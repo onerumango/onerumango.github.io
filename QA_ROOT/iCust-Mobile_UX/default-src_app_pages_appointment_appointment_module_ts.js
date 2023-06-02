@@ -94,22 +94,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppointmentPage": () => (/* binding */ AppointmentPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _appointment_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./appointment.page.html?ngResource */ 25204);
 /* harmony import */ var _appointment_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./appointment.page.scss?ngResource */ 87918);
 /* harmony import */ var _services_trxn_pdf_doc_download_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/trxn-pdf-doc-download.service */ 72734);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
 /* harmony import */ var src_app_services_loading_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/loading.service */ 4471);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 86712);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 86527);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 86712);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 86527);
 /* harmony import */ var _daterange_daterange_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../daterange/daterange.page */ 36675);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../appointmentpopup/appointmentpopup.page */ 14808);
+/* harmony import */ var _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../token-v2/token-v2.page */ 68106);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 52816);
+
 
 
 
@@ -159,7 +161,7 @@ let AppointmentPage = class AppointmentPage {
         this.quickOptions = [
             {
                 id: 0,
-                options: "Recent Transaction"
+                options: 'Recent Transaction',
             },
             {
                 id: 1,
@@ -190,10 +192,12 @@ let AppointmentPage = class AppointmentPage {
         this.noOfDaysList = Array.from({ length: 60 }, (v, k) => k + 1);
     }
     ngOnInit() {
+        var _a;
+        this.currentUser = this.shareDataService.getCurrentUser();
         this.loginRespAccountId = localStorage.getItem('loginRespAccountId');
         this.phoneNumber = localStorage.getItem('customerPhonenum');
         this.accountsData = JSON.parse(localStorage.getItem('cardData'));
-        this.loggedInCust = sessionStorage.getItem('customer_id') || localStorage.getItem('customer_id');
+        this.loggedInCust = (_a = this.currentUser) === null || _a === void 0 ? void 0 : _a.customerId;
         this.shareDataService.getAccountInfo.subscribe((data) => {
             this.accountInfo = data;
             if (this.accountInfo != null && this.accountInfo != undefined) {
@@ -202,11 +206,11 @@ let AppointmentPage = class AppointmentPage {
         });
         this.loadData();
         this.appointmentForm = this.fb.group({
-            accountNumber: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
-            filterOption: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
-            fromDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
-            toDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
-            customerId: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
+            accountNumber: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            filterOption: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            fromDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            toDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+            customerId: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
         });
         // this.getAppointmentByCustomerId('onload',null,null,null,null,null,null);
         this.getAppointmentByCustomerId('', this.loggedInCust, '');
@@ -220,7 +224,6 @@ let AppointmentPage = class AppointmentPage {
     compareWithFn(o1, o2) {
         return o1 === o2;
     }
-    ;
     ionViewDidEnter() {
         var _a, _b;
         this.slideNo = localStorage.getItem('slideNo') || 0;
@@ -228,7 +231,7 @@ let AppointmentPage = class AppointmentPage {
         this.accountIdArrayVal = (_b = (_a = this.accountsData) === null || _a === void 0 ? void 0 : _a[this.slideNo]) === null || _b === void 0 ? void 0 : _b.accountId;
     }
     openActionSheet() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
             console.log(this.transactionDataArr);
             const actionSheet = yield this.actionSheetController.create({
                 // header: 'Albums',
@@ -242,11 +245,13 @@ let AppointmentPage = class AppointmentPage {
                         text: 'Completed',
                         // icon: 'share',
                         handler: () => {
-                            this.apiService.filterAppointment('COMPLETED').subscribe(resp => {
+                            this.apiService
+                                .filterAppointment(this.loggedInCust, 'COMPLETED')
+                                .subscribe((resp) => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
-                            }, error => {
+                            }, (error) => {
                                 console.log(error);
                             });
                             // this.trxnArrayList = this.transactionDataArr.filter(
@@ -259,11 +264,13 @@ let AppointmentPage = class AppointmentPage {
                         text: 'Failed',
                         // icon: 'share',
                         handler: () => {
-                            this.apiService.filterAppointment('FAILED').subscribe(resp => {
+                            this.apiService
+                                .filterAppointment(this.loggedInCust, 'FAILED')
+                                .subscribe((resp) => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
-                            }, error => {
+                            }, (error) => {
                                 console.log(error);
                             });
                             // this.trxnArrayList = this.transactionDataArr.filter(
@@ -277,11 +284,13 @@ let AppointmentPage = class AppointmentPage {
                         // icon: 'share',
                         handler: () => {
                             // this.selectAction('CANCELED');
-                            this.apiService.filterAppointment('INPROGRESS').subscribe(resp => {
+                            this.apiService
+                                .filterAppointment(this.loggedInCust, 'INPROGRESS')
+                                .subscribe((resp) => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
-                            }, error => {
+                            }, (error) => {
                                 console.log(error);
                             });
                             // this.trxnArrayList = this.transactionDataArr.filter(
@@ -295,11 +304,13 @@ let AppointmentPage = class AppointmentPage {
                         // icon: 'share',
                         handler: () => {
                             // this.selectAction('CANCELED');
-                            this.apiService.filterAppointment('SCHEDULED').subscribe(resp => {
+                            this.apiService
+                                .filterAppointment(this.loggedInCust, 'SCHEDULED')
+                                .subscribe((resp) => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
-                            }, error => {
+                            }, (error) => {
                                 console.log(error);
                             });
                             // this.trxnArrayList = this.transactionDataArr.filter(
@@ -311,11 +322,13 @@ let AppointmentPage = class AppointmentPage {
                         text: 'Cancelled',
                         // icon: 'share',
                         handler: () => {
-                            this.apiService.filterAppointment('CANCELED').subscribe(resp => {
+                            this.apiService
+                                .filterAppointment(this.loggedInCust, 'CANCELLED')
+                                .subscribe((resp) => {
                                 console.log(resp);
                                 if (resp)
                                     this.trxnArrayList = resp === null || resp === void 0 ? void 0 : resp.data;
-                            }, error => {
+                            }, (error) => {
                                 console.log(error);
                             });
                             // this.selectAction('CANCELED');
@@ -338,11 +351,11 @@ let AppointmentPage = class AppointmentPage {
         });
     }
     selectAction(action) {
-        console.log(action, "Action");
-        console.log(this.transactionDataArr, "Appointment List");
+        console.log(action, 'Action');
+        console.log(this.transactionDataArr, 'Appointment List');
         console.log(this.transactionDataArr[0].appointmentStatus);
         let filterArray = [];
-        console.log(filterArray, "Before push");
+        console.log(filterArray, 'Before push');
         for (let i = 0; i < this.transactionDataArr.length; i++) {
             // if(this.transactionDataArr[i].appointmentStatus){
             if (action == this.transactionDataArr[i].appointmentStatus) {
@@ -352,31 +365,40 @@ let AppointmentPage = class AppointmentPage {
             // }
         }
         this.trxnArrayList = filterArray;
-        console.log(this.trxnArrayList, "Array list");
+        console.log(this.trxnArrayList, 'Array list');
         // this.transactionDataArr=filterArray;
-        console.log(filterArray, "After push");
+        console.log(filterArray, 'After push');
     }
     OnselectQuickOption(event, val) {
         if (event.target.value.options == 'Select Date Range') {
             this.addCustomTask();
         }
         else {
+            console.log(val, this.loggedInCust);
             this.getAppointmentByCustomerId(val, this.loggedInCust, null);
             this.filterOptions = event.target.value.data;
             this.selectedFilter = event.target.value;
         }
     }
     addCustomTask() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
             let modal = yield this.modalCtrl.create({
                 component: _daterange_daterange_page__WEBPACK_IMPORTED_MODULE_6__.DaterangePage,
                 cssClass: 'small-modal',
             });
             modal.onDidDismiss().then((modelData) => {
                 this.enableDate = true;
+                const Value = {
+                    accountNumber: null,
+                    customerId: null,
+                    filterOption: '',
+                    fromDate: modelData.data.fromDate,
+                    toDate: modelData.data.toDate,
+                };
+                this.getAppointmentByCustomerId(Value, this.loggedInCust, null);
                 return this.appointmentForm.patchValue({
-                    fromDate: [(new Date(modelData.data)).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
-                    toDate: [(new Date(modelData.role)).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]],
+                    fromDate: [new Date(modelData.data).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
+                    toDate: [new Date(modelData.role).toJSON(), [_angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required]],
                 });
             });
             return yield modal.present();
@@ -403,24 +425,25 @@ let AppointmentPage = class AppointmentPage {
             console.log('Today is: ' + d.toLocaleString());
             d.setDate(d.getDate() - event.target.value);
             console.log('<br>5 days ago was: ' + d.toLocaleString());
-            const formatFromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(d, 'yyyy-MM-dd');
+            const formatFromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(d, 'yyyy-MM-dd');
             this.fromDate = formatFromDate;
-            const formatToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(this.currentDate, 'yyyy-MM-dd');
+            const formatToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.currentDate, 'yyyy-MM-dd');
             this.toDate = formatToDate;
             console.log('formatFromDate :: ', formatFromDate, ' ::formatToDate::  ', formatToDate);
             this.isNoOfDays = true;
         }
     }
     getAppointmentByCustomerId(Value, custId, accId) {
-        console.log(Value);
         if (Value.filterOption) {
             Value.filterOption = Value.filterOption.data;
+            Value.fromDate = null;
+            Value.toDate = null;
         }
         if (Value.fromDate) {
-            Value.fromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(Value.fromDate), 'yyyy-MM-dd');
+            Value.fromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(Value.fromDate), 'yyyy-MM-dd');
         }
         if (Value.toDate) {
-            Value.toDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(Value.toDate), 'yyyy-MM-dd');
+            Value.toDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(Value.toDate), 'yyyy-MM-dd');
             // Value.toDate='2022-11-12';
         }
         this.loadingService.present();
@@ -474,7 +497,6 @@ let AppointmentPage = class AppointmentPage {
     }
     getTransactionByAccountId(dataLoad, page, event, formattedFromDate, formattedToDate, size) {
         this.loadingService.present();
-        this.loggedInCust = sessionStorage.getItem('customer_id');
         this.page = page;
         // console.log("Logged In Customer -- ", this.loggedInCust);
         this.apiService
@@ -565,15 +587,15 @@ let AppointmentPage = class AppointmentPage {
         console.log('change event :: ', event);
         var formatFromDate = null;
         var formatToDate = null;
-        var currDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(this.currentDate, 'yyyy-MM-dd');
+        var currDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.currentDate, 'yyyy-MM-dd');
         if (!isNoOfDays) {
-            const formattedFromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.fromDate), "yyyy-MM-dd'T'HH:mm:ss");
+            const formattedFromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(this.fromDate), "yyyy-MM-dd'T'HH:mm:ss");
             this.formattedFromDate = formattedFromDate;
             // console.log('fromDate :: ',this.formattedFromDate);
-            const formattedToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.toDate), "yyyy-MM-dd'T'HH:mm:ss");
+            const formattedToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(this.toDate), "yyyy-MM-dd'T'HH:mm:ss");
             this.formattedToDate = formattedToDate;
-            formatFromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.fromDate), 'yyyy-MM-dd');
-            formatToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.toDate), 'yyyy-MM-dd');
+            formatFromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(this.fromDate), 'yyyy-MM-dd');
+            formatToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(this.toDate), 'yyyy-MM-dd');
             this.compareDates(formatToDate, formatFromDate, event, currDate, isNoOfDays);
         }
         else {
@@ -617,15 +639,15 @@ let AppointmentPage = class AppointmentPage {
     }
     checkToDate(event) {
         console.log(event.target.value);
-        var currDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(this.currentDate, 'yyyy-MM-dd');
-        this.formattedToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(event.target.value), 'yyyy-MM-dd');
+        var currDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.currentDate, 'yyyy-MM-dd');
+        this.formattedToDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(event.target.value), 'yyyy-MM-dd');
         console.log('formatted:: ', currDate, this.formattedToDate);
-        this.fromDateVal = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.fromDate).toISOString();
+        this.fromDateVal = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(this.fromDate).toISOString();
         this.toDate = '';
         // this.getAppointmentByCustomerId('fromDate','','',this.formattedFromDate,this.formattedToDate,this.loggedInCust,this.accountIdNum);
     }
     openAlert(message) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
             const alert = yield this.alertController.create({
                 header: 'Alert',
                 message: `${message}`,
@@ -661,8 +683,6 @@ let AppointmentPage = class AppointmentPage {
             this.loadingService.dismiss();
             console.log('backend resp in home', resp);
             this.customerDetails = resp;
-            this.loggedInCust = resp.customerId;
-            // console.log("phonenumber resp:", resp);
             this.accountNumber = resp.custAccount.accountId;
             this.custAccountData = resp.custAccount;
             if (resp.custAccount.accountId > 1) {
@@ -689,13 +709,20 @@ let AppointmentPage = class AppointmentPage {
         this.location.back();
     }
     onClick(event) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
-            console.log(event);
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
             localStorage.setItem('AppointmentDetails', JSON.stringify(event));
             let modal = yield this.modalCtrl.create({
-                component: _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__.AppointmentpopupPage,
+                component: event.trnType == 'Forex Transaction' ||
+                    event.trnType == 'Cash Deposit' ||
+                    event.trnType == 'Cash Withdrawal' ||
+                    (event === null || event === void 0 ? void 0 : event.trnType) == 'Loan Disbursement' ||
+                    (event === null || event === void 0 ? void 0 : event.trnType) == 'Loan Repayment' ||
+                    (event === null || event === void 0 ? void 0 : event.trnType) == 'Cheque Deposit'
+                    ? _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_8__.TokenV2Page
+                    : _appointmentpopup_appointmentpopup_page__WEBPACK_IMPORTED_MODULE_7__.AppointmentpopupPage,
                 componentProps: {
                     value: event,
+                    screen: event === null || event === void 0 ? void 0 : event.trnType,
                 },
             });
             modal.onDidDismiss().then((modelData) => {
@@ -704,11 +731,6 @@ let AppointmentPage = class AppointmentPage {
             return yield modal.present();
         });
     }
-    // const modal = await modalController.create({ component: UploadPage });
-    // const { data } = await modal.onDidDismiss();
-    // if (data) {
-    //    this.getData();
-    // }
     downloadPdf(trxnArrayList, fromDate, toDate) {
         console.log('inside download pdf', trxnArrayList, fromDate, toDate);
         if (fromDate == undefined || fromDate == null) {
@@ -719,29 +741,29 @@ let AppointmentPage = class AppointmentPage {
         }
     }
     loadAllTransactionData(data) {
-        var currDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(this.currentDate, 'dd-MM-yyyy HH:mm:ss');
+        var currDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.currentDate, 'dd-MM-yyyy HH:mm:ss');
         this.pdfService.createPdf(data, this.customerDetails, currDate);
     }
 };
 AppointmentPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_12__.Router },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.AlertController },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.NavController },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_13__.Router },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.AlertController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.NavController },
     { type: src_app_services_loading_service__WEBPACK_IMPORTED_MODULE_5__.LoadingService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.ModalController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.ModalController },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__.ApiService },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_14__.ChangeDetectorRef },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormBuilder },
-    { type: _angular_common__WEBPACK_IMPORTED_MODULE_15__.Location },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_15__.ChangeDetectorRef },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormBuilder },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_16__.Location },
     { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_4__.DataService },
     { type: _services_trxn_pdf_doc_download_service__WEBPACK_IMPORTED_MODULE_2__.TrxnPdfDocDownloadService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.ActionSheetController }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.ActionSheetController }
 ];
 AppointmentPage.propDecorators = {
-    infiniteScroll: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_14__.ViewChild, args: [_ionic_angular__WEBPACK_IMPORTED_MODULE_13__.IonInfiniteScroll,] }]
+    infiniteScroll: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_15__.ViewChild, args: [_ionic_angular__WEBPACK_IMPORTED_MODULE_14__.IonInfiniteScroll,] }]
 };
-AppointmentPage = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_14__.Component)({
+AppointmentPage = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_15__.Component)({
         selector: 'app-appointment',
         template: _appointment_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_appointment_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -768,7 +790,7 @@ module.exports = "ion-header .header ion-icon {\n  font-size: larger;\n}\nion-he
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goBack()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" size=\"large\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"header_title\">Appointment History</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"openActionSheet()\">\r\n        <ion-icon slot=\"icon-only\" name=\"funnel-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n  <ion-toolbar>\r\n    <div>\r\n      <form [formGroup]=\"appointmentForm\">\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-list>\r\n              <ion-item>\r\n                <ion-select class=\"selectAccId\" [interfaceOptions]=\"{'cssClass': 'wider-popover-apt'}\"\r\n                  interface=\"popover\" formControlName=\"filterOption\" placeholder=\"Quick Options\"\r\n                  (ionChange)=\"OnselectQuickOption($event,appointmentForm.value)\" [compareWith]=\"compareWith\">\r\n                  <ion-select-option *ngFor=\"let item of quickOptions\" [value]=\"item\">\r\n                    <div class=\"select_option\" class=\"quickOption\">\r\n                      <div class=\"acc_num\">{{item.options}}</div>\r\n                    </div>\r\n                  </ion-select-option>\r\n                </ion-select>\r\n              </ion-item>\r\n            </ion-list>\r\n          </ion-col>\r\n        </ion-row>\r\n      </form>\r\n    </div>\r\n  </ion-toolbar>\r\n\r\n  <div class=\"transactionCard\">\r\n    <div *ngIf=\"displayInfo\" class=\"text-center\">\r\n      <p>{{message}}</p>\r\n    </div>\r\n    <ion-list class=\"ion_list\">\r\n      <ion-item *ngFor=\"let trans of trxnArrayList;\" (click)=\"onClick(trans)\">\r\n        <!-- <ion-button slot=\"start\">\r\n        <ion-icon slot=\"icon-only\" name=\"wallet-outline\"></ion-icon>\r\n      </ion-button> -->\r\n\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-label>\r\n                <h3>{{trans.trnType}}</h3>\r\n                <p>\r\n                  <small>\r\n                    Ref No:{{ trans.transactionId }}-{{trans.transactionDate}}-{{\r\n                    trans.creatorDtStamp }}\r\n                  </small>\r\n                </p>\r\n              </ion-label>\r\n            </ion-col>\r\n            <ion-col class=\"ion-align-self-center\">\r\n              <ion-label\r\n                [color]=\"trans.appointmentStatus == 'COMPLETED' || trans.appointmentStatus == 'SCHEDULED' ? 'success' : 'danger'\"\r\n                class=\"text-xs text-right\">\r\n                <small>{{trans.transactionAmount |\r\n                  currency:trans.transactionCurrency:'symbol':'1.0-1'}}</small> <br>\r\n                <p class=\"statuscls\"><small>{{trans.appointmentStatus}}</small></p>\r\n              </ion-label>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-item>\r\n    </ion-list>\r\n\r\n    <ion-infinite-scroll threshold=\"100px\" (ionInfinite)=\"onScrollingFinished($event)\">\r\n      <ion-infinite-scroll-content loadingSpinner=\"bubbles\" loadingText=\"Loading more data...\">\r\n      </ion-infinite-scroll-content>\r\n    </ion-infinite-scroll>\r\n  </div>\r\n</ion-content>\r\n<app-footer></app-footer>\r\n";
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goBack()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" size=\"large\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"header_title\">Appointment History</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"openActionSheet()\">\r\n        <ion-icon slot=\"icon-only\" name=\"funnel-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n  <ion-toolbar>\r\n    <div>\r\n      <form [formGroup]=\"appointmentForm\">\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-list>\r\n              <ion-item>\r\n                <ion-select class=\"selectAccId\" [interfaceOptions]=\"{'cssClass': 'wider-popover-apt'}\"\r\n                  interface=\"popover\" formControlName=\"filterOption\" placeholder=\"Quick Options\"\r\n                  (ionChange)=\"OnselectQuickOption($event,appointmentForm.value)\" [compareWith]=\"compareWith\">\r\n                  <ion-select-option *ngFor=\"let item of quickOptions\" [value]=\"item\">\r\n                    <div class=\"select_option\" class=\"quickOption\">\r\n                      <div class=\"acc_num\">{{item.options}}</div>\r\n                    </div>\r\n                  </ion-select-option>\r\n                </ion-select>\r\n              </ion-item>\r\n            </ion-list>\r\n          </ion-col>\r\n        </ion-row>\r\n      </form>\r\n    </div>\r\n  </ion-toolbar>\r\n\r\n  <div class=\"transactionCard\">\r\n    <div *ngIf=\"displayInfo\" class=\"text-center\">\r\n      <p>{{message}}</p>\r\n    </div>\r\n    <ion-list class=\"ion_list\">\r\n      <ion-item *ngFor=\"let trans of trxnArrayList;\" (click)=\"onClick(trans)\">\r\n        <!-- <ion-button slot=\"start\">\r\n        <ion-icon slot=\"icon-only\" name=\"wallet-outline\"></ion-icon>\r\n      </ion-button> -->\r\n\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col>\r\n              <ion-label>\r\n                <h3>{{trans.trnType}}</h3>\r\n                <p>\r\n                  <small>\r\n                    Ref No:{{ trans.transactionId }}-{{trans.transactionDate}}-{{\r\n                    trans.creatorDtStamp }}\r\n                  </small>\r\n                </p>\r\n              </ion-label>\r\n            </ion-col>\r\n            <ion-col class=\"ion-align-self-center\">\r\n              <ion-label\r\n                [color]=\"trans.appointmentStatus == 'COMPLETED' || trans.appointmentStatus == 'SCHEDULED' ? 'success' : 'danger'\"\r\n                class=\"text-xs text-right\">\r\n                <ng-container *ngIf=\"trans.trnType == 'Forex Transaction'; else showOtherTxn\">\r\n                  <small>\r\n                    {{ trans.forexTransAmount  |\r\n                    currency:trans.forexTransCurrency :'symbol':'1.0-1'}}</small>\r\n                  <br>\r\n                </ng-container>\r\n                <ng-template #showOtherTxn>\r\n                  <small>\r\n                    {{trans.transactionAmount | currency:trans.transactionCurrency :'symbol':'1.0-1'}}\r\n                  </small>\r\n                  <br>\r\n                </ng-template>\r\n                <p class=\"statuscls\"><small>{{trans.appointmentStatus}}</small></p>\r\n              </ion-label>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-item>\r\n    </ion-list>\r\n\r\n    <ion-infinite-scroll threshold=\"100px\" (ionInfinite)=\"onScrollingFinished($event)\">\r\n      <ion-infinite-scroll-content loadingSpinner=\"bubbles\" loadingText=\"Loading more data...\">\r\n      </ion-infinite-scroll-content>\r\n    </ion-infinite-scroll>\r\n  </div>\r\n</ion-content>\r\n<app-footer></app-footer>\r\n";
 
 /***/ })
 

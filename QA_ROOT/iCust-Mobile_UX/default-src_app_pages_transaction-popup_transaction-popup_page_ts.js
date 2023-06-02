@@ -18,10 +18,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 3184);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 52816);
 /* harmony import */ var src_app_services_toast_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/toast.service */ 84465);
 /* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 52816);
 
 
 
@@ -120,58 +120,6 @@ TransactionPopupPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
         styles: [_transaction_popup_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], TransactionPopupPage);
-
-
-
-/***/ }),
-
-/***/ 84465:
-/*!*******************************************!*\
-  !*** ./src/app/services/toast.service.ts ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ToastService": () => (/* binding */ ToastService)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic/angular */ 93819);
-
-
-
-let ToastService = class ToastService {
-    constructor(toast) {
-        this.toast = toast;
-    }
-    showToast(msg) {
-        this.myToast = this.toast.create({
-            message: msg,
-            duration: 3000,
-            buttons: [
-                {
-                    text: 'Dismiss',
-                    role: 'cancel',
-                    handler: () => { }
-                }
-            ]
-        }).then((toastData) => {
-            toastData.present();
-        });
-    }
-    dismissToast() {
-        this.myToast = this.toast.dismiss();
-    }
-};
-ToastService.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_0__.ToastController }
-];
-ToastService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
-        providedIn: 'root'
-    })
-], ToastService);
 
 
 

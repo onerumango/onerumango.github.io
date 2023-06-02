@@ -2410,7 +2410,7 @@ ion-popover::part(content) {
   border-bottom-right-radius: 30px !important;
 }
 ion-modal.dup-modal {
-  --height: 40%;
+  --height: 50%;
   padding: 13px;
   --border-radius: 16px;
   --box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px !important;

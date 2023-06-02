@@ -1,6 +1,61 @@
 "use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["common"],{
 
+/***/ 10910:
+/*!***************************************!*\
+  !*** ./src/app/pages/v2/kyc/store.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Store": () => (/* binding */ Store)
+/* harmony export */ });
+class Store {
+}
+Store.verificationMethod = [
+    {
+        title: 'Branch Verification',
+        id: 1,
+        link: 'kyc-branch',
+        white_bg_img: 'assets/images/kyc/branch.svg',
+        selected: false,
+    },
+    {
+        title: 'Video Verification',
+        id: 2,
+        link: 'kyc-video',
+        white_bg_img: 'assets/images/kyc/video.svg',
+        selected: false,
+    },
+    {
+        title: 'KYC Registration Agency',
+        id: 3,
+        link: null,
+        white_bg_img: 'assets/images/kyc/agent.svg',
+        selected: false,
+    },
+];
+Store.onboardingMethod = [
+    {
+        title: 'Individual',
+        id: 1,
+        link: 'onboarding-individual',
+        white_bg_img: 'assets/images/customer-onboarding/individual.svg',
+        selected: false,
+    },
+    {
+        title: 'Corporate',
+        id: 2,
+        link: 'onboarding-corporate',
+        white_bg_img: 'assets/images/customer-onboarding/corporate.svg',
+        selected: false,
+    },
+];
+
+
+/***/ }),
+
 /***/ 44045:
 /*!***************************************************!*\
   !*** ./src/app/services/commonservice.service.ts ***!

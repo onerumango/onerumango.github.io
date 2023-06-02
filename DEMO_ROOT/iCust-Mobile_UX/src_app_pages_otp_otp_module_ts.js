@@ -156,9 +156,9 @@ let OtpPage = class OtpPage {
             disableAutoFocus: false,
             placeholder: '',
             inputStyles: {
-                'width': '40px',
-                'height': '40px'
-            }
+                width: '40px',
+                height: '40px',
+            },
         };
     }
     ngOnInit() {
@@ -171,8 +171,7 @@ let OtpPage = class OtpPage {
         this.PhoneNumLogin = localStorage.getItem('customerPhonenum');
         this.navSubscription = this.api.getNavParam.subscribe((data) => (this.screenNames = data));
     }
-    onOtpChange() {
-    }
+    onOtpChange() { }
     getOTP() {
         this.oTpModel.source = 'customer';
         this.oTpModel.source_key = 'mobile';
@@ -188,7 +187,6 @@ let OtpPage = class OtpPage {
         }, (err) => {
             this.openToast(err);
         });
-        ;
     }
     resendOTP() {
         this.ngOtpInput.setValue('');
@@ -203,13 +201,13 @@ let OtpPage = class OtpPage {
         this.verifyOtpModel.isMobileLogin = true;
         this.isLoading = true;
         this.api.verifyOtp(this.verifyOtpModel).subscribe((otpResp) => {
-            var _a, _b, _c, _d, _e;
+            var _a, _b, _c, _d, _e, _f;
             if ((otpResp === null || otpResp === void 0 ? void 0 : otpResp.status) == 200) {
-                if (((_a = otpResp['data']) === null || _a === void 0 ? void 0 : _a.firstTimeLogin) == "Y") {
+                if (((_a = otpResp['data']) === null || _a === void 0 ? void 0 : _a.firstTimeLogin) == 'Y') {
                     localStorage.setItem('customerPhonenum', this.customerPhonenum);
                     const navigationExtras = {
                         queryParams: {
-                            'screenName': 'reset'
+                            screenName: 'reset',
                         },
                     };
                     this.api.sendNavParam(navigationExtras);
@@ -218,19 +216,20 @@ let OtpPage = class OtpPage {
                 else {
                     // TODO:
                     if (this.screenNames) {
-                        if (this.screenNames.queryParams.screenName == "mpinotpValidate" || this.screenNames.queryParams.screenName == "forgotmpin") {
+                        if (this.screenNames.queryParams.screenName == 'mpinotpValidate' ||
+                            this.screenNames.queryParams.screenName == 'forgotmpin') {
                             const navigationExtras = {
                                 queryParams: {
-                                    'screenName': 'forgotmpin'
+                                    screenName: 'forgotmpin',
                                 },
                             };
                             this.api.sendNavParam(navigationExtras);
                             this.router.navigateByUrl('/setmpin');
                         }
-                        else if (this.screenNames.queryParams.screenName == "forget-password") {
+                        else if (this.screenNames.queryParams.screenName == 'forget-password') {
                             const navigationExtras = {
                                 queryParams: {
-                                    'screenName': 'forget-password'
+                                    screenName: 'forget-password',
                                 },
                             };
                             this.api.sendNavParam(navigationExtras);
@@ -242,7 +241,8 @@ let OtpPage = class OtpPage {
                             localStorage.setItem('lastName', (_d = otpResp['data']) === null || _d === void 0 ? void 0 : _d.lastName);
                             localStorage.setItem('customer_id', (_e = otpResp['data']) === null || _e === void 0 ? void 0 : _e.customerId);
                             localStorage.setItem('customer_details', JSON.stringify(otpResp['data']));
-                            localStorage.setItem('isShowed', "no");
+                            localStorage.setItem('userType', (_f = otpResp['data']) === null || _f === void 0 ? void 0 : _f.userType);
+                            localStorage.setItem('isShowed', 'no');
                             this.router.navigate(['dashboard'], { replaceUrl: true });
                             this.otpForm.reset();
                             this.dataService.isLoggedIn.next(true);
@@ -258,7 +258,7 @@ let OtpPage = class OtpPage {
             this.isLoading = false;
         }, (err) => {
             this.errMsg = 'Please enter a valid OTP';
-            setTimeout(() => this.errMsg = '', 3000);
+            setTimeout(() => (this.errMsg = ''), 3000);
             this.isLoading = false;
         });
     }

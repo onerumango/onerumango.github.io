@@ -11,14 +11,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DaterangePage": () => (/* binding */ DaterangePage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _daterange_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./daterange.page.html?ngResource */ 94252);
 /* harmony import */ var _daterange_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./daterange.page.scss?ngResource */ 68274);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ 86712);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 86527);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 86712);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 86527);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ 56908);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -34,40 +37,39 @@ let DaterangePage = class DaterangePage {
     }
     ngOnInit() {
         this.appointmentForm = this.fb.group({
-            fromDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required]],
-            toDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required]]
+            fromDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required]],
+            toDate: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required]]
         });
     }
     next() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             yield this.modalCtrl.dismiss();
         });
     }
     getfromDate(event) {
         console.log("event", event);
-        let fromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(event), 'yyyy-MM-dd');
+        let fromDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])(event), 'yyyy-MM-dd');
         this.appointmentForm.get('fromDate').patchValue(fromDate);
     }
     getToDate(event) {
         console.log("to event", event);
-        let toDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(event), 'yyyy-MM-dd');
+        let toDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])(event), 'yyyy-MM-dd');
         this.appointmentForm.get('toDate').patchValue(toDate);
     }
     onClickConfirm() {
-        var _a, _b;
         let data = {
-            fromDate: (_a = this.appointmentForm.get('fromDate')) === null || _a === void 0 ? void 0 : _a.value,
-            toDate: (_b = this.appointmentForm.get('toDate')) === null || _b === void 0 ? void 0 : _b.value
+            fromDate: this.appointmentForm.get('fromDate').value ? this.appointmentForm.get('fromDate').value : moment__WEBPACK_IMPORTED_MODULE_2__(new Date()).format("YYYY-MM-DD"),
+            toDate: this.appointmentForm.get('toDate').value ? this.appointmentForm.get('toDate').value : moment__WEBPACK_IMPORTED_MODULE_2__(new Date()).format("YYYY-MM-DD")
         };
         this.modalCtrl.dismiss(data);
     }
 };
 DaterangePage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ModalController },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormBuilder }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormBuilder }
 ];
-DaterangePage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
+DaterangePage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-daterange',
         template: _daterange_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_daterange_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
@@ -3547,7 +3549,7 @@ module.exports = ".new-background-color {\n  border-top-left-radius: 20px;\n  bo
   \****************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content class=\"ion-padding\">\r\n  <ion-toolbar>\r\n    <ion-title>Duration</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-icon slot=\"icon-only\" name=\"close\" (click)=\"next()\"></ion-icon>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n\r\n  <div class=\"mainDiv\">\r\n    <form [formGroup]=\"appointmentForm\" *ngIf=\"appointmentForm\">\r\n\r\n      <ion-item class=\"dateRange\">\r\n        <ion-select class=\"selectAccId\" interface=\"popover\" placeholder=\"Select date Range\"\r\n          [interfaceOptions]=\"{'cssClass': 'wider-popover'}\">\r\n          <ion-select-option [value]=\"item\">\r\n            <div class=\"acc_num\">\r\n              Select Date Range\r\n            </div>\r\n          </ion-select-option>\r\n        </ion-select>\r\n      </ion-item>\r\n      <div class=\"my-2\">\r\n        <ion-label>Date Range</ion-label>\r\n        <ion-item>\r\n          <ion-datetime-button datetime=\"datetime2\" showTimeLabel=\"false\"></ion-datetime-button>\r\n          <ion-modal [keepContentsMounted]=\"true\">\r\n            <ng-template>\r\n              <ion-datetime presentation=\"date\" id=\"datetime2\" (ionChange)=\"getfromDate($event.target.value)\"\r\n                formControlName=\"fromDate\" displayFormat=\"DDD. MMM DD, YY\" [showDefaultTitle]=\"true\" #datetime\r\n                [max]=\"maxDate\" [showDefaultButtons]=\"true\"></ion-datetime>\r\n            </ng-template>\r\n          </ion-modal>\r\n          <ion-icon name=\"calendar\" slot=\"end\"></ion-icon>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-datetime-button datetime=\"datetime\" showTimeLabel=\"false\"></ion-datetime-button>\r\n          <ion-modal [keepContentsMounted]=\"true\">\r\n            <ng-template>\r\n              <ion-datetime presentation=\"date\" id=\"datetime\" (ionChange)=\"getToDate($event.target.value)\"\r\n                formControlName=\"toDate\" displayFormat=\"DDD. MMM DD, YY\" [showDefaultTitle]=\"true\" #datetime1\r\n                [max]=\"maxDate\" [showDefaultButtons]=\"true\"></ion-datetime>\r\n            </ng-template>\r\n          </ion-modal>\r\n          <ion-icon name=\"calendar\" slot=\"end\"></ion-icon>\r\n        </ion-item>\r\n      </div>\r\n\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-button shape=\"round\" size=\"default\" (click)=\"onClickConfirm()\">Confirm</ion-button>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-button shape=\"round\" color=\"danger\" (click)=\"next()\" size=\"default\">Cancle</ion-button>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </form>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content class=\"ion-padding\">\r\n  <ion-toolbar>\r\n    <ion-title>Duration</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-icon slot=\"icon-only\" name=\"close\" (click)=\"next()\"></ion-icon>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n\r\n  <div class=\"mainDiv\">\r\n    <form [formGroup]=\"appointmentForm\" *ngIf=\"appointmentForm\">\r\n\r\n      <ion-item class=\"dateRange\">\r\n        <ion-select class=\"selectAccId\" interface=\"popover\" placeholder=\"Select date Range\"\r\n          [interfaceOptions]=\"{'cssClass': 'wider-popover'}\">\r\n          <ion-select-option value=\"0\" selected=\"true\">Select Date Range</ion-select-option>\r\n        </ion-select>\r\n      </ion-item>\r\n      <div class=\"my-2\">\r\n        <ion-label class=\"mx-4\">Date Range</ion-label>\r\n        <ion-item>\r\n          <ion-datetime-button datetime=\"datetime2\" showTimeLabel=\"false\"></ion-datetime-button>\r\n          <ion-modal [keepContentsMounted]=\"true\">\r\n            <ng-template>\r\n              <ion-datetime presentation=\"date\" id=\"datetime2\" (ionChange)=\"getfromDate($event.target.value)\"\r\n                formControlName=\"fromDate\" displayFormat=\"DDD. MMM DD, YY\" [showDefaultTitle]=\"true\" #datetime\r\n                [max]=\"maxDate\" [showDefaultButtons]=\"true\"></ion-datetime>\r\n            </ng-template>\r\n          </ion-modal>\r\n          <ion-icon name=\"calendar\" slot=\"end\"></ion-icon>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-datetime-button datetime=\"datetime\" showTimeLabel=\"false\"></ion-datetime-button>\r\n          <ion-modal [keepContentsMounted]=\"true\">\r\n            <ng-template>\r\n              <ion-datetime presentation=\"date\" id=\"datetime\" (ionChange)=\"getToDate($event.target.value)\"\r\n                formControlName=\"toDate\" displayFormat=\"DDD. MMM DD, YY\" [showDefaultTitle]=\"true\" #datetime1\r\n                [max]=\"maxDate\" [showDefaultButtons]=\"true\"></ion-datetime>\r\n            </ng-template>\r\n          </ion-modal>\r\n          <ion-icon name=\"calendar\" slot=\"end\"></ion-icon>\r\n        </ion-item>\r\n      </div>\r\n\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-button shape=\"round\" size=\"default\" (click)=\"onClickConfirm()\">Confirm</ion-button>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-button shape=\"round\" color=\"danger\" (click)=\"next()\" size=\"default\">Cancle</ion-button>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </form>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ })
 

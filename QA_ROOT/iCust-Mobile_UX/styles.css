@@ -2280,10 +2280,119 @@ button.swiper-pagination-bullet {
 }
 :root {
   --ion-font-family: "Montserrat";
-  --primary-color: #456efe;
+  --primary-color: #004c97;
+  --ion-color-bank: #004c97;
+  --ion-color-bank-rgb: 0, 76, 151;
+  --ion-color-bank-contrast: #ffffff;
+  --ion-color-bank-contrast-rgb: 255, 255, 255;
+  --ion-color-bank-shade: #004385;
+  --ion-color-bank-tint: #1a5ea1;
+}
+.ion-color-bank {
+  --ion-color-base: var(--ion-color-bank);
+  --ion-color-base-rgb: var(--ion-color-bank-rgb);
+  --ion-color-contrast: var(--ion-color-bank-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-bank-contrast-rgb);
+  --ion-color-shade: var(--ion-color-bank-shade);
+  --ion-color-tint: var(--ion-color-bank-tint);
+}
+.mat-select-panel .mat-option.loan-text {
+  line-height: 1.5em !important;
+  height: 60px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #102245 !important;
+}
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  background: #e9ecf5 !important;
+}
+.mat-select-panel .mat-option.mat-active {
+  color: #004c97 !important;
+}
+.mat-option-text > span.sub-text {
+  color: #b1b1b1 !important;
+  opacity: 100% !important;
+}
+.mat-select-panel-wrap {
+  margin-left: 9px;
+  margin-right: 9px;
+  z-index: -1;
+}
+.mat-form-field-empty.mat-form-field-label {
+  white-space: pre-line !important;
+}
+.lbl-title {
+  color: #102245;
+  font-size: 11px;
+  opacity: 50%;
+}
+.lbl-content {
+  color: #262831;
+  font-size: 12px;
+  opacity: 100%;
+}
+.currency-label {
+  width: 43px;
+  height: 26px;
+  background: rgba(0, 76, 151, 0.1411764706);
+  border: 1pt solid #004c97;
+  margin: 0px;
+  display: inline-grid;
+  padding: 5px;
+  color: #004c97;
+  border-radius: 6px;
+  font-size: 10px;
+  text-align: center;
+  font-family: "Poppins,Medium";
+}
+.mat-form-field-label {
+  font-size: 12px;
+  color: #102245;
+  opacity: 100%;
+}
+.removeArrow .mat-select-arrow {
+  display: none !important;
+}
+.mat-select-panel {
+  z-index: -1;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  margin-top: -12px;
+  position: relative;
 }
 .app-font {
   font-family: "Montserrat" !important;
+}
+.font-size-16 {
+  font-size: 16px !important;
+}
+.secondary {
+  background-image: linear-gradient(90deg, #051a2d, #004c97);
+  color: #ffffff;
+}
+.inactive-bg {
+  background: #e3e3e3;
+  color: #707070;
+}
+.active-bg {
+  background-image: linear-gradient(90deg, #051a2d, #004c97);
+  color: #ffffff;
+}
+.action-button {
+  top: -6px;
+  right: -5px;
+  height: 40px;
+  position: relative;
+  width: 120px;
+  text-align: center;
+}
+.select-flags {
+  top: -2px !important;
+  width: 15px !important;
+}
+.mat-calendar-arrow {
+  fill: #ffffff;
 }
 ion-toolbar {
   --min-height: 75px;
@@ -2300,28 +2409,55 @@ ion-popover::part(content) {
   border-bottom-left-radius: 30px !important;
   border-bottom-right-radius: 30px !important;
 }
-.mat-form-field-appearance-outline .mat-form-field-outline-thick {
-  opacity: unset !important;
+ion-modal.dup-modal {
+  --height: 50%;
+  padding: 13px;
+  --border-radius: 16px;
+  --box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px !important;
+  --backdrop-opacity: #dee2e6 !important;
+}
+ion-modal.dup-modal::part(backdrop) {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+ion-modal.dup-modal ion-toolbar {
+  --background: rgb(14 116 144);
+  --color: white;
+}
+ion-segment {
+  --background: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  height: 56px;
+}
+ion-segment-button {
+  padding: 4px 0;
+  margin: 0;
+  border-radius: 13px;
+  --background-checked: var(--ion-color-primary) !important;
+  --color-checked: white;
+  --indicator-color: transparent !important;
+}
+.mat-form-field {
+  font-family: "Montserrat" !important;
 }
 .selection-text {
   font-size: 16px;
 }
-.mat-form-field-appearance-outline .mat-form-field-outline {
-  color: #6c757d;
+.error {
+  color: #dc3545;
+  font-size: 12px;
 }
 .swiper-pagination-bullets {
   position: unset !important;
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
 }
 ion-modal.internet-modal {
   --height: 35%;
   --width: 340px;
   --border-radius: 16px;
-  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
@@ -2342,8 +2478,8 @@ ion-alert.logout-alert .alert-button {
   text-transform: capitalize !important;
 }
 button.alert-button.alert-button-confirm {
-  background-color: #C90303;
-  color: #FFFFFF;
+  background-color: #c90303;
+  color: #ffffff;
   width: 45%;
   border-radius: 50px;
   height: 50px;
@@ -2352,8 +2488,8 @@ button.alert-button.alert-button-confirm {
   justify-content: center !important;
 }
 button.alert-button.alert-button-cancel {
-  background-color: #456EFE;
-  color: #FFFFFF;
+  background-color: #456efe;
+  color: #ffffff;
   width: 45%;
   border-radius: 50px;
   height: 50px;
@@ -2441,6 +2577,117 @@ input[type=date]::-webkit-calendar-picker-indicator {
   padding: 0px;
   margin: 0px;
   margin-top: 10px;
+}
+.leaflet-popup-tip-container {
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  overflow: hidden;
+  pointer-events: none;
+  top: -10px;
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: white;
+  color: #333;
+  box-shadow: unset !important;
+}
+.leaflet-popup-tip {
+  width: 17px;
+  height: 17px;
+  padding: 1px;
+  margin-top: 3px !important;
+  margin-left: 10px !important;
+  margin-bottom: 6px !important;
+  transform: rotate(-45deg);
+}
+.datetime-size-fixed:not(.datetime-prefer-wheel) {
+  max-width: 480px !important;
+}
+:host ::ng-deep .calendar-header {
+  background: #051a2d !important;
+}
+.calendar-days-of-week {
+  background: #051a2d !important;
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+.calendar-action-buttons {
+  background: #051a2d !important;
+}
+.calendar-action-buttons {
+  color: #ffffff !important;
+}
+button:focus {
+  outline: unset !important;
+}
+.mat-calendar-header {
+  padding: 8px 8px 0 8px;
+  background: #051a2d;
+  color: #ffffff;
+}
+.mat-calendar-content {
+  padding: 0px !important;
+  outline: none;
+}
+.mat-calendar-controls {
+  margin: 0px !important;
+}
+.mat-calendar-table-header {
+  color: #ffffff !important;
+  background: #051a2d !important;
+  font-family: "Montserrat";
+}
+.mat-calendar-table-header th {
+  font-size: 15px;
+  font-weight: 100;
+}
+table {
+  border: none !important;
+}
+.mat-calendar-table-header-divider {
+  position: relative;
+  height: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.mat-calendar-table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.0901960784);
+}
+.mat-calendar-body-selected {
+  background-color: #004c97;
+  color: #ffffff !important;
+}
+.mat-calendar-body-cell-content {
+  width: 56px !important;
+  height: 46px !important;
+  border-radius: 6px !important;
+}
+.mat-button {
+  font-family: "Montserrat" !important;
+  padding: 0 12px !important;
+}
+ion-footer::before {
+  background-image: unset !important;
+}
+.mat-calendar-body-today.mat-calendar-body-selected {
+  box-shadow: inset 0 0 0 1px #fff;
+  color: #ffffff !important;
+}
+.mat-calendar-body-cell-content {
+  font-size: 16px !important;
+  font-family: "Montserrat" !important;
+  margin-top: 8px !important;
+}
+.mat-calendar-body-cell.special-date > .mat-calendar-body-cell-content {
+  opacity: 100% !important;
+  color: #b20000 !important;
+  font-size: 16px !important;
 }
 /*!**********************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].rules[0].oneOf[0].use[2]!./node_modules/animate.css/animate.min.css ***!

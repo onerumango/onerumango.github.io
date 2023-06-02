@@ -251,8 +251,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_mock_service_state_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/mock-service/state-service */ 93580);
 /* harmony import */ var src_app_services_mock_service_country_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/services/mock-service/country-service */ 97902);
 /* harmony import */ var src_app_services_static_data_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/services/static-data-service */ 27804);
-/* harmony import */ var src_app_components_kyc_modal_kyc_modal_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/components/kyc-modal/kyc-modal.component */ 56215);
-/* harmony import */ var _transaction_date_transaction_date_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../transaction-date/transaction-date.component */ 19693);
+/* harmony import */ var _transaction_date_transaction_date_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../transaction-date/transaction-date.component */ 19693);
+/* harmony import */ var _verification_modal_verification_modal_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../verification-modal/verification-modal.component */ 49241);
 
 
 
@@ -272,7 +272,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let BasicInfoComponent = class BasicInfoComponent {
-    constructor(fb, _location, branchService, fetchCustomers, modalCtrl, cityService, stateService, countryService, staticDataService) {
+    constructor(fb, _location, branchService, fetchCustomers, modalCtrl, cityService, stateService, countryService, staticDataService, loadingCtrl) {
         this.fb = fb;
         this._location = _location;
         this.branchService = branchService;
@@ -282,6 +282,7 @@ let BasicInfoComponent = class BasicInfoComponent {
         this.stateService = stateService;
         this.countryService = countryService;
         this.staticDataService = staticDataService;
+        this.loadingCtrl = loadingCtrl;
         this.emitData = new _angular_core__WEBPACK_IMPORTED_MODULE_13__.EventEmitter();
         this.deleteIcon = 'assets/icon/delete.svg';
         this.editIcon = 'assets/icon/edit.svg';
@@ -310,7 +311,6 @@ let BasicInfoComponent = class BasicInfoComponent {
     }
     ngOnInit() {
         this.createForm();
-        ;
         this.getPrefixData();
         this.getGenderData();
         this.getMaritalStatus();
@@ -332,10 +332,10 @@ let BasicInfoComponent = class BasicInfoComponent {
     openKycModal(isAutoSelected) {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__awaiter)(this, void 0, void 0, function* () {
             let modal = yield this.modalCtrl.create({
-                component: src_app_components_kyc_modal_kyc_modal_component__WEBPACK_IMPORTED_MODULE_11__.KycModalComponent,
+                component: _verification_modal_verification_modal_component__WEBPACK_IMPORTED_MODULE_12__.VerificationModalComponent,
                 componentProps: {
-                    isAutoSelected: isAutoSelected
-                }
+                    isAutoSelected: isAutoSelected,
+                },
             });
             return yield modal.present();
         });
@@ -408,19 +408,64 @@ let BasicInfoComponent = class BasicInfoComponent {
         this._location.back();
     }
     saveCustomerData() {
-        let payload = Object.assign({}, this.basicInfoForm.value);
-        payload.verificationType = 'KYC';
-        delete payload.dateOfBirth;
-        console.log(payload);
-        this.branchService.upsertCustomer(payload).subscribe((res) => {
-            if (res && res.kycReference) {
-                localStorage.setItem('kycRef', res.kycReference);
-                this.emitData.emit(res);
-            }
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__awaiter)(this, void 0, void 0, function* () {
+            let payload = Object.assign({}, this.basicInfoForm.value);
+            payload.verificationType = 'KYC';
+            delete payload.dateOfBirth;
+            console.log(payload);
+            this.branchService.upsertCustomer(payload).subscribe((res) => (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__awaiter)(this, void 0, void 0, function* () {
+                if (res && res.kycReference) {
+                    localStorage.setItem('kycRef', res.kycReference);
+                    let kycDocs = JSON.parse(localStorage.getItem('UploadedDocument'));
+                    if (kycDocs) {
+                        this.pushKycDocumentInDB(kycDocs, res);
+                    }
+                    else {
+                        this.emitData.emit(res);
+                    }
+                }
+            }));
         });
     }
+    pushKycDocumentInDB(kycDocs, kycInfo) {
+        var _a;
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__awaiter)(this, void 0, void 0, function* () {
+            yield ((_a = kycDocs === null || kycDocs === void 0 ? void 0 : kycDocs.items) === null || _a === void 0 ? void 0 : _a.map((doc, index) => (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__awaiter)(this, void 0, void 0, function* () {
+                const uploadData = new FormData();
+                const data = {
+                    customerId: kycInfo === null || kycInfo === void 0 ? void 0 : kycInfo.customerId,
+                    documentName: doc.documentName,
+                    documentType: doc === null || doc === void 0 ? void 0 : doc.documentType,
+                    fileType: doc === null || doc === void 0 ? void 0 : doc.fileType,
+                    fileName: doc === null || doc === void 0 ? void 0 : doc.fileName,
+                    verificationType: 'KYC verification',
+                    documentSide: doc === null || doc === void 0 ? void 0 : doc.documentSide,
+                    idNumber: '',
+                    name: '',
+                    dob: '',
+                };
+                uploadData.append('data', JSON.stringify(data));
+                uploadData.append('file', this.DataURIToBlob(doc === null || doc === void 0 ? void 0 : doc.fileUrl));
+                yield this.branchService.upload(uploadData).subscribe((res) => {
+                    console.log(res);
+                });
+            })));
+            this.emitData.emit(kycInfo);
+        });
+    }
+    DataURIToBlob(dataURI) {
+        const splitDataURI = dataURI.split(',');
+        const byteString = splitDataURI[0].indexOf('base64') >= 0
+            ? atob(splitDataURI[1])
+            : decodeURI(splitDataURI[1]);
+        const mimeString = splitDataURI[0].split(':')[1].split(';')[0];
+        const ia = new Uint8Array(byteString.length);
+        for (let i = 0; i < byteString.length; i++)
+            ia[i] = byteString.charCodeAt(i);
+        return new Blob([ia], { type: mimeString });
+    }
     fetchDataUsingCIF(value) {
-        this.fetchCustomers.getCustomerInfo(value).subscribe(res => {
+        this.fetchCustomers.getCustomerInfo(value).subscribe((res) => {
             console.log(res === null || res === void 0 ? void 0 : res.customerInfoList[0]);
             this.customerData = res === null || res === void 0 ? void 0 : res.customerInfoList[0];
             this.basicInfoForm.patchValue(this.customerData);
@@ -428,10 +473,12 @@ let BasicInfoComponent = class BasicInfoComponent {
     }
     fetchStateAndCity(zip, index) {
         const formCtrl = this.userAddresses.at(index);
-        if (!formCtrl.get('country').value) {
+        if (!formCtrl.get('country').value || !zip) {
             return;
         }
-        this.branchService.fetchStateCityByZipcode(formCtrl.get('country').value, zip).subscribe((res) => {
+        this.branchService
+            .fetchStateCityByZipcode(formCtrl.get('country').value, zip)
+            .subscribe((res) => {
             formCtrl.get('state').setValue(res === null || res === void 0 ? void 0 : res.stateName);
             formCtrl.get('city').setValue(res === null || res === void 0 ? void 0 : res.cityName);
         });
@@ -439,10 +486,10 @@ let BasicInfoComponent = class BasicInfoComponent {
     datePopup() {
         this.modalCtrl
             .create({
-            component: _transaction_date_transaction_date_component__WEBPACK_IMPORTED_MODULE_12__.TransactionDateComponent,
+            component: _transaction_date_transaction_date_component__WEBPACK_IMPORTED_MODULE_11__.TransactionDateComponent,
             componentProps: {
-                screenType: 'basicInfo'
-            }
+                screenType: 'basicInfo',
+            },
         })
             .then((modalResp) => {
             modalResp.present();
@@ -498,7 +545,9 @@ let BasicInfoComponent = class BasicInfoComponent {
             this.branchService.fetchCustomerDetails(payload).subscribe((res) => {
                 var _a, _b;
                 console.log(res);
-                if (res.data != null && (((_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.emailPresent) == true || ((_b = res === null || res === void 0 ? void 0 : res.data) === null || _b === void 0 ? void 0 : _b.phoneNumberPresent) == true)) {
+                if (res.data != null &&
+                    (((_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.emailPresent) == true ||
+                        ((_b = res === null || res === void 0 ? void 0 : res.data) === null || _b === void 0 ? void 0 : _b.phoneNumberPresent) == true)) {
                     this.openDuplicationDiaglogue(res.data);
                 }
                 else {
@@ -515,6 +564,7 @@ let BasicInfoComponent = class BasicInfoComponent {
             let modal = yield this.modalCtrl.create({
                 component: _otp_verification_popup_otp_verification_popup_component__WEBPACK_IMPORTED_MODULE_6__.OtpVerificationPopup,
                 componentProps: {
+                    source_key: source_key,
                     Mnumber: source_value,
                     screen: 'branch',
                 },
@@ -535,44 +585,62 @@ let BasicInfoComponent = class BasicInfoComponent {
         });
     }
     getOtp(source_key, source_value) {
-        let payload = {
-            source: 'customer',
-            source_key: source_key,
-            source_value: source_value,
-        };
-        this.branchService.getOtp(payload).subscribe((res) => {
-            this.openOtpModal(source_key, source_value);
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_14__.__awaiter)(this, void 0, void 0, function* () {
+            let payload = {
+                source: 'customer',
+                source_key: source_key,
+                source_value: source_value,
+            };
+            const loading = yield this.loadingCtrl.create({
+                message: 'Please Wait',
+                translucent: true,
+            });
+            yield loading.present();
+            this.branchService.getOtp(payload).subscribe((res) => {
+                loading.dismiss();
+                this.openOtpModal(source_key, source_value);
+            }, (error) => {
+                loading.dismiss();
+            });
         });
     }
     getPrefixData() {
-        this.staticDataService.prefixData().subscribe(res => this.prefixArr = res);
+        this.staticDataService
+            .prefixData()
+            .subscribe((res) => (this.prefixArr = res));
     }
     getGenderData() {
-        this.staticDataService.genderData().subscribe(res => {
+        this.staticDataService.genderData().subscribe((res) => {
             this.genderArr = res;
         });
     }
     getMaritalStatus() {
-        this.staticDataService.maritalStatusData().subscribe(res => this.maritalStatusArr = res);
+        this.staticDataService
+            .maritalStatusData()
+            .subscribe((res) => (this.maritalStatusArr = res));
     }
     getNationalityData() {
-        this.staticDataService.nationalityData().subscribe(res => this.nationalityArr = res);
+        this.staticDataService
+            .nationalityData()
+            .subscribe((res) => (this.nationalityArr = res));
     }
     getResidenceData() {
-        this.staticDataService.residenceData().subscribe(res => this.residenceTypeArr = res);
+        this.staticDataService
+            .residenceData()
+            .subscribe((res) => (this.residenceTypeArr = res));
     }
     getCity() {
-        this.cityService.loadCity().subscribe(res => {
+        this.cityService.loadCity().subscribe((res) => {
             this.cityArr = res;
         });
     }
     getState() {
-        this.stateService.loadState().subscribe(res => {
+        this.stateService.loadState().subscribe((res) => {
             this.stateArr = res;
         });
     }
     getCountry() {
-        this.countryService.loadCountry().subscribe(res => {
+        this.countryService.loadCountry().subscribe((res) => {
             this.countryArr = res;
         });
     }
@@ -596,7 +664,8 @@ BasicInfoComponent.ctorParameters = () => [
     { type: src_app_services_mock_service_city_service__WEBPACK_IMPORTED_MODULE_7__.CityService },
     { type: src_app_services_mock_service_state_service__WEBPACK_IMPORTED_MODULE_8__.StateService },
     { type: src_app_services_mock_service_country_service__WEBPACK_IMPORTED_MODULE_9__.CountryService },
-    { type: src_app_services_static_data_service__WEBPACK_IMPORTED_MODULE_10__.StaticDataService }
+    { type: src_app_services_static_data_service__WEBPACK_IMPORTED_MODULE_10__.StaticDataService },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_17__.LoadingController }
 ];
 BasicInfoComponent.propDecorators = {
     emitData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_13__.Output }],
@@ -830,17 +899,16 @@ let CaptureImageComponent = class CaptureImageComponent {
         }
     }
     capturePreview() {
-        if (window.confirm('Do you want to capture image?')) {
-            const pictureOpts = {
-                quality: 100,
-            };
-            // take a picture
-            this.preview.takePicture(pictureOpts).then((imageData) => {
-                this.isVisible = false;
-                this.img = 'data:image/jpg;base64,' + imageData;
-                this.preview.stopCamera();
-            });
-        }
+        // if (window.confirm('Do you want to capture image?')) {
+        const pictureOpts = {
+            quality: 100,
+        };
+        // take a picture
+        this.preview.takePicture(pictureOpts).then((imageData) => {
+            this.isVisible = false;
+            this.img = 'data:image/jpg;base64,' + imageData;
+            this.preview.stopCamera();
+        });
     }
 };
 CaptureImageComponent.ctorParameters = () => [
@@ -893,26 +961,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _directives_directive_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../directives/directive.module */ 27589);
 /* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @angular/material/card */ 11961);
 /* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @angular/material/icon */ 65590);
-/* harmony import */ var _kyc_modal_kyc_modal_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./kyc-modal/kyc-modal.component */ 56215);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @angular/common/http */ 28784);
-/* harmony import */ var _duplication_duplication_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./duplication/duplication.component */ 10473);
-/* harmony import */ var _verification_done_verification_done_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./verification-done/verification-done.component */ 86848);
+/* harmony import */ var _duplication_duplication_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./duplication/duplication.component */ 10473);
+/* harmony import */ var _verification_done_verification_done_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./verification-done/verification-done.component */ 86848);
 /* harmony import */ var ngx_webcam__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ngx-webcam */ 19839);
-/* harmony import */ var _capture_image_capture_image_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./capture-image/capture-image.component */ 85652);
-/* harmony import */ var _otp_verification_popup_otp_verification_popup_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./otp-verification-popup/otp-verification-popup.component */ 6987);
+/* harmony import */ var _capture_image_capture_image_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./capture-image/capture-image.component */ 85652);
+/* harmony import */ var _otp_verification_popup_otp_verification_popup_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./otp-verification-popup/otp-verification-popup.component */ 6987);
 /* harmony import */ var ng_otp_input__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ng-otp-input */ 2981);
-/* harmony import */ var _rekyc_popup_rekyc_popup_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./rekyc-popup/rekyc-popup.component */ 65573);
-/* harmony import */ var _scan_doc_scan_doc_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./scan-doc/scan-doc.component */ 15408);
-/* harmony import */ var _basic_info_basic_info_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./basic-info/basic-info.component */ 5816);
+/* harmony import */ var _rekyc_popup_rekyc_popup_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./rekyc-popup/rekyc-popup.component */ 65573);
+/* harmony import */ var _scan_doc_scan_doc_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./scan-doc/scan-doc.component */ 15408);
+/* harmony import */ var _basic_info_basic_info_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./basic-info/basic-info.component */ 5816);
 /* harmony import */ var ngx_document_scanner__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ngx-document-scanner */ 20890);
-/* harmony import */ var _appointment_schedule_modal_appointment_schedule_modal_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./appointment-schedule-modal/appointment-schedule-modal.component */ 82628);
+/* harmony import */ var _appointment_schedule_modal_appointment_schedule_modal_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./appointment-schedule-modal/appointment-schedule-modal.component */ 82628);
 /* harmony import */ var angularx_qrcode__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! angularx-qrcode */ 30165);
-/* harmony import */ var _fingerprint_scan_fingerprint_scan_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./fingerprint-scan/fingerprint-scan.component */ 27038);
+/* harmony import */ var _fingerprint_scan_fingerprint_scan_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./fingerprint-scan/fingerprint-scan.component */ 27038);
 /* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @angular/flex-layout */ 77114);
-/* harmony import */ var _kyc_modal_customer_manual_verification_customer_manual_verification_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./kyc-modal/customer-manual-verification/customer-manual-verification.component */ 14212);
-/* harmony import */ var _crop_crop_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./crop/crop.component */ 4720);
-/* harmony import */ var _kyc_modal_customer_auto_verification_customer_auto_verification_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./kyc-modal/customer-auto-verification/customer-auto-verification.component */ 85827);
-
+/* harmony import */ var _crop_crop_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./crop/crop.component */ 4720);
+/* harmony import */ var _verification_modal_customer_auto_verification_customer_auto_verification_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./verification-modal/customer-auto-verification/customer-auto-verification.component */ 85609);
+/* harmony import */ var _verification_modal_customer_manual_verification_customer_manual_verification_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./verification-modal/customer-manual-verification/customer-manual-verification.component */ 14767);
+/* harmony import */ var _verification_modal_verification_modal_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./verification-modal/verification-modal.component */ 49241);
 
 
 
@@ -953,6 +1020,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const declaration = [
     _branch_branch_component__WEBPACK_IMPORTED_MODULE_2__.BranchComponent,
     _avatar_photo_avatar_photo_component__WEBPACK_IMPORTED_MODULE_1__.AvatarPhotoComponent,
@@ -965,19 +1033,19 @@ const declaration = [
     _denomination_slide_denomination_slide_component__WEBPACK_IMPORTED_MODULE_9__.DenominationSlideComponent,
     _transaction_date_transaction_date_component__WEBPACK_IMPORTED_MODULE_11__.TransactionDateComponent,
     _add_account_add_account_component__WEBPACK_IMPORTED_MODULE_12__.AddAccountComponent,
-    _kyc_modal_kyc_modal_component__WEBPACK_IMPORTED_MODULE_14__.KycModalComponent,
-    _duplication_duplication_component__WEBPACK_IMPORTED_MODULE_15__.DuplicationComponent,
-    _verification_done_verification_done_component__WEBPACK_IMPORTED_MODULE_16__.VerificationDoneComponent,
-    _capture_image_capture_image_component__WEBPACK_IMPORTED_MODULE_17__.CaptureImageComponent,
-    _otp_verification_popup_otp_verification_popup_component__WEBPACK_IMPORTED_MODULE_18__.OtpVerificationPopup,
-    _rekyc_popup_rekyc_popup_component__WEBPACK_IMPORTED_MODULE_19__.RekycPopupComponent,
-    _scan_doc_scan_doc_component__WEBPACK_IMPORTED_MODULE_20__.ScanDocComponent,
-    _appointment_schedule_modal_appointment_schedule_modal_component__WEBPACK_IMPORTED_MODULE_22__.AppointmentScheduleModalComponent,
-    _basic_info_basic_info_component__WEBPACK_IMPORTED_MODULE_21__.BasicInfoComponent,
-    _fingerprint_scan_fingerprint_scan_component__WEBPACK_IMPORTED_MODULE_23__.FingerprintScanComponent,
-    _kyc_modal_customer_auto_verification_customer_auto_verification_component__WEBPACK_IMPORTED_MODULE_26__.CustomerAutoVerificationComponent,
-    _kyc_modal_customer_manual_verification_customer_manual_verification_component__WEBPACK_IMPORTED_MODULE_24__.CustomerManualVerificationComponent,
-    _crop_crop_component__WEBPACK_IMPORTED_MODULE_25__.CropComponent
+    _verification_modal_verification_modal_component__WEBPACK_IMPORTED_MODULE_26__.VerificationModalComponent,
+    _duplication_duplication_component__WEBPACK_IMPORTED_MODULE_14__.DuplicationComponent,
+    _verification_done_verification_done_component__WEBPACK_IMPORTED_MODULE_15__.VerificationDoneComponent,
+    _capture_image_capture_image_component__WEBPACK_IMPORTED_MODULE_16__.CaptureImageComponent,
+    _otp_verification_popup_otp_verification_popup_component__WEBPACK_IMPORTED_MODULE_17__.OtpVerificationPopup,
+    _rekyc_popup_rekyc_popup_component__WEBPACK_IMPORTED_MODULE_18__.RekycPopupComponent,
+    _scan_doc_scan_doc_component__WEBPACK_IMPORTED_MODULE_19__.ScanDocComponent,
+    _appointment_schedule_modal_appointment_schedule_modal_component__WEBPACK_IMPORTED_MODULE_21__.AppointmentScheduleModalComponent,
+    _basic_info_basic_info_component__WEBPACK_IMPORTED_MODULE_20__.BasicInfoComponent,
+    _fingerprint_scan_fingerprint_scan_component__WEBPACK_IMPORTED_MODULE_22__.FingerprintScanComponent,
+    _verification_modal_customer_auto_verification_customer_auto_verification_component__WEBPACK_IMPORTED_MODULE_24__.CustomerAutoVerificationComponent,
+    _verification_modal_customer_manual_verification_customer_manual_verification_component__WEBPACK_IMPORTED_MODULE_25__.CustomerManualVerificationComponent,
+    _crop_crop_component__WEBPACK_IMPORTED_MODULE_23__.CropComponent
 ];
 let ComponentsModule = class ComponentsModule {
 };
@@ -1380,11 +1448,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let DuplicationComponent = class DuplicationComponent {
-    constructor(modalCtrl, fb, branchService, apiService) {
+    constructor(modalCtrl, fb, branchService, apiService, loadingCtrl) {
         this.modalCtrl = modalCtrl;
         this.fb = fb;
         this.branchService = branchService;
         this.apiService = apiService;
+        this.loadingCtrl = loadingCtrl;
         this.firstScreen = true;
         this.relationshipArr = [];
     }
@@ -1413,24 +1482,35 @@ let DuplicationComponent = class DuplicationComponent {
     }
     onSubmit() {
         var _a, _b, _c, _d, _e, _f, _g, _h;
-        //payload for accept Re-kyc api
-        var payload = {
-            phoneNumber: (_a = this.customerData) === null || _a === void 0 ? void 0 : _a.phoneNumber,
-            primaryEmailAdress: (_b = this.customerData) === null || _b === void 0 ? void 0 : _b.primaryEmailAdress,
-            address: (_c = this.customerData) === null || _c === void 0 ? void 0 : _c.address,
-            relationship: (_e = (_d = this.duplicationForm) === null || _d === void 0 ? void 0 : _d.value) === null || _e === void 0 ? void 0 : _e.relationshipType,
-            remarks: (_g = (_f = this.duplicationForm) === null || _f === void 0 ? void 0 : _f.value) === null || _g === void 0 ? void 0 : _g.remark,
-            isReKyc: (_h = this.customerData) === null || _h === void 0 ? void 0 : _h.reKyc,
-        };
-        // this.branchService.updateKyc(payload).subscribe((resp) => {
-        //   if (resp.status == 200) {
-        //     if (this.customerData?.reKyc == true) {
-        //       this.closeModal(this.customerData);
-        //     } else {
-        this.closeModal(this.customerData);
-        //     }
-        //   }
-        // });
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+            //payload for accept Re-kyc api
+            var payload = {
+                phoneNumber: (_a = this.customerData) === null || _a === void 0 ? void 0 : _a.phoneNumber,
+                primaryEmailAdress: (_b = this.customerData) === null || _b === void 0 ? void 0 : _b.primaryEmailAdress,
+                address: (_c = this.customerData) === null || _c === void 0 ? void 0 : _c.address,
+                relationship: (_e = (_d = this.duplicationForm) === null || _d === void 0 ? void 0 : _d.value) === null || _e === void 0 ? void 0 : _e.relationshipType,
+                remarks: (_g = (_f = this.duplicationForm) === null || _f === void 0 ? void 0 : _f.value) === null || _g === void 0 ? void 0 : _g.remark,
+                isReKyc: (_h = this.customerData) === null || _h === void 0 ? void 0 : _h.reKyc,
+            };
+            const loading = yield this.loadingCtrl.create({
+                message: 'Please Wait',
+                translucent: true,
+            });
+            yield loading.present();
+            this.branchService.updateKyc(payload).subscribe((resp) => {
+                var _a;
+                if (resp.status == 200) {
+                    if (((_a = this.customerData) === null || _a === void 0 ? void 0 : _a.reKyc) == true) {
+                        loading.dismiss();
+                        this.closeModal(this.customerData);
+                    }
+                    else {
+                        loading.dismiss();
+                        this.closeModal(this.customerData);
+                    }
+                }
+            }, err => loading.dismiss());
+        });
     }
     openDialog() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
@@ -1455,7 +1535,8 @@ DuplicationComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder },
     { type: src_app_pages_v2_kyc_branch_kyc_branch_service__WEBPACK_IMPORTED_MODULE_2__.BranchService },
-    { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_4__.ApiService }
+    { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_4__.ApiService },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.LoadingController }
 ];
 DuplicationComponent.propDecorators = {
     customerData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.Input }]
@@ -1542,9 +1623,10 @@ __webpack_require__.r(__webpack_exports__);
 let FooterComponent = class FooterComponent {
     constructor(router) {
         this.router = router;
-        this.url1 = "";
+        this.url1 = '';
     }
     ngOnInit() {
+        this.userType = localStorage.getItem('userType');
         this.url1 = this.router.url;
     }
     dashboardPage() {
@@ -1573,716 +1655,6 @@ FooterComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
         styles: [_footer_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], FooterComponent);
-
-
-
-/***/ }),
-
-/***/ 85827:
-/*!*********************************************************************************************************!*\
-  !*** ./src/app/components/kyc-modal/customer-auto-verification/customer-auto-verification.component.ts ***!
-  \*********************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CustomerAutoVerificationComponent": () => (/* binding */ CustomerAutoVerificationComponent)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _customer_auto_verification_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./customer-auto-verification.component.html?ngResource */ 8465);
-/* harmony import */ var _customer_auto_verification_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./customer-auto-verification.component.scss?ngResource */ 91242);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _fingerprint_scan_fingerprint_scan_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../fingerprint-scan/fingerprint-scan.component */ 27038);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _capture_image_capture_image_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../capture-image/capture-image.component */ 85652);
-
-
-
-
-
-
-
-let CustomerAutoVerificationComponent = class CustomerAutoVerificationComponent {
-    constructor(modalController) {
-        this.modalController = modalController;
-        this.enableSubmit = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
-        this.irisData = {
-            title: 'Scan Irish',
-            desc: 'Place the Irish and scan to proceed',
-        };
-        this.faceData = {
-            title: 'Scan Face ID',
-            desc: 'Place the face and scan to proceed',
-        };
-        this.front_data = {
-            title: 'frontScan',
-            desc: 'front scanned',
-        };
-        this.back_data = {
-            title: 'Backscan',
-            desc: 'back scanned',
-        };
-        this.fingerPrintData = {
-            title: 'Scan fingerprint',
-            desc: 'place the finger and scan to proceed',
-        };
-        this.docArr = ['Aadhar Card', 'Pan Card', 'Passport'];
-    }
-    ngOnInit() { }
-    verificationMethodToggle(evt) {
-        console.log(evt);
-        if (!this.documentName || !this.documentNumber) {
-            return;
-        }
-        // if ((!this.documentName_rekyc || !this.documentNumber_rekyc)) {
-        //   return;
-        // }
-        if (evt == 'otp') {
-            this.isOtp = true;
-            this.isBiometric = false;
-        }
-        else {
-            this.isOtp = false;
-            this.isBiometric = true;
-        }
-    }
-    openFingerPrint(data) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
-            let modal = yield this.modalController.create({
-                component: _fingerprint_scan_fingerprint_scan_component__WEBPACK_IMPORTED_MODULE_2__.FingerprintScanComponent,
-                backdropDismiss: true,
-                componentProps: {
-                    screenData: data,
-                },
-            });
-            modal.onDidDismiss().then((res) => {
-                console.log('Getting Back Data', res);
-            });
-            return yield modal.present();
-        });
-    }
-    openScanner(data) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
-            if (data == 'irisData') {
-                this.scannedItem = 'iris';
-            }
-            else {
-                this.scannedItem = 'face';
-            }
-            let modal = yield this.modalController.create({
-                component: _capture_image_capture_image_component__WEBPACK_IMPORTED_MODULE_3__.CaptureImageComponent,
-                backdropDismiss: true,
-                componentProps: {
-                    scanObject: this.scannedItem
-                },
-            });
-            modal.onDidDismiss().then((res) => {
-                console.log('Getting Back Data', res);
-            });
-            return yield modal.present();
-        });
-    }
-    valid(value) {
-        if (this.otpValue.toString().length == 6) {
-            console.log("calling");
-            this.enableSubmit.emit(true);
-        }
-    }
-};
-CustomerAutoVerificationComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ModalController }
-];
-CustomerAutoVerificationComponent.propDecorators = {
-    enableSubmit: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.Output }]
-};
-CustomerAutoVerificationComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
-        selector: 'app-customer-auto-verification',
-        template: _customer_auto_verification_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
-        styles: [_customer_auto_verification_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
-    })
-], CustomerAutoVerificationComponent);
-
-
-
-/***/ }),
-
-/***/ 14212:
-/*!*************************************************************************************************************!*\
-  !*** ./src/app/components/kyc-modal/customer-manual-verification/customer-manual-verification.component.ts ***!
-  \*************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CustomerManualVerificationComponent": () => (/* binding */ CustomerManualVerificationComponent)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _customer_manual_verification_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./customer-manual-verification.component.html?ngResource */ 62515);
-/* harmony import */ var _customer_manual_verification_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./customer-manual-verification.component.scss?ngResource */ 43369);
-/* harmony import */ var _kyc_modal_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../kyc-modal.component.scss?ngResource */ 93895);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ 28784);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _capture_image_capture_image_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../capture-image/capture-image.component */ 85652);
-/* harmony import */ var _scan_doc_scan_doc_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../scan-doc/scan-doc.component */ 15408);
-/* harmony import */ var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/snack-bar */ 32528);
-/* harmony import */ var _file_upload_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../file-upload.service */ 4761);
-/* harmony import */ var _crop_crop_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../crop/crop.component */ 4720);
-/* harmony import */ var src_app_services_static_data_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/static-data-service */ 27804);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let CustomerManualVerificationComponent = class CustomerManualVerificationComponent {
-    constructor(router, api, cdr, modalController, snack, http, fileService, staticDataService) {
-        this.router = router;
-        this.api = api;
-        this.cdr = cdr;
-        this.modalController = modalController;
-        this.snack = snack;
-        this.http = http;
-        this.fileService = fileService;
-        this.staticDataService = staticDataService;
-        this.isFrontDocUploaded = false;
-        this.isBackDocUploaded = false;
-        this.isAuto_rekyc = true;
-        this.isFile = false;
-        this.files = [];
-        this.isUploading = false;
-        this.isUploaded = false;
-        this.isScanned = false;
-        this.back = false;
-        this.front = false;
-        this.emitAadharData = new _angular_core__WEBPACK_IMPORTED_MODULE_9__.EventEmitter();
-        this.emitfrontFile = new _angular_core__WEBPACK_IMPORTED_MODULE_9__.EventEmitter();
-        this.emitisUploaded = new _angular_core__WEBPACK_IMPORTED_MODULE_9__.EventEmitter();
-        this.irisData = {
-            title: 'Scan Irish',
-            desc: 'Place the Irish and scan to proceed',
-        };
-        this.faceData = {
-            title: 'Scan Face ID',
-            desc: 'Place the face and scan to proceed',
-        };
-        this.front_data = {
-            title: 'frontScan',
-            desc: 'front scanned',
-        };
-        this.back_data = {
-            title: 'Backscan',
-            desc: 'back scanned',
-        };
-        this.fingerPrintData = {
-            title: 'Scan fingerprint',
-            desc: 'place the finger and scan to proceed',
-        };
-        this.docArr = [];
-        this.disableSubmit = true;
-        this.UploadData = ["Front Uploded", "Back Uploded"];
-    }
-    ngOnInit() {
-        this.getDocumentName();
-    }
-    onFileSelect(e, side) {
-        try {
-            const file = e.target.files[0];
-            const fReader = new FileReader();
-            fReader.readAsDataURL(file);
-            fReader.onloadend = (_event) => {
-                this.filename = file.name;
-                this.base64File = _event.target.result;
-                console.log(this.filename);
-                this.files.push(file);
-                console.log("name: ", file);
-                console.log(side);
-                this.openDocuemntCropModal(file);
-                if (side == "Front") {
-                    this.isFrontDocUploaded = true;
-                    this.frontImg = fReader.result;
-                    this.fileService.readAadharData(file, side.toLowerCase()).subscribe(res => {
-                        var _a, _b, _c, _d, _e;
-                        console.log(res);
-                        let name = (_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.name.value.split(" ");
-                        let data = { firstName: name[0], lastName: name[name.length - 1], dateOfBirth: (_b = res === null || res === void 0 ? void 0 : res.data) === null || _b === void 0 ? void 0 : _b.dob.value, gender: ((_c = res === null || res === void 0 ? void 0 : res.data) === null || _c === void 0 ? void 0 : _c.gender.value.charAt(0).toUpperCase()) + ((_d = res === null || res === void 0 ? void 0 : res.data) === null || _d === void 0 ? void 0 : _d.gender.value.slice(1)), documentNumber: (_e = res === null || res === void 0 ? void 0 : res.data) === null || _e === void 0 ? void 0 : _e.no.value };
-                        this.aadharData = Object.assign(Object.assign({}, this.aadharData), data);
-                        console.log(this.aadharData);
-                        this.front = true;
-                        this.emitAadharData.emit(this.aadharData);
-                    });
-                }
-                else if (side == "Back") {
-                    this.isBackDocUploaded = true;
-                    this.backImg = fReader.result;
-                    this.fileService.readAadharDataBack(file, side.toLowerCase()).subscribe(res => {
-                        var _a, _b, _c;
-                        console.log(res);
-                        let dataBack = { userAddress: [{ address1: (_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.address.value, address2: '', zipCode: (_b = res === null || res === void 0 ? void 0 : res.data) === null || _b === void 0 ? void 0 : _b.pin.value, country: '', state: (_c = res === null || res === void 0 ? void 0 : res.data) === null || _c === void 0 ? void 0 : _c.state.value, city: '' }] };
-                        this.aadharData = Object.assign(Object.assign({}, this.aadharData), dataBack);
-                        console.log(this.aadharData);
-                        this.back = true;
-                        this.emitAadharData.emit(this.aadharData);
-                        if (this.front == true && this.back == true) {
-                            this.emitisUploaded.emit(true);
-                        }
-                    });
-                }
-                if (this.isFrontDocUploaded && this.isBackDocUploaded) {
-                    localStorage.setItem("UploadedDocument", JSON.stringify({ documentName: this.DocumentId, documentNumber: this.aadharData.documentNumber, frontSide: this.frontImg, backSide: this.backImg }));
-                }
-                this.fileUpload(file);
-            };
-        }
-        catch (error) {
-            this.filename = null;
-            this.base64File = null;
-        }
-    }
-    fileUpload(file) {
-        this.isUploading = true;
-        this.requestSubscription = this.api
-            .uploadAndProgress(file)
-            .subscribe((event) => {
-            if (event.type === _angular_common_http__WEBPACK_IMPORTED_MODULE_10__.HttpEventType.UploadProgress) {
-                this.percentDone = Math.round((100 * event.loaded) / event.total);
-                this.isUploaded = true;
-            }
-            else if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_10__.HttpResponse) {
-                this.percentDone = 0;
-                this.isUploading = false;
-                this.cdr.markForCheck();
-            }
-        });
-    }
-    deleteFile(item) {
-        var index = this.files.indexOf(item);
-        this.files.splice(index, 1);
-        this.cdr.markForCheck();
-        this.isBackDocUploaded = false;
-        this.isFrontDocUploaded = false;
-    }
-    cancel(item) {
-        this.requestSubscription.unsubscribe();
-        var index = this.files.indexOf(item);
-        this.files.splice(index, 1);
-        this.cdr.markForCheck();
-    }
-    gotobasicScreen() {
-        this.router.navigate['basicscreen'];
-    }
-    closeModal() {
-        if (this.isedit == true) {
-            this.modalController.dismiss({ customerData: this.customerData });
-            return;
-        }
-        if (this.isupload == true) {
-            this.modalController.dismiss({ customerData: this.aadharData });
-        }
-        this.modalController.dismiss();
-    }
-    upload_doc(value) {
-        if (value == 'upload' && this.DocumentId) {
-            this.isupload = true;
-            this.isscan = false;
-            this.files = [];
-        }
-    }
-    scan_doc(value) {
-        if (value == 'scan' && this.DocumentId) {
-            this.isupload = false;
-            this.isscan = true;
-            this.files = [];
-        }
-    }
-    openScanner(data) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__awaiter)(this, void 0, void 0, function* () {
-            let modal = yield this.modalController.create({
-                component: _capture_image_capture_image_component__WEBPACK_IMPORTED_MODULE_4__.CaptureImageComponent,
-                backdropDismiss: true,
-                componentProps: {
-                    screenData: data,
-                },
-            });
-            modal.onDidDismiss().then((res) => {
-                console.log('Getting Back Data', res);
-            });
-            return yield modal.present();
-        });
-    }
-    DataURIToBlob(dataURI) {
-        const splitDataURI = dataURI.split(',');
-        const byteString = splitDataURI[0].indexOf('base64') >= 0
-            ? atob(splitDataURI[1])
-            : decodeURI(splitDataURI[1]);
-        const mimeString = splitDataURI[0].split(':')[1].split(';')[0];
-        const ia = new Uint8Array(byteString.length);
-        for (let i = 0; i < byteString.length; i++)
-            ia[i] = byteString.charCodeAt(i);
-        return new Blob([ia], { type: mimeString });
-    }
-    openDocScan(data) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__awaiter)(this, void 0, void 0, function* () {
-            let modal = yield this.modalController.create({
-                component: _scan_doc_scan_doc_component__WEBPACK_IMPORTED_MODULE_5__.ScanDocComponent,
-                backdropDismiss: true,
-                componentProps: {
-                    screenData: data,
-                },
-            });
-            modal.onDidDismiss().then((res) => {
-                var _a;
-                console.log('Getting Back Data', res);
-                this.emitisUploaded.emit(true);
-                this.scanImage = (_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.resImage;
-                this.openDocuemntCropModal(this.DataURIToBlob(this.scanImage));
-            });
-            return yield modal.present();
-        });
-    }
-    openDocuemntCropModal(file) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__awaiter)(this, void 0, void 0, function* () {
-            let modal = yield this.modalController.create({
-                component: _crop_crop_component__WEBPACK_IMPORTED_MODULE_7__.CropComponent,
-                componentProps: {
-                    file: file
-                }
-            });
-            modal.onDidDismiss().then((res) => {
-                console.log('Getting Back Data', res);
-                let fr = new FileReader();
-                fr.readAsDataURL(res === null || res === void 0 ? void 0 : res.data);
-                fr.onload = (_event) => {
-                    this.cropImage = this.cropImage = fr.result;
-                };
-            });
-            return yield modal.present();
-        });
-    }
-    getDocumentName() {
-        this.staticDataService.documentType().subscribe(res => {
-            this.docArr = res;
-            console.log(res);
-        });
-    }
-};
-CustomerManualVerificationComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_12__.Router },
-    { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__.ApiService },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_9__.ChangeDetectorRef },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.ModalController },
-    { type: _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_14__.MatSnackBar },
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_10__.HttpClient },
-    { type: _file_upload_service__WEBPACK_IMPORTED_MODULE_6__.FileUploadService },
-    { type: src_app_services_static_data_service__WEBPACK_IMPORTED_MODULE_8__.StaticDataService }
-];
-CustomerManualVerificationComponent.propDecorators = {
-    emitAadharData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__.Output }],
-    emitfrontFile: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__.Output }],
-    emitisUploaded: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_9__.Output }]
-};
-CustomerManualVerificationComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_9__.Component)({
-        selector: "app-customer-manual-verification",
-        template: _customer_manual_verification_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
-        styles: [_customer_manual_verification_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__, _kyc_modal_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__]
-    })
-], CustomerManualVerificationComponent);
-
-
-
-/***/ }),
-
-/***/ 4761:
-/*!*************************************************************!*\
-  !*** ./src/app/components/kyc-modal/file-upload.service.ts ***!
-  \*************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "FileUploadService": () => (/* binding */ FileUploadService)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 28784);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-
-
-
-let FileUploadService = class FileUploadService {
-    constructor(http) {
-        this.http = http;
-    }
-    readAadharData(file, side) {
-        // create form data
-        const formData = new FormData();
-        // store form name as File
-        formData.append('File', file, file.name);
-        return this.http.post(`https://nationalapi.docsumo.com/api/v1/national/extract/?side=front&save_data=false&return_redacted=false&fraud_check=true`, formData, {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({
-                'X-API-KEY': 'vpVmVFN6XoTdOQnJOaQvQIKrTl18036KiHQjBTyCZlxYDtneD1e6MZMOwmYo',
-            }),
-        });
-    }
-    readAadharDataBack(file, side) {
-        // create form data
-        const formData = new FormData();
-        // store form name as File
-        formData.append('File', file, file.name);
-        return this.http.post(`https://nationalapi.docsumo.com/api/v1/national/extract/?side=back&save_data=false&return_redacted=false&fraud_check=true`, formData, {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({
-                'X-API-KEY': 'vpVmVFN6XoTdOQnJOaQvQIKrTl18036KiHQjBTyCZlxYDtneD1e6MZMOwmYo',
-            }),
-        });
-    }
-};
-FileUploadService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient }
-];
-FileUploadService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
-        providedIn: 'root',
-    })
-], FileUploadService);
-
-
-
-/***/ }),
-
-/***/ 56215:
-/*!*************************************************************!*\
-  !*** ./src/app/components/kyc-modal/kyc-modal.component.ts ***!
-  \*************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "KycModalComponent": () => (/* binding */ KycModalComponent)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _kyc_modal_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./kyc-modal.component.html?ngResource */ 39037);
-/* harmony import */ var _kyc_modal_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./kyc-modal.component.scss?ngResource */ 93895);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
-/* harmony import */ var _duplication_duplication_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../duplication/duplication.component */ 10473);
-
-
-
-
-
-
-
-
-let KycModalComponent = class KycModalComponent {
-    constructor(router, api, 
-    // private cdr: ChangeDetectorRef,
-    modalController) {
-        this.router = router;
-        this.api = api;
-        this.modalController = modalController;
-        this.isFile = false;
-        this.files = [];
-        this.disableSubmit = true;
-        this.customerArr = [
-            {
-                id: 1,
-                checked: true,
-                name: 'New Customer',
-            },
-            {
-                id: 2,
-                checked: false,
-                name: 'Existing Customer',
-            },
-        ];
-        this.toggleArr = [
-            {
-                id: 1,
-                checked: true,
-                name: 'Auto',
-            },
-            {
-                id: 2,
-                checked: false,
-                name: 'Manual',
-            },
-        ];
-        this.docArr = ['Aadhar Card', 'Pan Card', 'Passport'];
-        this.options = [
-            {
-                id: 1,
-                checked: false,
-                name: 'OTP',
-            },
-            {
-                id: 2,
-                checked: false,
-                name: 'Biometric',
-            },
-        ];
-        this.isExistingCustomer = false;
-        this.isAuto = true;
-        this.selectedTab1 = 'new_customer';
-    }
-    ngOnInit() {
-        // this.isAuto ??= this.isAutoSelected
-        // if(this.isAutoSelected == false){
-        //   this.toggleArr.map(toggle =>{
-        //     toggle.checked = !toggle.checked
-        //   })
-        // }
-        console.log(this.isAutoSelected);
-        console.log(this.screen);
-    }
-    CustomerType(value) {
-        // this.isExistingCustomer = event;
-        this.isAuto = true;
-        this.customerId = "";
-        if (value == 'Existing Customer') {
-            this.isExistingCustomer = true;
-        }
-        else {
-            this.isExistingCustomer = false;
-        }
-        this.documentName = '';
-        this.documentNumber = '';
-        this.otpValue = '';
-        this.isOtp = false;
-        this.isBiometric = false;
-        this.isupload = false;
-        this.isscan = false;
-        this.isrekyc = false;
-        this.isedit = false;
-    }
-    autoManualToggle(value) {
-        if (value == "Auto") {
-            this.isAuto = true;
-            this.isUploaded = false;
-        }
-        else {
-            this.isAuto = false;
-            this.isUploaded = false;
-        }
-    }
-    verificationMethodToggle(evt) {
-        console.log(evt);
-        if (!this.documentName || !this.documentNumber) {
-            return;
-        }
-        // if ((!this.documentName_rekyc || !this.documentNumber_rekyc)) {
-        //   return;
-        // }
-        if (evt == 'otp') {
-            this.isOtp = true;
-            this.isBiometric = false;
-        }
-        else {
-            this.isOtp = false;
-            this.isBiometric = true;
-        }
-    }
-    radioButtonChange(evt) {
-        console.log(evt);
-    }
-    Rekyc(value) {
-        if (value == 'Re-kyc' && this.customerId) {
-            this.isrekyc = true;
-            this.isedit = false;
-        }
-    }
-    edit_info(value) {
-        if (value == 'edit' && this.customerId) {
-            this.isrekyc = false;
-            this.isedit = true;
-        }
-    }
-    gotobasicScreen() {
-        this.router.navigate['basicscreen'];
-    }
-    closeModal() {
-        if (this.isedit == true) {
-            this.modalController.dismiss({ customerData: this.customerData });
-            return;
-        }
-        if (!this.isAuto && !this.isedit) {
-            this.modalController.dismiss({ customerData: this.aadharData });
-            return;
-        }
-        this.modalController.dismiss({ customerData: this.aadharData });
-    }
-    backModal() {
-        this.modalController.dismiss();
-    }
-    openDialog() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
-            let modal = yield this.modalController.create({
-                component: _duplication_duplication_component__WEBPACK_IMPORTED_MODULE_3__.DuplicationComponent,
-                backdropDismiss: true,
-                cssClass: 'dup-modal',
-                componentProps: {
-                    data: '',
-                },
-            });
-            modal.onDidDismiss().then((res) => {
-                console.log('Getting Back Data', res);
-            });
-            return yield modal.present();
-        });
-    }
-    getCustomerDetails() {
-        this.isUploaded = true;
-        this.api.getCustomerInfo(this.customerId).subscribe((res) => {
-            console.log(res === null || res === void 0 ? void 0 : res.customerInfoList[0]);
-            this.customerData = res === null || res === void 0 ? void 0 : res.customerInfoList[0];
-        });
-    }
-    validateForm(event) {
-        this.disableSubmit = !event;
-    }
-    getAadharData(event) {
-        console.log(event);
-        this.aadharData = event;
-    }
-    getData(event) {
-        console.log("calling");
-        console.log(event);
-        this.isUploaded = event;
-    }
-    updateEnableSubmit(evt) {
-        this.isUploaded = evt;
-    }
-};
-KycModalComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
-    { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ModalController }
-];
-KycModalComponent.propDecorators = {
-    data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_7__.Input }],
-    screen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_7__.Input }],
-    isAutoSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_7__.Input }]
-};
-KycModalComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
-        selector: 'app-kyc-modal',
-        template: _kyc_modal_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
-        styles: [_kyc_modal_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
-    })
-], KycModalComponent);
 
 
 
@@ -2532,6 +1904,7 @@ let OtpVerificationPopup = class OtpVerificationPopup {
             },
         };
         this.disableProceed = true;
+        this.isLoading = false;
     }
     ngOnInit() {
         this.otpForm = this.fb.group({
@@ -2563,16 +1936,21 @@ let OtpVerificationPopup = class OtpVerificationPopup {
         }
     }
     verifyOtp() {
-        console.log(this.otpForm);
         let payload = {
             otp: this.otp,
-            sourceKey: 'mobile',
+            sourceKey: this.source_key,
             sourceValue: this.Mnumber,
         };
+        this.isLoading = true;
         this.branchService.verifyOtp(payload).subscribe((res) => {
-            console.log(res);
-            this.modalController.dismiss({ otp: this.otp });
-        });
+            if (res) {
+                this.isLoading = false;
+                this.modalController.dismiss({ otp: this.otp });
+            }
+            else {
+                this.isLoading = false;
+            }
+        }, err => this.isLoading = false);
     }
 };
 OtpVerificationPopup.ctorParameters = () => [
@@ -2581,7 +1959,8 @@ OtpVerificationPopup.ctorParameters = () => [
     { type: src_app_pages_v2_kyc_branch_kyc_branch_service__WEBPACK_IMPORTED_MODULE_2__.BranchService }
 ];
 OtpVerificationPopup.propDecorators = {
-    Mnumber: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__.Input }]
+    Mnumber: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__.Input }],
+    source_key: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__.Input }]
 };
 OtpVerificationPopup = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
@@ -4876,6 +4255,757 @@ VerificationDoneComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
+/***/ 85609:
+/*!******************************************************************************************************************!*\
+  !*** ./src/app/components/verification-modal/customer-auto-verification/customer-auto-verification.component.ts ***!
+  \******************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CustomerAutoVerificationComponent": () => (/* binding */ CustomerAutoVerificationComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _customer_auto_verification_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./customer-auto-verification.component.html?ngResource */ 47003);
+/* harmony import */ var _customer_auto_verification_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./customer-auto-verification.component.scss?ngResource */ 76827);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _fingerprint_scan_fingerprint_scan_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../fingerprint-scan/fingerprint-scan.component */ 27038);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _capture_image_capture_image_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../capture-image/capture-image.component */ 85652);
+
+
+
+
+
+
+
+let CustomerAutoVerificationComponent = class CustomerAutoVerificationComponent {
+    constructor(modalController) {
+        this.modalController = modalController;
+        this.enableSubmit = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
+        this.irisData = {
+            title: 'Scan Irish',
+            desc: 'Place the Irish and scan to proceed',
+        };
+        this.faceData = {
+            title: 'Scan Face ID',
+            desc: 'Place the face and scan to proceed',
+        };
+        this.front_data = {
+            title: 'frontScan',
+            desc: 'front scanned',
+        };
+        this.back_data = {
+            title: 'Backscan',
+            desc: 'back scanned',
+        };
+        this.fingerPrintData = {
+            title: 'Scan fingerprint',
+            desc: 'place the finger and scan to proceed',
+        };
+        this.docArr = ['Aadhar Card', 'Pan Card', 'Passport'];
+    }
+    ngOnInit() { }
+    verificationMethodToggle(evt) {
+        console.log(evt);
+        if (!this.documentName || !this.documentNumber) {
+            return;
+        }
+        if (evt == 'otp') {
+            this.isOtp = true;
+            this.isBiometric = false;
+        }
+        else {
+            this.isOtp = false;
+            this.isBiometric = true;
+        }
+    }
+    openFingerPrint(data) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+            let modal = yield this.modalController.create({
+                component: _fingerprint_scan_fingerprint_scan_component__WEBPACK_IMPORTED_MODULE_2__.FingerprintScanComponent,
+                backdropDismiss: true,
+                componentProps: {
+                    screenData: data,
+                },
+            });
+            modal.onDidDismiss().then((res) => {
+                console.log('Getting Back Data', res);
+            });
+            return yield modal.present();
+        });
+    }
+    openScanner(data) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+            if (data == 'irisData') {
+                this.scannedItem = 'iris';
+            }
+            else {
+                this.scannedItem = 'face';
+            }
+            let modal = yield this.modalController.create({
+                component: _capture_image_capture_image_component__WEBPACK_IMPORTED_MODULE_3__.CaptureImageComponent,
+                backdropDismiss: true,
+                componentProps: {
+                    scanObject: this.scannedItem,
+                },
+            });
+            modal.onDidDismiss().then((res) => {
+                console.log('Getting Back Data', res);
+            });
+            return yield modal.present();
+        });
+    }
+    valid(value) {
+        if (this.otpValue.toString().length == 6) {
+            console.log('calling');
+            this.enableSubmit.emit(true);
+        }
+    }
+};
+CustomerAutoVerificationComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ModalController }
+];
+CustomerAutoVerificationComponent.propDecorators = {
+    enableSubmit: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.Output }]
+};
+CustomerAutoVerificationComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+        selector: 'app-customer-auto-verification',
+        template: _customer_auto_verification_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        styles: [_customer_auto_verification_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
+    })
+], CustomerAutoVerificationComponent);
+
+
+
+/***/ }),
+
+/***/ 14767:
+/*!**********************************************************************************************************************!*\
+  !*** ./src/app/components/verification-modal/customer-manual-verification/customer-manual-verification.component.ts ***!
+  \**********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CustomerManualVerificationComponent": () => (/* binding */ CustomerManualVerificationComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _customer_manual_verification_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./customer-manual-verification.component.html?ngResource */ 92830);
+/* harmony import */ var _customer_manual_verification_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./customer-manual-verification.component.scss?ngResource */ 11499);
+/* harmony import */ var _verification_modal_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../verification-modal.component.scss?ngResource */ 99261);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _scan_doc_scan_doc_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../scan-doc/scan-doc.component */ 15408);
+/* harmony import */ var _file_upload_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../file-upload.service */ 15743);
+/* harmony import */ var _crop_crop_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../crop/crop.component */ 4720);
+/* harmony import */ var src_app_services_static_data_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/services/static-data-service */ 27804);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ 90587);
+
+
+
+
+
+
+
+
+
+
+
+
+
+let CustomerManualVerificationComponent = class CustomerManualVerificationComponent {
+    constructor(api, cdr, modalController, fileService, staticDataService, fb) {
+        this.api = api;
+        this.cdr = cdr;
+        this.modalController = modalController;
+        this.fileService = fileService;
+        this.staticDataService = staticDataService;
+        this.fb = fb;
+        this.isFormValid = new _angular_core__WEBPACK_IMPORTED_MODULE_8__.EventEmitter();
+        this.isFrontDocUploaded = false;
+        this.isBackDocUploaded = false;
+        this.isAuto_rekyc = true;
+        this.isFile = false;
+        this.files = [];
+        this.isUploading = false;
+        this.isUploaded = false;
+        this.isScanned = false;
+        this.back = false;
+        this.front = false;
+        this.emitAadharData = new _angular_core__WEBPACK_IMPORTED_MODULE_8__.EventEmitter();
+        this.docArr = [];
+        this.disableSubmit = true;
+        this.UploadData = ['Front Uploaded', 'Back Uploaded'];
+        this.documentItems = {};
+    }
+    ngOnInit() {
+        this.getDocumentName();
+        this.initManualForm();
+        this.documentItems.items = [];
+    }
+    onFileSelect(e, index) {
+        try {
+            this.selectedIndex = index;
+            const file = e.target.files[0];
+            const fReader = new FileReader();
+            fReader.readAsDataURL(file);
+            fReader.onloadend = (_event) => (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+                this.filename = file.name;
+                this.base64File = _event.target.result;
+                this.openDocuemntCropModal(file);
+                yield this.fetchDocumentDetails(file, index);
+                this.documents
+                    .at(this.selectedIndex)
+                    .get('fileUrl')
+                    .setValue(fReader.result);
+                this.documents
+                    .at(this.selectedIndex)
+                    .get('fileName')
+                    .setValue(file.name);
+                this.fileUpload(file);
+            });
+        }
+        catch (error) {
+            this.filename = null;
+            this.base64File = null;
+        }
+    }
+    fetchDocumentDetails(file, index) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+            let side = this.documents.at(this.selectedIndex).get('documentTitle').value;
+            this.fileService
+                .readAadharData(file, side.toLowerCase())
+                .subscribe((res) => {
+                if (res) {
+                    if (side == 'Front') {
+                        this.fetchFrontData(file, res, index);
+                    }
+                    else if (side == 'Back') {
+                        this.fetchBackData(file, res, index);
+                    }
+                }
+            });
+        });
+    }
+    fetchFrontData(file, res, index) {
+        var _a, _b, _c, _d, _e;
+        let name = (_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.name.value.split(' ');
+        let data = {
+            firstName: name[0],
+            lastName: name[name.length - 1],
+            dateOfBirth: (_b = res === null || res === void 0 ? void 0 : res.data) === null || _b === void 0 ? void 0 : _b.dob.value,
+            gender: ((_c = res === null || res === void 0 ? void 0 : res.data) === null || _c === void 0 ? void 0 : _c.gender.value.charAt(0).toUpperCase()) +
+                ((_d = res === null || res === void 0 ? void 0 : res.data) === null || _d === void 0 ? void 0 : _d.gender.value.slice(1)),
+            documentNumber: (_e = res === null || res === void 0 ? void 0 : res.data) === null || _e === void 0 ? void 0 : _e.no.value,
+        };
+        this.aadharData = Object.assign(Object.assign({}, this.aadharData), data);
+        this.emitAadharData.emit(this.aadharData);
+        this.setPayloadModal(file, index);
+    }
+    fetchBackData(file, res, index) {
+        var _a, _b, _c;
+        let dataBack = {
+            userAddress: [
+                {
+                    address1: (_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.address.value,
+                    address2: '',
+                    zipCode: (_b = res === null || res === void 0 ? void 0 : res.data) === null || _b === void 0 ? void 0 : _b.pin.value,
+                    country: '',
+                    state: (_c = res === null || res === void 0 ? void 0 : res.data) === null || _c === void 0 ? void 0 : _c.state.value,
+                    city: '',
+                },
+            ],
+        };
+        this.aadharData = Object.assign(Object.assign({}, this.aadharData), dataBack);
+        this.emitAadharData.emit(this.aadharData);
+        this.setPayloadModal(file, index);
+    }
+    setPayloadModal(file, index) {
+        let docBack = {
+            documentName: this.manualVerificationForm.get('docName').value,
+            documentNumber: this.aadharData.documentNumber,
+            documentSide: index + 1,
+            documentType: this.getDocType(this.manualVerificationForm.get('docName').value),
+            fileName: file.name,
+            fileType: file.type,
+            fileUrl: this.documents.controls[this.selectedIndex].get('fileUrl').value,
+        };
+        this.documentItems.items.push(docBack);
+        localStorage.setItem('UploadedDocument', JSON.stringify(this.documentItems));
+        this.isFormValid.emit(this.manualVerificationForm.valid);
+    }
+    getDocType(docName) {
+        let docType;
+        if (docName === 'Aadhar card') {
+            docType = '6';
+        }
+        else if (docName === 'Pan card') {
+            docType = '7';
+        }
+        else if (docName === 'Passport') {
+            docType = '8';
+        }
+        return docType;
+    }
+    fileUpload(file) {
+        this.isUploading = true;
+        this.requestSubscription = this.api
+            .uploadAndProgress(file)
+            .subscribe((event) => {
+            if (event.type === _angular_common_http__WEBPACK_IMPORTED_MODULE_10__.HttpEventType.UploadProgress) {
+                this.percentDone = Math.round((100 * event.loaded) / event.total);
+                this.isUploaded = true;
+            }
+            else if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_10__.HttpResponse) {
+                this.percentDone = 0;
+                this.isUploading = false;
+                this.cdr.markForCheck();
+            }
+        });
+    }
+    cancel(index) {
+        this.requestSubscription.unsubscribe();
+        this.documents.controls[index].get('fileUrl').setValue('');
+        this.cdr.markForCheck();
+    }
+    DataURIToBlob(dataURI) {
+        const splitDataURI = dataURI.split(',');
+        const byteString = splitDataURI[0].indexOf('base64') >= 0
+            ? atob(splitDataURI[1])
+            : decodeURI(splitDataURI[1]);
+        const mimeString = splitDataURI[0].split(':')[1].split(';')[0];
+        const ia = new Uint8Array(byteString.length);
+        for (let i = 0; i < byteString.length; i++)
+            ia[i] = byteString.charCodeAt(i);
+        return new Blob([ia], { type: mimeString });
+    }
+    openDocScan(index) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+            this.selectedIndex = index;
+            let modal = yield this.modalController.create({
+                component: _scan_doc_scan_doc_component__WEBPACK_IMPORTED_MODULE_4__.ScanDocComponent,
+                backdropDismiss: true,
+            });
+            modal.onDidDismiss().then((res) => {
+                var _a;
+                let scannedImage = (_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.resImage;
+                this.fetchDocumentDetails(this.DataURIToBlob(scannedImage), index);
+                this.documents
+                    .at(this.selectedIndex)
+                    .get('fileUrl')
+                    .setValue(scannedImage);
+                let fileName = this.manualVerificationForm.get('docName').value +
+                    ' ' +
+                    this.documents.at(this.selectedIndex).get('documentTitle').value;
+                this.documents.at(this.selectedIndex).get('fileName').setValue(fileName);
+                this.isFormValid.emit(this.manualVerificationForm.valid);
+            });
+            return yield modal.present();
+        });
+    }
+    openDocuemntCropModal(file) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+            let modal = yield this.modalController.create({
+                component: _crop_crop_component__WEBPACK_IMPORTED_MODULE_6__.CropComponent,
+                componentProps: {
+                    file: file,
+                },
+            });
+            modal.onDidDismiss().then((res) => {
+                console.log('Getting Back Data', res);
+                let fr = new FileReader();
+                fr.readAsDataURL(res === null || res === void 0 ? void 0 : res.data);
+                fr.onload = (_event) => {
+                    this.cropImage = this.cropImage = fr.result;
+                };
+            });
+            return yield modal.present();
+        });
+    }
+    /** get document type dropdown values */
+    getDocumentName() {
+        this.staticDataService.documentType().subscribe((res) => {
+            this.docArr = res;
+            console.log(res);
+        });
+    }
+    /** Init manualverification form and update validation while changing form value */
+    initManualForm() {
+        this.manualVerificationForm = this.fb.group({
+            docName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required]],
+            isScan: [false],
+            isUpload: [false],
+            documents: this.fb.array([this.addNewPage(0), this.addNewPage(1)]),
+        });
+    }
+    /** get the documnt form array controls in manual verification form */
+    get documents() {
+        return this.manualVerificationForm.get('documents');
+    }
+    /**
+     * form group for docuemnt upload
+     * @param side of the docuemnt
+     * @returns the form group each side document
+     */
+    addNewPage(side) {
+        return this.fb.group({
+            id: [],
+            fileUrl: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required],
+            fileName: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required],
+            documentSide: [side],
+            documentTitle: [this.getPageName(side), _angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required],
+        });
+    }
+    /**
+     * document side name defined
+     * @param side of the docuemnt
+     * @returns side name for the docuement
+     */
+    getPageName(side) {
+        switch (side) {
+            case 0:
+                return 'Front';
+            case 1:
+                return 'Back';
+            default:
+                return 'Other';
+        }
+    }
+    /**
+     * scan upload toggle changes
+     * @param event toggle event
+     * @returns while no document selected
+     */
+    onToggle(event) {
+        if (this.manualVerificationForm.controls.docName.invalid) {
+            return;
+        }
+        this.manualVerificationForm.get('isScan').setValue(event);
+        this.manualVerificationForm.get('isUpload').setValue(!event);
+        this.documents.controls.map((doc) => {
+            doc.get('fileUrl').setValue('');
+            doc.get('fileName').setValue('');
+        });
+    }
+    /**
+     * delete the document
+     * @param index index of the document to be deleted
+     */
+    deleteDoc(index) {
+        this.documents.controls[index].get('fileUrl').setValue('');
+    }
+};
+CustomerManualVerificationComponent.ctorParameters = () => [
+    { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__.ApiService },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ChangeDetectorRef },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_12__.ModalController },
+    { type: _file_upload_service__WEBPACK_IMPORTED_MODULE_5__.FileUploadService },
+    { type: src_app_services_static_data_service__WEBPACK_IMPORTED_MODULE_7__.StaticDataService },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormBuilder }
+];
+CustomerManualVerificationComponent.propDecorators = {
+    isFormValid: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.Output }],
+    emitAadharData: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.Output }]
+};
+CustomerManualVerificationComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
+        selector: 'app-customer-manual-verification',
+        template: _customer_manual_verification_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        styles: [_customer_manual_verification_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__, _verification_modal_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_2__]
+    })
+], CustomerManualVerificationComponent);
+
+
+
+/***/ }),
+
+/***/ 15743:
+/*!**********************************************************************!*\
+  !*** ./src/app/components/verification-modal/file-upload.service.ts ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FileUploadService": () => (/* binding */ FileUploadService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+
+let FileUploadService = class FileUploadService {
+    constructor(http) {
+        this.http = http;
+    }
+    readAadharData(file, side) {
+        // create form data
+        const formData = new FormData();
+        // store form name as File
+        formData.append('File', file, file.name);
+        return this.http.post(`https://nationalapi.docsumo.com/api/v1/national/extract/?side=${side}&save_data=false&return_redacted=false&fraud_check=true`, formData, {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({
+                'X-API-KEY': 'vpVmVFN6XoTdOQnJOaQvQIKrTl18036KiHQjBTyCZlxYDtneD1e6MZMOwmYo',
+            })
+        });
+    }
+    readAadharDataBack(file, side) {
+        // create form data
+        const formData = new FormData();
+        // store form name as File
+        formData.append('File', file, file.name);
+        return this.http.post(`https://nationalapi.docsumo.com/api/v1/national/extract/?side=back&save_data=false&return_redacted=false&fraud_check=true`, formData, {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({
+                'X-API-KEY': 'vpVmVFN6XoTdOQnJOaQvQIKrTl18036KiHQjBTyCZlxYDtneD1e6MZMOwmYo',
+            }),
+        });
+    }
+};
+FileUploadService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient }
+];
+FileUploadService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+        providedIn: 'root',
+    })
+], FileUploadService);
+
+
+
+/***/ }),
+
+/***/ 49241:
+/*!*******************************************************************************!*\
+  !*** ./src/app/components/verification-modal/verification-modal.component.ts ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "VerificationModalComponent": () => (/* binding */ VerificationModalComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _verification_modal_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./verification-modal.component.html?ngResource */ 49640);
+/* harmony import */ var _verification_modal_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./verification-modal.component.scss?ngResource */ 99261);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _duplication_duplication_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../duplication/duplication.component */ 10473);
+
+
+
+
+
+
+
+
+let VerificationModalComponent = class VerificationModalComponent {
+    constructor(router, api, 
+    // private cdr: ChangeDetectorRef,
+    modalController) {
+        this.router = router;
+        this.api = api;
+        this.modalController = modalController;
+        this.isFile = false;
+        this.files = [];
+        this.disableSubmit = true;
+        this.isFormValid = false;
+        this.customerArr = [
+            {
+                id: 1,
+                checked: true,
+                name: 'New Customer',
+            },
+            {
+                id: 2,
+                checked: false,
+                name: 'Existing Customer',
+            },
+        ];
+        this.toggleArr = [
+            {
+                id: 1,
+                checked: true,
+                name: 'Auto',
+            },
+            {
+                id: 2,
+                checked: false,
+                name: 'Manual',
+            },
+        ];
+        this.docArr = ['Aadhar Card', 'Pan Card', 'Passport'];
+        this.options = [
+            {
+                id: 1,
+                checked: false,
+                name: 'OTP',
+            },
+            {
+                id: 2,
+                checked: false,
+                name: 'Biometric',
+            },
+        ];
+        this.isExistingCustomer = false;
+        this.isAuto = true;
+        this.selectedTab1 = 'new_customer';
+    }
+    ngOnInit() {
+        // this.isAuto ??= this.isAutoSelected
+        // if(this.isAutoSelected == false){
+        //   this.toggleArr.map(toggle =>{
+        //     toggle.checked = !toggle.checked
+        //   })
+        // }
+        console.log(this.isAutoSelected);
+        console.log(this.screen);
+    }
+    CustomerType(value) {
+        // this.isExistingCustomer = event;
+        this.isAuto = true;
+        this.customerId = "";
+        if (value == 'Existing Customer') {
+            this.isExistingCustomer = true;
+        }
+        else {
+            this.isExistingCustomer = false;
+        }
+        this.documentName = '';
+        this.documentNumber = '';
+        this.otpValue = '';
+        this.isOtp = false;
+        this.isBiometric = false;
+        this.isupload = false;
+        this.isscan = false;
+        this.isrekyc = false;
+        this.isedit = false;
+    }
+    autoManualToggle(value) {
+        if (value == "Auto") {
+            this.isAuto = true;
+            this.isUploaded = false;
+        }
+        else {
+            this.isAuto = false;
+            this.isUploaded = false;
+        }
+    }
+    verificationMethodToggle(evt) {
+        console.log(evt);
+        if (!this.documentName || !this.documentNumber) {
+            return;
+        }
+        // if ((!this.documentName_rekyc || !this.documentNumber_rekyc)) {
+        //   return;
+        // }
+        if (evt == 'otp') {
+            this.isOtp = true;
+            this.isBiometric = false;
+        }
+        else {
+            this.isOtp = false;
+            this.isBiometric = true;
+        }
+    }
+    radioButtonChange(evt) {
+        console.log(evt);
+    }
+    Rekyc(value) {
+        if (value == 'Re-kyc' && this.customerId) {
+            this.isrekyc = true;
+            this.isedit = false;
+        }
+    }
+    edit_info(value) {
+        if (value == 'edit' && this.customerId) {
+            this.isrekyc = false;
+            this.isedit = true;
+        }
+    }
+    gotobasicScreen() {
+        this.router.navigate['basicscreen'];
+    }
+    closeModal() {
+        if (this.isedit == true) {
+            this.modalController.dismiss({ customerData: this.customerData });
+            return;
+        }
+        if (!this.isAuto && !this.isedit) {
+            this.modalController.dismiss({ customerData: this.aadharData });
+            return;
+        }
+        this.modalController.dismiss({ customerData: this.aadharData });
+    }
+    backModal() {
+        this.modalController.dismiss();
+    }
+    openDialog() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
+            let modal = yield this.modalController.create({
+                component: _duplication_duplication_component__WEBPACK_IMPORTED_MODULE_3__.DuplicationComponent,
+                backdropDismiss: true,
+                cssClass: 'dup-modal',
+                componentProps: {
+                    data: '',
+                },
+            });
+            modal.onDidDismiss().then((res) => {
+                console.log('Getting Back Data', res);
+            });
+            return yield modal.present();
+        });
+    }
+    getCustomerDetails() {
+        this.isUploaded = true;
+        this.api.getCustomerInfo(this.customerId).subscribe((res) => {
+            console.log(res === null || res === void 0 ? void 0 : res.customerInfoList[0]);
+            this.customerData = res === null || res === void 0 ? void 0 : res.customerInfoList[0];
+        });
+    }
+    validateForm(event) {
+        this.disableSubmit = !event;
+        this.isFormValid = event;
+    }
+    getAadharData(event) {
+        this.aadharData = event;
+    }
+    updateEnableSubmit(evt) {
+        this.isUploaded = evt;
+        this.isFormValid = evt;
+    }
+    updateFormValidation(event) {
+        this.isFormValid = event;
+    }
+};
+VerificationModalComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router },
+    { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ModalController }
+];
+VerificationModalComponent.propDecorators = {
+    data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_7__.Input }],
+    screen: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_7__.Input }],
+    isAutoSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_7__.Input }]
+};
+VerificationModalComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
+        selector: 'app-verification-modal',
+        template: _verification_modal_component_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
+        styles: [_verification_modal_component_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
+    })
+], VerificationModalComponent);
+
+
+
+/***/ }),
+
 /***/ 86176:
 /*!***************************************!*\
   !*** ./src/app/config/db.constant.ts ***!
@@ -5089,20 +5219,24 @@ MapsService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "API_URL": () => (/* binding */ API_URL),
 /* harmony export */   "CityService": () => (/* binding */ CityService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 28784);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 64139);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 86942);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 64139);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 86942);
 /* harmony import */ var _data_city__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/city */ 99726);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ 92340);
 
 
 
 
 
 
+
+const API_URL = src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.BASE_URL;
 let CityService = class CityService extends _data_city__WEBPACK_IMPORTED_MODULE_0__.CityData {
     constructor(http) {
         super();
@@ -5110,16 +5244,14 @@ let CityService = class CityService extends _data_city__WEBPACK_IMPORTED_MODULE_
     }
     loadCity() {
         if (this.cities) {
-            return (0,rxjs__WEBPACK_IMPORTED_MODULE_1__.of)(this.cities);
+            return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(this.cities);
         }
         else {
             return this.getCities();
         }
     }
     getCities() {
-        return this.http
-            .get("assets/json/city.json")
-            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(this.processData, this));
+        return this.http.get(`${API_URL}/iccity/fetchAllAuthCities`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.map)(this.processData, this));
     }
     processData(data) {
         this.cities = data;
@@ -5127,10 +5259,10 @@ let CityService = class CityService extends _data_city__WEBPACK_IMPORTED_MODULE_
     }
 };
 CityService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__.HttpClient }
 ];
-CityService = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Injectable)({
+CityService = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Injectable)({
         providedIn: "root",
     })
 ], CityService);
@@ -5580,7 +5712,7 @@ module.exports = ".circle {\n  border-radius: 50%;\n  width: 45px;\n  height: 45
   \****************************************************************************/
 /***/ ((module) => {
 
-module.exports = "ion-toolbar {\n  --display: flex !important;\n  --align-items: center;\n  --justify-content: space-between;\n  --color: #004c97;\n  --width: 100%;\n}\n\nion-button.next {\n  width: 100px;\n  --background: linear-gradient(90deg, #051a2d, #004c97);\n  --color: #ffffff;\n}\n\nion-button.cancel {\n  width: 100px;\n  --background: #ffffff;\n  --color: #b20000;\n}\n\nion-button.back {\n  width: 100px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #000000 !important;\n}\n\n.BI-container {\n  height: 170px;\n}\n\n.BI-container .BI-top-section {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  justify-content: space-between;\n  height: 100%;\n}\n\n.BI-container .BI-top-section .img-container {\n  width: 141.3px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  border: 1px solid #d5d5d5;\n  border-radius: 15px;\n  background-color: #ececec;\n  height: 140px;\n}\n\n.BI-container .BI-top-section .img-container img {\n  height: 80px;\n  width: 80px;\n}\n\n.BI-container .BI-top-section .img-container .icons {\n  position: absolute;\n  top: 3px;\n  right: 3px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  justify-content: space-between;\n  flex-direction: column;\n  height: 60px;\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);\n  padding: 5px 7px;\n  border-bottom-left-radius: 9px;\n}\n\n.BI-container .BI-top-section .right-top-section {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  justify-content: space-between !important;\n  align-items: flex-end;\n  align-content: space-between;\n  flex-direction: column;\n  height: 100%;\n}\n\n.BI-container .BI-top-section .right-top-section ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {\n  display: flex !important;\n}\n\n.BI-container .BI-top-section .right-top-section .auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  border-radius: 8px !important;\n  opacity: 1;\n  width: 160px;\n  height: 51px;\n  margin-bottom: 25px;\n}\n\n.BI-container .BI-top-section .right-top-section .auto-manual-toggle {\n  width: 100px !important;\n  color: #6e6e6e !important;\n  font: medium poppins !important;\n}\n\n.BI-container .BI-top-section .right-top-section .mat-button-toggle-checked {\n  background-color: #004c97 !important;\n  color: white !important;\n  border-radius: 8px !important;\n}\n\n.BI-container .BI-top-section .right-top-section .input-field-cont {\n  border-radius: 12px;\n  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.1);\n  padding-bottom: 0;\n}\n\n.BI-container .BI-top-section .right-top-section .input-field-cont ::ng-deep .mat-form-field-wrapper {\n  padding-bottom: 0;\n}\n\n.BI-mid-section {\n  margin-top: 30px;\n  width: 100%;\n}\n\n.BI-mid-section mat-form-field {\n  width: 100%;\n  border-radius: 12px;\n  padding-bottom: 0;\n  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.1);\n  margin-bottom: 13px;\n  color: #8a8989;\n}\n\n.BI-mid-section mat-form-field mat-label {\n  color: #8a8989;\n}\n\n.BI-mid-section mat-form-field .mat-select-arrow-wrapper {\n  color: #8a8989;\n}\n\n.BI-mid-section .verify-btn-disable {\n  color: red;\n  padding: 15px 32px;\n  border-radius: 7px;\n  color: #292d32;\n}\n\n.BI-mid-section ::ng-deep .mat-form-field-flex {\n  align-items: center;\n}\n\n.BI-mid-section .verify-btn-enable {\n  background: rgb(5, 26, 45);\n  background: linear-gradient(91deg, rgb(5, 26, 45) 0%, rgb(0, 76, 151) 100%);\n  padding: 15px 32px;\n  border-radius: 7px;\n  color: #e7e7e7;\n}\n\n.BI-mid-section ::ng-deep .mat-form-field-flex {\n  align-items: center;\n}\n\n.BI-mid-section ::ng-deep .mat-form-field-wrapper {\n  padding-bottom: 0;\n}\n\n.BI-mid-section ::ng-deep .mat-form-field-wrapper .mat-form-field-infix {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.BI-mid-section ::ng-deep .mat-form-field-appearance-outline .mat-form-field-suffix {\n  top: 0.16em;\n}\n\n.BI-mid-section .ml-name,\n.BI-mid-section .DOB-gender,\n.BI-mid-section .marital-nat {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n}\n\n.BI-mid-section .ml-name mat-form-field,\n.BI-mid-section .DOB-gender mat-form-field,\n.BI-mid-section .marital-nat mat-form-field {\n  width: 49%;\n}\n\n.BI-mid-section .email {\n  width: 100%;\n  display: flex;\n}\n\n.BI-address-section {\n  margin-top: 20px;\n}\n\n.BI-address-section .comm-add {\n  margin-top: 30px;\n  width: 100%;\n}\n\n.BI-address-section .comm-add ion-text {\n  margin-bottom: 30px;\n}\n\n.BI-address-section .comm-add mat-form-field {\n  width: 100%;\n  border-radius: 12px;\n  padding-bottom: 0;\n  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.1);\n  margin-bottom: 13px;\n  color: #8a8989;\n}\n\n.BI-address-section .comm-add mat-form-field mat-label {\n  color: #8a8989;\n}\n\n.BI-address-section .comm-add mat-form-field .mat-select-arrow-wrapper {\n  color: #8a8989;\n}\n\n.BI-address-section ::ng-deep .mat-form-field-wrapper {\n  padding-bottom: 0;\n}\n\n.BI-address-section ::ng-deep .mat-form-field-wrapper .mat-form-field-infix {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.BI-address-section .state-city {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n}\n\n.BI-address-section .state-city mat-form-field {\n  width: 49%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhc2ljLWluZm8uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBOEJBO0VBQ0UsMEJBQUE7RUFDQSxxQkFBQTtFQUNBLGdDQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0FBN0JGOztBQWdDQTtFQUNFLFlBQUE7RUFDQSxzREFBQTtFQUNBLGdCQUFBO0FBN0JGOztBQWdDQTtFQUNFLFlBQUE7RUFDQSxxQkFBQTtFQUNBLGdCQUFBO0FBN0JGOztBQWdDQTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EscUJBQUE7RUFDQSwyQkFBQTtBQTdCRjs7QUFpQ0E7RUFDRSxhQUFBO0FBOUJGOztBQWtDRTtFQXhEQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFQXdERSw4QkFBQTtFQUNBLFlBQUE7QUE5Qko7O0FBZ0NJO0VBQ0UsY0FBQTtFQTlESixhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFQThESSxrQkFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSx5QkFBQTtFQUNBLGFBQUE7QUE1Qk47O0FBNkJNO0VBQ0UsWUFBQTtFQUNBLFdBQUE7QUEzQlI7O0FBOEJNO0VBQ0Usa0JBQUE7RUFDQSxRQUFBO0VBQ0EsVUFBQTtFQTdFTixhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFQTZFTSw4QkFBQTtFQUNBLHNCQUFBO0VBQ0EsWUFBQTtFQUNBLCtDQUFBO0VBQ0EsZ0JBQUE7RUFDQSw4QkFBQTtBQTFCUjs7QUE4Qkk7RUF4RkYsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUF3RkkseUNBQUE7RUFDQSxxQkFBQTtFQUNBLDRCQUFBO0VBQ0Esc0JBQUE7RUFDQSxZQUFBO0FBMUJOOztBQTRCTTtFQUNFLHdCQUFBO0FBMUJSOztBQTZCTTtFQUNFLCtDQUFBO0VBQ0EsNkJBQUE7RUFDQSxVQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtBQTNCUjs7QUE4Qk07RUFDRSx1QkFBQTtFQUNBLHlCQUFBO0VBQ0EsK0JBQUE7QUE1QlI7O0FBK0JNO0VBQ0Usb0NBQUE7RUFDQSx1QkFBQTtFQUNBLDZCQUFBO0FBN0JSOztBQWdDTTtFQUNFLG1CQUFBO0VBcEhOLCtDQUFBO0VBc0hNLGlCQUFBO0FBOUJSOztBQWdDUTtFQUNFLGlCQUFBO0FBOUJWOztBQXNDQTtFQUNFLGdCQUFBO0VBQ0EsV0FBQTtBQW5DRjs7QUFxQ0U7RUFDRSxXQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtFQXhJRiwrQ0FBQTtFQTBJRSxtQkFBQTtFQUNBLGNBQUE7QUFuQ0o7O0FBcUNJO0VBQ0UsY0FBQTtBQW5DTjs7QUFzQ0k7RUFDRSxjQUFBO0FBcENOOztBQXVDRTtFQUNFLFVBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtBQXJDSjs7QUF3Q0U7RUFDRSxtQkFBQTtBQXRDSjs7QUF5Q0U7RUF4SkEsMEJBQUE7RUFDQSwyRUFBQTtFQXlKRSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtBQXRDSjs7QUF5Q0U7RUFDRSxtQkFBQTtBQXZDSjs7QUEyQ0k7RUFDRSxpQkFBQTtBQXpDTjs7QUEyQ007RUFyTEosYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUE2SUY7O0FBMENJO0VBQ0UsV0FBQTtBQXhDTjs7QUE0Q0U7OztFQTlMQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFQWdNRSw4QkFBQTtFQUNBLFdBQUE7QUF4Q0o7O0FBMENJOzs7RUFDRSxVQUFBO0FBdENOOztBQTBDRTtFQUNFLFdBQUE7RUFDQSxhQUFBO0FBeENKOztBQTZDQTtFQUNFLGdCQUFBO0FBMUNGOztBQTJDRTtFQUtFLGdCQUFBO0VBQ0EsV0FBQTtBQTdDSjs7QUF3Q0k7RUFDRSxtQkFBQTtBQXRDTjs7QUE0Q0k7RUFDRSxXQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtFQXhOSiwrQ0FBQTtFQTBOSSxtQkFBQTtFQUNBLGNBQUE7QUExQ047O0FBNENNO0VBQ0UsY0FBQTtBQTFDUjs7QUE2Q007RUFDRSxjQUFBO0FBM0NSOztBQWlESTtFQUNFLGlCQUFBO0FBL0NOOztBQWlETTtFQWpQSixhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtBQW1NRjs7QUFrREU7RUF2UEEsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUF1UEUsOEJBQUE7RUFDQSxXQUFBO0FBOUNKOztBQWdESTtFQUNFLFVBQUE7QUE5Q04iLCJmaWxlIjoiYmFzaWMtaW5mby5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIGFsbCB2YXJpYWJsZXMgYW5kIHJlLXVzYWJsZSBjb21wb25lbnRzIGRlZmluZWQgaGVyZS4uLlxyXG5cclxuJE1CLWlucHV0LWZpZWxkOiAxNXB4O1xyXG4kaW5wdXQtZmllbGQtYmctY29sb3I6ICNmY2ZjZmM7XHJcbiRpbnB1dC1maWVsZC10ZXh0LWNvbG9yOiAjNTQ1NDU0O1xyXG5cclxuQG1peGluIGFsaWdubWVudCB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG59XHJcblxyXG5AbWl4aW4gc2hhZG93IHtcclxuICBib3gtc2hhZG93OiAwcHggNHB4IDE4cHggMHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcclxufVxyXG5cclxuQG1peGluIGJvcmRlci1yYWRpdXMge1xyXG4gIGJvcmRlci1yYWRpdXM6IDE1cHg7XHJcbn1cclxuXHJcbkBtaXhpbiBidG4tZ3JhZGllbnQge1xyXG4gIGJhY2tncm91bmQ6IHJnYig1LCAyNiwgNDUpO1xyXG4gIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudChcclxuICAgIDkxZGVnLFxyXG4gICAgcmdiYSg1LCAyNiwgNDUsIDEpIDAlLFxyXG4gICAgcmdiYSgwLCA3NiwgMTUxLCAxKSAxMDAlXHJcbiAgKTtcclxufVxyXG5cclxuLy9zdHlsaW5nIGNvZGUgZ29lcyBoZXJlLi4uXHJcbmlvbi10b29sYmFyIHtcclxuICAtLWRpc3BsYXk6IGZsZXggIWltcG9ydGFudDtcclxuICAtLWFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgLS1qdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgLS1jb2xvcjogIzAwNGM5NztcclxuICAtLXdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG5pb24tYnV0dG9uLm5leHQge1xyXG4gIHdpZHRoOiAxMDBweDtcclxuICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCwgIzAwNGM5Nyk7XHJcbiAgLS1jb2xvcjogI2ZmZmZmZjtcclxufVxyXG5cclxuaW9uLWJ1dHRvbi5jYW5jZWwge1xyXG4gIHdpZHRoOiAxMDBweDtcclxuICAtLWJhY2tncm91bmQ6ICNmZmZmZmY7XHJcbiAgLS1jb2xvcjogI2IyMDAwMDtcclxufVxyXG5cclxuaW9uLWJ1dHRvbi5iYWNrIHtcclxuICB3aWR0aDogMTAwcHg7XHJcbiAgaGVpZ2h0OiA0MHB4O1xyXG4gIC0tYmFja2dyb3VuZDogI2ZmZmZmZjtcclxuICAtLWNvbG9yOiAjMDAwMDAwICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi8vIEJBU0lDIElORk9STUFUSU9OIGNvbnRlbnRzIHN0eWxpbmdcclxuLkJJLWNvbnRhaW5lciB7XHJcbiAgaGVpZ2h0OiAxNzBweDtcclxuXHJcblxyXG5cclxuICAuQkktdG9wLXNlY3Rpb24ge1xyXG4gICAgQGluY2x1ZGUgYWxpZ25tZW50O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG5cclxuICAgIC5pbWctY29udGFpbmVyIHtcclxuICAgICAgd2lkdGg6IDE0MS4zcHg7XHJcbiAgICAgIEBpbmNsdWRlIGFsaWdubWVudDtcclxuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICBib3JkZXI6IDFweCBzb2xpZCAjZDVkNWQ1O1xyXG4gICAgICBib3JkZXItcmFkaXVzOiAxNXB4O1xyXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlY2VjO1xyXG4gICAgICBoZWlnaHQ6IDE0MHB4O1xyXG4gICAgICBpbWcge1xyXG4gICAgICAgIGhlaWdodDogODBweDtcclxuICAgICAgICB3aWR0aDogODBweDtcclxuICAgICAgfVxyXG5cclxuICAgICAgLmljb25zIHtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgdG9wOiAzcHg7XHJcbiAgICAgICAgcmlnaHQ6IDNweDtcclxuICAgICAgICBAaW5jbHVkZSBhbGlnbm1lbnQ7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICAgICAgaGVpZ2h0OiA2MHB4O1xyXG4gICAgICAgIGJveC1zaGFkb3c6IDBweCAwcHggMjBweCAwcHggcmdiYSgwLCAwLCAwLCAwLjEpO1xyXG4gICAgICAgIHBhZGRpbmc6IDVweCA3cHg7XHJcbiAgICAgICAgYm9yZGVyLWJvdHRvbS1sZWZ0LXJhZGl1czogOXB4O1xyXG4gICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLnJpZ2h0LXRvcC1zZWN0aW9uIHtcclxuICAgICAgQGluY2x1ZGUgYWxpZ25tZW50O1xyXG4gICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW4gIWltcG9ydGFudDtcclxuICAgICAgYWxpZ24taXRlbXM6IGZsZXgtZW5kO1xyXG4gICAgICBhbGlnbi1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICBoZWlnaHQ6IDEwMCU7XHJcblxyXG4gICAgICA6Om5nLWRlZXAgLm1hdC1mb3JtLWZpZWxkLWFwcGVhcmFuY2Utb3V0bGluZSAubWF0LWZvcm0tZmllbGQtaW5maXgge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXggIWltcG9ydGFudDtcclxuICAgICAgfVxyXG5cclxuICAgICAgLmF1dG8tbWFudWFsLXRvZ2dsZS1ncm91cCB7XHJcbiAgICAgICAgYmFja2dyb3VuZDogI2YzZjNmMyAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogOHB4ICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgb3BhY2l0eTogMTtcclxuICAgICAgICB3aWR0aDogMTYwcHg7XHJcbiAgICAgICAgaGVpZ2h0OiA1MXB4O1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDI1cHg7XHJcbiAgICAgIH1cclxuXHJcbiAgICAgIC5hdXRvLW1hbnVhbC10b2dnbGUge1xyXG4gICAgICAgIHdpZHRoOiAxMDBweCAhaW1wb3J0YW50O1xyXG4gICAgICAgIGNvbG9yOiAjNmU2ZTZlICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgZm9udDogbWVkaXVtIHBvcHBpbnMgIWltcG9ydGFudDtcclxuICAgICAgfVxyXG5cclxuICAgICAgLm1hdC1idXR0b24tdG9nZ2xlLWNoZWNrZWQge1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDRjOTcgIWltcG9ydGFudDtcclxuICAgICAgICBjb2xvcjogd2hpdGUgIWltcG9ydGFudDtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiA4cHggIWltcG9ydGFudDtcclxuICAgICAgfVxyXG5cclxuICAgICAgLmlucHV0LWZpZWxkLWNvbnQge1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDEycHg7XHJcbiAgICAgICAgQGluY2x1ZGUgc2hhZG93O1xyXG4gICAgICAgIHBhZGRpbmctYm90dG9tOiAwO1xyXG5cclxuICAgICAgICA6Om5nLWRlZXAgLm1hdC1mb3JtLWZpZWxkLXdyYXBwZXIge1xyXG4gICAgICAgICAgcGFkZGluZy1ib3R0b206IDA7XHJcbiAgICAgICAgfVxyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcblxyXG4vLyBtaWQgc2VjdGlvbiBzdHlsaW5nLi4uXHJcbi5CSS1taWQtc2VjdGlvbiB7XHJcbiAgbWFyZ2luLXRvcDogMzBweDtcclxuICB3aWR0aDogMTAwJTtcclxuXHJcbiAgbWF0LWZvcm0tZmllbGQge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMnB4O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDA7XHJcbiAgICBAaW5jbHVkZSBzaGFkb3c7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxM3B4O1xyXG4gICAgY29sb3I6ICM4YTg5ODk7XHJcblxyXG4gICAgbWF0LWxhYmVsIHtcclxuICAgICAgY29sb3I6ICM4YTg5ODk7XHJcbiAgICB9XHJcblxyXG4gICAgLm1hdC1zZWxlY3QtYXJyb3ctd3JhcHBlciB7XHJcbiAgICAgIGNvbG9yOiAjOGE4OTg5O1xyXG4gICAgfVxyXG4gIH1cclxuICAudmVyaWZ5LWJ0bi1kaXNhYmxlIHtcclxuICAgIGNvbG9yOiByZWQ7XHJcbiAgICBwYWRkaW5nOiAxNXB4IDMycHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA3cHg7XHJcbiAgICBjb2xvcjogIzI5MmQzMjtcclxuICB9XHJcblxyXG4gIDo6bmctZGVlcCAubWF0LWZvcm0tZmllbGQtZmxleCB7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIH1cclxuXHJcbiAgLnZlcmlmeS1idG4tZW5hYmxlIHtcclxuICAgIEBpbmNsdWRlIGJ0bi1ncmFkaWVudDtcclxuICAgIHBhZGRpbmc6IDE1cHggMzJweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDdweDtcclxuICAgIGNvbG9yOiAjZTdlN2U3O1xyXG4gIH1cclxuXHJcbiAgOjpuZy1kZWVwIC5tYXQtZm9ybS1maWVsZC1mbGV4IHtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgfVxyXG5cclxuICA6Om5nLWRlZXAge1xyXG4gICAgLm1hdC1mb3JtLWZpZWxkLXdyYXBwZXIge1xyXG4gICAgICBwYWRkaW5nLWJvdHRvbTogMDtcclxuXHJcbiAgICAgIC5tYXQtZm9ybS1maWVsZC1pbmZpeCB7XHJcbiAgICAgICAgQGluY2x1ZGUgYWxpZ25tZW50O1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgICAubWF0LWZvcm0tZmllbGQtYXBwZWFyYW5jZS1vdXRsaW5lIC5tYXQtZm9ybS1maWVsZC1zdWZmaXh7XHJcbiAgICAgIHRvcDogMC4xNmVtO1xyXG4gICAgfVxyXG4gIH1cclxuXHJcbiAgLm1sLW5hbWUsXHJcbiAgLkRPQi1nZW5kZXIsXHJcbiAgLm1hcml0YWwtbmF0IHtcclxuICAgIEBpbmNsdWRlIGFsaWdubWVudDtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG5cclxuICAgIG1hdC1mb3JtLWZpZWxkIHtcclxuICAgICAgd2lkdGg6IDQ5JTtcclxuICAgIH1cclxuICB9XHJcblxyXG4gIC5lbWFpbCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgfVxyXG59XHJcblxyXG4vLyBhZGRyZXNzIHNlY3Rpb24gc3R5bGluZy4uXHJcbi5CSS1hZGRyZXNzLXNlY3Rpb24ge1xyXG4gIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgLmNvbW0tYWRkIHtcclxuICAgIGlvbi10ZXh0IHtcclxuICAgICAgbWFyZ2luLWJvdHRvbTogMzBweDtcclxuICAgIH1cclxuXHJcbiAgICBtYXJnaW4tdG9wOiAzMHB4O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcblxyXG4gICAgbWF0LWZvcm0tZmllbGQge1xyXG4gICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgYm9yZGVyLXJhZGl1czogMTJweDtcclxuICAgICAgcGFkZGluZy1ib3R0b206IDA7XHJcbiAgICAgIEBpbmNsdWRlIHNoYWRvdztcclxuICAgICAgbWFyZ2luLWJvdHRvbTogMTNweDtcclxuICAgICAgY29sb3I6ICM4YTg5ODk7XHJcblxyXG4gICAgICBtYXQtbGFiZWwge1xyXG4gICAgICAgIGNvbG9yOiAjOGE4OTg5O1xyXG4gICAgICB9XHJcblxyXG4gICAgICAubWF0LXNlbGVjdC1hcnJvdy13cmFwcGVyIHtcclxuICAgICAgICBjb2xvcjogIzhhODk4OTtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxuXHJcbiAgOjpuZy1kZWVwIHtcclxuICAgIC5tYXQtZm9ybS1maWVsZC13cmFwcGVyIHtcclxuICAgICAgcGFkZGluZy1ib3R0b206IDA7XHJcblxyXG4gICAgICAubWF0LWZvcm0tZmllbGQtaW5maXgge1xyXG4gICAgICAgIEBpbmNsdWRlIGFsaWdubWVudDtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxuXHJcbiAgLnN0YXRlLWNpdHkge1xyXG4gICAgQGluY2x1ZGUgYWxpZ25tZW50O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcblxyXG4gICAgbWF0LWZvcm0tZmllbGQge1xyXG4gICAgICB3aWR0aDogNDklO1xyXG4gICAgfVxyXG4gIH1cclxufVxyXG5cclxuXHJcblxyXG4iXX0= */";
+module.exports = "ion-toolbar {\n  --display: flex !important;\n  --align-items: center;\n  --justify-content: space-between;\n  --color: #004c97;\n  --width: 100%;\n}\n\nion-button.next {\n  width: 100px;\n  --background: linear-gradient(90deg, #051a2d, #004c97);\n  --color: #ffffff;\n}\n\nion-button.cancel {\n  width: 100px;\n  --background: #ffffff;\n  --color: #b20000;\n}\n\nion-button.back {\n  width: 100px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #000000 !important;\n}\n\n.BI-container {\n  height: 170px;\n}\n\n.BI-container .BI-top-section {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  justify-content: space-between;\n  height: 100%;\n}\n\n.BI-container .BI-top-section .img-container {\n  width: 141.3px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  border: 1px solid #d5d5d5;\n  border-radius: 15px;\n  background-color: #ececec;\n  height: 140px;\n}\n\n.BI-container .BI-top-section .img-container img {\n  height: 80px;\n  width: 80px;\n}\n\n.BI-container .BI-top-section .img-container .icons {\n  position: absolute;\n  top: 3px;\n  right: 3px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  justify-content: space-between;\n  flex-direction: column;\n  height: 60px;\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);\n  padding: 5px 7px;\n  border-bottom-left-radius: 9px;\n}\n\n.BI-container .BI-top-section .right-top-section {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  justify-content: space-between !important;\n  align-items: flex-end;\n  align-content: space-between;\n  flex-direction: column;\n  height: 100%;\n}\n\n.BI-container .BI-top-section .right-top-section ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {\n  display: flex !important;\n}\n\n.BI-container .BI-top-section .right-top-section .auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  border-radius: 8px !important;\n  opacity: 1;\n  width: 160px;\n  height: 51px;\n  margin-bottom: 25px;\n}\n\n.BI-container .BI-top-section .right-top-section .auto-manual-toggle {\n  width: 100px !important;\n  color: #6e6e6e !important;\n  font: medium poppins !important;\n}\n\n.BI-container .BI-top-section .right-top-section .mat-button-toggle-checked {\n  background-color: #004c97 !important;\n  color: white !important;\n  border-radius: 8px !important;\n}\n\n.BI-container .BI-top-section .right-top-section .input-field-cont {\n  border-radius: 12px;\n  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.1);\n  padding-bottom: 0;\n}\n\n.BI-container .BI-top-section .right-top-section .input-field-cont ::ng-deep .mat-form-field-wrapper {\n  padding-bottom: 0;\n}\n\n.BI-mid-section {\n  margin-top: 30px;\n  width: 100%;\n}\n\n.BI-mid-section mat-form-field {\n  width: 100%;\n  border-radius: 12px;\n  padding-bottom: 0;\n  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.1);\n  margin-bottom: 13px;\n  color: #8a8989;\n}\n\n.BI-mid-section mat-form-field mat-label {\n  color: #8a8989;\n}\n\n.BI-mid-section mat-form-field .mat-select-arrow-wrapper {\n  color: #8a8989;\n}\n\n.BI-mid-section .verify-btn-disable {\n  color: red;\n  padding: 15px 32px;\n  border-radius: 7px;\n  color: #292d32;\n}\n\n.BI-mid-section ::ng-deep .mat-form-field-flex {\n  align-items: center;\n}\n\n.BI-mid-section .verify-btn-enable {\n  background: rgb(5, 26, 45);\n  background: linear-gradient(91deg, rgb(5, 26, 45) 0%, rgb(0, 76, 151) 100%);\n  padding: 15px 32px;\n  border-radius: 7px;\n  color: #e7e7e7;\n}\n\n.BI-mid-section ::ng-deep .mat-form-field-flex {\n  align-items: center;\n}\n\n.BI-mid-section ::ng-deep .mat-form-field-wrapper {\n  padding-bottom: 0;\n}\n\n.BI-mid-section ::ng-deep .mat-form-field-wrapper .mat-form-field-infix {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.BI-mid-section ::ng-deep .mat-form-field-appearance-outline .mat-form-field-suffix {\n  top: 0.16em;\n}\n\n.BI-mid-section .ml-name,\n.BI-mid-section .DOB-gender,\n.BI-mid-section .marital-nat {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n}\n\n.BI-mid-section .ml-name .input-div,\n.BI-mid-section .DOB-gender .input-div,\n.BI-mid-section .marital-nat .input-div {\n  width: 49%;\n}\n\n.BI-mid-section .email {\n  width: 100%;\n  display: flex;\n}\n\n.BI-address-section {\n  margin-top: 20px;\n}\n\n.BI-address-section .comm-add {\n  margin-top: 30px;\n  width: 100%;\n}\n\n.BI-address-section .comm-add ion-text {\n  margin-bottom: 30px;\n}\n\n.BI-address-section .comm-add mat-form-field {\n  width: 100%;\n  border-radius: 12px;\n  padding-bottom: 0;\n  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.1);\n  margin-bottom: 13px;\n  color: #8a8989;\n}\n\n.BI-address-section .comm-add mat-form-field mat-label {\n  color: #8a8989;\n}\n\n.BI-address-section .comm-add mat-form-field .mat-select-arrow-wrapper {\n  color: #8a8989;\n}\n\n.BI-address-section ::ng-deep .mat-form-field-wrapper {\n  padding-bottom: 0;\n}\n\n.BI-address-section ::ng-deep .mat-form-field-wrapper .mat-form-field-infix {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.BI-address-section .state-city {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n}\n\n.BI-address-section .state-city .input-div {\n  width: 49%;\n}\n\n.err-msg {\n  margin-left: 5px;\n  margin-top: -10px;\n  font-size: smaller;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhc2ljLWluZm8uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBOEJBO0VBQ0UsMEJBQUE7RUFDQSxxQkFBQTtFQUNBLGdDQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0FBN0JGOztBQWdDQTtFQUNFLFlBQUE7RUFDQSxzREFBQTtFQUNBLGdCQUFBO0FBN0JGOztBQWdDQTtFQUNFLFlBQUE7RUFDQSxxQkFBQTtFQUNBLGdCQUFBO0FBN0JGOztBQWdDQTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EscUJBQUE7RUFDQSwyQkFBQTtBQTdCRjs7QUFpQ0E7RUFDRSxhQUFBO0FBOUJGOztBQWtDRTtFQXhEQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFQXdERSw4QkFBQTtFQUNBLFlBQUE7QUE5Qko7O0FBZ0NJO0VBQ0UsY0FBQTtFQTlESixhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFQThESSxrQkFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSx5QkFBQTtFQUNBLGFBQUE7QUE1Qk47O0FBNkJNO0VBQ0UsWUFBQTtFQUNBLFdBQUE7QUEzQlI7O0FBOEJNO0VBQ0Usa0JBQUE7RUFDQSxRQUFBO0VBQ0EsVUFBQTtFQTdFTixhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFQTZFTSw4QkFBQTtFQUNBLHNCQUFBO0VBQ0EsWUFBQTtFQUNBLCtDQUFBO0VBQ0EsZ0JBQUE7RUFDQSw4QkFBQTtBQTFCUjs7QUE4Qkk7RUF4RkYsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUF3RkkseUNBQUE7RUFDQSxxQkFBQTtFQUNBLDRCQUFBO0VBQ0Esc0JBQUE7RUFDQSxZQUFBO0FBMUJOOztBQTRCTTtFQUNFLHdCQUFBO0FBMUJSOztBQTZCTTtFQUNFLCtDQUFBO0VBQ0EsNkJBQUE7RUFDQSxVQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtBQTNCUjs7QUE4Qk07RUFDRSx1QkFBQTtFQUNBLHlCQUFBO0VBQ0EsK0JBQUE7QUE1QlI7O0FBK0JNO0VBQ0Usb0NBQUE7RUFDQSx1QkFBQTtFQUNBLDZCQUFBO0FBN0JSOztBQWdDTTtFQUNFLG1CQUFBO0VBcEhOLCtDQUFBO0VBc0hNLGlCQUFBO0FBOUJSOztBQWdDUTtFQUNFLGlCQUFBO0FBOUJWOztBQXNDQTtFQUNFLGdCQUFBO0VBQ0EsV0FBQTtBQW5DRjs7QUFxQ0U7RUFDRSxXQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtFQXhJRiwrQ0FBQTtFQTBJRSxtQkFBQTtFQUNBLGNBQUE7QUFuQ0o7O0FBcUNJO0VBQ0UsY0FBQTtBQW5DTjs7QUFzQ0k7RUFDRSxjQUFBO0FBcENOOztBQXVDRTtFQUNFLFVBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtBQXJDSjs7QUF3Q0U7RUFDRSxtQkFBQTtBQXRDSjs7QUF5Q0U7RUF4SkEsMEJBQUE7RUFDQSwyRUFBQTtFQXlKRSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtBQXRDSjs7QUF5Q0U7RUFDRSxtQkFBQTtBQXZDSjs7QUEyQ0k7RUFDRSxpQkFBQTtBQXpDTjs7QUEyQ007RUFyTEosYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUE2SUY7O0FBMENJO0VBQ0UsV0FBQTtBQXhDTjs7QUE0Q0U7OztFQTlMQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFQWdNRSw4QkFBQTtFQUNBLFdBQUE7QUF4Q0o7O0FBeUNJOzs7RUFDSixVQUFBO0FBckNBOztBQXlDRTtFQUNFLFdBQUE7RUFDQSxhQUFBO0FBdkNKOztBQTRDQTtFQUNFLGdCQUFBO0FBekNGOztBQTBDRTtFQUtFLGdCQUFBO0VBQ0EsV0FBQTtBQTVDSjs7QUF1Q0k7RUFDRSxtQkFBQTtBQXJDTjs7QUEyQ0k7RUFDRSxXQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtFQXZOSiwrQ0FBQTtFQXlOSSxtQkFBQTtFQUNBLGNBQUE7QUF6Q047O0FBMkNNO0VBQ0UsY0FBQTtBQXpDUjs7QUE0Q007RUFDRSxjQUFBO0FBMUNSOztBQWdESTtFQUNFLGlCQUFBO0FBOUNOOztBQWdETTtFQWhQSixhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtBQW1NRjs7QUFpREU7RUF0UEEsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUFzUEUsOEJBQUE7RUFDQSxXQUFBO0FBN0NKOztBQStDSTtFQUNFLFVBQUE7QUE3Q047O0FBa0RBO0VBQ0UsZ0JBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FBL0NGIiwiZmlsZSI6ImJhc2ljLWluZm8uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBhbGwgdmFyaWFibGVzIGFuZCByZS11c2FibGUgY29tcG9uZW50cyBkZWZpbmVkIGhlcmUuLi5cclxuXHJcbiRNQi1pbnB1dC1maWVsZDogMTVweDtcclxuJGlucHV0LWZpZWxkLWJnLWNvbG9yOiAjZmNmY2ZjO1xyXG4kaW5wdXQtZmllbGQtdGV4dC1jb2xvcjogIzU0NTQ1NDtcclxuXHJcbkBtaXhpbiBhbGlnbm1lbnQge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxufVxyXG5cclxuQG1peGluIHNoYWRvdyB7XHJcbiAgYm94LXNoYWRvdzogMHB4IDRweCAxOHB4IDBweCByZ2JhKDAsIDAsIDAsIDAuMSk7XHJcbn1cclxuXHJcbkBtaXhpbiBib3JkZXItcmFkaXVzIHtcclxuICBib3JkZXItcmFkaXVzOiAxNXB4O1xyXG59XHJcblxyXG5AbWl4aW4gYnRuLWdyYWRpZW50IHtcclxuICBiYWNrZ3JvdW5kOiByZ2IoNSwgMjYsIDQ1KTtcclxuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoXHJcbiAgICA5MWRlZyxcclxuICAgIHJnYmEoNSwgMjYsIDQ1LCAxKSAwJSxcclxuICAgIHJnYmEoMCwgNzYsIDE1MSwgMSkgMTAwJVxyXG4gICk7XHJcbn1cclxuXHJcbi8vc3R5bGluZyBjb2RlIGdvZXMgaGVyZS4uLlxyXG5pb24tdG9vbGJhciB7XHJcbiAgLS1kaXNwbGF5OiBmbGV4ICFpbXBvcnRhbnQ7XHJcbiAgLS1hbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIC0tanVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gIC0tY29sb3I6ICMwMDRjOTc7XHJcbiAgLS13aWR0aDogMTAwJTtcclxufVxyXG5cclxuaW9uLWJ1dHRvbi5uZXh0IHtcclxuICB3aWR0aDogMTAwcHg7XHJcbiAgLS1iYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFhMmQsICMwMDRjOTcpO1xyXG4gIC0tY29sb3I6ICNmZmZmZmY7XHJcbn1cclxuXHJcbmlvbi1idXR0b24uY2FuY2VsIHtcclxuICB3aWR0aDogMTAwcHg7XHJcbiAgLS1iYWNrZ3JvdW5kOiAjZmZmZmZmO1xyXG4gIC0tY29sb3I6ICNiMjAwMDA7XHJcbn1cclxuXHJcbmlvbi1idXR0b24uYmFjayB7XHJcbiAgd2lkdGg6IDEwMHB4O1xyXG4gIGhlaWdodDogNDBweDtcclxuICAtLWJhY2tncm91bmQ6ICNmZmZmZmY7XHJcbiAgLS1jb2xvcjogIzAwMDAwMCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4vLyBCQVNJQyBJTkZPUk1BVElPTiBjb250ZW50cyBzdHlsaW5nXHJcbi5CSS1jb250YWluZXIge1xyXG4gIGhlaWdodDogMTcwcHg7XHJcblxyXG5cclxuXHJcbiAgLkJJLXRvcC1zZWN0aW9uIHtcclxuICAgIEBpbmNsdWRlIGFsaWdubWVudDtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIGhlaWdodDogMTAwJTtcclxuXHJcbiAgICAuaW1nLWNvbnRhaW5lciB7XHJcbiAgICAgIHdpZHRoOiAxNDEuM3B4O1xyXG4gICAgICBAaW5jbHVkZSBhbGlnbm1lbnQ7XHJcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgYm9yZGVyOiAxcHggc29saWQgI2Q1ZDVkNTtcclxuICAgICAgYm9yZGVyLXJhZGl1czogMTVweDtcclxuICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2VjZWNlYztcclxuICAgICAgaGVpZ2h0OiAxNDBweDtcclxuICAgICAgaW1nIHtcclxuICAgICAgICBoZWlnaHQ6IDgwcHg7XHJcbiAgICAgICAgd2lkdGg6IDgwcHg7XHJcbiAgICAgIH1cclxuXHJcbiAgICAgIC5pY29ucyB7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHRvcDogM3B4O1xyXG4gICAgICAgIHJpZ2h0OiAzcHg7XHJcbiAgICAgICAgQGluY2x1ZGUgYWxpZ25tZW50O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICAgIGhlaWdodDogNjBweDtcclxuICAgICAgICBib3gtc2hhZG93OiAwcHggMHB4IDIwcHggMHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcclxuICAgICAgICBwYWRkaW5nOiA1cHggN3B4O1xyXG4gICAgICAgIGJvcmRlci1ib3R0b20tbGVmdC1yYWRpdXM6IDlweDtcclxuICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5yaWdodC10b3Atc2VjdGlvbiB7XHJcbiAgICAgIEBpbmNsdWRlIGFsaWdubWVudDtcclxuICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuICFpbXBvcnRhbnQ7XHJcbiAgICAgIGFsaWduLWl0ZW1zOiBmbGV4LWVuZDtcclxuICAgICAgYWxpZ24tY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgaGVpZ2h0OiAxMDAlO1xyXG5cclxuICAgICAgOjpuZy1kZWVwIC5tYXQtZm9ybS1maWVsZC1hcHBlYXJhbmNlLW91dGxpbmUgLm1hdC1mb3JtLWZpZWxkLWluZml4IHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4ICFpbXBvcnRhbnQ7XHJcbiAgICAgIH1cclxuXHJcbiAgICAgIC5hdXRvLW1hbnVhbC10b2dnbGUtZ3JvdXAge1xyXG4gICAgICAgIGJhY2tncm91bmQ6ICNmM2YzZjMgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDhweCAhaW1wb3J0YW50O1xyXG4gICAgICAgIG9wYWNpdHk6IDE7XHJcbiAgICAgICAgd2lkdGg6IDE2MHB4O1xyXG4gICAgICAgIGhlaWdodDogNTFweDtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAyNXB4O1xyXG4gICAgICB9XHJcblxyXG4gICAgICAuYXV0by1tYW51YWwtdG9nZ2xlIHtcclxuICAgICAgICB3aWR0aDogMTAwcHggIWltcG9ydGFudDtcclxuICAgICAgICBjb2xvcjogIzZlNmU2ZSAhaW1wb3J0YW50O1xyXG4gICAgICAgIGZvbnQ6IG1lZGl1bSBwb3BwaW5zICFpbXBvcnRhbnQ7XHJcbiAgICAgIH1cclxuXHJcbiAgICAgIC5tYXQtYnV0dG9uLXRvZ2dsZS1jaGVja2VkIHtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA0Yzk3ICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogOHB4ICFpbXBvcnRhbnQ7XHJcbiAgICAgIH1cclxuXHJcbiAgICAgIC5pbnB1dC1maWVsZC1jb250IHtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMnB4O1xyXG4gICAgICAgIEBpbmNsdWRlIHNoYWRvdztcclxuICAgICAgICBwYWRkaW5nLWJvdHRvbTogMDtcclxuXHJcbiAgICAgICAgOjpuZy1kZWVwIC5tYXQtZm9ybS1maWVsZC13cmFwcGVyIHtcclxuICAgICAgICAgIHBhZGRpbmctYm90dG9tOiAwO1xyXG4gICAgICAgIH1cclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxufVxyXG5cclxuLy8gbWlkIHNlY3Rpb24gc3R5bGluZy4uLlxyXG4uQkktbWlkLXNlY3Rpb24ge1xyXG4gIG1hcmdpbi10b3A6IDMwcHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcblxyXG4gIG1hdC1mb3JtLWZpZWxkIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTJweDtcclxuICAgIHBhZGRpbmctYm90dG9tOiAwO1xyXG4gICAgQGluY2x1ZGUgc2hhZG93O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTNweDtcclxuICAgIGNvbG9yOiAjOGE4OTg5O1xyXG5cclxuICAgIG1hdC1sYWJlbCB7XHJcbiAgICAgIGNvbG9yOiAjOGE4OTg5O1xyXG4gICAgfVxyXG5cclxuICAgIC5tYXQtc2VsZWN0LWFycm93LXdyYXBwZXIge1xyXG4gICAgICBjb2xvcjogIzhhODk4OTtcclxuICAgIH1cclxuICB9XHJcbiAgLnZlcmlmeS1idG4tZGlzYWJsZSB7XHJcbiAgICBjb2xvcjogcmVkO1xyXG4gICAgcGFkZGluZzogMTVweCAzMnB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogN3B4O1xyXG4gICAgY29sb3I6ICMyOTJkMzI7XHJcbiAgfVxyXG5cclxuICA6Om5nLWRlZXAgLm1hdC1mb3JtLWZpZWxkLWZsZXgge1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICB9XHJcblxyXG4gIC52ZXJpZnktYnRuLWVuYWJsZSB7XHJcbiAgICBAaW5jbHVkZSBidG4tZ3JhZGllbnQ7XHJcbiAgICBwYWRkaW5nOiAxNXB4IDMycHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA3cHg7XHJcbiAgICBjb2xvcjogI2U3ZTdlNztcclxuICB9XHJcblxyXG4gIDo6bmctZGVlcCAubWF0LWZvcm0tZmllbGQtZmxleCB7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIH1cclxuXHJcbiAgOjpuZy1kZWVwIHtcclxuICAgIC5tYXQtZm9ybS1maWVsZC13cmFwcGVyIHtcclxuICAgICAgcGFkZGluZy1ib3R0b206IDA7XHJcblxyXG4gICAgICAubWF0LWZvcm0tZmllbGQtaW5maXgge1xyXG4gICAgICAgIEBpbmNsdWRlIGFsaWdubWVudDtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gICAgLm1hdC1mb3JtLWZpZWxkLWFwcGVhcmFuY2Utb3V0bGluZSAubWF0LWZvcm0tZmllbGQtc3VmZml4e1xyXG4gICAgICB0b3A6IDAuMTZlbTtcclxuICAgIH1cclxuICB9XHJcblxyXG4gIC5tbC1uYW1lLFxyXG4gIC5ET0ItZ2VuZGVyLFxyXG4gIC5tYXJpdGFsLW5hdCB7XHJcbiAgICBAaW5jbHVkZSBhbGlnbm1lbnQ7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIC5pbnB1dC1kaXZ7XHJcbndpZHRoOiA0OSU7XHJcbiAgICB9XHJcbiAgfVxyXG5cclxuICAuZW1haWwge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gIH1cclxufVxyXG5cclxuLy8gYWRkcmVzcyBzZWN0aW9uIHN0eWxpbmcuLlxyXG4uQkktYWRkcmVzcy1zZWN0aW9uIHtcclxuICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gIC5jb21tLWFkZCB7XHJcbiAgICBpb24tdGV4dCB7XHJcbiAgICAgIG1hcmdpbi1ib3R0b206IDMwcHg7XHJcbiAgICB9XHJcblxyXG4gICAgbWFyZ2luLXRvcDogMzBweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG5cclxuICAgIG1hdC1mb3JtLWZpZWxkIHtcclxuICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDEycHg7XHJcbiAgICAgIHBhZGRpbmctYm90dG9tOiAwO1xyXG4gICAgICBAaW5jbHVkZSBzaGFkb3c7XHJcbiAgICAgIG1hcmdpbi1ib3R0b206IDEzcHg7XHJcbiAgICAgIGNvbG9yOiAjOGE4OTg5O1xyXG5cclxuICAgICAgbWF0LWxhYmVsIHtcclxuICAgICAgICBjb2xvcjogIzhhODk4OTtcclxuICAgICAgfVxyXG5cclxuICAgICAgLm1hdC1zZWxlY3QtYXJyb3ctd3JhcHBlciB7XHJcbiAgICAgICAgY29sb3I6ICM4YTg5ODk7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcblxyXG4gIDo6bmctZGVlcCB7XHJcbiAgICAubWF0LWZvcm0tZmllbGQtd3JhcHBlciB7XHJcbiAgICAgIHBhZGRpbmctYm90dG9tOiAwO1xyXG5cclxuICAgICAgLm1hdC1mb3JtLWZpZWxkLWluZml4IHtcclxuICAgICAgICBAaW5jbHVkZSBhbGlnbm1lbnQ7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcblxyXG4gIC5zdGF0ZS1jaXR5IHtcclxuICAgIEBpbmNsdWRlIGFsaWdubWVudDtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG5cclxuICAgIC5pbnB1dC1kaXZ7XHJcbiAgICAgIHdpZHRoOiA0OSU7XHJcbiAgICAgICAgICB9XHJcbiAgfVxyXG59XHJcblxyXG4uZXJyLW1zZ3tcclxuICBtYXJnaW4tbGVmdDogNXB4OyBcclxuICBtYXJnaW4tdG9wOiAtMTBweDtcclxuICBmb250LXNpemU6IHNtYWxsZXI7XHJcbn1cclxuXHJcblxyXG4iXX0= */";
 
 /***/ }),
 
@@ -5664,36 +5796,6 @@ module.exports = ".footer-custom-icon {\n  position: absolute !important;\n  top
 
 /***/ }),
 
-/***/ 91242:
-/*!**********************************************************************************************************************!*\
-  !*** ./src/app/components/kyc-modal/customer-auto-verification/customer-auto-verification.component.scss?ngResource ***!
-  \**********************************************************************************************************************/
-/***/ ((module) => {
-
-module.exports = ".segment-button-checked {\n  background-color: #d6dbea !important;\n  color: #ffffff;\n  border: 2px solid #3c75ae;\n}\n\n.verification_section .fingerscan {\n  padding: 5px 5px 5px 5px;\n}\n\n.verification_section .fingerscan .fingerprint_label {\n  margin-left: 28%;\n}\n\n.verification_section .irish {\n  padding: 5px 5px 5px 5px;\n}\n\n.verification_section .irish .irish_label {\n  margin-left: 28%;\n}\n\n.verification_section .facescan {\n  padding: 5px 5px 5px 5px;\n}\n\n.verification_section .facescan .facescan_label {\n  margin-left: 28%;\n}\n\n.new_cust {\n  width: 50%;\n  color: black;\n}\n\n.exist_cust {\n  color: black;\n}\n\n.uploadDocType {\n  margin-left: 120px;\n  height: min-content;\n}\n\n.uploadDocType .segment-button-checked {\n  background-color: #004385 !important;\n  color: #ffffff;\n  border: 2px solid #3c75ae;\n}\n\n.auto {\n  max-height: 74%;\n  max-width: 46%;\n}\n\n.otp_field {\n  border: 2px hidden gray;\n  box-shadow: 2px 2px 2px 2px rgb(184, 178, 178);\n  border-radius: 10px;\n  margin-top: 20px;\n  margin-left: 20%;\n}\n\n.mat-tab-nav-bar {\n  border-bottom: none;\n}\n\n.mat-tab-header {\n  border-bottom: none;\n  display: flex;\n  overflow: hidden;\n  position: relative;\n  flex-shrink: 0;\n}\n\n::ng-deep .mat-ink-bar {\n  height: 4px;\n  top: 8px;\n  border-radius: 10px;\n}\n\n::ng-deep .mat-tab-header {\n  border: none;\n}\n\n.auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  padding: 3px;\n  border-radius: 12px !important;\n  opacity: 1;\n  width: 100%;\n}\n\n.auto-manual-toggle {\n  color: #ffffff !important;\n  font: medium poppins !important;\n}\n\n::ng-deep .mat-button-toggle-label-content {\n  color: black;\n}\n\n.mat-button-toggle-checked {\n  background-color: #d6dbea !important;\n  color: rgba(0, 0, 0, 0) !important;\n  border-radius: 12px !important;\n  border: 1px solid #004c97;\n  width: 100%;\n}\n\n.AutomanualToggle .auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  border: 1px solid #004c97;\n  border-radius: 12px !important;\n  opacity: 1;\n}\n\n.AutomanualToggle .auto-manual-toggle {\n  width: 100px !important;\n  color: #6e6e6e !important;\n  font: medium poppins !important;\n}\n\n.AutomanualToggle .mat-button-toggle-checked {\n  background-color: #004c97 !important;\n  color: white !important;\n  border-radius: 12px !important;\n}\n\n.heading {\n  display: flex;\n  justify-content: space-around;\n  padding-top: 18px;\n}\n\n.customerHeading {\n  display: flex;\n  height: 50px;\n  align-items: center;\n}\n\n::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle,\n.mat-radio-outer-circle {\n  border-color: #004385 !important;\n  /* Sets outer circle & click effect color */\n}\n\n::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {\n  background-color: #004385 !important;\n  /* Sets inner circle color */\n}\n\nmat-card.otpandbioclass {\n  border-radius: 12px;\n  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.0901960784);\n}\n\n.widthclass {\n  display: inline-block;\n  width: 45%;\n}\n\n.margin {\n  margin-right: 30px;\n}\n\n.otpclass {\n  margin-left: 16px;\n}\n\n.bioclass {\n  margin-left: 16px;\n}\n\ninput::placeholder {\n  text-transform: capitalize;\n  letter-spacing: 7.2px;\n  text-align: center;\n}\n\n.customerHeading2 {\n  margin-top: 10px;\n}\n\n.customerHeading3 {\n  display: flex;\n  margin-bottom: 20px;\n}\n\n.choose {\n  padding-left: 10px;\n  margin-right: 10%;\n}\n\n.ion_radio_cards {\n  margin-top: 10px;\n  width: 100%;\n  margin-left: -20px;\n  margin-right: 10px;\n}\n\n.card1 {\n  border-radius: 15px;\n  width: 200px;\n  box-shadow: rgba(0, 0, 0, 0.0705882353);\n  border: 1px solid grey;\n}\n\n.card2 {\n  border-radius: 15px;\n  width: 200px;\n  box-shadow: rgba(0, 0, 0, 0.0705882353);\n  border: 1px solid grey;\n}\n\n.new_manual[_ngcontent-nkd-c420] {\n  margin-left: 10px;\n  margin-top: 10px;\n  margin-right: 3px;\n}\n\n.file-content-wrapper {\n  margin-top: 160px !important;\n}\n\n.mt-16 {\n  margin-top: 16px;\n}\n\n.cat-text {\n  color: #8d8d8d !important;\n  font-size: 12px !important;\n  opacity: 100%;\n  margin-bottom: 8px !important;\n  margin-top: -6px !important;\n}\n\nh6.cat-head {\n  color: #000000;\n  font-size: 20px;\n}\n\n.card {\n  width: auto;\n  height: 85px;\n  padding: 16px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n  border-radius: 10px;\n  margin-bottom: 10px;\n}\n\n.chq-text {\n  color: #000000;\n  font-size: 16px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: pre-line;\n  margin-top: 0px !important;\n  margin-bottom: 0px !important;\n}\n\n.danger {\n  color: #b20000 !important;\n  opacity: 100% !important;\n}\n\nion-progress-bar {\n  --background: #e8e8e8;\n  --progress-background: linear-gradient(90deg, #051a2d, #004c97);\n  height: 8px !important;\n  border-radius: 16px !important;\n}\n\n.file-card {\n  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n  width: auto;\n  height: 110px;\n  border-radius: 10px;\n  text-align: center;\n}\n\n.file-card .p-1 {\n  height: 80px;\n}\n\n.file-card .pb-3 {\n  padding-bottom: 1rem !important;\n}\n\n.file-card .border-end {\n  border-right: 1pt solid #dee2e6 !important;\n}\n\n.file-card p {\n  opacity: 100% !important;\n  color: #707070 !important;\n  font-size: 13px !important;\n}\n\n.file-card .avatar {\n  height: 60px;\n  width: 60px;\n  background: #edecec;\n  margin: 0 auto;\n  border-radius: 5px;\n}\n\n.file-card .avatar .bg-gradient {\n  background-image: #edecec !important;\n}\n\n.file-card .avatar img {\n  margin-top: 16px;\n}\n\nion-button.next {\n  width: 150px;\n  height: 40px;\n  --background: linear-gradient(90deg, #051a2d, #004c97);\n  --color: #ffffff;\n}\n\nion-button.back {\n  width: 150px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #000000 !important;\n}\n\n.widthForMat {\n  width: 93%;\n  margin-top: 20px;\n}\n\n.btns {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 90%;\n  margin-left: 10px;\n  margin-top: 80px;\n}\n\n.btns .btns1 {\n  padding: 12px 28px;\n  width: 48%;\n  font-size: 16px;\n  font-weight: 500;\n  border-radius: 35px;\n  background: rgb(5, 26, 45);\n  background: linear-gradient(148deg, rgb(5, 26, 45) 0%, rgb(0, 76, 151) 100%);\n}\n\n.btns .btns2 {\n  padding: 12px 28px;\n  width: 48%;\n  font-size: 16px;\n  font-weight: 500;\n  border-radius: 35px;\n  background: rgb(255, 255, 255);\n  box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.15);\n  color: black;\n}\n\n.move_toggle .auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  border: 1px solid #004c97;\n  border-radius: 12px !important;\n  opacity: 1;\n}\n\n.move_toggle .auto-manual-toggle {\n  width: 100px !important;\n  color: #6e6e6e !important;\n  font: medium poppins !important;\n}\n\n.move_toggle .mat-button-toggle-checked {\n  background-color: #004c97 !important;\n  color: white !important;\n  border-radius: 12px !important;\n}\n\n.on-icon {\n  display: flex;\n}\n\nion-toolbar {\n  --display: flex !important;\n  --align-items: center;\n  --justify-content: space-between;\n  --color: #004c97;\n  --width: 100%;\n}\n\nion-button.next {\n  width: 150px;\n  height: 40px;\n  --background: linear-gradient(90deg, #051a2d, #004c97);\n  --color: #ffffff;\n}\n\nion-button.cancel {\n  width: 150px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #b20000;\n}\n\nion-button.back {\n  width: 150px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #000000 !important;\n}\n\n.full-width90.m-2 {\n  margin-left: 10px;\n  box-shadow: #707070;\n}\n\n.full-width {\n  width: 100% !important;\n}\n\n.card-biometric {\n  margin-right: 20px;\n  margin-top: 20px;\n  border-radius: 16px;\n}\n\n.card-biometric .biometric-div {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  text-align: center;\n}\n\n.card-biometric .biometric-div .fingerPrint {\n  color: #004c97;\n  font-size: 12px;\n}\n\n.card-biometric .biometric-div .irishText {\n  color: #707070;\n  font-size: 12px;\n}\n\n.card-biometric .biometric-div .faceScan {\n  color: #707070;\n  font-size: 12px;\n}\n\n.card-biometric .biometric-div .verticalLine {\n  border: 1px rgba(0, 0, 0, 0.0901960784) solid;\n}\n\n.bioclass {\n  margin-left: -8px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImN1c3RvbWVyLWF1dG8tdmVyaWZpY2F0aW9uLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksb0NBQUE7RUFDQSxjQUFBO0VBSUEseUJBQUE7QUFGSjs7QUFNSTtFQUNFLHdCQUFBO0FBSE47O0FBSU07RUFDRSxnQkFBQTtBQUZSOztBQUtJO0VBQ0Usd0JBQUE7QUFITjs7QUFJTTtFQUNFLGdCQUFBO0FBRlI7O0FBS0k7RUFDRSx3QkFBQTtBQUhOOztBQUlNO0VBQ0UsZ0JBQUE7QUFGUjs7QUFPRTtFQUNFLFVBQUE7RUFDQSxZQUFBO0FBSko7O0FBVUU7RUFDRSxZQUFBO0FBUEo7O0FBU0U7RUFDRSxrQkFBQTtFQUNBLG1CQUFBO0FBTko7O0FBT0k7RUFDRSxvQ0FBQTtFQUNBLGNBQUE7RUFHQSx5QkFBQTtBQVBOOztBQVVFO0VBRUUsZUFBQTtFQUNBLGNBQUE7QUFSSjs7QUFlRTtFQUNFLHVCQUFBO0VBQ0EsOENBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7QUFaSjs7QUFjRTtFQUNFLG1CQUFBO0FBWEo7O0FBYUU7RUFDRSxtQkFBQTtFQUNBLGFBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtBQVZKOztBQVlFO0VBQ0UsV0FBQTtFQUNBLFFBQUE7RUFDQSxtQkFBQTtBQVRKOztBQVdFO0VBQ0UsWUFBQTtBQVJKOztBQWVFO0VBQ0UsK0NBQUE7RUFDQSxZQUFBO0VBQ0EsOEJBQUE7RUFDQSxVQUFBO0VBQ0EsV0FBQTtBQVpKOztBQWVFO0VBRUUseUJBQUE7RUFDQSwrQkFBQTtBQWJKOztBQWdCRTtFQUNFLFlBQUE7QUFiSjs7QUFnQkU7RUFDRSxvQ0FBQTtFQUNBLGtDQUFBO0VBQ0EsOEJBQUE7RUFDQSx5QkFBQTtFQUNBLFdBQUE7QUFiSjs7QUFpQkk7RUFDRSwrQ0FBQTtFQUVBLHlCQUFBO0VBRUEsOEJBQUE7RUFFQSxVQUFBO0FBakJOOztBQW9CSTtFQUNFLHVCQUFBO0VBRUEseUJBQUE7RUFFQSwrQkFBQTtBQXBCTjs7QUF1Qkk7RUFDRSxvQ0FBQTtFQUVBLHVCQUFBO0VBRUEsOEJBQUE7QUF2Qk47O0FBMkJFO0VBQ0UsYUFBQTtFQUNBLDZCQUFBO0VBQ0EsaUJBQUE7QUF4Qko7O0FBMEJFO0VBQ0UsYUFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtBQXZCSjs7QUEyQkU7O0VBSUUsZ0NBQUE7RUFDQSwyQ0FBQTtBQTFCSjs7QUE0QkU7RUFDRSxvQ0FBQTtFQUNBLDRCQUFBO0FBekJKOztBQTJCRTtFQUNFLG1CQUFBO0VBQ0Esb0RBQUE7QUF4Qko7O0FBMkJFO0VBQ0UscUJBQUE7RUFDQSxVQUFBO0FBeEJKOztBQTBCRTtFQUNFLGtCQUFBO0FBdkJKOztBQXlCRTtFQUNFLGlCQUFBO0FBdEJKOztBQXdCRTtFQUNFLGlCQUFBO0FBckJKOztBQXdCRTtFQUNFLDBCQUFBO0VBQ0EscUJBQUE7RUFDQSxrQkFBQTtBQXJCSjs7QUF3QkU7RUFDRSxnQkFBQTtBQXJCSjs7QUF1QkU7RUFDRSxhQUFBO0VBR0EsbUJBQUE7QUF0Qko7O0FBd0JFO0VBQ0Usa0JBQUE7RUFDQSxpQkFBQTtBQXJCSjs7QUF3QkU7RUFDRSxnQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0FBckJKOztBQXVCRTtFQUNFLG1CQUFBO0VBQ0EsWUFBQTtFQUNBLHVDQUFBO0VBQ0Esc0JBQUE7QUFwQko7O0FBc0JFO0VBQ0UsbUJBQUE7RUFDQSxZQUFBO0VBQ0EsdUNBQUE7RUFDQSxzQkFBQTtBQW5CSjs7QUFxQkU7RUFDRSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7QUFsQko7O0FBc0JFO0VBQ0UsNEJBQUE7QUFuQko7O0FBc0JFO0VBQ0UsZ0JBQUE7QUFuQko7O0FBc0JFO0VBQ0UseUJBQUE7RUFDQSwwQkFBQTtFQUNBLGFBQUE7RUFDQSw2QkFBQTtFQUNBLDJCQUFBO0FBbkJKOztBQXNCRTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBbkJKOztBQXNCRTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGlEQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtBQW5CSjs7QUFzQkU7RUFDRSxjQUFBO0VBQ0EsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1QkFBQTtFQUNBLHFCQUFBO0VBQ0EsMEJBQUE7RUFDQSw2QkFBQTtBQW5CSjs7QUFzQkU7RUFDRSx5QkFBQTtFQUNBLHdCQUFBO0FBbkJKOztBQXNCRTtFQUNFLHFCQUFBO0VBQ0EsK0RBQUE7RUFDQSxzQkFBQTtFQUNBLDhCQUFBO0FBbkJKOztBQXNCRTtFQUNFLHFEQUFBO0VBQ0EsV0FBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FBbkJKOztBQXFCSTtFQUNFLFlBQUE7QUFuQk47O0FBc0JJO0VBQ0UsK0JBQUE7QUFwQk47O0FBdUJJO0VBQ0UsMENBQUE7QUFyQk47O0FBd0JJO0VBQ0Usd0JBQUE7RUFDQSx5QkFBQTtFQUNBLDBCQUFBO0FBdEJOOztBQXlCSTtFQUNFLFlBQUE7RUFDQSxXQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7QUF2Qk47O0FBeUJNO0VBQ0Usb0NBQUE7QUF2QlI7O0FBMEJNO0VBQ0UsZ0JBQUE7QUF4QlI7O0FBNkJFO0VBQ0UsWUFBQTtFQUNBLFlBQUE7RUFDQSxzREFBQTtFQUNBLGdCQUFBO0FBMUJKOztBQTZCRTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EscUJBQUE7RUFDQSwyQkFBQTtBQTFCSjs7QUE2QkU7RUFDRSxVQUFBO0VBQ0EsZ0JBQUE7QUExQko7O0FBOEJFO0VBQ0UsYUFBQTtFQUNBLDhCQUFBO0VBQ0EsbUJBQUE7RUFDQSxVQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQTNCSjs7QUE0Qkk7RUFDRSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLDBCQUFBO0VBQ0EsNEVBQUE7QUExQk47O0FBZ0NJO0VBQ0Usa0JBQUE7RUFDQSxVQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSw4QkFBQTtFQUNBLGlEQUFBO0VBQ0EsWUFBQTtBQTlCTjs7QUFrQ0k7RUFDRSwrQ0FBQTtFQUVBLHlCQUFBO0VBRUEsOEJBQUE7RUFFQSxVQUFBO0FBbENOOztBQXFDSTtFQUNFLHVCQUFBO0VBRUEseUJBQUE7RUFFQSwrQkFBQTtBQXJDTjs7QUEwQ0k7RUFDRSxvQ0FBQTtFQUVBLHVCQUFBO0VBRUEsOEJBQUE7QUExQ047O0FBOENFO0VBQ0UsYUFBQTtBQTNDSjs7QUE2Q0U7RUFDRSwwQkFBQTtFQUNBLHFCQUFBO0VBQ0EsZ0NBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUExQ0o7O0FBNkNFO0VBQ0UsWUFBQTtFQUNBLFlBQUE7RUFDQSxzREFBQTtFQUNBLGdCQUFBO0FBMUNKOztBQTZDRTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EscUJBQUE7RUFDQSxnQkFBQTtBQTFDSjs7QUE2Q0U7RUFDRSxZQUFBO0VBQ0EsWUFBQTtFQUNBLHFCQUFBO0VBQ0EsMkJBQUE7QUExQ0o7O0FBNENFO0VBQ0UsaUJBQUE7RUFDQSxtQkFBQTtBQXpDSjs7QUE0Q0U7RUFDRSxzQkFBQTtBQXpDSjs7QUE0Q0U7RUFDRSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7QUF6Q0o7O0FBMkNJO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsNkJBQUE7RUFDQSxrQkFBQTtBQXpDTjs7QUEyQ007RUFDRSxjQUFBO0VBQ0EsZUFBQTtBQXpDUjs7QUEyQ007RUFDRSxjQUFBO0VBQ0EsZUFBQTtBQXpDUjs7QUEyQ007RUFDRSxjQUFBO0VBQ0EsZUFBQTtBQXpDUjs7QUEyQ007RUFDRSw2Q0FBQTtBQXpDUjs7QUE2Q0U7RUFDRSxpQkFBQTtBQTFDSiIsImZpbGUiOiJjdXN0b21lci1hdXRvLXZlcmlmaWNhdGlvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zZWdtZW50LWJ1dHRvbi1jaGVja2VkIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNkNmRiZWEgIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiAjZmZmZmZmO1xyXG4gICAgLy8gYm9yZGVyLWNvbG9yOiAjM0M3NUFFO1xyXG4gICAgLy8gYm9yZGVyLXdpZHRoOiBtZWRpdW07XHJcbiAgXHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCAjM2M3NWFlO1xyXG4gIH1cclxuIFxyXG4gIC52ZXJpZmljYXRpb25fc2VjdGlvbiB7XHJcbiAgICAuZmluZ2Vyc2NhbiB7XHJcbiAgICAgIHBhZGRpbmc6IDVweCA1cHggNXB4IDVweDtcclxuICAgICAgLmZpbmdlcnByaW50X2xhYmVsIHtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMjglO1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgICAuaXJpc2gge1xyXG4gICAgICBwYWRkaW5nOiA1cHggNXB4IDVweCA1cHg7XHJcbiAgICAgIC5pcmlzaF9sYWJlbCB7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDI4JTtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gICAgLmZhY2VzY2FuIHtcclxuICAgICAgcGFkZGluZzogNXB4IDVweCA1cHggNXB4O1xyXG4gICAgICAuZmFjZXNjYW5fbGFiZWwge1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAyOCU7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbiAgXHJcbiAgLm5ld19jdXN0IHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgfVxyXG4gIC8vIC5uZXdfY3VzdDp2aXNpdGVke1xyXG4gIC8vICAgYmFja2dyb3VuZC1jb2xvcjogYXF1YTtcclxuICBcclxuICAvLyB9XHJcbiAgLmV4aXN0X2N1c3Qge1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG4gIH1cclxuICAudXBsb2FkRG9jVHlwZSB7XHJcbiAgICBtYXJnaW4tbGVmdDogMTIwcHg7XHJcbiAgICBoZWlnaHQ6IG1pbi1jb250ZW50O1xyXG4gICAgLnNlZ21lbnQtYnV0dG9uLWNoZWNrZWQge1xyXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA0Mzg1ICFpbXBvcnRhbnQ7XHJcbiAgICAgIGNvbG9yOiAjZmZmZmZmO1xyXG4gICAgICAvLyBib3JkZXItY29sb3I6ICMzQzc1QUU7XHJcbiAgICAgIC8vIGJvcmRlci13aWR0aDogbWVkaXVtO1xyXG4gICAgICBib3JkZXI6IDJweCBzb2xpZCAjM2M3NWFlO1xyXG4gICAgfVxyXG4gIH1cclxuICAuYXV0byB7XHJcbiAgICAvLyB3aWR0aDogNDBweDtcclxuICAgIG1heC1oZWlnaHQ6IDc0JTtcclxuICAgIG1heC13aWR0aDogNDYlO1xyXG4gIH1cclxuICAvLyAubWFudWFsIHtcclxuICAvLyB3aWR0aDo0MHB4O1xyXG4gIC8vIG1heC1oZWlnaHQ6IDc0JTtcclxuICAvLyBtYXgtd2lkdGg6NDYlO1xyXG4gIC8vIH1cclxuICAub3RwX2ZpZWxkIHtcclxuICAgIGJvcmRlcjogMnB4IGhpZGRlbiBncmF5O1xyXG4gICAgYm94LXNoYWRvdzogMnB4IDJweCAycHggMnB4IHJnYigxODQsIDE3OCwgMTc4KTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDIwJTtcclxuICB9XHJcbiAgLm1hdC10YWItbmF2LWJhciB7XHJcbiAgICBib3JkZXItYm90dG9tOiBub25lO1xyXG4gIH1cclxuICAubWF0LXRhYi1oZWFkZXIge1xyXG4gICAgYm9yZGVyLWJvdHRvbTogbm9uZTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgZmxleC1zaHJpbms6IDA7XHJcbiAgfVxyXG4gIDo6bmctZGVlcCAubWF0LWluay1iYXIge1xyXG4gICAgaGVpZ2h0OiA0cHg7XHJcbiAgICB0b3A6IDhweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgfVxyXG4gIDo6bmctZGVlcCAubWF0LXRhYi1oZWFkZXIge1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gIH1cclxuICBcclxuICAvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy9cclxuICAvLy9cclxuICAvLy9cclxuICBcclxuICAuYXV0by1tYW51YWwtdG9nZ2xlLWdyb3VwIHtcclxuICAgIGJhY2tncm91bmQ6ICNmM2YzZjMgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gICAgcGFkZGluZzogM3B4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTJweCAhaW1wb3J0YW50O1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuICAuYXV0by1tYW51YWwtdG9nZ2xlIHtcclxuICAgIC8vIHdpZHRoOiAxMDBweCAhaW1wb3J0YW50O1xyXG4gICAgY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDtcclxuICAgIGZvbnQ6IG1lZGl1bSBwb3BwaW5zICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIFxyXG4gIDo6bmctZGVlcCAubWF0LWJ1dHRvbi10b2dnbGUtbGFiZWwtY29udGVudCB7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgfVxyXG4gIFxyXG4gIC5tYXQtYnV0dG9uLXRvZ2dsZS1jaGVja2VkIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNkNmRiZWEgIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiAjMDAwMDAwMDAgIWltcG9ydGFudDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEycHggIWltcG9ydGFudDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICMwMDRjOTc7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbiAgLkF1dG9tYW51YWxUb2dnbGUge1xyXG4gICAgLmF1dG8tbWFudWFsLXRvZ2dsZS1ncm91cCB7XHJcbiAgICAgIGJhY2tncm91bmQ6ICNmM2YzZjMgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIFxyXG4gICAgICBib3JkZXI6IDFweCBzb2xpZCAjMDA0Yzk3O1xyXG4gIFxyXG4gICAgICBib3JkZXItcmFkaXVzOiAxMnB4ICFpbXBvcnRhbnQ7XHJcbiAgXHJcbiAgICAgIG9wYWNpdHk6IDE7XHJcbiAgICB9XHJcbiAgXHJcbiAgICAuYXV0by1tYW51YWwtdG9nZ2xlIHtcclxuICAgICAgd2lkdGg6IDEwMHB4ICFpbXBvcnRhbnQ7XHJcbiAgXHJcbiAgICAgIGNvbG9yOiAjNmU2ZTZlICFpbXBvcnRhbnQ7XHJcbiAgXHJcbiAgICAgIGZvbnQ6IG1lZGl1bSBwb3BwaW5zICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcbiAgXHJcbiAgICAubWF0LWJ1dHRvbi10b2dnbGUtY2hlY2tlZCB7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDRjOTcgIWltcG9ydGFudDtcclxuICBcclxuICAgICAgY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XHJcbiAgXHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDEycHggIWltcG9ydGFudDtcclxuICAgIH1cclxuICB9XHJcbiAgXHJcbiAgLmhlYWRpbmcge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xyXG4gICAgcGFkZGluZy10b3A6IDE4cHg7XHJcbiAgfVxyXG4gIC5jdXN0b21lckhlYWRpbmcge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGhlaWdodDogNTBweDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAvLyBtYXJnaW4tbGVmdDotMTRweDtcclxuICB9XHJcbiAgXHJcbiAgOjpuZy1kZWVwXHJcbiAgICAubWF0LXJhZGlvLWJ1dHRvbi5tYXQtYWNjZW50Lm1hdC1yYWRpby1jaGVja2VkXHJcbiAgICAubWF0LXJhZGlvLW91dGVyLWNpcmNsZSxcclxuICAubWF0LXJhZGlvLW91dGVyLWNpcmNsZSB7XHJcbiAgICBib3JkZXItY29sb3I6ICMwMDQzODUgIWltcG9ydGFudDtcclxuICAgIC8qIFNldHMgb3V0ZXIgY2lyY2xlICYgY2xpY2sgZWZmZWN0IGNvbG9yICovXHJcbiAgfVxyXG4gIDo6bmctZGVlcCAubWF0LXJhZGlvLWJ1dHRvbi5tYXQtYWNjZW50IC5tYXQtcmFkaW8taW5uZXItY2lyY2xlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDQzODUgIWltcG9ydGFudDtcclxuICAgIC8qIFNldHMgaW5uZXIgY2lyY2xlIGNvbG9yICovXHJcbiAgfVxyXG4gIG1hdC1jYXJkLm90cGFuZGJpb2NsYXNzIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEycHg7XHJcbiAgICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDE3O1xyXG4gIH1cclxuICBcclxuICAud2lkdGhjbGFzcyB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB3aWR0aDogNDUlO1xyXG4gIH1cclxuICAubWFyZ2luIHtcclxuICAgIG1hcmdpbi1yaWdodDogMzBweDtcclxuICB9XHJcbiAgLm90cGNsYXNzIHtcclxuICAgIG1hcmdpbi1sZWZ0OiAxNnB4O1xyXG4gIH1cclxuICAuYmlvY2xhc3Mge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE2cHg7XHJcbiAgfVxyXG4gIFxyXG4gIGlucHV0OjpwbGFjZWhvbGRlciB7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcclxuICAgIGxldHRlci1zcGFjaW5nOiA3LjJweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB9XHJcbiAgXHJcbiAgLmN1c3RvbWVySGVhZGluZzIge1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICB9XHJcbiAgLmN1c3RvbWVySGVhZGluZzMge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIC8vICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcclxuICAgIC8vICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG4gIH1cclxuICAuY2hvb3NlIHtcclxuICAgIHBhZGRpbmctbGVmdDogMTBweDtcclxuICAgIG1hcmdpbi1yaWdodDogMTAlO1xyXG4gIH1cclxuICBcclxuICAuaW9uX3JhZGlvX2NhcmRzIHtcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiAtMjBweDtcclxuICAgIG1hcmdpbi1yaWdodDogMTBweDtcclxuICB9XHJcbiAgLmNhcmQxIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDE1cHg7XHJcbiAgICB3aWR0aDogMjAwcHg7XHJcbiAgICBib3gtc2hhZG93OiAjMDAwMDAwMTI7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBncmV5O1xyXG4gIH1cclxuICAuY2FyZDIge1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTVweDtcclxuICAgIHdpZHRoOiAyMDBweDtcclxuICAgIGJveC1zaGFkb3c6ICMwMDAwMDAxMjtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGdyZXk7XHJcbiAgfVxyXG4gIC5uZXdfbWFudWFsW19uZ2NvbnRlbnQtbmtkLWM0MjBdIHtcclxuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIG1hcmdpbi1yaWdodDogM3B4O1xyXG4gIH1cclxuICBcclxuICAvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL2ZpbGUgdXBsb2FkIGNzc1xyXG4gIC5maWxlLWNvbnRlbnQtd3JhcHBlciB7XHJcbiAgICBtYXJnaW4tdG9wOiAxNjBweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICBcclxuICAubXQtMTYge1xyXG4gICAgbWFyZ2luLXRvcDogMTZweDtcclxuICB9XHJcbiAgXHJcbiAgLmNhdC10ZXh0IHtcclxuICAgIGNvbG9yOiAjOGQ4ZDhkICFpbXBvcnRhbnQ7XHJcbiAgICBmb250LXNpemU6IDEycHggIWltcG9ydGFudDtcclxuICAgIG9wYWNpdHk6IDEwMCU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA4cHggIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi10b3A6IC02cHggIWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgaDYuY2F0LWhlYWQge1xyXG4gICAgY29sb3I6ICMwMDAwMDA7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5jYXJkIHtcclxuICAgIHdpZHRoOiBhdXRvO1xyXG4gICAgaGVpZ2h0OiA4NXB4O1xyXG4gICAgcGFkZGluZzogMTZweDtcclxuICAgIGJveC1zaGFkb3c6IHJnYig5OSA5OSA5OSAvIDIwJSkgMHB4IDJweCA4cHggMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5jaHEtdGV4dCB7XHJcbiAgICBjb2xvcjogIzAwMDAwMDtcclxuICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgIHdoaXRlLXNwYWNlOiBub3dyYXA7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgICB3aGl0ZS1zcGFjZTogcHJlLWxpbmU7XHJcbiAgICBtYXJnaW4tdG9wOiAwcHggIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1ib3R0b206IDBweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICBcclxuICAuZGFuZ2VyIHtcclxuICAgIGNvbG9yOiAjYjIwMDAwICFpbXBvcnRhbnQ7XHJcbiAgICBvcGFjaXR5OiAxMDAlICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIFxyXG4gIGlvbi1wcm9ncmVzcy1iYXIge1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjZThlOGU4O1xyXG4gICAgLS1wcm9ncmVzcy1iYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFhMmQsICMwMDRjOTcpO1xyXG4gICAgaGVpZ2h0OiA4cHggIWltcG9ydGFudDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDE2cHggIWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgLmZpbGUtY2FyZCB7XHJcbiAgICBib3gtc2hhZG93OiByZ2IoMTAwIDEwMCAxMTEgLyAyMCUpIDBweCA3cHggMjlweCAwcHg7XHJcbiAgICB3aWR0aDogYXV0bztcclxuICAgIGhlaWdodDogMTEwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIFxyXG4gICAgLnAtMSB7XHJcbiAgICAgIGhlaWdodDogODBweDtcclxuICAgIH1cclxuICBcclxuICAgIC5wYi0zIHtcclxuICAgICAgcGFkZGluZy1ib3R0b206IDFyZW0gIWltcG9ydGFudDtcclxuICAgIH1cclxuICBcclxuICAgIC5ib3JkZXItZW5kIHtcclxuICAgICAgYm9yZGVyLXJpZ2h0OiAxcHQgc29saWQgI2RlZTJlNiAhaW1wb3J0YW50O1xyXG4gICAgfVxyXG4gIFxyXG4gICAgcCB7XHJcbiAgICAgIG9wYWNpdHk6IDEwMCUgIWltcG9ydGFudDtcclxuICAgICAgY29sb3I6ICM3MDcwNzAgIWltcG9ydGFudDtcclxuICAgICAgZm9udC1zaXplOiAxM3B4ICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcbiAgXHJcbiAgICAuYXZhdGFyIHtcclxuICAgICAgaGVpZ2h0OiA2MHB4O1xyXG4gICAgICB3aWR0aDogNjBweDtcclxuICAgICAgYmFja2dyb3VuZDogI2VkZWNlYztcclxuICAgICAgbWFyZ2luOiAwIGF1dG87XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBcclxuICAgICAgLmJnLWdyYWRpZW50IHtcclxuICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOiAjZWRlY2VjICFpbXBvcnRhbnQ7XHJcbiAgICAgIH1cclxuICBcclxuICAgICAgaW1nIHtcclxuICAgICAgICBtYXJnaW4tdG9wOiAxNnB4O1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG4gIFxyXG4gIGlvbi1idXR0b24ubmV4dCB7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbiAgICBoZWlnaHQ6IDQwcHg7XHJcbiAgICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCwgIzAwNGM5Nyk7XHJcbiAgICAtLWNvbG9yOiAjZmZmZmZmO1xyXG4gIH1cclxuICBcclxuICBpb24tYnV0dG9uLmJhY2sge1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgaGVpZ2h0OiA0MHB4O1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjZmZmZmZmO1xyXG4gICAgLS1jb2xvcjogIzAwMDAwMCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICBcclxuICAud2lkdGhGb3JNYXQge1xyXG4gICAgd2lkdGg6IDkzJTtcclxuICAgIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgfVxyXG4gIC8vLy8vL1xyXG4gIC8vLyBidXR0b25zXHJcbiAgLmJ0bnMge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICB3aWR0aDogOTAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiA4MHB4O1xyXG4gICAgLmJ0bnMxIHtcclxuICAgICAgcGFkZGluZzogMTJweCAyOHB4O1xyXG4gICAgICB3aWR0aDogNDglO1xyXG4gICAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDM1cHg7XHJcbiAgICAgIGJhY2tncm91bmQ6IHJnYig1LCAyNiwgNDUpO1xyXG4gICAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoXHJcbiAgICAgICAgMTQ4ZGVnLFxyXG4gICAgICAgIHJnYmEoNSwgMjYsIDQ1LCAxKSAwJSxcclxuICAgICAgICByZ2JhKDAsIDc2LCAxNTEsIDEpIDEwMCVcclxuICAgICAgKTtcclxuICAgIH1cclxuICAgIC5idG5zMiB7XHJcbiAgICAgIHBhZGRpbmc6IDEycHggMjhweDtcclxuICAgICAgd2lkdGg6IDQ4JTtcclxuICAgICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgICBib3JkZXItcmFkaXVzOiAzNXB4O1xyXG4gICAgICBiYWNrZ3JvdW5kOiByZ2IoMjU1LCAyNTUsIDI1NSk7XHJcbiAgICAgIGJveC1zaGFkb3c6IDBweCAtMXB4IDEwcHggMHB4IHJnYmEoMCwgMCwgMCwgMC4xNSk7XHJcbiAgICAgIGNvbG9yOiBibGFjaztcclxuICAgIH1cclxuICB9XHJcbiAgLm1vdmVfdG9nZ2xlIHtcclxuICAgIC5hdXRvLW1hbnVhbC10b2dnbGUtZ3JvdXAge1xyXG4gICAgICBiYWNrZ3JvdW5kOiAjZjNmM2YzIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICBcclxuICAgICAgYm9yZGVyOiAxcHggc29saWQgIzAwNGM5NztcclxuICBcclxuICAgICAgYm9yZGVyLXJhZGl1czogMTJweCAhaW1wb3J0YW50O1xyXG4gIFxyXG4gICAgICBvcGFjaXR5OiAxO1xyXG4gICAgfVxyXG4gIFxyXG4gICAgLmF1dG8tbWFudWFsLXRvZ2dsZSB7XHJcbiAgICAgIHdpZHRoOiAxMDBweCAhaW1wb3J0YW50O1xyXG4gIFxyXG4gICAgICBjb2xvcjogIzZlNmU2ZSAhaW1wb3J0YW50O1xyXG4gIFxyXG4gICAgICBmb250OiBtZWRpdW0gcG9wcGlucyAhaW1wb3J0YW50O1xyXG4gICAgICAvLyBtYXJnaW4tbGVmdDotNTRweDtcclxuICAgICAgLy8gbWFyZ2luLXRvcDoycHg7XHJcbiAgICB9XHJcbiAgXHJcbiAgICAubWF0LWJ1dHRvbi10b2dnbGUtY2hlY2tlZCB7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDRjOTcgIWltcG9ydGFudDtcclxuICBcclxuICAgICAgY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XHJcbiAgXHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDEycHggIWltcG9ydGFudDtcclxuICAgIH1cclxuICB9XHJcbiAgXHJcbiAgLm9uLWljb24ge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICB9XHJcbiAgaW9uLXRvb2xiYXIge1xyXG4gICAgLS1kaXNwbGF5OiBmbGV4ICFpbXBvcnRhbnQ7XHJcbiAgICAtLWFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAtLWp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIC0tY29sb3I6ICMwMDRjOTc7XHJcbiAgICAtLXdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuICBpb24tYnV0dG9uLm5leHQge1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgaGVpZ2h0OiA0MHB4O1xyXG4gICAgLS1iYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFhMmQsICMwMDRjOTcpO1xyXG4gICAgLS1jb2xvcjogI2ZmZmZmZjtcclxuICB9XHJcbiAgXHJcbiAgaW9uLWJ1dHRvbi5jYW5jZWwge1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgaGVpZ2h0OiA0MHB4O1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjZmZmZmZmO1xyXG4gICAgLS1jb2xvcjogI2IyMDAwMDtcclxuICB9XHJcbiAgXHJcbiAgaW9uLWJ1dHRvbi5iYWNrIHtcclxuICAgIHdpZHRoOiAxNTBweDtcclxuICAgIGhlaWdodDogNDBweDtcclxuICAgIC0tYmFja2dyb3VuZDogI2ZmZmZmZjtcclxuICAgIC0tY29sb3I6ICMwMDAwMDAgIWltcG9ydGFudDtcclxuICB9XHJcbiAgLmZ1bGwtd2lkdGg5MC5tLTIge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgICBib3gtc2hhZG93OiAjNzA3MDcwO1xyXG4gIH1cclxuICBcclxuICAuZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJSAhaW1wb3J0YW50O1xyXG4gIH1cclxuICBcclxuICAuY2FyZC1iaW9tZXRyaWMge1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMjBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDE2cHg7XHJcbiAgXHJcbiAgICAuYmlvbWV0cmljLWRpdiB7XHJcbiAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xyXG4gICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgXHJcbiAgICAgIC5maW5nZXJQcmludCB7XHJcbiAgICAgICAgY29sb3I6ICMwMDRjOTc7XHJcbiAgICAgICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgICB9XHJcbiAgICAgIC5pcmlzaFRleHQge1xyXG4gICAgICAgIGNvbG9yOiAjNzA3MDcwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgfVxyXG4gICAgICAuZmFjZVNjYW4ge1xyXG4gICAgICAgIGNvbG9yOiAjNzA3MDcwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgfVxyXG4gICAgICAudmVydGljYWxMaW5lIHtcclxuICAgICAgICBib3JkZXI6IDFweCAjMDAwMDAwMTcgc29saWQ7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbiAgLmJpb2NsYXNzIHtcclxuICAgIG1hcmdpbi1sZWZ0OiAtOHB4O1xyXG4gIH1cclxuICBcclxuICBcclxuICAiXX0= */";
-
-/***/ }),
-
-/***/ 43369:
-/*!**************************************************************************************************************************!*\
-  !*** ./src/app/components/kyc-modal/customer-manual-verification/customer-manual-verification.component.scss?ngResource ***!
-  \**************************************************************************************************************************/
-/***/ ((module) => {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjdXN0b21lci1tYW51YWwtdmVyaWZpY2F0aW9uLmNvbXBvbmVudC5zY3NzIn0= */";
-
-/***/ }),
-
-/***/ 93895:
-/*!**************************************************************************!*\
-  !*** ./src/app/components/kyc-modal/kyc-modal.component.scss?ngResource ***!
-  \**************************************************************************/
-/***/ ((module) => {
-
-module.exports = ".segment-button-checked {\n  background-color: #d6dbea !important;\n  color: #ffffff;\n  border: 2px solid #3c75ae;\n}\n\n.verification_section .fingerscan {\n  padding: 5px 5px 5px 5px;\n}\n\n.verification_section .fingerscan .fingerprint_label {\n  margin-left: 28%;\n}\n\n.verification_section .irish {\n  padding: 5px 5px 5px 5px;\n}\n\n.verification_section .irish .irish_label {\n  margin-left: 28%;\n}\n\n.verification_section .facescan {\n  padding: 5px 5px 5px 5px;\n}\n\n.verification_section .facescan .facescan_label {\n  margin-left: 28%;\n}\n\n.new_cust {\n  width: 50%;\n  color: black;\n}\n\n.exist_cust {\n  color: black;\n}\n\n.uploadDocType {\n  margin-left: 120px;\n  height: min-content;\n}\n\n.uploadDocType .segment-button-checked {\n  background-color: #004385 !important;\n  color: #ffffff;\n  border: 2px solid #3c75ae;\n}\n\n.auto {\n  max-height: 74%;\n  max-width: 46%;\n}\n\n.otp_field {\n  border: 2px hidden gray;\n  box-shadow: 2px 2px 2px 2px rgb(184, 178, 178);\n  border-radius: 10px;\n  margin-top: 20px;\n  margin-left: 20%;\n}\n\n.mat-tab-nav-bar {\n  border-bottom: none;\n}\n\n.mat-tab-header {\n  border-bottom: none;\n  display: flex;\n  overflow: hidden;\n  position: relative;\n  flex-shrink: 0;\n}\n\n::ng-deep .mat-ink-bar {\n  height: 4px;\n  top: 8px;\n  border-radius: 10px;\n}\n\n::ng-deep .mat-tab-header {\n  border: none;\n}\n\n.auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  padding: 3px;\n  border-radius: 12px !important;\n  opacity: 1;\n  width: 100%;\n}\n\n.auto-manual-toggle {\n  color: #ffffff !important;\n  font: medium poppins !important;\n}\n\n::ng-deep .mat-button-toggle-label-content {\n  color: black;\n}\n\n.mat-button-toggle-checked {\n  background-color: #d6dbea !important;\n  color: rgba(0, 0, 0, 0) !important;\n  border-radius: 12px !important;\n  border: 1px solid #004c97;\n  width: 100%;\n}\n\n.AutomanualToggle .auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  border: 1px solid #004c97;\n  border-radius: 12px !important;\n  opacity: 1;\n}\n\n.AutomanualToggle .auto-manual-toggle {\n  width: 100px !important;\n  color: #6e6e6e !important;\n  font: medium poppins !important;\n}\n\n.AutomanualToggle .mat-button-toggle-checked {\n  background-color: #004c97 !important;\n  color: white !important;\n  border-radius: 12px !important;\n}\n\n.heading {\n  display: flex;\n  justify-content: space-around;\n  padding-top: 18px;\n}\n\n.customerHeading {\n  display: flex;\n  height: 50px;\n  align-items: center;\n}\n\n::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle,\n.mat-radio-outer-circle {\n  border-color: #004385 !important;\n  /* Sets outer circle & click effect color */\n}\n\n::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {\n  background-color: #004385 !important;\n  /* Sets inner circle color */\n}\n\nmat-card.otpandbioclass {\n  border-radius: 12px;\n  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.0901960784);\n}\n\n.widthclass {\n  display: inline-block;\n  width: 45%;\n}\n\n.margin {\n  margin-right: 30px;\n}\n\n.otpclass {\n  margin-left: 16px;\n}\n\n.bioclass {\n  margin-left: 16px;\n}\n\ninput::placeholder {\n  text-transform: capitalize;\n  letter-spacing: 7.2px;\n  text-align: center;\n}\n\n.customerHeading2 {\n  margin-top: 10px;\n}\n\n.customerHeading3 {\n  display: flex;\n  margin-bottom: 20px;\n}\n\n.choose {\n  padding-left: 10px;\n  margin-right: 10%;\n}\n\n.ion_radio_cards {\n  margin-top: 10px;\n  width: 100%;\n  margin-left: -20px;\n  margin-right: 10px;\n}\n\n.card1 {\n  border-radius: 15px;\n  width: 200px;\n  box-shadow: rgba(0, 0, 0, 0.0705882353);\n  border: 1px solid grey;\n}\n\n.card2 {\n  border-radius: 15px;\n  width: 200px;\n  box-shadow: rgba(0, 0, 0, 0.0705882353);\n  border: 1px solid grey;\n}\n\n.new_manual[_ngcontent-nkd-c420] {\n  margin-left: 10px;\n  margin-top: 10px;\n  margin-right: 3px;\n}\n\n.file-content-wrapper {\n  margin-top: 160px !important;\n}\n\n.mt-16 {\n  margin-top: 16px;\n}\n\n.cat-text {\n  color: #8d8d8d !important;\n  font-size: 12px !important;\n  opacity: 100%;\n  margin-bottom: 8px !important;\n  margin-top: -6px !important;\n}\n\nh6.cat-head {\n  color: #000000;\n  font-size: 20px;\n}\n\n.card {\n  width: auto;\n  height: 85px;\n  padding: 16px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n  border-radius: 10px;\n  margin-bottom: 10px;\n}\n\n.chq-text {\n  color: #000000;\n  font-size: 16px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: pre-line;\n  margin-top: 0px !important;\n  margin-bottom: 0px !important;\n}\n\n.danger {\n  color: #b20000 !important;\n  opacity: 100% !important;\n}\n\nion-progress-bar {\n  --background: #e8e8e8;\n  --progress-background: linear-gradient(90deg, #051a2d, #004c97);\n  height: 8px !important;\n  border-radius: 16px !important;\n}\n\n.file-card {\n  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n  width: auto;\n  height: 110px;\n  border-radius: 10px;\n  text-align: center;\n}\n\n.file-card .p-1 {\n  height: 80px;\n}\n\n.file-card .pb-3 {\n  padding-bottom: 1rem !important;\n}\n\n.file-card .border-end {\n  border-right: 1pt solid #dee2e6 !important;\n}\n\n.file-card p {\n  opacity: 100% !important;\n  color: #707070 !important;\n  font-size: 13px !important;\n}\n\n.file-card .avatar {\n  height: 60px;\n  width: 60px;\n  background: #edecec;\n  margin: 0 auto;\n  border-radius: 5px;\n}\n\n.file-card .avatar .bg-gradient {\n  background-image: #edecec !important;\n}\n\n.file-card .avatar img {\n  margin-top: 16px;\n}\n\nion-button.next {\n  width: 150px;\n  height: 40px;\n  --background: linear-gradient(90deg, #051a2d, #004c97);\n  --color: #ffffff;\n}\n\nion-button.back {\n  width: 150px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #000000 !important;\n}\n\n.widthForMat {\n  width: 93%;\n  margin-top: 20px;\n}\n\n.btns {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 90%;\n  margin-left: 10px;\n  margin-top: 80px;\n}\n\n.btns .btns1 {\n  padding: 12px 28px;\n  width: 48%;\n  font-size: 16px;\n  font-weight: 500;\n  border-radius: 35px;\n  background: rgb(5, 26, 45);\n  background: linear-gradient(148deg, rgb(5, 26, 45) 0%, rgb(0, 76, 151) 100%);\n}\n\n.btns .btns2 {\n  padding: 12px 28px;\n  width: 48%;\n  font-size: 16px;\n  font-weight: 500;\n  border-radius: 35px;\n  background: rgb(255, 255, 255);\n  box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.15);\n  color: black;\n}\n\n.move_toggle .auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  border: 1px solid #004c97;\n  border-radius: 12px !important;\n  opacity: 1;\n}\n\n.move_toggle .auto-manual-toggle {\n  width: 100px !important;\n  color: #6e6e6e !important;\n  font: medium poppins !important;\n}\n\n.move_toggle .mat-button-toggle-checked {\n  background-color: #004c97 !important;\n  color: white !important;\n  border-radius: 12px !important;\n}\n\n.on-icon {\n  display: flex;\n}\n\nion-toolbar {\n  --display: flex !important;\n  --align-items: center;\n  --justify-content: space-between;\n  --color: #004c97;\n  --width: 100%;\n}\n\nion-button.next {\n  width: 150px;\n  height: 40px;\n  --background: linear-gradient(90deg, #051a2d, #004c97);\n  --color: #ffffff;\n}\n\nion-button.cancel {\n  width: 150px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #b20000;\n}\n\nion-button.back {\n  width: 150px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #000000 !important;\n}\n\n.full-width90.m-2 {\n  margin-left: 10px;\n  box-shadow: #707070;\n}\n\n.full-width {\n  width: 100% !important;\n}\n\n.card-biometric {\n  margin-right: 20px;\n  margin-top: 20px;\n  border-radius: 16px;\n}\n\n.card-biometric .biometric-div {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  text-align: center;\n}\n\n.card-biometric .biometric-div .fingerPrint {\n  color: #004c97;\n  font-size: 12px;\n}\n\n.card-biometric .biometric-div .irishText {\n  color: #707070;\n  font-size: 12px;\n}\n\n.card-biometric .biometric-div .faceScan {\n  color: #707070;\n  font-size: 12px;\n}\n\n.card-biometric .biometric-div .verticalLine {\n  border: 1px rgba(0, 0, 0, 0.0901960784) solid;\n}\n\n.bioclass {\n  margin-left: -8px;\n}\n\nh3 {\n  font-size: 15px;\n}\n\n.toggle-customer-details {\n  padding-top: 10px;\n}\n\nion-button.man {\n  float: right;\n  --background: #004385;\n  --color: #ffffff;\n  --border-radius: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImt5Yy1tb2RhbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLG9DQUFBO0VBQ0EsY0FBQTtFQUlBLHlCQUFBO0FBSEY7O0FBNkJFO0VBQ0Usd0JBQUE7QUExQko7O0FBMkJJO0VBQ0UsZ0JBQUE7QUF6Qk47O0FBNEJFO0VBQ0Usd0JBQUE7QUExQko7O0FBMkJJO0VBQ0UsZ0JBQUE7QUF6Qk47O0FBNEJFO0VBQ0Usd0JBQUE7QUExQko7O0FBMkJJO0VBQ0UsZ0JBQUE7QUF6Qk47O0FBOEJBO0VBQ0UsVUFBQTtFQUNBLFlBQUE7QUEzQkY7O0FBaUNBO0VBQ0UsWUFBQTtBQTlCRjs7QUFnQ0E7RUFDRSxrQkFBQTtFQUNBLG1CQUFBO0FBN0JGOztBQThCRTtFQUNFLG9DQUFBO0VBQ0EsY0FBQTtFQUdBLHlCQUFBO0FBOUJKOztBQWlDQTtFQUVFLGVBQUE7RUFDQSxjQUFBO0FBL0JGOztBQXNDQTtFQUNFLHVCQUFBO0VBQ0EsOENBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7QUFuQ0Y7O0FBcUNBO0VBQ0UsbUJBQUE7QUFsQ0Y7O0FBb0NBO0VBQ0UsbUJBQUE7RUFDQSxhQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7QUFqQ0Y7O0FBMENBO0VBQ0UsV0FBQTtFQUNBLFFBQUE7RUFDQSxtQkFBQTtBQXZDRjs7QUF5Q0E7RUFDRSxZQUFBO0FBdENGOztBQTZDQTtFQUNFLCtDQUFBO0VBQ0EsWUFBQTtFQUNBLDhCQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7QUExQ0Y7O0FBNkNBO0VBRUUseUJBQUE7RUFDQSwrQkFBQTtBQTNDRjs7QUE4Q0E7RUFDRSxZQUFBO0FBM0NGOztBQThDQTtFQUNFLG9DQUFBO0VBQ0Esa0NBQUE7RUFDQSw4QkFBQTtFQUNBLHlCQUFBO0VBQ0EsV0FBQTtBQTNDRjs7QUErQ0U7RUFDRSwrQ0FBQTtFQUVBLHlCQUFBO0VBRUEsOEJBQUE7RUFFQSxVQUFBO0FBL0NKOztBQWtERTtFQUNFLHVCQUFBO0VBRUEseUJBQUE7RUFFQSwrQkFBQTtBQWxESjs7QUFxREU7RUFDRSxvQ0FBQTtFQUVBLHVCQUFBO0VBRUEsOEJBQUE7QUFyREo7O0FBeURBO0VBQ0UsYUFBQTtFQUNBLDZCQUFBO0VBQ0EsaUJBQUE7QUF0REY7O0FBd0RBO0VBQ0UsYUFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtBQXJERjs7QUF5REE7O0VBSUUsZ0NBQUE7RUFDQSwyQ0FBQTtBQXhERjs7QUEwREE7RUFDRSxvQ0FBQTtFQUNBLDRCQUFBO0FBdkRGOztBQXlEQTtFQUNFLG1CQUFBO0VBQ0Esb0RBQUE7QUF0REY7O0FBeURBO0VBQ0UscUJBQUE7RUFDQSxVQUFBO0FBdERGOztBQXdEQTtFQUNFLGtCQUFBO0FBckRGOztBQXVEQTtFQUNFLGlCQUFBO0FBcERGOztBQXNEQTtFQUNFLGlCQUFBO0FBbkRGOztBQXNEQTtFQUNFLDBCQUFBO0VBQ0EscUJBQUE7RUFDQSxrQkFBQTtBQW5ERjs7QUFzREE7RUFDRSxnQkFBQTtBQW5ERjs7QUFxREE7RUFDRSxhQUFBO0VBR0EsbUJBQUE7QUFwREY7O0FBc0RBO0VBQ0Usa0JBQUE7RUFDQSxpQkFBQTtBQW5ERjs7QUFzREE7RUFDRSxnQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0FBbkRGOztBQXFEQTtFQUNFLG1CQUFBO0VBQ0EsWUFBQTtFQUNBLHVDQUFBO0VBQ0Esc0JBQUE7QUFsREY7O0FBb0RBO0VBQ0UsbUJBQUE7RUFDQSxZQUFBO0VBQ0EsdUNBQUE7RUFDQSxzQkFBQTtBQWpERjs7QUFtREE7RUFDRSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7QUFoREY7O0FBb0RBO0VBQ0UsNEJBQUE7QUFqREY7O0FBb0RBO0VBQ0UsZ0JBQUE7QUFqREY7O0FBb0RBO0VBQ0UseUJBQUE7RUFDQSwwQkFBQTtFQUNBLGFBQUE7RUFDQSw2QkFBQTtFQUNBLDJCQUFBO0FBakRGOztBQW9EQTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBakRGOztBQW9EQTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGlEQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtBQWpERjs7QUFvREE7RUFDRSxjQUFBO0VBQ0EsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1QkFBQTtFQUNBLHFCQUFBO0VBQ0EsMEJBQUE7RUFDQSw2QkFBQTtBQWpERjs7QUFvREE7RUFDRSx5QkFBQTtFQUNBLHdCQUFBO0FBakRGOztBQW9EQTtFQUNFLHFCQUFBO0VBQ0EsK0RBQUE7RUFDQSxzQkFBQTtFQUNBLDhCQUFBO0FBakRGOztBQW9EQTtFQUNFLHFEQUFBO0VBQ0EsV0FBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FBakRGOztBQW1ERTtFQUNFLFlBQUE7QUFqREo7O0FBb0RFO0VBQ0UsK0JBQUE7QUFsREo7O0FBcURFO0VBQ0UsMENBQUE7QUFuREo7O0FBc0RFO0VBQ0Usd0JBQUE7RUFDQSx5QkFBQTtFQUNBLDBCQUFBO0FBcERKOztBQXVERTtFQUNFLFlBQUE7RUFDQSxXQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7QUFyREo7O0FBdURJO0VBQ0Usb0NBQUE7QUFyRE47O0FBd0RJO0VBQ0UsZ0JBQUE7QUF0RE47O0FBMkRBO0VBQ0UsWUFBQTtFQUNBLFlBQUE7RUFDQSxzREFBQTtFQUNBLGdCQUFBO0FBeERGOztBQTJEQTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EscUJBQUE7RUFDQSwyQkFBQTtBQXhERjs7QUEyREE7RUFDRSxVQUFBO0VBQ0EsZ0JBQUE7QUF4REY7O0FBNERBO0VBQ0UsYUFBQTtFQUNBLDhCQUFBO0VBQ0EsbUJBQUE7RUFDQSxVQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQXpERjs7QUEwREU7RUFDRSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLDBCQUFBO0VBQ0EsNEVBQUE7QUF4REo7O0FBOERFO0VBQ0Usa0JBQUE7RUFDQSxVQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSw4QkFBQTtFQUNBLGlEQUFBO0VBQ0EsWUFBQTtBQTVESjs7QUFnRUU7RUFDRSwrQ0FBQTtFQUVBLHlCQUFBO0VBRUEsOEJBQUE7RUFFQSxVQUFBO0FBaEVKOztBQW1FRTtFQUNFLHVCQUFBO0VBRUEseUJBQUE7RUFFQSwrQkFBQTtBQW5FSjs7QUF3RUU7RUFDRSxvQ0FBQTtFQUVBLHVCQUFBO0VBRUEsOEJBQUE7QUF4RUo7O0FBNEVBO0VBQ0UsYUFBQTtBQXpFRjs7QUEyRUE7RUFDRSwwQkFBQTtFQUNBLHFCQUFBO0VBQ0EsZ0NBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUF4RUY7O0FBMkVBO0VBQ0UsWUFBQTtFQUNBLFlBQUE7RUFDQSxzREFBQTtFQUNBLGdCQUFBO0FBeEVGOztBQTJFQTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EscUJBQUE7RUFDQSxnQkFBQTtBQXhFRjs7QUEyRUE7RUFDRSxZQUFBO0VBQ0EsWUFBQTtFQUNBLHFCQUFBO0VBQ0EsMkJBQUE7QUF4RUY7O0FBMEVBO0VBQ0UsaUJBQUE7RUFDQSxtQkFBQTtBQXZFRjs7QUEwRUE7RUFDRSxzQkFBQTtBQXZFRjs7QUEwRUE7RUFDRSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7QUF2RUY7O0FBeUVFO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsNkJBQUE7RUFDQSxrQkFBQTtBQXZFSjs7QUF5RUk7RUFDRSxjQUFBO0VBQ0EsZUFBQTtBQXZFTjs7QUF5RUk7RUFDRSxjQUFBO0VBQ0EsZUFBQTtBQXZFTjs7QUF5RUk7RUFDRSxjQUFBO0VBQ0EsZUFBQTtBQXZFTjs7QUF5RUk7RUFDRSw2Q0FBQTtBQXZFTjs7QUEyRUE7RUFDRSxpQkFBQTtBQXhFRjs7QUEwRUE7RUFDRSxlQUFBO0FBdkVGOztBQXlFQTtFQUNFLGlCQUFBO0FBdEVGOztBQXdFQTtFQUNJLFlBQUE7RUFDRixxQkFBQTtFQUNBLGdCQUFBO0VBQ0MscUJBQUE7QUFyRUgiLCJmaWxlIjoia3ljLW1vZGFsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL25ld1xyXG4uc2VnbWVudC1idXR0b24tY2hlY2tlZCB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Q2ZGJlYSAhaW1wb3J0YW50O1xyXG4gIGNvbG9yOiAjZmZmZmZmO1xyXG4gIC8vIGJvcmRlci1jb2xvcjogIzNDNzVBRTtcclxuICAvLyBib3JkZXItd2lkdGg6IG1lZGl1bTtcclxuXHJcbiAgYm9yZGVyOiAycHggc29saWQgIzNjNzVhZTtcclxufVxyXG4vLyBpb24tc2VnbWVudCB7XHJcbi8vICAgbWF4LXdpZHRoOiA0NiU7XHJcbi8vICAgbWF4LWhlaWdodDogNzQlO1xyXG4vLyAgIGJvcmRlci1yYWRpdXM6IDEzcHg7XHJcbi8vIH1cclxuLy8gfVxyXG4vLyBpb24tc2VnbWVudC1idXR0b24ge1xyXG4vLyAgIHBhZGRpbmc6IDRweCAwO1xyXG4vLyAgIG1hcmdpbjogMDtcclxuLy8gICBib3JkZXItcmFkaXVzOiAxM3B4O1xyXG4vLyAgIC0tYmFja2dyb3VuZC1jaGVja2VkOiNENkRCRUEgIWltcG9ydGFudDtcclxuLy8gICAvKiAtLWNvbG9yOiAjM0M3NUFFOyAqL1xyXG4vLyAgIC8vIC0tY29sb3ItY2hlY2tlZDogd2hpdGU7XHJcbi8vICAgLy8gLS1pbmRpY2F0b3ItY29sb3I6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7XHJcbi8vICAgYm9yZGVyLWNvbG9yOiAjM0M3NUFFO1xyXG4vLyB9XHJcbi8vIC5leGlzdGluZ19zZWN0aW9ue1xyXG4vLyAgIGlvbi1pbnB1dHtcclxuLy8gICAgIHdpZHRoOjQwMHB4O1xyXG4vLyAgICAgbWFyZ2luLWxlZnQ6MDtcclxuXHJcbi8vICAgfVxyXG4vLyB9XHJcbi52ZXJpZmljYXRpb25fc2VjdGlvbiB7XHJcbiAgLmZpbmdlcnNjYW4ge1xyXG4gICAgcGFkZGluZzogNXB4IDVweCA1cHggNXB4O1xyXG4gICAgLmZpbmdlcnByaW50X2xhYmVsIHtcclxuICAgICAgbWFyZ2luLWxlZnQ6IDI4JTtcclxuICAgIH1cclxuICB9XHJcbiAgLmlyaXNoIHtcclxuICAgIHBhZGRpbmc6IDVweCA1cHggNXB4IDVweDtcclxuICAgIC5pcmlzaF9sYWJlbCB7XHJcbiAgICAgIG1hcmdpbi1sZWZ0OiAyOCU7XHJcbiAgICB9XHJcbiAgfVxyXG4gIC5mYWNlc2NhbiB7XHJcbiAgICBwYWRkaW5nOiA1cHggNXB4IDVweCA1cHg7XHJcbiAgICAuZmFjZXNjYW5fbGFiZWwge1xyXG4gICAgICBtYXJnaW4tbGVmdDogMjglO1xyXG4gICAgfVxyXG4gIH1cclxufVxyXG5cclxuLm5ld19jdXN0IHtcclxuICB3aWR0aDogNTAlO1xyXG4gIGNvbG9yOiBibGFjaztcclxufVxyXG4vLyAubmV3X2N1c3Q6dmlzaXRlZHtcclxuLy8gICBiYWNrZ3JvdW5kLWNvbG9yOiBhcXVhO1xyXG5cclxuLy8gfVxyXG4uZXhpc3RfY3VzdCB7XHJcbiAgY29sb3I6IGJsYWNrO1xyXG59XHJcbi51cGxvYWREb2NUeXBlIHtcclxuICBtYXJnaW4tbGVmdDogMTIwcHg7XHJcbiAgaGVpZ2h0OiBtaW4tY29udGVudDtcclxuICAuc2VnbWVudC1idXR0b24tY2hlY2tlZCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA0Mzg1ICFpbXBvcnRhbnQ7XHJcbiAgICBjb2xvcjogI2ZmZmZmZjtcclxuICAgIC8vIGJvcmRlci1jb2xvcjogIzNDNzVBRTtcclxuICAgIC8vIGJvcmRlci13aWR0aDogbWVkaXVtO1xyXG4gICAgYm9yZGVyOiAycHggc29saWQgIzNjNzVhZTtcclxuICB9XHJcbn1cclxuLmF1dG8ge1xyXG4gIC8vIHdpZHRoOiA0MHB4O1xyXG4gIG1heC1oZWlnaHQ6IDc0JTtcclxuICBtYXgtd2lkdGg6IDQ2JTtcclxufVxyXG4vLyAubWFudWFsIHtcclxuLy8gd2lkdGg6NDBweDtcclxuLy8gbWF4LWhlaWdodDogNzQlO1xyXG4vLyBtYXgtd2lkdGg6NDYlO1xyXG4vLyB9XHJcbi5vdHBfZmllbGQge1xyXG4gIGJvcmRlcjogMnB4IGhpZGRlbiBncmF5O1xyXG4gIGJveC1zaGFkb3c6IDJweCAycHggMnB4IDJweCByZ2IoMTg0LCAxNzgsIDE3OCk7XHJcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gIG1hcmdpbi1sZWZ0OiAyMCU7XHJcbn1cclxuLm1hdC10YWItbmF2LWJhciB7XHJcbiAgYm9yZGVyLWJvdHRvbTogbm9uZTtcclxufVxyXG4ubWF0LXRhYi1oZWFkZXIge1xyXG4gIGJvcmRlci1ib3R0b206IG5vbmU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBmbGV4LXNocmluazogMDtcclxufVxyXG4vLyAubWF0LWluay1iYXJ7XHJcbi8vICAgZGlzcGxheTogZmxleDtcclxuLy8gICBvdmVyZmxvdzogaGlkZGVuO1xyXG4vLyAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuLy8gICBmbGV4LXNocmluazogMDtcclxuLy8gICB0b3A6IDBweDtcclxuLy8gfVxyXG46Om5nLWRlZXAgLm1hdC1pbmstYmFyIHtcclxuICBoZWlnaHQ6IDRweDtcclxuICB0b3A6IDhweDtcclxuICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG59XHJcbjo6bmctZGVlcCAubWF0LXRhYi1oZWFkZXIge1xyXG4gIGJvcmRlcjogbm9uZTtcclxufVxyXG5cclxuLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vXHJcbi8vL1xyXG4vLy9cclxuXHJcbi5hdXRvLW1hbnVhbC10b2dnbGUtZ3JvdXAge1xyXG4gIGJhY2tncm91bmQ6ICNmM2YzZjMgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIHBhZGRpbmc6IDNweDtcclxuICBib3JkZXItcmFkaXVzOiAxMnB4ICFpbXBvcnRhbnQ7XHJcbiAgb3BhY2l0eTogMTtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLmF1dG8tbWFudWFsLXRvZ2dsZSB7XHJcbiAgLy8gd2lkdGg6IDEwMHB4ICFpbXBvcnRhbnQ7XHJcbiAgY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDtcclxuICBmb250OiBtZWRpdW0gcG9wcGlucyAhaW1wb3J0YW50O1xyXG59XHJcblxyXG46Om5nLWRlZXAgLm1hdC1idXR0b24tdG9nZ2xlLWxhYmVsLWNvbnRlbnQge1xyXG4gIGNvbG9yOiBibGFjaztcclxufVxyXG5cclxuLm1hdC1idXR0b24tdG9nZ2xlLWNoZWNrZWQge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNkNmRiZWEgIWltcG9ydGFudDtcclxuICBjb2xvcjogIzAwMDAwMDAwICFpbXBvcnRhbnQ7XHJcbiAgYm9yZGVyLXJhZGl1czogMTJweCAhaW1wb3J0YW50O1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICMwMDRjOTc7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi5BdXRvbWFudWFsVG9nZ2xlIHtcclxuICAuYXV0by1tYW51YWwtdG9nZ2xlLWdyb3VwIHtcclxuICAgIGJhY2tncm91bmQ6ICNmM2YzZjMgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG5cclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICMwMDRjOTc7XHJcblxyXG4gICAgYm9yZGVyLXJhZGl1czogMTJweCAhaW1wb3J0YW50O1xyXG5cclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgfVxyXG5cclxuICAuYXV0by1tYW51YWwtdG9nZ2xlIHtcclxuICAgIHdpZHRoOiAxMDBweCAhaW1wb3J0YW50O1xyXG5cclxuICAgIGNvbG9yOiAjNmU2ZTZlICFpbXBvcnRhbnQ7XHJcblxyXG4gICAgZm9udDogbWVkaXVtIHBvcHBpbnMgIWltcG9ydGFudDtcclxuICB9XHJcblxyXG4gIC5tYXQtYnV0dG9uLXRvZ2dsZS1jaGVja2VkIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDRjOTcgIWltcG9ydGFudDtcclxuXHJcbiAgICBjb2xvcjogd2hpdGUgIWltcG9ydGFudDtcclxuXHJcbiAgICBib3JkZXItcmFkaXVzOiAxMnB4ICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG59XHJcblxyXG4uaGVhZGluZyB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcclxuICBwYWRkaW5nLXRvcDogMThweDtcclxufVxyXG4uY3VzdG9tZXJIZWFkaW5nIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGhlaWdodDogNTBweDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIC8vIG1hcmdpbi1sZWZ0Oi0xNHB4O1xyXG59XHJcblxyXG46Om5nLWRlZXBcclxuICAubWF0LXJhZGlvLWJ1dHRvbi5tYXQtYWNjZW50Lm1hdC1yYWRpby1jaGVja2VkXHJcbiAgLm1hdC1yYWRpby1vdXRlci1jaXJjbGUsXHJcbi5tYXQtcmFkaW8tb3V0ZXItY2lyY2xlIHtcclxuICBib3JkZXItY29sb3I6ICMwMDQzODUgIWltcG9ydGFudDtcclxuICAvKiBTZXRzIG91dGVyIGNpcmNsZSAmIGNsaWNrIGVmZmVjdCBjb2xvciAqL1xyXG59XHJcbjo6bmctZGVlcCAubWF0LXJhZGlvLWJ1dHRvbi5tYXQtYWNjZW50IC5tYXQtcmFkaW8taW5uZXItY2lyY2xlIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA0Mzg1ICFpbXBvcnRhbnQ7XHJcbiAgLyogU2V0cyBpbm5lciBjaXJjbGUgY29sb3IgKi9cclxufVxyXG5tYXQtY2FyZC5vdHBhbmRiaW9jbGFzcyB7XHJcbiAgYm9yZGVyLXJhZGl1czogMTJweDtcclxuICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDE3O1xyXG59XHJcblxyXG4ud2lkdGhjbGFzcyB7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIHdpZHRoOiA0NSU7XHJcbn1cclxuLm1hcmdpbiB7XHJcbiAgbWFyZ2luLXJpZ2h0OiAzMHB4O1xyXG59XHJcbi5vdHBjbGFzcyB7XHJcbiAgbWFyZ2luLWxlZnQ6IDE2cHg7XHJcbn1cclxuLmJpb2NsYXNzIHtcclxuICBtYXJnaW4tbGVmdDogMTZweDtcclxufVxyXG5cclxuaW5wdXQ6OnBsYWNlaG9sZGVyIHtcclxuICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcclxuICBsZXR0ZXItc3BhY2luZzogNy4ycHg7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG4uY3VzdG9tZXJIZWFkaW5nMiB7XHJcbiAgbWFyZ2luLXRvcDogMTBweDtcclxufVxyXG4uY3VzdG9tZXJIZWFkaW5nMyB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICAvLyAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XHJcbiAgLy8gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG59XHJcbi5jaG9vc2Uge1xyXG4gIHBhZGRpbmctbGVmdDogMTBweDtcclxuICBtYXJnaW4tcmlnaHQ6IDEwJTtcclxufVxyXG5cclxuLmlvbl9yYWRpb19jYXJkcyB7XHJcbiAgbWFyZ2luLXRvcDogMTBweDtcclxuICB3aWR0aDogMTAwJTtcclxuICBtYXJnaW4tbGVmdDogLTIwcHg7XHJcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xyXG59XHJcbi5jYXJkMSB7XHJcbiAgYm9yZGVyLXJhZGl1czogMTVweDtcclxuICB3aWR0aDogMjAwcHg7XHJcbiAgYm94LXNoYWRvdzogIzAwMDAwMDEyO1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkIGdyZXk7XHJcbn1cclxuLmNhcmQyIHtcclxuICBib3JkZXItcmFkaXVzOiAxNXB4O1xyXG4gIHdpZHRoOiAyMDBweDtcclxuICBib3gtc2hhZG93OiAjMDAwMDAwMTI7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgZ3JleTtcclxufVxyXG4ubmV3X21hbnVhbFtfbmdjb250ZW50LW5rZC1jNDIwXSB7XHJcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgbWFyZ2luLXRvcDogMTBweDtcclxuICBtYXJnaW4tcmlnaHQ6IDNweDtcclxufVxyXG5cclxuLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy9maWxlIHVwbG9hZCBjc3NcclxuLmZpbGUtY29udGVudC13cmFwcGVyIHtcclxuICBtYXJnaW4tdG9wOiAxNjBweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4ubXQtMTYge1xyXG4gIG1hcmdpbi10b3A6IDE2cHg7XHJcbn1cclxuXHJcbi5jYXQtdGV4dCB7XHJcbiAgY29sb3I6ICM4ZDhkOGQgIWltcG9ydGFudDtcclxuICBmb250LXNpemU6IDEycHggIWltcG9ydGFudDtcclxuICBvcGFjaXR5OiAxMDAlO1xyXG4gIG1hcmdpbi1ib3R0b206IDhweCAhaW1wb3J0YW50O1xyXG4gIG1hcmdpbi10b3A6IC02cHggIWltcG9ydGFudDtcclxufVxyXG5cclxuaDYuY2F0LWhlYWQge1xyXG4gIGNvbG9yOiAjMDAwMDAwO1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxufVxyXG5cclxuLmNhcmQge1xyXG4gIHdpZHRoOiBhdXRvO1xyXG4gIGhlaWdodDogODVweDtcclxuICBwYWRkaW5nOiAxNnB4O1xyXG4gIGJveC1zaGFkb3c6IHJnYig5OSA5OSA5OSAvIDIwJSkgMHB4IDJweCA4cHggMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxufVxyXG5cclxuLmNocS10ZXh0IHtcclxuICBjb2xvcjogIzAwMDAwMDtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xyXG4gIHdoaXRlLXNwYWNlOiBwcmUtbGluZTtcclxuICBtYXJnaW4tdG9wOiAwcHggIWltcG9ydGFudDtcclxuICBtYXJnaW4tYm90dG9tOiAwcHggIWltcG9ydGFudDtcclxufVxyXG5cclxuLmRhbmdlciB7XHJcbiAgY29sb3I6ICNiMjAwMDAgIWltcG9ydGFudDtcclxuICBvcGFjaXR5OiAxMDAlICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmlvbi1wcm9ncmVzcy1iYXIge1xyXG4gIC0tYmFja2dyb3VuZDogI2U4ZThlODtcclxuICAtLXByb2dyZXNzLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCwgIzAwNGM5Nyk7XHJcbiAgaGVpZ2h0OiA4cHggIWltcG9ydGFudDtcclxuICBib3JkZXItcmFkaXVzOiAxNnB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5maWxlLWNhcmQge1xyXG4gIGJveC1zaGFkb3c6IHJnYigxMDAgMTAwIDExMSAvIDIwJSkgMHB4IDdweCAyOXB4IDBweDtcclxuICB3aWR0aDogYXV0bztcclxuICBoZWlnaHQ6IDExMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG5cclxuICAucC0xIHtcclxuICAgIGhlaWdodDogODBweDtcclxuICB9XHJcblxyXG4gIC5wYi0zIHtcclxuICAgIHBhZGRpbmctYm90dG9tOiAxcmVtICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG5cclxuICAuYm9yZGVyLWVuZCB7XHJcbiAgICBib3JkZXItcmlnaHQ6IDFwdCBzb2xpZCAjZGVlMmU2ICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG5cclxuICBwIHtcclxuICAgIG9wYWNpdHk6IDEwMCUgIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiAjNzA3MDcwICFpbXBvcnRhbnQ7XHJcbiAgICBmb250LXNpemU6IDEzcHggIWltcG9ydGFudDtcclxuICB9XHJcblxyXG4gIC5hdmF0YXIge1xyXG4gICAgaGVpZ2h0OiA2MHB4O1xyXG4gICAgd2lkdGg6IDYwcHg7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZWRlY2VjO1xyXG4gICAgbWFyZ2luOiAwIGF1dG87XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcblxyXG4gICAgLmJnLWdyYWRpZW50IHtcclxuICAgICAgYmFja2dyb3VuZC1pbWFnZTogI2VkZWNlYyAhaW1wb3J0YW50O1xyXG4gICAgfVxyXG5cclxuICAgIGltZyB7XHJcbiAgICAgIG1hcmdpbi10b3A6IDE2cHg7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcblxyXG5pb24tYnV0dG9uLm5leHQge1xyXG4gIHdpZHRoOiAxNTBweDtcclxuICBoZWlnaHQ6IDQwcHg7XHJcbiAgLS1iYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFhMmQsICMwMDRjOTcpO1xyXG4gIC0tY29sb3I6ICNmZmZmZmY7XHJcbn1cclxuXHJcbmlvbi1idXR0b24uYmFjayB7XHJcbiAgd2lkdGg6IDE1MHB4O1xyXG4gIGhlaWdodDogNDBweDtcclxuICAtLWJhY2tncm91bmQ6ICNmZmZmZmY7XHJcbiAgLS1jb2xvcjogIzAwMDAwMCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4ud2lkdGhGb3JNYXQge1xyXG4gIHdpZHRoOiA5MyU7XHJcbiAgbWFyZ2luLXRvcDogMjBweDtcclxufVxyXG4vLy8vLy9cclxuLy8vIGJ1dHRvbnNcclxuLmJ0bnMge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgd2lkdGg6IDkwJTtcclxuICBtYXJnaW4tbGVmdDogMTBweDtcclxuICBtYXJnaW4tdG9wOiA4MHB4O1xyXG4gIC5idG5zMSB7XHJcbiAgICBwYWRkaW5nOiAxMnB4IDI4cHg7XHJcbiAgICB3aWR0aDogNDglO1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDM1cHg7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2IoNSwgMjYsIDQ1KTtcclxuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudChcclxuICAgICAgMTQ4ZGVnLFxyXG4gICAgICByZ2JhKDUsIDI2LCA0NSwgMSkgMCUsXHJcbiAgICAgIHJnYmEoMCwgNzYsIDE1MSwgMSkgMTAwJVxyXG4gICAgKTtcclxuICB9XHJcbiAgLmJ0bnMyIHtcclxuICAgIHBhZGRpbmc6IDEycHggMjhweDtcclxuICAgIHdpZHRoOiA0OCU7XHJcbiAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMzVweDtcclxuICAgIGJhY2tncm91bmQ6IHJnYigyNTUsIDI1NSwgMjU1KTtcclxuICAgIGJveC1zaGFkb3c6IDBweCAtMXB4IDEwcHggMHB4IHJnYmEoMCwgMCwgMCwgMC4xNSk7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgfVxyXG59XHJcbi5tb3ZlX3RvZ2dsZSB7XHJcbiAgLmF1dG8tbWFudWFsLXRvZ2dsZS1ncm91cCB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZjNmM2YzIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuXHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjMDA0Yzk3O1xyXG5cclxuICAgIGJvcmRlci1yYWRpdXM6IDEycHggIWltcG9ydGFudDtcclxuXHJcbiAgICBvcGFjaXR5OiAxO1xyXG4gIH1cclxuXHJcbiAgLmF1dG8tbWFudWFsLXRvZ2dsZSB7XHJcbiAgICB3aWR0aDogMTAwcHggIWltcG9ydGFudDtcclxuXHJcbiAgICBjb2xvcjogIzZlNmU2ZSAhaW1wb3J0YW50O1xyXG5cclxuICAgIGZvbnQ6IG1lZGl1bSBwb3BwaW5zICFpbXBvcnRhbnQ7XHJcbiAgICAvLyBtYXJnaW4tbGVmdDotNTRweDtcclxuICAgIC8vIG1hcmdpbi10b3A6MnB4O1xyXG4gIH1cclxuXHJcbiAgLm1hdC1idXR0b24tdG9nZ2xlLWNoZWNrZWQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzAwNGM5NyAhaW1wb3J0YW50O1xyXG5cclxuICAgIGNvbG9yOiB3aGl0ZSAhaW1wb3J0YW50O1xyXG5cclxuICAgIGJvcmRlci1yYWRpdXM6IDEycHggIWltcG9ydGFudDtcclxuICB9XHJcbn1cclxuXHJcbi5vbi1pY29uIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcbmlvbi10b29sYmFyIHtcclxuICAtLWRpc3BsYXk6IGZsZXggIWltcG9ydGFudDtcclxuICAtLWFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgLS1qdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgLS1jb2xvcjogIzAwNGM5NztcclxuICAtLXdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG5pb24tYnV0dG9uLm5leHQge1xyXG4gIHdpZHRoOiAxNTBweDtcclxuICBoZWlnaHQ6IDQwcHg7XHJcbiAgLS1iYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFhMmQsICMwMDRjOTcpO1xyXG4gIC0tY29sb3I6ICNmZmZmZmY7XHJcbn1cclxuXHJcbmlvbi1idXR0b24uY2FuY2VsIHtcclxuICB3aWR0aDogMTUwcHg7XHJcbiAgaGVpZ2h0OiA0MHB4O1xyXG4gIC0tYmFja2dyb3VuZDogI2ZmZmZmZjtcclxuICAtLWNvbG9yOiAjYjIwMDAwO1xyXG59XHJcblxyXG5pb24tYnV0dG9uLmJhY2sge1xyXG4gIHdpZHRoOiAxNTBweDtcclxuICBoZWlnaHQ6IDQwcHg7XHJcbiAgLS1iYWNrZ3JvdW5kOiAjZmZmZmZmO1xyXG4gIC0tY29sb3I6ICMwMDAwMDAgIWltcG9ydGFudDtcclxufVxyXG4uZnVsbC13aWR0aDkwLm0tMiB7XHJcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgYm94LXNoYWRvdzogIzcwNzA3MDtcclxufVxyXG5cclxuLmZ1bGwtd2lkdGgge1xyXG4gIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5jYXJkLWJpb21ldHJpYyB7XHJcbiAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogMTZweDtcclxuXHJcbiAgLmJpb21ldHJpYy1kaXYge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHJcbiAgICAuZmluZ2VyUHJpbnQge1xyXG4gICAgICBjb2xvcjogIzAwNGM5NztcclxuICAgICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgfVxyXG4gICAgLmlyaXNoVGV4dCB7XHJcbiAgICAgIGNvbG9yOiAjNzA3MDcwO1xyXG4gICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICB9XHJcbiAgICAuZmFjZVNjYW4ge1xyXG4gICAgICBjb2xvcjogIzcwNzA3MDtcclxuICAgICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgfVxyXG4gICAgLnZlcnRpY2FsTGluZSB7XHJcbiAgICAgIGJvcmRlcjogMXB4ICMwMDAwMDAxNyBzb2xpZDtcclxuICAgIH1cclxuICB9XHJcbn1cclxuLmJpb2NsYXNzIHtcclxuICBtYXJnaW4tbGVmdDogLThweDtcclxufVxyXG5oM3tcclxuICBmb250LXNpemU6IDE1cHg7XHJcbn1cclxuLnRvZ2dsZS1jdXN0b21lci1kZXRhaWxze1xyXG4gIHBhZGRpbmctdG9wOiAxMHB4O1xyXG59XHJcbmlvbi1idXR0b24ubWFuIHtcclxuICAgIGZsb2F0OiByaWdodDtcclxuICAtLWJhY2tncm91bmQ6ICMwMDQzODU7XHJcbiAgLS1jb2xvcjogI2ZmZmZmZjtcclxuICAgLS1ib3JkZXItcmFkaXVzOiAxMnB4O1xyXG4gIFxyXG4gIH1cclxuXHJcbiJdfQ== */";
-
-/***/ }),
-
 /***/ 54325:
 /*!**************************************************************!*\
   !*** ./src/app/components/map/map.component.scss?ngResource ***!
@@ -5774,6 +5876,36 @@ module.exports = ".container {\n  display: flex;\n  justify-content: space-betwe
 
 /***/ }),
 
+/***/ 76827:
+/*!*******************************************************************************************************************************!*\
+  !*** ./src/app/components/verification-modal/customer-auto-verification/customer-auto-verification.component.scss?ngResource ***!
+  \*******************************************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = ".segment-button-checked {\n  background-color: #d6dbea !important;\n  color: #ffffff;\n  border: 2px solid #3c75ae;\n}\n\n.verification_section .fingerscan {\n  padding: 5px 5px 5px 5px;\n}\n\n.verification_section .fingerscan .fingerprint_label {\n  margin-left: 28%;\n}\n\n.verification_section .irish {\n  padding: 5px 5px 5px 5px;\n}\n\n.verification_section .irish .irish_label {\n  margin-left: 28%;\n}\n\n.verification_section .facescan {\n  padding: 5px 5px 5px 5px;\n}\n\n.verification_section .facescan .facescan_label {\n  margin-left: 28%;\n}\n\n.new_cust {\n  width: 50%;\n  color: black;\n}\n\n.exist_cust {\n  color: black;\n}\n\n.uploadDocType {\n  margin-left: 120px;\n  height: min-content;\n}\n\n.uploadDocType .segment-button-checked {\n  background-color: #004385 !important;\n  color: #ffffff;\n  border: 2px solid #3c75ae;\n}\n\n.auto {\n  max-height: 74%;\n  max-width: 46%;\n}\n\n.otp_field {\n  border: 2px hidden gray;\n  box-shadow: 2px 2px 2px 2px rgb(184, 178, 178);\n  border-radius: 10px;\n  margin-top: 20px;\n  margin-left: 20%;\n}\n\n.mat-tab-nav-bar {\n  border-bottom: none;\n}\n\n.mat-tab-header {\n  border-bottom: none;\n  display: flex;\n  overflow: hidden;\n  position: relative;\n  flex-shrink: 0;\n}\n\n::ng-deep .mat-ink-bar {\n  height: 4px;\n  top: 8px;\n  border-radius: 10px;\n}\n\n::ng-deep .mat-tab-header {\n  border: none;\n}\n\n.auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  padding: 3px;\n  border-radius: 12px !important;\n  opacity: 1;\n  width: 100%;\n}\n\n.auto-manual-toggle {\n  color: #ffffff !important;\n  font: medium poppins !important;\n}\n\n::ng-deep .mat-button-toggle-label-content {\n  color: black;\n}\n\n.mat-button-toggle-checked {\n  background-color: #d6dbea !important;\n  color: rgba(0, 0, 0, 0) !important;\n  border-radius: 12px !important;\n  border: 1px solid #004c97;\n  width: 100%;\n}\n\n.AutomanualToggle .auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  border: 1px solid #004c97;\n  border-radius: 12px !important;\n  opacity: 1;\n}\n\n.AutomanualToggle .auto-manual-toggle {\n  width: 100px !important;\n  color: #6e6e6e !important;\n  font: medium poppins !important;\n}\n\n.AutomanualToggle .mat-button-toggle-checked {\n  background-color: #004c97 !important;\n  color: white !important;\n  border-radius: 12px !important;\n}\n\n.heading {\n  display: flex;\n  justify-content: space-around;\n  padding-top: 18px;\n}\n\n.customerHeading {\n  display: flex;\n  height: 50px;\n  align-items: center;\n}\n\n::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle,\n.mat-radio-outer-circle {\n  border-color: #004385 !important;\n  /* Sets outer circle & click effect color */\n}\n\n::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {\n  background-color: #004385 !important;\n  /* Sets inner circle color */\n}\n\nmat-card.otpandbioclass {\n  border-radius: 12px;\n  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.0901960784);\n}\n\n.widthclass {\n  display: inline-block;\n  width: 45%;\n}\n\n.margin {\n  margin-right: 30px;\n}\n\n.otpclass {\n  margin-left: 16px;\n}\n\n.bioclass {\n  margin-left: 16px;\n}\n\ninput::placeholder {\n  text-transform: capitalize;\n  letter-spacing: 7.2px;\n  text-align: center;\n}\n\n.customerHeading2 {\n  margin-top: 10px;\n}\n\n.customerHeading3 {\n  display: flex;\n  margin-bottom: 20px;\n}\n\n.choose {\n  padding-left: 10px;\n  margin-right: 10%;\n}\n\n.ion_radio_cards {\n  margin-top: 10px;\n  width: 100%;\n  margin-left: -20px;\n  margin-right: 10px;\n}\n\n.card1 {\n  border-radius: 15px;\n  width: 200px;\n  box-shadow: rgba(0, 0, 0, 0.0705882353);\n  border: 1px solid grey;\n}\n\n.card2 {\n  border-radius: 15px;\n  width: 200px;\n  box-shadow: rgba(0, 0, 0, 0.0705882353);\n  border: 1px solid grey;\n}\n\n.new_manual[_ngcontent-nkd-c420] {\n  margin-left: 10px;\n  margin-top: 10px;\n  margin-right: 3px;\n}\n\n.file-content-wrapper {\n  margin-top: 160px !important;\n}\n\n.mt-16 {\n  margin-top: 16px;\n}\n\n.cat-text {\n  color: #8d8d8d !important;\n  font-size: 12px !important;\n  opacity: 100%;\n  margin-bottom: 8px !important;\n  margin-top: -6px !important;\n}\n\nh6.cat-head {\n  color: #000000;\n  font-size: 20px;\n}\n\n.card {\n  width: auto;\n  height: 85px;\n  padding: 16px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n  border-radius: 10px;\n  margin-bottom: 10px;\n}\n\n.chq-text {\n  color: #000000;\n  font-size: 16px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: pre-line;\n  margin-top: 0px !important;\n  margin-bottom: 0px !important;\n}\n\n.danger {\n  color: #b20000 !important;\n  opacity: 100% !important;\n}\n\nion-progress-bar {\n  --background: #e8e8e8;\n  --progress-background: linear-gradient(90deg, #051a2d, #004c97);\n  height: 8px !important;\n  border-radius: 16px !important;\n}\n\n.file-card {\n  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n  width: auto;\n  height: 110px;\n  border-radius: 10px;\n  text-align: center;\n}\n\n.file-card .p-1 {\n  height: 80px;\n}\n\n.file-card .pb-3 {\n  padding-bottom: 1rem !important;\n}\n\n.file-card .border-end {\n  border-right: 1pt solid #dee2e6 !important;\n}\n\n.file-card p {\n  opacity: 100% !important;\n  color: #707070 !important;\n  font-size: 13px !important;\n}\n\n.file-card .avatar {\n  height: 60px;\n  width: 60px;\n  background: #edecec;\n  margin: 0 auto;\n  border-radius: 5px;\n}\n\n.file-card .avatar .bg-gradient {\n  background-image: #edecec !important;\n}\n\n.file-card .avatar img {\n  margin-top: 16px;\n}\n\nion-button.next {\n  width: 150px;\n  height: 40px;\n  --background: linear-gradient(90deg, #051a2d, #004c97);\n  --color: #ffffff;\n}\n\nion-button.back {\n  width: 150px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #000000 !important;\n}\n\n.widthForMat {\n  width: 93%;\n  margin-top: 20px;\n}\n\n.btns {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 90%;\n  margin-left: 10px;\n  margin-top: 80px;\n}\n\n.btns .btns1 {\n  padding: 12px 28px;\n  width: 48%;\n  font-size: 16px;\n  font-weight: 500;\n  border-radius: 35px;\n  background: rgb(5, 26, 45);\n  background: linear-gradient(148deg, rgb(5, 26, 45) 0%, rgb(0, 76, 151) 100%);\n}\n\n.btns .btns2 {\n  padding: 12px 28px;\n  width: 48%;\n  font-size: 16px;\n  font-weight: 500;\n  border-radius: 35px;\n  background: rgb(255, 255, 255);\n  box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.15);\n  color: black;\n}\n\n.move_toggle .auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  border: 1px solid #004c97;\n  border-radius: 12px !important;\n  opacity: 1;\n}\n\n.move_toggle .auto-manual-toggle {\n  width: 100px !important;\n  color: #6e6e6e !important;\n  font: medium poppins !important;\n}\n\n.move_toggle .mat-button-toggle-checked {\n  background-color: #004c97 !important;\n  color: white !important;\n  border-radius: 12px !important;\n}\n\n.on-icon {\n  display: flex;\n}\n\nion-toolbar {\n  --display: flex !important;\n  --align-items: center;\n  --justify-content: space-between;\n  --color: #004c97;\n  --width: 100%;\n}\n\nion-button.next {\n  width: 150px;\n  height: 40px;\n  --background: linear-gradient(90deg, #051a2d, #004c97);\n  --color: #ffffff;\n}\n\nion-button.cancel {\n  width: 150px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #b20000;\n}\n\nion-button.back {\n  width: 150px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #000000 !important;\n}\n\n.full-width90.m-2 {\n  margin-left: 10px;\n  box-shadow: #707070;\n}\n\n.full-width {\n  width: 100% !important;\n}\n\n.card-biometric {\n  margin-right: 20px;\n  margin-top: 20px;\n  border-radius: 16px;\n}\n\n.card-biometric .biometric-div {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  text-align: center;\n}\n\n.card-biometric .biometric-div .fingerPrint {\n  color: #004c97;\n  font-size: 12px;\n}\n\n.card-biometric .biometric-div .irishText {\n  color: #707070;\n  font-size: 12px;\n}\n\n.card-biometric .biometric-div .faceScan {\n  color: #707070;\n  font-size: 12px;\n}\n\n.card-biometric .biometric-div .verticalLine {\n  border: 1px rgba(0, 0, 0, 0.0901960784) solid;\n}\n\n.bioclass {\n  margin-left: -8px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImN1c3RvbWVyLWF1dG8tdmVyaWZpY2F0aW9uLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksb0NBQUE7RUFDQSxjQUFBO0VBSUEseUJBQUE7QUFGSjs7QUFNSTtFQUNFLHdCQUFBO0FBSE47O0FBSU07RUFDRSxnQkFBQTtBQUZSOztBQUtJO0VBQ0Usd0JBQUE7QUFITjs7QUFJTTtFQUNFLGdCQUFBO0FBRlI7O0FBS0k7RUFDRSx3QkFBQTtBQUhOOztBQUlNO0VBQ0UsZ0JBQUE7QUFGUjs7QUFPRTtFQUNFLFVBQUE7RUFDQSxZQUFBO0FBSko7O0FBVUU7RUFDRSxZQUFBO0FBUEo7O0FBU0U7RUFDRSxrQkFBQTtFQUNBLG1CQUFBO0FBTko7O0FBT0k7RUFDRSxvQ0FBQTtFQUNBLGNBQUE7RUFHQSx5QkFBQTtBQVBOOztBQVVFO0VBRUUsZUFBQTtFQUNBLGNBQUE7QUFSSjs7QUFlRTtFQUNFLHVCQUFBO0VBQ0EsOENBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7QUFaSjs7QUFjRTtFQUNFLG1CQUFBO0FBWEo7O0FBYUU7RUFDRSxtQkFBQTtFQUNBLGFBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtBQVZKOztBQVlFO0VBQ0UsV0FBQTtFQUNBLFFBQUE7RUFDQSxtQkFBQTtBQVRKOztBQVdFO0VBQ0UsWUFBQTtBQVJKOztBQWVFO0VBQ0UsK0NBQUE7RUFDQSxZQUFBO0VBQ0EsOEJBQUE7RUFDQSxVQUFBO0VBQ0EsV0FBQTtBQVpKOztBQWVFO0VBRUUseUJBQUE7RUFDQSwrQkFBQTtBQWJKOztBQWdCRTtFQUNFLFlBQUE7QUFiSjs7QUFnQkU7RUFDRSxvQ0FBQTtFQUNBLGtDQUFBO0VBQ0EsOEJBQUE7RUFDQSx5QkFBQTtFQUNBLFdBQUE7QUFiSjs7QUFpQkk7RUFDRSwrQ0FBQTtFQUVBLHlCQUFBO0VBRUEsOEJBQUE7RUFFQSxVQUFBO0FBakJOOztBQW9CSTtFQUNFLHVCQUFBO0VBRUEseUJBQUE7RUFFQSwrQkFBQTtBQXBCTjs7QUF1Qkk7RUFDRSxvQ0FBQTtFQUVBLHVCQUFBO0VBRUEsOEJBQUE7QUF2Qk47O0FBMkJFO0VBQ0UsYUFBQTtFQUNBLDZCQUFBO0VBQ0EsaUJBQUE7QUF4Qko7O0FBMEJFO0VBQ0UsYUFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtBQXZCSjs7QUEyQkU7O0VBSUUsZ0NBQUE7RUFDQSwyQ0FBQTtBQTFCSjs7QUE0QkU7RUFDRSxvQ0FBQTtFQUNBLDRCQUFBO0FBekJKOztBQTJCRTtFQUNFLG1CQUFBO0VBQ0Esb0RBQUE7QUF4Qko7O0FBMkJFO0VBQ0UscUJBQUE7RUFDQSxVQUFBO0FBeEJKOztBQTBCRTtFQUNFLGtCQUFBO0FBdkJKOztBQXlCRTtFQUNFLGlCQUFBO0FBdEJKOztBQXdCRTtFQUNFLGlCQUFBO0FBckJKOztBQXdCRTtFQUNFLDBCQUFBO0VBQ0EscUJBQUE7RUFDQSxrQkFBQTtBQXJCSjs7QUF3QkU7RUFDRSxnQkFBQTtBQXJCSjs7QUF1QkU7RUFDRSxhQUFBO0VBR0EsbUJBQUE7QUF0Qko7O0FBd0JFO0VBQ0Usa0JBQUE7RUFDQSxpQkFBQTtBQXJCSjs7QUF3QkU7RUFDRSxnQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0FBckJKOztBQXVCRTtFQUNFLG1CQUFBO0VBQ0EsWUFBQTtFQUNBLHVDQUFBO0VBQ0Esc0JBQUE7QUFwQko7O0FBc0JFO0VBQ0UsbUJBQUE7RUFDQSxZQUFBO0VBQ0EsdUNBQUE7RUFDQSxzQkFBQTtBQW5CSjs7QUFxQkU7RUFDRSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7QUFsQko7O0FBc0JFO0VBQ0UsNEJBQUE7QUFuQko7O0FBc0JFO0VBQ0UsZ0JBQUE7QUFuQko7O0FBc0JFO0VBQ0UseUJBQUE7RUFDQSwwQkFBQTtFQUNBLGFBQUE7RUFDQSw2QkFBQTtFQUNBLDJCQUFBO0FBbkJKOztBQXNCRTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBbkJKOztBQXNCRTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGlEQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtBQW5CSjs7QUFzQkU7RUFDRSxjQUFBO0VBQ0EsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1QkFBQTtFQUNBLHFCQUFBO0VBQ0EsMEJBQUE7RUFDQSw2QkFBQTtBQW5CSjs7QUFzQkU7RUFDRSx5QkFBQTtFQUNBLHdCQUFBO0FBbkJKOztBQXNCRTtFQUNFLHFCQUFBO0VBQ0EsK0RBQUE7RUFDQSxzQkFBQTtFQUNBLDhCQUFBO0FBbkJKOztBQXNCRTtFQUNFLHFEQUFBO0VBQ0EsV0FBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FBbkJKOztBQXFCSTtFQUNFLFlBQUE7QUFuQk47O0FBc0JJO0VBQ0UsK0JBQUE7QUFwQk47O0FBdUJJO0VBQ0UsMENBQUE7QUFyQk47O0FBd0JJO0VBQ0Usd0JBQUE7RUFDQSx5QkFBQTtFQUNBLDBCQUFBO0FBdEJOOztBQXlCSTtFQUNFLFlBQUE7RUFDQSxXQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7QUF2Qk47O0FBeUJNO0VBQ0Usb0NBQUE7QUF2QlI7O0FBMEJNO0VBQ0UsZ0JBQUE7QUF4QlI7O0FBNkJFO0VBQ0UsWUFBQTtFQUNBLFlBQUE7RUFDQSxzREFBQTtFQUNBLGdCQUFBO0FBMUJKOztBQTZCRTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EscUJBQUE7RUFDQSwyQkFBQTtBQTFCSjs7QUE2QkU7RUFDRSxVQUFBO0VBQ0EsZ0JBQUE7QUExQko7O0FBOEJFO0VBQ0UsYUFBQTtFQUNBLDhCQUFBO0VBQ0EsbUJBQUE7RUFDQSxVQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQTNCSjs7QUE0Qkk7RUFDRSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLDBCQUFBO0VBQ0EsNEVBQUE7QUExQk47O0FBZ0NJO0VBQ0Usa0JBQUE7RUFDQSxVQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSw4QkFBQTtFQUNBLGlEQUFBO0VBQ0EsWUFBQTtBQTlCTjs7QUFrQ0k7RUFDRSwrQ0FBQTtFQUVBLHlCQUFBO0VBRUEsOEJBQUE7RUFFQSxVQUFBO0FBbENOOztBQXFDSTtFQUNFLHVCQUFBO0VBRUEseUJBQUE7RUFFQSwrQkFBQTtBQXJDTjs7QUEwQ0k7RUFDRSxvQ0FBQTtFQUVBLHVCQUFBO0VBRUEsOEJBQUE7QUExQ047O0FBOENFO0VBQ0UsYUFBQTtBQTNDSjs7QUE2Q0U7RUFDRSwwQkFBQTtFQUNBLHFCQUFBO0VBQ0EsZ0NBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUExQ0o7O0FBNkNFO0VBQ0UsWUFBQTtFQUNBLFlBQUE7RUFDQSxzREFBQTtFQUNBLGdCQUFBO0FBMUNKOztBQTZDRTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EscUJBQUE7RUFDQSxnQkFBQTtBQTFDSjs7QUE2Q0U7RUFDRSxZQUFBO0VBQ0EsWUFBQTtFQUNBLHFCQUFBO0VBQ0EsMkJBQUE7QUExQ0o7O0FBNENFO0VBQ0UsaUJBQUE7RUFDQSxtQkFBQTtBQXpDSjs7QUE0Q0U7RUFDRSxzQkFBQTtBQXpDSjs7QUE0Q0U7RUFDRSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7QUF6Q0o7O0FBMkNJO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsNkJBQUE7RUFDQSxrQkFBQTtBQXpDTjs7QUEyQ007RUFDRSxjQUFBO0VBQ0EsZUFBQTtBQXpDUjs7QUEyQ007RUFDRSxjQUFBO0VBQ0EsZUFBQTtBQXpDUjs7QUEyQ007RUFDRSxjQUFBO0VBQ0EsZUFBQTtBQXpDUjs7QUEyQ007RUFDRSw2Q0FBQTtBQXpDUjs7QUE2Q0U7RUFDRSxpQkFBQTtBQTFDSiIsImZpbGUiOiJjdXN0b21lci1hdXRvLXZlcmlmaWNhdGlvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zZWdtZW50LWJ1dHRvbi1jaGVja2VkIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNkNmRiZWEgIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiAjZmZmZmZmO1xyXG4gICAgLy8gYm9yZGVyLWNvbG9yOiAjM0M3NUFFO1xyXG4gICAgLy8gYm9yZGVyLXdpZHRoOiBtZWRpdW07XHJcbiAgXHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCAjM2M3NWFlO1xyXG4gIH1cclxuIFxyXG4gIC52ZXJpZmljYXRpb25fc2VjdGlvbiB7XHJcbiAgICAuZmluZ2Vyc2NhbiB7XHJcbiAgICAgIHBhZGRpbmc6IDVweCA1cHggNXB4IDVweDtcclxuICAgICAgLmZpbmdlcnByaW50X2xhYmVsIHtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMjglO1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgICAuaXJpc2gge1xyXG4gICAgICBwYWRkaW5nOiA1cHggNXB4IDVweCA1cHg7XHJcbiAgICAgIC5pcmlzaF9sYWJlbCB7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDI4JTtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gICAgLmZhY2VzY2FuIHtcclxuICAgICAgcGFkZGluZzogNXB4IDVweCA1cHggNXB4O1xyXG4gICAgICAuZmFjZXNjYW5fbGFiZWwge1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAyOCU7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbiAgXHJcbiAgLm5ld19jdXN0IHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgfVxyXG4gIC8vIC5uZXdfY3VzdDp2aXNpdGVke1xyXG4gIC8vICAgYmFja2dyb3VuZC1jb2xvcjogYXF1YTtcclxuICBcclxuICAvLyB9XHJcbiAgLmV4aXN0X2N1c3Qge1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG4gIH1cclxuICAudXBsb2FkRG9jVHlwZSB7XHJcbiAgICBtYXJnaW4tbGVmdDogMTIwcHg7XHJcbiAgICBoZWlnaHQ6IG1pbi1jb250ZW50O1xyXG4gICAgLnNlZ21lbnQtYnV0dG9uLWNoZWNrZWQge1xyXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA0Mzg1ICFpbXBvcnRhbnQ7XHJcbiAgICAgIGNvbG9yOiAjZmZmZmZmO1xyXG4gICAgICAvLyBib3JkZXItY29sb3I6ICMzQzc1QUU7XHJcbiAgICAgIC8vIGJvcmRlci13aWR0aDogbWVkaXVtO1xyXG4gICAgICBib3JkZXI6IDJweCBzb2xpZCAjM2M3NWFlO1xyXG4gICAgfVxyXG4gIH1cclxuICAuYXV0byB7XHJcbiAgICAvLyB3aWR0aDogNDBweDtcclxuICAgIG1heC1oZWlnaHQ6IDc0JTtcclxuICAgIG1heC13aWR0aDogNDYlO1xyXG4gIH1cclxuICAvLyAubWFudWFsIHtcclxuICAvLyB3aWR0aDo0MHB4O1xyXG4gIC8vIG1heC1oZWlnaHQ6IDc0JTtcclxuICAvLyBtYXgtd2lkdGg6NDYlO1xyXG4gIC8vIH1cclxuICAub3RwX2ZpZWxkIHtcclxuICAgIGJvcmRlcjogMnB4IGhpZGRlbiBncmF5O1xyXG4gICAgYm94LXNoYWRvdzogMnB4IDJweCAycHggMnB4IHJnYigxODQsIDE3OCwgMTc4KTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDIwJTtcclxuICB9XHJcbiAgLm1hdC10YWItbmF2LWJhciB7XHJcbiAgICBib3JkZXItYm90dG9tOiBub25lO1xyXG4gIH1cclxuICAubWF0LXRhYi1oZWFkZXIge1xyXG4gICAgYm9yZGVyLWJvdHRvbTogbm9uZTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgZmxleC1zaHJpbms6IDA7XHJcbiAgfVxyXG4gIDo6bmctZGVlcCAubWF0LWluay1iYXIge1xyXG4gICAgaGVpZ2h0OiA0cHg7XHJcbiAgICB0b3A6IDhweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgfVxyXG4gIDo6bmctZGVlcCAubWF0LXRhYi1oZWFkZXIge1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gIH1cclxuICBcclxuICAvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy9cclxuICAvLy9cclxuICAvLy9cclxuICBcclxuICAuYXV0by1tYW51YWwtdG9nZ2xlLWdyb3VwIHtcclxuICAgIGJhY2tncm91bmQ6ICNmM2YzZjMgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gICAgcGFkZGluZzogM3B4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTJweCAhaW1wb3J0YW50O1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuICAuYXV0by1tYW51YWwtdG9nZ2xlIHtcclxuICAgIC8vIHdpZHRoOiAxMDBweCAhaW1wb3J0YW50O1xyXG4gICAgY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDtcclxuICAgIGZvbnQ6IG1lZGl1bSBwb3BwaW5zICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIFxyXG4gIDo6bmctZGVlcCAubWF0LWJ1dHRvbi10b2dnbGUtbGFiZWwtY29udGVudCB7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgfVxyXG4gIFxyXG4gIC5tYXQtYnV0dG9uLXRvZ2dsZS1jaGVja2VkIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNkNmRiZWEgIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiAjMDAwMDAwMDAgIWltcG9ydGFudDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEycHggIWltcG9ydGFudDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICMwMDRjOTc7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgXHJcbiAgLkF1dG9tYW51YWxUb2dnbGUge1xyXG4gICAgLmF1dG8tbWFudWFsLXRvZ2dsZS1ncm91cCB7XHJcbiAgICAgIGJhY2tncm91bmQ6ICNmM2YzZjMgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG4gIFxyXG4gICAgICBib3JkZXI6IDFweCBzb2xpZCAjMDA0Yzk3O1xyXG4gIFxyXG4gICAgICBib3JkZXItcmFkaXVzOiAxMnB4ICFpbXBvcnRhbnQ7XHJcbiAgXHJcbiAgICAgIG9wYWNpdHk6IDE7XHJcbiAgICB9XHJcbiAgXHJcbiAgICAuYXV0by1tYW51YWwtdG9nZ2xlIHtcclxuICAgICAgd2lkdGg6IDEwMHB4ICFpbXBvcnRhbnQ7XHJcbiAgXHJcbiAgICAgIGNvbG9yOiAjNmU2ZTZlICFpbXBvcnRhbnQ7XHJcbiAgXHJcbiAgICAgIGZvbnQ6IG1lZGl1bSBwb3BwaW5zICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcbiAgXHJcbiAgICAubWF0LWJ1dHRvbi10b2dnbGUtY2hlY2tlZCB7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDRjOTcgIWltcG9ydGFudDtcclxuICBcclxuICAgICAgY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XHJcbiAgXHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDEycHggIWltcG9ydGFudDtcclxuICAgIH1cclxuICB9XHJcbiAgXHJcbiAgLmhlYWRpbmcge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xyXG4gICAgcGFkZGluZy10b3A6IDE4cHg7XHJcbiAgfVxyXG4gIC5jdXN0b21lckhlYWRpbmcge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGhlaWdodDogNTBweDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAvLyBtYXJnaW4tbGVmdDotMTRweDtcclxuICB9XHJcbiAgXHJcbiAgOjpuZy1kZWVwXHJcbiAgICAubWF0LXJhZGlvLWJ1dHRvbi5tYXQtYWNjZW50Lm1hdC1yYWRpby1jaGVja2VkXHJcbiAgICAubWF0LXJhZGlvLW91dGVyLWNpcmNsZSxcclxuICAubWF0LXJhZGlvLW91dGVyLWNpcmNsZSB7XHJcbiAgICBib3JkZXItY29sb3I6ICMwMDQzODUgIWltcG9ydGFudDtcclxuICAgIC8qIFNldHMgb3V0ZXIgY2lyY2xlICYgY2xpY2sgZWZmZWN0IGNvbG9yICovXHJcbiAgfVxyXG4gIDo6bmctZGVlcCAubWF0LXJhZGlvLWJ1dHRvbi5tYXQtYWNjZW50IC5tYXQtcmFkaW8taW5uZXItY2lyY2xlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDQzODUgIWltcG9ydGFudDtcclxuICAgIC8qIFNldHMgaW5uZXIgY2lyY2xlIGNvbG9yICovXHJcbiAgfVxyXG4gIG1hdC1jYXJkLm90cGFuZGJpb2NsYXNzIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEycHg7XHJcbiAgICBib3gtc2hhZG93OiAwcHggM3B4IDE1cHggIzAwMDAwMDE3O1xyXG4gIH1cclxuICBcclxuICAud2lkdGhjbGFzcyB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB3aWR0aDogNDUlO1xyXG4gIH1cclxuICAubWFyZ2luIHtcclxuICAgIG1hcmdpbi1yaWdodDogMzBweDtcclxuICB9XHJcbiAgLm90cGNsYXNzIHtcclxuICAgIG1hcmdpbi1sZWZ0OiAxNnB4O1xyXG4gIH1cclxuICAuYmlvY2xhc3Mge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE2cHg7XHJcbiAgfVxyXG4gIFxyXG4gIGlucHV0OjpwbGFjZWhvbGRlciB7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcclxuICAgIGxldHRlci1zcGFjaW5nOiA3LjJweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB9XHJcbiAgXHJcbiAgLmN1c3RvbWVySGVhZGluZzIge1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICB9XHJcbiAgLmN1c3RvbWVySGVhZGluZzMge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIC8vICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcclxuICAgIC8vICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG4gIH1cclxuICAuY2hvb3NlIHtcclxuICAgIHBhZGRpbmctbGVmdDogMTBweDtcclxuICAgIG1hcmdpbi1yaWdodDogMTAlO1xyXG4gIH1cclxuICBcclxuICAuaW9uX3JhZGlvX2NhcmRzIHtcclxuICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiAtMjBweDtcclxuICAgIG1hcmdpbi1yaWdodDogMTBweDtcclxuICB9XHJcbiAgLmNhcmQxIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDE1cHg7XHJcbiAgICB3aWR0aDogMjAwcHg7XHJcbiAgICBib3gtc2hhZG93OiAjMDAwMDAwMTI7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBncmV5O1xyXG4gIH1cclxuICAuY2FyZDIge1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTVweDtcclxuICAgIHdpZHRoOiAyMDBweDtcclxuICAgIGJveC1zaGFkb3c6ICMwMDAwMDAxMjtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGdyZXk7XHJcbiAgfVxyXG4gIC5uZXdfbWFudWFsW19uZ2NvbnRlbnQtbmtkLWM0MjBdIHtcclxuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIG1hcmdpbi1yaWdodDogM3B4O1xyXG4gIH1cclxuICBcclxuICAvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL2ZpbGUgdXBsb2FkIGNzc1xyXG4gIC5maWxlLWNvbnRlbnQtd3JhcHBlciB7XHJcbiAgICBtYXJnaW4tdG9wOiAxNjBweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICBcclxuICAubXQtMTYge1xyXG4gICAgbWFyZ2luLXRvcDogMTZweDtcclxuICB9XHJcbiAgXHJcbiAgLmNhdC10ZXh0IHtcclxuICAgIGNvbG9yOiAjOGQ4ZDhkICFpbXBvcnRhbnQ7XHJcbiAgICBmb250LXNpemU6IDEycHggIWltcG9ydGFudDtcclxuICAgIG9wYWNpdHk6IDEwMCU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA4cHggIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi10b3A6IC02cHggIWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgaDYuY2F0LWhlYWQge1xyXG4gICAgY29sb3I6ICMwMDAwMDA7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5jYXJkIHtcclxuICAgIHdpZHRoOiBhdXRvO1xyXG4gICAgaGVpZ2h0OiA4NXB4O1xyXG4gICAgcGFkZGluZzogMTZweDtcclxuICAgIGJveC1zaGFkb3c6IHJnYig5OSA5OSA5OSAvIDIwJSkgMHB4IDJweCA4cHggMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5jaHEtdGV4dCB7XHJcbiAgICBjb2xvcjogIzAwMDAwMDtcclxuICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgIHdoaXRlLXNwYWNlOiBub3dyYXA7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgICB3aGl0ZS1zcGFjZTogcHJlLWxpbmU7XHJcbiAgICBtYXJnaW4tdG9wOiAwcHggIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi1ib3R0b206IDBweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICBcclxuICAuZGFuZ2VyIHtcclxuICAgIGNvbG9yOiAjYjIwMDAwICFpbXBvcnRhbnQ7XHJcbiAgICBvcGFjaXR5OiAxMDAlICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG4gIFxyXG4gIGlvbi1wcm9ncmVzcy1iYXIge1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjZThlOGU4O1xyXG4gICAgLS1wcm9ncmVzcy1iYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFhMmQsICMwMDRjOTcpO1xyXG4gICAgaGVpZ2h0OiA4cHggIWltcG9ydGFudDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDE2cHggIWltcG9ydGFudDtcclxuICB9XHJcbiAgXHJcbiAgLmZpbGUtY2FyZCB7XHJcbiAgICBib3gtc2hhZG93OiByZ2IoMTAwIDEwMCAxMTEgLyAyMCUpIDBweCA3cHggMjlweCAwcHg7XHJcbiAgICB3aWR0aDogYXV0bztcclxuICAgIGhlaWdodDogMTEwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIFxyXG4gICAgLnAtMSB7XHJcbiAgICAgIGhlaWdodDogODBweDtcclxuICAgIH1cclxuICBcclxuICAgIC5wYi0zIHtcclxuICAgICAgcGFkZGluZy1ib3R0b206IDFyZW0gIWltcG9ydGFudDtcclxuICAgIH1cclxuICBcclxuICAgIC5ib3JkZXItZW5kIHtcclxuICAgICAgYm9yZGVyLXJpZ2h0OiAxcHQgc29saWQgI2RlZTJlNiAhaW1wb3J0YW50O1xyXG4gICAgfVxyXG4gIFxyXG4gICAgcCB7XHJcbiAgICAgIG9wYWNpdHk6IDEwMCUgIWltcG9ydGFudDtcclxuICAgICAgY29sb3I6ICM3MDcwNzAgIWltcG9ydGFudDtcclxuICAgICAgZm9udC1zaXplOiAxM3B4ICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcbiAgXHJcbiAgICAuYXZhdGFyIHtcclxuICAgICAgaGVpZ2h0OiA2MHB4O1xyXG4gICAgICB3aWR0aDogNjBweDtcclxuICAgICAgYmFja2dyb3VuZDogI2VkZWNlYztcclxuICAgICAgbWFyZ2luOiAwIGF1dG87XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBcclxuICAgICAgLmJnLWdyYWRpZW50IHtcclxuICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOiAjZWRlY2VjICFpbXBvcnRhbnQ7XHJcbiAgICAgIH1cclxuICBcclxuICAgICAgaW1nIHtcclxuICAgICAgICBtYXJnaW4tdG9wOiAxNnB4O1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG4gIFxyXG4gIGlvbi1idXR0b24ubmV4dCB7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbiAgICBoZWlnaHQ6IDQwcHg7XHJcbiAgICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCwgIzAwNGM5Nyk7XHJcbiAgICAtLWNvbG9yOiAjZmZmZmZmO1xyXG4gIH1cclxuICBcclxuICBpb24tYnV0dG9uLmJhY2sge1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgaGVpZ2h0OiA0MHB4O1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjZmZmZmZmO1xyXG4gICAgLS1jb2xvcjogIzAwMDAwMCAhaW1wb3J0YW50O1xyXG4gIH1cclxuICBcclxuICAud2lkdGhGb3JNYXQge1xyXG4gICAgd2lkdGg6IDkzJTtcclxuICAgIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgfVxyXG4gIC8vLy8vL1xyXG4gIC8vLyBidXR0b25zXHJcbiAgLmJ0bnMge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICB3aWR0aDogOTAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiA4MHB4O1xyXG4gICAgLmJ0bnMxIHtcclxuICAgICAgcGFkZGluZzogMTJweCAyOHB4O1xyXG4gICAgICB3aWR0aDogNDglO1xyXG4gICAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDM1cHg7XHJcbiAgICAgIGJhY2tncm91bmQ6IHJnYig1LCAyNiwgNDUpO1xyXG4gICAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoXHJcbiAgICAgICAgMTQ4ZGVnLFxyXG4gICAgICAgIHJnYmEoNSwgMjYsIDQ1LCAxKSAwJSxcclxuICAgICAgICByZ2JhKDAsIDc2LCAxNTEsIDEpIDEwMCVcclxuICAgICAgKTtcclxuICAgIH1cclxuICAgIC5idG5zMiB7XHJcbiAgICAgIHBhZGRpbmc6IDEycHggMjhweDtcclxuICAgICAgd2lkdGg6IDQ4JTtcclxuICAgICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgICBib3JkZXItcmFkaXVzOiAzNXB4O1xyXG4gICAgICBiYWNrZ3JvdW5kOiByZ2IoMjU1LCAyNTUsIDI1NSk7XHJcbiAgICAgIGJveC1zaGFkb3c6IDBweCAtMXB4IDEwcHggMHB4IHJnYmEoMCwgMCwgMCwgMC4xNSk7XHJcbiAgICAgIGNvbG9yOiBibGFjaztcclxuICAgIH1cclxuICB9XHJcbiAgLm1vdmVfdG9nZ2xlIHtcclxuICAgIC5hdXRvLW1hbnVhbC10b2dnbGUtZ3JvdXAge1xyXG4gICAgICBiYWNrZ3JvdW5kOiAjZjNmM2YzIDAlIDAlIG5vLXJlcGVhdCBwYWRkaW5nLWJveDtcclxuICBcclxuICAgICAgYm9yZGVyOiAxcHggc29saWQgIzAwNGM5NztcclxuICBcclxuICAgICAgYm9yZGVyLXJhZGl1czogMTJweCAhaW1wb3J0YW50O1xyXG4gIFxyXG4gICAgICBvcGFjaXR5OiAxO1xyXG4gICAgfVxyXG4gIFxyXG4gICAgLmF1dG8tbWFudWFsLXRvZ2dsZSB7XHJcbiAgICAgIHdpZHRoOiAxMDBweCAhaW1wb3J0YW50O1xyXG4gIFxyXG4gICAgICBjb2xvcjogIzZlNmU2ZSAhaW1wb3J0YW50O1xyXG4gIFxyXG4gICAgICBmb250OiBtZWRpdW0gcG9wcGlucyAhaW1wb3J0YW50O1xyXG4gICAgICAvLyBtYXJnaW4tbGVmdDotNTRweDtcclxuICAgICAgLy8gbWFyZ2luLXRvcDoycHg7XHJcbiAgICB9XHJcbiAgXHJcbiAgICAubWF0LWJ1dHRvbi10b2dnbGUtY2hlY2tlZCB7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDRjOTcgIWltcG9ydGFudDtcclxuICBcclxuICAgICAgY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XHJcbiAgXHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDEycHggIWltcG9ydGFudDtcclxuICAgIH1cclxuICB9XHJcbiAgXHJcbiAgLm9uLWljb24ge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICB9XHJcbiAgaW9uLXRvb2xiYXIge1xyXG4gICAgLS1kaXNwbGF5OiBmbGV4ICFpbXBvcnRhbnQ7XHJcbiAgICAtLWFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAtLWp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIC0tY29sb3I6ICMwMDRjOTc7XHJcbiAgICAtLXdpZHRoOiAxMDAlO1xyXG4gIH1cclxuICBcclxuICBpb24tYnV0dG9uLm5leHQge1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgaGVpZ2h0OiA0MHB4O1xyXG4gICAgLS1iYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMwNTFhMmQsICMwMDRjOTcpO1xyXG4gICAgLS1jb2xvcjogI2ZmZmZmZjtcclxuICB9XHJcbiAgXHJcbiAgaW9uLWJ1dHRvbi5jYW5jZWwge1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgaGVpZ2h0OiA0MHB4O1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjZmZmZmZmO1xyXG4gICAgLS1jb2xvcjogI2IyMDAwMDtcclxuICB9XHJcbiAgXHJcbiAgaW9uLWJ1dHRvbi5iYWNrIHtcclxuICAgIHdpZHRoOiAxNTBweDtcclxuICAgIGhlaWdodDogNDBweDtcclxuICAgIC0tYmFja2dyb3VuZDogI2ZmZmZmZjtcclxuICAgIC0tY29sb3I6ICMwMDAwMDAgIWltcG9ydGFudDtcclxuICB9XHJcbiAgLmZ1bGwtd2lkdGg5MC5tLTIge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgICBib3gtc2hhZG93OiAjNzA3MDcwO1xyXG4gIH1cclxuICBcclxuICAuZnVsbC13aWR0aCB7XHJcbiAgICB3aWR0aDogMTAwJSAhaW1wb3J0YW50O1xyXG4gIH1cclxuICBcclxuICAuY2FyZC1iaW9tZXRyaWMge1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMjBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDE2cHg7XHJcbiAgXHJcbiAgICAuYmlvbWV0cmljLWRpdiB7XHJcbiAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xyXG4gICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgXHJcbiAgICAgIC5maW5nZXJQcmludCB7XHJcbiAgICAgICAgY29sb3I6ICMwMDRjOTc7XHJcbiAgICAgICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgICB9XHJcbiAgICAgIC5pcmlzaFRleHQge1xyXG4gICAgICAgIGNvbG9yOiAjNzA3MDcwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgfVxyXG4gICAgICAuZmFjZVNjYW4ge1xyXG4gICAgICAgIGNvbG9yOiAjNzA3MDcwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgfVxyXG4gICAgICAudmVydGljYWxMaW5lIHtcclxuICAgICAgICBib3JkZXI6IDFweCAjMDAwMDAwMTcgc29saWQ7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbiAgLmJpb2NsYXNzIHtcclxuICAgIG1hcmdpbi1sZWZ0OiAtOHB4O1xyXG4gIH1cclxuICBcclxuICBcclxuICAiXX0= */";
+
+/***/ }),
+
+/***/ 11499:
+/*!***********************************************************************************************************************************!*\
+  !*** ./src/app/components/verification-modal/customer-manual-verification/customer-manual-verification.component.scss?ngResource ***!
+  \***********************************************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjdXN0b21lci1tYW51YWwtdmVyaWZpY2F0aW9uLmNvbXBvbmVudC5zY3NzIn0= */";
+
+/***/ }),
+
+/***/ 99261:
+/*!********************************************************************************************!*\
+  !*** ./src/app/components/verification-modal/verification-modal.component.scss?ngResource ***!
+  \********************************************************************************************/
+/***/ ((module) => {
+
+module.exports = ".segment-button-checked {\n  background-color: #d6dbea !important;\n  color: #ffffff;\n  border: 2px solid #3c75ae;\n}\n\n.verification_section .fingerscan {\n  padding: 5px 5px 5px 5px;\n}\n\n.verification_section .fingerscan .fingerprint_label {\n  margin-left: 28%;\n}\n\n.verification_section .irish {\n  padding: 5px 5px 5px 5px;\n}\n\n.verification_section .irish .irish_label {\n  margin-left: 28%;\n}\n\n.verification_section .facescan {\n  padding: 5px 5px 5px 5px;\n}\n\n.verification_section .facescan .facescan_label {\n  margin-left: 28%;\n}\n\n.new_cust {\n  width: 50%;\n  color: black;\n}\n\n.exist_cust {\n  color: black;\n}\n\n.uploadDocType {\n  margin-left: 120px;\n  height: min-content;\n}\n\n.uploadDocType .segment-button-checked {\n  background-color: #004385 !important;\n  color: #ffffff;\n  border: 2px solid #3c75ae;\n}\n\n.auto {\n  max-height: 74%;\n  max-width: 46%;\n}\n\n.otp_field {\n  border: 2px hidden gray;\n  box-shadow: 2px 2px 2px 2px rgb(184, 178, 178);\n  border-radius: 10px;\n  margin-top: 20px;\n  margin-left: 20%;\n}\n\n.mat-tab-nav-bar {\n  border-bottom: none;\n}\n\n.mat-tab-header {\n  border-bottom: none;\n  display: flex;\n  overflow: hidden;\n  position: relative;\n  flex-shrink: 0;\n}\n\n::ng-deep .mat-ink-bar {\n  height: 4px;\n  top: 8px;\n  border-radius: 10px;\n}\n\n::ng-deep .mat-tab-header {\n  border: none;\n}\n\n.auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  padding: 3px;\n  border-radius: 12px !important;\n  opacity: 1;\n  width: 100%;\n}\n\n.auto-manual-toggle {\n  color: #ffffff !important;\n  font: medium poppins !important;\n}\n\n::ng-deep .mat-button-toggle-label-content {\n  color: black;\n}\n\n.mat-button-toggle-checked {\n  background-color: #d6dbea !important;\n  color: rgba(0, 0, 0, 0) !important;\n  border-radius: 12px !important;\n  border: 1px solid #004c97;\n  width: 100%;\n}\n\n.AutomanualToggle .auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  border: 1px solid #004c97;\n  border-radius: 12px !important;\n  opacity: 1;\n}\n\n.AutomanualToggle .auto-manual-toggle {\n  width: 100px !important;\n  color: #6e6e6e !important;\n  font: medium poppins !important;\n}\n\n.AutomanualToggle .mat-button-toggle-checked {\n  background-color: #004c97 !important;\n  color: white !important;\n  border-radius: 12px !important;\n}\n\n.heading {\n  display: flex;\n  justify-content: space-around;\n  padding-top: 18px;\n}\n\n.customerHeading {\n  display: flex;\n  height: 50px;\n  align-items: center;\n}\n\n::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle,\n.mat-radio-outer-circle {\n  border-color: #004385 !important;\n  /* Sets outer circle & click effect color */\n}\n\n::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {\n  background-color: #004385 !important;\n  /* Sets inner circle color */\n}\n\nmat-card.otpandbioclass {\n  border-radius: 12px;\n  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.0901960784);\n}\n\n.widthclass {\n  display: inline-block;\n  width: 45%;\n}\n\n.margin {\n  margin-right: 30px;\n}\n\n.otpclass {\n  margin-left: 16px;\n}\n\n.bioclass {\n  margin-left: 16px;\n}\n\ninput::placeholder {\n  text-transform: capitalize;\n  letter-spacing: 7.2px;\n  text-align: center;\n}\n\n.customerHeading2 {\n  margin-top: 10px;\n}\n\n.customerHeading3 {\n  display: flex;\n  margin-bottom: 20px;\n}\n\n.choose {\n  padding-left: 10px;\n  margin-right: 10%;\n}\n\n.ion_radio_cards {\n  margin-top: 10px;\n  width: 100%;\n  margin-left: -20px;\n  margin-right: 10px;\n}\n\n.card1 {\n  border-radius: 15px;\n  width: 200px;\n  box-shadow: rgba(0, 0, 0, 0.0705882353);\n  border: 1px solid grey;\n}\n\n.card2 {\n  border-radius: 15px;\n  width: 200px;\n  box-shadow: rgba(0, 0, 0, 0.0705882353);\n  border: 1px solid grey;\n}\n\n.new_manual[_ngcontent-nkd-c420] {\n  margin-left: 10px;\n  margin-top: 10px;\n  margin-right: 3px;\n}\n\n.file-content-wrapper {\n  margin-top: 160px !important;\n}\n\n.mt-16 {\n  margin-top: 16px;\n}\n\n.cat-text {\n  color: #8d8d8d !important;\n  font-size: 12px !important;\n  opacity: 100%;\n  margin-bottom: 8px !important;\n  margin-top: -6px !important;\n}\n\nh6.cat-head {\n  color: #000000;\n  font-size: 20px;\n}\n\n.card {\n  width: auto;\n  height: 85px;\n  padding: 16px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n  border-radius: 10px;\n  margin-bottom: 10px;\n}\n\n.chq-text {\n  color: #000000;\n  font-size: 16px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: pre-line;\n  margin-top: 0px !important;\n  margin-bottom: 0px !important;\n}\n\n.danger {\n  color: #b20000 !important;\n  opacity: 100% !important;\n}\n\nion-progress-bar {\n  --background: #e8e8e8;\n  --progress-background: linear-gradient(90deg, #051a2d, #004c97);\n  height: 8px !important;\n  border-radius: 16px !important;\n}\n\n.file-card {\n  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n  width: auto;\n  height: 110px;\n  border-radius: 10px;\n  text-align: center;\n}\n\n.file-card .p-1 {\n  height: 80px;\n}\n\n.file-card .pb-3 {\n  padding-bottom: 1rem !important;\n}\n\n.file-card .border-end {\n  border-right: 1pt solid #dee2e6 !important;\n}\n\n.file-card p {\n  opacity: 100% !important;\n  color: #707070 !important;\n  font-size: 13px !important;\n}\n\n.file-card .avatar {\n  height: 60px;\n  width: 60px;\n  background: #edecec;\n  margin: 0 auto;\n  border-radius: 5px;\n}\n\n.file-card .avatar .bg-gradient {\n  background-image: #edecec !important;\n}\n\n.file-card .avatar img {\n  margin-top: 16px;\n}\n\nion-button.next {\n  width: 150px;\n  height: 40px;\n  --background: linear-gradient(90deg, #051a2d, #004c97);\n  --color: #ffffff;\n}\n\nion-button.back {\n  width: 150px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #000000 !important;\n}\n\n.widthForMat {\n  margin-top: 20px;\n}\n\n.btns {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 90%;\n  margin-left: 10px;\n  margin-top: 80px;\n}\n\n.btns .btns1 {\n  padding: 12px 28px;\n  width: 48%;\n  font-size: 16px;\n  font-weight: 500;\n  border-radius: 35px;\n  background: rgb(5, 26, 45);\n  background: linear-gradient(148deg, rgb(5, 26, 45) 0%, rgb(0, 76, 151) 100%);\n}\n\n.btns .btns2 {\n  padding: 12px 28px;\n  width: 48%;\n  font-size: 16px;\n  font-weight: 500;\n  border-radius: 35px;\n  background: rgb(255, 255, 255);\n  box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.15);\n  color: black;\n}\n\n.move_toggle .auto-manual-toggle-group {\n  background: #f3f3f3 0% 0% no-repeat padding-box;\n  border: 1px solid #004c97;\n  border-radius: 12px !important;\n  opacity: 1;\n}\n\n.move_toggle .auto-manual-toggle {\n  width: 100px !important;\n  color: #6e6e6e !important;\n  font: medium poppins !important;\n}\n\n.move_toggle .mat-button-toggle-checked {\n  background-color: #004c97 !important;\n  color: white !important;\n  border-radius: 12px !important;\n}\n\n.on-icon {\n  display: flex;\n}\n\nion-toolbar {\n  --display: flex !important;\n  --align-items: center;\n  --justify-content: space-between;\n  --color: #004c97;\n  --width: 100%;\n}\n\nion-button.next {\n  width: 150px;\n  height: 40px;\n  --background: linear-gradient(90deg, #051a2d, #004c97);\n  --color: #ffffff;\n}\n\nion-button.cancel {\n  width: 150px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #b20000;\n}\n\nion-button.back {\n  width: 150px;\n  height: 40px;\n  --background: #ffffff;\n  --color: #000000 !important;\n}\n\n.full-width90.m-2 {\n  margin-left: 10px;\n  box-shadow: #707070;\n}\n\n.full-width {\n  width: 100% !important;\n}\n\n.card-biometric {\n  margin-right: 20px;\n  margin-top: 20px;\n  border-radius: 16px;\n}\n\n.card-biometric .biometric-div {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  text-align: center;\n}\n\n.card-biometric .biometric-div .fingerPrint {\n  color: #004c97;\n  font-size: 12px;\n}\n\n.card-biometric .biometric-div .irishText {\n  color: #707070;\n  font-size: 12px;\n}\n\n.card-biometric .biometric-div .faceScan {\n  color: #707070;\n  font-size: 12px;\n}\n\n.card-biometric .biometric-div .verticalLine {\n  border: 1px rgba(0, 0, 0, 0.0901960784) solid;\n}\n\n.bioclass {\n  margin-left: -8px;\n}\n\nh3 {\n  font-size: 15px;\n}\n\n.toggle-customer-details {\n  padding-top: 10px;\n}\n\nion-button.man {\n  float: right;\n  --background: #004385;\n  --color: #ffffff;\n  --border-radius: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZlcmlmaWNhdGlvbi1tb2RhbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLG9DQUFBO0VBQ0EsY0FBQTtFQUlBLHlCQUFBO0FBSEY7O0FBNkJFO0VBQ0Usd0JBQUE7QUExQko7O0FBMkJJO0VBQ0UsZ0JBQUE7QUF6Qk47O0FBNEJFO0VBQ0Usd0JBQUE7QUExQko7O0FBMkJJO0VBQ0UsZ0JBQUE7QUF6Qk47O0FBNEJFO0VBQ0Usd0JBQUE7QUExQko7O0FBMkJJO0VBQ0UsZ0JBQUE7QUF6Qk47O0FBOEJBO0VBQ0UsVUFBQTtFQUNBLFlBQUE7QUEzQkY7O0FBaUNBO0VBQ0UsWUFBQTtBQTlCRjs7QUFnQ0E7RUFDRSxrQkFBQTtFQUNBLG1CQUFBO0FBN0JGOztBQThCRTtFQUNFLG9DQUFBO0VBQ0EsY0FBQTtFQUdBLHlCQUFBO0FBOUJKOztBQWlDQTtFQUVFLGVBQUE7RUFDQSxjQUFBO0FBL0JGOztBQXNDQTtFQUNFLHVCQUFBO0VBQ0EsOENBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7QUFuQ0Y7O0FBcUNBO0VBQ0UsbUJBQUE7QUFsQ0Y7O0FBb0NBO0VBQ0UsbUJBQUE7RUFDQSxhQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7QUFqQ0Y7O0FBMENBO0VBQ0UsV0FBQTtFQUNBLFFBQUE7RUFDQSxtQkFBQTtBQXZDRjs7QUF5Q0E7RUFDRSxZQUFBO0FBdENGOztBQTZDQTtFQUNFLCtDQUFBO0VBQ0EsWUFBQTtFQUNBLDhCQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7QUExQ0Y7O0FBNkNBO0VBRUUseUJBQUE7RUFDQSwrQkFBQTtBQTNDRjs7QUE4Q0E7RUFDRSxZQUFBO0FBM0NGOztBQThDQTtFQUNFLG9DQUFBO0VBQ0Esa0NBQUE7RUFDQSw4QkFBQTtFQUNBLHlCQUFBO0VBQ0EsV0FBQTtBQTNDRjs7QUErQ0U7RUFDRSwrQ0FBQTtFQUVBLHlCQUFBO0VBRUEsOEJBQUE7RUFFQSxVQUFBO0FBL0NKOztBQWtERTtFQUNFLHVCQUFBO0VBRUEseUJBQUE7RUFFQSwrQkFBQTtBQWxESjs7QUFxREU7RUFDRSxvQ0FBQTtFQUVBLHVCQUFBO0VBRUEsOEJBQUE7QUFyREo7O0FBeURBO0VBQ0UsYUFBQTtFQUNBLDZCQUFBO0VBQ0EsaUJBQUE7QUF0REY7O0FBd0RBO0VBQ0UsYUFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtBQXJERjs7QUF5REE7O0VBSUUsZ0NBQUE7RUFDQSwyQ0FBQTtBQXhERjs7QUEwREE7RUFDRSxvQ0FBQTtFQUNBLDRCQUFBO0FBdkRGOztBQXlEQTtFQUNFLG1CQUFBO0VBQ0Esb0RBQUE7QUF0REY7O0FBeURBO0VBQ0UscUJBQUE7RUFDQSxVQUFBO0FBdERGOztBQXdEQTtFQUNFLGtCQUFBO0FBckRGOztBQXVEQTtFQUNFLGlCQUFBO0FBcERGOztBQXNEQTtFQUNFLGlCQUFBO0FBbkRGOztBQXNEQTtFQUNFLDBCQUFBO0VBQ0EscUJBQUE7RUFDQSxrQkFBQTtBQW5ERjs7QUFzREE7RUFDRSxnQkFBQTtBQW5ERjs7QUFxREE7RUFDRSxhQUFBO0VBR0EsbUJBQUE7QUFwREY7O0FBc0RBO0VBQ0Usa0JBQUE7RUFDQSxpQkFBQTtBQW5ERjs7QUFzREE7RUFDRSxnQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0FBbkRGOztBQXFEQTtFQUNFLG1CQUFBO0VBQ0EsWUFBQTtFQUNBLHVDQUFBO0VBQ0Esc0JBQUE7QUFsREY7O0FBb0RBO0VBQ0UsbUJBQUE7RUFDQSxZQUFBO0VBQ0EsdUNBQUE7RUFDQSxzQkFBQTtBQWpERjs7QUFtREE7RUFDRSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7QUFoREY7O0FBb0RBO0VBQ0UsNEJBQUE7QUFqREY7O0FBb0RBO0VBQ0UsZ0JBQUE7QUFqREY7O0FBb0RBO0VBQ0UseUJBQUE7RUFDQSwwQkFBQTtFQUNBLGFBQUE7RUFDQSw2QkFBQTtFQUNBLDJCQUFBO0FBakRGOztBQW9EQTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBakRGOztBQW9EQTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGlEQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtBQWpERjs7QUFvREE7RUFDRSxjQUFBO0VBQ0EsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1QkFBQTtFQUNBLHFCQUFBO0VBQ0EsMEJBQUE7RUFDQSw2QkFBQTtBQWpERjs7QUFvREE7RUFDRSx5QkFBQTtFQUNBLHdCQUFBO0FBakRGOztBQW9EQTtFQUNFLHFCQUFBO0VBQ0EsK0RBQUE7RUFDQSxzQkFBQTtFQUNBLDhCQUFBO0FBakRGOztBQW9EQTtFQUNFLHFEQUFBO0VBQ0EsV0FBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FBakRGOztBQW1ERTtFQUNFLFlBQUE7QUFqREo7O0FBb0RFO0VBQ0UsK0JBQUE7QUFsREo7O0FBcURFO0VBQ0UsMENBQUE7QUFuREo7O0FBc0RFO0VBQ0Usd0JBQUE7RUFDQSx5QkFBQTtFQUNBLDBCQUFBO0FBcERKOztBQXVERTtFQUNFLFlBQUE7RUFDQSxXQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7QUFyREo7O0FBdURJO0VBQ0Usb0NBQUE7QUFyRE47O0FBd0RJO0VBQ0UsZ0JBQUE7QUF0RE47O0FBMkRBO0VBQ0UsWUFBQTtFQUNBLFlBQUE7RUFDQSxzREFBQTtFQUNBLGdCQUFBO0FBeERGOztBQTJEQTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EscUJBQUE7RUFDQSwyQkFBQTtBQXhERjs7QUEyREE7RUFFRSxnQkFBQTtBQXpERjs7QUE2REE7RUFDRSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxtQkFBQTtFQUNBLFVBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0FBMURGOztBQTJERTtFQUNFLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0VBQ0EsMEJBQUE7RUFDQSw0RUFBQTtBQXpESjs7QUErREU7RUFDRSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLDhCQUFBO0VBQ0EsaURBQUE7RUFDQSxZQUFBO0FBN0RKOztBQWlFRTtFQUNFLCtDQUFBO0VBRUEseUJBQUE7RUFFQSw4QkFBQTtFQUVBLFVBQUE7QUFqRUo7O0FBb0VFO0VBQ0UsdUJBQUE7RUFFQSx5QkFBQTtFQUVBLCtCQUFBO0FBcEVKOztBQXlFRTtFQUNFLG9DQUFBO0VBRUEsdUJBQUE7RUFFQSw4QkFBQTtBQXpFSjs7QUE2RUE7RUFDRSxhQUFBO0FBMUVGOztBQTRFQTtFQUNFLDBCQUFBO0VBQ0EscUJBQUE7RUFDQSxnQ0FBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtBQXpFRjs7QUE0RUE7RUFDRSxZQUFBO0VBQ0EsWUFBQTtFQUNBLHNEQUFBO0VBQ0EsZ0JBQUE7QUF6RUY7O0FBNEVBO0VBQ0UsWUFBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtFQUNBLGdCQUFBO0FBekVGOztBQTRFQTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EscUJBQUE7RUFDQSwyQkFBQTtBQXpFRjs7QUEyRUE7RUFDRSxpQkFBQTtFQUNBLG1CQUFBO0FBeEVGOztBQTJFQTtFQUNFLHNCQUFBO0FBeEVGOztBQTJFQTtFQUNFLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtBQXhFRjs7QUEwRUU7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw2QkFBQTtFQUNBLGtCQUFBO0FBeEVKOztBQTBFSTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBeEVOOztBQTBFSTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBeEVOOztBQTBFSTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBeEVOOztBQTBFSTtFQUNFLDZDQUFBO0FBeEVOOztBQTRFQTtFQUNFLGlCQUFBO0FBekVGOztBQTJFQTtFQUNFLGVBQUE7QUF4RUY7O0FBMEVBO0VBQ0UsaUJBQUE7QUF2RUY7O0FBeUVBO0VBQ0ksWUFBQTtFQUNGLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQyxxQkFBQTtBQXRFSCIsImZpbGUiOiJ2ZXJpZmljYXRpb24tbW9kYWwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vbmV3XHJcbi5zZWdtZW50LWJ1dHRvbi1jaGVja2VkIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZDZkYmVhICFpbXBvcnRhbnQ7XHJcbiAgY29sb3I6ICNmZmZmZmY7XHJcbiAgLy8gYm9yZGVyLWNvbG9yOiAjM0M3NUFFO1xyXG4gIC8vIGJvcmRlci13aWR0aDogbWVkaXVtO1xyXG5cclxuICBib3JkZXI6IDJweCBzb2xpZCAjM2M3NWFlO1xyXG59XHJcbi8vIGlvbi1zZWdtZW50IHtcclxuLy8gICBtYXgtd2lkdGg6IDQ2JTtcclxuLy8gICBtYXgtaGVpZ2h0OiA3NCU7XHJcbi8vICAgYm9yZGVyLXJhZGl1czogMTNweDtcclxuLy8gfVxyXG4vLyB9XHJcbi8vIGlvbi1zZWdtZW50LWJ1dHRvbiB7XHJcbi8vICAgcGFkZGluZzogNHB4IDA7XHJcbi8vICAgbWFyZ2luOiAwO1xyXG4vLyAgIGJvcmRlci1yYWRpdXM6IDEzcHg7XHJcbi8vICAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6I0Q2REJFQSAhaW1wb3J0YW50O1xyXG4vLyAgIC8qIC0tY29sb3I6ICMzQzc1QUU7ICovXHJcbi8vICAgLy8gLS1jb2xvci1jaGVja2VkOiB3aGl0ZTtcclxuLy8gICAvLyAtLWluZGljYXRvci1jb2xvcjogdHJhbnNwYXJlbnQgIWltcG9ydGFudDtcclxuLy8gICBib3JkZXItY29sb3I6ICMzQzc1QUU7XHJcbi8vIH1cclxuLy8gLmV4aXN0aW5nX3NlY3Rpb257XHJcbi8vICAgaW9uLWlucHV0e1xyXG4vLyAgICAgd2lkdGg6NDAwcHg7XHJcbi8vICAgICBtYXJnaW4tbGVmdDowO1xyXG5cclxuLy8gICB9XHJcbi8vIH1cclxuLnZlcmlmaWNhdGlvbl9zZWN0aW9uIHtcclxuICAuZmluZ2Vyc2NhbiB7XHJcbiAgICBwYWRkaW5nOiA1cHggNXB4IDVweCA1cHg7XHJcbiAgICAuZmluZ2VycHJpbnRfbGFiZWwge1xyXG4gICAgICBtYXJnaW4tbGVmdDogMjglO1xyXG4gICAgfVxyXG4gIH1cclxuICAuaXJpc2gge1xyXG4gICAgcGFkZGluZzogNXB4IDVweCA1cHggNXB4O1xyXG4gICAgLmlyaXNoX2xhYmVsIHtcclxuICAgICAgbWFyZ2luLWxlZnQ6IDI4JTtcclxuICAgIH1cclxuICB9XHJcbiAgLmZhY2VzY2FuIHtcclxuICAgIHBhZGRpbmc6IDVweCA1cHggNXB4IDVweDtcclxuICAgIC5mYWNlc2Nhbl9sYWJlbCB7XHJcbiAgICAgIG1hcmdpbi1sZWZ0OiAyOCU7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcblxyXG4ubmV3X2N1c3Qge1xyXG4gIHdpZHRoOiA1MCU7XHJcbiAgY29sb3I6IGJsYWNrO1xyXG59XHJcbi8vIC5uZXdfY3VzdDp2aXNpdGVke1xyXG4vLyAgIGJhY2tncm91bmQtY29sb3I6IGFxdWE7XHJcblxyXG4vLyB9XHJcbi5leGlzdF9jdXN0IHtcclxuICBjb2xvcjogYmxhY2s7XHJcbn1cclxuLnVwbG9hZERvY1R5cGUge1xyXG4gIG1hcmdpbi1sZWZ0OiAxMjBweDtcclxuICBoZWlnaHQ6IG1pbi1jb250ZW50O1xyXG4gIC5zZWdtZW50LWJ1dHRvbi1jaGVja2VkIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDQzODUgIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiAjZmZmZmZmO1xyXG4gICAgLy8gYm9yZGVyLWNvbG9yOiAjM0M3NUFFO1xyXG4gICAgLy8gYm9yZGVyLXdpZHRoOiBtZWRpdW07XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCAjM2M3NWFlO1xyXG4gIH1cclxufVxyXG4uYXV0byB7XHJcbiAgLy8gd2lkdGg6IDQwcHg7XHJcbiAgbWF4LWhlaWdodDogNzQlO1xyXG4gIG1heC13aWR0aDogNDYlO1xyXG59XHJcbi8vIC5tYW51YWwge1xyXG4vLyB3aWR0aDo0MHB4O1xyXG4vLyBtYXgtaGVpZ2h0OiA3NCU7XHJcbi8vIG1heC13aWR0aDo0NiU7XHJcbi8vIH1cclxuLm90cF9maWVsZCB7XHJcbiAgYm9yZGVyOiAycHggaGlkZGVuIGdyYXk7XHJcbiAgYm94LXNoYWRvdzogMnB4IDJweCAycHggMnB4IHJnYigxODQsIDE3OCwgMTc4KTtcclxuICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgbWFyZ2luLWxlZnQ6IDIwJTtcclxufVxyXG4ubWF0LXRhYi1uYXYtYmFyIHtcclxuICBib3JkZXItYm90dG9tOiBub25lO1xyXG59XHJcbi5tYXQtdGFiLWhlYWRlciB7XHJcbiAgYm9yZGVyLWJvdHRvbTogbm9uZTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIGZsZXgtc2hyaW5rOiAwO1xyXG59XHJcbi8vIC5tYXQtaW5rLWJhcntcclxuLy8gICBkaXNwbGF5OiBmbGV4O1xyXG4vLyAgIG92ZXJmbG93OiBoaWRkZW47XHJcbi8vICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4vLyAgIGZsZXgtc2hyaW5rOiAwO1xyXG4vLyAgIHRvcDogMHB4O1xyXG4vLyB9XHJcbjo6bmctZGVlcCAubWF0LWluay1iYXIge1xyXG4gIGhlaWdodDogNHB4O1xyXG4gIHRvcDogOHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbn1cclxuOjpuZy1kZWVwIC5tYXQtdGFiLWhlYWRlciB7XHJcbiAgYm9yZGVyOiBub25lO1xyXG59XHJcblxyXG4vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy9cclxuLy8vXHJcbi8vL1xyXG5cclxuLmF1dG8tbWFudWFsLXRvZ2dsZS1ncm91cCB7XHJcbiAgYmFja2dyb3VuZDogI2YzZjNmMyAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcbiAgcGFkZGluZzogM3B4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDEycHggIWltcG9ydGFudDtcclxuICBvcGFjaXR5OiAxO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4uYXV0by1tYW51YWwtdG9nZ2xlIHtcclxuICAvLyB3aWR0aDogMTAwcHggIWltcG9ydGFudDtcclxuICBjb2xvcjogI2ZmZmZmZiAhaW1wb3J0YW50O1xyXG4gIGZvbnQ6IG1lZGl1bSBwb3BwaW5zICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbjo6bmctZGVlcCAubWF0LWJ1dHRvbi10b2dnbGUtbGFiZWwtY29udGVudCB7XHJcbiAgY29sb3I6IGJsYWNrO1xyXG59XHJcblxyXG4ubWF0LWJ1dHRvbi10b2dnbGUtY2hlY2tlZCB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Q2ZGJlYSAhaW1wb3J0YW50O1xyXG4gIGNvbG9yOiAjMDAwMDAwMDAgIWltcG9ydGFudDtcclxuICBib3JkZXItcmFkaXVzOiAxMnB4ICFpbXBvcnRhbnQ7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgIzAwNGM5NztcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLkF1dG9tYW51YWxUb2dnbGUge1xyXG4gIC5hdXRvLW1hbnVhbC10b2dnbGUtZ3JvdXAge1xyXG4gICAgYmFja2dyb3VuZDogI2YzZjNmMyAwJSAwJSBuby1yZXBlYXQgcGFkZGluZy1ib3g7XHJcblxyXG4gICAgYm9yZGVyOiAxcHggc29saWQgIzAwNGM5NztcclxuXHJcbiAgICBib3JkZXItcmFkaXVzOiAxMnB4ICFpbXBvcnRhbnQ7XHJcblxyXG4gICAgb3BhY2l0eTogMTtcclxuICB9XHJcblxyXG4gIC5hdXRvLW1hbnVhbC10b2dnbGUge1xyXG4gICAgd2lkdGg6IDEwMHB4ICFpbXBvcnRhbnQ7XHJcblxyXG4gICAgY29sb3I6ICM2ZTZlNmUgIWltcG9ydGFudDtcclxuXHJcbiAgICBmb250OiBtZWRpdW0gcG9wcGlucyAhaW1wb3J0YW50O1xyXG4gIH1cclxuXHJcbiAgLm1hdC1idXR0b24tdG9nZ2xlLWNoZWNrZWQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzAwNGM5NyAhaW1wb3J0YW50O1xyXG5cclxuICAgIGNvbG9yOiB3aGl0ZSAhaW1wb3J0YW50O1xyXG5cclxuICAgIGJvcmRlci1yYWRpdXM6IDEycHggIWltcG9ydGFudDtcclxuICB9XHJcbn1cclxuXHJcbi5oZWFkaW5nIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xyXG4gIHBhZGRpbmctdG9wOiAxOHB4O1xyXG59XHJcbi5jdXN0b21lckhlYWRpbmcge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgaGVpZ2h0OiA1MHB4O1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgLy8gbWFyZ2luLWxlZnQ6LTE0cHg7XHJcbn1cclxuXHJcbjo6bmctZGVlcFxyXG4gIC5tYXQtcmFkaW8tYnV0dG9uLm1hdC1hY2NlbnQubWF0LXJhZGlvLWNoZWNrZWRcclxuICAubWF0LXJhZGlvLW91dGVyLWNpcmNsZSxcclxuLm1hdC1yYWRpby1vdXRlci1jaXJjbGUge1xyXG4gIGJvcmRlci1jb2xvcjogIzAwNDM4NSAhaW1wb3J0YW50O1xyXG4gIC8qIFNldHMgb3V0ZXIgY2lyY2xlICYgY2xpY2sgZWZmZWN0IGNvbG9yICovXHJcbn1cclxuOjpuZy1kZWVwIC5tYXQtcmFkaW8tYnV0dG9uLm1hdC1hY2NlbnQgLm1hdC1yYWRpby1pbm5lci1jaXJjbGUge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDQzODUgIWltcG9ydGFudDtcclxuICAvKiBTZXRzIGlubmVyIGNpcmNsZSBjb2xvciAqL1xyXG59XHJcbm1hdC1jYXJkLm90cGFuZGJpb2NsYXNzIHtcclxuICBib3JkZXItcmFkaXVzOiAxMnB4O1xyXG4gIGJveC1zaGFkb3c6IDBweCAzcHggMTVweCAjMDAwMDAwMTc7XHJcbn1cclxuXHJcbi53aWR0aGNsYXNzIHtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgd2lkdGg6IDQ1JTtcclxufVxyXG4ubWFyZ2luIHtcclxuICBtYXJnaW4tcmlnaHQ6IDMwcHg7XHJcbn1cclxuLm90cGNsYXNzIHtcclxuICBtYXJnaW4tbGVmdDogMTZweDtcclxufVxyXG4uYmlvY2xhc3Mge1xyXG4gIG1hcmdpbi1sZWZ0OiAxNnB4O1xyXG59XHJcblxyXG5pbnB1dDo6cGxhY2Vob2xkZXIge1xyXG4gIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gIGxldHRlci1zcGFjaW5nOiA3LjJweDtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5jdXN0b21lckhlYWRpbmcyIHtcclxuICBtYXJnaW4tdG9wOiAxMHB4O1xyXG59XHJcbi5jdXN0b21lckhlYWRpbmczIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIC8vICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcclxuICAvLyAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XHJcbn1cclxuLmNob29zZSB7XHJcbiAgcGFkZGluZy1sZWZ0OiAxMHB4O1xyXG4gIG1hcmdpbi1yaWdodDogMTAlO1xyXG59XHJcblxyXG4uaW9uX3JhZGlvX2NhcmRzIHtcclxuICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1hcmdpbi1sZWZ0OiAtMjBweDtcclxuICBtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcbn1cclxuLmNhcmQxIHtcclxuICBib3JkZXItcmFkaXVzOiAxNXB4O1xyXG4gIHdpZHRoOiAyMDBweDtcclxuICBib3gtc2hhZG93OiAjMDAwMDAwMTI7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgZ3JleTtcclxufVxyXG4uY2FyZDIge1xyXG4gIGJvcmRlci1yYWRpdXM6IDE1cHg7XHJcbiAgd2lkdGg6IDIwMHB4O1xyXG4gIGJveC1zaGFkb3c6ICMwMDAwMDAxMjtcclxuICBib3JkZXI6IDFweCBzb2xpZCBncmV5O1xyXG59XHJcbi5uZXdfbWFudWFsW19uZ2NvbnRlbnQtbmtkLWM0MjBdIHtcclxuICBtYXJnaW4tbGVmdDogMTBweDtcclxuICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gIG1hcmdpbi1yaWdodDogM3B4O1xyXG59XHJcblxyXG4vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL2ZpbGUgdXBsb2FkIGNzc1xyXG4uZmlsZS1jb250ZW50LXdyYXBwZXIge1xyXG4gIG1hcmdpbi10b3A6IDE2MHB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5tdC0xNiB7XHJcbiAgbWFyZ2luLXRvcDogMTZweDtcclxufVxyXG5cclxuLmNhdC10ZXh0IHtcclxuICBjb2xvcjogIzhkOGQ4ZCAhaW1wb3J0YW50O1xyXG4gIGZvbnQtc2l6ZTogMTJweCAhaW1wb3J0YW50O1xyXG4gIG9wYWNpdHk6IDEwMCU7XHJcbiAgbWFyZ2luLWJvdHRvbTogOHB4ICFpbXBvcnRhbnQ7XHJcbiAgbWFyZ2luLXRvcDogLTZweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5oNi5jYXQtaGVhZCB7XHJcbiAgY29sb3I6ICMwMDAwMDA7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG59XHJcblxyXG4uY2FyZCB7XHJcbiAgd2lkdGg6IGF1dG87XHJcbiAgaGVpZ2h0OiA4NXB4O1xyXG4gIHBhZGRpbmc6IDE2cHg7XHJcbiAgYm94LXNoYWRvdzogcmdiKDk5IDk5IDk5IC8gMjAlKSAwcHggMnB4IDhweCAwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG59XHJcblxyXG4uY2hxLXRleHQge1xyXG4gIGNvbG9yOiAjMDAwMDAwO1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgd2hpdGUtc3BhY2U6IHByZS1saW5lO1xyXG4gIG1hcmdpbi10b3A6IDBweCAhaW1wb3J0YW50O1xyXG4gIG1hcmdpbi1ib3R0b206IDBweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uZGFuZ2VyIHtcclxuICBjb2xvcjogI2IyMDAwMCAhaW1wb3J0YW50O1xyXG4gIG9wYWNpdHk6IDEwMCUgIWltcG9ydGFudDtcclxufVxyXG5cclxuaW9uLXByb2dyZXNzLWJhciB7XHJcbiAgLS1iYWNrZ3JvdW5kOiAjZThlOGU4O1xyXG4gIC0tcHJvZ3Jlc3MtYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjMDUxYTJkLCAjMDA0Yzk3KTtcclxuICBoZWlnaHQ6IDhweCAhaW1wb3J0YW50O1xyXG4gIGJvcmRlci1yYWRpdXM6IDE2cHggIWltcG9ydGFudDtcclxufVxyXG5cclxuLmZpbGUtY2FyZCB7XHJcbiAgYm94LXNoYWRvdzogcmdiKDEwMCAxMDAgMTExIC8gMjAlKSAwcHggN3B4IDI5cHggMHB4O1xyXG4gIHdpZHRoOiBhdXRvO1xyXG4gIGhlaWdodDogMTEwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblxyXG4gIC5wLTEge1xyXG4gICAgaGVpZ2h0OiA4MHB4O1xyXG4gIH1cclxuXHJcbiAgLnBiLTMge1xyXG4gICAgcGFkZGluZy1ib3R0b206IDFyZW0gIWltcG9ydGFudDtcclxuICB9XHJcblxyXG4gIC5ib3JkZXItZW5kIHtcclxuICAgIGJvcmRlci1yaWdodDogMXB0IHNvbGlkICNkZWUyZTYgIWltcG9ydGFudDtcclxuICB9XHJcblxyXG4gIHAge1xyXG4gICAgb3BhY2l0eTogMTAwJSAhaW1wb3J0YW50O1xyXG4gICAgY29sb3I6ICM3MDcwNzAgIWltcG9ydGFudDtcclxuICAgIGZvbnQtc2l6ZTogMTNweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuXHJcbiAgLmF2YXRhciB7XHJcbiAgICBoZWlnaHQ6IDYwcHg7XHJcbiAgICB3aWR0aDogNjBweDtcclxuICAgIGJhY2tncm91bmQ6ICNlZGVjZWM7XHJcbiAgICBtYXJnaW46IDAgYXV0bztcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuXHJcbiAgICAuYmctZ3JhZGllbnQge1xyXG4gICAgICBiYWNrZ3JvdW5kLWltYWdlOiAjZWRlY2VjICFpbXBvcnRhbnQ7XHJcbiAgICB9XHJcblxyXG4gICAgaW1nIHtcclxuICAgICAgbWFyZ2luLXRvcDogMTZweDtcclxuICAgIH1cclxuICB9XHJcbn1cclxuXHJcbmlvbi1idXR0b24ubmV4dCB7XHJcbiAgd2lkdGg6IDE1MHB4O1xyXG4gIGhlaWdodDogNDBweDtcclxuICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCwgIzAwNGM5Nyk7XHJcbiAgLS1jb2xvcjogI2ZmZmZmZjtcclxufVxyXG5cclxuaW9uLWJ1dHRvbi5iYWNrIHtcclxuICB3aWR0aDogMTUwcHg7XHJcbiAgaGVpZ2h0OiA0MHB4O1xyXG4gIC0tYmFja2dyb3VuZDogI2ZmZmZmZjtcclxuICAtLWNvbG9yOiAjMDAwMDAwICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi53aWR0aEZvck1hdCB7XHJcbiAgLy8gd2lkdGg6IDkzJTtcclxuICBtYXJnaW4tdG9wOiAyMHB4O1xyXG59XHJcbi8vLy8vL1xyXG4vLy8gYnV0dG9uc1xyXG4uYnRucyB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICB3aWR0aDogOTAlO1xyXG4gIG1hcmdpbi1sZWZ0OiAxMHB4O1xyXG4gIG1hcmdpbi10b3A6IDgwcHg7XHJcbiAgLmJ0bnMxIHtcclxuICAgIHBhZGRpbmc6IDEycHggMjhweDtcclxuICAgIHdpZHRoOiA0OCU7XHJcbiAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMzVweDtcclxuICAgIGJhY2tncm91bmQ6IHJnYig1LCAyNiwgNDUpO1xyXG4gICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KFxyXG4gICAgICAxNDhkZWcsXHJcbiAgICAgIHJnYmEoNSwgMjYsIDQ1LCAxKSAwJSxcclxuICAgICAgcmdiYSgwLCA3NiwgMTUxLCAxKSAxMDAlXHJcbiAgICApO1xyXG4gIH1cclxuICAuYnRuczIge1xyXG4gICAgcGFkZGluZzogMTJweCAyOHB4O1xyXG4gICAgd2lkdGg6IDQ4JTtcclxuICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzNXB4O1xyXG4gICAgYmFja2dyb3VuZDogcmdiKDI1NSwgMjU1LCAyNTUpO1xyXG4gICAgYm94LXNoYWRvdzogMHB4IC0xcHggMTBweCAwcHggcmdiYSgwLCAwLCAwLCAwLjE1KTtcclxuICAgIGNvbG9yOiBibGFjaztcclxuICB9XHJcbn1cclxuLm1vdmVfdG9nZ2xlIHtcclxuICAuYXV0by1tYW51YWwtdG9nZ2xlLWdyb3VwIHtcclxuICAgIGJhY2tncm91bmQ6ICNmM2YzZjMgMCUgMCUgbm8tcmVwZWF0IHBhZGRpbmctYm94O1xyXG5cclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICMwMDRjOTc7XHJcblxyXG4gICAgYm9yZGVyLXJhZGl1czogMTJweCAhaW1wb3J0YW50O1xyXG5cclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgfVxyXG5cclxuICAuYXV0by1tYW51YWwtdG9nZ2xlIHtcclxuICAgIHdpZHRoOiAxMDBweCAhaW1wb3J0YW50O1xyXG5cclxuICAgIGNvbG9yOiAjNmU2ZTZlICFpbXBvcnRhbnQ7XHJcblxyXG4gICAgZm9udDogbWVkaXVtIHBvcHBpbnMgIWltcG9ydGFudDtcclxuICAgIC8vIG1hcmdpbi1sZWZ0Oi01NHB4O1xyXG4gICAgLy8gbWFyZ2luLXRvcDoycHg7XHJcbiAgfVxyXG5cclxuICAubWF0LWJ1dHRvbi10b2dnbGUtY2hlY2tlZCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA0Yzk3ICFpbXBvcnRhbnQ7XHJcblxyXG4gICAgY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XHJcblxyXG4gICAgYm9yZGVyLXJhZGl1czogMTJweCAhaW1wb3J0YW50O1xyXG4gIH1cclxufVxyXG5cclxuLm9uLWljb24ge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbn1cclxuaW9uLXRvb2xiYXIge1xyXG4gIC0tZGlzcGxheTogZmxleCAhaW1wb3J0YW50O1xyXG4gIC0tYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAtLWp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAtLWNvbG9yOiAjMDA0Yzk3O1xyXG4gIC0td2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbmlvbi1idXR0b24ubmV4dCB7XHJcbiAgd2lkdGg6IDE1MHB4O1xyXG4gIGhlaWdodDogNDBweDtcclxuICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCg5MGRlZywgIzA1MWEyZCwgIzAwNGM5Nyk7XHJcbiAgLS1jb2xvcjogI2ZmZmZmZjtcclxufVxyXG5cclxuaW9uLWJ1dHRvbi5jYW5jZWwge1xyXG4gIHdpZHRoOiAxNTBweDtcclxuICBoZWlnaHQ6IDQwcHg7XHJcbiAgLS1iYWNrZ3JvdW5kOiAjZmZmZmZmO1xyXG4gIC0tY29sb3I6ICNiMjAwMDA7XHJcbn1cclxuXHJcbmlvbi1idXR0b24uYmFjayB7XHJcbiAgd2lkdGg6IDE1MHB4O1xyXG4gIGhlaWdodDogNDBweDtcclxuICAtLWJhY2tncm91bmQ6ICNmZmZmZmY7XHJcbiAgLS1jb2xvcjogIzAwMDAwMCAhaW1wb3J0YW50O1xyXG59XHJcbi5mdWxsLXdpZHRoOTAubS0yIHtcclxuICBtYXJnaW4tbGVmdDogMTBweDtcclxuICBib3gtc2hhZG93OiAjNzA3MDcwO1xyXG59XHJcblxyXG4uZnVsbC13aWR0aCB7XHJcbiAgd2lkdGg6IDEwMCUgIWltcG9ydGFudDtcclxufVxyXG5cclxuLmNhcmQtYmlvbWV0cmljIHtcclxuICBtYXJnaW4tcmlnaHQ6IDIwcHg7XHJcbiAgbWFyZ2luLXRvcDogMjBweDtcclxuICBib3JkZXItcmFkaXVzOiAxNnB4O1xyXG5cclxuICAuYmlvbWV0cmljLWRpdiB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG5cclxuICAgIC5maW5nZXJQcmludCB7XHJcbiAgICAgIGNvbG9yOiAjMDA0Yzk3O1xyXG4gICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICB9XHJcbiAgICAuaXJpc2hUZXh0IHtcclxuICAgICAgY29sb3I6ICM3MDcwNzA7XHJcbiAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgIH1cclxuICAgIC5mYWNlU2NhbiB7XHJcbiAgICAgIGNvbG9yOiAjNzA3MDcwO1xyXG4gICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICB9XHJcbiAgICAudmVydGljYWxMaW5lIHtcclxuICAgICAgYm9yZGVyOiAxcHggIzAwMDAwMDE3IHNvbGlkO1xyXG4gICAgfVxyXG4gIH1cclxufVxyXG4uYmlvY2xhc3Mge1xyXG4gIG1hcmdpbi1sZWZ0OiAtOHB4O1xyXG59XHJcbmgze1xyXG4gIGZvbnQtc2l6ZTogMTVweDtcclxufVxyXG4udG9nZ2xlLWN1c3RvbWVyLWRldGFpbHN7XHJcbiAgcGFkZGluZy10b3A6IDEwcHg7XHJcbn1cclxuaW9uLWJ1dHRvbi5tYW4ge1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gIC0tYmFja2dyb3VuZDogIzAwNDM4NTtcclxuICAtLWNvbG9yOiAjZmZmZmZmO1xyXG4gICAtLWJvcmRlci1yYWRpdXM6IDEycHg7XHJcbiAgXHJcbiAgfVxyXG5cclxuIl19 */";
+
+/***/ }),
+
 /***/ 93915:
 /*!******************************************************************************!*\
   !*** ./src/app/components/add-account/add-account.component.html?ngResource ***!
@@ -5810,7 +5942,7 @@ module.exports = "<div class=\"circle\" [ngStyle]=\"{'background-color':  circle
   \****************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-grid\r\n  class=\"BI-container my-3\"\r\n  *ngIf=\"basicInfoForm\"\r\n  [formGroup]=\"basicInfoForm\"\r\n>\r\n  <!-- top part -->\r\n  <!-- BEGIN:TOP ROW -->\r\n  <div class=\"row BI-top-section\">\r\n    <div class=\"col-6\">\r\n      <div class=\"img-container\">\r\n        <!-- <img src=\"assets/images/no-image.png\" alt=\"No image available...\" /> -->\r\n        <input type=\"file\" [hidden]=\"true\" #fileSelect formControlName=\"userImg\" (change)=\"onFileSelected($event)\"/>\r\n        <img\r\n          [src]=\"\r\n          basicInfoForm.get('userImg')?.value != ''\r\n              ? basicInfoForm.get('userImg')?.value\r\n              : 'assets/images/userImage.png'\r\n          \"\r\n          alt=\"No image available...\"\r\n        />\r\n        <div class=\"icons\">\r\n          <ion-icon [src]=\"editIcon\" (click)=\"fileSelect.click()\"></ion-icon>\r\n          <ion-icon [src]=\"deleteIcon\" (click)=\"basicInfoForm.get('userImg').setValue('')\"></ion-icon>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <div class=\"right-top-section\">\r\n        <mat-button-toggle-group\r\n          class=\"auto-manual-toggle-group\"\r\n          (change)=\"autoManualToggle($event.value)\"\r\n          [style]=\"screenType == 'branch' ? 'visibility: visible;':'visibility: hidden;'\"\r\n        >\r\n          <mat-button-toggle\r\n            *ngFor=\"let option of toggleArr; let i = index\"\r\n            color=\"primary\"\r\n            [checked]=\"option.checked\"\r\n            [value]=\"option.name\"\r\n            class=\"auto-manual-toggle\"\r\n            >{{ option.name }}\r\n          </mat-button-toggle>\r\n        </mat-button-toggle-group>\r\n\r\n        <mat-form-field\r\n          class=\"full-width\"\r\n          appearance=\"outline\"\r\n          class=\"input-field-cont\"\r\n          style=\"display: flex;\"\r\n        >\r\n          <mat-label>CIF Number </mat-label>\r\n          <input\r\n            type=\"number\"\r\n            matInput\r\n            formControlName=\"customerId\"\r\n            (change)=\"fetchDataUsingCIF($event.target.value)\"\r\n          />\r\n          <img\r\n          src=\"assets/icon/search.svg\"\r\n        />\r\n        </mat-form-field>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <!-- END:TOP ROW -->\r\n\r\n  <!-- mid section i/p fields... -->\r\n  <ion-row class=\"BI-mid-section\">\r\n    <mat-form-field\r\n      class=\"full-width\"\r\n      appearance=\"outline\"\r\n      class=\"input-field-cont\"\r\n    >\r\n      <mat-label>Prefix</mat-label>\r\n      <mat-select formControlName=\"prefix\">\r\n        <mat-option *ngFor=\"let prefix of prefixArr\" [value]=\"prefix\">{{prefix}}</mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n\r\n    <mat-form-field\r\n      class=\"full-width\"\r\n      appearance=\"outline\"\r\n      class=\"input-field-cont\"\r\n    >\r\n      <mat-label>First Name</mat-label>\r\n      <input\r\n        type=\"text\"\r\n        matInput\r\n        appAlphabetOnly\r\n        maxlength=\"15\"\r\n        class=\"alignment\"\r\n        formControlName=\"firstName\"\r\n      />\r\n    </mat-form-field>\r\n\r\n    <div class=\"ml-name\">\r\n      <mat-form-field\r\n        class=\"full-width\"\r\n        appearance=\"outline\"\r\n        class=\"input-field-cont\"\r\n      >\r\n        <mat-label>Middle Name </mat-label>\r\n        <input\r\n          type=\"text\"\r\n          matInput\r\n          appAlphabetOnly\r\n          maxlength=\"15\"\r\n          class=\"alignment\"\r\n          formControlName=\"middleName\"\r\n        />\r\n      </mat-form-field>\r\n\r\n      <mat-form-field\r\n        class=\"full-width\"\r\n        appearance=\"outline\"\r\n        class=\"input-field-cont\"\r\n      >\r\n        <mat-label>Last Name</mat-label>\r\n        <input\r\n          type=\"text\"\r\n          matInput\r\n          appAlphabetOnly\r\n          maxlength=\"15\"\r\n          class=\"alignment\"\r\n          formControlName=\"lastName\"\r\n        />\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div class=\"DOB-gender\">\r\n      <mat-form-field\r\n      class=\"full-width\"\r\n      appearance=\"outline\"\r\n      class=\"input-field-cont\"\r\n    >\r\n      <mat-label>Date Of Birth</mat-label>\r\n      <input matInput formControlName=\"dateOfBirth\" readonly />\r\n      <span matSuffix>\r\n        <mat-datepicker-toggle>\r\n          <img\r\n            src=\"assets/icon/calendar.svg\"\r\n            matDatepickerToggleIcon\r\n            class=\"calendar-icon\"\r\n            (click)=\"datePopup()\"\r\n          />\r\n        </mat-datepicker-toggle>\r\n      </span>\r\n    </mat-form-field>\r\n\r\n      <mat-form-field\r\n        class=\"full-width\"\r\n        appearance=\"outline\"\r\n        class=\"input-field-cont\"\r\n      >\r\n        <mat-label>Gender</mat-label>\r\n        <mat-select formControlName=\"gender\">\r\n          <mat-option *ngFor=\"let gender of genderArr\" [value]=\"gender\">{{gender}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div class=\"marital-nat\">\r\n      <mat-form-field\r\n        class=\"full-width\"\r\n        appearance=\"outline\"\r\n        class=\"input-field-cont\"\r\n      >\r\n        <mat-label>Marital Status</mat-label>\r\n        <mat-select formControlName=\"maritalStatus\">\r\n          <mat-option *ngFor=\"let maritalStatus of maritalStatusArr\" [value]=\"maritalStatus\">{{maritalStatus}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field\r\n        class=\"full-width\"\r\n        appearance=\"outline\"\r\n        class=\"input-field-cont\"\r\n      >\r\n        <mat-label>Nationality</mat-label>\r\n        <mat-select formControlName=\"nationality\">\r\n          <mat-option *ngFor=\"let nationality of nationalityArr\" [value]=\"nationality\">{{nationality}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\" class=\"emailField\">\r\n      <mat-label>Email</mat-label>\r\n      <input matInput formControlName=\"primaryEmailAdress\" />\r\n      <button\r\n        *ngIf=\"!emailVerified; else showEmailSuccess\"\r\n        matSuffix\r\n        (click)=\"getOtp('email', basicInfoForm.get('primaryEmailAdress').value)\"\r\n        class=\"verify-btn\"\r\n        [ngClass]=\"\r\n          basicInfoForm.get('primaryEmailAdress').invalid\r\n            ? 'verify-btn-disable'\r\n            : 'verify-btn-enable'\r\n        \"\r\n      >\r\n        Verify\r\n      </button>\r\n      <ng-template #showEmailSuccess>\r\n        <ion-icon\r\n          matSuffix\r\n          size=\"large\"\r\n          name=\"checkmark-circle-outline\"\r\n          class=\"succss-btn\"\r\n          style=\"color: green;\"\r\n        ></ion-icon>\r\n      </ng-template>\r\n    </mat-form-field>\r\n\r\n    <mat-form-field\r\n      appearance=\"outline\"\r\n      class=\"full-width\"\r\n      class=\"mobileNumberField\"\r\n    >\r\n      <mat-label>Mobile Number</mat-label>\r\n      <input\r\n        matInput\r\n        formControlName=\"phoneNumber\"\r\n        numbersOnly\r\n        maxlength=\"10\"\r\n      />\r\n      <button\r\n        *ngIf=\"!mobileVerified; else showSuccess\"\r\n        matSuffix\r\n        class=\"verify-btn\"\r\n        (click)=\"getOtp('mobile', basicInfoForm.get('phoneNumber').value)\"\r\n        [ngClass]=\"\r\n          basicInfoForm.get('phoneNumber').invalid\r\n            ? 'verify-btn-disable'\r\n            : 'verify-btn-enable'\r\n        \"\r\n      >\r\n        Verify\r\n      </button>\r\n      <ng-template #showSuccess>\r\n        <ion-icon\r\n          matSuffix\r\n          size=\"large\"\r\n          name=\"checkmark-circle-outline\"\r\n          class=\"succss-btn\"\r\n          style=\"color: green;\"\r\n        ></ion-icon>\r\n      </ng-template>\r\n    </mat-form-field>\r\n  </ion-row>\r\n\r\n  <!-- Address section👇👇👇 -->\r\n  <ion-row class=\"BI-address-section\">\r\n    <ion-text\r\n      >Is your Permanent Address is same as Communication Address?</ion-text\r\n    >\r\n    <mat-radio-group (change)=\"onClick($event)\">\r\n      <mat-radio-button value=\"Yes\" [checked]=\"true\">Yes </mat-radio-button>\r\n      <mat-radio-button value=\"No\" class=\"mx-4\">No </mat-radio-button>\r\n    </mat-radio-group>\r\n    <ng-container\r\n      *ngFor=\"let userAddress of userAddresses.controls; let i = index\"\r\n    >\r\n      <div class=\"comm-add\" [formGroup]=\"userAddress\">\r\n        <h6>{{ i == 0 ? \"Communication Address\" : \"Permanent Address\" }}</h6>\r\n        <mat-form-field\r\n          class=\"full-width\"\r\n          appearance=\"outline\"\r\n          class=\"input-field-cont\"\r\n        >\r\n          <mat-label>AddressLine1  </mat-label>\r\n          <input\r\n            type=\"text\"\r\n            matInput\r\n            appAlphabetOnly\r\n            class=\"alignment\"\r\n            formControlName=\"address1\"\r\n          />\r\n        </mat-form-field>\r\n\r\n        <mat-form-field\r\n          class=\"full-width\"\r\n          appearance=\"outline\"\r\n          class=\"input-field-cont\"\r\n        >\r\n          <mat-label>AddressLine2  </mat-label>\r\n          <input\r\n            type=\"text\"\r\n            matInput\r\n            appAlphabetOnly\r\n            class=\"alignment\"\r\n            formControlName=\"address2\"\r\n          />\r\n        </mat-form-field>\r\n\r\n        <mat-form-field\r\n          class=\"full-width\"\r\n          appearance=\"outline\"\r\n          class=\"input-field-cont\"\r\n        >\r\n          <mat-label>Residence Type </mat-label>\r\n          <mat-select formControlName=\"residenceType\">\r\n            <mat-option *ngFor=\"let residenceType of residenceTypeArr\" [value]=\"residenceType\">{{residenceType}}</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field\r\n          class=\"full-width\"\r\n          appearance=\"outline\"\r\n          class=\"input-field-cont\"\r\n        >\r\n          <mat-label>Country </mat-label>\r\n          <mat-select formControlName=\"country\">\r\n            <mat-option *ngFor=\"let country of countryArr\" [value]=\"country.countryName\">{{country.countryName}}</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field\r\n          class=\"full-width\"\r\n          appearance=\"outline\"\r\n          class=\"input-field-cont\"\r\n          style=\"\"\r\n        >\r\n            <mat-label>Zip Code </mat-label>\r\n\r\n          <input\r\n            type=\"text\"\r\n            matInput\r\n            numbersOnly\r\n            minlength=\"5\"\r\n            maxlength=\"10\"\r\n            class=\"alignment\"\r\n            formControlName=\"zipCode\"\r\n            (change)=\"fetchStateAndCity($event.target.value,i)\"\r\n          />\r\n\r\n          <img\r\n          src=\"assets/icon/search.svg\"\r\n        />\r\n\r\n        </mat-form-field>\r\n\r\n        <div class=\"state-city\">\r\n          <mat-form-field\r\n            class=\"full-width\"\r\n            appearance=\"outline\"\r\n            class=\"input-field-cont\"\r\n          >\r\n            <mat-label>State </mat-label>\r\n            <mat-select formControlName=\"state\">\r\n              <mat-option *ngFor=\"let state of stateArr\" [value]=\"state.stateName\">{{state.stateName}}</mat-option>\r\n            </mat-select>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field\r\n            class=\"full-width\"\r\n            appearance=\"outline\"\r\n            class=\"input-field-cont\"\r\n          >\r\n            <mat-label>City </mat-label>\r\n            <mat-select formControlName=\"city\">\r\n              <mat-option *ngFor=\"let city of cityArr\" [value]=\"city.cityName\">{{city.cityName}}</mat-option>\r\n            </mat-select>\r\n          </mat-form-field>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n  </ion-row>\r\n\r\n  <!-- buttons -->\r\n  <div class=\"row h-50 my-4\">\r\n    <div class=\"col-6\">\r\n      <ion-button shape=\"round\" class=\"back\" (click)=\"goBack()\"\r\n        >Back</ion-button\r\n      >\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <ion-button\r\n        shape=\"round\"\r\n        class=\"next float-right\"\r\n        [disabled]=\"basicInfoForm.invalid\"\r\n        (click)=\"goToNextTab('BASIC-INFO')\"\r\n      >\r\n        Next\r\n      </ion-button>\r\n    </div>\r\n  </div>\r\n</ion-grid>\r\n";
+module.exports = "<ion-grid\r\n  class=\"BI-container my-3\"\r\n  *ngIf=\"basicInfoForm\"\r\n  [formGroup]=\"basicInfoForm\"\r\n>\r\n  <!-- top part -->\r\n  <!-- BEGIN:TOP ROW -->\r\n  <div class=\"row BI-top-section\">\r\n    <div class=\"col-6\">\r\n      <div class=\"img-container\">\r\n        <input type=\"file\" [hidden]=\"true\" #fileSelect formControlName=\"userImg\" (change)=\"onFileSelected($event)\"/>\r\n        <img\r\n          [src]=\"\r\n          basicInfoForm.get('userImg')?.value != ''\r\n              ? basicInfoForm.get('userImg')?.value\r\n              : 'assets/images/userImage.png'\r\n          \"\r\n          alt=\"No image available...\"\r\n        />\r\n        <div class=\"icons\">\r\n          <ion-icon [src]=\"editIcon\" (click)=\"fileSelect.click()\"></ion-icon>\r\n          <ion-icon [src]=\"deleteIcon\" (click)=\"basicInfoForm.get('userImg').setValue('')\"></ion-icon>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <div class=\"right-top-section\">\r\n        <mat-button-toggle-group\r\n          class=\"auto-manual-toggle-group\"\r\n          (change)=\"autoManualToggle($event.value)\"\r\n          [style]=\"screenType == 'branch' ? 'visibility: visible;':'visibility: hidden;'\"\r\n        >\r\n          <mat-button-toggle\r\n            *ngFor=\"let option of toggleArr; let i = index\"\r\n            color=\"primary\"\r\n            [checked]=\"option.checked\"\r\n            [value]=\"option.name\"\r\n            class=\"auto-manual-toggle\"\r\n            >{{ option.name }}\r\n          </mat-button-toggle>\r\n        </mat-button-toggle-group>\r\n\r\n        <mat-form-field\r\n          class=\"full-width\"\r\n          appearance=\"outline\"\r\n          class=\"input-field-cont\"\r\n          style=\"display: flex;\"\r\n        >\r\n          <mat-label>CIF Number </mat-label>\r\n          <input\r\n            type=\"number\"\r\n            matInput\r\n            formControlName=\"customerId\"\r\n            (change)=\"fetchDataUsingCIF($event.target.value)\"\r\n          />\r\n          <img\r\n          src=\"assets/icon/search.svg\"\r\n        />\r\n        </mat-form-field>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <!-- END:TOP ROW -->\r\n\r\n  <!-- mid section i/p fields... -->\r\n  <ion-row class=\"BI-mid-section\">\r\n    <mat-form-field\r\n      class=\"full-width\"\r\n      appearance=\"outline\"\r\n      class=\"input-field-cont\"\r\n    >\r\n      <mat-label>Prefix</mat-label>\r\n      <mat-select formControlName=\"prefix\">\r\n        <mat-option *ngFor=\"let prefix of prefixArr\" [value]=\"prefix\">{{prefix}}</mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n    <mat-error class=\"err-msg\" *ngIf=\"basicInfoForm.controls['prefix'].touched && basicInfoForm.controls['prefix'].hasError('required')\">Please Enter Prefix</mat-error>\r\n\r\n    <mat-form-field\r\n      class=\"full-width\"\r\n      appearance=\"outline\"\r\n      class=\"input-field-cont\"\r\n    >\r\n      <mat-label>First Name</mat-label>\r\n      <input\r\n        type=\"text\"\r\n        matInput\r\n        appAlphabetOnly\r\n        maxlength=\"15\"\r\n        class=\"alignment\"\r\n        formControlName=\"firstName\"\r\n      />\r\n    </mat-form-field>\r\n    <mat-error class=\"err-msg\" *ngIf=\"basicInfoForm.controls['firstName'].touched && basicInfoForm.controls['firstName'].hasError('required')\">Please Enter First Name</mat-error>\r\n\r\n    <div class=\"ml-name\">\r\n      <div class=\"input-div\">\r\n        <mat-form-field\r\n        class=\"full-width\"\r\n        appearance=\"outline\"\r\n        class=\"input-field-cont\"\r\n      >\r\n        <mat-label>Middle Name </mat-label>\r\n        <input\r\n          type=\"text\"\r\n          matInput\r\n          appAlphabetOnly\r\n          maxlength=\"15\"\r\n          class=\"alignment\"\r\n          formControlName=\"middleName\"\r\n        />\r\n      </mat-form-field>\r\n      </div>\r\n     \r\n<div class=\"input-div\">\r\n  <mat-form-field\r\n  class=\"full-width\"\r\n  appearance=\"outline\"\r\n  class=\"input-field-cont\"\r\n>\r\n  <mat-label>Last Name</mat-label>\r\n  <input\r\n    type=\"text\"\r\n    matInput\r\n    appAlphabetOnly\r\n    maxlength=\"15\"\r\n    class=\"alignment\"\r\n    formControlName=\"lastName\"\r\n  />\r\n</mat-form-field>\r\n<mat-error class=\"err-msg\" *ngIf=\"basicInfoForm.controls['lastName'].touched && basicInfoForm.controls['lastName'].hasError('required')\">Please Enter Last Name</mat-error>\r\n</div>\r\n    </div>\r\n\r\n    <div class=\"DOB-gender\">\r\n      <div class=\"input-div\">\r\n      <mat-form-field\r\n      class=\"full-width\"\r\n      appearance=\"outline\"\r\n      class=\"input-field-cont\"\r\n    >\r\n      <mat-label>Date Of Birth</mat-label>\r\n      <input matInput formControlName=\"dateOfBirth\" readonly />\r\n      <span matSuffix>\r\n        <mat-datepicker-toggle>\r\n          <img\r\n            src=\"assets/icon/calendar.svg\"\r\n            matDatepickerToggleIcon\r\n            class=\"calendar-icon\"\r\n            (click)=\"datePopup()\"\r\n          />\r\n        </mat-datepicker-toggle>\r\n      </span>\r\n    </mat-form-field>\r\n    <mat-error class=\"err-msg\" *ngIf=\"basicInfoForm.controls['dateOfBirth'].touched && basicInfoForm.controls['dateOfBirth'].hasError('required')\">Please Enter Date of Birth</mat-error>\r\n</div>\r\n    <div class=\"input-div\">\r\n      <mat-form-field\r\n        class=\"full-width\"\r\n        appearance=\"outline\"\r\n        class=\"input-field-cont\"\r\n      >\r\n        <mat-label>Gender</mat-label>\r\n        <mat-select formControlName=\"gender\">\r\n          <mat-option *ngFor=\"let gender of genderArr\" [value]=\"gender\">{{gender}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n      <mat-error class=\"err-msg\" *ngIf=\"basicInfoForm.controls['gender'].touched && basicInfoForm.controls['gender'].hasError('required')\">Please Enter Gender</mat-error>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"marital-nat\">\r\n      <div class=\"input-div\">\r\n      <mat-form-field\r\n        class=\"full-width\"\r\n        appearance=\"outline\"\r\n        class=\"input-field-cont\"\r\n      >\r\n        <mat-label>Marital Status</mat-label>\r\n        <mat-select formControlName=\"maritalStatus\">\r\n          <mat-option *ngFor=\"let maritalStatus of maritalStatusArr\" [value]=\"maritalStatus\">{{maritalStatus}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n      <mat-error class=\"err-msg\" *ngIf=\"basicInfoForm.controls['maritalStatus'].touched && basicInfoForm.controls['maritalStatus'].hasError('required')\">Please Enter Marital Status</mat-error>\r\n</div>\r\n<div class=\"input-div\">\r\n      <mat-form-field\r\n        class=\"full-width\"\r\n        appearance=\"outline\"\r\n        class=\"input-field-cont\"\r\n      >\r\n        <mat-label>Nationality</mat-label>\r\n        <mat-select formControlName=\"nationality\">\r\n          <mat-option *ngFor=\"let nationality of nationalityArr\" [value]=\"nationality\">{{nationality}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n      <mat-error class=\"err-msg\" *ngIf=\"basicInfoForm.controls['nationality'].touched && basicInfoForm.controls['nationality'].hasError('required')\">Please Enter Nationality</mat-error>\r\n    </div>\r\n    </div>\r\n\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\" class=\"emailField\">\r\n      <mat-label>Email</mat-label>\r\n      <input matInput formControlName=\"primaryEmailAdress\" />\r\n      <button\r\n        *ngIf=\"!emailVerified; else showEmailSuccess\"\r\n        matSuffix\r\n        (click)=\"getOtp('email', basicInfoForm.get('primaryEmailAdress').value)\"\r\n        class=\"verify-btn\"\r\n        [ngClass]=\"\r\n          basicInfoForm.get('primaryEmailAdress').invalid\r\n            ? 'verify-btn-disable'\r\n            : 'verify-btn-enable'\r\n        \"\r\n      >\r\n        Verify\r\n      </button>\r\n      <ng-template #showEmailSuccess>\r\n        <ion-icon\r\n          matSuffix\r\n          size=\"large\"\r\n          name=\"checkmark-circle-outline\"\r\n          class=\"succss-btn\"\r\n          style=\"color: green;\"\r\n        ></ion-icon>\r\n      </ng-template>\r\n    </mat-form-field>\r\n    <mat-error class=\"err-msg\" *ngIf=\"basicInfoForm.controls['primaryEmailAdress'].touched && basicInfoForm.controls['primaryEmailAdress'].hasError('required')\">Please Enter E-mail</mat-error>\r\n\r\n\r\n    <mat-form-field\r\n      appearance=\"outline\"\r\n      class=\"full-width\"\r\n      class=\"mobileNumberField\"\r\n    >\r\n      <mat-label>Mobile Number</mat-label>\r\n      <input\r\n        matInput\r\n        formControlName=\"phoneNumber\"\r\n        numbersOnly\r\n        maxlength=\"10\"\r\n      />\r\n      <button\r\n        *ngIf=\"!mobileVerified; else showSuccess\"\r\n        matSuffix\r\n        class=\"verify-btn\"\r\n        (click)=\"getOtp('mobile', basicInfoForm.get('phoneNumber').value)\"\r\n        [ngClass]=\"\r\n          basicInfoForm.get('phoneNumber').invalid\r\n            ? 'verify-btn-disable'\r\n            : 'verify-btn-enable'\r\n        \"\r\n      >\r\n        Verify\r\n      </button>\r\n      <ng-template #showSuccess>\r\n        <ion-icon\r\n          matSuffix\r\n          size=\"large\"\r\n          name=\"checkmark-circle-outline\"\r\n          class=\"succss-btn\"\r\n          style=\"color: green;\"\r\n        ></ion-icon>\r\n      </ng-template>\r\n    </mat-form-field>\r\n    <mat-error class=\"err-msg\" *ngIf=\"basicInfoForm.controls['phoneNumber'].touched && basicInfoForm.controls['phoneNumber'].hasError('required')\">Please Enter Mobile Number</mat-error>\r\n\r\n  </ion-row>\r\n\r\n  <!-- Address section👇👇👇 -->\r\n  <ion-row class=\"BI-address-section\">\r\n    <ion-text\r\n      >Is your Permanent Address is same as Communication Address?</ion-text\r\n    >\r\n    <mat-radio-group (change)=\"onClick($event)\">\r\n      <mat-radio-button value=\"Yes\" [checked]=\"true\">Yes </mat-radio-button>\r\n      <mat-radio-button value=\"No\" class=\"mx-4\">No </mat-radio-button>\r\n    </mat-radio-group>\r\n    <ng-container\r\n      *ngFor=\"let userAddress of userAddresses.controls; let i = index\"\r\n    >\r\n      <div class=\"comm-add\" [formGroup]=\"userAddress\">\r\n        <h6>{{ i == 0 ? \"Communication Address\" : \"Permanent Address\" }}</h6>\r\n        <mat-form-field\r\n          class=\"full-width\"\r\n          appearance=\"outline\"\r\n          class=\"input-field-cont\"\r\n        >\r\n          <mat-label>AddressLine1  </mat-label>\r\n          <input\r\n            type=\"text\"\r\n            matInput\r\n            appAlphabetOnly\r\n            class=\"alignment\"\r\n            formControlName=\"address1\"\r\n          />\r\n        </mat-form-field>\r\n        <mat-error class=\"err-msg\" *ngIf=\"userAddress.controls['address1'].touched && userAddress.controls['address1'].hasError('required')\">Please Enter Address Line1</mat-error>\r\n\r\n        <mat-form-field\r\n          class=\"full-width\"\r\n          appearance=\"outline\"\r\n          class=\"input-field-cont\"\r\n        >\r\n          <mat-label>AddressLine2  </mat-label>\r\n          <input\r\n            type=\"text\"\r\n            matInput\r\n            appAlphabetOnly\r\n            class=\"alignment\"\r\n            formControlName=\"address2\"\r\n          />\r\n        </mat-form-field>\r\n        <mat-error class=\"err-msg\" *ngIf=\"userAddress.controls['address2'].touched && userAddress.controls['address2'].hasError('required')\">Please Enter First Name</mat-error>\r\n\r\n        <mat-form-field\r\n          class=\"full-width\"\r\n          appearance=\"outline\"\r\n          class=\"input-field-cont\"\r\n        >\r\n          <mat-label>Residence Type </mat-label>\r\n          <mat-select formControlName=\"residenceType\">\r\n            <mat-option *ngFor=\"let residenceType of residenceTypeArr\" [value]=\"residenceType\">{{residenceType}}</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n        <mat-error class=\"err-msg\" *ngIf=\"userAddress.controls['residenceType'].touched && userAddress.controls['residenceType'].hasError('required')\">Please Enter Residence type</mat-error>\r\n\r\n        <mat-form-field\r\n          class=\"full-width\"\r\n          appearance=\"outline\"\r\n          class=\"input-field-cont\"\r\n        >\r\n          <mat-label>Country </mat-label>\r\n          <mat-select formControlName=\"country\">\r\n            <mat-option *ngFor=\"let country of countryArr\" [value]=\"country.countryName\" (selectionChange)=\"fetchStateAndCity(userAddress.get('zipCode').value,i)\">{{country.countryName}}</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n        <mat-error class=\"err-msg\" *ngIf=\"userAddress.controls['country'].touched && userAddress.controls['country'].hasError('required')\">Please Enter Country</mat-error>\r\n\r\n        <mat-form-field\r\n          class=\"full-width\"\r\n          appearance=\"outline\"\r\n          class=\"input-field-cont\"\r\n        >\r\n            <mat-label>Zip Code </mat-label>\r\n          <input\r\n            type=\"text\"\r\n            matInput\r\n            numbersOnly\r\n            minlength=\"5\"\r\n            maxlength=\"10\"\r\n            class=\"alignment\"\r\n            formControlName=\"zipCode\"\r\n            (change)=\"fetchStateAndCity($event.target.value,i)\"\r\n          />\r\n\r\n          <img\r\n          src=\"assets/icon/search.svg\"\r\n        />\r\n\r\n        </mat-form-field>\r\n        <mat-error class=\"err-msg\" *ngIf=\"userAddress.controls['zipCode'].touched && userAddress.controls['zipCode'].hasError('required')\">Please Enter Zip Code</mat-error>\r\n\r\n        <div class=\"state-city\">\r\n          <div class=\"input-div\">\r\n            <mat-form-field\r\n            class=\"full-width\"\r\n            appearance=\"outline\"\r\n            class=\"input-field-cont\"\r\n          >\r\n            <mat-label>State </mat-label>\r\n            <mat-select formControlName=\"state\">\r\n              <mat-option *ngFor=\"let state of stateArr\" [value]=\"state.stateName\">{{state.stateName}}</mat-option>\r\n            </mat-select>\r\n          </mat-form-field>\r\n          <mat-error class=\"err-msg\" *ngIf=\"userAddress.controls['state'].touched && userAddress.controls['state'].hasError('required')\">Please Enter State</mat-error>\r\n          </div>\r\n          <div class=\"input-div\">\r\n            <mat-form-field\r\n            class=\"full-width\"\r\n            appearance=\"outline\"\r\n            class=\"input-field-cont\"\r\n          >\r\n            <mat-label>City </mat-label>\r\n            <mat-select formControlName=\"city\">\r\n              <mat-option *ngFor=\"let city of cityArr\" [value]=\"city.cityName\">{{city.cityName}}</mat-option>\r\n            </mat-select>\r\n          </mat-form-field>\r\n          <mat-error class=\"err-msg\" *ngIf=\"userAddress.controls['city'].touched && userAddress.controls['city'].hasError('required')\">Please Enter City</mat-error>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n  </ion-row>\r\n\r\n  <!-- buttons -->\r\n  <div class=\"row h-50 my-4\">\r\n    <div class=\"col-6\">\r\n      <ion-button shape=\"round\" class=\"back\" (click)=\"goBack()\"\r\n        >Back</ion-button\r\n      >\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <ion-button\r\n        shape=\"round\"\r\n        class=\"next float-right\"\r\n        [disabled]=\"basicInfoForm.invalid\"\r\n        (click)=\"goToNextTab('BASIC-INFO')\"\r\n      >\r\n        Next\r\n      </ion-button>\r\n    </div>\r\n  </div>\r\n</ion-grid>\r\n";
 
 /***/ }),
 
@@ -5890,37 +6022,7 @@ module.exports = "<ion-content>\r\n  <section>\r\n    <ion-toolbar>\r\n      <io
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<div class=\"footer pb-0\">\r\n  <ul>\r\n    <li (click)=\"dashboardPage()\">\r\n      <a class=\"icon\" [ngClass]=\"url1=='/dashboard' ? 'active ' : ''\">\r\n        <img src=\"assets/images/home-normal.svg\" class=\"w-100 normal footer-custom-icon-small\" />\r\n        <img src=\"assets/images/home-dark.svg\" class=\"w-100 hover footer-custom-icon-small\" />\r\n        <!-- <span><i class=\"fas fa-home\"></i></span>\r\n          <p>Home</p> -->\r\n      </a>\r\n    </li>\r\n    <li (click)=\"transactionPage()\">\r\n      <a class=\"icon\" [ngClass]=\"url1=='/transaction' ? 'active ' : ''\">\r\n        <img src=\"assets/images/my-trans-normal.svg\" class=\"w-100 normal footer-custom-icon\" />\r\n        <img src=\"assets/images/my-trans.svg\" class=\"w-100 hover footer-custom-icon\" />\r\n        <!-- <span>\r\n          <i class=\"fas fa-money-bill-wave\"></i>\r\n          <img class=\"foo_icon\" src=\"assets/images/footer/transaction-icon.png\" />\r\n        </span>\r\n        <p>My Transaction</p> -->\r\n      </a>\r\n    </li>\r\n    <li (click)=\"appointmentPage()\">\r\n      <a class=\"icon\" [ngClass]=\"url1=='/appointment' ? 'active ' : ''\">\r\n        <img src=\"assets/images/appt-his-normal.svg\" class=\"w-100 normal footer-custom-icon-appt\" />\r\n        <img src=\"assets/images/appt-his.svg\" class=\"w-100 hover footer-custom-icon-appt\" />\r\n        <!-- <span>\r\n          <i class=\"far fa-clock\"></i>\r\n        </span>\r\n        <p>Appointment History</p> -->\r\n      </a>\r\n    </li>\r\n    <li (click)=\"profilePage()\">\r\n      <a class=\"icon\" [ngClass]=\"url1=='/profile' ? 'active ' : ''\">\r\n        <img src=\"assets/images/profile-normal.svg\" class=\"w-100 normal footer-custom-icon-small\" />\r\n        <img src=\"assets/images/profile-dark.svg\" class=\"w-100 hover footer-custom-icon-small\" />\r\n        <!-- <span>\r\n          <i class=\"far fa-user-circle\"></i>\r\n        </span>\r\n        <p>Profile</p> -->\r\n      </a>\r\n    </li>\r\n  </ul>\r\n</div>\r\n\r\n\r\n";
-
-/***/ }),
-
-/***/ 8465:
-/*!**********************************************************************************************************************!*\
-  !*** ./src/app/components/kyc-modal/customer-auto-verification/customer-auto-verification.component.html?ngResource ***!
-  \**********************************************************************************************************************/
-/***/ ((module) => {
-
-module.exports = "<ng-container>\r\n  <!-- *ngIf=\"(!isExistingCustomer || (isExistingCustomer && isrekyc)) && isAuto\" class=\"\" -->\r\n<mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n  <mat-label>Document Name</mat-label>\r\n  <mat-select\r\n    matNativeControl\r\n    required\r\n    [(ngModel)]=\"documentName\"\r\n    #docName=\"ngModel\"\r\n    disableOptionCentering\r\n  >\r\n    <mat-option *ngFor=\"let doc of docArr\" [value]=\"doc\">{{\r\n      doc\r\n    }}</mat-option>\r\n  </mat-select>\r\n</mat-form-field>\r\n<mat-form-field appearance=\"outline\" class=\"full-width\">\r\n  <mat-label>Document Number</mat-label>\r\n  <input\r\n    matInput\r\n    placeholder=\"Document Number*\"\r\n    type=\"number\"\r\n    matNativeControl\r\n    required\r\n    [(ngModel)]=\"documentNumber\"\r\n    #docNumber=\"ngModel\"\r\n  />\r\n  <!-- (keyup)=\"onKeyUp1()\" -->\r\n</mat-form-field>\r\n<div class=\"my-2\">\r\n  <div fxLayout=\"row\" fxLayoutGap=\"10px\">\r\n    <div fxFlex=\"50\">\r\n      <mat-card\r\n        class=\"otpandbioclass\"\r\n        (click)=\"verificationMethodToggle('otp')\"\r\n      >\r\n        <div fxLayout=\"row\" fxLayoutGap=\"2px\" fxLayoutAlign=\"space-around center\">\r\n          <div fxFlex=\"50\">\r\n              <img\r\n                [src]=\"\r\n                  isOtp && documentName && documentNumber\r\n                    ? 'assets/Ellipse 161.png'\r\n                    : 'assets/Ellipse 132.png'\r\n                \"\r\n                alt=\"Ionic logo\"\r\n\r\n\r\n              />\r\n          </div>\r\n          <div fxFlex=\"50\">\r\n            <span>OTP</span>\r\n          </div>\r\n        </div>\r\n      </mat-card>\r\n    </div>\r\n    <div fxFlex=\"50\">\r\n      <mat-card\r\n        class=\"otpandbioclass\"\r\n        (click)=\"verificationMethodToggle('biometric')\"\r\n      >\r\n        <div fxLayout=\"row\" fxLayoutGap=\"2px\" fxLayoutAlign=\"space-around center\">\r\n          <div fxFlex=\"50\">\r\n              <img\r\n                [src]=\"\r\n                  isBiometric && documentName && documentNumber\r\n                    ? 'assets/Ellipse 161.png'\r\n                    : 'assets/Ellipse 132.png'\r\n                \"\r\n                alt=\"Ionic logo\"\r\n\r\n              />\r\n          </div>\r\n          <div fxFlex=\"50\">\r\n            <span>Biometric</span>\r\n          </div>\r\n        </div>\r\n      </mat-card>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div *ngIf=\"isOtp\">\r\n  <h3>Enter OTP to Verify</h3>\r\n  <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n    <input\r\n      matInput\r\n      placeholder=\"ENTER OTP\"\r\n      numbersOnly\r\n      [(ngModel)]=\"otpValue\"\r\n      #otp=\"ngModel\"\r\n      maxlength=\"6\"\r\n      (keyup)=\"valid($event)\"\r\n    />\r\n  </mat-form-field>\r\n  <div style=\"color:#004C97;text-align: center;\">Resend code</div>\r\n</div>\r\n<mat-card *ngIf=\"isBiometric\" class=\"card-biometric\">\r\n  <div class=\"biometric-div\">\r\n    <div (click)=\"openFingerPrint(fingerPrintData)\">\r\n      <img src=\"assets\\images\\kycfingerprint.svg\" alt=\"\" />\r\n      <h6 class=\"fingerPrint\">Fingerprint</h6>\r\n    </div>\r\n    <div class=\"verticalLine\"></div>\r\n    <div (click)=\"openScanner('irisData')\">\r\n      <img src=\"assets\\images\\kycIrish.svg\" alt=\"\" />\r\n      <h6 class=\"irishText\">Iris</h6>\r\n    </div>\r\n    <div class=\"verticalLine\"></div>\r\n    <div (click)=\"openScanner('faceData')\">\r\n      <img src=\"assets\\images\\kycFacescan.svg\" />\r\n      <h6 class=\"faceScan\">Face Scan</h6>\r\n    </div>\r\n  </div>\r\n</mat-card>\r\n</ng-container>\r\n";
-
-/***/ }),
-
-/***/ 62515:
-/*!**************************************************************************************************************************!*\
-  !*** ./src/app/components/kyc-modal/customer-manual-verification/customer-manual-verification.component.html?ngResource ***!
-  \**************************************************************************************************************************/
-/***/ ((module) => {
-
-module.exports = "<div>\r\n<!-- *ngIf=\"(!isExistingCustomer || (isExistingCustomer && isrekyc)) && !isAuto\" -->\r\n<!-- class=\"my-3\" -->\r\n<mat-form-field appearance=\"outline\" class=\"full-width\">\r\n  <mat-label>Document Name</mat-label>\r\n  <mat-select matNativeControl required [(ngModel)]=\"DocumentId\">\r\n    <mat-option *ngFor=\"let doc of docArr\" [value]=\"doc\">{{\r\n      doc\r\n    }}</mat-option>\r\n  </mat-select>\r\n</mat-form-field>\r\n<div class=\"verify\">verifications methods</div>\r\n<div class=\"my-2\">\r\n  <div fxLayout=\"row\" fxLayoutGap=\"10px\">\r\n    <div fxFlex=\"50\">\r\n      <mat-card\r\n        class=\"otpandbioclass\"\r\n        (click)=\"scan_doc('scan')\"\r\n      >\r\n        <div fxLayout=\"row\" fxLayoutGap=\"2px\" fxLayoutAlign=\"space-around center\">\r\n          <div fxFlex=\"50\">\r\n            <!-- <mat-icon> -->\r\n              <img\r\n                [src]=\"\r\n                  isscan && DocumentId\r\n                    ? 'assets/Ellipse 161.png'\r\n                    : 'assets/Ellipse 132.png'\r\n                \"\r\n                alt=\"Ionic logo\"\r\n\r\n              />\r\n            <!-- </mat-icon> -->\r\n          </div>\r\n          <div fxFlex=\"50\">\r\n            <span>Scan</span>\r\n          </div>\r\n        </div>\r\n      </mat-card>\r\n    </div>\r\n    <div fxFlex=\"50\">\r\n      <mat-card\r\n        class=\"otpandbioclass\"\r\n        (click)=\"upload_doc('upload')\"\r\n      >\r\n        <div fxLayout=\"row\" fxLayoutGap=\"2px\" fxLayoutAlign=\"space-around center\">\r\n          <div fxFlex=\"50\">\r\n            <!-- <mat-icon> -->\r\n              <img\r\n                [src]=\"\r\n                  isupload && DocumentId\r\n                    ? 'assets/Ellipse 161.png'\r\n                    : 'assets/Ellipse 132.png'\r\n                \"\r\n                alt=\"Ionic logo\"\r\n              />\r\n            <!-- </mat-icon> -->\r\n          </div>\r\n          <div fxFlex=\"50\">\r\n            <span>Upload</span>\r\n          </div>\r\n        </div>\r\n      </mat-card>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!-- upload photo -->\r\n<div *ngIf=\"isupload && !isscan\" class=\"widthForMat\">\r\n  <div class=\"file-card\">\r\n    <div class=\"row justify-content-between pb-3\">\r\n      <div\r\n        class=\"col-6 align-self-center text-center border-end mt-16\"\r\n        (click)=\"fileSelect.click()\"\r\n      >\r\n        <div class=\"p-1\">\r\n          <div class=\"avatar\" [style]=\"!isFrontDocUploaded ? '':'background: #00846140'\">\r\n            <img [src]=\"!isFrontDocUploaded ? 'assets/icon/v2/upload-icon.svg':'assets/icon/v2/uploaded-icon-green.svg'\" />\r\n          </div>\r\n          <p>Front</p>\r\n          <input\r\n            [hidden]=\"true\"\r\n            type=\"file\"\r\n            id=\"file-input\"\r\n            (change)=\"onFileSelect($event, 'Front')\"\r\n            accept=\"image/png, image/jpeg\"\r\n            #fileSelect\r\n          />\r\n        </div>\r\n      </div>\r\n      <div\r\n        class=\"col-6 align-self-center text-center mt-16\"\r\n        (click)=\"backSelect.click()\"\r\n      >\r\n        <div class=\"p-1\">\r\n          <div class=\"avatar bg-gradient\" [style]=\"!isBackDocUploaded ? '':'background: #00846140'\">\r\n            <img [src]=\"!isBackDocUploaded ? 'assets/icon/v2/upload-icon.svg':'assets/icon/v2/uploaded-icon-green.svg'\" />\r\n          </div>\r\n          <p>Back</p>\r\n          <input\r\n            [hidden]=\"true\"\r\n            type=\"file\"\r\n            id=\"file-input\"\r\n            (change)=\"onFileSelect($event, 'Back')\"\r\n            accept=\"image/png, image/jpeg\"\r\n            #backSelect\r\n          />\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <!-- </ng-container> -->\r\n\r\n  <ng-container>\r\n    <div class=\"my-5\">\r\n      <div class=\"card\" *ngFor=\"let item of files; index as i\">\r\n        <div class=\"row\">\r\n          <div class=\"col-4\">\r\n            <img\r\n              alt=\"front\"\r\n              [src]=\"i == 0 ? frontImg : backImg\"\r\n              width=\"120\"\r\n              height=\"51\"\r\n            />\r\n          </div>\r\n          <div class=\"col-8\">\r\n            <div class=\"row justify-content-between\">\r\n              <div class=\"col-9 align-self-center\">\r\n                <h3 class=\"chq-text\">{{UploadData[i]}}</h3>\r\n\r\n              </div>\r\n              <div class=\"col-3 align-self-center text-right\">\r\n                <ion-button\r\n                  fill=\"clear\"\r\n                  *ngIf=\"\r\n                    uploadingFile == item.name && isUploading;\r\n                    else uploaded\r\n                  \"\r\n                  (click)=\"cancel(item.name)\"\r\n                >\r\n                  <ion-icon\r\n                    slot=\"icon-only\"\r\n                    name=\"close\"\r\n                    color=\"medium\"\r\n                  ></ion-icon>\r\n                </ion-button>\r\n\r\n                <ng-template #uploaded>\r\n                  <mat-icon class=\"danger\" (click)=\"deleteFile(item.name)\"\r\n                    >delete</mat-icon\r\n                  >\r\n                </ng-template>\r\n              </div>\r\n            </div>\r\n\r\n            <ion-progress-bar\r\n              [value]=\"percentDone\"\r\n              *ngIf=\"uploadingFile == item.name && isUploading\"\r\n            ></ion-progress-bar>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </ng-container>\r\n</div>\r\n<div *ngIf=\"!isupload && isscan\" class=\"widthForMat\">\r\n  <div class=\"file-card\">\r\n    <div class=\"row justify-content-between pb-3\">\r\n      <div\r\n        class=\"col-6 align-self-center text-center border-end mt-16\"\r\n        (click)=\"openDocScan(front_data)\"\r\n      >\r\n        <div class=\"p-1\">\r\n          <div class=\"avatar\">\r\n            <img src=\"assets/scan_front.png\" style=\"margin-top: 0px\" />\r\n          </div>\r\n          <p>Front</p>\r\n          <input\r\n            [hidden]=\"true\"\r\n            type=\"file\"\r\n            id=\"file-input\"\r\n            (change)=\"onFileSelect($event, 'front')\"\r\n            accept=\"image/png, image/jpeg\"\r\n            #fileSelect\r\n          />\r\n        </div>\r\n      </div>\r\n      <div\r\n        class=\"col-6 align-self-center text-center mt-16\"\r\n        (click)=\"openDocScan(back_data)\"\r\n      >\r\n        <div class=\"p-1\">\r\n          <div class=\"avatar bg-gradient\">\r\n            <img src=\"assets/scan_back.png\" style=\"margin-top: 0px\" />\r\n          </div>\r\n          <p>Back</p>\r\n          <input\r\n            [hidden]=\"true\"\r\n            type=\"file\"\r\n            id=\"file-input\"\r\n            (change)=\"onFileSelect($event, 'back')\"\r\n            accept=\"image/png, image/jpeg\"\r\n            #fileSelect\r\n          />\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <!-- </ng-container> -->\r\n\r\n  <ng-container>\r\n    <div class=\"my-5\">\r\n      <div class=\"card\" *ngFor=\"let item of files; index as i\">\r\n        <div class=\"row\">\r\n          <div class=\"col-4\">\r\n            <img\r\n              alt=\"front\"\r\n              [src]=\"i == 0 ? frontImg : backImg\"\r\n              width=\"120\"\r\n              height=\"51\"\r\n            />\r\n          </div>\r\n          <div class=\"col-8\">\r\n            <div class=\"row justify-content-between\">\r\n              <div class=\"col-9 align-self-center\">\r\n                <h3 class=\"chq-text\">{{ item?.name }}</h3>\r\n              </div>\r\n              <div class=\"col-3 align-self-center text-right\">\r\n                <ion-button\r\n                  fill=\"clear\"\r\n                  *ngIf=\"\r\n                    uploadingFile == item.name && isUploading;\r\n                    else uploaded\r\n                  \"\r\n                  (click)=\"cancel(item.name)\"\r\n                >\r\n                  <ion-icon\r\n                    slot=\"icon-only\"\r\n                    name=\"close\"\r\n                    color=\"medium\"\r\n                  ></ion-icon>\r\n                </ion-button>\r\n\r\n                <ng-template #uploaded>\r\n                  <mat-icon class=\"danger\" (click)=\"deleteFile(item.name)\"\r\n                    >delete</mat-icon\r\n                  >\r\n                </ng-template>\r\n              </div>\r\n            </div>\r\n\r\n\r\n            <ion-progress-bar\r\n              [value]=\"percentDone\"\r\n              *ngIf=\"uploadingFile == item.name && isUploading\"\r\n            ></ion-progress-bar>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </ng-container>\r\n</div>\r\n\r\n\r\n<mat-icon>trip_origin</mat-icon>\r\n";
-
-/***/ }),
-
-/***/ 39037:
-/*!**************************************************************************!*\
-  !*** ./src/app/components/kyc-modal/kyc-modal.component.html?ngResource ***!
-  \**************************************************************************/
-/***/ ((module) => {
-
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"closeModal()\">\r\n        <ion-icon\r\n          slot=\"icon-only\"\r\n          name=\"chevron-back-outline\"\r\n          style=\"color: #004c97\"\r\n        ></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>KYC Screening</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content [fullscreen]=\"true\" class=\"ion-padding\">\r\n  <!-- toggle button new customer existing customer -->\r\n<ng-container *ngIf=\"screen == 'branch' ; else showVideo\">\r\n  <mat-button-toggle-group\r\n    class=\"auto-manual-toggle-group\"\r\n    (change)=\"CustomerType($event.value)\"\r\n  >\r\n    <mat-button-toggle\r\n      *ngFor=\"let option of customerArr; let i = index\"\r\n      color=\"primary\"\r\n      [checked]=\"option.checked\"\r\n      [value]=\"option.name\"\r\n      class=\"auto-manual-toggle\"\r\n      >{{ option.name }}\r\n    </mat-button-toggle>\r\n  </mat-button-toggle-group>\r\n  <ng-container *ngIf=\"isExistingCustomer\">\r\n    <div class=\"heading2\">\r\n      <h3>Customer Details</h3>\r\n    </div>\r\n\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n      <input\r\n        matInput\r\n        placeholder=\"CIF number*\"\r\n        type=\"number\"\r\n        [(ngModel)]=\"customerId\"\r\n        #cif=\"ngModel\"\r\n        (change)=\"getCustomerDetails()\"\r\n      />\r\n    </mat-form-field>\r\n\r\n    <div class=\"customerHeading3\">\r\n      <div class=\"choose\">choose the process</div>\r\n    </div>\r\n    <div class=\"my-2\">\r\n      <div fxLayout=\"row\" fxLayoutGap=\"10px\">\r\n        <div fxFlex=\"50\">\r\n          <mat-card\r\n            class=\"otpandbioclass\"\r\n            (click)=\"Rekyc('Re-kyc')\"\r\n          >\r\n            <div fxLayout=\"row\" fxLayoutGap=\"2px\" fxLayoutAlign=\"space-around center\">\r\n              <div fxFlex=\"50\">\r\n                <!-- <mat-icon> -->\r\n                  <img\r\n                  [src]=\"\r\n                  isrekyc && customerId\r\n                    ? 'assets/Ellipse 161.png'\r\n                    : 'assets/Ellipse 132.png'\r\n                \"\r\n                    alt=\"Ionic logo\"\r\n                    style=\"margin-top: -3px;\"\r\n\r\n                  />\r\n                <!-- </mat-icon> -->\r\n              </div>\r\n              <div fxFlex=\"50\">\r\n                <span>Re-kyc</span>\r\n              </div>\r\n            </div>\r\n          </mat-card>\r\n        </div>\r\n        <div fxFlex=\"50\">\r\n          <mat-card\r\n            class=\"otpandbioclass\"\r\n            (click)=\"edit_info('edit')\"\r\n          >\r\n            <div fxLayout=\"row\" fxLayoutGap=\"2px\" fxLayoutAlign=\"space-around center\">\r\n              <div fxFlex=\"50\">\r\n                <!-- <mat-icon> -->\r\n                  <img\r\n                  class=\"grid-icon\"\r\n                  [src]=\"\r\n                    isedit && customerId ? 'assets/Ellipse 161.png' : 'assets/Ellipse 132.png'\r\n                  \"\r\n                  alt=\"Ionic logo\"\r\n                  style=\"margin-top: -3px;\"\r\n                />\r\n                <!-- </mat-icon> -->\r\n              </div>\r\n              <div fxFlex=\"50\">\r\n                <span>edit</span>\r\n              </div>\r\n            </div>\r\n          </mat-card>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </ng-container>\r\n\r\n <!--////////// existing customer/////////// -->\r\n <ng-container *ngIf=\"!isExistingCustomer || (isExistingCustomer && isrekyc)\">\r\n  <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"toggle-customer-details\">\r\n    <h3>Customer Details</h3>\r\n    <div class=\"move_toggle\">\r\n      <mat-button-toggle-group\r\n        class=\"auto-manual-toggle-group\"\r\n        (change)=\"autoManualToggle($event.value)\"\r\n      >\r\n        <mat-button-toggle\r\n          *ngFor=\"let option of toggleArr; let i = index\"\r\n          color=\"primary\"\r\n          [checked]=\"option.checked\"\r\n          [value]=\"option.name\"\r\n          class=\"auto-manual-toggle\"\r\n          >{{ option.name }}\r\n        </mat-button-toggle>\r\n      </mat-button-toggle-group>\r\n    </div>\r\n  </div>\r\n  <app-customer-auto-verification *ngIf=\"isAuto\"\r\n  (updateValidation)=\"validateForm($event)\"\r\n  (enableSubmit)=\"updateEnableSubmit($event)\"></app-customer-auto-verification>\r\n  <!-- <ng-template #showManual> -->\r\n    <app-customer-manual-verification *ngIf=\"!isAuto\"\r\n      (updateValidation)=\"validateForm($event)\"\r\n      (emitAadharData)= \"getAadharData($event)\"\r\n      (emitisUploaded)=\"getData($event)\"\r\n    ></app-customer-manual-verification>\r\n\r\n </ng-container>\r\n</ng-container>\r\n<ng-template #showVideo>\r\n  <div class=\"row\">\r\n <div class=\"col-8\">\r\n      <div class=\"customerHeading2\">Customer Details</div>\r\n     </div>\r\n     <div class=\"col-4\">\r\n      <ion-button class=\"man\">manual</ion-button>\r\n     </div>\r\n  </div>\r\n  <app-customer-manual-verification\r\n  (updateValidation)=\"validateForm($event)\"\r\n  (emitAadharData)= \"getAadharData($event)\"\r\n  (emitisUploaded)=\"getData($event)\"\r\n    ></app-customer-manual-verification>\r\n</ng-template>\r\n</ion-content>\r\n\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar style=\"background: transparent !important\">\r\n    <div class=\"row text-center\">\r\n      <div class=\"col-6\">\r\n        <ion-button shape=\"round\" class=\"next\" (click)=\"closeModal()\" [disabled]=\"!isUploaded \"\r\n          >Submit\r\n        </ion-button>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <ion-button shape=\"round\" class=\"back\" (click)=\"backModal()\"\r\n          >Skip</ion-button\r\n        >\r\n      </div>\r\n    </div>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n";
+module.exports = "<div class=\"footer pb-0\">\r\n  <ul>\r\n    <li (click)=\"dashboardPage()\" [style]=\"userType === 'MOBILE_USER' ? 'width: 25%;' : 'width: 50%;'\">\r\n      <a class=\"icon\" [ngClass]=\"url1=='/dashboard' ? 'active ' : ''\">\r\n        <img src=\"assets/images/home-normal.svg\" class=\"w-100 normal footer-custom-icon-small\" />\r\n        <img src=\"assets/images/home-dark.svg\" class=\"w-100 hover footer-custom-icon-small\" />\r\n        <!-- <span><i class=\"fas fa-home\"></i></span>\r\n          <p>Home</p> -->\r\n      </a>\r\n    </li>\r\n    <li (click)=\"transactionPage()\" *ngIf=\"userType === 'MOBILE_USER'\">\r\n      <a class=\"icon\" [ngClass]=\"url1=='/transaction' ? 'active ' : ''\">\r\n        <img src=\"assets/images/my-trans-normal.svg\" class=\"w-100 normal footer-custom-icon\" />\r\n        <img src=\"assets/images/my-trans.svg\" class=\"w-100 hover footer-custom-icon\" />\r\n        <!-- <span>\r\n          <i class=\"fas fa-money-bill-wave\"></i>\r\n          <img class=\"foo_icon\" src=\"assets/images/footer/transaction-icon.png\" />\r\n        </span>\r\n        <p>My Transaction</p> -->\r\n      </a>\r\n    </li>\r\n    <li (click)=\"appointmentPage()\" *ngIf=\"userType === 'MOBILE_USER'\">\r\n      <a class=\"icon\" [ngClass]=\"url1=='/appointment' ? 'active ' : ''\">\r\n        <img src=\"assets/images/appt-his-normal.svg\" class=\"w-100 normal footer-custom-icon-appt\" />\r\n        <img src=\"assets/images/appt-his.svg\" class=\"w-100 hover footer-custom-icon-appt\" />\r\n        <!-- <span>\r\n          <i class=\"far fa-clock\"></i>\r\n        </span>\r\n        <p>Appointment History</p> -->\r\n      </a>\r\n    </li>\r\n    <li (click)=\"profilePage()\" [style]=\"userType === 'MOBILE_USER' ? 'width: 25%;' : 'width: 50%;'\">\r\n      <a class=\"icon\" [ngClass]=\"url1=='/profile' ? 'active ' : ''\">\r\n        <img src=\"assets/images/profile-normal.svg\" class=\"w-100 normal footer-custom-icon-small\" />\r\n        <img src=\"assets/images/profile-dark.svg\" class=\"w-100 hover footer-custom-icon-small\" />\r\n        <!-- <span>\r\n          <i class=\"far fa-user-circle\"></i>\r\n        </span>\r\n        <p>Profile</p> -->\r\n      </a>\r\n    </li>\r\n  </ul>\r\n</div>\r\n\r\n\r\n";
 
 /***/ }),
 
@@ -5940,7 +6042,7 @@ module.exports = "<ion-content>\r\n  <div class=\"row justify-content-between he
   \****************************************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content>\r\n  <div class=\"form-box\">\r\n    <section>\r\n      <ion-toolbar>\r\n        <ion-buttons slot=\"start\">\r\n          <ion-button fill=\"clear\" (click)=\"back()\">\r\n            <ion-icon\r\n              slot=\"icon-only\"\r\n              name=\"chevron-back-outline\"\r\n              class=\"back-nav-color\"\r\n            ></ion-icon>\r\n          </ion-button>\r\n        </ion-buttons>\r\n      </ion-toolbar>\r\n    </section>\r\n    <div>\r\n      <form\r\n        *ngIf=\"otpForm\"\r\n        [formGroup]=\"otpForm\"\r\n        class=\"form_container\"\r\n        novalidate\r\n      >\r\n        <div class=\"otp-box\">\r\n          <ion-text>\r\n            <h4 class=\"otp-auth\">OTP Authentication</h4>\r\n            <p class=\"otp-msg\">An authentication code has been sent to</p>\r\n            <p>{{Mnumber}}</p>\r\n          </ion-text>\r\n        </div>\r\n\r\n        <ng-otp-input\r\n          [formCtrl]=\"otp\"\r\n          (onInputChange)=\"onOtpChange($event)\"\r\n          [config]=\"config\"\r\n        ></ng-otp-input>\r\n        <ion-row class=\"ion-justify-content-around\">\r\n          <ion-col>\r\n            <div class=\"resend\" (click)=\"resendOtp()\">Resend code</div>\r\n          </ion-col>\r\n        </ion-row>\r\n      </form>\r\n    </div>\r\n    <div class=\"btn-prcs\">\r\n      <ion-button\r\n        class=\"process\"\r\n        expand=\"full\"\r\n        shape=\"round\"\r\n        (click)=\"verifyOtp()\"\r\n        [disabled]=\"disableProceed\"\r\n      >\r\n        Process\r\n      </ion-button>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content>\r\n  <div class=\"form-box\">\r\n    <section>\r\n      <ion-toolbar>\r\n        <ion-buttons slot=\"start\">\r\n          <ion-button fill=\"clear\" (click)=\"back()\">\r\n            <ion-icon\r\n              slot=\"icon-only\"\r\n              name=\"chevron-back-outline\"\r\n              class=\"back-nav-color\"\r\n            ></ion-icon>\r\n          </ion-button>\r\n        </ion-buttons>\r\n      </ion-toolbar>\r\n    </section>\r\n    <div>\r\n      <form\r\n        *ngIf=\"otpForm\"\r\n        [formGroup]=\"otpForm\"\r\n        class=\"form_container\"\r\n        novalidate\r\n      >\r\n        <div class=\"otp-box\">\r\n          <ion-text>\r\n            <h4 class=\"otp-auth\">OTP Authentication</h4>\r\n            <p class=\"otp-msg\">An authentication code has been sent to</p>\r\n            <p>{{Mnumber}}</p>\r\n          </ion-text>\r\n        </div>\r\n\r\n        <ng-otp-input\r\n          [formCtrl]=\"otp\"\r\n          (onInputChange)=\"onOtpChange($event)\"\r\n          [config]=\"config\"\r\n        ></ng-otp-input>\r\n        <ion-row class=\"ion-justify-content-around\">\r\n          <ion-col>\r\n            <div class=\"resend\" (click)=\"resendOtp()\">Resend code</div>\r\n          </ion-col>\r\n        </ion-row>\r\n      </form>\r\n    </div>\r\n    <div class=\"btn-prcs\">\r\n      <ng-container *ngIf=\"isLoading; else showProcess\">\r\n        <ion-button expand=\"full\" shape=\"round\" class=\"process\">\r\n          <ion-spinner name=\"circles\"></ion-spinner>\r\n        </ion-button>\r\n      </ng-container>\r\n      <ng-template #showProcess>\r\n        <ion-button\r\n        class=\"process\"\r\n        expand=\"full\"\r\n        shape=\"round\"\r\n        (click)=\"verifyOtp()\"\r\n        [disabled]=\"disableProceed\"\r\n      >\r\n        Process\r\n      </ion-button>\r\n      </ng-template>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ }),
 
@@ -5990,7 +6092,7 @@ module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"sta
   \****************************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header class=\"ion-no-border\" [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"close()\" color=\"light\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>Select Date</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content  [fullscreen]=\"true\">\r\n  <mat-calendar\r\n  startView=\"month\"\r\n  [(selected)]=\"selected\" [dateFilter]=\"screenType == 'basicInfo' ? '': disableWeekendsFilter\" [minDate]=\"screenType == 'basicInfo' ? minDateDOB  : minDate\" [maxDate]=\"screenType == 'basicInfo' ? maxDateDOB  : maxDate\"\r\n  [dateClass]=\"dateClass\">\r\n  </mat-calendar>\r\n</ion-content>\r\n<ion-footer>\r\n  <div class=\"row p-3\">\r\n    <div class=\"col-6 btn_content\">\r\n      <ion-button shape=\"round\" [disabled]=\"!selected\" class=\"footer_btn\" (click)=\"done()\">Submit</ion-button>\r\n    </div>\r\n    <div class=\"col-6 btn_content\">\r\n      <ion-button shape=\"round\" class=\"footer_btn cancel\" (click)=\"close()\">Back</ion-button>\r\n    </div>\r\n  </div>\r\n</ion-footer>\r\n";
+module.exports = "<ion-header class=\"ion-no-border\" [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"close()\" color=\"light\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>Select Date</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content  [fullscreen]=\"true\">\r\n  <mat-calendar\r\n  startView=\"month\"\r\n  [(selected)]=\"selected\" [dateFilter]=\"screenType != 'basicInfo' ? disableWeekendsFilter : ''\" [minDate]=\"screenType == 'basicInfo' ? minDateDOB  : minDate\" [maxDate]=\"screenType == 'basicInfo' ? maxDateDOB  : maxDate\"\r\n  [dateClass]=\"screenType != 'basicInfo' ? dateClass : ''\">\r\n  </mat-calendar>\r\n</ion-content>\r\n<ion-footer>\r\n  <div class=\"row p-3\">\r\n    <div class=\"col-6 btn_content\">\r\n      <ion-button shape=\"round\" [disabled]=\"!selected\" class=\"footer_btn\" (click)=\"done()\">Submit</ion-button>\r\n    </div>\r\n    <div class=\"col-6 btn_content\">\r\n      <ion-button shape=\"round\" class=\"footer_btn cancel\" (click)=\"close()\">Back</ion-button>\r\n    </div>\r\n  </div>\r\n</ion-footer>\r\n";
 
 /***/ }),
 
@@ -6001,6 +6103,36 @@ module.exports = "<ion-header class=\"ion-no-border\" [translucent]=\"true\">\r\
 /***/ ((module) => {
 
 module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <ion-grid class=\"container\">\r\n    <ion-row class=\"mid-section\">\r\n      <ion-icon [src]=\"doneIcon\"></ion-icon>\r\n      <ng-container *ngIf=\"!kycReference; else showKyc\">\r\n        <ion-text class=\"heading\">Verification Completed</ion-text>\r\n        <ion-text class=\"sub-heading\"\r\n          >Your Verification process has been completed successfully</ion-text\r\n        >\r\n      </ng-container>\r\n\r\n      <ng-template #showKyc>\r\n        <ion-text class=\"heading\"> KYC Verification is completed! </ion-text>\r\n        <ion-text class=\"sub-heading\">\r\n          KYC Reference Number: <span style=\"color:#004C97;\">{{kycReference}}</span>\r\n        </ion-text>\r\n      </ng-template>\r\n    </ion-row>\r\n    <button class=\"btn\" (click)=\"close()\">Done</button>\r\n  </ion-grid>\r\n</ion-content>\r\n";
+
+/***/ }),
+
+/***/ 47003:
+/*!*******************************************************************************************************************************!*\
+  !*** ./src/app/components/verification-modal/customer-auto-verification/customer-auto-verification.component.html?ngResource ***!
+  \*******************************************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = "<ng-container>\r\n  <!-- *ngIf=\"(!isExistingCustomer || (isExistingCustomer && isrekyc)) && isAuto\" class=\"\" -->\r\n  <div class=\"my-3\">\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n      <mat-label>Document Name</mat-label>\r\n      <mat-select\r\n        matNativeControl\r\n        required\r\n        [(ngModel)]=\"documentName\"\r\n        #docName=\"ngModel\"\r\n        disableOptionCentering\r\n      >\r\n        <mat-option *ngFor=\"let doc of docArr\" [value]=\"doc\">{{\r\n          doc\r\n        }}</mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n      <mat-label>Document Number</mat-label>\r\n      <input\r\n        matInput\r\n        placeholder=\"Document Number*\"\r\n        type=\"number\"\r\n        matNativeControl\r\n        required\r\n        [(ngModel)]=\"documentNumber\"\r\n        #docNumber=\"ngModel\"\r\n      />\r\n      <!-- (keyup)=\"onKeyUp1()\" -->\r\n    </mat-form-field>\r\n  </div>\r\n<div class=\"my-2\">\r\n  <div fxLayout=\"row\" fxLayoutGap=\"10px\">\r\n    <div fxFlex=\"50\">\r\n      <mat-card\r\n        class=\"otpandbioclass\"\r\n        (click)=\"verificationMethodToggle('otp')\"\r\n      >\r\n        <div fxLayout=\"row\" fxLayoutGap=\"2px\" fxLayoutAlign=\"space-around center\">\r\n          <div fxFlex=\"50\">\r\n              <img\r\n                [src]=\"\r\n                  isOtp && documentName && documentNumber\r\n                    ? 'assets/Ellipse 161.png'\r\n                    : 'assets/Ellipse 132.png'\r\n                \"\r\n                alt=\"Ionic logo\"\r\n\r\n\r\n              />\r\n          </div>\r\n          <div fxFlex=\"50\">\r\n            <span>OTP</span>\r\n          </div>\r\n        </div>\r\n      </mat-card>\r\n    </div>\r\n    <div fxFlex=\"50\">\r\n      <mat-card\r\n        class=\"otpandbioclass\"\r\n        (click)=\"verificationMethodToggle('biometric')\"\r\n      >\r\n        <div fxLayout=\"row\" fxLayoutGap=\"2px\" fxLayoutAlign=\"space-around center\">\r\n          <div fxFlex=\"50\">\r\n              <img\r\n                [src]=\"\r\n                  isBiometric && documentName && documentNumber\r\n                    ? 'assets/Ellipse 161.png'\r\n                    : 'assets/Ellipse 132.png'\r\n                \"\r\n                alt=\"Ionic logo\"\r\n\r\n              />\r\n          </div>\r\n          <div fxFlex=\"50\">\r\n            <span>Biometric</span>\r\n          </div>\r\n        </div>\r\n      </mat-card>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div *ngIf=\"isOtp\">\r\n  <h3>Enter OTP to Verify</h3>\r\n  <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n    <input\r\n      matInput\r\n      placeholder=\"ENTER OTP\"\r\n      numbersOnly\r\n      [(ngModel)]=\"otpValue\"\r\n      #otp=\"ngModel\"\r\n      maxlength=\"6\"\r\n      (keyup)=\"valid($event)\"\r\n    />\r\n  </mat-form-field>\r\n  <div style=\"color:#004C97;text-align: center;\">Resend code</div>\r\n</div>\r\n<mat-card *ngIf=\"isBiometric\" class=\"card-biometric\">\r\n  <div class=\"biometric-div\">\r\n    <div (click)=\"openFingerPrint(fingerPrintData)\">\r\n      <img src=\"assets\\images\\kycfingerprint.svg\" alt=\"\" />\r\n      <h6 class=\"fingerPrint\">Fingerprint</h6>\r\n    </div>\r\n    <div class=\"verticalLine\"></div>\r\n    <div (click)=\"openScanner('irisData')\">\r\n      <img src=\"assets\\images\\kycIrish.svg\" alt=\"\" />\r\n      <h6 class=\"irishText\">Iris</h6>\r\n    </div>\r\n    <div class=\"verticalLine\"></div>\r\n    <div (click)=\"openScanner('faceData')\">\r\n      <img src=\"assets\\images\\kycFacescan.svg\" />\r\n      <h6 class=\"faceScan\">Face Scan</h6>\r\n    </div>\r\n  </div>\r\n</mat-card>\r\n</ng-container>\r\n";
+
+/***/ }),
+
+/***/ 92830:
+/*!***********************************************************************************************************************************!*\
+  !*** ./src/app/components/verification-modal/customer-manual-verification/customer-manual-verification.component.html?ngResource ***!
+  \***********************************************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = "<form *ngIf=\"manualVerificationForm\" [formGroup]=\"manualVerificationForm\">\r\n  <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n    <mat-label>Document Name</mat-label>\r\n    <mat-select formControlName=\"docName\">\r\n      <mat-option *ngFor=\"let doc of docArr\" [value]=\"doc\">{{\r\n        doc\r\n      }}</mat-option>\r\n    </mat-select>\r\n  </mat-form-field>\r\n  <div class=\"verify\">verifications methods</div>\r\n  <div class=\"my-2\">\r\n    <div fxLayout=\"row\" fxLayoutGap=\"10px\">\r\n      <div fxFlex=\"50\">\r\n        <mat-card\r\n          class=\"otpandbioclass\"\r\n          (click)=\"onToggle(true)\"\r\n        >\r\n          <div fxLayout=\"row\" fxLayoutGap=\"2px\" fxLayoutAlign=\"space-around center\">\r\n            <div fxFlex=\"50\">\r\n                <img\r\n                  [src]=\"\r\n                  manualVerificationForm.value.isScan=== true\r\n                      ? 'assets/Ellipse 161.png'\r\n                      : 'assets/Ellipse 132.png'\r\n                  \"\r\n                  alt=\"Ionic logo\"\r\n  \r\n                />\r\n            </div>\r\n            <div fxFlex=\"50\">\r\n              <span>Scan</span>\r\n            </div>\r\n          </div>\r\n        </mat-card>\r\n      </div>\r\n      <div fxFlex=\"50\">\r\n        <mat-card\r\n          class=\"otpandbioclass\"\r\n          (click)=\"onToggle(false)\"\r\n        >\r\n          <div fxLayout=\"row\" fxLayoutGap=\"2px\" fxLayoutAlign=\"space-around center\">\r\n            <div fxFlex=\"50\">\r\n                <img\r\n                  [src]=\"\r\n                  manualVerificationForm.value.isUpload === true\r\n                      ? 'assets/Ellipse 161.png'\r\n                      : 'assets/Ellipse 132.png'\r\n                  \"\r\n                  alt=\"Ionic logo\"\r\n                />\r\n            </div>\r\n            <div fxFlex=\"50\">\r\n              <span>Upload</span>\r\n            </div>\r\n          </div>\r\n        </mat-card>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"\r\n  manualVerificationForm.value.isScan === true ||\r\n  manualVerificationForm.value.isUpload === true\r\n\" class=\"widthForMat\">\r\n    <div class=\"file-card\">\r\n      <div class=\"row justify-content-between pb-3\">\r\n        <ng-container\r\n          *ngFor=\"let document of documents.controls; let i = index\"\r\n        >\r\n        <div\r\n          class=\"col-6 align-self-center text-center border-end mt-16\"\r\n        >\r\n          <div class=\"p-1\">\r\n            <div class=\"avatar\">\r\n              <ng-container *ngIf=\"manualVerificationForm.value.isScan === true\">\r\n              <img  [src]=\"\r\n              document.value.fileUrl\r\n                ? 'assets/images/scan-success.png' : 'assets/scan_front.png'\" style=\"margin-top: 0px\"  (click)=\"openDocScan(i)\"/>\r\n                </ng-container>\r\n                <ng-container\r\n              *ngIf=\"manualVerificationForm.value.isUpload === true\"\r\n            >\r\n            <img [src]=\"document.value.fileUrl && !isUploading ?'assets/icon/v2/uploaded-icon-green.svg':'assets/icon/v2/upload-icon.svg'\"          \r\n             (click)=\"fileSelect.click()\"\r\n            />\r\n            <input\r\n              [hidden]=\"true\"\r\n              type=\"file\"\r\n              id=\"file-input\"\r\n              (change)=\"onFileSelect($event, i)\"\r\n              accept=\"image/png, image/jpeg\"\r\n              #fileSelect\r\n            />\r\n            </ng-container>\r\n            </div>\r\n            <p>{{ document.value.documentTitle}}</p>\r\n          </div>\r\n        </div>\r\n        </ng-container>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <ng-container *ngFor=\"let document of documents.controls; let i = index\" >\r\n    <div class=\"widthForMat\" *ngIf=\"document.controls.fileUrl.value\">\r\n      <div class=\"card\">\r\n        <div class=\"row\">\r\n          <div class=\"col-4\">\r\n            <img\r\n              alt=\"front\"\r\n              [src]=\"document.value.fileUrl\"\r\n              [alt]=\"document.value.documentTitle\"\r\n              width=\"120\"\r\n              height=\"51\"\r\n            />\r\n          </div>\r\n          <div class=\"col-8\">\r\n            <div class=\"row justify-content-between\">\r\n              <div class=\"col-9 align-self-center\">\r\n                <h3 class=\"chq-text\">{{document.value.documentTitle + ' ' + 'Uploaded'}}</h3>\r\n              </div>\r\n              <div class=\"col-3 align-self-center text-right\">\r\n                <ion-button\r\n                  fill=\"clear\"\r\n                  *ngIf=\"selectedIndex == i && isUploading; else showDelete\"\r\n                  (click)=\"cancel(i)\"\r\n                >\r\n                  <ion-icon\r\n                    slot=\"icon-only\"\r\n                    name=\"close\"\r\n                    color=\"medium\"\r\n                  ></ion-icon>\r\n                </ion-button>\r\n  \r\n                <ng-template #showDelete>\r\n                  <mat-icon class=\"danger\" (click)=\"deleteDoc(i)\"\r\n                    >delete</mat-icon\r\n                  >\r\n                </ng-template>\r\n              </div>\r\n            </div>\r\n  \r\n            <ion-progress-bar\r\n              [value]=\"percentDone\"\r\n              *ngIf=\"selectedIndex == i && isUploading\"\r\n            ></ion-progress-bar>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </ng-container>  \r\n</form>\r\n\r\n\r\n";
+
+/***/ }),
+
+/***/ 49640:
+/*!********************************************************************************************!*\
+  !*** ./src/app/components/verification-modal/verification-modal.component.html?ngResource ***!
+  \********************************************************************************************/
+/***/ ((module) => {
+
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"closeModal()\">\r\n        <ion-icon\r\n          slot=\"icon-only\"\r\n          name=\"chevron-back-outline\"\r\n          style=\"color: #004c97\"\r\n        ></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title>KYC Screening</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content [fullscreen]=\"true\" class=\"ion-padding\">\r\n  <!-- toggle button new customer existing customer -->\r\n<ng-container *ngIf=\"screen == 'branch' ; else showVideo\">\r\n  <mat-button-toggle-group\r\n    class=\"auto-manual-toggle-group\"\r\n    (change)=\"CustomerType($event.value)\"\r\n  >\r\n    <mat-button-toggle\r\n      *ngFor=\"let option of customerArr; let i = index\"\r\n      color=\"primary\"\r\n      [checked]=\"option.checked\"\r\n      [value]=\"option.name\"\r\n      class=\"auto-manual-toggle\"\r\n      >{{ option.name }}\r\n    </mat-button-toggle>\r\n  </mat-button-toggle-group>\r\n  <ng-container *ngIf=\"isExistingCustomer\">\r\n    <div class=\"heading2\">\r\n      <h3>Customer Details</h3>\r\n    </div>\r\n\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n      <input\r\n        matInput\r\n        placeholder=\"CIF number*\"\r\n        type=\"number\"\r\n        [(ngModel)]=\"customerId\"\r\n        #cif=\"ngModel\"\r\n        (change)=\"getCustomerDetails()\"\r\n      />\r\n    </mat-form-field>\r\n\r\n    <div class=\"customerHeading3\">\r\n      <div class=\"choose\">choose the process</div>\r\n    </div>\r\n    <div class=\"my-2\">\r\n      <div fxLayout=\"row\" fxLayoutGap=\"10px\">\r\n        <div fxFlex=\"50\">\r\n          <mat-card\r\n            class=\"otpandbioclass\"\r\n            (click)=\"Rekyc('Re-kyc')\"\r\n          >\r\n            <div fxLayout=\"row\" fxLayoutGap=\"2px\" fxLayoutAlign=\"space-around center\">\r\n              <div fxFlex=\"50\">\r\n                <!-- <mat-icon> -->\r\n                  <img\r\n                  [src]=\"\r\n                  isrekyc && customerId\r\n                    ? 'assets/Ellipse 161.png'\r\n                    : 'assets/Ellipse 132.png'\r\n                \"\r\n                    alt=\"Ionic logo\"\r\n                    style=\"margin-top: -3px;\"\r\n\r\n                  />\r\n                <!-- </mat-icon> -->\r\n              </div>\r\n              <div fxFlex=\"50\">\r\n                <span>Re-KYC</span>\r\n              </div>\r\n            </div>\r\n          </mat-card>\r\n        </div>\r\n        <div fxFlex=\"50\">\r\n          <mat-card\r\n            class=\"otpandbioclass\"\r\n            (click)=\"edit_info('edit')\"\r\n          >\r\n            <div fxLayout=\"row\" fxLayoutGap=\"2px\" fxLayoutAlign=\"space-around center\">\r\n              <div fxFlex=\"50\">\r\n                <!-- <mat-icon> -->\r\n                  <img\r\n                  class=\"grid-icon\"\r\n                  [src]=\"\r\n                    isedit && customerId ? 'assets/Ellipse 161.png' : 'assets/Ellipse 132.png'\r\n                  \"\r\n                  alt=\"Ionic logo\"\r\n                  style=\"margin-top: -3px;\"\r\n                />\r\n                <!-- </mat-icon> -->\r\n              </div>\r\n              <div fxFlex=\"50\">\r\n                <span>edit</span>\r\n              </div>\r\n            </div>\r\n          </mat-card>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </ng-container>\r\n\r\n <!--////////// existing customer/////////// -->\r\n <ng-container *ngIf=\"!isExistingCustomer || (isExistingCustomer && isrekyc)\">\r\n  <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\" class=\"toggle-customer-details\">\r\n    <h3>Customer Details</h3>\r\n    <div class=\"move_toggle\">\r\n      <mat-button-toggle-group\r\n        class=\"auto-manual-toggle-group\"\r\n        (change)=\"autoManualToggle($event.value)\"\r\n      >\r\n        <mat-button-toggle\r\n          *ngFor=\"let option of toggleArr; let i = index\"\r\n          color=\"primary\"\r\n          [checked]=\"option.checked\"\r\n          [value]=\"option.name\"\r\n          class=\"auto-manual-toggle\"\r\n          >{{ option.name }}\r\n        </mat-button-toggle>\r\n      </mat-button-toggle-group>\r\n    </div>\r\n  </div>\r\n  <app-customer-auto-verification *ngIf=\"isAuto\"\r\n  (updateValidation)=\"validateForm($event)\"\r\n  (enableSubmit)=\"updateEnableSubmit($event)\"></app-customer-auto-verification>\r\n  <!-- <ng-template #showManual> -->\r\n    <app-customer-manual-verification *ngIf=\"!isAuto\"\r\n      (emitAadharData)= \"getAadharData($event)\"\r\n      (isFormValid)=\"updateFormValidation($event)\"\r\n      ></app-customer-manual-verification>\r\n\r\n </ng-container>\r\n</ng-container>\r\n<ng-template #showVideo>\r\n  <div class=\"row\">\r\n <div class=\"col-8\">\r\n      <div class=\"customerHeading2\">Customer Details</div>\r\n     </div>\r\n     <div class=\"col-4\">\r\n      <ion-button class=\"man\">manual</ion-button>\r\n     </div>\r\n  </div>\r\n  <app-customer-manual-verification\r\n  (emitAadharData)= \"getAadharData($event)\"\r\n  (isFormValid)=\"updateFormValidation($event)\"\r\n    ></app-customer-manual-verification>\r\n</ng-template>\r\n</ion-content>\r\n\r\n<ion-footer class=\"ion-no-border\">\r\n  <ion-toolbar style=\"background: transparent !important\">\r\n    <div class=\"row text-center\">\r\n      <div class=\"col-6\">\r\n        <ion-button shape=\"round\" class=\"next\" (click)=\"closeModal()\" [disabled]=\" isedit ? !customerId : !isFormValid \"\r\n          >Submit\r\n        </ion-button>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <ion-button shape=\"round\" class=\"back\" (click)=\"backModal()\"\r\n          >Skip</ion-button\r\n        >\r\n      </div>\r\n    </div>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n";
 
 /***/ }),
 

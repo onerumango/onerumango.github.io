@@ -222,7 +222,7 @@ const routes = [
     },
     {
         path: 'kyc',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_v2_kyc_kyc_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/v2/kyc/kyc.module */ 76769)).then((m) => m.KycPageModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_v2_kyc_kyc_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/v2/kyc/kyc.module */ 76769)).then((m) => m.KycPageModule),
     },
     {
         path: 'kyc-branch',
@@ -231,6 +231,18 @@ const routes = [
     {
         path: 'kyc-video',
         loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_moment_moment_js"), __webpack_require__.e("default-src_app_shared_shared-material_module_ts"), __webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_js"), __webpack_require__.e("default-src_app_services_toast_service_ts-node_modules_angularx-qrcode___ivy_ngcc___fesm2015_-d91662"), __webpack_require__.e("default-src_app_components_components_module_ts"), __webpack_require__.e("default-src_app_pages_transaction-popup_transaction-popup_page_ts"), __webpack_require__.e("default-src_app_pages_token-v2_token-v2_page_ts"), __webpack_require__.e("default-node_modules_ngx-flag-picker___ivy_ngcc___fesm2015_ngx-flag-picker_js"), __webpack_require__.e("src_app_pages_v2_kyc-video_kyc-video_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/v2/kyc-video/kyc-video.module */ 49056)).then((m) => m.KycVideoPageModule),
+    },
+    {
+        path: 'customer-onboarding',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_pages_v2_customer-onboarding_customer-onboarding_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/v2/customer-onboarding/customer-onboarding.module */ 87867)).then(m => m.CustomerOnboardingPageModule)
+    },
+    {
+        path: 'onboarding-individual',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_v2_onboarding-individual_onboarding-individual_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/v2/onboarding-individual/onboarding-individual.module */ 64915)).then(m => m.OnboardingIndividualPageModule)
+    },
+    {
+        path: 'onboarding-corporate',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_v2_onboarding-corporate_onboarding-corporate_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/v2/onboarding-corporate/onboarding-corporate.module */ 38275)).then(m => m.OnboardingCorporatePageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -331,6 +343,7 @@ let AppComponent = class AppComponent {
     ngOnInit() {
         var _a, _b, _c, _d, _e;
         this.currentUser = this.dataService.getCurrentUser();
+        this.userType = localStorage.getItem('userType');
         console.log(this.currentUser);
         this.checkInternet().subscribe((isOnline) => {
             this.checkInterent = isOnline;
@@ -415,6 +428,7 @@ let AppComponent = class AppComponent {
     }
     getCurrentUser() {
         this.currentUser = this.dataService.getCurrentUser();
+        this.userType = localStorage.getItem('userType');
     }
     initializeApp() {
         this.platform.ready().then(() => {
@@ -469,12 +483,12 @@ let AppComponent = class AppComponent {
         this.router.navigate(['notification']);
     }
     goToChqD() {
-        localStorage.removeItem("chequeData");
+        localStorage.removeItem('chequeData');
         this.menu.close();
         this.router.navigate(['cheque-deposit-v2']);
     }
     goToChqW() {
-        localStorage.removeItem("chequeData");
+        localStorage.removeItem('chequeData');
         this.menu.close();
         this.router.navigate(['cheque-withdrawal-v2']);
     }
@@ -2377,7 +2391,7 @@ module.exports = ".box {\n  width: 60px;\n  height: 60px;\n  background: #FFEDED
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu\r\n      contentId=\"main-content\"\r\n      type=\"overlay\"\r\n      menuId=\"slidingMenu\"\r\n      swipe-gesture=\"false\"\r\n    >\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container\r\n              *ngIf=\"avatar == null || avatar == undefined; else showAvatar\"\r\n            >\r\n              <div\r\n                class=\"profile-image mx-2\"\r\n                [style.background]=\"dataService.getRandomColor(i + 3)\"\r\n              >\r\n                {{ currentUser?.firstName | uppercase | slice : 0 : 1\r\n                }}{{ currentUser?.lastName | uppercase | slice : 0 : 1 }}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\" />\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n              <h2>{{ currentUser?.firstName }}</h2>\r\n              <p>\r\n                <small>{{ currentUser?.primaryEmailAdress }}</small>\r\n              </p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n          <!-- FOR DEV LINK START -->\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToChqD()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\" />\r\n            <ion-label class=\"label\"\r\n              >Cheque Deposit (new)<br />\r\n              <small class=\"text-muted\"\r\n                >Quick Modify For Your Appointment</small\r\n              >\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToChqW()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\" />\r\n            <ion-label class=\"label\"\r\n              >Cheque Withdrawal (new)<br />\r\n              <small class=\"text-muted\"\r\n                >Quick Modify For Your Appointment</small\r\n              >\r\n            </ion-label>\r\n          </ion-item>\r\n          <!-- FOR DEV LINK END -->\r\n\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToTransaction()\">\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\" />\r\n            <ion-label class=\"label\"\r\n              >My Transaction<br />\r\n              <small class=\"text-muted\"\r\n                >Quick Modify For Your Appointment</small\r\n              >\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToAppointment()\">\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\" />\r\n            <ion-label class=\"label\"\r\n              >Appointment History <br />\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\" />\r\n            <ion-label class=\"label\"\r\n              >Foreign exchange <br />\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\" />\r\n            <ion-label class=\"label\"\r\n              >Notifications <br />\r\n              <small class=\"text-muted\"\r\n                >Change your notification settings</small\r\n              >\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item class=\"Item_title mt-18\" (click)=\"logoutApp()\">\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\" />\r\n            <ion-label class=\"label\"\r\n              >Logout <br />\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n        <h6 class=\"app-font version-color\">Ver 0.0.26</h6>\r\n        <p class=\"app-font version-color\">Build 26</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
+module.exports = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu\r\n      contentId=\"main-content\"\r\n      type=\"overlay\"\r\n      menuId=\"slidingMenu\"\r\n      swipe-gesture=\"false\"\r\n    >\r\n      <ion-header class=\"headerbar\">\r\n        <ion-toolbar class=\"head-block\">\r\n          <ion-item lines=\"none\">\r\n            <ng-container\r\n              *ngIf=\"avatar == null || avatar == undefined; else showAvatar\"\r\n            >\r\n              <div\r\n                class=\"profile-image mx-2\"\r\n                [style.background]=\"dataService.getRandomColor(i + 3)\"\r\n              >\r\n                {{ currentUser?.firstName | uppercase | slice : 0 : 1\r\n                }}{{ currentUser?.lastName | uppercase | slice : 0 : 1 }}\r\n              </div>\r\n            </ng-container>\r\n            <ng-template #showAvatar>\r\n              <ion-avatar slot=\"start\">\r\n                <img [src]=\"avatar\" alt=\"profile\" class=\"profile-pic\" />\r\n              </ion-avatar>\r\n            </ng-template>\r\n            <ion-label>\r\n              <h2>{{ currentUser?.firstName }}</h2>\r\n              <p>\r\n                <small>{{ currentUser?.primaryEmailAdress }}</small>\r\n              </p>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list lines=\"none\" class=\"my-3\">\r\n          <ion-item\r\n            class=\"Item_title mt-18\"\r\n            (click)=\"goToTransaction()\"\r\n            *ngIf=\"userType === 'MOBILE_USER'\"\r\n          >\r\n            <img src=\"assets/images/transaction.svg\" alt=\"MyTransaction\" />\r\n            <ion-label class=\"label\"\r\n              >My Transaction<br />\r\n              <small class=\"text-muted\"\r\n                >Quick Modify For Your Appointment</small\r\n              >\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            class=\"Item_title mt-18\"\r\n            (click)=\"goToAppointment()\"\r\n            *ngIf=\"userType === 'MOBILE_USER'\"\r\n          >\r\n            <img src=\"assets/images/appointment.svg\" alt=\"appointmenthistory\" />\r\n            <ion-label class=\"label\"\r\n              >Appointment History <br />\r\n              <small class=\"text-muted\">Overall activity</small>\r\n            </ion-label>\r\n          </ion-item>\r\n          <!-- <ion-item class=\"Item_title mt-18\" (click)=\"goToExchangerate()\">\r\n            <img src=\"assets/images/exchange-main.svg\" alt=\"foreignexchange\" />\r\n            <ion-label class=\"label\"\r\n              >Foreign exchange <br />\r\n              <small class=\"text-muted\">Exchange rate</small>\r\n            </ion-label>\r\n          </ion-item> -->\r\n          <!-- <ion-item class=\"Item_title mt-18\" (click)=\"goToNotifications()\">\r\n            <img src=\"assets/images/notification.svg\" alt=\"notification\" />\r\n            <ion-label class=\"label\"\r\n              >Notifications <br />\r\n              <small class=\"text-muted\"\r\n                >Change your notification settings</small\r\n              >\r\n            </ion-label>\r\n          </ion-item> -->\r\n          <ion-item\r\n            class=\"Item_title mt-18\"\r\n            (click)=\"logoutApp()\"\r\n            *ngIf=\"userType === 'MOBILE_USER' || userType === 'MOBILE_AGENT'\"\r\n          >\r\n            <img src=\"assets/images/logout.svg\" alt=\"logout\" />\r\n            <ion-label class=\"label\"\r\n              >Logout <br />\r\n              <small class=\"text-muted\">Logout your account</small>\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-content>\r\n      <ion-footer class=\"ion-padding ion-no-border bg-content\">\r\n        <h6 class=\"app-font version-color\">Ver 0.0.37</h6>\r\n        <p class=\"app-font version-color\">Build 37</p>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
 
 /***/ }),
 

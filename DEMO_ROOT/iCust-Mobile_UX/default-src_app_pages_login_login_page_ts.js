@@ -91,16 +91,16 @@ let LoginPage = class LoginPage {
             this.isLoading = true;
             let payload = {
                 phoneNumber: loginForm.phoneNo,
-                password: loginForm.password
+                password: loginForm.password,
             };
             this.api.validatePassword(payload).subscribe((res) => {
-                var _a, _b, _c, _d, _e;
+                var _a, _b, _c, _d, _e, _f;
                 if (res.status == 200) {
-                    if (((_a = res['data']) === null || _a === void 0 ? void 0 : _a.firstTimeLogin) == "Y") {
+                    if (((_a = res['data']) === null || _a === void 0 ? void 0 : _a.firstTimeLogin) == 'Y') {
                         localStorage.setItem('customerPhonenum', loginForm.phoneNo);
                         const navigationExtras = {
                             queryParams: {
-                                'screenName': 'reset'
+                                screenName: 'reset',
                             },
                         };
                         this.api.sendNavParam(navigationExtras);
@@ -111,12 +111,13 @@ let LoginPage = class LoginPage {
                         sessionStorage.setItem('customer_id', (_b = res['data']) === null || _b === void 0 ? void 0 : _b.customerId);
                         localStorage.setItem('firstName', (_c = res['data']) === null || _c === void 0 ? void 0 : _c.firstName);
                         localStorage.setItem('lastName', (_d = res['data']) === null || _d === void 0 ? void 0 : _d.lastName);
-                        localStorage.setItem('customer_id', (_e = res['data']) === null || _e === void 0 ? void 0 : _e.customerId);
+                        localStorage.setItem('userType', (_e = res['data']) === null || _e === void 0 ? void 0 : _e.userType);
+                        localStorage.setItem('customer_id', (_f = res['data']) === null || _f === void 0 ? void 0 : _f.customerId);
                         localStorage.setItem('customer_details', JSON.stringify(res['data']));
-                        localStorage.setItem('isShowed', "no");
+                        localStorage.setItem('isShowed', 'no');
                         this.router.navigate(['dashboard'], { replaceUrl: true });
                         this.dataService.isLoggedIn.next(true);
-                        this.openToast("Logged in Successfully!");
+                        this.openToast('Logged in Successfully!');
                     }
                 }
                 else {
@@ -148,7 +149,7 @@ let LoginPage = class LoginPage {
                 this.openToast(res === null || res === void 0 ? void 0 : res.message);
                 const navigationExtras = {
                     queryParams: {
-                        'screenName': 'login'
+                        screenName: 'login',
                     },
                 };
                 this.api.sendNavParam(navigationExtras);
@@ -226,7 +227,7 @@ module.exports = "section {\n  position: relative;\n  background: url('3@3x.png'
   \********************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content>\r\n  <section>\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button fill=\"clear\" (click)=\"back()\">\r\n          <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n    \r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\"><img src=\"assets/images/Demobank.svg\" class=\"w-100\"></div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <div class=\"title\">Sign In</div>\r\n      <p class=\"sub-title\">Enter your details to get started</p>\r\n\r\n      <form [formGroup]=\"loginForm\" *ngIf=\"loginForm\">\r\n\r\n        <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n          <mat-label>Phone Number</mat-label>\r\n          <input type=\"tel\" matInput name=\"username\" formControlName=\"phoneNo\" #phone (keyup)=\"_keyPress($event)\"\r\n            placeholder=\"Phone Number\" maxLength=\"10\" autocomplete=\"off\"/>\r\n        </mat-form-field>\r\n\r\n\r\n        <mat-checkbox formControlName=\"isOtp\" color=\"primary\" class=\"app-font\">\r\n          Sign in using OTP\r\n        </mat-checkbox>\r\n\r\n        <mat-form-field class=\"full-width mt-2\" appearance=\"outline\" *ngIf=\"loginForm.get('isOtp').value == false\">\r\n          <mat-label>Password</mat-label>\r\n          <input [type]=\"hide ? 'text' : 'password'\" name=\"password\" matInput formControlName=\"password\"\r\n            placeholder=\"Enter Password\" autocomplete=\"off\" />\r\n          <button mat-icon-button matSuffix (click)=\"hide = !hide\" [attr.aria-label]=\"'Hide password'\"\r\n            [attr.aria-pressed]=\"hide\">\r\n            <mat-icon color=\"primary\">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>\r\n          </button>\r\n        </mat-form-field>\r\n\r\n\r\n        <div class=\"forgot\">\r\n          <a class=\"text-right\" (click)=\"forgotPassword()\">Forgot password ?</a>\r\n        </div>\r\n\r\n      </form>\r\n\r\n      <div class=\"continue_btn\">\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-3\" (click)=\"continue(loginForm.value)\">CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n      <!-- <ion-button expand=\"full\" shape=\"round\" class=\"my-3\" (click)=\"fingerprint()\">fingerprint\r\n      </ion-button>\r\n      <ion-button expand=\"full\" shape=\"round\" class=\"my-3\" (click)=\"faceid()\">faceid\r\n      </ion-button> -->\r\n\r\n      <ion-item class=\"ion-no-border\" lines=\"none\">\r\n        <ion-label class=\"text-center app-font\">\r\n          <h6><small>Version 0.0.26</small></h6>\r\n          <p><small>Build 26</small></p>\r\n        </ion-label>\r\n      </ion-item>\r\n\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content>\r\n  <section>\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button fill=\"clear\" (click)=\"back()\">\r\n          <ion-icon\r\n            slot=\"icon-only\"\r\n            name=\"chevron-back-outline\"\r\n            class=\"back-nav-color\"\r\n          ></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\">\r\n        <img src=\"assets/images/Demobank.svg\" class=\"w-100\" />\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <div class=\"title\">Sign In</div>\r\n      <p class=\"sub-title\">Enter your details to get started</p>\r\n\r\n      <form [formGroup]=\"loginForm\" *ngIf=\"loginForm\">\r\n        <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n          <mat-label>Phone Number</mat-label>\r\n          <input\r\n            type=\"tel\"\r\n            matInput\r\n            name=\"username\"\r\n            formControlName=\"phoneNo\"\r\n            #phone\r\n            (keyup)=\"_keyPress($event)\"\r\n            placeholder=\"Phone Number\"\r\n            maxlength=\"10\"\r\n            autocomplete=\"off\"\r\n          />\r\n        </mat-form-field>\r\n\r\n        <mat-checkbox formControlName=\"isOtp\" color=\"primary\" class=\"app-font\">\r\n          Sign in using OTP\r\n        </mat-checkbox>\r\n\r\n        <mat-form-field\r\n          class=\"full-width mt-2\"\r\n          appearance=\"outline\"\r\n          *ngIf=\"loginForm.get('isOtp').value == false\"\r\n        >\r\n          <mat-label>Password</mat-label>\r\n          <input\r\n            [type]=\"hide ? 'text' : 'password'\"\r\n            name=\"password\"\r\n            matInput\r\n            formControlName=\"password\"\r\n            placeholder=\"Enter Password\"\r\n            autocomplete=\"off\"\r\n          />\r\n          <button\r\n            mat-icon-button\r\n            matSuffix\r\n            (click)=\"hide = !hide\"\r\n            [attr.aria-label]=\"'Hide password'\"\r\n            [attr.aria-pressed]=\"hide\"\r\n          >\r\n            <mat-icon color=\"primary\"\r\n              >{{hide ? 'visibility' : 'visibility_off'}}</mat-icon\r\n            >\r\n          </button>\r\n        </mat-form-field>\r\n\r\n        <div class=\"forgot\">\r\n          <a class=\"text-right\" (click)=\"forgotPassword()\">Forgot password ?</a>\r\n        </div>\r\n      </form>\r\n\r\n      <div class=\"continue_btn\">\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button\r\n            expand=\"full\"\r\n            shape=\"round\"\r\n            class=\"my-3\"\r\n            (click)=\"continue(loginForm.value)\"\r\n            >CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n      <!-- <ion-button expand=\"full\" shape=\"round\" class=\"my-3\" (click)=\"fingerprint()\">fingerprint\r\n      </ion-button>\r\n      <ion-button expand=\"full\" shape=\"round\" class=\"my-3\" (click)=\"faceid()\">faceid\r\n      </ion-button> -->\r\n\r\n      <ion-item class=\"ion-no-border\" lines=\"none\">\r\n        <ion-label class=\"text-center app-font\">\r\n          <h6><small>Version 0.0.37</small></h6>\r\n          <p><small>Build 37</small></p>\r\n        </ion-label>\r\n      </ion-item>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ })
 

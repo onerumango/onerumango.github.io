@@ -104,14 +104,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _otp_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./otp.page.html?ngResource */ 93684);
 /* harmony import */ var _otp_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./otp.page.scss?ngResource */ 79706);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 52816);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 92218);
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-toastr */ 34101);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 52816);
 
 
 
@@ -156,9 +156,9 @@ let OtpPage = class OtpPage {
             disableAutoFocus: false,
             placeholder: '',
             inputStyles: {
-                'width': '40px',
-                'height': '40px'
-            }
+                width: '40px',
+                height: '40px',
+            },
         };
     }
     ngOnInit() {
@@ -171,8 +171,7 @@ let OtpPage = class OtpPage {
         this.PhoneNumLogin = localStorage.getItem('customerPhonenum');
         this.navSubscription = this.api.getNavParam.subscribe((data) => (this.screenNames = data));
     }
-    onOtpChange() {
-    }
+    onOtpChange() { }
     getOTP() {
         this.oTpModel.source = 'customer';
         this.oTpModel.source_key = 'mobile';
@@ -188,7 +187,6 @@ let OtpPage = class OtpPage {
         }, (err) => {
             this.openToast(err);
         });
-        ;
     }
     resendOTP() {
         this.ngOtpInput.setValue('');
@@ -203,13 +201,13 @@ let OtpPage = class OtpPage {
         this.verifyOtpModel.isMobileLogin = true;
         this.isLoading = true;
         this.api.verifyOtp(this.verifyOtpModel).subscribe((otpResp) => {
-            var _a, _b, _c, _d, _e;
+            var _a, _b, _c, _d, _e, _f;
             if ((otpResp === null || otpResp === void 0 ? void 0 : otpResp.status) == 200) {
-                if (((_a = otpResp['data']) === null || _a === void 0 ? void 0 : _a.firstTimeLogin) == "Y") {
+                if (((_a = otpResp['data']) === null || _a === void 0 ? void 0 : _a.firstTimeLogin) == 'Y') {
                     localStorage.setItem('customerPhonenum', this.customerPhonenum);
                     const navigationExtras = {
                         queryParams: {
-                            'screenName': 'reset'
+                            screenName: 'reset',
                         },
                     };
                     this.api.sendNavParam(navigationExtras);
@@ -218,19 +216,20 @@ let OtpPage = class OtpPage {
                 else {
                     // TODO:
                     if (this.screenNames) {
-                        if (this.screenNames.queryParams.screenName == "mpinotpValidate" || this.screenNames.queryParams.screenName == "forgotmpin") {
+                        if (this.screenNames.queryParams.screenName == 'mpinotpValidate' ||
+                            this.screenNames.queryParams.screenName == 'forgotmpin') {
                             const navigationExtras = {
                                 queryParams: {
-                                    'screenName': 'forgotmpin'
+                                    screenName: 'forgotmpin',
                                 },
                             };
                             this.api.sendNavParam(navigationExtras);
                             this.router.navigateByUrl('/setmpin');
                         }
-                        else if (this.screenNames.queryParams.screenName == "forget-password") {
+                        else if (this.screenNames.queryParams.screenName == 'forget-password') {
                             const navigationExtras = {
                                 queryParams: {
-                                    'screenName': 'forget-password'
+                                    screenName: 'forget-password',
                                 },
                             };
                             this.api.sendNavParam(navigationExtras);
@@ -242,7 +241,8 @@ let OtpPage = class OtpPage {
                             localStorage.setItem('lastName', (_d = otpResp['data']) === null || _d === void 0 ? void 0 : _d.lastName);
                             localStorage.setItem('customer_id', (_e = otpResp['data']) === null || _e === void 0 ? void 0 : _e.customerId);
                             localStorage.setItem('customer_details', JSON.stringify(otpResp['data']));
-                            localStorage.setItem('isShowed', "no");
+                            localStorage.setItem('userType', (_f = otpResp['data']) === null || _f === void 0 ? void 0 : _f.userType);
+                            localStorage.setItem('isShowed', 'no');
                             this.router.navigate(['dashboard'], { replaceUrl: true });
                             this.otpForm.reset();
                             this.dataService.isLoggedIn.next(true);
@@ -252,13 +252,13 @@ let OtpPage = class OtpPage {
                 }
             }
             else {
-                this.router.navigateByUrl('/login');
+                // this.router.navigateByUrl('/login');
                 this.openToast(otpResp === null || otpResp === void 0 ? void 0 : otpResp.message);
             }
             this.isLoading = false;
         }, (err) => {
             this.errMsg = 'Please enter a valid OTP';
-            setTimeout(() => this.errMsg = '', 3000);
+            setTimeout(() => (this.errMsg = ''), 3000);
             this.isLoading = false;
         });
     }
