@@ -54,3 +54,18 @@
 //   scroll-behavior: smooth;
 //     left: 0;
 // }
+.custom-class-for-mat-dialog {
+    mat-dialog-container {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 4px;
+    }
+  }
+  .popup-dialog-class{
+    mat-dialog-container{
+      padding-bottom: 0px;
+      padding-right: 0px;
+      padding-left: 0px;
+  
+     }
+  }
