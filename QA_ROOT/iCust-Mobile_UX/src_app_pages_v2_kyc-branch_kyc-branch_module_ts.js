@@ -429,7 +429,7 @@ let KycBranchPage = class KycBranchPage {
             let modal = yield this.modalCtrl.create({
                 component: src_app_components_capture_image_capture_image_component__WEBPACK_IMPORTED_MODULE_7__.CaptureImageComponent,
                 componentProps: {
-                    scanObject: this.scannedItem
+                    scanObject: this.scannedItem,
                 },
             });
             modal.onDidDismiss().then((res) => {
