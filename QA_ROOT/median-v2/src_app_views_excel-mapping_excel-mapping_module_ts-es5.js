@@ -3141,7 +3141,7 @@
             return ctx_r30.updateMappingData(ctx_r30.addForm.value, ctx_r30.excelMappingForm.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Save");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Save1");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -3293,7 +3293,7 @@
             return ctx_r42.finalSubmit(ctx_r42.excelMappingForm.value, ctx_r42.addForm.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Save");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, " Save");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -3305,7 +3305,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", ctx_r11.excelMappingForm.invalid || ctx_r11.addForm.controls.excelMappingDetails.invalid);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", (ctx_r11.excelMappingForm.invalid || !ctx_r11.excelMappingForm.dirty) && (ctx_r11.addForm.controls.excelMappingDetails.invalid || !ctx_r11.addForm.controls.excelMappingDetails.dirty));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("disabled", ctx_r11.editFlag);
         }
@@ -3766,13 +3766,13 @@
             this.currentUser = localStorage.getItem("userFromLogin");
             this.excelMappingForm = this.fb.group({
               processName: [""],
-              extSysCode: [""],
+              extSysCode: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
               extSys: [""],
               userId: [this.currentUser],
-              sheetNumber: [""],
+              sheetNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]],
               headerRepeated: [false],
               startingRow: [""],
-              currency: [""]
+              currency: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required]]
             });
             this.addForm = this.fb.group({
               excelMappingDetails: this.fb.array([this.getSubArray()])

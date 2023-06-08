@@ -5642,10 +5642,11 @@
           value: function removeTranslation(index) {
             var _this23 = this;
 
+            // console.log("xfcvbncxcvbn");
             sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
               title: 'are you sure, want to remove the record?',
               showDenyButton: true,
-              showCancelButton: true,
+              // showCancelButton: true,
               confirmButtonText: 'Yes',
               denyButtonText: "No"
             }).then(function (result) {
@@ -5660,8 +5661,14 @@
 
                 _this23.msgTransDetails.removeAt(index);
 
-                console.log(_this23.tempArrayList);
+                console.log(_this23.ruleTransForm.valid);
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire('Removed!', '', 'success');
+
+                _this23.ruleTransForm.setErrors({
+                  'customeError': false
+                });
+
+                console.log(_this23.ruleTransForm.valid);
               }
             });
           }

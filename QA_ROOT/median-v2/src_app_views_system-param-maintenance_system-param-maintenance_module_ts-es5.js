@@ -3858,11 +3858,10 @@
                 _this20.deleteRowResp = resp;
 
                 if (_this20.deleteRowResp == true) {
-                  {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                      title: 'Deleted Row Data!',
-                      icon: 'success'
-                    });
+                  {// Swal.fire({
+                    //   title: 'Deleted Row Data!',
+                    //   icon: 'success'
+                    // });
                   }
                   medGlobalGlCodeDetails.removeAt(i);
 
@@ -5404,11 +5403,10 @@
                 _this28.deleteRowResp = resp;
 
                 if (_this28.deleteRowResp == true) {
-                  {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                      title: 'Deleted Row Data!',
-                      icon: 'success'
-                    });
+                  {// Swal.fire({
+                    //   title: 'Deleted Row Data!',
+                    //   icon: 'success'
+                    // });
                   }
                   medGlobalGlCodeDetails.removeAt(i); // this.submitFlag = true;
                 } else {
@@ -7041,7 +7039,7 @@
               console.log('this is reopen ', result);
 
               if (result.isConfirmed === true) {
-                _this40.apiService.onClckOfOperationGlobal('reopen', _this40.currentUser, udata).subscribe(function (resp) {
+                _this40.apiService.onClckOfOperationGlobal('open', _this40.currentUser, udata).subscribe(function (resp) {
                   console.log(resp);
                   _this40.globalgccacsummryData = resp;
 
@@ -24800,7 +24798,7 @@
 
       var _c0 = function _c0(a0) {
         return {
-          "isDisabled": a0
+          isDisabled: a0
         };
       };
 
@@ -24921,7 +24919,7 @@
             return ctx_r16.enableEditFlag();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "Edit");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, " Edit ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -24945,7 +24943,7 @@
             return ctx_r18.onClickOfAuthGCC(ctx_r18.userGLEditForm.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "Auth");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, " Auth ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -24969,7 +24967,7 @@
             return ctx_r20.onClickOfCloseGCC(ctx_r20.userGLEditForm.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "Close");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, " Close ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -24993,7 +24991,7 @@
             return ctx_r22.onClickOfReopenGCC(ctx_r22.userGLEditForm.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "Reopen");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, " Reopen ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -25017,7 +25015,7 @@
             return ctx_r24.OndeleteofUserGCC(ctx_r24.getuserGCCSummarydata.creatorId);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "Delete");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, " Delete ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -25038,11 +25036,10 @@
 
             var ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
 
-            ctx_r26.onSubmitGlForm(ctx_r26.userGLEditForm.value);
-            return ctx_r26.clicked = true;
+            return ctx_r26.onSubmitGlForm(ctx_r26.userGLEditForm.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "Save ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, " Save ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -25054,7 +25051,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", !ctx_r9.userGLEditForm.dirty);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", !ctx_r9.userGLEditForm.valid);
         }
       }
 
@@ -25646,7 +25643,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind2"](26, 8, ctx_r1.getuserGCCSummarydata.createdTime, "MM/dd/yyyy, h:mm a"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind2"](26, 8, ctx_r1.getuserGCCSummarydata.createdTime, "MM/dd/yyyy, h:mm a"), " ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](13);
 
@@ -25658,7 +25655,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind2"](63, 11, ctx_r1.getuserGCCSummarydata.approvedTime, "MM/dd/yyyy, h:mm a"));
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind2"](63, 11, ctx_r1.getuserGCCSummarydata.approvedTime, "MM/dd/yyyy, h:mm a"), " ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](13);
 
@@ -26142,7 +26139,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](7, "button", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8, "User General Ledger");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8, " User General Ledger ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 
@@ -26156,7 +26153,7 @@
               return ctx.usertoACC();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](11, "Account Class");
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](11, " Account Class ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 

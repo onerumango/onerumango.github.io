@@ -6619,7 +6619,8 @@
           this.canDeactivateGuard = canDeactivateGuard;
           this.ruleService = ruleService;
           this.toastService = toastService;
-          this.cdr = cdr;
+          this.cdr = cdr; // saveDisabled = true;
+
           this.submit = true;
           this.showRuleValidation = false;
           this.externalsystem = [];
@@ -6794,6 +6795,7 @@
         }, {
           key: "deleteVFGroup",
           value: function deleteVFGroup(index) {
+            console.log("Inside delete");
             this.validationSystems.removeAt(index);
             var selectedSystems = new Set(this.validationSystems.value.map(function (val) {
               return val.validationSystem;
@@ -6805,6 +6807,8 @@
         }, {
           key: "removeSysRules",
           value: function removeSysRules(index) {
+            console.log(this.removeSysRules);
+
             if (this.tempArrayList[index]) {
               this.tempArrayList.splice(index, 1);
             }
@@ -6814,7 +6818,21 @@
             }
 
             this.sysRuleDetails.removeAt(index);
-          }
+            console.log(this.ruleForm.valid);
+            this.ruleForm.controls['sysRuleDetails'].setErrors({
+              'customeError': true
+            });
+            console.log(this.ruleForm.valid); // if (this.ruleForm.invalid){
+            //   console.log(this.ruleForm);
+            //   this.disableButton();
+            // }
+          } // disableButton() {
+          //   this.ruleForm.get('submitButton').disable();
+          // }
+          // enableButton() {
+          //   this.ruleForm.get('submitButton').enable();
+          // }
+
         }, {
           key: "trackByFn",
           value: function trackByFn(index, item) {

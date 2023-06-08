@@ -3315,6 +3315,7 @@ class RuleDetailsComponent {
         this.ruleService = ruleService;
         this.toastService = toastService;
         this.cdr = cdr;
+        // saveDisabled = true;
         this.submit = true;
         this.showRuleValidation = false;
         this.externalsystem = [];
@@ -3453,11 +3454,13 @@ class RuleDetailsComponent {
         console.log(this.sysRuleDetails.value);
     }
     deleteVFGroup(index) {
+        console.log("Inside delete");
         this.validationSystems.removeAt(index);
         const selectedSystems = new Set(this.validationSystems.value.map(val => val.validationSystem));
         this.filteredExternalSystems = this.externalsystem.filter(val => !selectedSystems.has(val));
     }
     removeSysRules(index) {
+        console.log(this.removeSysRules);
         if (this.tempArrayList[index]) {
             this.tempArrayList.splice(index, 1);
         }
@@ -3465,7 +3468,20 @@ class RuleDetailsComponent {
             this.tempArrayList2.splice(index, 1);
         }
         this.sysRuleDetails.removeAt(index);
+        console.log(this.ruleForm.valid);
+        this.ruleForm.controls['sysRuleDetails'].setErrors({ 'customeError': true });
+        console.log(this.ruleForm.valid);
+        // if (this.ruleForm.invalid){
+        //   console.log(this.ruleForm);
+        //   this.disableButton();
+        // }
     }
+    // disableButton() {
+    //   this.ruleForm.get('submitButton').disable();
+    // }
+    // enableButton() {
+    //   this.ruleForm.get('submitButton').enable();
+    // }
     trackByFn(index, item) {
         return index;
     }

@@ -2948,10 +2948,11 @@ class RuleTranslationComponent {
         this.msgTransDetails.push(this.getTranslationItem(item));
     }
     removeTranslation(index) {
+        // console.log("xfcvbncxcvbn");
         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             title: 'are you sure, want to remove the record?',
             showDenyButton: true,
-            showCancelButton: true,
+            // showCancelButton: true,
             confirmButtonText: 'Yes',
             denyButtonText: `No`,
         }).then((result) => {
@@ -2963,8 +2964,10 @@ class RuleTranslationComponent {
                     this.desSystem.splice(index, 1);
                 }
                 this.msgTransDetails.removeAt(index);
-                console.log(this.tempArrayList);
+                console.log(this.ruleTransForm.valid);
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire('Removed!', '', 'success');
+                this.ruleTransForm.setErrors({ 'customeError': false });
+                console.log(this.ruleTransForm.valid);
             }
         });
     }
