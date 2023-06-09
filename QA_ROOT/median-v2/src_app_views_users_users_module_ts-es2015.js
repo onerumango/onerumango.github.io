@@ -3004,7 +3004,7 @@ class UserNewComponent {
             return;
         }
         localStorage.setItem('UserID', this.userForm.get('userId').value.toUpperCase());
-        // console.log(this.userForm);
+        console.log(this.userForm);
         this.userObj.userId = this.userForm.get('userId').value.toUpperCase();
         this.userObj.userName = this.userForm.get('userName').value;
         this.userObj.encryptedPassword = this.userForm.get('password').value;
