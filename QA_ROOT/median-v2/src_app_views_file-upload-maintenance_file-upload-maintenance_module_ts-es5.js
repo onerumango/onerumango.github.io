@@ -19564,7 +19564,7 @@
             return ctx_r8.enableEditFlag();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Edit");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, " Edit ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -19578,7 +19578,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "button", 22);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Auth");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, " Auth ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -19602,7 +19602,7 @@
             return ctx_r10.OndeleteofUser();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Delete");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, " Delete ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -19626,7 +19626,7 @@
             return ctx_r12.onSubmit(ctx_r12.externalSystemForm.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Save");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, " Save ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 
@@ -19656,7 +19656,7 @@
             return ctx_r15.onSubmitOfEdit(ctx_r15.externalSystemForm.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, "Save");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, " Save ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         }
@@ -20500,7 +20500,7 @@
         selectors: [["npr-external-system-new"]],
         decls: 37,
         vars: 13,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "extCode", 1, "formLbl"], [1, "colorRed"], ["id", "extCode", "type", "text", "formControlName", "extSysCode", "placeholder", "External System Code", "value", "", 1, "form-control", 3, "readonly", "keyup"], ["extCode", ""], ["for", "extName", 1, "formLbl"], ["id", "extName", "formControlName", "extSysName", "type", "text", "placeholder", "External System Name", "value", "", 1, "form-control", 3, "readonly", "keyup"], ["extName", ""], ["for", "department", 1, "formLbl"], ["id", "outlineNgSelect", "id", "outlineNgSelect", "formControlName", "department", "bindLabel", "name", "placeholder", "Select Department", "labelForId", "city", 3, "items", "clearable", "change"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["href", "javascript:void(0);", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["href", "javascript:void(0)", "class", "btn smBtn minWdSmBtn btnPrimary", 3, "disabled", "click", 4, "ngIf"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], [1, "fa", "fa-edit", "faClass"], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["aria-hidden", "true", 1, "fa", "fa-files-o", "faRecordStatus"], [1, "csCardStyleIcon", "csCardStyleIconBg4"], [1, "fa", "fa-check-square-o", "faClassChecker"], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], [1, "fa", "fa-shield", "faClassFirstTimeAuth"], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/authorize.svg", "alt", "...", 1, "modImage"], ["src", "assets/images/modification.svg", "alt", "...", 1, "modImage"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "extCode", 1, "formLbl"], [1, "colorRed"], ["id", "extCode", "oninput", "this.value = this.value.toUpperCase()", "type", "text", "formControlName", "extSysCode", "placeholder", "External System Code", "value", "", 1, "form-control", 3, "readonly", "keyup"], ["extCode", ""], ["for", "extName", 1, "formLbl"], ["id", "extName", "formControlName", "extSysName", "oninput", "this.value = this.value.toUpperCase()", "type", "text", "placeholder", "External System Name", "value", "", 1, "form-control", 3, "readonly", "keyup"], ["extName", ""], ["for", "department", 1, "formLbl"], ["id", "outlineNgSelect", "id", "outlineNgSelect", "formControlName", "department", "bindLabel", "name", "placeholder", "Select Department", "labelForId", "city", 3, "items", "clearable", "change"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["href", "javascript:void(0);", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["href", "javascript:void(0)", "class", "btn smBtn minWdSmBtn btnPrimary", 3, "disabled", "click", 4, "ngIf"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], [1, "fa", "fa-edit", "faClass"], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["aria-hidden", "true", 1, "fa", "fa-files-o", "faRecordStatus"], [1, "csCardStyleIcon", "csCardStyleIconBg4"], [1, "fa", "fa-check-square-o", "faClassChecker"], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], [1, "fa", "fa-shield", "faClassFirstTimeAuth"], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/authorize.svg", "alt", "...", 1, "modImage"], ["src", "assets/images/modification.svg", "alt", "...", 1, "modImage"]],
         template: function ExternalSystemNewComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();

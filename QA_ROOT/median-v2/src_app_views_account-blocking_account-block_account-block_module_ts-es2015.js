@@ -176,70 +176,77 @@ class AccountBlockingComponent {
     }
     ngOnInit() {
         this.link = localStorage.getItem("link");
-        this.apiService.getCustomerSearch().subscribe(data => {
+        this.apiService.getCustomerSearch().subscribe((data) => {
             this.buildForm(data);
         });
     }
     buildForm(data) {
+        this.accountBlockDetails = data;
         this.accountBlockForm = this.formBuilder.group({
             customerName: [data ? data.customerName : "", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
             customerNumber: [data ? data.customerNumber : "", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
-            customerAccountNumber: [data ? data.accountNumber : "", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+            customerAccountNumber: [
+                data ? data.accountNumber : "",
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required,
+            ],
             branchCode: [data ? data.branchCode : "", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
             nameOfCustomer: [data ? data.customerName : "", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
-            effectiveDate: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
-            amountToBlock: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+            effectiveDate: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+            amountToBlock: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
             customerMobileNumber: [data ? data.mobileNo : "", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
             commentsByOperator: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
-            emailid: [data ? data.email :
-                    "",
+            emailid: [
+                data ? data.email : "",
                 [
                     _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required,
                     _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$"),
                 ],
             ],
             sendmail: [""],
-            customerAlert: [""]
+            customerAlert: [""],
         });
     }
     onClickOfSubmit() {
+        this.submitdisable = true;
         let payload = {
-            "userId": "XMLMEDIANUSR",
-            "source": "XMLMEDIAN",
-            "accountNumber": this.accountBlockForm.get("customerAccountNumber").value,
-            "branchCode": this.accountBlockForm.get("branchCode").value,
-            "amount": this.accountBlockForm.get("amountToBlock").value,
-            "narration": this.accountBlockForm.get("commentsByOperator").value,
-            "effectiveDate": this.accountBlockForm.get("effectiveDate").value,
-            "expiryDate": "",
-            "customerAlert": this.accountBlockForm.get("customerAlert").value,
-            "email": this.accountBlockForm.get("emailid").value,
-            "mobileNo": this.accountBlockForm.get("customerMobileNumber").value
+            userId: "XMLMEDIANUSR",
+            source: "XMLMEDIAN",
+            ccy: this.accountBlockDetails.ccy,
+            accountNumber: this.accountBlockForm.get("customerAccountNumber").value,
+            branchCode: this.accountBlockForm.get("branchCode").value,
+            amount: this.accountBlockForm.get("amountToBlock").value,
+            narration: this.accountBlockForm.get("commentsByOperator").value,
+            effectiveDate: this.accountBlockForm.get("effectiveDate").value,
+            expiryDate: "",
+            customerAlert: this.accountBlockForm.get("customerAlert").value,
+            email: this.accountBlockForm.get("emailid").value,
+            mobileNo: this.accountBlockForm.get("customerMobileNumber").value,
         };
         this.apiService.accountBlock(payload).subscribe((resp) => {
             var _a;
             this.resp = resp;
             if (((_a = this.resp) === null || _a === void 0 ? void 0 : _a.responseCode) === "200") {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                    title: 'Amount frozen successfully',
-                    icon: 'success',
-                }).then((result => {
+                    title: "Amount frozen successfully",
+                    icon: "success",
+                }).then((result) => {
                     if (result) {
                         this.router.navigateByUrl("/customer-search");
                     }
-                }));
+                });
             }
             else {
                 this.toastService.errorMessage(resp === null || resp === void 0 ? void 0 : resp.status, "");
             }
-        }, err => {
-        });
+        }, (err) => { });
     }
     exit() {
         this.apiService.setAccountBlocking({
-            exit: 'clickedOnExitFromAccountBlocking'
+            exit: "clickedOnExitFromAccountBlocking",
         });
-        this.link === "Account_Block" ? this.router.navigateByUrl('/customer-search') : this.router.navigateByUrl('/amount-block');
+        this.link === "Account_Block"
+            ? this.router.navigateByUrl("/customer-search")
+            : this.router.navigateByUrl("/amount-block");
     }
 }
 AccountBlockingComponent.ɵfac = function AccountBlockingComponent_Factory(t) { return new (t || AccountBlockingComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_1__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.Router)); };

@@ -293,7 +293,7 @@
             return ctx_r6.custMoreDetails(data_r5);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5, "Customer Details");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5, " Customer Details ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -377,7 +377,7 @@
             return ctx_r10.accountBlock(ctx_r10.custMoreDetailsdata);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "Amount Block");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " Amount Block ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
@@ -401,7 +401,7 @@
             return ctx_r12.accountBlock(ctx_r12.custMoreDetailsdata);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "Account Block");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " Account Block ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
@@ -439,7 +439,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "th");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10, "Cust Ac No ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10, "Cust Ac No");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -457,7 +457,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "th");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "Frozen Status ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "Frozen Status");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -525,7 +525,7 @@
             return ctx_r14.openDialog(_r2, ctx_r14.custMoreDetailsdata);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](35, "Transactions");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](35, " Transactions ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -559,19 +559,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](22);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r1.custMoreDetailsdata.countryCode, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.custMoreDetailsdata.countryCode);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r1.custMoreDetailsdata.brn, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.custMoreDetailsdata.brn);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r1.custMoreDetailsdata.acc, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.custMoreDetailsdata.acc);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r1.custMoreDetailsdata.ccy, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.custMoreDetailsdata.ccy);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
@@ -579,7 +579,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r1.custMoreDetailsdata.frozen, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.custMoreDetailsdata.frozen);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
 
@@ -633,23 +633,23 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", data_r18.cbsref, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r18.cbsref);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", data_r18.acbrn, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r18.acbrn);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", data_r18.acno, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r18.acno);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", data_r18.lcyamt, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r18.lcyamt);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", data_r18.txninitdt, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r18.txninitdt);
         }
       }
 
@@ -821,8 +821,8 @@
               return !!_this2.accountForm.value[field];
             });
             var payload = {
-              "identifier": field,
-              "identifierVal": this.accountForm.value[field]
+              identifier: field,
+              identifierVal: this.accountForm.value[field]
             };
             this.accountBlockingService.accountBlockingQuery(payload).subscribe(function (result) {
               _this2.accountBlockingEmail = result;
@@ -865,9 +865,9 @@
 
             this.accountBlockingMobile = data.mobileNo;
             var payload = {
-              "custAccInfo": {
-                "branch": data.branchCode,
-                "accNo": data.customerAcNo
+              custAccInfo: {
+                branch: data.branchCode,
+                accNo: data.customerAcNo
               }
             };
             this.accountBlockingService.custMoreDetails(payload).subscribe(function (custMoreDetailsdata) {
@@ -897,9 +897,9 @@
             var _this4 = this;
 
             var payload = {
-              "numoftrn": "10",
-              "accno": row.acc,
-              "accbrn": row.brn
+              numoftrn: "10",
+              accno: row.acc,
+              accbrn: row.brn
             };
             this.showSpinn = true;
             this.accountBlockingService.last10Transaction(payload).subscribe(function (data) {
@@ -923,9 +923,9 @@
             var _this5 = this;
 
             var payload = {
-              "numoftrn": "10",
-              "accno": data.acc,
-              "accbrn": data.brn
+              numoftrn: "10",
+              accno: data.acc,
+              accbrn: data.brn
             };
             this.accountBlockingService.last10Transaction(payload).subscribe(function (res) {
               _this5.showSpinn = false;
@@ -975,7 +975,8 @@
               customerName: data.custname,
               branchCode: data.brn,
               nationalId: "",
-              email: this.accountBlockingEmail.email
+              email: this.accountBlockingEmail.email,
+              ccy: data.ccy
             });
             this.router.navigateByUrl("/accountBlocking");
           }
@@ -1193,7 +1194,7 @@
               return ctx.onFetch();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](49, "Get Customer");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](49, " Get Customer ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 

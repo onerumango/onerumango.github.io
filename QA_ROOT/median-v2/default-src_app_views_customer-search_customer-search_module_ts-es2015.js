@@ -120,7 +120,7 @@ function CustomerSearchComponent_div_53_tr_8_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "button", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function CustomerSearchComponent_div_53_tr_8_Template_button_click_4_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r7); const data_r5 = restoredCtx.$implicit; const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2); return ctx_r6.custMoreDetails(data_r5); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5, "Customer Details");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5, " Customer Details ");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -158,7 +158,7 @@ function CustomerSearchComponent_div_55_button_37_Template(rf, ctx) { if (rf & 1
     const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function CustomerSearchComponent_div_55_button_37_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r11); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2); return ctx_r10.accountBlock(ctx_r10.custMoreDetailsdata); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "Amount Block");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " Amount Block ");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](1, _c0));
@@ -167,7 +167,7 @@ function CustomerSearchComponent_div_55_button_39_Template(rf, ctx) { if (rf & 1
     const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function CustomerSearchComponent_div_55_button_39_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r13); const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2); return ctx_r12.accountBlock(ctx_r12.custMoreDetailsdata); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "Account Block");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, " Account Block ");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](1, _c0));
@@ -186,7 +186,7 @@ function CustomerSearchComponent_div_55_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](8, "Branch Code");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](9, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10, "Cust Ac No ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10, "Cust Ac No");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "th");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](12, "Currency");
@@ -195,7 +195,7 @@ function CustomerSearchComponent_div_55_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](14, "Account Status");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](15, "th");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "Frozen Status ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "Frozen Status");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "th");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](18, "Action");
@@ -225,7 +225,7 @@ function CustomerSearchComponent_div_55_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](33, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](34, "button", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function CustomerSearchComponent_div_55_Template_button_click_34_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r15); const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](57); return ctx_r14.openDialog(_r2, ctx_r14.custMoreDetailsdata); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](35, "Transactions");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](35, " Transactions ");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](36, "td");
@@ -242,17 +242,17 @@ function CustomerSearchComponent_div_55_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r1.custMoreDetailsdata.countryCode, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.custMoreDetailsdata.countryCode);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r1.custMoreDetailsdata.brn, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.custMoreDetailsdata.brn);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r1.custMoreDetailsdata.acc, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.custMoreDetailsdata.acc);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r1.custMoreDetailsdata.ccy, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.custMoreDetailsdata.ccy);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.custMoreDetailsdata.status);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r1.custMoreDetailsdata.frozen, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx_r1.custMoreDetailsdata.frozen);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r1.screen == "amountBlock");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
@@ -279,15 +279,15 @@ function CustomerSearchComponent_ng_template_56_tr_21_Template(rf, ctx) { if (rf
 } if (rf & 2) {
     const data_r18 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", data_r18.cbsref, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r18.cbsref);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", data_r18.acbrn, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r18.acbrn);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", data_r18.acno, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r18.acno);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", data_r18.lcyamt, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r18.lcyamt);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", data_r18.txninitdt, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r18.txninitdt);
 } }
 function CustomerSearchComponent_ng_template_56_Template(rf, ctx) { if (rf & 1) {
     const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
@@ -411,8 +411,8 @@ class CustomerSearchComponent {
             "Customer_No",
         ].find((field) => !!this.accountForm.value[field]);
         let payload = {
-            "identifier": field,
-            "identifierVal": this.accountForm.value[field]
+            identifier: field,
+            identifierVal: this.accountForm.value[field],
         };
         this.accountBlockingService
             .accountBlockingQuery(payload)
@@ -453,14 +453,14 @@ class CustomerSearchComponent {
     custMoreDetails(data) {
         this.accountBlockingMobile = data.mobileNo;
         let payload = {
-            "custAccInfo": {
-                "branch": data.branchCode,
-                "accNo": data.customerAcNo
-            }
+            custAccInfo: {
+                branch: data.branchCode,
+                accNo: data.customerAcNo,
+            },
         };
         this.accountBlockingService
             .custMoreDetails(payload)
-            .subscribe(custMoreDetailsdata => {
+            .subscribe((custMoreDetailsdata) => {
             this.custMoreDetailsdata = custMoreDetailsdata;
             if ((custMoreDetailsdata === null || custMoreDetailsdata === void 0 ? void 0 : custMoreDetailsdata.responseCode) === "200") {
                 if (this.custMoreDetailsdata.frozen === "Y") {
@@ -481,14 +481,12 @@ class CustomerSearchComponent {
     }
     transactiondetails(row) {
         let payload = {
-            "numoftrn": "10",
-            "accno": row.acc,
-            "accbrn": row.brn
+            numoftrn: "10",
+            accno: row.acc,
+            accbrn: row.brn,
         };
         this.showSpinn = true;
-        this.accountBlockingService
-            .last10Transaction(payload)
-            .subscribe((data) => {
+        this.accountBlockingService.last10Transaction(payload).subscribe((data) => {
             this.showSpinn = false;
             this.trndata = data.accDetailFull;
             if ((data === null || data === void 0 ? void 0 : data.responseCode) == "200") {
@@ -505,13 +503,11 @@ class CustomerSearchComponent {
     }
     openDialog(content, data) {
         let payload = {
-            "numoftrn": "10",
-            "accno": data.acc,
-            "accbrn": data.brn
+            numoftrn: "10",
+            accno: data.acc,
+            accbrn: data.brn,
         };
-        this.accountBlockingService
-            .last10Transaction(payload)
-            .subscribe((res) => {
+        this.accountBlockingService.last10Transaction(payload).subscribe((res) => {
             this.showSpinn = false;
             this.trndata = res.accDetailFull;
             if ((res === null || res === void 0 ? void 0 : res.responseCode) === "200") {
@@ -554,6 +550,7 @@ class CustomerSearchComponent {
             branchCode: data.brn,
             nationalId: "",
             email: this.accountBlockingEmail.email,
+            ccy: data.ccy,
         });
         this.router.navigateByUrl("/accountBlocking");
     }
@@ -680,7 +677,7 @@ CustomerSearchComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](47, "div", 19);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](48, "button", 20);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function CustomerSearchComponent_Template_button_click_48_listener() { return ctx.onFetch(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](49, "Get Customer");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](49, " Get Customer ");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](50, "div", 19);

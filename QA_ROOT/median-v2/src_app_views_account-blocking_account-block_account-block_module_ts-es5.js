@@ -387,14 +387,15 @@
         }, {
           key: "buildForm",
           value: function buildForm(data) {
+            this.accountBlockDetails = data;
             this.accountBlockForm = this.formBuilder.group({
               customerName: [data ? data.customerName : "", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               customerNumber: [data ? data.customerNumber : "", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               customerAccountNumber: [data ? data.accountNumber : "", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               branchCode: [data ? data.branchCode : "", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               nameOfCustomer: [data ? data.customerName : "", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
-              effectiveDate: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
-              amountToBlock: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+              effectiveDate: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
+              amountToBlock: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               customerMobileNumber: [data ? data.mobileNo : "", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               commentsByOperator: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required],
               emailid: [data ? data.email : "", [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")]],
@@ -407,18 +408,20 @@
           value: function onClickOfSubmit() {
             var _this2 = this;
 
+            this.submitdisable = true;
             var payload = {
-              "userId": "XMLMEDIANUSR",
-              "source": "XMLMEDIAN",
-              "accountNumber": this.accountBlockForm.get("customerAccountNumber").value,
-              "branchCode": this.accountBlockForm.get("branchCode").value,
-              "amount": this.accountBlockForm.get("amountToBlock").value,
-              "narration": this.accountBlockForm.get("commentsByOperator").value,
-              "effectiveDate": this.accountBlockForm.get("effectiveDate").value,
-              "expiryDate": "",
-              "customerAlert": this.accountBlockForm.get("customerAlert").value,
-              "email": this.accountBlockForm.get("emailid").value,
-              "mobileNo": this.accountBlockForm.get("customerMobileNumber").value
+              userId: "XMLMEDIANUSR",
+              source: "XMLMEDIAN",
+              ccy: this.accountBlockDetails.ccy,
+              accountNumber: this.accountBlockForm.get("customerAccountNumber").value,
+              branchCode: this.accountBlockForm.get("branchCode").value,
+              amount: this.accountBlockForm.get("amountToBlock").value,
+              narration: this.accountBlockForm.get("commentsByOperator").value,
+              effectiveDate: this.accountBlockForm.get("effectiveDate").value,
+              expiryDate: "",
+              customerAlert: this.accountBlockForm.get("customerAlert").value,
+              email: this.accountBlockForm.get("emailid").value,
+              mobileNo: this.accountBlockForm.get("customerMobileNumber").value
             };
             this.apiService.accountBlock(payload).subscribe(function (resp) {
               var _a;
@@ -427,8 +430,8 @@
 
               if (((_a = _this2.resp) === null || _a === void 0 ? void 0 : _a.responseCode) === "200") {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
-                  title: 'Amount frozen successfully',
-                  icon: 'success'
+                  title: "Amount frozen successfully",
+                  icon: "success"
                 }).then(function (result) {
                   if (result) {
                     _this2.router.navigateByUrl("/customer-search");
@@ -443,9 +446,9 @@
           key: "exit",
           value: function exit() {
             this.apiService.setAccountBlocking({
-              exit: 'clickedOnExitFromAccountBlocking'
+              exit: "clickedOnExitFromAccountBlocking"
             });
-            this.link === "Account_Block" ? this.router.navigateByUrl('/customer-search') : this.router.navigateByUrl('/amount-block');
+            this.link === "Account_Block" ? this.router.navigateByUrl("/customer-search") : this.router.navigateByUrl("/amount-block");
           }
         }]);
 

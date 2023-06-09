@@ -47,7 +47,7 @@ a:hover {
 
 img {
   max-width: 100%;
-  min-width:12px;
+  min-width: 12px;
 }
 
 :focus,
@@ -233,9 +233,9 @@ button:focus,
 }
 
 .tColor::before {
-  content: '';
+  content: "";
   position: absolute;
-  background-image: url('/assets/images/checkMedian.png');
+  background-image: url("/assets/images/checkMedian.png");
   -webkit-background-size: contain;
   background-size: contain;
   background-repeat: no-repeat;
@@ -252,7 +252,7 @@ button:focus,
 }
 
 .tColor.theme3::before {
-  background-image: url('/assets/images/checkbox-check.svg');
+  background-image: url("/assets/images/checkbox-check.svg");
   height: 9px;
 }
 
@@ -551,11 +551,11 @@ span.medainStyle {
     box-shadow 0.15s ease-in-out;
 }
 
-.theme2 .form-check-input[type='checkbox'] {
+.theme2 .form-check-input[type="checkbox"] {
   border-radius: 0.45em;
 }
 
-.theme2 .form-check:not(.form-switch) .form-check-input[type='checkbox'] {
+.theme2 .form-check:not(.form-switch) .form-check-input[type="checkbox"] {
   background-size: 60% 60%;
 }
 
@@ -653,7 +653,7 @@ span.medainStyle {
 }
 
 .sMenuLink .navLink::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 6px;
   border-top: 5px solid;
@@ -706,6 +706,7 @@ span.medainStyle {
   height: 20px;
   display: block;
   position: relative;
+  top: 13px;
 }
 
 .tglLine {
@@ -780,7 +781,7 @@ span.medainStyle {
 }
 
 .subMenuLink::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 11px;
@@ -814,7 +815,7 @@ span.medainStyle {
 }
 
 .circleNitification .navText::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 4px;
@@ -1081,7 +1082,7 @@ span.medainStyle {
 }
 
 .activeDot::before {
-  content: '';
+  content: "";
   border-radius: 50%;
   width: 6px;
   height: 6px;
@@ -1136,7 +1137,7 @@ span.medainStyle {
 }
 
 .availableStatus::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 50%;
@@ -1361,7 +1362,7 @@ ul.msgList > li.visited {
 }
 
 .cardCounter::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -10px;
   top: -10px;
@@ -1396,7 +1397,7 @@ ul.msgList > li.visited {
 }
 
 .dbTopCard::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -20px;
   top: -25px;
@@ -1420,13 +1421,12 @@ ul.msgList > li.visited {
   background-color: #1e1e2d;
   border: unset;
 }
-.theme1 .close{
+.theme1 .close {
   background-color: var(--bs-white);
 }
-.theme2 .close{
+.theme2 .close {
   background-color: #1e1e2d;
 }
-
 
 /* dataTable */
 .table.tableStyle > :not(:last-child) > :last-child > * {
@@ -1612,11 +1612,11 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control::before {
 .theme2 .table > :not(caption) > * > * {
   border-bottom: 1px dashed #2b2b40 !important;
 }
-.greet{
-  color: var(--primaryColor) ;
+.greet {
+  color: var(--primaryColor);
 }
 .theme1 .greet {
-  color: var(--primaryColor) ;
+  color: var(--primaryColor);
 }
 
 .theme2 .greet {
@@ -1638,7 +1638,8 @@ a:hover {
 
 .theme2 table.tableStyle tbody td a,
 a:hover {
-  color: #cdcdde;
+  /* color: #cdcdde; */
+  color: var(--primaryColor);
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
@@ -1769,14 +1770,14 @@ a:hover {
   /* color: #92929f !important; */
   color: #e8e8ee !important;
 }
-.theme2 .padding{
+.theme2 .padding {
   background-color: #1b1b29 !important;
   border-color: #7b7b86 !important;
   /* color: #92929f !important; */
   color: #e8e8ee !important;
 }
 
-.ng-dropdown-panel .ng-dropdown-header{
+.ng-dropdown-panel .ng-dropdown-header {
   padding: 0px !important;
 }
 .theme2 .form-select {
@@ -1819,12 +1820,12 @@ a:hover {
 
 .theme2 .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
   color: #92929f !important;
-  background-color:  #1b1b29 !important;
+  background-color: #1b1b29 !important;
 }
 
 .theme2 .form-class {
   color: #92929f !important;
-  background-color:  #1b1b29 !important;
+  background-color: #1b1b29 !important;
 }
 
 .theme2 .dropdown-list .filter-textbox {
@@ -1832,7 +1833,7 @@ a:hover {
   background: #383854 !important;
 }
 
-.theme2 .multiselect-item-checkbox input[type='checkbox'] + div {
+.theme2 .multiselect-item-checkbox input[type="checkbox"] + div {
   color: #cdcdde !important;
 }
 
@@ -1859,7 +1860,7 @@ a:hover {
 }
 
 .cardListStyle > li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -31px;
   top: 0;
@@ -1998,7 +1999,7 @@ a:hover {
   border: 1px solid #efefef;
   height: 45px;
   font-size: 13px;
-  color:black;
+  color: black;
   background-color: #f8f9fa;
 }
 .ng-select .ng-select-container {
@@ -2010,7 +2011,7 @@ a:hover {
   margin: 0;
 }
 
-.formStyle input[type='number'] {
+.formStyle input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -2082,7 +2083,7 @@ a:hover {
 .csCardStyleText > h2 {
   color: var(--secondaryColor);
   font-size: 16px;
-  font-family: 'Conv_BwModelicaSS01-BoldCondensed';
+  font-family: "Conv_BwModelicaSS01-BoldCondensed";
   line-height: 1;
   margin-bottom: 6px;
 }
@@ -2105,13 +2106,13 @@ a:hover {
   margin-top: 15px;
 }
 
-.radioStyle input[type='radio'] {
+.radioStyle input[type="radio"] {
   position: absolute;
   opacity: 0;
 }
 
-.radioStyle input[type='radio'] + .radio-label:before {
-  content: '';
+.radioStyle input[type="radio"] + .radio-label:before {
+  content: "";
   background: transparent;
   border-radius: 100%;
   border: 1px solid var(--themeColor);
@@ -2127,22 +2128,22 @@ a:hover {
   left: 0;
 }
 
-.radioStyle input[type='radio']:checked + .radio-label:before {
+.radioStyle input[type="radio"]:checked + .radio-label:before {
   background-color: var(--primaryColor);
   box-shadow: inset 0 0 0 4px #f4f4f4;
   border-color: var(--primaryColor);
 }
 
-.radioStyle input[type='radio']:focus + .radio-label:before {
+.radioStyle input[type="radio"]:focus + .radio-label:before {
   outline: none;
   border-color: var(--primaryColor);
 }
 
-.radioStyle input[type='radio']:disabled + .radio-label:before {
+.radioStyle input[type="radio"]:disabled + .radio-label:before {
   border-color: var(--primaryColor);
 }
 
-.radioStyle input[type='radio'] + .radio-label:empty:before {
+.radioStyle input[type="radio"] + .radio-label:empty:before {
   margin-right: 0;
 }
 
@@ -2168,7 +2169,7 @@ a:hover {
 }
 
 .checkStyle label:before {
-  content: '';
+  content: "";
   border: 1px solid var(--themeColor);
   cursor: pointer;
   width: 16px;
@@ -2183,7 +2184,7 @@ a:hover {
 }
 
 .checkStyle input:checked + label:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 3px;
@@ -2345,8 +2346,8 @@ ul.nav.nav-tabs li + li {
 
 .fileUpload .file-upload-wrapper:before {
   position: absolute;
-  content: '';
-  background-image: url('/assets/images/upload-cloud.svg');
+  content: "";
+  background-image: url("/assets/images/upload-cloud.svg");
   height: 25px;
   width: 25px;
   background-repeat: no-repeat;
@@ -2358,12 +2359,9 @@ ul.nav.nav-tabs li + li {
   transform: translate(-50%, -50%);
 }
 
-
 .fileUpload .file-upload-wrapper.upIcon:before {
   display: var(--display);
 }
-
-
 
 .titleStyle > p {
   font-size: 13px;
@@ -2762,42 +2760,42 @@ ul.nav.nav-tabs li + li {
     left: 60%;
   }
 }
-.faClass{
-    font-size: 22px;
-    position: relative;
-    left: 2px;
-    color: #F75F44;
+.faClass {
+  font-size: 22px;
+  position: relative;
+  left: 2px;
+  color: #f75f44;
 }
-.faClassChecker{
+.faClassChecker {
   font-size: 25px;
   position: relative;
   left: 2px;
-  color: #44D5AF;
+  color: #44d5af;
 }
-.faClassFirstTimeAuth{
+.faClassFirstTimeAuth {
   font-size: 22px;
   position: relative;
   left: 2px;
-  color: #5086F0;
+  color: #5086f0;
 }
-.faClassAuth{
+.faClassAuth {
   font-size: 22px;
   position: relative;
   left: 2px;
-  color: #52B9CF;
+  color: #52b9cf;
 }
-.faRecordStatus{
+.faRecordStatus {
   font-size: 22px;
   position: relative;
   left: 2px;
-  color: #BA73DB;
+  color: #ba73db;
 }
-.modImage{
-  width:22px;
+.modImage {
+  width: 22px;
 }
-.theme2 .primaryColor{
+.theme2 .primaryColor {
   color: white;
 }
-.theme2 .summaryIcon{
+/* .theme2 .summaryIcon {
   filter: brightness(0) invert(1);
-}
+} */

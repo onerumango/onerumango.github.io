@@ -710,23 +710,24 @@ class EmailManagementCreateComponent {
             confirmButtonText: 'YES',
             icon: 'info',
         }).then((result) => {
-            // if (result.isConfirmed === true) {
-            //   this.accountBlockingService.onClickOfAuthOfEmailManagement('Verify','Account_Block',this.loggedInUser).subscribe(authresp => {
-            //     if (authresp) {
-            //       Swal.fire({
-            //         text: 'Record is Authorized',  
-            //         icon:'success'
-            //       });
-            //       this.eamilAuditLog=authresp;
-            //       this.auditLog();
-            //     } else {
-            //       Swal.fire({
-            //         text: 'Record Authorization is Failed',  
-            //         icon:'error'
-            //       });
-            //     }
-            //   });
-            // }
+            if (result.isConfirmed === true) {
+                this.accountBlockingService.onClickOfAuthOfEmailManagement('Verify', 'Account_Block', this.loggedInUser).subscribe(authresp => {
+                    if (authresp) {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                            text: 'Record is Authorized',
+                            icon: 'success'
+                        });
+                        this.eamilAuditLog = authresp;
+                        this.auditLog();
+                    }
+                    else {
+                        sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                            text: 'Record Authorization is Failed',
+                            icon: 'error'
+                        });
+                    }
+                });
+            }
             if (this.loggedInUser === this.eamilAuditLog.inputBy) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     text: "Maker cannot authorize the record",

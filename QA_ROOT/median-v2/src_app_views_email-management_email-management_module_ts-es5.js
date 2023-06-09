@@ -1302,23 +1302,25 @@
               confirmButtonText: 'YES',
               icon: 'info'
             }).then(function (result) {
-              // if (result.isConfirmed === true) {
-              //   this.accountBlockingService.onClickOfAuthOfEmailManagement('Verify','Account_Block',this.loggedInUser).subscribe(authresp => {
-              //     if (authresp) {
-              //       Swal.fire({
-              //         text: 'Record is Authorized',  
-              //         icon:'success'
-              //       });
-              //       this.eamilAuditLog=authresp;
-              //       this.auditLog();
-              //     } else {
-              //       Swal.fire({
-              //         text: 'Record Authorization is Failed',  
-              //         icon:'error'
-              //       });
-              //     }
-              //   });
-              // }
+              if (result.isConfirmed === true) {
+                _this7.accountBlockingService.onClickOfAuthOfEmailManagement('Verify', 'Account_Block', _this7.loggedInUser).subscribe(function (authresp) {
+                  if (authresp) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                      text: 'Record is Authorized',
+                      icon: 'success'
+                    });
+                    _this7.eamilAuditLog = authresp;
+
+                    _this7.auditLog();
+                  } else {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                      text: 'Record Authorization is Failed',
+                      icon: 'error'
+                    });
+                  }
+                });
+              }
+
               if (_this7.loggedInUser === _this7.eamilAuditLog.inputBy) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                   text: "Maker cannot authorize the record",
