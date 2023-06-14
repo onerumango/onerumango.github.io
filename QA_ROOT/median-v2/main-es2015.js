@@ -392,7 +392,7 @@ class HeaderComponent {
         // 
         var lastBg = this.lastBg;
         jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '.tColor', function (e) {
-            e.preventDefault();
+            //e.preventDefault();
             var bgClass = jquery__WEBPACK_IMPORTED_MODULE_0__(this).data("id");
             jquery__WEBPACK_IMPORTED_MODULE_0__(this).addClass('active').parent().siblings().find('.tColor').removeClass('active');
             jquery__WEBPACK_IMPORTED_MODULE_0__('body').removeClass(lastBg).addClass(bgClass);
@@ -425,6 +425,7 @@ class HeaderComponent {
             confirmButtonText: 'YES',
             icon: 'info'
         }).then((result => {
+            this.router.navigate(['session/login']);
             if (result.isConfirmed == true) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     text: "Logout Successfully",
@@ -434,7 +435,7 @@ class HeaderComponent {
                     this.localStoreService.clear();
                     sessionStorage.clear();
                     localStorage.clear();
-                    this.router.navigate(['session/login']);
+                    // this.router.navigate(['session/login']);
                     window.location.reload();
                 }));
             }
@@ -997,7 +998,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LayoutComponent": function() { return /* binding */ LayoutComponent; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _ngneat_until_destroy__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngneat/until-destroy */ 99758);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 71258);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 9170);
@@ -1131,7 +1132,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SidenavComponent": function() { return /* binding */ SidenavComponent; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _utils_track_by__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/track-by */ 34770);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ 31600);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
@@ -2630,11 +2631,11 @@ const routes = [
     },
     {
         path: 'session',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_crypto-js_index_js"), __webpack_require__.e("default-node_modules_ngx-spinner___ivy_ngcc___fesm2015_ngx-spinner_js-src_app_shared_services-95cfea"), __webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_js"), __webpack_require__.e("src_app_views_auth_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/auth/login/login.module */ 33794)).then(m => m.LoginModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_crypto-js_index_js"), __webpack_require__.e("default-node_modules_ngx-spinner___ivy_ngcc___fesm2015_ngx-spinner_js-src_app_shared_services-95cfea"), __webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_mjs"), __webpack_require__.e("src_app_views_auth_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/auth/login/login.module */ 33794)).then(m => m.LoginModule),
     },
     {
         path: 'forget-password',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_crypto-js_index_js"), __webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_forget-password_forget-password_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/forget-password/forget-password.module */ 82352)).then(m => m.ForgetPasswordModule),
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_crypto-js_index_js"), __webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_forget-password_forget-password_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/forget-password/forget-password.module */ 82352)).then(m => m.ForgetPasswordModule),
     }, {
         path: '',
         component: src_npr_components_layout_layout_component__WEBPACK_IMPORTED_MODULE_0__.LayoutComponent,
@@ -4409,7 +4410,7 @@ const environment = {
     // MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
     // ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
     //Currently Using Ports 
-    MEDIAN_URL: 'http://192.168.0.14:9003/medianv2',
+    MEDIAN_URL: 'http://192.168.0.14:8081/medianv2',
     //  MEDIAN_URL : 'http://localhost:9191',
     //ACC_CLOSER_URL: 'http://localhost:9192'
     // MEDIAN_URL: 'http://192.168.0.14:9003/medianBanzpay',

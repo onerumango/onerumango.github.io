@@ -42,12 +42,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DataTableDirective": function() { return /* binding */ DataTableDirective; }
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2316);
+var __spreadArray = undefined && undefined.__spreadArray || function (to, from, pack) {
+  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+    if (ar || !(i in from)) {
+      if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+      ar[i] = from[i];
+    }
+  }
+  return to.concat(ar || Array.prototype.slice.call(from));
+};
 /**
  * @license
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://raw.githubusercontent.com/l-lin/angular-datatables/master/LICENSE
  */
+
+
 
 
 
@@ -140,16 +151,17 @@ function () {
       return x.ngPipeInstance && !x.ngTemplateRef;
     });
     colsWithPipe.forEach(function (el) {
-      var pipe = el.ngPipeInstance; // find index of column using `data` attr
+      var pipe = el.ngPipeInstance;
+      var pipeArgs = el.ngPipeArgs || []; // find index of column using `data` attr
 
       var i = columns.findIndex(function (e) {
         return e.data === el.data;
       }); // get <td> element which holds data using index
 
-      var rowFromCol = row.childNodes.item(i); // Transform data with Pipe
+      var rowFromCol = row.childNodes.item(i); // Transform data with Pipe and PipeArgs
 
       var rowVal = $(rowFromCol).text();
-      var rowValAfter = pipe.transform(rowVal); // Apply transformed string to <td>
+      var rowValAfter = pipe.transform.apply(pipe, __spreadArray([rowVal], pipeArgs, false)); // Apply transformed string to <td>
 
       $(rowFromCol).text(rowValAfter);
     });
@@ -401,7 +413,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SecurityPolicySummaryComponent": function() { return /* binding */ SecurityPolicySummaryComponent; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 79441);
 /* harmony import */ var src_app_shared_models_fmosNewRolePermissions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/models/fmosNewRolePermissions */ 35383);
 /* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular-datatables */ 50481);

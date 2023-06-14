@@ -5,11 +5,15 @@
 
   function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 
-  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+  function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+
+  function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -103,6 +107,16 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       2316);
+
+      var __spreadArray = undefined && undefined.__spreadArray || function (to, from, pack) {
+        if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+          if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+          }
+        }
+        return to.concat(ar || Array.prototype.slice.call(from));
+      };
       /**
        * @license
        *
@@ -199,16 +213,17 @@
             return x.ngPipeInstance && !x.ngTemplateRef;
           });
           colsWithPipe.forEach(function (el) {
-            var pipe = el.ngPipeInstance; // find index of column using `data` attr
+            var pipe = el.ngPipeInstance;
+            var pipeArgs = el.ngPipeArgs || []; // find index of column using `data` attr
 
             var i = columns.findIndex(function (e) {
               return e.data === el.data;
             }); // get <td> element which holds data using index
 
-            var rowFromCol = row.childNodes.item(i); // Transform data with Pipe
+            var rowFromCol = row.childNodes.item(i); // Transform data with Pipe and PipeArgs
 
             var rowVal = $(rowFromCol).text();
-            var rowValAfter = pipe.transform(rowVal); // Apply transformed string to <td>
+            var rowValAfter = pipe.transform.apply(pipe, __spreadArray([rowVal], pipeArgs, false)); // Apply transformed string to <td>
 
             $(rowFromCol).text(rowValAfter);
           });
@@ -881,7 +896,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r4.editFlag)("checked", ctx_r4.selectAllChecked);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r4.editFlag)("checked", ctx_r4.selectAllChecked || roles_r15.SELECTALL);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
 
@@ -2049,7 +2064,7 @@
 
             var permissionslist = [];
 
-            var _loop = function _loop(i) {
+            var _loop = function _loop() {
               var screenoccurence = _this7.rolessorteddata[i].screenlist;
 
               var _loop2 = function _loop2(ind) {
@@ -2076,7 +2091,7 @@
             };
 
             for (var i = 0; i < this.rolessorteddata.length; i++) {
-              _loop(i);
+              _loop();
             } //for loop endng
 
 
@@ -2176,7 +2191,7 @@
                     initalizepermissions = missiongpermissions;
                   }
 
-                  var _loop3 = function _loop3(_i) {
+                  var _loop3 = function _loop3() {
                     var items = data.screenDto[_i];
                     var screenindex = permissionsarray.findIndex(function (item) {
                       return item.permissionId.screenId == items.screensId.screenId;
@@ -2196,7 +2211,7 @@
                   };
 
                   for (var _i = 0; _i < data.screenDto.length; _i++) {
-                    _loop3(_i);
+                    _loop3();
                   }
                 }
 
@@ -2343,7 +2358,7 @@
         }, {
           key: "getscreenlist",
           value: function getscreenlist(arrayB, element, permissionsarray, screen, screenslist) {
-            var _loop4 = function _loop4(ind) {
+            var _loop4 = function _loop4() {
               var items = arrayB[ind];
 
               if (element.tabId == items.screensId.tabId) {
@@ -2370,7 +2385,7 @@
               } //if
             }) //arrayb fnctn endng */
             for (var ind = 0; ind < arrayB.length; ind++) {
-              _loop4(ind);
+              _loop4();
             } //for loop endng
 
 
@@ -2523,7 +2538,7 @@
             this.modifyRoleObject.makerId = this.username;
             var permissionslist = [];
 
-            var _loop5 = function _loop5(i) {
+            var _loop5 = function _loop5() {
               var screenoccurence = _this9.rolessorteddata[i].screenlist;
 
               var _loop6 = function _loop6(ind) {
@@ -2559,7 +2574,7 @@
             };
 
             for (var i = 0; i < this.rolessorteddata.length; i++) {
-              _loop5(i);
+              _loop5();
             } //for loop endng
 
 
@@ -2775,12 +2790,21 @@
             console.log(roles.Screens);
             console.log(roles.NEW); // let check = true;
             // for (let index = 0; index < roleScreenList.length; index++) {
-            // if(roleScreenList[index].AUTH == "0" || roleScreenList[index].NEW == "0" || roleScreenList[index].DELETE == "0" || roleScreenList[index].VIEW == "0" || roleScreenList[index].CLOSE == "0" || roleScreenList[index].REOPEN == "0"){
-            //   check = false;
+            //   if (roleScreenList[index].AUTH == "1" && roleScreenList[index].NEW == "1" && roleScreenList[index].DELETE == "1" && roleScreenList[index].VIEW == "1" && roleScreenList[index].CLOSE == "1" && roleScreenList[index].REOPEN == "1" && roleScreenList[index].EDIT == "1") {
+            //     debugger
+            //     if (roleScreenList[index].SELECTALL == "1") {
+            //       this.selectAllChecked = true;
+            //     }
+            //     //roleScreenList[index].SELECTALL = 1;
+            //     this.check = true;
+            //     console.log(this.check);
+            //     console.log(roles.SELECTALL);
+            //   }
             // }
-            // }
-            // if(check){
-            // this.selectAllChecked = true;}else{
+            // if (roles) {
+            //   this.selectAllChecked = true;
+            //   console.log(this.selectAllChecked);
+            // } else {
             //   this.selectAllChecked = false
             // }
 
@@ -2840,6 +2864,12 @@
               if (this.roleScreenList[i].AUTH == 1 || this.roleScreenList[i].CLOSE == 1 || this.roleScreenList[i].DELETE == 1 || this.roleScreenList[i].EDIT == 1 || this.roleScreenList[i].NEW == 1 || this.roleScreenList[i].PRINT == 1 || this.roleScreenList[i].REOPEN == 1) {
                 roles.VIEW = "1";
               }
+
+              if (this.roleScreenList[i].AUTH == 1 && this.roleScreenList[i].CLOSE == 1 && this.roleScreenList[i].DELETE == 1 && this.roleScreenList[i].EDIT == 1 && this.roleScreenList[i].NEW == 1 && this.roleScreenList[i].REOPEN == 1) {
+                roles.VIEW = "1";
+                roles.SELECTALL = "1";
+                console.log(roles.SELECTALL);
+              }
             } else {
               if (action == "NEW" || action == "SELECTALL") {
                 roles.NEW = event ? "1" : "0";
@@ -2887,6 +2917,12 @@
 
               if (this.roleScreenList[i].AUTH == 1 || this.roleScreenList[i].CLOSE == 1 || this.roleScreenList[i].DELETE == 1 || this.roleScreenList[i].EDIT == 1 || this.roleScreenList[i].NEW == 1 || this.roleScreenList[i].PRINT == 1 || this.roleScreenList[i].REOPEN == 1) {
                 roles.VIEW = "1";
+              }
+
+              if (this.roleScreenList[i].AUTH == 1 && this.roleScreenList[i].CLOSE == 1 && this.roleScreenList[i].DELETE == 1 && this.roleScreenList[i].EDIT == 1 && this.roleScreenList[i].NEW == 1 && this.roleScreenList[i].REOPEN == 1) {
+                roles.VIEW = "1";
+                roles.SELECTALL = "1";
+                console.log(roles.SELECTALL);
               }
             }
 
@@ -2990,7 +3026,7 @@
 
             var isExit = false;
 
-            if (this.myform.touched && this.formTouched == true) {
+            if (this.myform.touched && this.formTouched == true || this.modifyRoleObject) {
               return sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                 text: 'There are unsaved changes in the screen. Would you like to navigate to other screen?',
                 showCancelButton: true,

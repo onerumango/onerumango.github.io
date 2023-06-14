@@ -42,12 +42,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DataTableDirective": function() { return /* binding */ DataTableDirective; }
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2316);
+var __spreadArray = undefined && undefined.__spreadArray || function (to, from, pack) {
+  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+    if (ar || !(i in from)) {
+      if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+      ar[i] = from[i];
+    }
+  }
+  return to.concat(ar || Array.prototype.slice.call(from));
+};
 /**
  * @license
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://raw.githubusercontent.com/l-lin/angular-datatables/master/LICENSE
  */
+
+
 
 
 
@@ -140,16 +151,17 @@ function () {
       return x.ngPipeInstance && !x.ngTemplateRef;
     });
     colsWithPipe.forEach(function (el) {
-      var pipe = el.ngPipeInstance; // find index of column using `data` attr
+      var pipe = el.ngPipeInstance;
+      var pipeArgs = el.ngPipeArgs || []; // find index of column using `data` attr
 
       var i = columns.findIndex(function (e) {
         return e.data === el.data;
       }); // get <td> element which holds data using index
 
-      var rowFromCol = row.childNodes.item(i); // Transform data with Pipe
+      var rowFromCol = row.childNodes.item(i); // Transform data with Pipe and PipeArgs
 
       var rowVal = $(rowFromCol).text();
-      var rowValAfter = pipe.transform(rowVal); // Apply transformed string to <td>
+      var rowValAfter = pipe.transform.apply(pipe, __spreadArray([rowVal], pipeArgs, false)); // Apply transformed string to <td>
 
       $(rowFromCol).text(rowValAfter);
     });
@@ -488,7 +500,7 @@ function RoleDetailsComponent_tr_53_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate"](roles_r15.Screens);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r4.editFlag)("checked", ctx_r4.selectAllChecked);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r4.editFlag)("checked", ctx_r4.selectAllChecked || roles_r15.SELECTALL);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r4.editFlag)("checked", roles_r15.VIEW == "0" ? false : true);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
@@ -1004,8 +1016,10 @@ class RoleDetailsComponent {
                 icon: 'info'
             }).then((result => {
                 if (result.isConfirmed === true) {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({ text: 'Maker Cannot Authorize Record!',
-                        icon: 'error' });
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
+                        text: 'Maker Cannot Authorize Record!',
+                        icon: 'error'
+                    });
                 }
             }));
             return;
@@ -1737,12 +1751,21 @@ class RoleDetailsComponent {
         console.log(roles.NEW);
         // let check = true;
         // for (let index = 0; index < roleScreenList.length; index++) {
-        // if(roleScreenList[index].AUTH == "0" || roleScreenList[index].NEW == "0" || roleScreenList[index].DELETE == "0" || roleScreenList[index].VIEW == "0" || roleScreenList[index].CLOSE == "0" || roleScreenList[index].REOPEN == "0"){
-        //   check = false;
+        //   if (roleScreenList[index].AUTH == "1" && roleScreenList[index].NEW == "1" && roleScreenList[index].DELETE == "1" && roleScreenList[index].VIEW == "1" && roleScreenList[index].CLOSE == "1" && roleScreenList[index].REOPEN == "1" && roleScreenList[index].EDIT == "1") {
+        //     debugger
+        //     if (roleScreenList[index].SELECTALL == "1") {
+        //       this.selectAllChecked = true;
+        //     }
+        //     //roleScreenList[index].SELECTALL = 1;
+        //     this.check = true;
+        //     console.log(this.check);
+        //     console.log(roles.SELECTALL);
+        //   }
         // }
-        // }
-        // if(check){
-        // this.selectAllChecked = true;}else{
+        // if (roles) {
+        //   this.selectAllChecked = true;
+        //   console.log(this.selectAllChecked);
+        // } else {
         //   this.selectAllChecked = false
         // }
         if (roles.AUTH) {
@@ -1794,6 +1817,13 @@ class RoleDetailsComponent {
                 this.roleScreenList[i].REOPEN == 1) {
                 roles.VIEW = "1";
             }
+            if (this.roleScreenList[i].AUTH == 1 && this.roleScreenList[i].CLOSE == 1 &&
+                this.roleScreenList[i].DELETE == 1 && this.roleScreenList[i].EDIT == 1 &&
+                this.roleScreenList[i].NEW == 1 && this.roleScreenList[i].REOPEN == 1) {
+                roles.VIEW = "1";
+                roles.SELECTALL = "1";
+                console.log(roles.SELECTALL);
+            }
         }
         else {
             if (action == "NEW" || action == "SELECTALL") {
@@ -1836,6 +1866,13 @@ class RoleDetailsComponent {
                 this.roleScreenList[i].NEW == 1 || this.roleScreenList[i].PRINT == 1 ||
                 this.roleScreenList[i].REOPEN == 1) {
                 roles.VIEW = "1";
+            }
+            if (this.roleScreenList[i].AUTH == 1 && this.roleScreenList[i].CLOSE == 1 &&
+                this.roleScreenList[i].DELETE == 1 && this.roleScreenList[i].EDIT == 1 &&
+                this.roleScreenList[i].NEW == 1 && this.roleScreenList[i].REOPEN == 1) {
+                roles.VIEW = "1";
+                roles.SELECTALL = "1";
+                console.log(roles.SELECTALL);
             }
         }
         for (let m = 0; m < this.rolessorteddata.length; m++) {
@@ -1914,7 +1951,7 @@ class RoleDetailsComponent {
     }
     canExit() {
         let isExit = false;
-        if (this.myform.touched && this.formTouched == true) {
+        if ((this.myform.touched && this.formTouched == true) || (this.modifyRoleObject)) {
             return sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
                 text: 'There are unsaved changes in the screen. Would you like to navigate to other screen?',
                 showCancelButton: true,

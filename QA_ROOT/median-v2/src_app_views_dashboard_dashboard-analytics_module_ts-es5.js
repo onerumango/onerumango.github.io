@@ -5,11 +5,15 @@
 
   function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 
-  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+  function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+
+  function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -103,6 +107,16 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       2316);
+
+      var __spreadArray = undefined && undefined.__spreadArray || function (to, from, pack) {
+        if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+          if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+          }
+        }
+        return to.concat(ar || Array.prototype.slice.call(from));
+      };
       /**
        * @license
        *
@@ -199,16 +213,17 @@
             return x.ngPipeInstance && !x.ngTemplateRef;
           });
           colsWithPipe.forEach(function (el) {
-            var pipe = el.ngPipeInstance; // find index of column using `data` attr
+            var pipe = el.ngPipeInstance;
+            var pipeArgs = el.ngPipeArgs || []; // find index of column using `data` attr
 
             var i = columns.findIndex(function (e) {
               return e.data === el.data;
             }); // get <td> element which holds data using index
 
-            var rowFromCol = row.childNodes.item(i); // Transform data with Pipe
+            var rowFromCol = row.childNodes.item(i); // Transform data with Pipe and PipeArgs
 
             var rowVal = $(rowFromCol).text();
-            var rowValAfter = pipe.transform(rowVal); // Apply transformed string to <td>
+            var rowValAfter = pipe.transform.apply(pipe, __spreadArray([rowVal], pipeArgs, false)); // Apply transformed string to <td>
 
             $(rowFromCol).text(rowValAfter);
           });
@@ -467,9 +482,7 @@
                 zIndex: g.zIndex || 0
               }).add());
               this.updateCenter();
-              if (n) for (n = b(n), g = Math.max(n.length, this.background.length || 0), q = 0; q < g; q++) {
-                n[q] && this.axis ? this.renderBackground(x(this.defaultBackgroundOptions, n[q]), q) : this.background[q] && (this.background[q] = this.background[q].destroy(), this.background.splice(q, 1));
-              }
+              if (n) for (n = b(n), g = Math.max(n.length, this.background.length || 0), q = 0; q < g; q++) n[q] && this.axis ? this.renderBackground(x(this.defaultBackgroundOptions, n[q]), q) : this.background[q] && (this.background[q] = this.background[q].destroy(), this.background.splice(q, 1));
             };
 
             g.prototype.renderBackground = function (b, g) {
@@ -682,9 +695,7 @@
               y && (E = this.getCrosshairPosition(h, a, z), m = E[0], e = E[1], E = E[2]);
               if (this.isCircular) m = Math.sqrt(Math.pow(e - a, 2) + Math.pow(E - z, 2)), g = "string" === typeof B ? n(B, 1) : B / m, r = "string" === typeof q ? n(q, 1) : q / m, b && v && (v /= m, g < v && (g = v), r < v && (r = v)), b = [["M", a + g * (e - a), z - g * (z - E)], ["L", e - (1 - r) * (e - a), E + (1 - r) * (z - E)]];else if ((m = this.translate(m)) && (0 > m || m > c) && (m = 0), "circle" === this.options.gridLineInterpolation) b = this.getLinePath(0, m, v);else if (b = [], r[u ? "yAxis" : "xAxis"].forEach(function (h) {
                 h.pane === f.pane && (k = h);
-              }), k) for (a = k.tickPositions, k.autoConnect && (a = a.concat([a[0]])), g && (a = a.slice().reverse()), m && (m += v), z = 0; z < a.length; z++) {
-                v = k.getPosition(a[z], m), b.push(z ? ["L", v.x, v.y] : ["M", v.x, v.y]);
-              }
+              }), k) for (a = k.tickPositions, k.autoConnect && (a = a.concat([a[0]])), g && (a = a.slice().reverse()), m && (m += v), z = 0; z < a.length; z++) v = k.getPosition(a[z], m), b.push(z ? ["L", v.x, v.y] : ["M", v.x, v.y]);
               return b;
             }
 
@@ -936,9 +947,7 @@
               } instanceof Array && function (b, g) {
                 b.__proto__ = g;
               } || function (b, g) {
-                for (var a in g) {
-                  g.hasOwnProperty(a) && (b[a] = g[a]);
-                }
+                for (var a in g) g.hasOwnProperty(a) && (b[a] = g[a]);
               };
 
               return _a2(c, k);
@@ -1021,9 +1030,7 @@
               } instanceof Array && function (b, f) {
                 b.__proto__ = f;
               } || function (b, f) {
-                for (var h in f) {
-                  f.hasOwnProperty(h) && (b[h] = f[h]);
-                }
+                for (var h in f) f.hasOwnProperty(h) && (b[h] = f[h]);
               };
 
               return _b(g, a);
@@ -1166,41 +1173,33 @@
                 } else v = m({}, u), v.x = u.xHigh, v.y = u.yHigh, c = m({}, u), c.x = u.xLow, c.y = u.yLow;
 
                 if (v.enabled || this._hasPointLabels) {
-                  for (f = a; f--;) {
-                    if (r = g[f]) {
-                      var q = v.inside ? r.plotHigh < r.plotLow : r.plotHigh > r.plotLow;
-                      r.y = r.high;
-                      r._plotY = r.plotY;
-                      r.plotY = r.plotHigh;
-                      h[f] = r.dataLabel;
-                      r.dataLabel = r.dataLabelUpper;
-                      r.below = q;
-                      B ? v.align || (v.align = q ? "right" : "left") : v.verticalAlign || (v.verticalAlign = q ? "top" : "bottom");
-                    }
+                  for (f = a; f--;) if (r = g[f]) {
+                    var q = v.inside ? r.plotHigh < r.plotLow : r.plotHigh > r.plotLow;
+                    r.y = r.high;
+                    r._plotY = r.plotY;
+                    r.plotY = r.plotHigh;
+                    h[f] = r.dataLabel;
+                    r.dataLabel = r.dataLabelUpper;
+                    r.below = q;
+                    B ? v.align || (v.align = q ? "right" : "left") : v.verticalAlign || (v.verticalAlign = q ? "top" : "bottom");
                   }
 
                   this.options.dataLabels = v;
                   b.drawDataLabels && b.drawDataLabels.apply(this, arguments);
 
-                  for (f = a; f--;) {
-                    if (r = g[f]) r.dataLabelUpper = r.dataLabel, r.dataLabel = h[f], delete r.dataLabels, r.y = r.low, r.plotY = r._plotY;
-                  }
+                  for (f = a; f--;) if (r = g[f]) r.dataLabelUpper = r.dataLabel, r.dataLabel = h[f], delete r.dataLabels, r.y = r.low, r.plotY = r._plotY;
                 }
 
                 if (c.enabled || this._hasPointLabels) {
-                  for (f = a; f--;) {
-                    if (r = g[f]) q = c.inside ? r.plotHigh < r.plotLow : r.plotHigh > r.plotLow, r.below = !q, B ? c.align || (c.align = q ? "left" : "right") : c.verticalAlign || (c.verticalAlign = q ? "bottom" : "top");
-                  }
+                  for (f = a; f--;) if (r = g[f]) q = c.inside ? r.plotHigh < r.plotLow : r.plotHigh > r.plotLow, r.below = !q, B ? c.align || (c.align = q ? "left" : "right") : c.verticalAlign || (c.verticalAlign = q ? "bottom" : "top");
 
                   this.options.dataLabels = c;
                   b.drawDataLabels && b.drawDataLabels.apply(this, arguments);
                 }
 
-                if (v.enabled) for (f = a; f--;) {
-                  if (r = g[f]) r.dataLabels = [r.dataLabelUpper, r.dataLabel].filter(function (h) {
-                    return !!h;
-                  });
-                }
+                if (v.enabled) for (f = a; f--;) if (r = g[f]) r.dataLabels = [r.dataLabelUpper, r.dataLabel].filter(function (h) {
+                  return !!h;
+                });
                 this.options.dataLabels = u;
               }
             };
@@ -1237,9 +1236,7 @@
 
               b.drawPoints.apply(this, arguments);
 
-              for (c = 0; c < a;) {
-                f = this.points[c], f.upperGraphic = f.graphic, f.graphic = f.lowerGraphic, f.origProps && (m(f, f.origProps), delete f.origProps), c++;
-              }
+              for (c = 0; c < a;) f = this.points[c], f.upperGraphic = f.graphic, f.graphic = f.lowerGraphic, f.origProps && (m(f, f.origProps), delete f.origProps), c++;
             };
 
             c.defaultOptions = H(e.defaultOptions, {
@@ -1280,9 +1277,7 @@
               } instanceof Array && function (b, g) {
                 b.__proto__ = g;
               } || function (b, g) {
-                for (var a in g) {
-                  g.hasOwnProperty(a) && (b[a] = g[a]);
-                }
+                for (var a in g) g.hasOwnProperty(a) && (b[a] = g[a]);
               };
 
               return _a3(c, k);
@@ -1332,9 +1327,7 @@
               } instanceof Array && function (b, a) {
                 b.__proto__ = a;
               } || function (b, a) {
-                for (var g in a) {
-                  a.hasOwnProperty(g) && (b[g] = a[g]);
-                }
+                for (var g in a) a.hasOwnProperty(g) && (b[g] = a[g]);
               };
 
               return _a4(c, b);
@@ -1760,19 +1753,15 @@
                   f,
                   h = 0;
 
-              for (f = 0; f < g; f++) {
-                if (b[f].legendItemHeight && (b[f].itemHeight = b[f].legendItemHeight), b[f] === b[g - 1] || b[f + 1] && b[f]._legendItemPos[1] !== b[f + 1]._legendItemPos[1]) {
-                  a.push({
-                    height: 0
-                  });
-                  var u = a[a.length - 1];
+              for (f = 0; f < g; f++) if (b[f].legendItemHeight && (b[f].itemHeight = b[f].legendItemHeight), b[f] === b[g - 1] || b[f + 1] && b[f]._legendItemPos[1] !== b[f + 1]._legendItemPos[1]) {
+                a.push({
+                  height: 0
+                });
+                var u = a[a.length - 1];
 
-                  for (h; h <= f; h++) {
-                    b[h].itemHeight > u.height && (u.height = b[h].itemHeight);
-                  }
+                for (h; h <= f; h++) b[h].itemHeight > u.height && (u.height = b[h].itemHeight);
 
-                  u.step = f;
-                }
+                u.step = f;
               }
 
               return a;
@@ -1841,9 +1830,7 @@
               } instanceof Array && function (a, c) {
                 a.__proto__ = c;
               } || function (a, c) {
-                for (var e in c) {
-                  c.hasOwnProperty(e) && (a[e] = c[e]);
-                }
+                for (var e in c) c.hasOwnProperty(e) && (a[e] = c[e]);
               };
 
               return _a5(c, e);
@@ -1892,9 +1879,7 @@
               } instanceof Array && function (b, h) {
                 b.__proto__ = h;
               } || function (b, h) {
-                for (var f in h) {
-                  h.hasOwnProperty(f) && (b[f] = h[f]);
-                }
+                for (var f in h) h.hasOwnProperty(f) && (b[f] = h[f]);
               };
 
               return _b2(f, h);
@@ -2153,12 +2138,10 @@
                 n = b.allowZoomOutside = !0;
                 var r = f[v];
                 c && f.getRadii(0, 0, f);
-                if (0 < m) for (var u = r.length; u--;) {
-                  if (K(r[u]) && b.dataMin <= r[u] && r[u] <= b.max) {
-                    var B = f.radii && f.radii[u] || 0;
-                    a = Math.min((r[u] - e) * k - B, a);
-                    g = Math.max((r[u] - e) * k + B, g);
-                  }
+                if (0 < m) for (var u = r.length; u--;) if (K(r[u]) && b.dataMin <= r[u] && r[u] <= b.max) {
+                  var B = f.radii && f.radii[u] || 0;
+                  a = Math.min((r[u] - e) * k - B, a);
+                  g = Math.max((r[u] - e) * k + B, g);
                 }
               }
             });
@@ -2180,9 +2163,7 @@
               } instanceof Array && function (a, b) {
                 a.__proto__ = b;
               } || function (a, b) {
-                for (var g in b) {
-                  b.hasOwnProperty(g) && (a[g] = b[g]);
-                }
+                for (var g in b) b.hasOwnProperty(g) && (a[g] = b[g]);
               };
 
               return _a6(c, e);
@@ -2237,9 +2218,7 @@
               } instanceof Array && function (b, a) {
                 b.__proto__ = a;
               } || function (b, a) {
-                for (var g in a) {
-                  a.hasOwnProperty(g) && (b[g] = a[g]);
-                }
+                for (var g in a) a.hasOwnProperty(g) && (b[g] = a[g]);
               };
 
               return _b3(a, g);
@@ -2379,9 +2358,7 @@
               } instanceof Array && function (b, a) {
                 b.__proto__ = a;
               } || function (b, a) {
-                for (var g in a) {
-                  a.hasOwnProperty(g) && (b[g] = a[g]);
-                }
+                for (var g in a) a.hasOwnProperty(g) && (b[g] = a[g]);
               };
 
               return _a7(c, b);
@@ -2482,9 +2459,7 @@
               } instanceof Array && function (b, a) {
                 b.__proto__ = a;
               } || function (b, a) {
-                for (var g in a) {
-                  a.hasOwnProperty(g) && (b[g] = a[g]);
-                }
+                for (var g in a) a.hasOwnProperty(g) && (b[g] = a[g]);
               };
 
               return _a8(c, b);
@@ -2560,9 +2535,7 @@
               } instanceof Array && function (a, c) {
                 a.__proto__ = c;
               } || function (a, c) {
-                for (var e in c) {
-                  c.hasOwnProperty(e) && (a[e] = c[e]);
-                }
+                for (var e in c) c.hasOwnProperty(e) && (a[e] = c[e]);
               };
 
               return _e(a, c);
@@ -2605,9 +2578,7 @@
               } instanceof Array && function (b, a) {
                 b.__proto__ = a;
               } || function (b, a) {
-                for (var g in a) {
-                  a.hasOwnProperty(g) && (b[g] = a[g]);
-                }
+                for (var g in a) a.hasOwnProperty(g) && (b[g] = a[g]);
               };
 
               return _b4(a, g);
@@ -2783,9 +2754,7 @@
               } instanceof Array && function (a, c) {
                 a.__proto__ = c;
               } || function (a, c) {
-                for (var e in c) {
-                  c.hasOwnProperty(e) && (a[e] = c[e]);
-                }
+                for (var e in c) c.hasOwnProperty(e) && (a[e] = c[e]);
               };
 
               return _a9(c, e);
@@ -3522,9 +3491,7 @@
               } instanceof Array && function (a, b) {
                 a.__proto__ = b;
               } || function (a, b) {
-                for (var h in b) {
-                  b.hasOwnProperty(h) && (a[h] = b[h]);
-                }
+                for (var h in b) b.hasOwnProperty(h) && (a[h] = b[h]);
               };
 
               return _a10(b, h);
@@ -3574,16 +3541,12 @@
                   f,
                   c;
 
-              for (f = 0; f < b.series.length; f++) {
-                if (a = b.series[f], a.is("packedbubble") && a.visible || !b.options.chart.ignoreHiddenSeries) for (c = 0; c < a.yData.length; c++) {
-                  h.push([null, null, a.yData[c], a.index, c, {
-                    id: c,
-                    marker: {
-                      radius: 0
-                    }
-                  }]);
+              for (f = 0; f < b.series.length; f++) if (a = b.series[f], a.is("packedbubble") && a.visible || !b.options.chart.ignoreHiddenSeries) for (c = 0; c < a.yData.length; c++) h.push([null, null, a.yData[c], a.index, c, {
+                id: c,
+                marker: {
+                  radius: 0
                 }
-              }
+              }]);
 
               return h;
             };
@@ -3822,9 +3785,7 @@
 
               if (a.length) {
                 c.push([[0, 0, a[0][2], a[0][3], a[0][4]]]);
-                if (1 < a.length) for (c.push([[0, 0 - a[1][2] - a[0][2], a[1][2], a[1][3], a[1][4]]]), k = 2; k < a.length; k++) {
-                  a[k][2] = a[k][2] || 1, g = f(c[h][e], c[h - 1][d], a[k]), b(g, c[h][0]) ? (c.push([]), d = 0, c[h + 1].push(f(c[h][e], c[h][0], a[k])), h++, e = 0) : 1 < h && c[h - 1][d + 1] && b(g, c[h - 1][d + 1]) ? (d++, c[h].push(f(c[h][e], c[h - 1][d], a[k])), e++) : (e++, c[h].push(g));
-                }
+                if (1 < a.length) for (c.push([[0, 0 - a[1][2] - a[0][2], a[1][2], a[1][3], a[1][4]]]), k = 2; k < a.length; k++) a[k][2] = a[k][2] || 1, g = f(c[h][e], c[h - 1][d], a[k]), b(g, c[h][0]) ? (c.push([]), d = 0, c[h + 1].push(f(c[h][e], c[h][0], a[k])), h++, e = 0) : 1 < h && c[h - 1][d + 1] && b(g, c[h - 1][d + 1]) ? (d++, c[h].push(f(c[h][e], c[h - 1][d], a[k])), e++) : (e++, c[h].push(g));
                 this.chart.stages = c;
                 this.chart.rawPositions = [].concat.apply([], c);
                 this.resizeRadius();
@@ -3894,9 +3855,7 @@
               f = f.apply([], [(k - e) / m[0], (g - d) / m[1]]);
 
               if (1e-10 < Math.abs(f - 1)) {
-                for (m = 0; m < b.length; m++) {
-                  b[m][2] *= f;
-                }
+                for (m = 0; m < b.length; m++) b[m][2] *= f;
 
                 this.placeBubbles(b);
               } else a.diffY = g / 2 + d - l - (n - l) / 2, a.diffX = k / 2 + e - p - (z - p) / 2;
@@ -3933,17 +3892,15 @@
               g(a.allDataPoints) || (a.allDataPoints = this.accumulateAllPoints(this), this.getPointRadius());
               if (e) var d = a.allDataPoints;else d = this.placeBubbles(a.allDataPoints), this.options.draggable = !1;
 
-              for (c = 0; c < d.length; c++) {
-                if (d[c][3] === f) {
-                  var k = b[d[c][4]];
-                  var l = I(d[c][2], void 0);
-                  e || (k.plotX = d[c][0] - a.plotLeft + a.diffX, k.plotY = d[c][1] - a.plotTop + a.diffY);
-                  H(l) && (k.marker = m(k.marker, {
-                    radius: l,
-                    width: 2 * l,
-                    height: 2 * l
-                  }), k.radius = l);
-                }
+              for (c = 0; c < d.length; c++) if (d[c][3] === f) {
+                var k = b[d[c][4]];
+                var l = I(d[c][2], void 0);
+                e || (k.plotX = d[c][0] - a.plotLeft + a.diffX, k.plotY = d[c][1] - a.plotTop + a.diffY);
+                H(l) && (k.marker = m(k.marker, {
+                  radius: l,
+                  width: 2 * l,
+                  height: 2 * l
+                }), k.radius = l);
               }
 
               e && this.deferLayout();
@@ -4046,9 +4003,7 @@
               } instanceof Array && function (a, b) {
                 a.__proto__ = b;
               } || function (a, b) {
-                for (var c in b) {
-                  b.hasOwnProperty(c) && (a[c] = b[c]);
-                }
+                for (var c in b) b.hasOwnProperty(c) && (a[c] = b[c]);
               };
 
               return _a11(b, c);
@@ -4086,9 +4041,7 @@
             c(e, a);
 
             e.prototype.getGraphPath = function () {
-              for (var a = x.prototype.getGraphPath.call(this), b = a.length + 1; b--;) {
-                (b === a.length || "M" === a[b][0]) && 0 < b && a.splice(b, 0, ["Z"]);
-              }
+              for (var a = x.prototype.getGraphPath.call(this), b = a.length + 1; b--;) (b === a.length || "M" === a[b][0]) && 0 < b && a.splice(b, 0, ["Z"]);
 
               return this.areaPath = a;
             };
@@ -4144,11 +4097,9 @@
             }
 
             function x() {
-              for (var a = this.axes, b = this.series, c = b.length; c--;) {
-                b[c].options.stacking && (a.forEach(function (a) {
-                  a.isXAxis || (a.waterfall.stacks.changed = !0);
-                }), c = 0);
-              }
+              for (var a = this.axes, b = this.series, c = b.length; c--;) b[c].options.stacking && (a.forEach(function (a) {
+                a.isXAxis || (a.waterfall.stacks.changed = !0);
+              }), c = 0);
             }
 
             function w() {
@@ -4204,9 +4155,7 @@
               } instanceof Array && function (a, c) {
                 a.__proto__ = c;
               } || function (a, c) {
-                for (var b in c) {
-                  c.hasOwnProperty(b) && (a[b] = c[b]);
-                }
+                for (var b in c) c.hasOwnProperty(b) && (a[b] = c[b]);
               };
 
               return _a12(c, e);
@@ -4255,9 +4204,7 @@
               } instanceof Array && function (a, b) {
                 a.__proto__ = b;
               } || function (a, b) {
-                for (var c in b) {
-                  b.hasOwnProperty(c) && (a[c] = b[c]);
-                }
+                for (var c in b) b.hasOwnProperty(c) && (a[c] = b[c]);
               };
 
               return _a13(b, c);
@@ -4447,9 +4394,7 @@
 
             c.prototype.setStackedPoints = function () {
               function a(a, b, c, f) {
-                if (J) for (c; c < J; c++) {
-                  A.stackState[c] += f;
-                } else A.stackState[0] = a, J = A.stackState.length;
+                if (J) for (c; c < J; c++) A.stackState[c] += f;else A.stackState[0] = a, J = A.stackState.length;
                 A.stackState.push(A.stackState[J - 1] + b);
               }
 
@@ -4646,9 +4591,7 @@
 
             if (a.polar && this.xAxis) {
               (this.kdByAngle = a.tooltip && a.tooltip.shared) ? this.searchPoint = this.searchPointByAngle : this.options.findNearestPointBy = "xy";
-              if (!this.preventPostTranslate) for (var c = this.points, d = c.length; d--;) {
-                this.toXY(c[d]), !a.hasParallelCoordinates && !this.yAxis.reversed && c[d].y < this.yAxis.min && (c[d].isNull = !0);
-              }
+              if (!this.preventPostTranslate) for (var c = this.points, d = c.length; d--;) this.toXY(c[d]), !a.hasParallelCoordinates && !this.yAxis.reversed && c[d].y < this.yAxis.min && (c[d].isNull = !0);
               this.hasClipCircleSetter || (this.hasClipCircleSetter = !!this.eventsToUnbind.push(b(this, "afterRender", function () {
                 if (a.polar) {
                   var b = this.yAxis.pane.center;
@@ -4673,11 +4616,9 @@
             if (this.chart.polar) {
               b = b || this.points;
 
-              for (d = 0; d < b.length; d++) {
-                if (!b[d].isNull) {
-                  var e = d;
-                  break;
-                }
+              for (d = 0; d < b.length; d++) if (!b[d].isNull) {
+                var e = d;
+                break;
               }
 
               if (!1 !== this.options.connectEnds && "undefined" !== typeof e) {
@@ -5084,9 +5025,7 @@
             var m;
             b || (b = {});
 
-            for (m in d) {
-              b[m] = d[m];
-            }
+            for (m in d) b[m] = d[m];
 
             return b;
           }
@@ -5122,9 +5061,7 @@
           }
 
           function B(b, d, g) {
-            for (var m in b) {
-              Object.hasOwnProperty.call(b, m) && d.call(g || b[m], b[m], m, b);
-            }
+            for (var m in b) Object.hasOwnProperty.call(b, m) && d.call(g || b[m], b[m], m, b);
           }
 
           function t(b, d, g) {
@@ -5143,9 +5080,7 @@
                 } else L = g;
 
                 B(L, function (b, d) {
-                  if (g[d]) for (x = g[d].length; x--;) {
-                    m(d, g[d][x].fn);
-                  }
+                  if (g[d]) for (x = g[d].length; x--;) m(d, g[d][x].fn);
                 });
               }
             }
@@ -5178,9 +5113,7 @@
               });
               m = [];
 
-              for (var x = b, D = !1; x.hcEvents;) {
-                Object.hasOwnProperty.call(x, "hcEvents") && x.hcEvents[d] && (m.length && (D = !0), m.unshift.apply(m, x.hcEvents[d])), x = Object.getPrototypeOf(x);
-              }
+              for (var x = b, D = !1; x.hcEvents;) Object.hasOwnProperty.call(x, "hcEvents") && x.hcEvents[d] && (m.length && (D = !0), m.unshift.apply(m, x.hcEvents[d])), x = Object.getPrototypeOf(x);
 
               D && m.sort(function (b, d) {
                 return b.order - d.order;
@@ -5208,9 +5141,7 @@
             var m,
                 g = b.length;
 
-            for (m = 0; m < g; m++) {
-              if (d(b[m], m)) return b[m];
-            }
+            for (m = 0; m < g; m++) if (d(b[m], m)) return b[m];
           };
           B({
             map: "map",
@@ -5264,16 +5195,12 @@
               };
             },
             arrayMax: function arrayMax(b) {
-              for (var d = b.length, m = b[0]; d--;) {
-                b[d] > m && (m = b[d]);
-              }
+              for (var d = b.length, m = b[0]; d--;) b[d] > m && (m = b[d]);
 
               return m;
             },
             arrayMin: function arrayMin(b) {
-              for (var d = b.length, m = b[0]; d--;) {
-                b[d] < m && (m = b[d]);
-              }
+              for (var d = b.length, m = b[0]; d--;) b[d] < m && (m = b[d]);
 
               return m;
             },
@@ -5320,11 +5247,9 @@
               b && b.parentElement && b.parentElement.removeChild(b);
             },
             erase: function erase(b, d) {
-              for (var m = b.length; m--;) {
-                if (b[m] === d) {
-                  b.splice(m, 1);
-                  break;
-                }
+              for (var m = b.length; m--;) if (b[m] === d) {
+                b.splice(m, 1);
+                break;
               }
             },
             error: v,
@@ -5388,9 +5313,7 @@
               !0 === d[0] && (g = d[1], d = Array.prototype.slice.call(d, 2));
               var c = d.length;
 
-              for (b = 0; b < c; b++) {
-                g = l(g, d[b]);
-              }
+              for (b = 0; b < c; b++) g = l(g, d[b]);
 
               return g;
             },
@@ -5402,9 +5325,7 @@
                 return 0 === b % 1;
               }) : .1 >= g && (d = [1 / g])));
 
-              for (l = 0; l < d.length && !(m = d[l], c && m * g >= b || !c && r <= (d[l] + (d[l + 1] || d[l])) / 2); l++) {
-                ;
-              }
+              for (l = 0; l < d.length && !(m = d[l], c && m * g >= b || !c && r <= (d[l] + (d[l + 1] || d[l])) / 2); l++);
 
               return m = w(m * g, -Math.round(Math.log(.001) / Math.LN10));
             },
@@ -5441,18 +5362,14 @@
                   m,
                   l;
 
-              for (l = 0; l < g; l++) {
-                b[l].safeI = l;
-              }
+              for (l = 0; l < g; l++) b[l].safeI = l;
 
               b.sort(function (b, g) {
                 m = d(b, g);
                 return 0 === m ? b.safeI - g.safeI : m;
               });
 
-              for (l = 0; l < g; l++) {
-                delete b[l].safeI;
-              }
+              for (l = 0; l < g; l++) delete b[l].safeI;
             },
             syncTimeout: function syncTimeout(b, d, g) {
               if (0 < d) return setTimeout(b, d, g);
@@ -5585,9 +5502,7 @@
               var A = this.rgba;
               if (this.stops) this.stops.forEach(function (n) {
                 n.brighten(a);
-              });else if (v(a) && 0 !== a) for (var q = 0; 3 > q; q++) {
-                A[q] += y(255 * a), 0 > A[q] && (A[q] = 0), 255 < A[q] && (A[q] = 255);
-              }
+              });else if (v(a) && 0 !== a) for (var q = 0; 3 > q; q++) A[q] += y(255 * a), 0 > A[q] && (A[q] = 0), 255 < A[q] && (A[q] = 255);
               return this;
             };
 
@@ -5763,9 +5678,7 @@
                 L: n(Math.floor(e % 1E3), 3)
               }, a.dateFormats);
               q(h, function (b, d) {
-                for (; -1 !== c.indexOf("%" + d);) {
-                  c = c.replace("%" + d, "function" === typeof b ? b.call(p, e) : b);
-                }
+                for (; -1 !== c.indexOf("%" + d);) c = c.replace("%" + d, "function" === typeof b ? b.call(p, e) : b);
               });
               return f ? c.substr(0, 1).toUpperCase() + c.substr(1) : c;
             };
@@ -5810,9 +5723,7 @@
                 !p.variableTimezone && p.useUTC || !F(f) || (m = f - h > 4 * c.month || p.getTimezoneOffset(h) !== p.getTimezoneOffset(f));
                 h = b.getTime();
 
-                for (b = 1; h < f;) {
-                  r.push(h), h = g === c.year ? p.makeTime(D + b * d, 0) : g === c.month ? p.makeTime(D, w + b * d) : !m || g !== c.day && g !== c.week ? m && g === c.hour && 1 < d ? p.makeTime(D, w, x, t + b * d) : h + g * d : p.makeTime(D, w, x + b * d * (g === c.day ? 1 : 7)), b++;
-                }
+                for (b = 1; h < f;) r.push(h), h = g === c.year ? p.makeTime(D + b * d, 0) : g === c.month ? p.makeTime(D, w + b * d) : !m || g !== c.day && g !== c.week ? m && g === c.hour && 1 < d ? p.makeTime(D, w, x, t + b * d) : h + g * d : p.makeTime(D, w, x + b * d * (g === c.day ? 1 : 7)), b++;
 
                 r.push(h);
                 g <= c.hour && 1E4 > r.length && r.forEach(function (b) {
@@ -6093,9 +6004,7 @@
                 setTimeout(c, 13);
               },
                   w = function w() {
-                for (var c = 0; c < a.timers.length; c++) {
-                  a.timers[c]() || a.timers.splice(c--, 1);
-                }
+                for (var c = 0; c < a.timers.length; c++) a.timers[c]() || a.timers.splice(c--, 1);
 
                 a.timers.length && f(w);
               };
@@ -6136,12 +6045,10 @@
               }
 
               function c(c, e) {
-                for (; c.length < J;) {
-                  if (e = c[Math.floor(c.length / p) - 1].slice(), "C" === e[0] && (e[1] = e[5], e[2] = e[6]), w) {
-                    var l = c[Math.floor(c.length / p)].slice();
-                    c.splice(c.length / 2, 0, e, l);
-                  } else c.push(e);
-                }
+                for (; c.length < J;) if (e = c[Math.floor(c.length / p) - 1].slice(), "C" === e[0] && (e[1] = e[5], e[2] = e[6]), w) {
+                  var l = c[Math.floor(c.length / p)].slice();
+                  c.splice(c.length / 2, 0, e, l);
+                } else c.push(e);
               }
 
               var h = a.startX,
@@ -6153,18 +6060,16 @@
               if (!n) return [k, k];
 
               if (h && f && f.length) {
-                for (a = 0; a < h.length; a++) {
-                  if (h[a] === f[0]) {
-                    var B = a;
-                    break;
-                  } else if (h[0] === f[f.length - h.length + a]) {
-                    B = a;
-                    var t = !0;
-                    break;
-                  } else if (h[h.length - 1] === f[f.length - h.length + a]) {
-                    B = h.length - a;
-                    break;
-                  }
+                for (a = 0; a < h.length; a++) if (h[a] === f[0]) {
+                  var B = a;
+                  break;
+                } else if (h[0] === f[f.length - h.length + a]) {
+                  B = a;
+                  var t = !0;
+                  break;
+                } else if (h[h.length - 1] === f[f.length - h.length + a]) {
+                  B = h.length - a;
+                  break;
                 }
 
                 "undefined" === typeof B && (n = []);
@@ -6202,9 +6107,7 @@
           }
 
           function F(c, e) {
-            for (var h = a.timers.length; h--;) {
-              a.timers[h].elem !== c || e && e !== a.timers[h].prop || (a.timers[h].stopped = !0);
-            }
+            for (var h = a.timers.length; h--;) a.timers[h].elem !== c || e && e !== a.timers[h].prop || (a.timers[h].stopped = !0);
           }
 
           var y = u.defined,
@@ -6478,16 +6381,12 @@
                   p = [],
                   B = 0;
 
-              for (f = a.length; f--;) {
-                B += a[f].size;
-              }
+              for (f = a.length; f--;) B += a[f].size;
 
               if (B > e) {
                 F(a, c);
 
-                for (B = f = 0; B <= e;) {
-                  B += a[f].size, f++;
-                }
+                for (B = f = 0; B <= e;) B += a[f].size, f++;
 
                 p = a.splice(f - 1, a.length);
               }
@@ -6501,15 +6400,11 @@
                   align: z(c.align, .5)
                 };
               }); w;) {
-                for (f = a.length; f--;) {
-                  e = a[f], c = (Math.min.apply(0, e.targets) + Math.max.apply(0, e.targets)) / 2, e.pos = v(c - e.size * e.align, 0, q - e.size);
-                }
+                for (f = a.length; f--;) e = a[f], c = (Math.min.apply(0, e.targets) + Math.max.apply(0, e.targets)) / 2, e.pos = v(c - e.size * e.align, 0, q - e.size);
 
                 f = a.length;
 
-                for (w = !1; f--;) {
-                  0 < f && a[f - 1].pos + a[f - 1].size > a[f].pos && (a[f - 1].size += a[f].size, a[f - 1].targets = a[f - 1].targets.concat(a[f].targets), a[f - 1].align = .5, a[f - 1].pos + a[f - 1].size > q && (a[f - 1].pos = q - a[f - 1].size), a.splice(f, 1), w = !0);
-                }
+                for (w = !1; f--;) 0 < f && a[f - 1].pos + a[f - 1].size > a[f].pos && (a[f - 1].size += a[f].size, a[f - 1].targets = a[f - 1].targets.concat(a[f].targets), a[f - 1].align = .5, a[f - 1].pos + a[f - 1].size > q && (a[f - 1].pos = q - a[f - 1].size), a.splice(f, 1), w = !0);
               }
 
               k.push.apply(k, p);
@@ -6854,9 +6749,7 @@
               if (b = b && b.toLowerCase()) {
                 var c = b.replace("shortdashdotdot", "3,1,1,1,1,1,").replace("shortdashdot", "3,1,1,1").replace("shortdot", "1,1,").replace("shortdash", "3,1,").replace("longdash", "8,3,").replace(/dot/g, "1,3,").replace("dash", "4,3,").replace(/,$/, "").split(",");
 
-                for (b = c.length; b--;) {
-                  c[b] = "" + I(c[b]) * x(d, NaN);
-                }
+                for (b = c.length; b--;) c[b] = "" + I(c[b]) * x(d, NaN);
 
                 b = c.join(",").replace(/NaN/g, "none");
                 this.element.setAttribute("stroke-dasharray", b);
@@ -6881,9 +6774,7 @@
               }
 
               if (b.stops) {
-                for (g = 0; g < b.stops.length; g++) {
-                  b.stops[g].destroy();
-                }
+                for (g = 0; g < b.stops.length; g++) b.stops[g].destroy();
 
                 b.stops.length = 0;
                 b.stops = void 0;
@@ -6891,9 +6782,7 @@
 
               b.safeRemoveChild(d);
 
-              for (c.styledMode || b.destroyShadows(); m && m.div && 0 === m.div.childNodes.length;) {
-                d = m.parentGroup, b.safeRemoveChild(m.div), delete m.div, m = d;
-              }
+              for (c.styledMode || b.destroyShadows(); m && m.div && 0 === m.div.childNodes.length;) d = m.parentGroup, b.safeRemoveChild(m.div), delete m.div, m = d;
 
               b.alignTo && J(c.alignedObjects, b);
               D(b, function (d, c) {
@@ -6914,9 +6803,7 @@
 
               if (c) {
                 if (c.removeAttribute("dx"), c.removeAttribute("dy"), d.element.setAttribute("id", ""), this.textPathWrapper && c.getElementsByTagName("textPath").length) {
-                  for (b = this.textPathWrapper.element.childNodes; b.length;) {
-                    c.appendChild(b[0]);
-                  }
+                  for (b = this.textPathWrapper.element.childNodes; b.length;) c.appendChild(b[0]);
 
                   c.removeChild(this.textPathWrapper.element);
                 }
@@ -7003,9 +6890,7 @@
                 }[(p || "") + "," + Math.round(g)] || g), c && (E = c * q, f.width = Math.abs(g * Math.sin(E)) + Math.abs(d * Math.cos(E)), f.height = Math.abs(g * Math.cos(E)) + Math.abs(d * Math.sin(E))));
 
                 if (D && ("" === l || 0 < f.height)) {
-                  for (; 250 < h.length;) {
-                    delete r[h.shift()];
-                  }
+                  for (; 250 < h.length;) delete r[h.shift()];
 
                   r[D] || h.push(D);
                   r[D] = f;
@@ -7242,9 +7127,7 @@
 
             a.prototype.updateShadows = function (b, d, c) {
               var g = this.shadows;
-              if (g) for (var m = g.length; m--;) {
-                c.call(g[m], "height" === b ? Math.max(d - (g[m].cutHeight || 0), 0) : "d" === b ? this.d : d, b, g[m]);
-              }
+              if (g) for (var m = g.length; m--;) c.call(g[m], "height" === b ? Math.max(d - (g[m].cutHeight || 0), 0) : "d" === b ? this.d : d, b, g[m]);
             };
 
             a.prototype.updateTransform = function () {
@@ -7345,9 +7228,7 @@
               } instanceof Array && function (c, e) {
                 c.__proto__ = e;
               } || function (c, e) {
-                for (var a in e) {
-                  e.hasOwnProperty(a) && (c[a] = e[a]);
-                }
+                for (var a in e) e.hasOwnProperty(a) && (c[a] = e[a]);
               };
 
               return _a14(k, e);
@@ -7691,9 +7572,7 @@
                 e.textCache = t;
                 delete e.actualWidth;
 
-                for (t = p.length; t--;) {
-                  c.removeChild(p[t]);
-                }
+                for (t = p.length; t--;) c.removeChild(p[t]);
 
                 k || this.ellipsis || this.width || -1 !== f.indexOf(" ") && (!this.noWrap || B.test(f)) ? "" !== f && (h && h.appendChild(c), f = new a(f), this.modifyTree(f.nodes), f.addToDOM(e.element), this.modifyDOM(), this.ellipsis && -1 !== (c.textContent || "").indexOf("\u2026") && e.attr("title", this.unescapeEntities(e.textStr || "", ["&lt;", "&gt;"])), h && h.removeChild(c)) : c.appendChild(v.createTextNode(this.unescapeEntities(f)));
                 A(this.textOutline) && e.applyTextOutline && e.applyTextOutline(this.textOutline);
@@ -7706,9 +7585,7 @@
                   h = H(c.element, "x");
               c.firstLineMetrics = void 0;
 
-              for (var f; f = c.element.firstChild;) {
-                if (/^[\s\u200B]*$/.test(f.textContent || " ")) c.element.removeChild(f);else break;
-              }
+              for (var f; f = c.element.firstChild;) if (/^[\s\u200B]*$/.test(f.textContent || " ")) c.element.removeChild(f);else break;
 
               [].forEach.call(c.element.querySelectorAll("tspan.highcharts-br"), function (e, p) {
                 e.nextSibling && e.previousSibling && (0 === p && 1 === e.previousSibling.nodeType && (c.firstLineMetrics = c.renderer.fontMetrics(void 0, e.previousSibling)), H(e, {
@@ -7731,15 +7608,11 @@
                   });else if (l) {
                     f = [];
 
-                    for (l = []; _p.firstChild && _p.firstChild !== e;) {
-                      l.push(_p.firstChild), _p.removeChild(_p.firstChild);
-                    }
+                    for (l = []; _p.firstChild && _p.firstChild !== e;) l.push(_p.firstChild), _p.removeChild(_p.firstChild);
 
-                    for (; r.length;) {
-                      r.length && !a.noWrap && 0 < g && (f.push(e.textContent || ""), e.textContent = r.join(" ").replace(/- /g, "-")), a.truncate(e, void 0, r, 0 === g ? d || 0 : 0, k, function (b, d) {
-                        return r.slice(0, d).join(" ").replace(/- /g, "-");
-                      }), d = c.actualWidth, g++;
-                    }
+                    for (; r.length;) r.length && !a.noWrap && 0 < g && (f.push(e.textContent || ""), e.textContent = r.join(" ").replace(/- /g, "-")), a.truncate(e, void 0, r, 0 === g ? d || 0 : 0, k, function (b, d) {
+                      return r.slice(0, d).join(" ").replace(/- /g, "-");
+                    }), d = c.actualWidth, g++;
 
                     l.forEach(function (b) {
                       _p.insertBefore(b, e);
@@ -7825,9 +7698,7 @@
               var m = d(a.textContent.length);
 
               if (f + m > k) {
-                for (; r <= l;) {
-                  b = Math.ceil((r + l) / 2), h && (g = p(h, b)), m = d(b, g && g.length - 1), r === l ? r = l + 1 : m > k ? l = b - 1 : r = b;
-                }
+                for (; r <= l;) b = Math.ceil((r + l) / 2), h && (g = p(h, b)), m = d(b, g && g.length - 1), r === l ? r = l + 1 : m > k ? l = b - 1 : r = b;
 
                 0 === l ? a.textContent = "" : c && l === c.length - 1 || (a.textContent = g || p(c || h, b));
               }
@@ -8316,9 +8187,7 @@
               b(d) && (m.text = d);
               d = this.createElement("text").attr(m);
               if (!g || this.forExport && !this.allowHTML) d.xSetter = function (b, d, a) {
-                for (var c = a.getElementsByTagName("tspan"), g = a.getAttribute(d), m = 0, e; m < c.length; m++) {
-                  e = c[m], e.getAttribute(d) === g && e.setAttribute(d, b);
-                }
+                for (var c = a.getElementsByTagName("tspan"), g = a.getAttribute(d), m = 0, e; m < c.length; m++) e = c[m], e.getAttribute(d) === g && e.setAttribute(d, b);
 
                 a.setAttribute(d, b);
               };
@@ -8356,9 +8225,7 @@
                 S: 5,
                 T: 3,
                 V: 2
-              }, g = 0; g < b.length; g++) {
-                I(a[0]) && D(b[g]) && a.length === c[a[0].toUpperCase()] && b.splice(g, 0, a[0].replace("M", "L").replace("m", "l")), "string" === typeof b[g] && (a.length && d.push(a.slice(0)), a.length = 0), a.push(b[g]);
-              }
+              }, g = 0; g < b.length; g++) I(a[0]) && D(b[g]) && a.length === c[a[0].toUpperCase()] && b.splice(g, 0, a[0].replace("M", "L").replace("m", "l")), "string" === typeof b[g] && (a.length && d.push(a.slice(0)), a.length = 0), a.push(b[g]);
 
               d.push(a.slice(0));
               return d;
@@ -8402,9 +8269,7 @@
               } instanceof Array && function (a, c) {
                 a.__proto__ = c;
               } || function (a, c) {
-                for (var e in c) {
-                  c.hasOwnProperty(e) && (a[e] = c[e]);
-                }
+                for (var e in c) c.hasOwnProperty(e) && (a[e] = c[e]);
               };
 
               return _a15(c, e);
@@ -8564,9 +8429,7 @@
               } instanceof Array && function (a, e) {
                 a.__proto__ = e;
               } || function (a, e) {
-                for (var c in e) {
-                  e.hasOwnProperty(c) && (a[c] = e[c]);
-                }
+                for (var c in e) e.hasOwnProperty(c) && (a[c] = e[c]);
               };
 
               return _a16(k, e);
@@ -8651,9 +8514,7 @@
                   var l = a.div;
 
                   if (!l) {
-                    for (; a;) {
-                      e.push(a), a = a.parentGroup;
-                    }
+                    for (; a;) e.push(a), a = a.parentGroup;
 
                     e.reverse().forEach(function (b) {
                       function a(d, a) {
@@ -8979,13 +8840,11 @@
               f = u.call(O, O);
               var A = P && P.list;
               c.shortenLabel = A ? function () {
-                for (I = 0; I < A.length; I++) {
-                  if (q(O, {
-                    dateTimeLabelFormat: A[I]
-                  }), x.attr({
-                    text: u.call(O, O)
-                  }), x.getBBox().width < e.getSlotWidth(c) - 2 * b.padding) return;
-                }
+                for (I = 0; I < A.length; I++) if (q(O, {
+                  dateTimeLabelFormat: A[I]
+                }), x.attr({
+                  text: u.call(O, O)
+                }), x.getBBox().width < e.getSlotWidth(c) - 2 * b.padding) return;
 
                 x.attr({
                   text: ""
@@ -9315,9 +9174,7 @@
               m = m.numericSymbolMagnitude || 1E3;
               var f = d.logarithmic ? Math.abs(a) : d.tickInterval,
                   h = l && l.length;
-              if (d.categories) var r = "" + this.value;else if (e) r = c.dateFormat(e, a);else if (h && 1E3 <= f) for (; h-- && "undefined" === typeof r;) {
-                d = Math.pow(m, h + 1), f >= d && 0 === 10 * a % d && null !== l[h] && 0 !== a && (r = b(a / d, -1) + l[h]);
-              }
+              if (d.categories) var r = "" + this.value;else if (e) r = c.dateFormat(e, a);else if (h && 1E3 <= f) for (; h-- && "undefined" === typeof r;) d = Math.pow(m, h + 1), f >= d && 0 === 10 * a % d && null !== l[h] && 0 !== a && (r = b(a / d, -1) + l[h]);
               "undefined" === typeof r && (r = 1E4 <= Math.abs(a) ? b(a, -1) : b(a, -1, void 0, ""));
               return r;
             };
@@ -9456,9 +9313,7 @@
                 var l = this.logarithmic;
                 if (l) this.paddedTicks.forEach(function (b, d, c) {
                   d && m.push.apply(m, l.getLogTickPositions(a, c[d - 1], c[d], !0));
-                });else if (this.dateTime && "auto" === this.getMinorTickInterval()) m = m.concat(this.getTimeTicks(this.dateTime.normalizeTimeTickInterval(a), e, c, b.startOfWeek));else for (b = e + (d[0] - e) % a; b <= c && b !== m[0]; b += a) {
-                  m.push(b);
-                }
+                });else if (this.dateTime && "auto" === this.getMinorTickInterval()) m = m.concat(this.getTimeTicks(this.dateTime.normalizeTimeTickInterval(a), e, c, b.startOfWeek));else for (b = e + (d[0] - e) % a; b <= c && b !== m[0]; b += a) m.push(b);
               }
 
               0 !== m.length && this.trimTicks(m);
@@ -9478,9 +9333,7 @@
               this.isXAxis && "undefined" === typeof this.minRange && !d && (p(b.min) || p(b.max) || p(b.floor) || p(b.ceiling) ? this.minRange = null : (this.series.forEach(function (b) {
                 f = b.xData;
                 r = b.xIncrement ? 1 : f.length - 1;
-                if (1 < f.length) for (m = r; 0 < m; m--) {
-                  if (l = f[m] - f[m - 1], !g || l < g) g = l;
-                }
+                if (1 < f.length) for (m = r; 0 < m; m--) if (l = f[m] - f[m - 1], !g || l < g) g = l;
               }), this.minRange = Math.min(5 * g, this.dataMax - this.dataMin)));
 
               if (e - a < this.minRange) {
@@ -9674,12 +9527,8 @@
               r(this, "trimTicks");
 
               if (!this.isLinked) {
-                if (d && -Infinity !== c) this.min = c;else for (; this.min - g > b[0];) {
-                  b.shift();
-                }
-                if (a) this.max = e;else for (; this.max + g < b[b.length - 1];) {
-                  b.pop();
-                }
+                if (d && -Infinity !== c) this.min = c;else for (; this.min - g > b[0];) b.shift();
+                if (a) this.max = e;else for (; this.max + g < b[b.length - 1];) b.pop();
                 0 === b.length && p(c) && !this.options.tickPositions && b.push((e + c) / 2);
               }
             };
@@ -9717,9 +9566,7 @@
 
               if (this.hasData() && g(this.min) && g(this.max)) {
                 if (m < c) {
-                  for (; a.length < c;) {
-                    a.length % 2 || this.min === l ? a.push(w(a[a.length - 1] + d)) : a.unshift(w(a[0] - d));
-                  }
+                  for (; a.length < c;) a.length % 2 || this.min === l ? a.push(w(a[a.length - 1] + d)) : a.unshift(w(a[0] - d));
 
                   this.transA *= (m - 1) / (c - 1);
                   this.min = b.startOnTick ? a[0] : Math.min(this.min, a[0]);
@@ -9727,9 +9574,7 @@
                 } else m > c && (this.tickInterval *= 2, this.setTickPositions());
 
                 if (p(e)) {
-                  for (d = b = a.length; d--;) {
-                    (3 === e && 1 === d % 2 || 2 >= e && 0 < d && d < b - 1) && a.splice(d, 1);
-                  }
+                  for (d = b = a.length; d--;) (3 === e && 1 === d % 2 || 2 >= e && 0 < d && d < b - 1) && a.splice(d, 1);
 
                   this.finalTickAmt = void 0;
                 }
@@ -10188,9 +10033,7 @@
                   b.isActive || (b.render(d, !1, 0), b.isActive = !1, a.push(d));
                 });
                 U(function () {
-                  for (var d = a.length; d--;) {
-                    b[a[d]] && !b[a[d]].isActive && (b[a[d]].destroy(), delete b[a[d]]);
-                  }
+                  for (var d = a.length; d--;) b[a[d]] && !b[a[d]].isActive && (b[a[d]].destroy(), delete b[a[d]]);
                 }, b !== k && d.hasRendered && c ? c : 0);
               });
               I && (I[I.isPlaced ? "animate" : "attr"]({
@@ -10234,16 +10077,12 @@
               [d.ticks, d.minorTicks, d.alternateBands].forEach(function (b) {
                 B(b);
               });
-              if (a) for (b = a.length; b--;) {
-                a[b].destroy();
-              }
+              if (a) for (b = a.length; b--;) a[b].destroy();
               "axisLine axisTitle axisGroup gridGroup labelGroup cross scrollbar".split(" ").forEach(function (b) {
                 d[b] && (d[b] = d[b].destroy());
               });
 
-              for (var e in d.plotLinesAndBandsGroups) {
-                d.plotLinesAndBandsGroups[e] = d.plotLinesAndBandsGroups[e].destroy();
-              }
+              for (var e in d.plotLinesAndBandsGroups) d.plotLinesAndBandsGroups[e] = d.plotLinesAndBandsGroups[e].destroy();
 
               x(d, function (b, a) {
                 -1 === d.getKeepProps().indexOf(a) && delete d[a];
@@ -10335,9 +10174,7 @@
             };
 
             a.prototype.remove = function (b) {
-              for (var d = this.chart, a = this.coll, c = this.series, e = c.length; e--;) {
-                c[e] && c[e].remove(!1);
-              }
+              for (var d = this.chart, a = this.coll, c = this.series, e = c.length; e--;) c[e] && c[e].remove(!1);
 
               t(d.axes, this);
               t(d[a], this);
@@ -10404,9 +10241,7 @@
                     k = e[1],
                     n;
 
-                for (n = 0; n < c.length && !(e = c[n], h = y[e[0]], k = e[1], c[n + 1] && a <= (h * k[k.length - 1] + y[c[n + 1][0]]) / 2); n++) {
-                  ;
-                }
+                for (n = 0; n < c.length && !(e = c[n], h = y[e[0]], k = e[1], c[n + 1] && a <= (h * k[k.length - 1] + y[c[n + 1][0]]) / 2); n++);
 
                 h === y.year && a < 5 * h && (k = [1, 2, 5]);
                 a = F(a / h, k, "year" === e[0] ? Math.max(z(a / h), 1) : 1);
@@ -10598,14 +10433,10 @@
                     h = this.userOptions;
 
                 if (e) {
-                  for (var f = e.length; f--;) {
-                    e[f].id === a && e[f].destroy();
-                  }
+                  for (var f = e.length; f--;) e[f].id === a && e[f].destroy();
 
                   [c.plotLines || [], h.plotLines || [], c.plotBands || [], h.plotBands || []].forEach(function (c) {
-                    for (f = c.length; f--;) {
-                      (c[f] || {}).id === a && v(c, c[f]);
-                    }
+                    for (f = c.length; f--;) (c[f] || {}).id === a && v(c, c[f]);
                   });
                 }
               };
@@ -11446,9 +11277,7 @@
               function b() {
                 if (a.graphic || a.dataLabel || a.dataLabels) l(a), a.destroyElements();
 
-                for (h in a) {
-                  a[h] = null;
-                }
+                for (h in a) a[h] = null;
               }
 
               var a = this,
@@ -11545,9 +11374,7 @@
               var c,
                   e = 0;
 
-              for (c = a[e]; this[b] >= c.value;) {
-                c = a[++e];
-              }
+              for (c = a[e]; this[b] >= c.value;) c = a[++e];
 
               this.nonZonedColor || (this.nonZonedColor = this.color);
               this.color = c && c.color && !this.options.color ? c.color : this.nonZonedColor;
@@ -11576,9 +11403,7 @@
                   l = {},
                   r = 0,
                   h = 0;
-              if (p(b) || null === b) l[c[0]] = b;else if (f(b)) for (!d && b.length > e && (a = typeof b[0], "string" === a ? l.name = b[0] : "number" === a && (l.x = b[0]), r++); h < e;) {
-                d && "undefined" === typeof b[r] || (0 < c[h].indexOf(".") ? g.prototype.setNestedProperty(l, b[r], c[h]) : l[c[h]] = b[r]), r++, h++;
-              } else "object" === typeof b && (l = b, b.dataLabels && (a._hasPointLabels = !0), b.marker && (a._hasPointMarkers = !0));
+              if (p(b) || null === b) l[c[0]] = b;else if (f(b)) for (!d && b.length > e && (a = typeof b[0], "string" === a ? l.name = b[0] : "number" === a && (l.x = b[0]), r++); h < e;) d && "undefined" === typeof b[r] || (0 < c[h].indexOf(".") ? g.prototype.setNestedProperty(l, b[r], c[h]) : l[c[h]] = b[r]), r++, h++;else "object" === typeof b && (l = b, b.dataLabels && (a._hasPointLabels = !0), b.marker && (a._hasPointMarkers = !0));
               return l;
             };
 
@@ -12060,9 +11885,7 @@
             a.prototype.getPointFromEvent = function (a) {
               a = a.target;
 
-              for (var c; a && !c;) {
-                c = a.point, a = a.parentNode;
-              }
+              for (var c; a && !c;) c = a.point, a = a.parentNode;
 
               return c;
             };
@@ -12368,11 +12191,9 @@
               this.eventsToUnbind.push(A(e, "mouseleave", this.onContainerMouseLeave.bind(this)));
               a.unbindDocumentMouseUp || (a.unbindDocumentMouseUp = A(b, "mouseup", this.onDocumentMouseUp.bind(this)));
 
-              for (var g = this.chart.renderTo.parentElement; g && "BODY" !== g.tagName;) {
-                this.eventsToUnbind.push(A(g, "scroll", function () {
-                  delete c.chartPosition;
-                })), g = g.parentElement;
-              }
+              for (var g = this.chart.renderTo.parentElement; g && "BODY" !== g.tagName;) this.eventsToUnbind.push(A(g, "scroll", function () {
+                delete c.chartPosition;
+              })), g = g.parentElement;
 
               u.hasTouch && (this.eventsToUnbind.push(A(e, "touchstart", this.onContainerTouchStart.bind(this), {
                 passive: !1
@@ -12470,9 +12291,7 @@
               } instanceof Array && function (a, c) {
                 a.__proto__ = c;
               } || function (a, c) {
-                for (var e in c) {
-                  c.hasOwnProperty(e) && (a[e] = c[e]);
-                }
+                for (var e in c) c.hasOwnProperty(e) && (a[e] = c[e]);
               };
 
               return _a17(c, e);
@@ -13283,9 +13102,7 @@
               var a = this.series;
               b = b || 0;
 
-              for (var c = a.length; b < c; ++b) {
-                a[b] && (a[b].index = b, a[b].name = a[b].getName());
-              }
+              for (var c = a.length; b < c; ++b) a[b] && (a[b].index = b, a[b].name = a[b].getName());
             };
 
             a.prototype.isInsidePlot = function (b, a, c) {
@@ -13355,9 +13172,7 @@
                 }
               }
 
-              if (E) for (b = c.length; b--;) {
-                p = c[b], p.options.stacking && (p.isDirty = !0);
-              }
+              if (E) for (b = c.length; b--;) p = c[b], p.options.stacking && (p.isDirty = !0);
               c.forEach(function (b) {
                 b.isDirty && ("point" === b.options.legendType ? ("function" === typeof b.updateTotals && b.updateTotals(), m = !0) : g && (g.labelFormatter || g.labelFormat) && (m = !0));
                 b.isDirtyData && Q(b, "updatedData");
@@ -13401,9 +13216,7 @@
                 return a.id === b || a.options && a.options.id === b;
               }
 
-              for (var c = this.series, d = da(this.axes, a) || da(this.series, a), e = 0; !d && e < c.length; e++) {
-                d = da(c[e].points || [], a);
-              }
+              for (var c = this.series, d = da(this.axes, a) || da(this.series, a), e = 0; !d && e < c.length; e++) d = da(c[e].points || [], a);
 
               return d;
             };
@@ -13521,9 +13334,7 @@
 
             a.prototype.temporaryDisplay = function (b) {
               var a = this.renderTo;
-              if (b) for (; a && a.style;) {
-                a.hcOrigStyle && (O(a, a.hcOrigStyle), delete a.hcOrigStyle), a.hcOrigDetached && (r.body.removeChild(a), a.hcOrigDetached = !1), a = a.parentNode;
-              } else for (; a && a.style;) {
+              if (b) for (; a && a.style;) a.hcOrigStyle && (O(a, a.hcOrigStyle), delete a.hcOrigStyle), a.hcOrigDetached && (r.body.removeChild(a), a.hcOrigDetached = !1), a = a.parentNode;else for (; a && a.style;) {
                 r.body.contains(a) || a.parentNode || (a.hcOrigDetached = !0, r.body.appendChild(a));
                 if ("none" === ea(a, "display", !1) || a.hcOricDetached) a.hcOrigStyle = {
                   display: a.style.display,
@@ -13582,9 +13393,7 @@
               this.renderer = new (c.renderer || !b ? n.getRendererType(c.renderer) : e)(d, l, k, void 0, c.forExport, a.exporting && a.exporting.allowHTML, this.styledMode);
               B(void 0, this);
               this.setClassName(c.className);
-              if (this.styledMode) for (var m in a.defs) {
-                this.renderer.definition(a.defs[m]);
-              } else this.renderer.setStyle(c.style);
+              if (this.styledMode) for (var m in a.defs) this.renderer.definition(a.defs[m]);else this.renderer.setStyle(c.style);
               this.renderer.chartIndex = this.index;
               Q(this, "afterGetContainer");
             };
@@ -13826,9 +13635,7 @@
                 e = D[a.type || a.defaultSeriesType];
                 g = a[f] || e && e.prototype[f];
 
-                for (d = c && c.length; !g && d--;) {
-                  (e = D[c[d].type]) && e.prototype[f] && (g = !0);
-                }
+                for (d = c && c.length; !g && d--;) (e = D[c[d].type]) && e.prototype[f] && (g = !0);
 
                 b[f] = g;
               });
@@ -13939,15 +13746,11 @@
               b.renderTo.removeAttribute("data-highcharts-chart");
               ia(b);
 
-              for (g = a.length; g--;) {
-                a[g] = a[g].destroy();
-              }
+              for (g = a.length; g--;) a[g] = a[g].destroy();
 
               this.scroller && this.scroller.destroy && this.scroller.destroy();
 
-              for (g = c.length; g--;) {
-                c[g] = c[g].destroy();
-              }
+              for (g = c.length; g--;) c[g] = c[g].destroy();
 
               "title subtitle chartBackground plotBackground plotBGImage plotBorder seriesGroup clipRect credits pointer rangeSelector legend resetZoomButton tooltip renderer".split(" ").forEach(function (a) {
                 var c = b[a];
@@ -14524,11 +14327,9 @@
                   c;
 
               if (O(b)) {
-                for (c = a.length; c--;) {
-                  if (b >= K(a[c].options.index, a[c]._i)) {
-                    a.splice(c + 1, 0, this);
-                    break;
-                  }
+                for (c = a.length; c--;) if (b >= K(a[c].options.index, a[c]._i)) {
+                  a.splice(c + 1, 0, this);
+                  break;
                 }
 
                 -1 === c && a.unshift(this);
@@ -14716,9 +14517,7 @@
                   if (m = this.findPointIndex(m, p), -1 === m || "undefined" === typeof m ? f.push(a) : e[m] && a !== c.data[m] ? (e[m].update(a, !1, null, !1), e[m].touched = !0, h && (p = m + 1)) : e[m] && (e[m].touched = !0), !l || b !== m || d && d.enabled || this.hasDerivedData) k = !0;
                 } else f.push(a);
               }, this);
-              if (k) for (a = e.length; a--;) {
-                (m = e[a]) && !m.touched && m.remove && m.remove(!1, b);
-              } else !l || d && d.enabled ? n = !1 : (a.forEach(function (a, b) {
+              if (k) for (a = e.length; a--;) (m = e[a]) && !m.touched && m.remove && m.remove(!1, b);else !l || d && d.enabled ? n = !1 : (a.forEach(function (a, b) {
                 a !== e[b].y && e[b].update && e[b].update(a, !1, null, !1);
               }), f.length = 0);
               e.forEach(function (a) {
@@ -14763,33 +14562,19 @@
                   e[a + "Data"].length = 0;
                 });
                 if (n && v > n) {
-                  if (x = e.getFirstValidPoint(a), O(x)) for (c = 0; c < v; c++) {
-                    r[c] = this.autoIncrement(), E[c] = a[c];
-                  } else if (S(x)) {
+                  if (x = e.getFirstValidPoint(a), O(x)) for (c = 0; c < v; c++) r[c] = this.autoIncrement(), E[c] = a[c];else if (S(x)) {
                     if (t) {
-                      if (x.length === t) for (c = 0; c < v; c++) {
-                        r[c] = this.autoIncrement(), E[c] = a[c];
-                      } else for (c = 0; c < v; c++) {
-                        d = a[c], r[c] = d[0], E[c] = d.slice(1, t + 1);
-                      }
-                    } else if (q && (B = q.indexOf("x"), C = q.indexOf("y"), B = 0 <= B ? B : 0, C = 0 <= C ? C : 1), 1 === x.length && (C = 0), B === C) for (c = 0; c < v; c++) {
-                      r[c] = this.autoIncrement(), E[c] = a[c][C];
-                    } else for (c = 0; c < v; c++) {
-                      d = a[c], r[c] = d[B], E[c] = d[C];
-                    }
+                      if (x.length === t) for (c = 0; c < v; c++) r[c] = this.autoIncrement(), E[c] = a[c];else for (c = 0; c < v; c++) d = a[c], r[c] = d[0], E[c] = d.slice(1, t + 1);
+                    } else if (q && (B = q.indexOf("x"), C = q.indexOf("y"), B = 0 <= B ? B : 0, C = 0 <= C ? C : 1), 1 === x.length && (C = 0), B === C) for (c = 0; c < v; c++) r[c] = this.autoIncrement(), E[c] = a[c][C];else for (c = 0; c < v; c++) d = a[c], r[c] = d[B], E[c] = d[C];
                   } else m(12, !1, l);
-                } else for (c = 0; c < v; c++) {
-                  "undefined" !== typeof a[c] && (d = {
-                    series: e
-                  }, e.pointClass.prototype.applyOptions.apply(d, [a[c]]), e.updateParallelArrays(d, c));
-                }
+                } else for (c = 0; c < v; c++) "undefined" !== typeof a[c] && (d = {
+                  series: e
+                }, e.pointClass.prototype.applyOptions.apply(d, [a[c]]), e.updateParallelArrays(d, c));
                 E && U(E[0]) && m(14, !0, l);
                 e.data = [];
                 e.options.data = e.userOptions.data = a;
 
-                for (c = f; c--;) {
-                  g[c] && g[c].destroy && g[c].destroy();
-                }
+                for (c = f; c--;) g[c] && g[c].destroy && g[c].destroy();
 
                 p && (p.minRange = p.userMinRange);
                 e.isDirty = l.isDirtyBox = !0;
@@ -14862,9 +14647,7 @@
                 t = !0;
               }
 
-              for (d = h.length || 1; --d;) {
-                if (b = c ? a(h[d]) - a(h[d - 1]) : h[d] - h[d - 1], 0 < b && ("undefined" === typeof q || b < q)) var q = b;else 0 > b && k && !p && (m(15, !1, this.chart), k = !1);
-              }
+              for (d = h.length || 1; --d;) if (b = c ? a(h[d]) - a(h[d - 1]) : h[d] - h[d - 1], 0 < b && ("undefined" === typeof q || b < q)) var q = b;else 0 > b && k && !p && (m(15, !1, this.chart), k = !1);
 
               return {
                 xData: h,
@@ -14894,18 +14677,14 @@
                   l = g;
               e = K(e, this.cropShoulder);
 
-              for (f = 0; f < g; f++) {
-                if (a[f] >= c) {
-                  h = Math.max(0, f - e);
-                  break;
-                }
+              for (f = 0; f < g; f++) if (a[f] >= c) {
+                h = Math.max(0, f - e);
+                break;
               }
 
-              for (c = f; c < g; c++) {
-                if (a[c] > d) {
-                  l = c + e;
-                  break;
-                }
+              for (c = f; c < g; c++) if (a[c] > d) {
+                l = c + e;
+                break;
               }
 
               return {
@@ -14953,9 +14732,7 @@
               }
 
               this.options.keys = l;
-              if (n && (g !== (m = n.length) || h)) for (p = 0; p < m; p++) {
-                p !== f || h || (p += g), n[p] && (n[p].destroyElements(), n[p].plotX = void 0);
-              }
+              if (n && (g !== (m = n.length) || h)) for (p = 0; p < m; p++) p !== f || h || (p += g), n[p] && (n[p].destroyElements(), n[p].plotX = void 0);
               this.data = n;
               this.points = k;
               I(this, "afterGeneratePoints");
@@ -14993,9 +14770,7 @@
                 n = a[h];
                 var t = (O(n) || S(n)) && (n.length || 0 < n || !d);
                 r = b || this.getExtremesFromAll || this.options.getExtremesFromAll || this.cropped || !c || (e[h + f] || r) >= l && (e[h - f] || r) <= k;
-                if (t && r) if (t = n.length) for (; t--;) {
-                  O(n[t]) && (g[m++] = n[t]);
-                } else g[m++] = n;
+                if (t && r) if (t = n.length) for (; t--;) O(n[t]) && (g[m++] = n[t]);else g[m++] = n;
               }
 
               a = {
@@ -15017,9 +14792,7 @@
             };
 
             a.prototype.getFirstValidPoint = function (a) {
-              for (var b = a.length, c = 0, d = null; null === d && c < b;) {
-                d = a[c], c++;
-              }
+              for (var b = a.length, c = 0, d = null; null === d && c < b;) d = a[c], c++;
 
               return d;
             };
@@ -15246,9 +15019,7 @@
               });
               b.legendItem && b.chart.legend.destroyItem(b);
 
-              for (h = g.length; h--;) {
-                (l = g[h]) && l.destroy && l.destroy();
-              }
+              for (h = g.length; h--;) (l = g[h]) && l.destroy && l.destroy();
 
               b.clips && b.clips.forEach(function (a) {
                 return a.destroy();
@@ -15566,9 +15337,7 @@
               this.pointClass.prototype.applyOptions.apply(n, [a]);
               var r = n.x;
               var t = k.length;
-              if (this.requireSorting && r < k[t - 1]) for (p = !0; t && k[t - 1] > r;) {
-                t--;
-              }
+              if (this.requireSorting && r < k[t - 1]) for (p = !0; t && k[t - 1] > r;) t--;
               this.updateParallelArrays(n, "splice", t, 0, 0);
               this.updateParallelArrays(n, t);
               l && n.name && (l[r] = n.name);
@@ -15661,9 +15430,7 @@
                 if (f = t !== c.type, c.remove(!1, !1, !1, !0), f) if (Object.setPrototypeOf) Object.setPrototypeOf(c, B[t].prototype);else {
                   k = Object.hasOwnProperty.call(c, "hcEvents") && c.hcEvents;
 
-                  for (n in h) {
-                    c[n] = void 0;
-                  }
+                  for (n in h) c[n] = void 0;
 
                   D(c, B[t].prototype);
                   k ? c.hcEvents = k : delete c.hcEvents;
@@ -15747,9 +15514,7 @@
                 a && (l = f[a].lineWidth || l + (f[a].lineWidthPlus || 0), m = K(f[a].opacity, m));
                 if (e && !e.dashstyle) for (d = {
                   "stroke-width": l
-                }, e.animate(d, h); c["zone-graph-" + k];) {
-                  c["zone-graph-" + k].animate(d, h), k += 1;
-                }
+                }, e.animate(d, h); c["zone-graph-" + k];) c["zone-graph-" + k].animate(d, h), k += 1;
                 g || [c.group, c.markerGroup, c.dataLabelsGroup, c.labelBySeries].forEach(function (a) {
                   a && a.animate({
                     opacity: m
@@ -16037,9 +15802,7 @@
                     k.setGroupedPoints();
                   }
 
-                  for (h = 0; h < f; h++) {
-                    c[h].modifyStacks();
-                  }
+                  for (h = 0; h < f; h++) c[h].modifyStacks();
 
                   H(a, "afterBuildStacks");
                 }
@@ -16256,9 +16019,7 @@
                 h,
                 k = a.options.stacking;
             a[k + "Stacker"] && [c, "-" + c].forEach(function (c) {
-              for (var b = f.length, g, d; b--;) {
-                if (g = f[b], h = a.getStackIndicator(h, g, a.index, c), d = (g = e[c] && e[c][g]) && g.points[h.key]) a[k + "Stacker"](d, g, b);
-              }
+              for (var b = f.length, g, d; b--;) if (g = f[b], h = a.getStackIndicator(h, g, a.index, c), d = (g = e[c] && e[c][g]) && g.points[h.key]) a[k + "Stacker"](d, g, b);
             });
           };
 
@@ -16291,9 +16052,7 @@
               } instanceof Array && function (a, k) {
                 a.__proto__ = k;
               } || function (a, k) {
-                for (var e in k) {
-                  k.hasOwnProperty(e) && (a[e] = k[e]);
-                }
+                for (var e in k) k.hasOwnProperty(e) && (a[e] = k[e]);
               };
 
               return _a18(v, q);
@@ -16400,9 +16159,7 @@
               } instanceof Array && function (a, c) {
                 a.__proto__ = c;
               } || function (a, c) {
-                for (var e in c) {
-                  c.hasOwnProperty(e) && (a[e] = c[e]);
-                }
+                for (var e in c) c.hasOwnProperty(e) && (a[e] = c[e]);
               };
 
               return _a19(e, c);
@@ -16543,9 +16300,7 @@
               a = a || this.points;
 
               if (this.options.stacking) {
-                for (var g = 0; g < a.length; g++) {
-                  a[g].leftNull = a[g].rightNull = void 0, u[a[g].x] = a[g];
-                }
+                for (var g = 0; g < a.length; g++) a[g].leftNull = a[g].rightNull = void 0, u[a[g].x] = a[g];
 
                 q(t, function (a, b) {
                   null !== a.total && k.push(b);
@@ -16619,9 +16374,7 @@
               } instanceof Array && function (a, k) {
                 a.__proto__ = k;
               } || function (a, k) {
-                for (var e in k) {
-                  k.hasOwnProperty(e) && (a[e] = k[e]);
-                }
+                for (var e in k) k.hasOwnProperty(e) && (a[e] = k[e]);
               };
 
               return _a20(v, q);
@@ -16697,9 +16450,7 @@
               } instanceof Array && function (a, e) {
                 a.__proto__ = e;
               } || function (a, e) {
-                for (var c in e) {
-                  e.hasOwnProperty(c) && (a[c] = e[c]);
-                }
+                for (var c in e) e.hasOwnProperty(c) && (a[c] = e[c]);
               };
 
               return _a21(k, e);
@@ -16751,9 +16502,7 @@
               } instanceof Array && function (a, b) {
                 a.__proto__ = b;
               } || function (a, b) {
-                for (var c in b) {
-                  b.hasOwnProperty(c) && (a[c] = b[c]);
-                }
+                for (var c in b) b.hasOwnProperty(c) && (a[c] = b[c]);
               };
 
               return _a22(c, b);
@@ -17273,9 +17022,7 @@
                 return n(a, b);
               });else if (q(b) && !q(a)) c = b.map(function (b) {
                 return n(a, b);
-              });else if (q(a) || q(b)) for (d = Math.max(a.length, b.length); d--;) {
-                c[d] = n(a[d], b[d]);
-              } else c = n(a, b);
+              });else if (q(a) || q(b)) for (d = Math.max(a.length, b.length); d--;) c[d] = n(a[d], b[d]);else c = n(a, b);
               return c;
             }
 
@@ -17367,9 +17114,7 @@
               } instanceof Array && function (a, k) {
                 a.__proto__ = k;
               } || function (a, k) {
-                for (var e in k) {
-                  k.hasOwnProperty(e) && (a[e] = k[e]);
-                }
+                for (var e in k) k.hasOwnProperty(e) && (a[e] = k[e]);
               };
 
               return _a23(v, q);
@@ -17417,9 +17162,7 @@
               } instanceof Array && function (a, c) {
                 a.__proto__ = c;
               } || function (a, c) {
-                for (var e in c) {
-                  c.hasOwnProperty(e) && (a[e] = c[e]);
-                }
+                for (var e in c) c.hasOwnProperty(e) && (a[e] = c[e]);
               };
 
               return _a24(n, k);
@@ -17534,9 +17277,7 @@
               a = [G(f[0], "50%"), G(f[1], "50%"), G(p && 0 > p ? void 0 : a.size, "100%"), G(v && 0 > v ? void 0 : a.innerSize || 0, "0%")];
               !k.angular || this instanceof u || (a[3] = 0);
 
-              for (f = 0; 4 > f; ++f) {
-                p = a[f], k = 2 > f || 2 === f && /%$/.test(p), a[f] = H(p, [c, h, q, a[2]][f]) + (k ? e : 0);
-              }
+              for (f = 0; 4 > f; ++f) p = a[f], k = 2 > f || 2 === f && /%$/.test(p), a[f] = H(p, [c, h, q, a[2]][f]) + (k ? e : 0);
 
               a[3] > a[2] && (a[3] = a[2]);
               return a;
@@ -17563,9 +17304,7 @@
               } instanceof Array && function (a, c) {
                 a.__proto__ = c;
               } || function (a, c) {
-                for (var e in c) {
-                  c.hasOwnProperty(e) && (a[e] = c[e]);
-                }
+                for (var e in c) c.hasOwnProperty(e) && (a[e] = c[e]);
               };
 
               return _a25(e, c);
@@ -17713,9 +17452,7 @@
               } instanceof Array && function (a, c) {
                 a.__proto__ = c;
               } || function (a, c) {
-                for (var e in c) {
-                  c.hasOwnProperty(e) && (a[e] = c[e]);
-                }
+                for (var e in c) c.hasOwnProperty(e) && (a[e] = c[e]);
               };
 
               return _a26(c, e);
@@ -17943,9 +17680,7 @@
 
               this.total = b;
 
-              for (f = 0; f < c; f++) {
-                g = a[f], g.percentage = 0 < b && (g.visible || !e) ? g.y / b * 100 : 0, g.total = b;
-              }
+              for (f = 0; f < c; f++) g = a[f], g.percentage = 0 < b && (g.visible || !e) ? g.y / b * 100 : 0, g.total = b;
             };
 
             c.defaultOptions = f(G.defaultOptions, {
@@ -18296,9 +18031,7 @@
               }
             };
 
-            for (f = 0; f < e; f++) {
-              if (h = a[f]) h.oldOpacity = h.opacity, h.newOpacity = 1, h.absoluteBox = q(h);
-            }
+            for (f = 0; f < e; f++) if (h = a[f]) h.oldOpacity = h.opacity, h.newOpacity = 1, h.absoluteBox = q(h);
 
             a.sort(function (a, c) {
               return (c.labelrank || 0) - (a.labelrank || 0);
@@ -18346,9 +18079,7 @@
                 function c(a, f, h, k) {
                   var b;
                   H(a, function (a, d) {
-                    if (!k && -1 < e.collectionsWithUpdate.indexOf(d) && f[d]) for (a = q(a), h[d] = [], b = 0; b < Math.max(a.length, f[d].length); b++) {
-                      f[d][b] && (void 0 === a[b] ? h[d][b] = f[d][b] : (h[d][b] = {}, c(a[b], f[d][b], h[d][b], k + 1)));
-                    } else y(a) ? (h[d] = F(a) ? [] : {}, c(a, f[d] || {}, h[d], k + 1)) : h[d] = "undefined" === typeof f[d] ? null : f[d];
+                    if (!k && -1 < e.collectionsWithUpdate.indexOf(d) && f[d]) for (a = q(a), h[d] = [], b = 0; b < Math.max(a.length, f[d].length); b++) f[d][b] && (void 0 === a[b] ? h[d][b] = f[d][b] : (h[d][b] = {}, c(a[b], f[d][b], h[d][b], k + 1)));else y(a) ? (h[d] = F(a) ? [] : {}, c(a, f[d] || {}, h[d], k + 1)) : h[d] = "undefined" === typeof f[d] ? null : f[d];
                   });
                 }
 
@@ -18940,9 +18671,7 @@
                     u = A;
                     Y = !0;
                     Ka = !1;
-                  }; J < E.length - 1 && "break" !== l();) {
-                    ;
-                  }
+                  }; J < E.length - 1 && "break" !== l(););
 
                   w.debug.showSkipSummary && console.log("skipped points:", Ia);
                   Y || !1 === z || "line_strip" !== b.drawMode || (ma.x < Number.MAX_VALUE && t(ma, !0), na.x > -Number.MAX_VALUE && t(na));
@@ -19012,12 +18741,8 @@
                   b.setSkipTranslation(d.skipTranslation);
                   "bubble" === d.series.type && b.setBubbleUniforms(d.series, d.zMin, d.zMax);
                   b.setDrawAsCircle(ba[d.series.type] || !1);
-                  if (0 < f || "line_strip" !== d.drawMode) for (f = 0; f < d.segments.length; f++) {
-                    O.render(d.segments[f].from, d.segments[f].to, d.drawMode);
-                  }
-                  if (d.hasMarkers && x) for (m.marker && p(m.marker.radius) ? b.setPointSize(2 * m.marker.radius) : b.setPointSize(10), b.setDrawAsCircle(!0), f = 0; f < d.segments.length; f++) {
-                    O.render(d.segments[f].from, d.segments[f].to, "POINTS");
-                  }
+                  if (0 < f || "line_strip" !== d.drawMode) for (f = 0; f < d.segments.length; f++) O.render(d.segments[f].from, d.segments[f].to, d.drawMode);
+                  if (d.hasMarkers && x) for (m.marker && p(m.marker.radius) ? b.setPointSize(2 * m.marker.radius) : b.setPointSize(10), b.setDrawAsCircle(!0), f = 0; f < d.segments.length; f++) O.render(d.segments[f].from, d.segments[f].to, "POINTS");
                 }
               });
               w.debug.timeRendering && console.timeEnd("gl rendering");
@@ -19143,9 +18868,7 @@
                 Y = !1;
                 if (!c) return !1;
 
-                for (w.debug.timeSetup && console.time("gl setup"); a < e.length && !(g = c.getContext(e[a], {})); a++) {
-                  ;
-                }
+                for (w.debug.timeSetup && console.time("gl setup"); a < e.length && !(g = c.getContext(e[a], {})); a++);
 
                 if (g) h || D();else return !1;
                 g.enable(g.BLEND);
@@ -19286,9 +19009,7 @@
         });
         u(a, "Extensions/Boost/BoostUtils.js", [a["Core/Globals.js"], a["Extensions/Boost/BoostableMap.js"], a["Extensions/Boost/BoostAttach.js"], a["Core/Utilities.js"]], function (a, z, v, k) {
           function d() {
-            for (var d = [], a = 0; a < arguments.length; a++) {
-              d[a] = arguments[a];
-            }
+            for (var d = [], a = 0; a < arguments.length; a++) d[a] = arguments[a];
 
             var e = -Number.MAX_VALUE;
             d.forEach(function (d) {
@@ -19309,9 +19030,7 @@
             k = k || 0;
             f = f || 3E3;
 
-            for (var c = k + f, h = !0; h && k < c && k < d.length;) {
-              h = a(d[k], k), ++k;
-            }
+            for (var c = k + f, h = !0; h && k < c && k < d.length;) h = a(d[k], k), ++k;
 
             h && (k < d.length ? q ? p(d, a, e, f, k, q) : n.requestAnimationFrame ? n.requestAnimationFrame(function () {
               p(d, a, e, f, k);
@@ -19325,11 +19044,9 @@
                 a,
                 e = ["webgl", "experimental-webgl", "moz-webgl", "webkit-3d"],
                 k = !1;
-            if ("undefined" !== typeof n.WebGLRenderingContext) for (a = f.createElement("canvas"); d < e.length; d++) {
-              try {
-                if (k = a.getContext(e[d]), "undefined" !== typeof k && null !== k) return !0;
-              } catch (D) {}
-            }
+            if ("undefined" !== typeof n.WebGLRenderingContext) for (a = f.createElement("canvas"); d < e.length; d++) try {
+              if (k = a.getContext(e[d]), "undefined" !== typeof k && null !== k) return !0;
+            } catch (D) {}
             return !1;
           }
 
@@ -19936,9 +19653,7 @@
                 e = this.points,
                 f,
                 b;
-            if (e) for (b = 0; b < e.length; b += 1) {
-              (f = e[b]) && f.destroyElements && f.destroyElements();
-            }
+            if (e) for (b = 0; b < e.length; b += 1) (f = e[b]) && f.destroyElements && f.destroyElements();
             ["graph", "area", "tracker"].forEach(function (b) {
               d[b] && (d[b] = d[b].destroy());
             });
@@ -20181,9 +19896,7 @@
           };
 
           d.hasData = function () {
-            for (var a = this.series || [], b = a.length; b--;) {
-              if (a[b].hasData() && !a[b].options.isInternal) return !0;
-            }
+            for (var a = this.series || [], b = a.length; b--;) if (a[b].hasData() && !a[b].options.isInternal) return !0;
 
             return this.loadingShown;
           };

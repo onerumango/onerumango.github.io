@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "msgTranslation": function() { return /* binding */ msgTranslation; },
 /* harmony export */   "translationDeatils": function() { return /* binding */ translationDeatils; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 42321);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common */ 54364);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 1707);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 79441);
@@ -1116,8 +1116,10 @@ class RuleTranslationDetailsComponent {
             console.log(ruleTranslationResp);
             this.ruleTRespData = ruleTranslationResp;
             if (ruleTranslationResp) {
-                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: 'Record is Updated',
-                    icon: 'success' });
+                sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                    text: 'Record is Updated',
+                    icon: 'success'
+                });
                 this.submit = false;
                 this.showAuditLog = true;
                 this.editValue = false;
@@ -1125,8 +1127,10 @@ class RuleTranslationDetailsComponent {
                 this.formTouched = !this.ruleTransForm.touched;
             }
         }, (err) => {
-            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Server Error.",
-                icon: 'error' });
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                text: "Server Error.",
+                icon: 'error'
+            });
         });
     }
     onFetch() {
@@ -1159,7 +1163,7 @@ class RuleTranslationDetailsComponent {
         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             title: 'are you sure, want to remove the record?',
             showDenyButton: true,
-            showCancelButton: true,
+            showCancelButton: false,
             confirmButtonText: 'Yes',
             denyButtonText: `No`,
         }).then((result) => {

@@ -1,9 +1,13 @@
 (function () {
   "use strict";
 
-  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+  function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+
+  function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -177,6 +181,8 @@
             this.loggedInUser = localStorage.getItem("userFromLogin");
             this.user = localStorage.getItem("userobj");
             console.log(JSON.parse(this.user));
+            this.userData = JSON.parse(this.user);
+            this.selectedTheme = this.userData.screenThemeSelected;
             this.userForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroup({
               userId: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl("", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required),
               userName: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl("", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required),
@@ -236,7 +242,8 @@
             // 
             this.isSaveEnable = true;
             this.selectedTheme = value;
-            console.log(this.selectedTheme); // this.saveTheme(value)
+            console.log(this.selectedTheme);
+            this.saveTheme(value);
           }
         }, {
           key: "updateTheme",
@@ -352,7 +359,7 @@
         selectors: [["npr-profile"]],
         decls: 64,
         vars: 6,
-        consts: [[1, "mt-1"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row"], [1, "col-lg-4"], [1, "d-flex", "justify-content-center"], [1, "image_outer_container"], [1, "green_icon", 3, "click"], ["type", "file", "name", "myfile", 2, "display", "none", 3, "change"], ["file", ""], [1, "image_inner_container"], [3, "src"], [1, "row", "g-3", "pt-3", "mt-2", "justify"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "col-lg-6"], [3, "disabled"], [1, "row", "gy-4", 2, "margin-top", "0%"], [1, "formLbl"], [1, "colorRed"], [1, "d-flex"], ["id", "userId", "placeholder", "Old Password", "required", "", "value", "", "name", "userId", "formControlName", "userId", 1, "form-control"], ["userId", ""], ["id", "userName", "placeholder", "User Name", "required", "", "value", "", "name", "userName", "formControlName", "userName", 1, "form-control"], ["userName", ""], ["id", "confirm password", "placeholder", "Confirm Password", "required", "", "value", "", "name", "department", "formControlName", "department", 1, "form-control"], ["department", ""], [1, "row", "mt-10"], ["id", "horizontal-list"], ["data-id", "selectedTheme?'theme1':'theme2'", 1, "tColor", "theme1", 3, "click"], ["data-id", "selectedTheme", 1, "tColor", "theme2", 3, "click"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"]],
+        consts: [[1, "mt-1"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row"], [1, "col-lg-4"], [1, "d-flex", "justify-content-center"], [1, "image_outer_container"], [1, "green_icon", 3, "click"], ["type", "file", "name", "myfile", 2, "display", "none", 3, "change"], ["file", ""], [1, "image_inner_container"], [3, "src"], [1, "row", "g-3", "pt-3", "mt-2", "justify"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "col-lg-6"], [3, "disabled"], [1, "row", "gy-4", 2, "margin-top", "0%"], [1, "formLbl"], [1, "colorRed"], [1, "d-flex"], ["id", "userId", "placeholder", "Old Password", "required", "", "value", "", "name", "userId", "formControlName", "userId", 1, "form-control"], ["userId", ""], ["id", "userName", "placeholder", "User Name", "required", "", "value", "", "name", "userName", "formControlName", "userName", 1, "form-control"], ["userName", ""], ["id", "confirm password", "placeholder", "Confirm Password", "required", "", "value", "", "name", "department", "formControlName", "department", 1, "form-control"], ["department", ""], [1, "row", "mt-10"], ["id", "horizontal-list"], ["data-id", "theme1", 1, "tColor", "theme1", 3, "click"], ["data-id", "theme2", 1, "tColor", "theme2", 3, "click"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"]],
         template: function ProfileComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
