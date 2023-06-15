@@ -8215,7 +8215,7 @@
         // ACC_CLOSER_URL: 'http://192.168.0.9003/medianAccountClosure'
         //  MEDIAN_URL: 'http://192.168.0.96:9193',
         //  MEDIAN_URL: 'http://192.168.0.14:9003/medianv2',
-        ACC_CLOSER_URL: 'http://192.168.0.14:9003/medianAccountClosure' // ACC_CLOSER_URL: 'http://192.168.0.14:9004/medianv2'
+        ACC_CLOSER_URL: 'http://192.168.0.14:8081/medianAccountClosure' // ACC_CLOSER_URL: 'http://192.168.0.14:9004/medianv2'
         ///////////////////DTB KENYA//////////////////////
         // MEDIAN_URL: 'https://10.137.161.200:1057/medianv2',
         // ACC_CLOSER_URL: 'https://10.137.161.200:1057/medianv2'

@@ -759,7 +759,7 @@ class LoginComponent {
                         this.check = false;
                     }
                     this.loginProcessing = false;
-                    this.user = this.responseforotp[0]; // 0 for 8081 and 1 for Kenya build
+                    this.user = this.responseforotp[0];
                     this.loginProcessing = false;
                     localStorage.setItem("userFromLogin", this.user.userId);
                     sessionStorage.setItem("user_id", this.user.userId);

@@ -14366,6 +14366,9 @@ select:-webkit-autofill:focus {
   box-shadow: none;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
+}.theme2 input:-webkit-autofill {
+  filter:none; /* needed for firefox! */
+  box-shadow: 0 0 0 100px #1b1b29 inset !important;
 }.theme1 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -14384,6 +14387,9 @@ select:-webkit-autofill:focus {
   box-shadow: none;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
+}.theme1 input:-webkit-autofill{
+  filter:none; /* needed for firefox! */
+  box-shadow: 0 0 0 100px #ffffff inset !important;
 }.loginInput input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -14405,7 +14411,7 @@ select:-webkit-autofill:focus {
 }.theme2 input:-webkit-autofill{
   -webkit-text-fill-color:#efefef!important;
 }.theme1 input:autofill {
-  background-color: #ffffff !important;
+  background-color: #f8f9fa !important;
   /* color: #92929f !important; */
 }.tColor.theme1 {
   background-color: #e6224a;
@@ -15605,7 +15611,7 @@ input[type="password"] {
   color: #747274;
   color: var(--darkgrey);
 }.tblIcon a.deleteIcon2 > img {
-  width: 20px;
+  width: 14px;
 }.listCol > ul > li {
   position: relative;
   margin-bottom: 10px;

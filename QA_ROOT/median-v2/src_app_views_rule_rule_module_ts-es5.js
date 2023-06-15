@@ -1966,7 +1966,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "button", 112);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "button", 111);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function RuleDetails2Component_div_6_div_5_Template_button_click_1_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r127);
@@ -1998,7 +1998,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 108);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "button", 113);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "button", 112);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function RuleDetails2Component_div_6_div_6_Template_button_click_1_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r129);
@@ -2028,7 +2028,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 108);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "button", 109);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "button", 113);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function RuleDetails2Component_div_6_div_7_Template_button_click_1_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r131);
@@ -2058,7 +2058,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 108);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "button", 109);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "button", 113);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function RuleDetails2Component_div_6_div_8_Template_button_click_1_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r133);
@@ -2088,7 +2088,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 108);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "button", 109);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "button", 113);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function RuleDetails2Component_div_6_div_9_Template_button_click_1_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r135);
@@ -2122,7 +2122,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](2, "div", 108);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](3, "button", 109);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](3, "button", 106);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function RuleDetails2Component_div_6_Template_button_click_3_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r137);
@@ -2138,15 +2138,15 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](5, RuleDetails2Component_div_6_div_5_Template, 3, 1, "div", 110);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](5, RuleDetails2Component_div_6_div_5_Template, 3, 1, "div", 109);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](6, RuleDetails2Component_div_6_div_6_Template, 3, 1, "div", 111);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](6, RuleDetails2Component_div_6_div_6_Template, 3, 1, "div", 110);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](7, RuleDetails2Component_div_6_div_7_Template, 3, 1, "div", 111);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](7, RuleDetails2Component_div_6_div_7_Template, 3, 1, "div", 110);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](8, RuleDetails2Component_div_6_div_8_Template, 3, 1, "div", 111);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](8, RuleDetails2Component_div_6_div_8_Template, 3, 1, "div", 110);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](9, RuleDetails2Component_div_6_div_9_Template, 3, 1, "div", 111);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](9, RuleDetails2Component_div_6_div_9_Template, 3, 1, "div", 110);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](10, "div", 10);
 
@@ -2170,7 +2170,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("hidden", !ctx_r1.hideSubmit);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r1.ruleForm.get("sysRuleDetails").invalid || ctx_r1.ruleForm.get("validationSystems").invalid || !ctx_r1.ruleForm.dirty);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", !(ctx_r1.ruleConfig.recordStatus == "C" || ctx_r1.ruleConfig.recordStatus == "CLOSED"));
 
@@ -2192,7 +2196,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](7, _c1));
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](8, _c1));
         }
       }
 
@@ -3255,7 +3259,7 @@
         selectors: [["npr-rule-details2"]],
         decls: 107,
         vars: 16,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["class", "formStyle", "novalidate", "", 3, "formGroup", 4, "ngIf"], ["class", "col-lg-12", 4, "ngIf"], [1, "dbCardStyle"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "col-auto"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], [1, "fa", "fa-edit", "faClass"], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], [1, "fa", "fa-check-square-o", "faClassChecker"], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/authorize.svg", "alt", "...", 1, "modImage"], ["src", "assets/images/modification.svg", "alt", "...", 1, "modImage"], ["novalidate", "", 1, "formStyle", 3, "formGroup"], [3, "disabled"], ["class", "dbCardStyle", 4, "ngIf"], [4, "ngIf"], [1, "row", "gy-4"], [1, "col-lg-4"], [1, "formLbl"], [1, "colorRed"], ["type", "text", "id", "ruleId", "name", "ruleId", "formControlName", "ruleId", "placeholder", "Rule ID", "readonly", "", 1, "form-control"], ["type", "text", "id", "ruleName", "name", "ruleName", "placeholder", "Rule Name", "formControlName", "ruleName", "readonly", "", 1, "form-control"], ["formGroupName", "sourceSystems", 1, "col-lg-12"], [1, "formContent"], [1, "titleStyle", "mb-3"], [1, "col-lg-3"], ["for", "sourceSystem", 1, "formLbl"], ["formControlName", "sourceSystem", 1, "form-select", 3, "items", "change"], ["for", "messageType", 1, "formLbl"], ["id", "messageType", "aria-label", "Default select example", "formControlName", "messageType", "disabled", "", 1, "form-select"], ["value", "A"], ["value", "I"], ["value", "O"], ["for", "operationName", 1, "formLbl"], ["id", "operationName", "type", "text", "formControlName", "operationName", "placeholder", "Operation Name", 1, "form-control", 3, "readonly"], ["for", "serviceName", 1, "formLbl"], ["type", "text", "id", "serviceName", "formControlName", "serviceName", "placeholder", "Service Name", 1, "form-control", 3, "readonly"], ["formGroupName", "destinationSystems", 1, "col-lg-12"], ["for", "destinationSystem", 1, "formLbl"], ["formControlName", "destinationSystem", 1, "form-select", 3, "items", "change"], ["id", "destinationSystem", "aria-label", "Default select example", "formControlName", "messageType", 1, "form-select"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["id", "serviceName", "type", "text", "formControlName", "serviceName", "placeholder", "Service Name", 1, "form-control", 3, "readonly"], [1, "col-lg-12"], ["formArrayName", "validationSystems", 1, "formContent", "border-bottom-0", "pb-0"], [4, "ngFor", "ngForOf"], [3, "formGroupName"], [1, "row", "gy-4", "align-items-center", "mt-1"], [1, "col-lg"], ["class", "formLbl", 4, "ngIf"], ["id", "outlineNgSelect", "id", "systemOne", "formControlName", "validationSystem", 1, "form-select", 3, "items", "readonly", "change"], ["id", "messageType", "formControlName", "messageType", "aria-label", "Default select example", "disabled", "", 1, "form-select"], ["id", "operationName", "type", "text", "formControlName", "operation", "placeholder", "Operation Name", 1, "form-control", 3, "readonly"], ["id", "serviceName", "type", "text", "formControlName", "service", "placeholder", "Service Name", 1, "form-control", 3, "readonly"], [1, "col-auto", 3, "ngStyle"], ["style", "cursor: pointer;", 3, "click", 4, "ngIf"], [2, "cursor", "pointer", 3, "click"], [1, "ddIcon"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "addIcon", "primarybg", 2, "cursor", "pointer", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], ["id", "dbTable1", 1, "table", "tableStyle", "vAlignMdl", "responsive", "nowrap", 2, "border-spacing", "10px", "border-collapse", "separate"], [1, "tbleheadStyle"], [2, "text-align", "center"], [1, "src-sys-style"], [1, "td-highlight"], ["class", "src-sys-style", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["formArrayName", "sysRuleDetails"], ["class", "row g-3 pb-3 justify-content-start pt-3", 4, "ngIf"], ["class", "row g-3 pb-3 justify-content-end pt-3", 4, "ngIf"], [3, "formGroup"], [4, "ngFor", "ngForOf", "ngForTrackBy"], ["formControlName", "validationMethod", "id", "validationMethod", "type", "text", "placeholder", "Validation Method", 1, "form-control", 2, "background-color", "#F8F9FA"], ["formControlName", "validationDetail", "id", "validationDetails", "type", "text", "placeholder", "Validation Details", 1, "form-control", 2, "background-color", "#F8F9FA"], ["class", "tblIcon", 4, "ngIf"], ["id", "outlineNgSelect", "id", "susRuleMsg", "formControlName", "messageKey", "aria-label", "Default select example", 1, "form-select", 3, "disabled", "change"], ["required", "", 3, "value", "hidden", 4, "ngFor", "ngForOf"], ["required", "", 3, "value", "hidden"], ["id", "outlineNgSelect", "required", "", 1, "form-select", 3, "name", "disabled", "ngModel", "ngModelChange"], ["messageKey", "ngModel"], ["required", "", 3, "value", 4, "ngFor", "ngForOf"], ["required", "", 3, "value"], [1, "tblIcon"], ["class", "deleteIcon2", 3, "click", 4, "ngIf"], [1, "deleteIcon2", 3, "click"], [1, "row", "g-3", "pb-3", "justify-content-start", "pt-3"], ["class", "addIcon primarybg", "style", "cursor: pointer;margin-left: 20px;", 3, "click", 4, "ngIf"], [1, "addIcon", "primarybg", 2, "cursor", "pointer", "margin-left", "20px", 3, "click"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "btn", "smBtn", "minWdSmBtn", "btnDarkGrey", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "col-auto", 3, "hidden"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["class", "col-auto", 4, "ngIf"], ["class", "col-auto", 3, "hidden", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "hidden", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["class", "formStyle", "novalidate", "", 3, "formGroup", 4, "ngIf"], ["class", "col-lg-12", 4, "ngIf"], [1, "dbCardStyle"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "col-auto"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], [1, "fa", "fa-edit", "faClass"], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["src", "assets/images/record-status-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg4"], [1, "fa", "fa-check-square-o", "faClassChecker"], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], ["src", "assets/images/first-auth-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/authorize.svg", "alt", "...", 1, "modImage"], ["src", "assets/images/modification.svg", "alt", "...", 1, "modImage"], ["novalidate", "", 1, "formStyle", 3, "formGroup"], [3, "disabled"], ["class", "dbCardStyle", 4, "ngIf"], [4, "ngIf"], [1, "row", "gy-4"], [1, "col-lg-4"], [1, "formLbl"], [1, "colorRed"], ["type", "text", "id", "ruleId", "name", "ruleId", "formControlName", "ruleId", "placeholder", "Rule ID", "readonly", "", 1, "form-control"], ["type", "text", "id", "ruleName", "name", "ruleName", "placeholder", "Rule Name", "formControlName", "ruleName", "readonly", "", 1, "form-control"], ["formGroupName", "sourceSystems", 1, "col-lg-12"], [1, "formContent"], [1, "titleStyle", "mb-3"], [1, "col-lg-3"], ["for", "sourceSystem", 1, "formLbl"], ["formControlName", "sourceSystem", 1, "form-select", 3, "items", "change"], ["for", "messageType", 1, "formLbl"], ["id", "messageType", "aria-label", "Default select example", "formControlName", "messageType", "disabled", "", 1, "form-select"], ["value", "A"], ["value", "I"], ["value", "O"], ["for", "operationName", 1, "formLbl"], ["id", "operationName", "type", "text", "formControlName", "operationName", "placeholder", "Operation Name", 1, "form-control", 3, "readonly"], ["for", "serviceName", 1, "formLbl"], ["type", "text", "id", "serviceName", "formControlName", "serviceName", "placeholder", "Service Name", 1, "form-control", 3, "readonly"], ["formGroupName", "destinationSystems", 1, "col-lg-12"], ["for", "destinationSystem", 1, "formLbl"], ["formControlName", "destinationSystem", 1, "form-select", 3, "items", "change"], ["id", "destinationSystem", "aria-label", "Default select example", "formControlName", "messageType", 1, "form-select"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["id", "serviceName", "type", "text", "formControlName", "serviceName", "placeholder", "Service Name", 1, "form-control", 3, "readonly"], [1, "col-lg-12"], ["formArrayName", "validationSystems", 1, "formContent", "border-bottom-0", "pb-0"], [4, "ngFor", "ngForOf"], [3, "formGroupName"], [1, "row", "gy-4", "align-items-center", "mt-1"], [1, "col-lg"], ["class", "formLbl", 4, "ngIf"], ["id", "outlineNgSelect", "id", "systemOne", "formControlName", "validationSystem", 1, "form-select", 3, "items", "readonly", "change"], ["id", "messageType", "formControlName", "messageType", "aria-label", "Default select example", "disabled", "", 1, "form-select"], ["id", "operationName", "type", "text", "formControlName", "operation", "placeholder", "Operation Name", 1, "form-control", 3, "readonly"], ["id", "serviceName", "type", "text", "formControlName", "service", "placeholder", "Service Name", 1, "form-control", 3, "readonly"], [1, "col-auto", 3, "ngStyle"], ["style", "cursor: pointer;", 3, "click", 4, "ngIf"], [2, "cursor", "pointer", 3, "click"], [1, "ddIcon"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "addIcon", "primarybg", 2, "cursor", "pointer", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], ["id", "dbTable1", 1, "table", "tableStyle", "vAlignMdl", "responsive", "nowrap", 2, "border-spacing", "10px", "border-collapse", "separate"], [1, "tbleheadStyle"], [2, "text-align", "center"], [1, "src-sys-style"], [1, "td-highlight"], ["class", "src-sys-style", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["formArrayName", "sysRuleDetails"], ["class", "row g-3 pb-3 justify-content-start pt-3", 4, "ngIf"], ["class", "row g-3 pb-3 justify-content-end pt-3", 4, "ngIf"], [3, "formGroup"], [4, "ngFor", "ngForOf", "ngForTrackBy"], ["formControlName", "validationMethod", "id", "validationMethod", "type", "text", "placeholder", "Validation Method", 1, "form-control", 2, "background-color", "#F8F9FA"], ["formControlName", "validationDetail", "id", "validationDetails", "type", "text", "placeholder", "Validation Details", 1, "form-control", 2, "background-color", "#F8F9FA"], ["class", "tblIcon", 4, "ngIf"], ["id", "outlineNgSelect", "id", "susRuleMsg", "formControlName", "messageKey", "aria-label", "Default select example", 1, "form-select", 3, "disabled", "change"], ["required", "", 3, "value", "hidden", 4, "ngFor", "ngForOf"], ["required", "", 3, "value", "hidden"], ["id", "outlineNgSelect", "required", "", 1, "form-select", 3, "name", "disabled", "ngModel", "ngModelChange"], ["messageKey", "ngModel"], ["required", "", 3, "value", 4, "ngFor", "ngForOf"], ["required", "", 3, "value"], [1, "tblIcon"], ["class", "deleteIcon2", 3, "click", 4, "ngIf"], [1, "deleteIcon2", 3, "click"], [1, "row", "g-3", "pb-3", "justify-content-start", "pt-3"], ["class", "addIcon primarybg", "style", "cursor: pointer;margin-left: 20px;", 3, "click", 4, "ngIf"], [1, "addIcon", "primarybg", 2, "cursor", "pointer", "margin-left", "20px", 3, "click"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "btn", "smBtn", "minWdSmBtn", "btnDarkGrey", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "col-auto", 3, "hidden"], ["class", "col-auto", 4, "ngIf"], ["class", "col-auto", 3, "hidden", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "hidden", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"]],
         template: function RuleDetails2Component_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 0);
@@ -3274,7 +3278,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](5, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](6, RuleDetails2Component_div_6_Template, 13, 8, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](6, RuleDetails2Component_div_6_Template, 13, 9, "div", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](7, "div", 5);
 
@@ -6200,7 +6204,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("hidden", !ctx_r1.submit)("disabled", ctx_r1.ruleForm.invalid || !ctx_r1.ruleForm.dirty);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("hidden", !ctx_r1.submit)("disabled", ctx_r1.ruleForm.invalid);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
@@ -6826,7 +6830,10 @@
             this.ruleForm.controls['sysRuleDetails'].setErrors({
               'customeError': true
             });
-            console.log(this.ruleForm.valid); // if (this.ruleForm.invalid){
+            console.log(this.ruleForm.valid);
+            console.log(this.ruleForm.invalid);
+            console.log(this.ruleForm.dirty);
+            console.log(this.ruleForm); // if (this.ruleForm.invalid){
             //   console.log(this.ruleForm);
             //   this.disableButton();
             // }

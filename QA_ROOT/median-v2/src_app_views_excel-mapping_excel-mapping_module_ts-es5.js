@@ -760,7 +760,7 @@
         if (rf & 2) {
           var ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", !ctx_r32.addForm.dirty || !ctx_r32.addForm.valid);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", (!ctx_r32.addForm.dirty || !ctx_r32.addForm.valid) && (ctx_r32.addForm.controls.excelMappingEdit.invalid || !ctx_r32.addForm.controls.excelMappingEdit.dirty));
         }
       }
 
@@ -3145,7 +3145,7 @@
             return ctx_r30.updateMappingData(ctx_r30.addForm.value, ctx_r30.excelMappingForm.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Save1");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Save");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
 

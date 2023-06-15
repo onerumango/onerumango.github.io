@@ -890,19 +890,31 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "option", 28);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, " --Please select-- ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, "--Please select--");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "option", 29);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](5, "Incoming");
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](5, " Incoming ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](6, "option", 30);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](7, "Outgoing");
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](7, " Outgoing ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](8, "option", 29);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](9, "Incoming");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](10, "option", 30);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](11, "Outgoing");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
@@ -2710,6 +2722,9 @@
           this.disableResetBtn = false;
           this.showAuditLog = false;
           this.isSelected = true;
+          this.placeholderDisplay = false;
+          this.placeholder = "Please select";
+          this.placeholder1 = "Please select";
           this.hideFetch = false;
           this.hideSubmit = false;
           this.fieldValueData = [];
@@ -3092,6 +3107,7 @@
           value: function onSourseSelection(event) {
             var _this8 = this;
 
+            this.placeholder = '';
             console.log(event);
             this.sourseSys = event;
             this.showSource = false;
@@ -3320,6 +3336,7 @@
           value: function ondestinationSource(event) {
             var _this10 = this;
 
+            this.placeholder1 = '';
             console.log(event.value);
             this.showSource = false;
             this.showDestination = false;
@@ -3700,8 +3717,8 @@
         type: _RuleMappingCreateComponent,
         selectors: [["npr-rule-mapping-create"]],
         decls: 76,
-        vars: 31,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["novalidate", "", 1, "formStyle", 3, "formGroup"], [3, "disabled"], [1, "dbCardStyle"], [1, "addformCol"], [1, "row", "g-4", "align-items-center"], [1, "col"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-3"], ["for", "roleName", 1, "formLbl"], [1, "colorRed"], ["formControlName", "systemCode", "aria-label", "Default select example", 3, "clearable", "placeholder", "change"], [3, "value", "hidden", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["formGroupName", "destinationSystems"], ["formControlName", "systemCode", "placeholder", "Please Select", 3, "items", "clearable", "change"], [1, "btn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["class", "dbCardStyle", 4, "ngIf"], [1, "row", "g-3", "pb-3", "pt-4", "justify-content-end"], ["class", "col-auto", 3, "hidden", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "hidden", "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle mt-20", 4, "ngIf"], [3, "value", "hidden"], ["formControlName", "messageType", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["value", "I"], ["value", "O"], ["type", "text", "formControlName", "messageType", "placeholder", "Message Type", 1, "form-control"], ["id", "ruleName", "formControlName", "operationName", "aria-label", "Default select example", 1, "form-select"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["id", "ruleName", "type", "text", "formControlName", "operationName", "value", "", 1, "form-control"], ["id", "ruleName", "formControlName", "serviceName", "aria-label", "Default select example", 1, "form-select"], ["id", "ruleName", "type", "text", "formControlName", "serviceName", "value", "", 1, "form-control"], ["formArrayName", "rulemappingDetail", 1, "addformCol"], [4, "ngFor", "ngForOf"], [1, "row", "g-3", "pt-4"], ["class", "addIcon primarybg", 3, "click", 4, "ngIf"], [3, "formGroupName"], [1, "row", "align-items-center"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "roleName", "class", "formLbl", 4, "ngIf"], [1, "col-lg-12"], ["type", "text", "id", "defaultVal", "formControlName", "defaultValue", "placeholder", "Default value", 3, "ngClass"], ["class", "deleteIcon2", "style", "cursor: pointer", 3, "click", 4, "ngIf"], ["formControlName", "sourceKey", "aria-label", "Default select example", 1, "form-select", 3, "change"], [3, "hidden", "value", 4, "ngFor", "ngForOf"], [3, "hidden", "value"], ["formControlName", "sourceKey", "aria-label", "Default select example", 1, "form-select"], ["formControlName", "destinationKey", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["formControlName", "destinationKey", "aria-label", "Default select example", 1, "form-select"], [1, "deleteIcon2", 2, "cursor", "pointer", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "...", 1, "image", 3, "ngClass"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-auto", 3, "hidden"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "dbCardStyle", "mt-20"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], [1, "fa", "fa-edit", "faClass"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["aria-hidden", "true", 1, "fa", "fa-files-o", "faRecordStatus"], [1, "csCardStyleIcon", "csCardStyleIconBg4"], [1, "fa", "fa-check-square-o", "faClassChecker"], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/modification.svg", "alt", "...", 1, "modImage"], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], [1, "fa", "fa-shield", "faClassFirstTimeAuth"], ["src", "assets/images/authorize.svg", "alt", "...", 1, "modImage"]],
+        vars: 32,
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["novalidate", "", 1, "formStyle", 3, "formGroup"], [3, "disabled"], [1, "dbCardStyle"], [1, "addformCol"], [1, "row", "g-4", "align-items-center"], [1, "col"], [1, "row", "gy-4", "align-items-end"], [1, "col-lg-3"], ["for", "roleName", 1, "formLbl"], [1, "colorRed"], ["placeholder", "Please select", "formControlName", "systemCode", "aria-label", "Default select example", 3, "clearable", "placeholder", "change"], [3, "value", "hidden", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["formGroupName", "destinationSystems"], ["formControlName", "systemCode", 3, "items", "clearable", "placeholder", "change"], [1, "btn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["class", "dbCardStyle", 4, "ngIf"], [1, "row", "g-3", "pb-3", "pt-4", "justify-content-end"], ["class", "col-auto", 3, "hidden", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "hidden", "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle mt-20", 4, "ngIf"], [3, "value", "hidden"], ["formControlName", "messageType", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["hidden", "", "value", "", "disabled", "", "selected", ""], ["value", "I"], ["value", "O"], ["type", "text", "formControlName", "messageType", "placeholder", "Message Type", 1, "form-control"], ["id", "ruleName", "formControlName", "operationName", "aria-label", "Default select example", 1, "form-select"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["id", "ruleName", "type", "text", "formControlName", "operationName", "value", "", 1, "form-control"], ["id", "ruleName", "formControlName", "serviceName", "aria-label", "Default select example", 1, "form-select"], ["id", "ruleName", "type", "text", "formControlName", "serviceName", "value", "", 1, "form-control"], ["formArrayName", "rulemappingDetail", 1, "addformCol"], [4, "ngFor", "ngForOf"], [1, "row", "g-3", "pt-4"], ["class", "addIcon primarybg", 3, "click", 4, "ngIf"], [3, "formGroupName"], [1, "row", "align-items-center"], [1, "row", "gy-4"], [1, "col-lg-4"], ["for", "roleName", "class", "formLbl", 4, "ngIf"], [1, "col-lg-12"], ["type", "text", "id", "defaultVal", "formControlName", "defaultValue", "placeholder", "Default value", 3, "ngClass"], ["class", "deleteIcon2", "style", "cursor: pointer", 3, "click", 4, "ngIf"], ["formControlName", "sourceKey", "aria-label", "Default select example", 1, "form-select", 3, "change"], [3, "hidden", "value", 4, "ngFor", "ngForOf"], [3, "hidden", "value"], ["formControlName", "sourceKey", "aria-label", "Default select example", 1, "form-select"], ["formControlName", "destinationKey", "aria-label", "Default select example", 1, "form-select", 3, "change"], ["formControlName", "destinationKey", "aria-label", "Default select example", 1, "form-select"], [1, "deleteIcon2", 2, "cursor", "pointer", 3, "click"], ["src", "assets/images/delete-icon.svg", "alt", "...", 1, "image", 3, "ngClass"], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-auto", 3, "hidden"], [1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "dbCardStyle", "mt-20"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], [1, "fa", "fa-edit", "faClass"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["aria-hidden", "true", 1, "fa", "fa-files-o", "faRecordStatus"], [1, "csCardStyleIcon", "csCardStyleIconBg4"], [1, "fa", "fa-check-square-o", "faClassChecker"], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/modification.svg", "alt", "...", 1, "modImage"], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], [1, "fa", "fa-shield", "faClassFirstTimeAuth"], ["src", "assets/images/authorize.svg", "alt", "...", 1, "modImage"]],
         template: function RuleMappingCreateComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 0);
@@ -3844,7 +3861,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](47, RuleMappingCreateComponent_div_47_Template, 8, 0, "div", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](47, RuleMappingCreateComponent_div_47_Template, 12, 0, "div", 15);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](48, RuleMappingCreateComponent_div_48_Template, 2, 0, "div", 15);
 
@@ -3964,7 +3981,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("clearable", false)("placeholder", "Please select");
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("clearable", false)("placeholder", ctx.placeholder);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
@@ -3996,7 +4013,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("items", ctx.externalCreateSystemFiltered)("clearable", false);
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("items", ctx.externalCreateSystemFiltered)("clearable", false)("placeholder", ctx.placeholder1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](6);
 
@@ -4056,7 +4073,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction0"](30, _c2));
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction0"](31, _c2));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
 
@@ -4065,7 +4082,7 @@
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_9__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormGroupDirective, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__.NgSelectComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormControlName, _angular_common__WEBPACK_IMPORTED_MODULE_12__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_12__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormGroupName, _angular_router__WEBPACK_IMPORTED_MODULE_10__.RouterLink, _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__.NgOptionComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormArrayName, _angular_common__WEBPACK_IMPORTED_MODULE_12__.NgClass],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_12__.DatePipe],
-        styles: [".m-10[_ngcontent-%COMP%] {\n  margin-top: 10px;\n}\n\n.path[_ngcontent-%COMP%] {\n  vertical-align: top;\n  margin-top: 0px;\n  margin-bottom: 20px;\n  min-width: 120px;\n  border-spacing: 1.5;\n}\n\n.first[_ngcontent-%COMP%] {\n  margin-top: 31px;\n}\n\n.image[_ngcontent-%COMP%] {\n  vertical-align: top;\n  top: -8px;\n  position: relative;\n}\n\n.first-image[_ngcontent-%COMP%] {\n  top: 24px;\n}\n\n  .ng-select .ng-has-value .ng-placeholder {\n  display: block !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJ1bGUtbWFwcGluZy1jcmVhdGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxnQkFBQTtBQUNKOztBQUNBO0VBQ0ksbUJBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFFQSxnQkFBQTtFQUVBLG1CQUFBO0FBQUo7O0FBRUE7RUFDSSxnQkFBQTtBQUNKOztBQUVBO0VBQ0ksbUJBQUE7RUFDQSxTQUFBO0VBQ0Esa0JBQUE7QUFDSjs7QUFFQTtFQUNJLFNBQUE7QUFDSjs7QUFDQTtFQUVJLHlCQUFBO0FBQ0oiLCJmaWxlIjoicnVsZS1tYXBwaW5nLWNyZWF0ZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tLTEwe1xyXG4gICAgbWFyZ2luLXRvcDogMTBweFxyXG59XHJcbi5wYXRoe1xyXG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIG1hcmdpbi10b3A6IDBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XHJcbiAgIC8vIGRpc3BsYXk6IGlubGluZTtcclxuICAgIG1pbi13aWR0aDogMTIwcHg7XHJcbiAgIC8vd2lkdGg6IDUwcHg7XHJcbiAgICBib3JkZXItc3BhY2luZzogMS41O1xyXG59XHJcbi5maXJzdCB7XHJcbiAgICBtYXJnaW4tdG9wOiAzMXB4O1xyXG59XHJcblxyXG4uaW1hZ2V7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgdG9wOiAtOHB4O1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4uZmlyc3QtaW1hZ2Uge1xyXG4gICAgdG9wOiAyNHB4O1xyXG59XHJcbjo6bmctZGVlcCAubmctc2VsZWN0IC5uZy1oYXMtdmFsdWUgLm5nLXBsYWNlaG9sZGVyIHtcclxuXHJcbiAgICBkaXNwbGF5OiBibG9jayAhaW1wb3J0YW50O1xyXG5cclxufSJdfQ== */"]
+        styles: [".m-10[_ngcontent-%COMP%] {\n  margin-top: 10px;\n}\n\n.path[_ngcontent-%COMP%] {\n  vertical-align: top;\n  margin-top: 0px;\n  margin-bottom: 20px;\n  min-width: 120px;\n  border-spacing: 1.5;\n}\n\n.first[_ngcontent-%COMP%] {\n  margin-top: 31px;\n}\n\n.image[_ngcontent-%COMP%] {\n  vertical-align: top;\n  top: -8px;\n  position: relative;\n}\n\n.first-image[_ngcontent-%COMP%] {\n  top: 24px;\n}\n\n  .ng-select .ng-placeholder {\n  display: block !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJ1bGUtbWFwcGluZy1jcmVhdGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxnQkFBQTtBQUNKOztBQUNBO0VBQ0ksbUJBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFFQSxnQkFBQTtFQUVBLG1CQUFBO0FBQUo7O0FBRUE7RUFDSSxnQkFBQTtBQUNKOztBQUVBO0VBQ0ksbUJBQUE7RUFDQSxTQUFBO0VBQ0Esa0JBQUE7QUFDSjs7QUFFQTtFQUNJLFNBQUE7QUFDSjs7QUFDQTtFQUVJLHlCQUFBO0FBQ0oiLCJmaWxlIjoicnVsZS1tYXBwaW5nLWNyZWF0ZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tLTEwe1xyXG4gICAgbWFyZ2luLXRvcDogMTBweFxyXG59XHJcbi5wYXRoe1xyXG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICAgIG1hcmdpbi10b3A6IDBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XHJcbiAgIC8vIGRpc3BsYXk6IGlubGluZTtcclxuICAgIG1pbi13aWR0aDogMTIwcHg7XHJcbiAgIC8vd2lkdGg6IDUwcHg7XHJcbiAgICBib3JkZXItc3BhY2luZzogMS41O1xyXG59XHJcbi5maXJzdCB7XHJcbiAgICBtYXJnaW4tdG9wOiAzMXB4O1xyXG59XHJcblxyXG4uaW1hZ2V7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgdG9wOiAtOHB4O1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcblxyXG4uZmlyc3QtaW1hZ2Uge1xyXG4gICAgdG9wOiAyNHB4O1xyXG59XHJcbjo6bmctZGVlcCAubmctc2VsZWN0ICAubmctcGxhY2Vob2xkZXIge1xyXG5cclxuICAgIGRpc3BsYXk6IGJsb2NrICFpbXBvcnRhbnQgO1xyXG5cclxufVxyXG5cclxuLy8gLm5nLXNlbGVjdDo6cGxhY2Vob2xkZXJ7XHJcbi8vICAgICBjb2xvcjogYXF1YTtcclxuLy8gfVxyXG4vLyAuZGlzYWJsZWQge1xyXG4vLyAgICAgY3Vyc29yOiBub3QtYWxsb3dlZDtcclxuLy8gICAgIHBvaW50ZXItZXZlbnRzOiBhbGwgIWltcG9ydGFudDtcclxuLy8gICB9XHJcblxyXG4iXX0= */"]
       });
 
       var _MdmtMessageMapping = /*#__PURE__*/_createClass(function _MdmtMessageMapping() {
@@ -5630,7 +5647,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", !ctx_r0.submit || !ctx_r0.ruleMappingForm.dirty);
+          _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", !ctx_r0.submit || !ctx_r0.ruleMappingForm.dirty || ctx_r0.ruleMappingForm.invalid);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
 
@@ -5724,17 +5741,29 @@
             } else {
               this.addSysRespData = this.ruleMappingDataForPayload.mdmtMessageMapping;
               this.auditLog();
-              this.rulemapping.sourceTranslationId = this.editruleMappingResp["sourceTransDetId"];
+              this.rulemapping.sourceTransSystemCode = this.editruleMappingResp["sourceTransSystemCode"];
 
-              if (this.rulemapping.sourceTranslationId) {
-                this.gettingTranslationData(this.rulemapping.sourceTranslationId);
+              if (this.rulemapping.sourceTransSystemCode) {
+                this.gettingTranslationData(this.rulemapping.sourceTransSystemCode);
               }
 
-              this.rulemapping.targetTranslationId = this.editruleMappingResp["targetTransDetId"];
+              this.rulemapping.targetTransSystemCode = this.editruleMappingResp["targetTransSystemCode"];
 
-              if (this.rulemapping.targetTranslationId) {
-                this.gettingTranslationDataForDest(this.rulemapping.targetTranslationId);
-              }
+              if (this.rulemapping.targetTransSystemCode) {
+                this.gettingTranslationDataForDest(this.rulemapping.targetTransSystemCode);
+              } // this.rulemapping.sourceTranslationId =
+              //   this.editruleMappingResp["sourceTransDetId"];
+              // if (this.rulemapping.sourceTranslationId) {
+              //   this.gettingTranslationData(this.rulemapping.sourceTranslationId);
+              // }
+              // this.rulemapping.targetTranslationId =
+              //   this.editruleMappingResp["targetTransDetId"];
+              // if (this.rulemapping.targetTranslationId) {
+              //   this.gettingTranslationDataForDest(
+              //     this.rulemapping.targetTranslationId
+              //   );
+              // }
+
 
               if (this.addSysRespData.recordStatus == "C") {
                 console.log(this.addSysRespData.recordStatus);
@@ -5857,12 +5886,12 @@
           value: function getRuleMappingDetails() {
             return this.formBuilder.group({
               id: [""],
-              defaultValue: [""],
+              defaultValue: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required],
               messageMappingId: [""],
               sourceTransDetId: [""],
               targetTransDetId: [""],
-              sourceKey: [""],
-              destinationKey: [""]
+              sourceKey: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required],
+              destinationKey: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required]
             });
           }
         }, {
@@ -6397,6 +6426,8 @@
 
             var payloadObj = {};
             payloadObj = this.ruleMappingDataForPayload;
+            payloadObj.sourceTranslationId = this.editruleMappingResp["sourceTranslationId"];
+            payloadObj.targetTranslationId = this.editruleMappingResp["targetTranslationId"];
             payloadObj.creatorId = this.currentUser;
             payloadObj.msgMappingDetails = this.rulemappingDetails.value;
 
@@ -7981,8 +8012,10 @@
               console.log(resp);
               _this29.mappingDetailsArray = resp.mdmtMessageMappingDet;
               var queryParams = {
-                sourceTransDetId: resp.sourceTransDetId,
-                targetTransDetId: resp.targetTransDetId,
+                sourceTransSystemCode: resp.sourceTransSystemCode,
+                targetTransSystemCode: resp.targetTransSystemCode,
+                sourceTranslationId: resp.sourceTranslationId,
+                targetTranslationId: resp.targetTranslationId,
                 mdmtMessageMappingDet: resp.mdmtMessageMappingDet,
                 responseData: data
               };

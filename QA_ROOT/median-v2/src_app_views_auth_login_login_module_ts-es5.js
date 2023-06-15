@@ -1266,8 +1266,7 @@
                   }
 
                   _this6.loginProcessing = false;
-                  _this6.user = _this6.responseforotp[0]; // 0 for 8081 and 1 for Kenya build
-
+                  _this6.user = _this6.responseforotp[0];
                   _this6.loginProcessing = false;
                   localStorage.setItem("userFromLogin", _this6.user.userId);
                   sessionStorage.setItem("user_id", _this6.user.userId);
