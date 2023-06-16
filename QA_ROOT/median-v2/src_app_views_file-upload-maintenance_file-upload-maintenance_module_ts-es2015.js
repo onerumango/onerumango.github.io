@@ -19241,7 +19241,20 @@ class ExternalSystemNewComponent {
         this.externalSystem.department = externalSystemFormValue.department;
         this.externalSystem.modifiedBy = this.currentUser;
         this.apiService.saveExternalSystem(this.externalSystem).subscribe(res => {
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
             this.externalSystemResponse = res;
+            this.apiService.setexcelSummaryData({ authStatus: (_a = this.externalSystemResponse) === null || _a === void 0 ? void 0 : _a.authStatus,
+                authorizedBy: (_b = this.externalSystemResponse) === null || _b === void 0 ? void 0 : _b.authorizedBy,
+                authorizedTime: (_c = this.externalSystemResponse) === null || _c === void 0 ? void 0 : _c.authorizedTime,
+                department: (_d = this.externalSystemResponse) === null || _d === void 0 ? void 0 : _d.department,
+                extSysCode: (_e = this.externalSystemResponse) === null || _e === void 0 ? void 0 : _e.extSysCode,
+                extSysName: (_f = this.externalSystemResponse) === null || _f === void 0 ? void 0 : _f.extSysName,
+                modifiedBy: (_g = this.externalSystemResponse) === null || _g === void 0 ? void 0 : _g.modifiedBy,
+                modifiedTime: (_h = this.externalSystemResponse) === null || _h === void 0 ? void 0 : _h.modifiedTime,
+                recordStatus: (_j = this.externalSystemResponse) === null || _j === void 0 ? void 0 : _j.recordStatus,
+                verifiedOnce: (_k = this.externalSystemResponse) === null || _k === void 0 ? void 0 : _k.verifiedOnce,
+                version: (_l = this.externalSystemResponse) === null || _l === void 0 ? void 0 : _l.version, });
+            console.log(externalSystemFormValue);
             if (this.externalSystemResponse != null) {
                 this.editFlag = true;
                 this.submitBtn = false;
@@ -19272,6 +19285,7 @@ class ExternalSystemNewComponent {
     }
     getExternalSystemSummry() {
         this.apiService.getExternalSystemSummry().subscribe((summaryData) => {
+            console.log(summaryData);
             this.externalSystemSummry = summaryData;
             var retrievedObject = localStorage.getItem('externalSystemSummry');
             this.externalSystemSummry = JSON.parse(retrievedObject);
@@ -19286,19 +19300,22 @@ class ExternalSystemNewComponent {
         });
     }
     onSubmitOfEdit(externalSystemFormValue) {
-        this.externalSystemUpdate.extSysCode = externalSystemFormValue.extSysCode;
-        this.externalSystemUpdate.extSysName = externalSystemFormValue.extSysName;
-        this.externalSystemUpdate.department = externalSystemFormValue.department;
+        var _a, _b, _c, _d, _e, _f, _g;
+        console.log(externalSystemFormValue.extSysCode);
+        this.externalSystemUpdate.extSysCode = externalSystemFormValue === null || externalSystemFormValue === void 0 ? void 0 : externalSystemFormValue.extSysCode;
+        this.externalSystemUpdate.extSysName = externalSystemFormValue === null || externalSystemFormValue === void 0 ? void 0 : externalSystemFormValue.extSysName;
+        this.externalSystemUpdate.department = externalSystemFormValue === null || externalSystemFormValue === void 0 ? void 0 : externalSystemFormValue.department;
         this.externalSystemUpdate.modifiedBy = this.currentUser;
         this.getExternalSystemSummry();
-        this.externalSystemUpdate.authStatus = this.externalSystemSummry.authStatus;
-        this.externalSystemUpdate.authorizedBy = this.externalSystemSummry.authorizedBy;
-        this.externalSystemUpdate.authorizedTime = this.externalSystemSummry.authorizedTime;
-        this.externalSystemUpdate.modifiedTime = this.externalSystemSummry.modifiedTime;
-        this.externalSystemUpdate.recordStatus = this.externalSystemSummry.recordStatus;
+        console.log(this.externalSystemSummry);
+        this.externalSystemUpdate.authStatus = (_a = this.externalSystemSummry) === null || _a === void 0 ? void 0 : _a.authStatus;
+        this.externalSystemUpdate.authorizedBy = (_b = this.externalSystemSummry) === null || _b === void 0 ? void 0 : _b.authorizedBy;
+        this.externalSystemUpdate.authorizedTime = (_c = this.externalSystemSummry) === null || _c === void 0 ? void 0 : _c.authorizedTime;
+        this.externalSystemUpdate.modifiedTime = (_d = this.externalSystemSummry) === null || _d === void 0 ? void 0 : _d.modifiedTime;
+        this.externalSystemUpdate.recordStatus = (_e = this.externalSystemSummry) === null || _e === void 0 ? void 0 : _e.recordStatus;
         this.externalSystemUpdate.updatedBy = this.currentUser;
-        this.externalSystemUpdate.verifiedOnce = this.externalSystemSummry.verifiedOnce;
-        this.externalSystemUpdate.version = this.externalSystemSummry.version;
+        this.externalSystemUpdate.verifiedOnce = (_f = this.externalSystemSummry) === null || _f === void 0 ? void 0 : _f.verifiedOnce;
+        this.externalSystemUpdate.version = (_g = this.externalSystemSummry) === null || _g === void 0 ? void 0 : _g.version;
         this.apiService.updateexternalSystemEdit(this.externalSystemUpdate).subscribe(data => {
             this.externalSystemSummry = data;
             if (this.externalSystemSummry) {
@@ -20007,14 +20024,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "FileUploadMaintenanceRoutingModule": function() { return /* binding */ FileUploadMaintenanceRoutingModule; }
 /* harmony export */ });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 71258);
-/* harmony import */ var src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/guards/can-deactivate.guard */ 50215);
-/* harmony import */ var _external_system_edit_external_system_edit_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./external-system-edit/external-system-edit.component */ 97643);
-/* harmony import */ var _external_system_new_external_system_new_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./external-system-new/external-system-new.component */ 94057);
-/* harmony import */ var _external_system_external_system_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./external-system/external-system.component */ 4846);
-/* harmony import */ var _process_code_mapping_edit_process_code_mapping_edit_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./process-code-mapping-edit/process-code-mapping-edit.component */ 9598);
-/* harmony import */ var _process_code_mapping_new_process_code_mapping_new_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./process-code-mapping-new/process-code-mapping-new.component */ 8972);
-/* harmony import */ var _process_code_mapping_process_code_mapping_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./process-code-mapping/process-code-mapping.component */ 87873);
-/* harmony import */ var _treasury_reference_treasury_reference_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./treasury-reference/treasury-reference.component */ 42034);
+/* harmony import */ var _external_system_edit_external_system_edit_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./external-system-edit/external-system-edit.component */ 97643);
+/* harmony import */ var _external_system_new_external_system_new_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./external-system-new/external-system-new.component */ 94057);
+/* harmony import */ var _external_system_external_system_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./external-system/external-system.component */ 4846);
+/* harmony import */ var _process_code_mapping_edit_process_code_mapping_edit_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./process-code-mapping-edit/process-code-mapping-edit.component */ 9598);
+/* harmony import */ var _process_code_mapping_new_process_code_mapping_new_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./process-code-mapping-new/process-code-mapping-new.component */ 8972);
+/* harmony import */ var _process_code_mapping_process_code_mapping_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./process-code-mapping/process-code-mapping.component */ 87873);
+/* harmony import */ var _treasury_reference_treasury_reference_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./treasury-reference/treasury-reference.component */ 42034);
+/* harmony import */ var src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/shared/guards/auth.guard */ 87618);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
@@ -20029,36 +20046,39 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: 'extSys-summary',
-        component: _external_system_external_system_component__WEBPACK_IMPORTED_MODULE_3__.ExternalSystemComponent
+        path: "extSys-summary",
+        component: _external_system_external_system_component__WEBPACK_IMPORTED_MODULE_2__.ExternalSystemComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard],
     },
     {
-        path: 'extSys-new',
-        component: _external_system_new_external_system_new_component__WEBPACK_IMPORTED_MODULE_2__.ExternalSystemNewComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "extSys-new",
+        component: _external_system_new_external_system_new_component__WEBPACK_IMPORTED_MODULE_1__.ExternalSystemNewComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard],
     },
     {
-        path: 'extSys-edit',
-        component: _external_system_edit_external_system_edit_component__WEBPACK_IMPORTED_MODULE_1__.ExternalSystemEditComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "extSys-edit",
+        component: _external_system_edit_external_system_edit_component__WEBPACK_IMPORTED_MODULE_0__.ExternalSystemEditComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard],
     },
     {
-        path: 'processCodeMapping',
-        component: _process_code_mapping_process_code_mapping_component__WEBPACK_IMPORTED_MODULE_6__.ProcessCodeMappingComponent
-    }, {
-        path: 'processCodeMappingNew',
-        component: _process_code_mapping_new_process_code_mapping_new_component__WEBPACK_IMPORTED_MODULE_5__.ProcessCodeMappingNewComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "processCodeMapping",
+        component: _process_code_mapping_process_code_mapping_component__WEBPACK_IMPORTED_MODULE_5__.ProcessCodeMappingComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard],
     },
     {
-        path: 'processCodeMappingEdit',
-        component: _process_code_mapping_edit_process_code_mapping_edit_component__WEBPACK_IMPORTED_MODULE_4__.ProcessCodeMappingEditComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "processCodeMappingNew",
+        component: _process_code_mapping_new_process_code_mapping_new_component__WEBPACK_IMPORTED_MODULE_4__.ProcessCodeMappingNewComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard],
     },
     {
-        path: 'treasuryReference',
-        component: _treasury_reference_treasury_reference_component__WEBPACK_IMPORTED_MODULE_7__.TreasuryReferenceComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "processCodeMappingEdit",
+        component: _process_code_mapping_edit_process_code_mapping_edit_component__WEBPACK_IMPORTED_MODULE_3__.ProcessCodeMappingEditComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard],
+    },
+    {
+        path: "treasuryReference",
+        component: _treasury_reference_treasury_reference_component__WEBPACK_IMPORTED_MODULE_6__.TreasuryReferenceComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard],
     },
 ];
 class FileUploadMaintenanceRoutingModule {

@@ -1055,9 +1055,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "EmailManagementRoutingModule": function() { return /* binding */ EmailManagementRoutingModule; }
 /* harmony export */ });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 71258);
-/* harmony import */ var src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/guards/can-deactivate.guard */ 50215);
-/* harmony import */ var _email_management_create_email_management_create_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./email-management-create/email-management-create.component */ 60664);
-/* harmony import */ var _email_management_email_management_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./email-management/email-management.component */ 33753);
+/* harmony import */ var _email_management_create_email_management_create_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./email-management-create/email-management-create.component */ 60664);
+/* harmony import */ var _email_management_email_management_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./email-management/email-management.component */ 33753);
+/* harmony import */ var src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/guards/auth.guard */ 87618);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
@@ -1068,13 +1068,13 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: "",
-        component: _email_management_email_management_component__WEBPACK_IMPORTED_MODULE_2__.EmailManagementComponent
+        component: _email_management_email_management_component__WEBPACK_IMPORTED_MODULE_1__.EmailManagementComponent,
     },
     {
         path: "create",
-        component: _email_management_create_email_management_create_component__WEBPACK_IMPORTED_MODULE_1__.EmailManagementCreateComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
-    }
+        component: _email_management_create_email_management_create_component__WEBPACK_IMPORTED_MODULE_0__.EmailManagementCreateComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__.AuthGuard],
+    },
 ];
 class EmailManagementRoutingModule {
 }

@@ -407,8 +407,10 @@ class HeaderComponent {
             console.log(resp);
             if (resp === 'Saved successfully') {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Theme changed successfully", icon: 'success' });
+                window.location.reload();
             }
         }, error => {
+            window.location.reload();
             if (error.error.text === 'Saved successfully') {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Theme changed successfully", icon: 'success' });
             }
@@ -1571,20 +1573,20 @@ function SidenavComponent_a_65_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](2, "img", 53);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](3, "span", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](4, "Account Block");
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](4, "Blocking");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](1, _c0, ctx_r28.handleActiveClass("customer-search")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](1, _c0, ctx_r28.handleActiveClass("accountBlock") || ctx_r28.handleActiveClass("amountBlock")));
 } }
 const _c29 = function () { return ["/customer-search"]; };
 function SidenavComponent_li_68_Template(rf, ctx) { if (rf & 1) {
-    const _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵgetCurrentView"]();
+    const _r37 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "li", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "a", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function SidenavComponent_li_68_Template_a_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r38); const ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](); return ctx_r37.FunctionAccountBlock(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Customer Search ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function SidenavComponent_li_68_Template_a_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r37); const ctx_r36 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](); return ctx_r36.FunctionAccountBlock(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Account Block ");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](3, "span", 54);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
@@ -1595,109 +1597,96 @@ function SidenavComponent_li_68_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](6, _c2, ctx_r29.handleActiveClass("customer-search")));
 } }
-function SidenavComponent_a_70_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "a", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "span", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](2, "img", 55);
+const _c30 = function () { return ["/amount-block"]; };
+function SidenavComponent_li_69_Template(rf, ctx) { if (rf & 1) {
+    const _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "li", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "a", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function SidenavComponent_li_69_Template_a_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r39); const ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](); return ctx_r38.FunctionAmountBlock(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Amount Block ");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](3, "span", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](4, "Amount Block");
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](3, "span", 54);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](1, _c0, ctx_r30.handleActiveClass("amount-block")));
-} }
-const _c30 = function () { return ["/amount-block"]; };
-function SidenavComponent_li_73_Template(rf, ctx) { if (rf & 1) {
-    const _r40 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "li", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "a", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function SidenavComponent_li_73_Template_a_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r40); const ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](); return ctx_r39.FunctionAmountBlock(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Customer Search ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](3, "span", 56);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](3, _c30))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](4, _c0, ctx_r31.handleActiveClass("amount-block")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](3, _c30))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](4, _c0, ctx_r30.handleActiveClass("amount-block")));
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](6, _c2, ctx_r31.handleActiveClass("amount-block")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](6, _c2, ctx_r30.handleActiveClass("amount-block")));
 } }
-function SidenavComponent_a_75_Template(rf, ctx) { if (rf & 1) {
+function SidenavComponent_a_71_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "a", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "span", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](2, "img", 57);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](2, "img", 55);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](3, "span", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](4, "Account Closure");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](1, _c0, ctx_r32.handleActiveClass("initiate-account-closure") || ctx_r32.handleActiveClass("process-account-closure") || ctx_r32.handleActiveClass("account-closure-maintenance") || ctx_r32.handleActiveClass("charge-maintainence")));
+    const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](1, _c0, ctx_r31.handleActiveClass("initiate-account-closure") || ctx_r31.handleActiveClass("process-account-closure") || ctx_r31.handleActiveClass("account-closure-maintenance") || ctx_r31.handleActiveClass("charge-maintainence")));
 } }
 const _c31 = function () { return ["/initiate-account-closure"]; };
-function SidenavComponent_li_78_Template(rf, ctx) { if (rf & 1) {
+function SidenavComponent_li_74_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "li", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "a", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Initiate Account Closure ");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](3, "span", 58);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](3, "span", 56);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+    const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](3, _c31))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](4, _c0, ctx_r33.handleActiveClass("initiate-account-closure")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](3, _c31))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](4, _c0, ctx_r32.handleActiveClass("initiate-account-closure")));
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](6, _c2, ctx_r33.handleActiveClass("initiate-account-closure")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](6, _c2, ctx_r32.handleActiveClass("initiate-account-closure")));
 } }
 const _c32 = function () { return ["/process-account-closure"]; };
-function SidenavComponent_li_79_Template(rf, ctx) { if (rf & 1) {
+function SidenavComponent_li_75_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "li", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "a", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Process Account Closure ");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](3, "span", 59);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](3, "span", 57);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+    const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](3, _c32))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](4, _c0, ctx_r34.handleActiveClass("process-account-closure")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](3, _c32))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](4, _c0, ctx_r33.handleActiveClass("process-account-closure")));
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](6, _c2, ctx_r34.handleActiveClass("process-account-closure")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](6, _c2, ctx_r33.handleActiveClass("process-account-closure")));
 } }
 const _c33 = "/account-closure-maintenance/account-closure-summary";
 const _c34 = function () { return [_c33]; };
-function SidenavComponent_li_80_Template(rf, ctx) { if (rf & 1) {
+function SidenavComponent_li_76_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "li", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "a", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Account Closure Maintenance ");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](3, "span", 60);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](3, "span", 58);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+    const ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](3, _c34))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](4, _c0, ctx_r35.handleActiveClass("account-closure-maintenance")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](3, _c34))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](4, _c0, ctx_r34.handleActiveClass("account-closure-maintenance")));
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](6, _c2, ctx_r35.handleActiveClass("account-closure-maintenance")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](6, _c2, ctx_r34.handleActiveClass("account-closure-maintenance")));
 } }
 const _c35 = function () { return ["/charge-maintainence"]; };
-function SidenavComponent_li_81_Template(rf, ctx) { if (rf & 1) {
+function SidenavComponent_li_77_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "li", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "a", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Charge Maintenance ");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](3, "span", 61);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](3, "span", 59);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r36 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
+    const ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](3, _c35))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](4, _c0, ctx_r36.handleActiveClass("charge-maintainence")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](3, _c35))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](4, _c0, ctx_r35.handleActiveClass("charge-maintainence")));
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](6, _c2, ctx_r36.handleActiveClass("charge-maintainence")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](6, _c2, ctx_r35.handleActiveClass("charge-maintainence")));
 } }
 const _c36 = function () { return ["/dashboard"]; };
 const _c37 = function () { return ["/incoming"]; };
@@ -1711,9 +1700,9 @@ class SidenavComponent {
         this.cdr = cdr;
         this.el = el;
         this.renderer = renderer;
-        this.scrollbarOptions = { axis: 'y', theme: 'minimal-dark' };
-        this.newRoleScreenPerm = [''];
-        this.screendata = [''];
+        this.scrollbarOptions = { axis: "y", theme: "minimal-dark" };
+        this.newRoleScreenPerm = [""];
+        this.screendata = [""];
         this.screenpermissions = [];
         this.trackByRoute = _utils_track_by__WEBPACK_IMPORTED_MODULE_0__.trackByRoute;
         this.screenwisePermissions = new rxjs__WEBPACK_IMPORTED_MODULE_9__.BehaviorSubject([]);
@@ -1721,7 +1710,7 @@ class SidenavComponent {
     ngOnInit() {
         this.EnablescreenPermissions();
         setTimeout(() => {
-            const resizeObserver = new ResizeObserver(entries => {
+            const resizeObserver = new ResizeObserver((entries) => {
                 this.sidebarHeight = entries[0].target.clientHeight;
                 const hideScrollbar = this.shouldHideSideScroll();
                 if (this.isScrollbarHidden === hideScrollbar)
@@ -1729,8 +1718,8 @@ class SidenavComponent {
                 this.isScrollbarHidden = hideScrollbar;
                 this.toggleSideScrollbar(this.shouldHideSideScroll());
             });
-            resizeObserver.observe(document.getElementById('mCSB_2_container'));
-            window.addEventListener('resize', () => {
+            resizeObserver.observe(document.getElementById("mCSB_2_container"));
+            window.addEventListener("resize", () => {
                 const hideScrollbar = this.shouldHideSideScroll();
                 if (this.isScrollbarHidden === hideScrollbar)
                     return;
@@ -1739,126 +1728,129 @@ class SidenavComponent {
             });
         }, 500);
         // this.getRoleScreen();
-        // start observing a DOM node    
+        // start observing a DOM node
         // this.roleName = sessionStorage.getItem('user_role');
         // this.screenpermission = localStorage.getItem('userPermissions');
         // this.screenwisePermissions.subscribe(message => this.screenpermissions = message);
         // this.getRoleScreen();
         // this.roleName = sessionStorage.getItem('user_role');
         // this.screenpermission = localStorage.getItem('userPermissions');
-        this.layoutService.share.subscribe(val => {
+        this.layoutService.share.subscribe((val) => {
             if (val) {
                 this.lastValue = val;
             }
         });
     }
     onResize(event) {
-        this.mScrollbarService.initScrollbar('#sideMenu', {
-            axis: 'y',
-            theme: 'inset-3',
+        this.mScrollbarService.initScrollbar("#sideMenu", {
+            axis: "y",
+            theme: "inset-3",
             scrollButtons: { enable: false },
-            scrollbarPosition: 'outside',
+            scrollbarPosition: "outside",
             autoHideScrollbar: true,
             alwaysShowScrollbar: 2,
-            setHeight: 900
+            setHeight: 900,
         });
     }
     ngAfterViewInit() {
-        this.mScrollbarService.initScrollbar('#sideMenu', {
-            axis: 'y',
-            theme: 'inset-3',
+        this.mScrollbarService.initScrollbar("#sideMenu", {
+            axis: "y",
+            theme: "inset-3",
             scrollButtons: { enable: false },
-            scrollbarPosition: 'outside',
+            scrollbarPosition: "outside",
             autoHideScrollbar: true,
             alwaysShowScrollbar: 2,
-            setHeight: 900
+            setHeight: 900,
         });
     }
     getRoleScreen() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
-            this.roleService.fetchScreenData().subscribe(data => {
+            this.roleService.fetchScreenData().subscribe((data) => {
                 this.screendata = data;
-                this.screendata.push('amount block');
+                this.screendata.push("amount block");
                 // console.log(data);
                 // console.log(this.screendata);
-                this.screendata.forEach(element => {
+                this.screendata.forEach((element) => {
                     //admin
-                    if (element === 'Dashboard') {
+                    if (element === "Dashboard") {
                         //  const rolescreen = true;
                         this.dashboardscreen = true;
                         // console.log('rolescreen', rolescreen)
                     }
-                    if (element === 'Roles') {
+                    if (element === "Roles") {
                         //  const rolescreen = true;
                         this.rolescreen = true;
                         // console.log('rolescreen', rolescreen)
                     }
-                    if (element == 'Users') {
+                    if (element == "Users") {
                         this.userScreen = true;
                     }
-                    if (element === 'Audit Logs') {
+                    if (element === "Audit Logs") {
                         this.auditScreen = true;
                     }
-                    if (element === 'Password Policy') {
+                    if (element === "Password Policy") {
                         this.passPolicy = true;
                     }
-                    if (element === 'GlobalCodeMaintenance') {
+                    if (element === "GlobalCodeMaintenance") {
                         this.gcode = true;
                     }
-                    if (element === 'UserCodeMaintenance') {
+                    if (element === "UserCodeMaintenance") {
                         this.ucode = true;
                     }
-                    if (element === 'Department Id Maintenance') {
+                    if (element === "Department Id Maintenance") {
                         this.deptcodeMaint = true;
                     }
-                    if (element === 'Transaction Code Maint') {
+                    if (element === "Transaction Code Maint") {
                         this.trncodeMaint = true;
                     }
-                    if (element === 'AcumenJournal') {
+                    if (element === "AcumenJournal") {
                         this.acumenjournal = true;
                     }
-                    if (element === 'Process Monitoring') {
+                    if (element === "Process Monitoring") {
                         this.processMonitor = true;
                     }
-                    if (element === 'External Systems') {
+                    if (element === "External Systems") {
                         this.extSystem = true;
                     }
-                    if (element === 'Process Code Mapping') {
+                    if (element === "Process Code Mapping") {
                         this.processCodeMapping = true;
                     }
-                    if (element === 'Excel Mapping') {
+                    if (element === "Excel Mapping") {
                         this.excelMapping = true;
                     }
-                    if (element === 'Upload Excel') {
+                    if (element === "Upload Excel") {
                         this.uploadExcel = true;
                     }
-                    if (element === 'Process Excel') {
+                    if (element === "Process Excel") {
                         this.processExcel = true;
                     }
-                    if (element === 'Modify Excel') {
+                    if (element === "Modify Excel") {
                         this.modifyExcel = true;
                     }
-                    if (element === 'Authorize Modifications') {
+                    if (element === "Authorize Modifications") {
                         this.authModification = true;
                     }
-                    if (element === 'Customer search') {
-                        this.customerSearch = true;
+                    if (element === 'Amount Block') {
+                        this.amountBlock = true;
+                    }
+                    if (element === 'Account Block') {
+                        this.accountBlock = true;
                     }
                     //code maintenance
-                    if (element === 'Email-Management') {
+                    if (element === "Email-Management") {
                         this.emailManagement = true;
                     }
                     //account closer
-                    if (element === 'Initiate Account Closure') {
+                    if (element === "Initiate Account Closure") {
                         this.initialAccountCloser = true;
                     }
-                    if (element === 'Process Account Closure') {
+                    if (element === "Process Account Closure") {
                         this.ProcessAccountCloser = true;
                     }
-                    if (element === 'Acc Closure Maintenance') {
+                    if (element === "Acc Closure Maintenance") {
                         this.acClosermaint = true;
                     }
-                    if (element === 'Charge Maintenance') {
+                    if (element === "Charge Maintenance") {
                         this.chargeMaintenance = true;
                     }
                 });
@@ -1870,7 +1862,7 @@ class SidenavComponent {
         this.layoutService.collapseOpenSidenav();
     }
     EnablescreenPermissions() {
-        let userPermissions = JSON.parse(localStorage.getItem('userPermissions'));
+        let userPermissions = JSON.parse(localStorage.getItem("userPermissions"));
         let permissionlist = [];
         console.log(userPermissions, "UserPermission");
         if (userPermissions) {
@@ -1895,9 +1887,10 @@ class SidenavComponent {
         } //if
         // console.log("methods are ", permissionlist);
         this.screenwisePermissions.next(permissionlist);
-        this.screenwisePermissions.subscribe(message => this.screenpermissions = message);
+        this.screenwisePermissions.subscribe((message) => (this.screenpermissions = message));
         this.screenpermissions.push("Amount Block");
         console.log("screen permissions final", this.screenpermissions);
+        sessionStorage.setItem("roleScreenPermission", this.screenpermissions);
     }
     onMouseLeave() {
         this.layoutService.collapseCloseSidenav();
@@ -1925,22 +1918,22 @@ class SidenavComponent {
     toggleSideScrollbar(shouldHide) {
         try {
             console.log(`shouldhide = ${shouldHide}`);
-            document.getElementsByClassName('mCSB_draggerContainer')[0].style.display = shouldHide ? "none" : "block";
+            document.getElementsByClassName("mCSB_draggerContainer")[0].style.display = shouldHide ? "none" : "block";
         }
         catch (error) { }
     }
     toggleNav() {
-        jquery__WEBPACK_IMPORTED_MODULE_1__(this.lastValue).find('ul.subMenuCol').slideUp();
+        jquery__WEBPACK_IMPORTED_MODULE_1__(this.lastValue).find("ul.subMenuCol").slideUp();
         let el = this.el.nativeElement.querySelector(".activeSMenu");
         if (el) {
-            this.renderer.removeClass(el, 'activeSMenu');
+            this.renderer.removeClass(el, "activeSMenu");
         }
     }
     toggle() {
-        jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents('.sMenuLink').siblings().removeClass('activeSMenu');
-        jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents('.sMenuLink').siblings().find('ul.subMenuCol').slideUp();
-        jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents('.sMenuLink').toggleClass('activeSMenu');
-        jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents('.sMenuLink').find('ul.subMenuCol').slideToggle();
+        jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents(".sMenuLink").siblings().removeClass("activeSMenu");
+        jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents(".sMenuLink").siblings().find("ul.subMenuCol").slideUp();
+        jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents(".sMenuLink").toggleClass("activeSMenu");
+        jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents(".sMenuLink").find("ul.subMenuCol").slideToggle();
     }
     ngOnDestroy() {
         // this.mScrollbarService.destroy('#sideMenu');
@@ -1949,7 +1942,7 @@ class SidenavComponent {
 SidenavComponent.ɵfac = function SidenavComponent_Factory(t) { return new (t || SidenavComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_services_layout_service__WEBPACK_IMPORTED_MODULE_2__.LayoutService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_3__.RoleService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_11__.Location), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](ngx_malihu_scrollbar__WEBPACK_IMPORTED_MODULE_12__.MalihuScrollbarService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_8__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_8__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_8__.Renderer2)); };
 SidenavComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineComponent"]({ type: SidenavComponent, selectors: [["npr-sidenav"]], hostBindings: function SidenavComponent_HostBindings(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("resize", function SidenavComponent_resize_HostBindingHandler($event) { return ctx.onResize($event); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵresolveWindow"]);
-    } }, decls: 82, vars: 53, consts: [["malihu-scrollbar", ""], ["sideMenu", ""], ["menuCollapse", "", 1, "navOverlay"], [1, "sidebarCol"], [1, "sidebarLogo"], [3, "routerLink"], ["src", "assets/images/logo.png", "alt", "logo", 2, "max-width", "200px"], [1, "sidebarNavCol", "mCustomScrollbar"], ["appDropdown", "", 1, "sidebarNav"], ["routerLinkActive", "open", 1, "navItem", 3, "click"], [1, "navLink", 3, "routerLink", "ngClass"], [1, "navIcon"], ["src", "assets/images/home.svg", "alt", "..."], [1, "navText"], ["appDropdownLink", "", "routerLinkActive", "open", 1, "navItem", "sMenuLink"], ["appDropdownToggle", "", "class", "navLink", 3, "ngClass", 4, "ngIf"], [1, "submenuColMain"], ["appDropdown", "", 1, "subMenuCol"], ["appDropdownLink", "", "routerLinkActive", "open", 4, "ngIf"], ["appDropdownLink", "", "routerLinkActive", "open"], [1, "subMenuLink", 3, "routerLink", "ngClass", "click"], ["appDropdownToggle", "", 1, "navLink", 3, "ngClass"], ["src", "assets/images/security.svg", "alt", "..."], [1, "subMenuLink", 3, "routerLink", "ngClass"], [1, "customListIcon", "roleIcon", 3, "ngClass"], [1, "customListIcon", "userIcon", 3, "ngClass"], [1, "customListIcon", "auditIcon", 3, "ngClass"], [1, "customListIcon", "securityIcon", 3, "ngClass"], ["src", "assets/images/transaction.svg", "alt", "..."], [1, "subMenuLink", 3, "ngClass", "routerLink"], [1, "customListIcon", "transactionIcon", 3, "ngClass"], [1, "customListIcon", "globalIcon", 3, "ngClass"], [1, "customListIcon", "userGlIcon", 3, "ngClass"], [1, "customListIcon", "departmentIcon", 3, "ngClass"], [1, "customListIcon", "emailIcon", 3, "ngClass"], ["src", "assets/images/add-system.svg", "alt", "..."], [1, "customListIcon", "addSysIcon", 3, "ngClass"], [1, "customListIcon", "translationIcon", 3, "ngClass"], [1, "customListIcon", "ruleIcon", 3, "ngClass"], [1, "customListIcon", "mappingIcon", 3, "ngClass"], ["src", "assets/images/external-system.svg", "alt", "..."], [1, "customListIcon", "externalSystemIcon", 3, "ngClass"], [1, "customListIcon", "processCodeMappingIcon", 3, "ngClass"], [1, "customListIcon", "templateMappingIcon", 3, "ngClass"], ["src", "assets/images/upload-excel.svg", "alt", "..."], [1, "subMenuLink", 3, "routerLinkActive", "routerLink"], [1, "customListIcon", "uploadIcon", 3, "ngClass"], [1, "subMenuLink", 3, "routerLinkActive", "ngClass", "routerLink"], [1, "customListIcon", "tresuryIcon", 3, "ngClass"], [1, "customListIcon", "authorizeIcon", 3, "ngClass"], [1, "customListIcon", "rejectionIcon", 3, "ngClass"], [1, "customListIcon", "authorizeModificationIcon", 3, "ngClass"], [1, "customListIcon", "processMonitoringIcon", 3, "ngClass"], ["src", "assets/images/customer-search.svg", "alt", "..."], [1, "customListIcon", "customerSearchIcon", 3, "ngClass"], ["src", "assets/images/cash-stack.svg", "alt", "..."], [1, "customListIcon", "amountBlockIcon", 3, "ngClass"], ["src", "assets/images/inititate-account.svg", "alt", "..."], [1, "customListIcon", "initiateIcon", 3, "ngClass"], [1, "customListIcon", "processAccountClosureIcon", 3, "ngClass"], [1, "customListIcon", "accountClosureIcon", 3, "ngClass"], [1, "customListIcon", "chargeIcon", 3, "ngClass"]], template: function SidenavComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 78, vars: 52, consts: [["malihu-scrollbar", ""], ["sideMenu", ""], ["menuCollapse", "", 1, "navOverlay"], [1, "sidebarCol"], [1, "sidebarLogo"], [3, "routerLink"], ["src", "assets/images/logo.png", "alt", "logo", 2, "max-width", "200px"], [1, "sidebarNavCol", "mCustomScrollbar"], ["appDropdown", "", 1, "sidebarNav"], ["routerLinkActive", "open", 1, "navItem", 3, "click"], [1, "navLink", 3, "routerLink", "ngClass"], [1, "navIcon"], ["src", "assets/images/home.svg", "alt", "..."], [1, "navText"], ["appDropdownLink", "", "routerLinkActive", "open", 1, "navItem", "sMenuLink"], ["appDropdownToggle", "", "class", "navLink", 3, "ngClass", 4, "ngIf"], [1, "submenuColMain"], ["appDropdown", "", 1, "subMenuCol"], ["appDropdownLink", "", "routerLinkActive", "open", 4, "ngIf"], ["appDropdownLink", "", "routerLinkActive", "open"], [1, "subMenuLink", 3, "routerLink", "ngClass", "click"], ["appDropdownToggle", "", 1, "navLink", 3, "ngClass"], ["src", "assets/images/security.svg", "alt", "..."], [1, "subMenuLink", 3, "routerLink", "ngClass"], [1, "customListIcon", "roleIcon", 3, "ngClass"], [1, "customListIcon", "userIcon", 3, "ngClass"], [1, "customListIcon", "auditIcon", 3, "ngClass"], [1, "customListIcon", "securityIcon", 3, "ngClass"], ["src", "assets/images/transaction.svg", "alt", "..."], [1, "subMenuLink", 3, "ngClass", "routerLink"], [1, "customListIcon", "transactionIcon", 3, "ngClass"], [1, "customListIcon", "globalIcon", 3, "ngClass"], [1, "customListIcon", "userGlIcon", 3, "ngClass"], [1, "customListIcon", "departmentIcon", 3, "ngClass"], [1, "customListIcon", "emailIcon", 3, "ngClass"], ["src", "assets/images/add-system.svg", "alt", "..."], [1, "customListIcon", "addSysIcon", 3, "ngClass"], [1, "customListIcon", "translationIcon", 3, "ngClass"], [1, "customListIcon", "ruleIcon", 3, "ngClass"], [1, "customListIcon", "mappingIcon", 3, "ngClass"], ["src", "assets/images/external-system.svg", "alt", "..."], [1, "customListIcon", "externalSystemIcon", 3, "ngClass"], [1, "customListIcon", "processCodeMappingIcon", 3, "ngClass"], [1, "customListIcon", "templateMappingIcon", 3, "ngClass"], ["src", "assets/images/upload-excel.svg", "alt", "..."], [1, "subMenuLink", 3, "routerLinkActive", "routerLink"], [1, "customListIcon", "uploadIcon", 3, "ngClass"], [1, "subMenuLink", 3, "routerLinkActive", "ngClass", "routerLink"], [1, "customListIcon", "tresuryIcon", 3, "ngClass"], [1, "customListIcon", "authorizeIcon", 3, "ngClass"], [1, "customListIcon", "rejectionIcon", 3, "ngClass"], [1, "customListIcon", "authorizeModificationIcon", 3, "ngClass"], [1, "customListIcon", "processMonitoringIcon", 3, "ngClass"], ["src", "assets/images/cash-stack.svg", "alt", "..."], [1, "customListIcon", "customerSearchIcon", 3, "ngClass"], ["src", "assets/images/inititate-account.svg", "alt", "..."], [1, "customListIcon", "initiateIcon", 3, "ngClass"], [1, "customListIcon", "processAccountClosureIcon", 3, "ngClass"], [1, "customListIcon", "accountClosureIcon", 3, "ngClass"], [1, "customListIcon", "chargeIcon", 3, "ngClass"]], template: function SidenavComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "section", 0, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](3, "div", 3);
@@ -2046,25 +2039,18 @@ SidenavComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_8_
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](66, "div", 16);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](67, "ul", 17);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](68, SidenavComponent_li_68_Template, 4, 8, "li", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](69, SidenavComponent_li_69_Template, 4, 8, "li", 18);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](69, "li", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](70, SidenavComponent_a_70_Template, 5, 3, "a", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](71, "div", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](72, "ul", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](73, SidenavComponent_li_73_Template, 4, 8, "li", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](74, "li", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](75, SidenavComponent_a_75_Template, 5, 3, "a", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](76, "div", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](77, "ul", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](78, SidenavComponent_li_78_Template, 4, 8, "li", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](79, SidenavComponent_li_79_Template, 4, 8, "li", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](80, SidenavComponent_li_80_Template, 4, 8, "li", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](81, SidenavComponent_li_81_Template, 4, 8, "li", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](70, "li", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](71, SidenavComponent_a_71_Template, 5, 3, "a", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](72, "div", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](73, "ul", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](74, SidenavComponent_li_74_Template, 4, 8, "li", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](75, SidenavComponent_li_75_Template, 4, 8, "li", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](76, SidenavComponent_li_76_Template, 4, 8, "li", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](77, SidenavComponent_li_77_Template, 4, 8, "li", 18);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
@@ -2074,9 +2060,9 @@ SidenavComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_8_
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](43, _c36));
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](42, _c36));
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](44, _c36))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](45, _c0, ctx.handleActiveClass("dashboard")));
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](43, _c36))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](44, _c0, ctx.handleActiveClass("dashboard")));
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](6);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.screenpermissions.indexOf("Roles") > -1 || ctx.screenpermissions.indexOf("Users") > -1 || ctx.screenpermissions.indexOf("Audit Logs") > -1 || ctx.screenpermissions.indexOf("Security Policy") > -1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
@@ -2110,9 +2096,9 @@ SidenavComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_8_
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.screenpermissions.indexOf("Rule Mapping") > -1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](47, _c37))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](48, _c0, ctx.handleActiveClass("incoming")));
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](46, _c37))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](47, _c0, ctx.handleActiveClass("incoming")));
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](50, _c38))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](51, _c0, ctx.handleActiveClass("outgoing")));
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction0"](49, _c38))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](50, _c0, ctx.handleActiveClass("outgoing")));
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.screenpermissions.indexOf("External System") > -1 || ctx.screenpermissions.indexOf("Process Code Mapping") > -1 || ctx.screenpermissions.indexOf("Template Mapping") > -1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
@@ -2136,12 +2122,10 @@ SidenavComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_8_
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.screenpermissions.indexOf("Process Monitoring") > -1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.screenpermissions.indexOf("Customer Search") > -1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.screenpermissions.indexOf("Account Block") > -1 || ctx.screenpermissions.indexOf("Amount Block") > -1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.screenpermissions.indexOf("Customer Search") > -1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.screenpermissions.indexOf("Amount Block") > -1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.screenpermissions.indexOf("Account Block") > -1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.screenpermissions.indexOf("Amount Block") > -1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.screenpermissions.indexOf("Initiate Account Closure") > -1 || ctx.screenpermissions.indexOf("Process Account Closure") > -1 || ctx.screenpermissions.indexOf("Account Closure Maintenance") > -1 || ctx.screenpermissions.indexOf("Charge Maintenance") > -1);
@@ -2154,15 +2138,15 @@ SidenavComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_8_
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx.screenpermissions.indexOf("Charge Maintenance") > -1);
     } }, directives: [ngx_malihu_scrollbar__WEBPACK_IMPORTED_MODULE_12__.MalihuScrollbarDirective, _directives_menu_collapse_directive__WEBPACK_IMPORTED_MODULE_4__.MenuCollapseDirective, _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouterLinkWithHref, _directives_dropdown_directive__WEBPACK_IMPORTED_MODULE_5__.AppDropdownDirective, _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouterLinkActive, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgClass, _directives_dropdown_link_directive__WEBPACK_IMPORTED_MODULE_6__.DropdownLinkDirective, _angular_common__WEBPACK_IMPORTED_MODULE_11__.NgIf, _directives_dropdown_anchor_directive__WEBPACK_IMPORTED_MODULE_7__.DropdownAnchorDirective], styles: ["a[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNpZGVuYXYuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxlQUFBO0FBQ0oiLCJmaWxlIjoic2lkZW5hdi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImF7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuIl19 */"], data: { animation: [
-            (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.trigger)('slideInOut', [
-                (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.transition)(':enter', [
-                    (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.style)({ transform: 'translateY(-100%)' }),
-                    (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.animate)('200ms ease-in', (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.style)({ transform: 'translateY(0%)' }))
+            (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.trigger)("slideInOut", [
+                (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.transition)(":enter", [
+                    (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.style)({ transform: "translateY(-100%)" }),
+                    (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.animate)("200ms ease-in", (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.style)({ transform: "translateY(0%)" })),
                 ]),
-                (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.transition)(':leave', [
-                    (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.animate)('200ms ease-in', (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.style)({ transform: 'translateY(-100%)' }))
-                ])
-            ])
+                (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.transition)(":leave", [
+                    (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.animate)("200ms ease-in", (0,_angular_animations__WEBPACK_IMPORTED_MODULE_14__.style)({ transform: "translateY(-100%)" })),
+                ]),
+            ]),
         ] } });
 
 
@@ -2625,164 +2609,213 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: '',
-        redirectTo: 'session/login',
-        pathMatch: 'full'
+        path: "",
+        redirectTo: "session/login",
+        pathMatch: "full",
     },
     {
-        path: 'session',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_crypto-js_index_js"), __webpack_require__.e("default-node_modules_ngx-spinner___ivy_ngcc___fesm2015_ngx-spinner_js-src_app_shared_services-95cfea"), __webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_mjs"), __webpack_require__.e("src_app_views_auth_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/auth/login/login.module */ 33794)).then(m => m.LoginModule),
+        path: "session",
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_crypto-js_index_js"), __webpack_require__.e("default-node_modules_ngx-spinner___ivy_ngcc___fesm2015_ngx-spinner_js-src_app_shared_services-95cfea"), __webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_mjs"), __webpack_require__.e("src_app_views_auth_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/auth/login/login.module */ 33794)).then((m) => m.LoginModule),
     },
     {
-        path: 'forget-password',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_crypto-js_index_js"), __webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_forget-password_forget-password_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/forget-password/forget-password.module */ 82352)).then(m => m.ForgetPasswordModule),
-    }, {
-        path: '',
+        path: "forget-password",
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_crypto-js_index_js"), __webpack_require__.e("default-node_modules_ng-otp-input_fesm2015_ng-otp-input_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_forget-password_forget-password_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/forget-password/forget-password.module */ 82352)).then((m) => m.ForgetPasswordModule),
+    },
+    {
+        path: "",
         component: src_npr_components_layout_layout_component__WEBPACK_IMPORTED_MODULE_0__.LayoutComponent,
-        canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
+        // canActivate: [AuthGuard],
         children: [
             {
-                path: 'dashboard',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_dashboard_dashboard-analytics_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/dashboard/dashboard-analytics.module */ 11164)).then(m => m.DashboardAnalyticsModule),
-            }, {
-                path: 'roles',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_views_roles_roles_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/roles/roles.module */ 57445)).then(m => m.RolesModule),
-            }, {
-                path: 'addSystem',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-node_modules_ngx-spinner___ivy_ngcc___fesm2015_ngx-spinner_js-src_app_shared_services-95cfea"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_addSystem_add-system_add-system_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/addSystem/add-system/add-system.module */ 18396)).then(m => m.AddSystemModule),
+                path: "dashboard",
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_dashboard_dashboard-analytics_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/dashboard/dashboard-analytics.module */ 11164)).then((m) => m.DashboardAnalyticsModule),
             },
             {
-                path: 'addSystem/summary',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-node_modules_ngx-spinner___ivy_ngcc___fesm2015_ngx-spinner_js-src_app_shared_services-95cfea"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_addSystem_add-system_add-system_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/addSystem/add-system/add-system.module */ 18396)).then(m => m.AddSystemModule),
+                path: "roles",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_views_roles_roles_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/roles/roles.module */ 57445)).then((m) => m.RolesModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
             },
             {
-                path: 'audit-logs',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("default-node_modules_jspdf-autotable_dist_jspdf_plugin_autotable_js"), __webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-closure-serv-3fd946"), __webpack_require__.e("src_app_views_audit-logs_audit-logs_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/audit-logs/audit-logs.module */ 46847)).then(m => m.AuditLogsModule),
+                path: "addSystem",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-node_modules_ngx-spinner___ivy_ngcc___fesm2015_ngx-spinner_js-src_app_shared_services-95cfea"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_addSystem_add-system_add-system_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/addSystem/add-system/add-system.module */ 18396)).then((m) => m.AddSystemModule),
+                // canActivate: [AuthGuard],
             },
             {
-                path: 'change-password',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_crypto-js_index_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_change-password_change-password_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/change-password/change-password.module */ 87015)).then(m => m.ChangePasswordModule),
+                path: "addSystem/summary",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-node_modules_ngx-spinner___ivy_ngcc___fesm2015_ngx-spinner_js-src_app_shared_services-95cfea"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_addSystem_add-system_add-system_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/addSystem/add-system/add-system.module */ 18396)).then((m) => m.AddSystemModule),
+                // canActivate: [AuthGuard],
             },
             {
-                path: 'profile',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_views_profile_profile_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/profile/profile.module */ 38323)).then(m => m.ProfileModule),
+                path: "audit-logs",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("default-node_modules_jspdf-autotable_dist_jspdf_plugin_autotable_js"), __webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-closure-serv-3fd946"), __webpack_require__.e("src_app_views_audit-logs_audit-logs_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/audit-logs/audit-logs.module */ 46847)).then((m) => m.AuditLogsModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
             },
             {
-                path: 'process-monitoring',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_process-monitoring_process-monitoring_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/process-monitoring/process-monitoring.module */ 63420)).then(m => m.ProcessMonitoringModule),
-            }, {
-                path: 'security-policy',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_views_security-policy_security-policy_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/security-policy/security-policy.module */ 88185)).then(m => m.SecurityPolicyModule),
+                path: "change-password",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_crypto-js_index_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_change-password_change-password_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/change-password/change-password.module */ 87015)).then((m) => m.ChangePasswordModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
+            },
+            {
+                path: "profile",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_views_profile_profile_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/profile/profile.module */ 38323)).then((m) => m.ProfileModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
+            },
+            {
+                path: "process-monitoring",
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_process-monitoring_process-monitoring_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/process-monitoring/process-monitoring.module */ 63420)).then((m) => m.ProcessMonitoringModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
+            },
+            {
+                path: "security-policy",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_views_security-policy_security-policy_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/security-policy/security-policy.module */ 88185)).then((m) => m.SecurityPolicyModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
             },
             // {
             //   path: 'summary',
             //   loadChildren: () => import('./views/security-policy/security-policy.module').then(m => m.SecurityPolicyModule),
             // },
             {
-                path: 'createrule',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-src_app_shared_services_add-system_service_ts-src_app_shared_services_rule_service_ts-68dfbf"), __webpack_require__.e("src_app_views_rule_rule_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/rule/rule.module */ 11784)).then(m => m.RuleModule),
-            }, {
-                path: 'external-system',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("src_app_views_file-upload-maintenance_file-upload-maintenance_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/file-upload-maintenance/file-upload-maintenance.module */ 99776)).then(m => m.FileUploadMaintenanceModule),
-            }, {
-                path: 'system-param-maintenance',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-node_modules_rxweb_reactive-form-validators___ivy_ngcc___fesm2015_rxweb-reactive-form-0ffb67"), __webpack_require__.e("src_app_views_system-param-maintenance_system-param-maintenance_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/system-param-maintenance/system-param-maintenance.module */ 76464)).then(m => m.SystemParamMaintenanceModule),
-            }, {
-                path: 'file-upload',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("default-node_modules_jspdf-autotable_dist_jspdf_plugin_autotable_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_file-upload_file-upload_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/file-upload/file-upload.module */ 9775)).then(m => m.FileUploadModule),
-            }, {
-                path: 'process-account-closure',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("src_app_views_process-account-closure_process-account-closure_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/process-account-closure/process-account-closure.module */ 39382)).then(m => m.ProcessAccountClosureModule),
-            }, {
-                path: 'new-external-system',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_new-external-system_new-external-system_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/new-external-system/new-external-system.module */ 66679)).then(m => m.NewExternalSystemModule),
-            }, {
-                path: 'initiate-account-closure',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("default-node_modules_jspdf-autotable_dist_jspdf_plugin_autotable_js"), __webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-closure-serv-3fd946"), __webpack_require__.e("src_app_views_initiate-account-closure_initiate-account-closure_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/initiate-account-closure/initiate-account-closure.module */ 69628)).then(m => m.InitiateAccountClosureModule),
+                path: "createrule",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-src_app_shared_services_add-system_service_ts-src_app_shared_services_rule_service_ts-68dfbf"), __webpack_require__.e("src_app_views_rule_rule_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/rule/rule.module */ 11784)).then((m) => m.RuleModule),
+                // canActivate: [AuthGuard],
             },
             {
-                path: 'initiate-account-closure/create',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("default-node_modules_jspdf-autotable_dist_jspdf_plugin_autotable_js"), __webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-closure-serv-3fd946"), __webpack_require__.e("src_app_views_initiate-account-closure_initiate-account-closure_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/initiate-account-closure/initiate-account-closure.module */ 69628)).then(m => m.InitiateAccountClosureModule),
-            }, {
-                path: 'email-management',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-blocking-ser-99fde2"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_email-management_email-management_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/email-management/email-management.module */ 81089)).then(m => m.EmailManagementModule),
+                path: "external-system",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("src_app_views_file-upload-maintenance_file-upload-maintenance_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/file-upload-maintenance/file-upload-maintenance.module */ 99776)).then((m) => m.FileUploadMaintenanceModule),
             },
             {
-                path: 'email-management/create',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-blocking-ser-99fde2"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_email-management_email-management_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/email-management/email-management.module */ 81089)).then(m => m.EmailManagementModule),
-            }, {
-                path: 'customer-search',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-blocking-ser-99fde2"), __webpack_require__.e("default-src_app_views_customer-search_customer-search_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/customer-search/customer-search.module */ 9208)).then(m => m.CustomerSearchModule),
+                path: "system-param-maintenance",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-node_modules_rxweb_reactive-form-validators___ivy_ngcc___fesm2015_rxweb-reactive-form-0ffb67"), __webpack_require__.e("src_app_views_system-param-maintenance_system-param-maintenance_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/system-param-maintenance/system-param-maintenance.module */ 76464)).then((m) => m.SystemParamMaintenanceModule),
             },
             {
-                path: 'authorize-modification',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_authorize-modification_authorize-modification_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/authorize-modification/authorize-modification.module */ 49136)).then(m => m.AuthorizeModificationModule),
-            }, {
-                path: 'account-closure-maintenance',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_account-closure-maintenance_account-closure-maintenance_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/account-closure-maintenance/account-closure-maintenance.module */ 95521)).then(m => m.AccountClosureMaintenanceModule),
+                path: "file-upload",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("default-node_modules_jspdf-autotable_dist_jspdf_plugin_autotable_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_file-upload_file-upload_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/file-upload/file-upload.module */ 9775)).then((m) => m.FileUploadModule),
+                // canActivate: [AuthGuard],
             },
             {
-                path: 'account-closure-maintenance/account-closure-summary',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_account-closure-maintenance_account-closure-maintenance_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/account-closure-maintenance/account-closure-maintenance.module */ 95521)).then(m => m.AccountClosureMaintenanceModule),
-            }, {
-                path: 'excel-mapping',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("src_app_views_excel-mapping_excel-mapping_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/excel-mapping/excel-mapping.module */ 18745)).then(m => m.ExcelMappingModule),
-            }, {
-                path: 'rule-mapping',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-src_app_shared_services_add-system_service_ts-src_app_shared_services_rule_service_ts-68dfbf"), __webpack_require__.e("src_app_views_rule-mapping_rule-mapping_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/rule-mapping/rule-mapping.module */ 8690)).then(m => m.RuleMappingModule),
+                path: "process-account-closure",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("src_app_views_process-account-closure_process-account-closure_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/process-account-closure/process-account-closure.module */ 39382)).then((m) => m.ProcessAccountClosureModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
             },
             {
-                path: 'charge-maintainence',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_rxweb_reactive-form-validators___ivy_ngcc___fesm2015_rxweb-reactive-form-0ffb67"), __webpack_require__.e("src_app_views_charge-maintainenece_charge-maintainenece_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/charge-maintainenece/charge-maintainenece.module */ 90988)).then(m => m.ChargeMaintaineneceModule),
+                path: "new-external-system",
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_new-external-system_new-external-system_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/new-external-system/new-external-system.module */ 66679)).then((m) => m.NewExternalSystemModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
             },
             {
-                path: 'rule-translation',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-src_app_shared_services_add-system_service_ts-src_app_shared_services_rule_service_ts-68dfbf"), __webpack_require__.e("src_app_views_rule-translation_rule-translation_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/rule-translation/rule-translation.module */ 80646)).then(m => m.RuleTranslationModule),
-            }, {
-                path: 'users',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_users_users_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/users/users.module */ 51557)).then(m => m.UsersModule),
+                path: "initiate-account-closure",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("default-node_modules_jspdf-autotable_dist_jspdf_plugin_autotable_js"), __webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-closure-serv-3fd946"), __webpack_require__.e("src_app_views_initiate-account-closure_initiate-account-closure_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/initiate-account-closure/initiate-account-closure.module */ 69628)).then((m) => m.InitiateAccountClosureModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
             },
             {
-                path: 'authorize-cash-payment',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_authorize-cash-payment_authorize-cash-payments_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/authorize-cash-payment/authorize-cash-payments.module */ 96653)).then(m => m.AuthorizeCashPaymentsModule),
+                path: "initiate-account-closure/create",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("default-node_modules_jspdf-autotable_dist_jspdf_plugin_autotable_js"), __webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-closure-serv-3fd946"), __webpack_require__.e("src_app_views_initiate-account-closure_initiate-account-closure_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/initiate-account-closure/initiate-account-closure.module */ 69628)).then((m) => m.InitiateAccountClosureModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
             },
             {
-                path: 'sql-data',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_jspdf-autotable_dist_jspdf_plugin_autotable_js"), __webpack_require__.e("src_app_views_banzpay_banzpay-sql-data_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/banzpay/banzpay-sql-data.module */ 37158)).then(m => m.BanzpaySqlDataModule),
+                path: "email-management",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-blocking-ser-99fde2"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_email-management_email-management_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/email-management/email-management.module */ 81089)).then((m) => m.EmailManagementModule),
+                // canActivate: [AuthGuard],
             },
             {
-                path: 'amount-block',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-blocking-ser-99fde2"), __webpack_require__.e("default-src_app_views_customer-search_customer-search_module_ts"), __webpack_require__.e("src_app_views_amount-block_amount-block_amount-block_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/amount-block/amount-block/amount-block.module */ 35612)).then(m => m.AmountBlockModule),
+                path: "email-management/create",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-blocking-ser-99fde2"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_email-management_email-management_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/email-management/email-management.module */ 81089)).then((m) => m.EmailManagementModule),
+                // canActivate: [AuthGuard],
             },
             {
-                path: 'accountBlocking',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_account-blocking_account-block_account-block_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/account-blocking/account-block/account-block.module */ 2991)).then(m => m.AccountBlockModule),
+                path: "customer-search",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-blocking-ser-99fde2"), __webpack_require__.e("default-src_app_views_customer-search_customer-search_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/customer-search/customer-search.module */ 9208)).then((m) => m.CustomerSearchModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
             },
             {
-                path: 'incoming',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "default-src_app_views_incoming_incoming_incoming_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/incoming/incoming/incoming.module */ 50764)).then(m => m.IncomingModule),
+                path: "authorize-modification",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_authorize-modification_authorize-modification_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/authorize-modification/authorize-modification.module */ 49136)).then((m) => m.AuthorizeModificationModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
             },
             {
-                path: 'outgoing',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_views_incoming_incoming_incoming_module_ts"), __webpack_require__.e("src_app_views_outgoing_outgoing_outgoing_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/outgoing/outgoing/outgoing.module */ 78426)).then(m => m.OutgoingModule),
+                path: "account-closure-maintenance",
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_account-closure-maintenance_account-closure-maintenance_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/account-closure-maintenance/account-closure-maintenance.module */ 95521)).then((m) => m.AccountClosureMaintenanceModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
             },
-        ]
-    }, {
-        path: '**',
-        redirectTo: 'dashboard'
-    }
+            {
+                path: "account-closure-maintenance/account-closure-summary",
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_account-closure-maintenance_account-closure-maintenance_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/account-closure-maintenance/account-closure-maintenance.module */ 95521)).then((m) => m.AccountClosureMaintenanceModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
+            },
+            {
+                path: "excel-mapping",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("src_app_views_excel-mapping_excel-mapping_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/excel-mapping/excel-mapping.module */ 18745)).then((m) => m.ExcelMappingModule),
+                // canActivate: [AuthGuard],
+            },
+            {
+                path: "rule-mapping",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-src_app_shared_services_add-system_service_ts-src_app_shared_services_rule_service_ts-68dfbf"), __webpack_require__.e("src_app_views_rule-mapping_rule-mapping_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/rule-mapping/rule-mapping.module */ 8690)).then((m) => m.RuleMappingModule),
+                // canActivate: [AuthGuard],
+            },
+            {
+                path: "charge-maintainence",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_rxweb_reactive-form-validators___ivy_ngcc___fesm2015_rxweb-reactive-form-0ffb67"), __webpack_require__.e("src_app_views_charge-maintainenece_charge-maintainenece_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/charge-maintainenece/charge-maintainenece.module */ 90988)).then((m) => m.ChargeMaintaineneceModule),
+                // canActivate: [AuthGuard],
+            },
+            {
+                path: "rule-translation",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-src_app_shared_services_add-system_service_ts-src_app_shared_services_rule_service_ts-68dfbf"), __webpack_require__.e("src_app_views_rule-translation_rule-translation_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/rule-translation/rule-translation.module */ 80646)).then((m) => m.RuleTranslationModule),
+                // canActivate: [AuthGuard],
+            },
+            {
+                path: "users",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-node_modules_ng-select_ng-select_fesm2015_ng-20c43d"), __webpack_require__.e("default-node_modules_file-saver_dist_FileSaver_min_js-node_modules_xlsx_xlsx_js"), __webpack_require__.e("common"), __webpack_require__.e("src_app_views_users_users_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/users/users.module */ 51557)).then((m) => m.UsersModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
+            },
+            {
+                path: "authorize-cash-payment",
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_authorize-cash-payment_authorize-cash-payments_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/authorize-cash-payment/authorize-cash-payments.module */ 96653)).then((m) => m.AuthorizeCashPaymentsModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
+            },
+            {
+                path: "sql-data",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_jspdf-autotable_dist_jspdf_plugin_autotable_js"), __webpack_require__.e("src_app_views_banzpay_banzpay-sql-data_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/banzpay/banzpay-sql-data.module */ 37158)).then((m) => m.BanzpaySqlDataModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
+            },
+            {
+                path: "amount-block",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular-datatables_index_js-src_app_shared_services_account-blocking-ser-99fde2"), __webpack_require__.e("default-src_app_views_customer-search_customer-search_module_ts"), __webpack_require__.e("src_app_views_amount-block_amount-block_amount-block_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/amount-block/amount-block/amount-block.module */ 35612)).then((m) => m.AmountBlockModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
+            },
+            {
+                path: "accountBlocking",
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_views_account-blocking_account-block_account-block_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/account-blocking/account-block/account-block.module */ 2991)).then((m) => m.AccountBlockModule),
+                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
+            },
+            {
+                path: "incoming",
+                loadChildren: () => __webpack_require__.e(/*! import() */ "default-src_app_views_incoming_incoming_incoming_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./views/incoming/incoming/incoming.module */ 50764)).then((m) => m.IncomingModule),
+                // canActivate: [AuthGuard],
+            },
+            {
+                path: "outgoing",
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_views_incoming_incoming_incoming_module_ts"), __webpack_require__.e("src_app_views_outgoing_outgoing_outgoing_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/outgoing/outgoing/outgoing.module */ 78426)).then((m) => m.OutgoingModule),
+            },
+        ],
+    },
+    {
+        path: "**",
+        redirectTo: "dashboard",
+    },
 ];
 class AppRoutingModule {
 }
 AppRoutingModule.ɵfac = function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); };
 AppRoutingModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
-AppRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_2__.CanDeactivateGuard], imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule.forRoot(routes, {
+AppRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_2__.CanDeactivateGuard], imports: [[
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule.forRoot(routes, {
                 // preloadingStrategy: PreloadAllModules,
                 useHash: true,
-                scrollPositionRestoration: 'enabled',
-                relativeLinkResolution: 'corrected',
-                anchorScrolling: 'enabled'
-            })], _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule] });
+                scrollPositionRestoration: "enabled",
+                relativeLinkResolution: "corrected",
+                anchorScrolling: "enabled",
+            }),
+        ], _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule] }); })();
 
 
@@ -2993,13 +3026,12 @@ class AuthGuard {
         this.router = router;
         this.jwtAuth = jwtAuth;
     }
-    canActivate(route, state) {
-        return this._check();
-    }
+    // canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    //   return this._check();
+    // }
     _check() {
         // Check the authentication status
-        return this.jwtAuth.check()
-            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.switchMap)((authenticated) => {
+        return this.jwtAuth.check().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.switchMap)((authenticated) => {
             console.log("check status", authenticated);
             // If the user is not authenticated...
             if (!authenticated) {
@@ -3013,6 +3045,230 @@ class AuthGuard {
             // Allow the access
             return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(true);
         }));
+    }
+    canActivate(route, state) {
+        console.log("route " + route.url.toString());
+        console.log("state " + state);
+        this.roleUrl = route.url.toString();
+        // this.userType = sessionStorage.getItem("userTypeAuthGuard");
+        this.roleInfo = sessionStorage.getItem("roleScreenPermission");
+        this.roles = this.roleInfo.split(",");
+        console.log(this.roleInfo);
+        console.log("roleUrl--- ", this.roleUrl);
+        console.log("roles--- ", this.roles);
+        // console.log("Checking url", state.url);
+        if (this.roleUrl == "users" && this.roles.includes("Users")) {
+            return true;
+        }
+        else if (this.roleUrl == "roles" && this.roles.includes("Roles")) {
+            return true;
+        }
+        else if (this.roleUrl == "audit-logs" &&
+            this.roles.includes("Audit Logs")) {
+            return true;
+        }
+        else if (this.roleUrl == "security-policy" &&
+            this.roles.includes("Security Policy")) {
+            return true;
+        }
+        else if (this.roleUrl == "authorize-cash-payment" &&
+            this.roles.includes("Authorize Cash Payments")) {
+            return true;
+        }
+        else if ((this.roleUrl == "transaction-code-summary" ||
+            this.roleUrl == "transaction-code-new" ||
+            this.roleUrl == "transaction-code-edit") &&
+            this.roles.includes("Transaction Code Maintenance")) {
+            return true;
+        }
+        else if ((this.roleUrl == "global-acc-maintenance-summary" ||
+            this.roleUrl == "global-acc-maintenance-new" ||
+            this.roleUrl == "global-gl-edit" ||
+            this.roleUrl == "global-ac-edit") &&
+            this.roles.includes("Global Account Restriction")) {
+            return true;
+        }
+        else if ((this.roleUrl == "user-gl-acc-maintenance-summary" ||
+            this.roleUrl == "user-gl-acc-maintenance-new" ||
+            this.roleUrl == "user-gl-edit" ||
+            this.roleUrl == "user-ac-edit") &&
+            this.roles.includes("User Account Restriction")) {
+            return true;
+        }
+        else if ((this.roleUrl == "dept-id-maintenance-summary" ||
+            this.roleUrl == "dept-id-maintenance-new" ||
+            this.roleUrl == "transaction-code-edit") &&
+            this.roles.includes("Department ID Maintenance")) {
+            return true;
+        }
+        else if (this.roleUrl == "create" &&
+            this.roles.includes("Email-Management")) {
+            return true;
+        }
+        else if ((this.roleUrl == "summary" || this.roleUrl == "addSystem") &&
+            this.roles.includes("Add System")) {
+            return true;
+        }
+        else if ((this.roleUrl == "summary" ||
+            this.roleUrl == "create") &&
+            this.roles.includes("Rule translation")) {
+            return true;
+        }
+        else if ((this.roleUrl == "list" ||
+            this.roleUrl == "create") &&
+            this.roles.includes("Create Rule")) {
+            return true;
+        }
+        else if ((this.roleUrl == "summary" ||
+            this.roleUrl == "create" ||
+            this.roleUrl == "conversion") &&
+            this.roles.includes("Rule Mapping")) {
+            return true;
+        }
+        else if ((this.roleUrl == "extSys-summary" ||
+            this.roleUrl == "extSys-new" ||
+            this.roleUrl == "extSys-edit") &&
+            this.roles.includes("External System")) {
+            return true;
+        }
+        else if ((this.roleUrl == "processCodeMapping" ||
+            this.roleUrl == "processCodeMappingNew" ||
+            this.roleUrl == "processCodeMappingEdit") &&
+            this.roles.includes("Process Code Mapping")) {
+            return true;
+        }
+        else if ((this.roleUrl == "excel-mapping-new" ||
+            this.roleUrl == "excel-mapping-edit") &&
+            this.roles.includes("Template Mapping")) {
+            return true;
+        }
+        else if (this.roleUrl == "upload-excel" &&
+            this.roles.includes("Upload Excel")) {
+            return true;
+        }
+        else if (this.roleUrl == "authorize_excel" &&
+            this.roles.includes("Authorize Excel")) {
+            return true;
+        }
+        else if (this.roleUrl == "rejection_queue" &&
+            this.roles.includes("Rejection Queue")) {
+            return true;
+        }
+        else if (this.roleUrl == "authorize-modification" &&
+            this.roles.includes("Authorize Modification")) {
+            return true;
+        }
+        else if (this.roleUrl == "treasuryReference" &&
+            this.roles.includes("Treasury Reference")) {
+            return true;
+        }
+        else if (this.roleUrl == "process-monitoring" &&
+            this.roles.includes("Process Monitoring")) {
+            return true;
+        }
+        else if (this.roleUrl == "customer-search" &&
+            this.roles.includes("Account Block")) {
+            return true;
+        }
+        else if (this.roleUrl == "initiate-account-closure" &&
+            this.roles.includes("Initiate Account Closure")) {
+            return true;
+        }
+        else if (this.roleUrl == "process-account-closure" &&
+            this.roles.includes("Process Account Closure")) {
+            return true;
+        }
+        else if (this.roleUrl == "account-closure-maintenance" &&
+            this.roles.includes("Account Closure Maintenance")) {
+            return true;
+        }
+        else if ((this.roleUrl == "charge-maintainence" || this.roleUrl == "create") &&
+            this.roles.includes("Charge Maintenance")) {
+            return true;
+        }
+        else if (this.roleUrl == "amount-block" &&
+            this.roles.includes("Amount Block")) {
+            return true;
+        }
+        // else if (
+        //   this.roleUrl == "upload-excel" &&
+        //   this.roles.includes("File Upload")
+        // ) {
+        //   return true;
+        // }
+        // else if (this.roleUrl == "workflowQueue" && this.roles.includes("WFQ")) {
+        //   return true;
+        // } else if (this.roleUrl == "commonDetails" && this.roles.includes("CM")) {
+        //   return true;
+        // } else if (
+        //   this.roleUrl == "mdaVerification" &&
+        //   this.roles.includes("WFRM")
+        // ) {
+        //   return true;
+        // } else if (this.roleUrl == "mdaVerification" && this.roles.includes("QR")) {
+        //   return true;
+        // } else if (
+        //   this.roleUrl == "mdaVerification" &&
+        //   this.roles.includes("QRS")
+        // ) {
+        //   return true;
+        // } else if (this.roleUrl == "securityPolicy" && this.roles.includes("SP")) {
+        //   return true;
+        // }
+        // // Commented by Shilpa Sree on 24/09/2020, IssueId: 0000739
+        // // else if (this.roleUrl == "mdaVerification" && this.roles.includes("RP")) {
+        // //   return true;
+        // // }
+        // else if (this.roleUrl == "mdaVerification" && this.roles.includes("RM")) {
+        //   return true;
+        // }
+        // // Changed from RC to RP by Shilpa Sree on 24/09/2020, IssueId: 0000739
+        // else if (
+        //   this.roleUrl == "reportConfiguration" &&
+        //   this.roles.includes("RP")
+        // ) {
+        //   return true;
+        // } else if (this.roleUrl == "ExcelMapping" && this.roles.includes("EXM")) {
+        //   return true;
+        // } else if (this.roleUrl == "ExcelUpload" && this.roles.includes("EXU")) {
+        //   return true;
+        // } else if (
+        //   this.roleUrl == "ExcelProcessing" &&
+        //   this.roles.includes("EXP")
+        // ) {
+        //   return true;
+        // } else if (this.roleUrl == "maintanance" && this.roles.includes("EXTSM")) {
+        //   return true;
+        // } else if (
+        //   this.roleUrl == "mapping-nonoracle" &&
+        //   this.roles.includes("EXTSNO")
+        // ) {
+        //   return true;
+        // } else if (
+        //   this.roleUrl == "mapping-oracle" &&
+        //   this.roles.includes("EXTSO")
+        // ) {
+        //   return true;
+        // } else if (this.roleUrl == "refresh" && this.roles.includes("EXTSR")) {
+        //   return true;
+        // } else if (this.roleUrl == "Authorization" && this.roles.includes("UAS")) {
+        //   return true;
+        // } else if (this.roleUrl == "ExtSysList" && this.roles.includes("EXMT")) {
+        //   return true;
+        // } else if (this.roleUrl == "ExtSumamry" && this.roles.includes("EXS")) {
+        //   return true;
+        // } else if (
+        //   this.roleUrl.includes("reportAuthor") &&
+        //   this.roles.includes("RA")
+        // ) {
+        //   return true;
+        // }
+        else {
+            alert("You dont have permission to access this page!");
+            console.log("You dont have permission to access this page!");
+            console.log("loginissuereproduce");
+            this.router.navigate(["/login"]);
+        }
     }
 }
 AuthGuard.ɵfac = function AuthGuard_Factory(t) { return new (t || AuthGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_services_jwt_auth_service__WEBPACK_IMPORTED_MODULE_0__.JwtAuthService)); };
@@ -4409,8 +4665,8 @@ const environment = {
     //ACC_CLOSER_URL: 'https://10.137.145.90:8443/medianAccountClosure'//account closer new
     // MEDIAN_URL: 'https://10.137.160.96:8443/medianv2',
     // ACC_CLOSER_URL: 'https://10.137.160.96:8443/medianv2'//account closer new
-    //Currently Using Ports 
-    MEDIAN_URL: 'http://192.168.0.14:8081/medianv2',
+    //Currently Using Ports
+    MEDIAN_URL: "http://192.168.0.14:8081/medianv2",
     //  MEDIAN_URL : 'http://localhost:9191',
     //ACC_CLOSER_URL: 'http://localhost:9192'
     // MEDIAN_URL: 'http://192.168.0.14:9003/medianBanzpay',

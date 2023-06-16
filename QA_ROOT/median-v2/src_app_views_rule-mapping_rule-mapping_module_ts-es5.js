@@ -890,19 +890,19 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "option", 28);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, "--Please select--");
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, " --Please select-- ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "option", 29);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](5, " Incoming ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](5, "Incoming");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](6, "option", 30);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](7, " Outgoing ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](7, "Outgoing");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
 
@@ -1854,12 +1854,6 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, "Default value");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "span", 12);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, "*");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
         }
       }
@@ -1971,7 +1965,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](23, "div", 45);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](24, RuleMappingCreateComponent_div_62_ng_container_2_label_24_Template, 4, 0, "label", 46);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](24, RuleMappingCreateComponent_div_62_ng_container_2_label_24_Template, 2, 0, "label", 46);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](25, "div", 44);
 
@@ -7235,33 +7229,33 @@
       /* harmony import */
 
 
-      var src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! src/app/shared/guards/can-deactivate.guard */
-      50215);
-      /* harmony import */
-
-
-      var _conversion_conversion_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _conversion_conversion_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./conversion/conversion.component */
       74982);
       /* harmony import */
 
 
-      var _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./rule-mapping-create/rule-mapping-create.component */
       7622);
       /* harmony import */
 
 
-      var _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./rule-mapping-details/rule-mapping-details.component */
       50531);
       /* harmony import */
 
 
-      var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./rule-mapping/rule-mapping.component */
       10245);
+      /* harmony import */
+
+
+      var src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! src/app/shared/guards/auth.guard */
+      87618);
       /* harmony import */
 
 
@@ -7270,19 +7264,21 @@
       2316);
 
       var routes = [{
-        path: 'create',
-        component: _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_2__.RuleMappingCreateComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "create",
+        component: _rule_mapping_create_rule_mapping_create_component__WEBPACK_IMPORTED_MODULE_1__.RuleMappingCreateComponent // canActivate: [AuthGuard],
+
       }, {
-        path: 'edit/:mapId',
-        component: _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_3__.RuleMappingDetailsComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "edit/:mapId",
+        component: _rule_mapping_details_rule_mapping_details_component__WEBPACK_IMPORTED_MODULE_2__.RuleMappingDetailsComponent // canActivate: [AuthGuard],
+
       }, {
-        path: 'summary',
-        component: _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_4__.RuleMappingComponent
+        path: "summary",
+        component: _rule_mapping_rule_mapping_component__WEBPACK_IMPORTED_MODULE_3__.RuleMappingComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_4__.AuthGuard]
       }, {
-        path: 'conversion',
-        component: _conversion_conversion_component__WEBPACK_IMPORTED_MODULE_1__.ConversionComponent
+        path: "conversion",
+        component: _conversion_conversion_component__WEBPACK_IMPORTED_MODULE_0__.ConversionComponent // canActivate: [AuthGuard],
+
       }];
 
       var _RuleMappingRoutingModule = /*#__PURE__*/_createClass(function _RuleMappingRoutingModule() {

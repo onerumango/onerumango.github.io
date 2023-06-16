@@ -563,11 +563,7 @@ class LoginComponent {
                                             }
                                             // ---------- Password Policy Implementation (END) ----------
                                             if (this.variable[0] === "true") {
-                                                this.progress = true;
-                                                this.toggle();
-                                                this.toastService.successMessage("OTP sent successfully to " + this.email, "");
-                                                this.loginProcessing = false;
-                                                this.verifyOTP = true;
+                                                this.roles(this.user);
                                             }
                                             else {
                                                 if (this.variable[0] ===
@@ -615,6 +611,9 @@ class LoginComponent {
                 if (remainingRolesToFetch === 0) {
                     this.isUserRoleAuthorized();
                 }
+                else {
+                    console.log("roles----");
+                }
             }),
                 (error) => { };
         }
@@ -632,7 +631,12 @@ class LoginComponent {
             });
         }
         else {
-            this.showToast();
+            console.log("else part isUserRoleAuthorized--- ");
+            this.progress = true;
+            this.toggle();
+            this.toastService.successMessage("OTP sent successfully to " + this.email, "");
+            this.loginProcessing = false;
+            this.verifyOTP = true;
         }
         this.arrayOfAuthStatus = [];
     }
@@ -826,7 +830,8 @@ class LoginComponent {
                                                         `${this.finalDiff}` +
                                                         " day(s)", "");
                                                 }
-                                                this.roles(this.user);
+                                                // this.roles(this.user);
+                                                this.showToast();
                                             }
                                         });
                                     });
@@ -893,11 +898,12 @@ class LoginComponent {
         }
     }
     showToast() {
-        this.ls.setItem("currentUser", this.userEntity.userId);
+        var _a, _b, _c, _d;
+        this.ls.setItem("currentUser", (_a = this.userEntity) === null || _a === void 0 ? void 0 : _a.userId);
         this.ls.setItem("userobj", this.userEntity);
         this.ls.setItem("usercompleteobj", this.userEntity);
-        if (this.userEntity.logoutTime === null &&
-            this.userEntity.passwordGenerationType === "Auto") {
+        if (((_b = this.userEntity) === null || _b === void 0 ? void 0 : _b.logoutTime) === null &&
+            ((_c = this.userEntity) === null || _c === void 0 ? void 0 : _c.passwordGenerationType) === "Auto") {
             this.router.navigate(["/change-password"]);
         }
         else {
@@ -905,7 +911,7 @@ class LoginComponent {
         }
         this.iziToast.show({
             title: `DTB - Median!`,
-            message: `Welcome, ${this.userEntity.userId}!`,
+            message: `Welcome, ${(_d = this.userEntity) === null || _d === void 0 ? void 0 : _d.userId}!`,
             image: "assets/images/user.png",
             icon: "ico ico-success",
             // theme:"dark",

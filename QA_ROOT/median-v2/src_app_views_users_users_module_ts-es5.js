@@ -4881,6 +4881,8 @@
             this.userObj.roleForUser = this.userForm.get('newRoleForUser').value;
             this.userObj.roleForUser.toString();
             this.userObj.creatorId = this.user_id;
+            this.userObj.activeStatus = 'A';
+            this.userObj.loginStatus = 0;
             this.userObj.statusForUser = this.userForm.get('statusForUser').value;
             this.userObj.department = this.userForm.get('department').value;
             this.userObj.intime = this.userForm.get('intime').value;

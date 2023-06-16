@@ -206,7 +206,14 @@ class ChangePasswordComponent {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.compose([_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.pattern(this.passwordRegex),
                     _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.maxLength(this.maxPass),
                     _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.minLength(this.minPass)])]),
-            confirmPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required),
+            confirmPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControl('', [
+                _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required,
+                _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.compose([
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.pattern(this.passwordRegex),
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.maxLength(this.maxPass),
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.minLength(this.minPass),
+                ]),
+            ]),
             otp: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required),
         });
         this.apiService.fetchSecurityPolicyService().subscribe(resp => {
@@ -287,7 +294,14 @@ class ChangePasswordComponent {
                 newPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.compose([_angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.pattern(this.passwordRegex), _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.maxLength(this.maxPass),
                         _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.minLength(this.minPass)])]),
                 oldPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required),
-                confirmPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required)
+                confirmPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControl("", [
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.required,
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.compose([
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.pattern(this.passwordRegex),
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.maxLength(this.maxPass),
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_6__.Validators.minLength(this.minPass),
+                    ]),
+                ]),
             });
         });
         console.log(this.minPass, this.maxPass);
@@ -487,7 +501,7 @@ ChangePasswordComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.hide2);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.userForm.get("confirmPassword").touched && !ctx.userForm.get("confirmPassword").valid);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.userForm.get("confirmPassword").invalid && (ctx.userForm.get("confirmPassword").dirty || ctx.userForm.get("confirmPassword").touched));
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.userForm.get("confirmPassword").hasError("minlength"));
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);

@@ -1,5 +1,5 @@
 (function () {
-  function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+  function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
   function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
@@ -20237,7 +20237,25 @@
             this.externalSystem.department = externalSystemFormValue.department;
             this.externalSystem.modifiedBy = this.currentUser;
             this.apiService.saveExternalSystem(this.externalSystem).subscribe(function (res) {
+              var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+
               _this12.externalSystemResponse = res;
+
+              _this12.apiService.setexcelSummaryData({
+                authStatus: (_a = _this12.externalSystemResponse) === null || _a === void 0 ? void 0 : _a.authStatus,
+                authorizedBy: (_b = _this12.externalSystemResponse) === null || _b === void 0 ? void 0 : _b.authorizedBy,
+                authorizedTime: (_c = _this12.externalSystemResponse) === null || _c === void 0 ? void 0 : _c.authorizedTime,
+                department: (_d = _this12.externalSystemResponse) === null || _d === void 0 ? void 0 : _d.department,
+                extSysCode: (_e = _this12.externalSystemResponse) === null || _e === void 0 ? void 0 : _e.extSysCode,
+                extSysName: (_f = _this12.externalSystemResponse) === null || _f === void 0 ? void 0 : _f.extSysName,
+                modifiedBy: (_g = _this12.externalSystemResponse) === null || _g === void 0 ? void 0 : _g.modifiedBy,
+                modifiedTime: (_h = _this12.externalSystemResponse) === null || _h === void 0 ? void 0 : _h.modifiedTime,
+                recordStatus: (_j = _this12.externalSystemResponse) === null || _j === void 0 ? void 0 : _j.recordStatus,
+                verifiedOnce: (_k = _this12.externalSystemResponse) === null || _k === void 0 ? void 0 : _k.verifiedOnce,
+                version: (_l = _this12.externalSystemResponse) === null || _l === void 0 ? void 0 : _l.version
+              });
+
+              console.log(externalSystemFormValue);
 
               if (_this12.externalSystemResponse != null) {
                 _this12.editFlag = true;
@@ -20273,6 +20291,7 @@
             var _this13 = this;
 
             this.apiService.getExternalSystemSummry().subscribe(function (summaryData) {
+              console.log(summaryData);
               _this13.externalSystemSummry = summaryData;
               var retrievedObject = localStorage.getItem('externalSystemSummry');
               _this13.externalSystemSummry = JSON.parse(retrievedObject); // console.log("this.externalSystemSummry", this.externalSystemSummry);
@@ -20295,19 +20314,23 @@
           value: function onSubmitOfEdit(externalSystemFormValue) {
             var _this14 = this;
 
-            this.externalSystemUpdate.extSysCode = externalSystemFormValue.extSysCode;
-            this.externalSystemUpdate.extSysName = externalSystemFormValue.extSysName;
-            this.externalSystemUpdate.department = externalSystemFormValue.department;
+            var _a, _b, _c, _d, _e, _f, _g;
+
+            console.log(externalSystemFormValue.extSysCode);
+            this.externalSystemUpdate.extSysCode = externalSystemFormValue === null || externalSystemFormValue === void 0 ? void 0 : externalSystemFormValue.extSysCode;
+            this.externalSystemUpdate.extSysName = externalSystemFormValue === null || externalSystemFormValue === void 0 ? void 0 : externalSystemFormValue.extSysName;
+            this.externalSystemUpdate.department = externalSystemFormValue === null || externalSystemFormValue === void 0 ? void 0 : externalSystemFormValue.department;
             this.externalSystemUpdate.modifiedBy = this.currentUser;
             this.getExternalSystemSummry();
-            this.externalSystemUpdate.authStatus = this.externalSystemSummry.authStatus;
-            this.externalSystemUpdate.authorizedBy = this.externalSystemSummry.authorizedBy;
-            this.externalSystemUpdate.authorizedTime = this.externalSystemSummry.authorizedTime;
-            this.externalSystemUpdate.modifiedTime = this.externalSystemSummry.modifiedTime;
-            this.externalSystemUpdate.recordStatus = this.externalSystemSummry.recordStatus;
+            console.log(this.externalSystemSummry);
+            this.externalSystemUpdate.authStatus = (_a = this.externalSystemSummry) === null || _a === void 0 ? void 0 : _a.authStatus;
+            this.externalSystemUpdate.authorizedBy = (_b = this.externalSystemSummry) === null || _b === void 0 ? void 0 : _b.authorizedBy;
+            this.externalSystemUpdate.authorizedTime = (_c = this.externalSystemSummry) === null || _c === void 0 ? void 0 : _c.authorizedTime;
+            this.externalSystemUpdate.modifiedTime = (_d = this.externalSystemSummry) === null || _d === void 0 ? void 0 : _d.modifiedTime;
+            this.externalSystemUpdate.recordStatus = (_e = this.externalSystemSummry) === null || _e === void 0 ? void 0 : _e.recordStatus;
             this.externalSystemUpdate.updatedBy = this.currentUser;
-            this.externalSystemUpdate.verifiedOnce = this.externalSystemSummry.verifiedOnce;
-            this.externalSystemUpdate.version = this.externalSystemSummry.version;
+            this.externalSystemUpdate.verifiedOnce = (_f = this.externalSystemSummry) === null || _f === void 0 ? void 0 : _f.verifiedOnce;
+            this.externalSystemUpdate.version = (_g = this.externalSystemSummry) === null || _g === void 0 ? void 0 : _g.version;
             this.apiService.updateexternalSystemEdit(this.externalSystemUpdate).subscribe(function (data) {
               _this14.externalSystemSummry = data;
 
@@ -21558,51 +21581,51 @@
       /* harmony import */
 
 
-      var src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! src/app/shared/guards/can-deactivate.guard */
-      50215);
-      /* harmony import */
-
-
-      var _external_system_edit_external_system_edit_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _external_system_edit_external_system_edit_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./external-system-edit/external-system-edit.component */
       97643);
       /* harmony import */
 
 
-      var _external_system_new_external_system_new_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _external_system_new_external_system_new_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./external-system-new/external-system-new.component */
       94057);
       /* harmony import */
 
 
-      var _external_system_external_system_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _external_system_external_system_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./external-system/external-system.component */
       4846);
       /* harmony import */
 
 
-      var _process_code_mapping_edit_process_code_mapping_edit_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _process_code_mapping_edit_process_code_mapping_edit_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./process-code-mapping-edit/process-code-mapping-edit.component */
       9598);
       /* harmony import */
 
 
-      var _process_code_mapping_new_process_code_mapping_new_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _process_code_mapping_new_process_code_mapping_new_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./process-code-mapping-new/process-code-mapping-new.component */
       8972);
       /* harmony import */
 
 
-      var _process_code_mapping_process_code_mapping_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _process_code_mapping_process_code_mapping_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ./process-code-mapping/process-code-mapping.component */
       87873);
       /* harmony import */
 
 
-      var _treasury_reference_treasury_reference_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _treasury_reference_treasury_reference_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ./treasury-reference/treasury-reference.component */
       42034);
+      /* harmony import */
+
+
+      var src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! src/app/shared/guards/auth.guard */
+      87618);
       /* harmony import */
 
 
@@ -21611,31 +21634,33 @@
       2316);
 
       var routes = [{
-        path: 'extSys-summary',
-        component: _external_system_external_system_component__WEBPACK_IMPORTED_MODULE_3__.ExternalSystemComponent
+        path: "extSys-summary",
+        component: _external_system_external_system_component__WEBPACK_IMPORTED_MODULE_2__.ExternalSystemComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard]
       }, {
-        path: 'extSys-new',
-        component: _external_system_new_external_system_new_component__WEBPACK_IMPORTED_MODULE_2__.ExternalSystemNewComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "extSys-new",
+        component: _external_system_new_external_system_new_component__WEBPACK_IMPORTED_MODULE_1__.ExternalSystemNewComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard]
       }, {
-        path: 'extSys-edit',
-        component: _external_system_edit_external_system_edit_component__WEBPACK_IMPORTED_MODULE_1__.ExternalSystemEditComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "extSys-edit",
+        component: _external_system_edit_external_system_edit_component__WEBPACK_IMPORTED_MODULE_0__.ExternalSystemEditComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard]
       }, {
-        path: 'processCodeMapping',
-        component: _process_code_mapping_process_code_mapping_component__WEBPACK_IMPORTED_MODULE_6__.ProcessCodeMappingComponent
+        path: "processCodeMapping",
+        component: _process_code_mapping_process_code_mapping_component__WEBPACK_IMPORTED_MODULE_5__.ProcessCodeMappingComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard]
       }, {
-        path: 'processCodeMappingNew',
-        component: _process_code_mapping_new_process_code_mapping_new_component__WEBPACK_IMPORTED_MODULE_5__.ProcessCodeMappingNewComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "processCodeMappingNew",
+        component: _process_code_mapping_new_process_code_mapping_new_component__WEBPACK_IMPORTED_MODULE_4__.ProcessCodeMappingNewComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard]
       }, {
-        path: 'processCodeMappingEdit',
-        component: _process_code_mapping_edit_process_code_mapping_edit_component__WEBPACK_IMPORTED_MODULE_4__.ProcessCodeMappingEditComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "processCodeMappingEdit",
+        component: _process_code_mapping_edit_process_code_mapping_edit_component__WEBPACK_IMPORTED_MODULE_3__.ProcessCodeMappingEditComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard]
       }, {
-        path: 'treasuryReference',
-        component: _treasury_reference_treasury_reference_component__WEBPACK_IMPORTED_MODULE_7__.TreasuryReferenceComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "treasuryReference",
+        component: _treasury_reference_treasury_reference_component__WEBPACK_IMPORTED_MODULE_6__.TreasuryReferenceComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__.AuthGuard]
       }];
 
       var _FileUploadMaintenanceRoutingModule = /*#__PURE__*/_createClass(function _FileUploadMaintenanceRoutingModule() {

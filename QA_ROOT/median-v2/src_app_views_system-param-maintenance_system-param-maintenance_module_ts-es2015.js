@@ -3196,7 +3196,7 @@ class GeneralLedgerEditComponent {
     }
 }
 GeneralLedgerEditComponent.ɵfac = function GeneralLedgerEditComponent_Factory(t) { return new (t || GeneralLedgerEditComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_local_store_service__WEBPACK_IMPORTED_MODULE_2__.LocalStoreService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder)); };
-GeneralLedgerEditComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: GeneralLedgerEditComponent, selectors: [["npr-general-ledger-edit"]], decls: 44, vars: 14, consts: [[1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mb-3", "mb-md-4"], [1, "smTitle"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], [1, "row", "g-2"], ["class", "col-lg-6", 4, "ngIf"], [1, "col-lg-6"], [1, "radio", "radioStyle"], ["id", "radio-2", "formControlName", "permission", "type", "radio", "value", "Disallow"], ["for", "radio-2", 1, "radio-label"], [1, "row", "gy-2"], [1, "col-lg-4", "col-sm-6"], [1, "colorRed"], ["formArrayName", "medGlobalGlCodeDetails"], ["class", "row gy-2 input_wrap", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-sm"], [1, "row", "g-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], ["id", "radio-1", "formControlName", "permission", "value", "Allow", "type", "radio"], ["for", "radio-1", 1, "radio-label"], [1, "row", "gy-2", "input_wrap", 3, "formGroupName"], ["id", "transactionDes", "required", "", "formControlName", "glCode", "type", "text", "placeholder", "GL Code", "nprSpecialCharacter", "", "value", "", 1, "form-control", 3, "readonly", "keydown"], ["id", "transactionCode", "formControlName", "glDesc", "placeholder", "GL Code Description", "nprSpecialCharacter", "", "value", "", "required", "", 1, "form-control", 3, "readonly", "keydown"], [2, "margin-top", "10px"], [1, "deleteIcon2", 3, "ngClass", "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "dbCardStyle"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], [1, "fa", "fa-edit", "faClass"], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["aria-hidden", "true", 1, "fa", "fa-files-o", "faRecordStatus"], [1, "csCardStyleIcon", "csCardStyleIconBg4"], [1, "fa", "fa-check-square-o", "faClassChecker"], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], [1, "fa", "fa-shield", "faClassFirstTimeAuth"], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/authorize.svg", "alt", "...", 1, "modImage"], ["src", "assets/images/modification.svg", "alt", "...", 1, "modImage"]], template: function GeneralLedgerEditComponent_Template(rf, ctx) { if (rf & 1) {
+GeneralLedgerEditComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: GeneralLedgerEditComponent, selectors: [["npr-general-ledger-edit"]], decls: 44, vars: 14, consts: [[1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mb-3", "mb-md-4"], [1, "smTitle"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], [1, "row", "g-2"], ["class", "col-lg-6", 4, "ngIf"], [1, "col-lg-6"], [1, "radio", "radioStyle"], ["id", "radio-2", "formControlName", "permission", "type", "radio", "value", "Disallow"], ["for", "radio-2", 1, "radio-label"], [1, "row", "gy-2"], [1, "col-lg-4", "col-sm-6"], [1, "colorRed"], ["formArrayName", "medGlobalGlCodeDetails"], ["class", "row gy-2 input_wrap", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-sm"], [1, "row", "g-3"], ["class", "col-auto", 4, "ngIf"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], ["id", "radio-1", "formControlName", "permission", "value", "Allow", "type", "radio"], ["for", "radio-1", 1, "radio-label"], [1, "row", "gy-2", "input_wrap", 3, "formGroupName"], ["id", "transactionDes", "required", "", "formControlName", "glCode", "type", "text", "placeholder", "GL Code", "nprSpecialCharacter", "", "value", "", 1, "form-control", 3, "readonly", "keydown"], ["id", "transactionCode", "formControlName", "glDesc", "placeholder", "GL Code Description", "value", "", "required", "", 1, "form-control", 3, "readonly", "keydown"], [2, "margin-top", "10px"], [1, "deleteIcon2", 3, "ngClass", "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], [1, "addIcon", "primarybg", 3, "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "dbCardStyle"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], [1, "fa", "fa-edit", "faClass"], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["aria-hidden", "true", 1, "fa", "fa-files-o", "faRecordStatus"], [1, "csCardStyleIcon", "csCardStyleIconBg4"], [1, "fa", "fa-check-square-o", "faClassChecker"], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], [1, "fa", "fa-shield", "faClassFirstTimeAuth"], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/authorize.svg", "alt", "...", 1, "modImage"], ["src", "assets/images/modification.svg", "alt", "...", 1, "modImage"]], template: function GeneralLedgerEditComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "form", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "h2", 2);
@@ -4802,7 +4802,7 @@ function GlobalGccAcNewComponent_div_15_div_24_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "input", 79);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "input", 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "input", 49);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "div", 50);
@@ -5221,7 +5221,7 @@ function GlobalGccAcNewComponent_div_16_div_24_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "input", 79);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "input", 80);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "input", 49);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "div", 50);
@@ -5510,7 +5510,7 @@ function GlobalGccAcNewComponent_div_16_div_43_Template(rf, ctx) { if (rf & 1) {
 } }
 function GlobalGccAcNewComponent_div_16_Template(rf, ctx) { if (rf & 1) {
     const _r107 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 80);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "form", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "div", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "h2", 21);
@@ -5613,8 +5613,8 @@ function GlobalGccAcNewComponent_div_16_Template(rf, ctx) { if (rf & 1) {
 function GlobalGccAcNewComponent_div_17_div_9_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "input", 84);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "label", 85);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "input", 83);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "label", 84);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Allow");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -5622,8 +5622,8 @@ function GlobalGccAcNewComponent_div_17_div_9_Template(rf, ctx) { if (rf & 1) {
 } }
 function GlobalGccAcNewComponent_div_17_div_11_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "input", 86);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "label", 87);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "input", 85);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "label", 86);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Disallow");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -5635,10 +5635,10 @@ function GlobalGccAcNewComponent_div_17_div_25_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "br");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "br");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "input", 88);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "input", 87);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "input", 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "input", 88);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "div", 50);
@@ -5927,7 +5927,7 @@ function GlobalGccAcNewComponent_div_17_div_44_Template(rf, ctx) { if (rf & 1) {
 } }
 function GlobalGccAcNewComponent_div_17_Template(rf, ctx) { if (rf & 1) {
     const _r138 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 82);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "form", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "div", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "h2", 21);
@@ -5941,7 +5941,7 @@ function GlobalGccAcNewComponent_div_17_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](9, GlobalGccAcNewComponent_div_17_div_9_Template, 5, 0, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "div", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](11, GlobalGccAcNewComponent_div_17_div_11_Template, 4, 0, "div", 83);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](11, GlobalGccAcNewComponent_div_17_div_11_Template, 4, 0, "div", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -6032,8 +6032,8 @@ function GlobalGccAcNewComponent_div_17_Template(rf, ctx) { if (rf & 1) {
 function GlobalGccAcNewComponent_div_18_div_9_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "input", 84);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "label", 85);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "input", 83);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "label", 84);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Allow");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -6045,8 +6045,8 @@ function GlobalGccAcNewComponent_div_18_div_9_Template(rf, ctx) { if (rf & 1) {
 } }
 function GlobalGccAcNewComponent_div_18_div_11_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "input", 86);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "label", 87);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "input", 85);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "label", 86);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Disallow ");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -6062,10 +6062,10 @@ function GlobalGccAcNewComponent_div_18_div_25_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "br");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "br");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "input", 88);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "input", 87);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "input", 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "input", 88);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "div", 50);
@@ -6354,7 +6354,7 @@ function GlobalGccAcNewComponent_div_18_div_44_Template(rf, ctx) { if (rf & 1) {
 } }
 function GlobalGccAcNewComponent_div_18_Template(rf, ctx) { if (rf & 1) {
     const _r169 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 90);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 89);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "form", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "div", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "h2", 21);
@@ -6368,7 +6368,7 @@ function GlobalGccAcNewComponent_div_18_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](9, GlobalGccAcNewComponent_div_18_div_9_Template, 5, 1, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "div", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](11, GlobalGccAcNewComponent_div_18_div_11_Template, 4, 1, "div", 83);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](11, GlobalGccAcNewComponent_div_18_div_11_Template, 4, 1, "div", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -6459,8 +6459,8 @@ function GlobalGccAcNewComponent_div_18_Template(rf, ctx) { if (rf & 1) {
 function GlobalGccAcNewComponent_div_19_div_9_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "input", 84);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "label", 85);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "input", 83);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "label", 84);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Allow");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -6468,8 +6468,8 @@ function GlobalGccAcNewComponent_div_19_div_9_Template(rf, ctx) { if (rf & 1) {
 } }
 function GlobalGccAcNewComponent_div_19_div_11_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "input", 86);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "label", 87);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "input", 85);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "label", 86);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "Disallow");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -6481,10 +6481,10 @@ function GlobalGccAcNewComponent_div_19_div_25_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "br");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "br");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "input", 88);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "input", 87);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "input", 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](7, "input", 88);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "div", 50);
@@ -6773,7 +6773,7 @@ function GlobalGccAcNewComponent_div_19_div_44_Template(rf, ctx) { if (rf & 1) {
 } }
 function GlobalGccAcNewComponent_div_19_Template(rf, ctx) { if (rf & 1) {
     const _r200 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 82);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "form", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "div", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "h2", 21);
@@ -6787,7 +6787,7 @@ function GlobalGccAcNewComponent_div_19_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](9, GlobalGccAcNewComponent_div_19_div_9_Template, 5, 0, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "div", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](11, GlobalGccAcNewComponent_div_19_div_11_Template, 4, 0, "div", 83);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](11, GlobalGccAcNewComponent_div_19_div_11_Template, 4, 0, "div", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -7743,7 +7743,7 @@ class GlobalGccAcNewComponent {
     }
 }
 GlobalGccAcNewComponent.ɵfac = function GlobalGccAcNewComponent_Factory(t) { return new (t || GlobalGccAcNewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_1__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](src_app_shared_services_toast_service__WEBPACK_IMPORTED_MODULE_2__.ToastService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__.ChangeDetectorRef)); };
-GlobalGccAcNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: GlobalGccAcNewComponent, selectors: [["npr-global-gcc-ac-new"]], decls: 20, vars: 12, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "tabStyleCol"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs"], ["class", "nav-item", "role", "presentation", 4, "ngIf"], [1, "dbCardStyle"], ["id", "myTabContent", 1, "tab-content"], ["class", "tab-pane fade show active", "id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 4, "ngIf"], ["class", "tab-pane fade", "id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 4, "ngIf"], ["class", "tab-pane fade", "id", "profile", "role", "tabpanel", "aria-labelledby", "profile-tab", 4, "ngIf"], ["class", "tab-pane fade show active", "id", "profile", "role", "tabpanel", "aria-labelledby", "profile-tab", 4, "ngIf"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-bs-toggle", "tab", "data-bs-target", "#home", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", 3, "click"], ["id", "home-tab", "data-bs-toggle", "tab", "data-bs-target", "#home", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], ["id", "profile-tab", "data-bs-toggle", "tab", "data-bs-target", "#profile", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link", "active"], ["id", "profile-tab", "data-bs-toggle", "tab", "data-bs-target", "#profile", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link", 3, "click"], ["id", "profile-tab", "data-bs-toggle", "tab", "data-bs-target", "#profile", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link"], ["id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 1, "tab-pane", "fade", "show", "active"], [1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mb-3", "mb-md-4"], [1, "smTitle"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], [1, "row", "g-2"], [1, "col-lg-6"], [1, "radio", "radioStyle"], ["id", "radio-1", "formControlName", "permission", "value", "Allow", "required", "", "type", "radio"], ["for", "radio-1", 1, "radio-label"], ["class", "col-lg-6", 4, "ngIf"], [1, "row", "gy-2"], [1, "col-lg-4", "col-sm-6"], [1, "colorRed"], ["formArrayName", "medGlobalGlCodeDetails"], ["class", "row gy-2", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-sm"], [1, "row", "g-3"], [1, "col-auto"], [1, "addIcon", "primarybg", 3, "ngClass", "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], ["id", "radio-2", "formControlName", "permission", "required", "", "type", "radio", "value", "Disallow"], ["for", "radio-2", 1, "radio-label"], [1, "row", "gy-2", 3, "formGroupName"], ["id", "transactionDes", "required", "", "formControlName", "glCode", "type", "text", "placeholder", "GL Code", "nprSpecialCharacter", "", "value", "", 1, "form-control", 3, "readonly"], ["id", "transactionCode", "formControlName", "glDesc", "placeholder", "GL Code Description", "nprSpecialCharacter", "", "value", "", "required", "", 1, "form-control", 3, "readonly"], [2, "margin-top", "10px"], [1, "deleteIcon2", 3, "ngClass", "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], [1, "fa", "fa-edit", "faClass"], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["aria-hidden", "true", 1, "fa", "fa-files-o", "faRecordStatus"], [1, "csCardStyleIcon", "csCardStyleIconBg4"], [1, "fa", "fa-check-square-o", "faClassChecker"], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], [1, "fa", "fa-shield", "faClassFirstTimeAuth"], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/authorize.svg", "alt", "...", 1, "modImage"], ["src", "assets/images/modification.svg", "alt", "...", 1, "modImage"], ["id", "transactionDes", "required", "", "formControlName", "glCode", "type", "text", "placeholder", "GL Code", "value", "", 1, "form-control", 3, "readonly"], ["id", "transactionCode", "formControlName", "glDesc", "placeholder", "GL Code Description", "value", "", "required", "", 1, "form-control", 3, "readonly"], ["id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 1, "tab-pane", "fade"], ["id", "profile", "role", "tabpanel", "aria-labelledby", "profile-tab", 1, "tab-pane", "fade"], ["class", "radio radioStyle", 4, "ngIf"], ["id", "radio-3", "formControlName", "permission", "value", "Allow", "required", "", "type", "radio"], ["for", "radio-3", 1, "radio-label"], ["id", "radio-4", "formControlName", "permission", "type", "radio", "required", "", "value", "Disallow"], ["for", "radio-4", 1, "radio-label"], ["id", "transactionDes", "required", "", "formControlName", "glCode", "type", "text", "placeholder", "Account Class", "value", "", 1, "form-control", 3, "readonly"], ["id", "transactionCode", "formControlName", "glDesc", "placeholder", "Account Class Description", "value", "", "required", "", 1, "form-control", 3, "readonly"], ["id", "profile", "role", "tabpanel", "aria-labelledby", "profile-tab", 1, "tab-pane", "fade", "show", "active"]], template: function GlobalGccAcNewComponent_Template(rf, ctx) { if (rf & 1) {
+GlobalGccAcNewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({ type: GlobalGccAcNewComponent, selectors: [["npr-global-gcc-ac-new"]], decls: 20, vars: 12, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "tabStyleCol"], ["id", "myTab", "role", "tablist", 1, "nav", "nav-tabs"], ["class", "nav-item", "role", "presentation", 4, "ngIf"], [1, "dbCardStyle"], ["id", "myTabContent", 1, "tab-content"], ["class", "tab-pane fade show active", "id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 4, "ngIf"], ["class", "tab-pane fade", "id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 4, "ngIf"], ["class", "tab-pane fade", "id", "profile", "role", "tabpanel", "aria-labelledby", "profile-tab", 4, "ngIf"], ["class", "tab-pane fade show active", "id", "profile", "role", "tabpanel", "aria-labelledby", "profile-tab", 4, "ngIf"], ["role", "presentation", 1, "nav-item"], ["id", "home-tab", "data-bs-toggle", "tab", "data-bs-target", "#home", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", 3, "click"], ["id", "home-tab", "data-bs-toggle", "tab", "data-bs-target", "#home", "type", "button", "role", "tab", "aria-controls", "home", "aria-selected", "true", 1, "nav-link", "active"], ["id", "profile-tab", "data-bs-toggle", "tab", "data-bs-target", "#profile", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link", "active"], ["id", "profile-tab", "data-bs-toggle", "tab", "data-bs-target", "#profile", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link", 3, "click"], ["id", "profile-tab", "data-bs-toggle", "tab", "data-bs-target", "#profile", "type", "button", "role", "tab", "aria-controls", "profile", "aria-selected", "false", 1, "nav-link"], ["id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 1, "tab-pane", "fade", "show", "active"], [1, "formStyle", 3, "formGroup"], [1, "titleStyle", "mb-3", "mb-md-4"], [1, "smTitle"], [1, "col-lg-4"], ["for", "roleName", 1, "formLbl"], [1, "row", "g-2"], [1, "col-lg-6"], [1, "radio", "radioStyle"], ["id", "radio-1", "formControlName", "permission", "value", "Allow", "required", "", "type", "radio"], ["for", "radio-1", 1, "radio-label"], ["class", "col-lg-6", 4, "ngIf"], [1, "row", "gy-2"], [1, "col-lg-4", "col-sm-6"], [1, "colorRed"], ["formArrayName", "medGlobalGlCodeDetails"], ["class", "row gy-2", 3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "col-sm"], [1, "row", "g-3"], [1, "col-auto"], [1, "addIcon", "primarybg", 3, "ngClass", "click"], ["src", "assets/images/plus-icon.svg", "alt", "..."], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], ["class", "col-auto", 4, "ngIf"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], ["class", "dbCardStyle", 4, "ngIf"], ["id", "radio-2", "formControlName", "permission", "required", "", "type", "radio", "value", "Disallow"], ["for", "radio-2", 1, "radio-label"], [1, "row", "gy-2", 3, "formGroupName"], ["id", "transactionDes", "required", "", "formControlName", "glCode", "type", "text", "placeholder", "GL Code", "nprSpecialCharacter", "", "value", "", 1, "form-control", 3, "readonly"], ["id", "transactionCode", "formControlName", "glDesc", "placeholder", "GL Code Description", "value", "", "required", "", 1, "form-control", 3, "readonly"], [2, "margin-top", "10px"], [1, "deleteIcon2", 3, "ngClass", "click"], ["src", "assets/images/delete-icon.svg", "alt", "..."], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnUpdate", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnAuth", 3, "click"], ["color", "primary", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], ["color", "warn", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "row"], [1, "col-sm-6", "col-md-4", "col-lg-3"], [1, "csCardStyle"], [1, "row", "g-2", "align-items-center"], [1, "csCardStyleIcon", "csCardStyleIconBg1"], [1, "fa", "fa-edit", "faClass"], [1, "col"], [1, "csCardStyleText"], [1, "csCardStyleIcon", "csCardStyleIconBg2"], ["src", "assets/images/time-stamp-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg3"], ["aria-hidden", "true", 1, "fa", "fa-files-o", "faRecordStatus"], [1, "csCardStyleIcon", "csCardStyleIconBg4"], [1, "fa", "fa-check-square-o", "faClassChecker"], [1, "csCardStyleIcon", "csCardStyleIconBg5"], ["src", "assets/images/checker-time-icon.svg", "alt", "..."], [1, "csCardStyleIcon", "csCardStyleIconBg6"], [1, "fa", "fa-shield", "faClassFirstTimeAuth"], [1, "csCardStyleIcon", "csCardStyleIconBg7"], ["src", "assets/images/authorize.svg", "alt", "...", 1, "modImage"], ["src", "assets/images/modification.svg", "alt", "...", 1, "modImage"], ["id", "transactionDes", "required", "", "formControlName", "glCode", "type", "text", "placeholder", "GL Code", "value", "", 1, "form-control", 3, "readonly"], ["id", "home", "role", "tabpanel", "aria-labelledby", "home-tab", 1, "tab-pane", "fade"], ["id", "profile", "role", "tabpanel", "aria-labelledby", "profile-tab", 1, "tab-pane", "fade"], ["class", "radio radioStyle", 4, "ngIf"], ["id", "radio-3", "formControlName", "permission", "value", "Allow", "required", "", "type", "radio"], ["for", "radio-3", 1, "radio-label"], ["id", "radio-4", "formControlName", "permission", "type", "radio", "required", "", "value", "Disallow"], ["for", "radio-4", 1, "radio-label"], ["id", "transactionDes", "required", "", "formControlName", "glCode", "type", "text", "placeholder", "Account Class", "value", "", 1, "form-control", 3, "readonly"], ["id", "transactionCode", "formControlName", "glDesc", "placeholder", "Account Class Description", "value", "", "required", "", 1, "form-control", 3, "readonly"], ["id", "profile", "role", "tabpanel", "aria-labelledby", "profile-tab", 1, "tab-pane", "fade", "show", "active"]], template: function GlobalGccAcNewComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "h2", 2);
@@ -7812,20 +7812,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "SystemParamMaintenanceRoutingModule": function() { return /* binding */ SystemParamMaintenanceRoutingModule; }
 /* harmony export */ });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/router */ 71258);
-/* harmony import */ var src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/guards/can-deactivate.guard */ 50215);
-/* harmony import */ var _department_id_maintenance_departmenrt_id_new_departmenrt_id_new_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./department-id-maintenance/departmenrt-id-new/departmenrt-id-new.component */ 64729);
-/* harmony import */ var _department_id_maintenance_department_id_maintenance_department_id_maintenance_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./department-id-maintenance/department-id-maintenance/department-id-maintenance.component */ 22263);
-/* harmony import */ var _global_gcc_ac_maintenance_ac_gl_ac_gl_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./global-gcc-ac-maintenance/ac-gl/ac-gl.component */ 48391);
-/* harmony import */ var _global_gcc_ac_maintenance_gl_ac_gl_ac_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./global-gcc-ac-maintenance/gl-ac/gl-ac.component */ 35439);
-/* harmony import */ var _global_gcc_ac_maintenance_global_gcc_ac_maintenance_global_gcc_ac_maintenance_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./global-gcc-ac-maintenance/global-gcc-ac-maintenance/global-gcc-ac-maintenance.component */ 23367);
-/* harmony import */ var _global_gcc_ac_maintenance_global_gcc_ac_new_global_gcc_ac_new_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./global-gcc-ac-maintenance/global-gcc-ac-new/global-gcc-ac-new.component */ 65252);
-/* harmony import */ var _transaction_code_maintenance_transaction_code_edit_transaction_code_edit_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./transaction-code-maintenance/transaction-code-edit/transaction-code-edit.component */ 69287);
-/* harmony import */ var _transaction_code_maintenance_transaction_code_maintenance_transaction_code_maintenance_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./transaction-code-maintenance/transaction-code-maintenance/transaction-code-maintenance.component */ 19926);
-/* harmony import */ var _transaction_code_maintenance_transaction_code_new_transaction_code_new_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./transaction-code-maintenance/transaction-code-new/transaction-code-new.component */ 90223);
-/* harmony import */ var _user_gcc_ac_maintenance_user_account_class_edit_user_account_class_edit_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user-gcc-ac-maintenance/user-account-class-edit/user-account-class-edit.component */ 58558);
-/* harmony import */ var _user_gcc_ac_maintenance_user_gcc_ac_maintenance_user_gcc_ac_maintenance_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./user-gcc-ac-maintenance/user-gcc-ac-maintenance/user-gcc-ac-maintenance.component */ 51619);
-/* harmony import */ var _user_gcc_ac_maintenance_user_gcc_ac_new_user_gcc_ac_new_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./user-gcc-ac-maintenance/user-gcc-ac-new/user-gcc-ac-new.component */ 14438);
-/* harmony import */ var _user_gcc_ac_maintenance_user_general_ledger_edit_user_general_ledger_edit_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./user-gcc-ac-maintenance/user-general-ledger-edit/user-general-ledger-edit.component */ 7847);
+/* harmony import */ var _department_id_maintenance_departmenrt_id_new_departmenrt_id_new_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./department-id-maintenance/departmenrt-id-new/departmenrt-id-new.component */ 64729);
+/* harmony import */ var _department_id_maintenance_department_id_maintenance_department_id_maintenance_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./department-id-maintenance/department-id-maintenance/department-id-maintenance.component */ 22263);
+/* harmony import */ var _global_gcc_ac_maintenance_ac_gl_ac_gl_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./global-gcc-ac-maintenance/ac-gl/ac-gl.component */ 48391);
+/* harmony import */ var _global_gcc_ac_maintenance_gl_ac_gl_ac_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./global-gcc-ac-maintenance/gl-ac/gl-ac.component */ 35439);
+/* harmony import */ var _global_gcc_ac_maintenance_global_gcc_ac_maintenance_global_gcc_ac_maintenance_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./global-gcc-ac-maintenance/global-gcc-ac-maintenance/global-gcc-ac-maintenance.component */ 23367);
+/* harmony import */ var _global_gcc_ac_maintenance_global_gcc_ac_new_global_gcc_ac_new_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./global-gcc-ac-maintenance/global-gcc-ac-new/global-gcc-ac-new.component */ 65252);
+/* harmony import */ var _transaction_code_maintenance_transaction_code_edit_transaction_code_edit_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./transaction-code-maintenance/transaction-code-edit/transaction-code-edit.component */ 69287);
+/* harmony import */ var _transaction_code_maintenance_transaction_code_maintenance_transaction_code_maintenance_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./transaction-code-maintenance/transaction-code-maintenance/transaction-code-maintenance.component */ 19926);
+/* harmony import */ var _transaction_code_maintenance_transaction_code_new_transaction_code_new_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./transaction-code-maintenance/transaction-code-new/transaction-code-new.component */ 90223);
+/* harmony import */ var _user_gcc_ac_maintenance_user_account_class_edit_user_account_class_edit_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./user-gcc-ac-maintenance/user-account-class-edit/user-account-class-edit.component */ 58558);
+/* harmony import */ var _user_gcc_ac_maintenance_user_gcc_ac_maintenance_user_gcc_ac_maintenance_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user-gcc-ac-maintenance/user-gcc-ac-maintenance/user-gcc-ac-maintenance.component */ 51619);
+/* harmony import */ var _user_gcc_ac_maintenance_user_gcc_ac_new_user_gcc_ac_new_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./user-gcc-ac-maintenance/user-gcc-ac-new/user-gcc-ac-new.component */ 14438);
+/* harmony import */ var _user_gcc_ac_maintenance_user_general_ledger_edit_user_general_ledger_edit_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./user-gcc-ac-maintenance/user-general-ledger-edit/user-general-ledger-edit.component */ 7847);
+/* harmony import */ var src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! src/app/shared/guards/auth.guard */ 87618);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
@@ -7846,66 +7846,74 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: 'transaction-code-summary',
-        component: _transaction_code_maintenance_transaction_code_maintenance_transaction_code_maintenance_component__WEBPACK_IMPORTED_MODULE_8__.TransactionCodeMaintenanceComponent
+        path: "transaction-code-summary",
+        component: _transaction_code_maintenance_transaction_code_maintenance_transaction_code_maintenance_component__WEBPACK_IMPORTED_MODULE_7__.TransactionCodeMaintenanceComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'transaction-code-new',
-        component: _transaction_code_maintenance_transaction_code_new_transaction_code_new_component__WEBPACK_IMPORTED_MODULE_9__.TransactionCodeNewComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "transaction-code-new",
+        component: _transaction_code_maintenance_transaction_code_new_transaction_code_new_component__WEBPACK_IMPORTED_MODULE_8__.TransactionCodeNewComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'transaction-code-edit',
-        component: _transaction_code_maintenance_transaction_code_edit_transaction_code_edit_component__WEBPACK_IMPORTED_MODULE_7__.TransactionCodeEditComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "transaction-code-edit",
+        component: _transaction_code_maintenance_transaction_code_edit_transaction_code_edit_component__WEBPACK_IMPORTED_MODULE_6__.TransactionCodeEditComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'global-acc-maintenance-summary',
-        component: _global_gcc_ac_maintenance_global_gcc_ac_maintenance_global_gcc_ac_maintenance_component__WEBPACK_IMPORTED_MODULE_5__.GlobalGccAcMaintenanceComponent
+        path: "global-acc-maintenance-summary",
+        component: _global_gcc_ac_maintenance_global_gcc_ac_maintenance_global_gcc_ac_maintenance_component__WEBPACK_IMPORTED_MODULE_4__.GlobalGccAcMaintenanceComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'global-acc-maintenance-new',
-        component: _global_gcc_ac_maintenance_global_gcc_ac_new_global_gcc_ac_new_component__WEBPACK_IMPORTED_MODULE_6__.GlobalGccAcNewComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "global-acc-maintenance-new",
+        component: _global_gcc_ac_maintenance_global_gcc_ac_new_global_gcc_ac_new_component__WEBPACK_IMPORTED_MODULE_5__.GlobalGccAcNewComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'global-gl-edit',
-        component: _global_gcc_ac_maintenance_gl_ac_gl_ac_component__WEBPACK_IMPORTED_MODULE_4__.GlAcComponent
+        path: "global-gl-edit",
+        component: _global_gcc_ac_maintenance_gl_ac_gl_ac_component__WEBPACK_IMPORTED_MODULE_3__.GlAcComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'global-ac-edit',
-        component: _global_gcc_ac_maintenance_ac_gl_ac_gl_component__WEBPACK_IMPORTED_MODULE_3__.AcGlComponent
+        path: "global-ac-edit",
+        component: _global_gcc_ac_maintenance_ac_gl_ac_gl_component__WEBPACK_IMPORTED_MODULE_2__.AcGlComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'user-gl-acc-maintenance-summary',
-        component: _user_gcc_ac_maintenance_user_gcc_ac_maintenance_user_gcc_ac_maintenance_component__WEBPACK_IMPORTED_MODULE_11__.UserGccAcMaintenanceComponent
+        path: "user-gl-acc-maintenance-summary",
+        component: _user_gcc_ac_maintenance_user_gcc_ac_maintenance_user_gcc_ac_maintenance_component__WEBPACK_IMPORTED_MODULE_10__.UserGccAcMaintenanceComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'user-gl-acc-maintenance-new',
-        component: _user_gcc_ac_maintenance_user_gcc_ac_new_user_gcc_ac_new_component__WEBPACK_IMPORTED_MODULE_12__.UserGccAcNewComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "user-gl-acc-maintenance-new",
+        component: _user_gcc_ac_maintenance_user_gcc_ac_new_user_gcc_ac_new_component__WEBPACK_IMPORTED_MODULE_11__.UserGccAcNewComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'user-gl-edit',
-        component: _user_gcc_ac_maintenance_user_general_ledger_edit_user_general_ledger_edit_component__WEBPACK_IMPORTED_MODULE_13__.UserGeneralLedgerEditComponent
+        path: "user-gl-edit",
+        component: _user_gcc_ac_maintenance_user_general_ledger_edit_user_general_ledger_edit_component__WEBPACK_IMPORTED_MODULE_12__.UserGeneralLedgerEditComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'user-ac-edit',
-        component: _user_gcc_ac_maintenance_user_account_class_edit_user_account_class_edit_component__WEBPACK_IMPORTED_MODULE_10__.UserAccountClassEditComponent
+        path: "user-ac-edit",
+        component: _user_gcc_ac_maintenance_user_account_class_edit_user_account_class_edit_component__WEBPACK_IMPORTED_MODULE_9__.UserAccountClassEditComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'dept-id-maintenance-summary',
-        component: _department_id_maintenance_department_id_maintenance_department_id_maintenance_component__WEBPACK_IMPORTED_MODULE_2__.DepartmentIdMaintenanceComponent
+        path: "dept-id-maintenance-summary",
+        component: _department_id_maintenance_department_id_maintenance_department_id_maintenance_component__WEBPACK_IMPORTED_MODULE_1__.DepartmentIdMaintenanceComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'dept-id-maintenance-new',
-        component: _department_id_maintenance_departmenrt_id_new_departmenrt_id_new_component__WEBPACK_IMPORTED_MODULE_1__.DepartmenrtIdNewComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "dept-id-maintenance-new",
+        component: _department_id_maintenance_departmenrt_id_new_departmenrt_id_new_component__WEBPACK_IMPORTED_MODULE_0__.DepartmenrtIdNewComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
     {
-        path: 'transaction-code-edit',
-        component: _transaction_code_maintenance_transaction_code_edit_transaction_code_edit_component__WEBPACK_IMPORTED_MODULE_7__.TransactionCodeEditComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "transaction-code-edit",
+        component: _transaction_code_maintenance_transaction_code_edit_transaction_code_edit_component__WEBPACK_IMPORTED_MODULE_6__.TransactionCodeEditComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__.AuthGuard],
     },
 ];
 class SystemParamMaintenanceRoutingModule {
@@ -9165,9 +9173,13 @@ class TransactionCodeMaintenanceComponent {
             this.operation = "verify";
             this.MedTransOperationDto.userId = transactionData.userId;
             this.MedTransOperationDto.userIdLoggedIn = this.currentUser;
+            const lsUser = localStorage.getItem("userFromLogin");
             if (result.isConfirmed === true) {
-                if (transactionData.createdBy === localStorage.getItem("userFromLogin")) {
-                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Maker Cannot Authorize Record!", icon: "error" });
+                if (transactionData.creatorId === lsUser) {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+                        text: "Maker cannot authorize the record!",
+                        icon: "error",
+                    });
                     return;
                 }
                 console.log("this is authorzation");

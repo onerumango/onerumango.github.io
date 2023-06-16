@@ -1047,14 +1047,7 @@
 
 
                               if (_this2.variable[0] === "true") {
-                                _this2.progress = true;
-
-                                _this2.toggle();
-
-                                _this2.toastService.successMessage("OTP sent successfully to " + _this2.email, "");
-
-                                _this2.loginProcessing = false;
-                                _this2.verifyOTP = true;
+                                _this2.roles(_this2.user);
                               } else {
                                 if (_this2.variable[0] === "Username or password wrong" || _this2.variable[0] === "User not found") {
                                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire("Username or Password is wrong");
@@ -1100,6 +1093,8 @@
 
                 if (remainingRolesToFetch === 0) {
                   _this3.isUserRoleAuthorized();
+                } else {
+                  console.log("roles----");
                 }
               }), function (error) {};
             };
@@ -1126,7 +1121,12 @@
                 _this4.backToLogin();
               });
             } else {
-              this.showToast();
+              console.log("else part isUserRoleAuthorized--- ");
+              this.progress = true;
+              this.toggle();
+              this.toastService.successMessage("OTP sent successfully to " + this.email, "");
+              this.loginProcessing = false;
+              this.verifyOTP = true;
             }
 
             this.arrayOfAuthStatus = [];
@@ -1326,9 +1326,10 @@
 
                                 if (_this6.finalDiff > 0 && _this6.finalDiff <= _this6.notifyPswdExpry) {
                                   _this6.toastService.errorMessage("Your password will expire in " + "".concat(_this6.finalDiff) + " day(s)", "");
-                                }
+                                } // this.roles(this.user);
 
-                                _this6.roles(_this6.user);
+
+                                _this6.showToast();
                               }
                             });
                           }); //  ---------- Password Policy Implementation (END) ----------
@@ -1410,11 +1411,13 @@
         }, {
           key: "showToast",
           value: function showToast() {
-            this.ls.setItem("currentUser", this.userEntity.userId);
+            var _a, _b, _c, _d;
+
+            this.ls.setItem("currentUser", (_a = this.userEntity) === null || _a === void 0 ? void 0 : _a.userId);
             this.ls.setItem("userobj", this.userEntity);
             this.ls.setItem("usercompleteobj", this.userEntity);
 
-            if (this.userEntity.logoutTime === null && this.userEntity.passwordGenerationType === "Auto") {
+            if (((_b = this.userEntity) === null || _b === void 0 ? void 0 : _b.logoutTime) === null && ((_c = this.userEntity) === null || _c === void 0 ? void 0 : _c.passwordGenerationType) === "Auto") {
               this.router.navigate(["/change-password"]);
             } else {
               this.router.navigate(["/dashboard"]);
@@ -1422,7 +1425,7 @@
 
             this.iziToast.show({
               title: "DTB - Median!",
-              message: "Welcome, ".concat(this.userEntity.userId, "!"),
+              message: "Welcome, ".concat((_d = this.userEntity) === null || _d === void 0 ? void 0 : _d.userId, "!"),
               image: "assets/images/user.png",
               icon: "ico ico-success",
               // theme:"dark",

@@ -794,9 +794,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ChargeMaintaineneceRoutingModule": function() { return /* binding */ ChargeMaintaineneceRoutingModule; }
 /* harmony export */ });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 71258);
-/* harmony import */ var src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/guards/can-deactivate.guard */ 50215);
-/* harmony import */ var _charge_maintainence_summary_charge_maintainence_summary_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./charge-maintainence-summary/charge-maintainence-summary.component */ 74849);
-/* harmony import */ var _charge_maintainenece_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./charge-maintainenece.component */ 73746);
+/* harmony import */ var _charge_maintainence_summary_charge_maintainence_summary_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./charge-maintainence-summary/charge-maintainence-summary.component */ 74849);
+/* harmony import */ var _charge_maintainenece_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./charge-maintainenece.component */ 73746);
+/* harmony import */ var src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/guards/auth.guard */ 87618);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
@@ -806,14 +806,15 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: '',
-        component: _charge_maintainence_summary_charge_maintainence_summary_component__WEBPACK_IMPORTED_MODULE_1__.ChargeMaintainenceSummaryComponent
+        path: "",
+        component: _charge_maintainence_summary_charge_maintainence_summary_component__WEBPACK_IMPORTED_MODULE_0__.ChargeMaintainenceSummaryComponent,
+        // canActivate: [AuthGuard],
     },
     {
-        path: 'create',
-        component: _charge_maintainenece_component__WEBPACK_IMPORTED_MODULE_2__.ChargeMaintaineneceComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
-    }
+        path: "create",
+        component: _charge_maintainenece_component__WEBPACK_IMPORTED_MODULE_1__.ChargeMaintaineneceComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__.AuthGuard],
+    },
 ];
 class ChargeMaintaineneceRoutingModule {
 }

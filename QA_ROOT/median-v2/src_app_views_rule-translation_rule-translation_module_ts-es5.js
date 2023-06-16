@@ -1377,7 +1377,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", !ctx_r0.ruleTransForm.dirty);
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", !ctx_r0.ruleTransForm.valid);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
 
@@ -2652,51 +2652,50 @@
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/router */
       71258);
       /* harmony import */
 
 
-      var src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! src/app/shared/guards/can-deactivate.guard */
-      50215);
-      /* harmony import */
-
-
-      var _rule_translation_details_rule_translation_details_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _rule_translation_details_rule_translation_details_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./rule-translation-details/rule-translation-details.component */
       62393);
       /* harmony import */
 
 
-      var _rule_translation_summary_rule_translation_summary_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _rule_translation_summary_rule_translation_summary_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./rule-translation-summary/rule-translation-summary.component */
       7281);
       /* harmony import */
 
 
-      var _rule_translation_rule_translation_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _rule_translation_rule_translation_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./rule-translation/rule-translation.component */
       1575);
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
       2316);
 
       var routes = [{
-        path: 'create',
-        component: _rule_translation_rule_translation_component__WEBPACK_IMPORTED_MODULE_3__.RuleTranslationComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "",
+        component: _rule_translation_rule_translation_component__WEBPACK_IMPORTED_MODULE_2__.RuleTranslationComponent // canActivate: [AuthGuard],
+
       }, {
-        path: 'edit/:id',
-        component: _rule_translation_details_rule_translation_details_component__WEBPACK_IMPORTED_MODULE_1__.RuleTranslationDetailsComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "summary",
+        component: _rule_translation_summary_rule_translation_summary_component__WEBPACK_IMPORTED_MODULE_1__.RuleTranslationSummaryComponent // canActivate: [AuthGuard],
+
       }, {
-        path: 'summary',
-        component: _rule_translation_summary_rule_translation_summary_component__WEBPACK_IMPORTED_MODULE_2__.RuleTranslationSummaryComponent
+        path: "create",
+        component: _rule_translation_rule_translation_component__WEBPACK_IMPORTED_MODULE_2__.RuleTranslationComponent // canActivate: [AuthGuard],
+
+      }, {
+        path: "edit/:id",
+        component: _rule_translation_details_rule_translation_details_component__WEBPACK_IMPORTED_MODULE_0__.RuleTranslationDetailsComponent // canActivate: [AuthGuard],
+
       }];
 
       var _RuleTranslationRoutingModule = /*#__PURE__*/_createClass(function _RuleTranslationRoutingModule() {
@@ -2707,17 +2706,17 @@
         return new (t || _RuleTranslationRoutingModule)();
       };
 
-      _RuleTranslationRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
+      _RuleTranslationRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: _RuleTranslationRoutingModule
       });
-      _RuleTranslationRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
-        imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule.forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule]
+      _RuleTranslationRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
+        imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule.forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
       });
 
       (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](_RuleTranslationRoutingModule, {
-          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule],
-          exports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule]
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](_RuleTranslationRoutingModule, {
+          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule],
+          exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
         });
       })();
       /***/
@@ -5984,7 +5983,7 @@
                   _this28.hideSubmit = true;
                   _this28.hideEdit = false;
                   _this28.showAuditLog = true;
-                  _this28.submitFlag = true;
+                  _this28.submitFlag = false;
                   _this28.disableSubmit = true;
                   _this28.disableReset = true;
                 }
@@ -6013,7 +6012,7 @@
                   _this28.hideSubmit = true;
                   _this28.hideEdit = false;
                   _this28.showAuditLog = true;
-                  _this28.submitFlag = false;
+                  _this28.submitFlag = true;
                   _this28.disableSubmit = true;
                   _this28.disableReset = true;
                 }

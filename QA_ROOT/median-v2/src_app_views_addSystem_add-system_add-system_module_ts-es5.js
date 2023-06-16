@@ -1238,21 +1238,21 @@
       /* harmony import */
 
 
-      var src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! src/app/shared/guards/can-deactivate.guard */
-      50215);
-      /* harmony import */
-
-
-      var _add_system_summary_add_system_summary_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _add_system_summary_add_system_summary_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ../add-system-summary/add-system-summary.component */
       86312);
       /* harmony import */
 
 
-      var _add_system_add_system_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _add_system_add_system_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../add-system/add-system.component */
       88154);
+      /* harmony import */
+
+
+      var src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! src/app/shared/guards/auth.guard */
+      87618);
       /* harmony import */
 
 
@@ -1261,13 +1261,19 @@
       2316);
 
       var routes = [{
-        path: '',
-        component: _add_system_add_system_component__WEBPACK_IMPORTED_MODULE_2__.AddSystemComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "",
+        component: _add_system_add_system_component__WEBPACK_IMPORTED_MODULE_1__.AddSystemComponent // canActivate: [AuthGuard],
+
       }, {
-        path: 'summary',
-        component: _add_system_summary_add_system_summary_component__WEBPACK_IMPORTED_MODULE_1__.AddSystemSummaryComponent
-      }];
+        path: "summary",
+        component: _add_system_summary_add_system_summary_component__WEBPACK_IMPORTED_MODULE_0__.AddSystemSummaryComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__.AuthGuard]
+      } // {
+      //   path: "addSystem",
+      //   component: AddSystemComponent,
+      //   canActivate: [AuthGuard],
+      // },
+      ];
 
       var _AddSystemRoutingModule = /*#__PURE__*/_createClass(function _AddSystemRoutingModule() {
         _classCallCheck(this, _AddSystemRoutingModule);
@@ -5571,8 +5577,6 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](7, "option");
-
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         }
       }
@@ -5659,7 +5663,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](13, AddSystemComponent_div_1_form_10_div_10_form_4_div_29_ng_select_13_Template, 4, 2, "ng-select", 103);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](14, AddSystemComponent_div_1_form_10_div_10_form_4_div_29_select_14_Template, 8, 0, "select", 164);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](14, AddSystemComponent_div_1_form_10_div_10_form_4_div_29_select_14_Template, 7, 0, "select", 164);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](15, AddSystemComponent_div_1_form_10_div_10_form_4_div_29_input_15_Template, 1, 0, "input", 105);
 

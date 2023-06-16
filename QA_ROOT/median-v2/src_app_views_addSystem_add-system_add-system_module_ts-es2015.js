@@ -652,9 +652,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AddSystemRoutingModule": function() { return /* binding */ AddSystemRoutingModule; }
 /* harmony export */ });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 71258);
-/* harmony import */ var src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/shared/guards/can-deactivate.guard */ 50215);
-/* harmony import */ var _add_system_summary_add_system_summary_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../add-system-summary/add-system-summary.component */ 86312);
-/* harmony import */ var _add_system_add_system_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../add-system/add-system.component */ 88154);
+/* harmony import */ var _add_system_summary_add_system_summary_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../add-system-summary/add-system-summary.component */ 86312);
+/* harmony import */ var _add_system_add_system_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../add-system/add-system.component */ 88154);
+/* harmony import */ var src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/guards/auth.guard */ 87618);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
 
 
@@ -664,14 +664,20 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: '',
-        component: _add_system_add_system_component__WEBPACK_IMPORTED_MODULE_2__.AddSystemComponent,
-        canDeactivate: [src_app_shared_guards_can_deactivate_guard__WEBPACK_IMPORTED_MODULE_0__.CanDeactivateGuard]
+        path: "",
+        component: _add_system_add_system_component__WEBPACK_IMPORTED_MODULE_1__.AddSystemComponent,
+        // canActivate: [AuthGuard],
     },
     {
-        path: 'summary',
-        component: _add_system_summary_add_system_summary_component__WEBPACK_IMPORTED_MODULE_1__.AddSystemSummaryComponent
-    }
+        path: "summary",
+        component: _add_system_summary_add_system_summary_component__WEBPACK_IMPORTED_MODULE_0__.AddSystemSummaryComponent,
+        canActivate: [src_app_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__.AuthGuard],
+    },
+    // {
+    //   path: "addSystem",
+    //   component: AddSystemComponent,
+    //   canActivate: [AuthGuard],
+    // },
 ];
 class AddSystemRoutingModule {
 }
@@ -2646,7 +2652,6 @@ function AddSystemComponent_div_1_form_10_div_10_form_4_div_29_select_14_Templat
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "option", 124);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, "Date");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](7, "option");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 } }
 function AddSystemComponent_div_1_form_10_div_10_form_4_div_29_input_15_Template(rf, ctx) { if (rf & 1) {
@@ -2686,7 +2691,7 @@ function AddSystemComponent_div_1_form_10_div_10_form_4_div_29_Template(rf, ctx)
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](12, "div", 86);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](13, AddSystemComponent_div_1_form_10_div_10_form_4_div_29_ng_select_13_Template, 4, 2, "ng-select", 103);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](14, AddSystemComponent_div_1_form_10_div_10_form_4_div_29_select_14_Template, 8, 0, "select", 164);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](14, AddSystemComponent_div_1_form_10_div_10_form_4_div_29_select_14_Template, 7, 0, "select", 164);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](15, AddSystemComponent_div_1_form_10_div_10_form_4_div_29_input_15_Template, 1, 0, "input", 105);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "div", 86);

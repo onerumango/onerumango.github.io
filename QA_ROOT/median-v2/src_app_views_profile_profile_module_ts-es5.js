@@ -180,9 +180,11 @@
           value: function ngOnInit() {
             this.loggedInUser = localStorage.getItem("userFromLogin");
             this.user = localStorage.getItem("userobj");
-            console.log(JSON.parse(this.user));
+            console.log(JSON.parse(this.user)); // console.log(this.userData.screenThemeSelected)
+
+            console.log(localStorage.getItem("SELECTED_THEME"));
             this.userData = JSON.parse(this.user);
-            this.selectedTheme = this.userData.screenThemeSelected;
+            this.selectedTheme = localStorage.getItem("SELECTED_THEME");
             this.userForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroup({
               userId: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl("", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required),
               userName: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl("", _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required),
@@ -357,9 +359,9 @@
       _ProfileComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
         type: _ProfileComponent,
         selectors: [["npr-profile"]],
-        decls: 64,
+        decls: 65,
         vars: 6,
-        consts: [[1, "mt-1"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row"], [1, "col-lg-4"], [1, "d-flex", "justify-content-center"], [1, "image_outer_container"], [1, "green_icon", 3, "click"], ["type", "file", "name", "myfile", 2, "display", "none", 3, "change"], ["file", ""], [1, "image_inner_container"], [3, "src"], [1, "row", "g-3", "pt-3", "mt-2", "justify"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "col-lg-6"], [3, "disabled"], [1, "row", "gy-4", 2, "margin-top", "0%"], [1, "formLbl"], [1, "colorRed"], [1, "d-flex"], ["id", "userId", "placeholder", "Old Password", "required", "", "value", "", "name", "userId", "formControlName", "userId", 1, "form-control"], ["userId", ""], ["id", "userName", "placeholder", "User Name", "required", "", "value", "", "name", "userName", "formControlName", "userName", 1, "form-control"], ["userName", ""], ["id", "confirm password", "placeholder", "Confirm Password", "required", "", "value", "", "name", "department", "formControlName", "department", 1, "form-control"], ["department", ""], [1, "row", "mt-10"], ["id", "horizontal-list"], ["data-id", "theme1", 1, "tColor", "theme1", 3, "click"], ["data-id", "theme2", 1, "tColor", "theme2", 3, "click"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"]],
+        consts: [[1, "mt-1"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row"], [1, "col-lg-4"], [1, "d-flex", "justify-content-center"], [1, "image_outer_container"], [1, "green_icon", 3, "click"], ["type", "file", "name", "myfile", 2, "display", "none", 3, "change"], ["file", ""], [1, "image_inner_container"], [3, "src"], [1, "row", "g-3", "pt-3", "mt-2", "justify"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "col-lg-6"], [3, "disabled"], [1, "row", "gy-4", 2, "margin-top", "0%"], [1, "formLbl"], [1, "colorRed"], [1, "d-flex"], ["id", "userId", "placeholder", "Old Password", "required", "", "value", "", "name", "userId", "formControlName", "userId", 1, "form-control"], ["userId", ""], ["id", "userName", "placeholder", "User Name", "required", "", "value", "", "name", "userName", "formControlName", "userName", 1, "form-control"], ["userName", ""], ["id", "confirm password", "placeholder", "Confirm Password", "required", "", "value", "", "name", "department", "formControlName", "department", 1, "form-control"], ["department", ""], [1, "row", "mt-10"], ["id", "horizontal-list"], ["id", "themeChangeRadio"], ["data-id", "theme1", 1, "tColor", "theme1", 3, "click"], ["data-id", "theme2", 1, "tColor", "theme2", 3, "click"], [1, "row", "g-3", "pb-3", "justify-content-end"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"]],
         template: function ProfileComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
@@ -532,11 +534,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](52, "ul", 30);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](53, "li");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](53, "ul", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](54, "span", 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](54, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileComponent_Template_span_click_54_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](55, "span", 32);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileComponent_Template_span_click_55_listener() {
               return ctx.changeTheme("theme1");
             });
 
@@ -544,11 +548,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](55, "li");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](56, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](56, "span", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](57, "span", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileComponent_Template_span_click_56_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileComponent_Template_span_click_57_listener() {
               return ctx.changeTheme("theme2");
             });
 
@@ -568,27 +572,29 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](57, "div", 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](58, "div", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](58, "div", 34);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](59, "button", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](59, "div", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileComponent_Template_button_click_59_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](60, "button", 35);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function ProfileComponent_Template_button_click_60_listener() {
               return ctx.saveTheme(ctx.selectedTheme);
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](60, "Save ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](61, "Save ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](61, "div", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](62, "div", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](62, "a", 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](63, "a", 36);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](63, "Exit");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](64, "Exit");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -616,7 +622,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx.submit);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](38);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](39);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", !ctx.isSaveEnable);
 

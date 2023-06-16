@@ -780,6 +780,13 @@
             var _this = this;
 
             this.loggedInUser = localStorage.getItem("userFromLogin").replace(/['"]+/g, "");
+
+            if (localStorage.getItem("link") == "Amount_Block") {
+              this.screenTitle = "Amount Block Customer Search";
+            } else {
+              this.screenTitle = "Account Block Customer Search";
+            }
+
             this.accountForm = this.formBuilder.group({
               First_Name: [""],
               Customer_No: [""],
@@ -1042,7 +1049,7 @@
           screen: "screen"
         },
         decls: 58,
-        vars: 4,
+        vars: 5,
         consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], ["action", "", 1, "formStyle", 3, "formGroup"], [1, "dbCardStyle"], [1, "row", "gy-4"], [2, "display", "flex", "gap", "20px"], ["id", "width", 1, "col-lg-4"], ["for", "", 1, "formLbl"], [1, "colorRed"], ["id", "fname", "formControlName", "First_Name", "type", "text", "placeholder", "First Name", "value", "", 1, "form-control"], ["id", "lname", "type", "text", "formControlName", "Last_Name", "placeholder", "Last Name", "value", "", 1, "form-control"], ["id", "cNumber", "type", "text", "formControlName", "Customer_No", "placeholder", "Customer Number", "value", "", 1, "form-control"], ["id", "MobNumber", "maxLength", "10", "formControlName", "Mobile_No", "placeholder", "Mobile Number", 1, "form-control", 3, "keypress"], ["id", "National_ID", "formControlName", "National_ID", "type", "text", "placeholder", "National ID", "value", "", 1, "form-control"], ["id", "accNumber", "formControlName", "Cust_Account_No", "name", "Cust_Account_No", "placeholder", "Account Number", 1, "form-control", 3, "keypress"], ["id", "E_mail", "formControlName", "E_mail", "type", "text", "placeholder", "Email", "value", "", 1, "form-control"], [1, "col-lg-12"], [1, "row", "g-3", "pb-3", "justify-content-end", "pt-3"], [1, "col-auto"], ["href", "javascript:void(0)", 1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "disabled", "click"], ["href", "javascript:void(0)", "routerLinkActive", "router-link-active", 1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "click"], ["class", "pageContentMain mt-4 mb-4", 4, "ngIf"], ["class", "table-responsive", 4, "ngIf"], ["content", ""], [1, "pageContentMain", "mt-4", "mb-4"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "click"], [1, "table-responsive"], ["id", "dbTable1", 1, "table", "tableStyle", "tableStyleSelect", "nowrap", "vAlignMdl"], [1, "btn", "smBtn", "minWdSmBtn", "btnInfo", 3, "click"], ["class", "btn smBtn minWdSmBtn btnPrimary", 3, "routerLink", "click", 4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLink", "click"], ["type", "button", "aria-label", "Close", 1, "close", 3, "click"], ["aria-hidden", "true", 1, "close"], ["id", "marginTitle", 1, "pageTitle"], [1, "pageContentMain", "mb-4"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "responsive", "nowrap", 2, "width", "100%", 3, "dtOptions"]],
         template: function CustomerSearchComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -1052,7 +1059,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "h2", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Search the Customer");
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
 
@@ -1242,7 +1249,11 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](ctx.screenTitle);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formGroup", ctx.accountForm);
 
