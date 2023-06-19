@@ -448,6 +448,7 @@ class LoginComponent {
         this.count = 0;
     }
     ngOnInit() {
+        console.log("LOGIN component");
         this.browserKey = (0,uuid__WEBPACK_IMPORTED_MODULE_11__.default)();
         this.signinForm = this.fb.group({
             username: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_12__.Validators.required],

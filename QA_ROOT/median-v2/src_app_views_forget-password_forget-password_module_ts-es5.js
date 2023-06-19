@@ -871,14 +871,12 @@
                 }
               });
             }, function (err) {
-              // Swal.fire(
-              // {text:  "Server Error,Unable to connect server."}
-              // Swal.fire(err.error.message);
-              // this.clickvalue = this.clickvalue + 1;
-              // console.log(this.clickvalue);
               sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                text: "Unable to find User details.Verify your userid."
-              });
+                text: "Server Error,Unable to connect server."
+              }); // Swal.fire(err.error.message);
+
+              _this5.clickvalue = _this5.clickvalue + 1;
+              console.log(_this5.clickvalue); // Swal.fire({ text: "Unable to find User details.Verify your userid." });
             });
           }
         }, {

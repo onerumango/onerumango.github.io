@@ -5089,8 +5089,8 @@
             38323)).then(function (m) {
               return m.ProfileModule;
             });
-          },
-          canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard]
+          } // canActivate: [AuthGuard],
+
         }, {
           path: "process-monitoring",
           loadChildren: function loadChildren() {
@@ -5575,7 +5575,6 @@
 
             localStorage.clear();
             sessionStorage.clear();
-            window.location.reload();
             this.router.navigate(['/session/login']);
           }
         }, {
@@ -6070,8 +6069,9 @@
             else {
               alert("You dont have permission to access this page!");
               console.log("You dont have permission to access this page!");
-              console.log("loginissuereproduce");
-              this.router.navigate(["/login"]);
+              localStorage.clear();
+              sessionStorage.clear();
+              this.router.navigate(["/session/login"]);
             }
           }
         }]);

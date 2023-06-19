@@ -516,12 +516,11 @@ class ForgetPasswordComponent {
                 }
             });
         }, (err) => {
-            // Swal.fire(
-            // {text:  "Server Error,Unable to connect server."}
+            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Server Error,Unable to connect server." });
             // Swal.fire(err.error.message);
-            // this.clickvalue = this.clickvalue + 1;
-            // console.log(this.clickvalue);
-            sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({ text: "Unable to find User details.Verify your userid." });
+            this.clickvalue = this.clickvalue + 1;
+            console.log(this.clickvalue);
+            // Swal.fire({ text: "Unable to find User details.Verify your userid." });
         });
     }
     goHome() {

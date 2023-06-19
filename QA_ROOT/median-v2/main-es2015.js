@@ -2658,7 +2658,7 @@ const routes = [
             {
                 path: "profile",
                 loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_views_profile_profile_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/profile/profile.module */ 38323)).then((m) => m.ProfileModule),
-                canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_1__.AuthGuard],
+                // canActivate: [AuthGuard],
             },
             {
                 path: "process-monitoring",
@@ -2871,7 +2871,6 @@ class AppComponent {
         }
         localStorage.clear();
         sessionStorage.clear();
-        window.location.reload();
         this.router.navigate(['/session/login']);
     }
     refreshUserState() {
@@ -3266,8 +3265,9 @@ class AuthGuard {
         else {
             alert("You dont have permission to access this page!");
             console.log("You dont have permission to access this page!");
-            console.log("loginissuereproduce");
-            this.router.navigate(["/login"]);
+            localStorage.clear();
+            sessionStorage.clear();
+            this.router.navigate(["/session/login"]);
         }
     }
 }
