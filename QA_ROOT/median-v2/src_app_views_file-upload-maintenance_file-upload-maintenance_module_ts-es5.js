@@ -18918,6 +18918,8 @@
             });
             this.getAllDeptNames();
             this.getExternalSystemSummry();
+            console.log(this.externalSystemSummry);
+            console.log(this.externalSystemSummry && !this.editFlag && this.externalSystemSummry.authStatus == 'UNAUTHORIZED' && this.roleCodes.auth);
           }
         }, {
           key: "newRolePermissions",
@@ -19010,9 +19012,11 @@
             var _this4 = this;
 
             this.apiService.getExternalSystemSummry().subscribe(function (summaryData) {
+              console.log(summaryData);
               _this4.externalSystemSummry = summaryData;
               var retrievedObject = localStorage.getItem('externalSystemSummry');
-              _this4.externalSystemSummry = JSON.parse(retrievedObject); // console.log("this.externalSystemSummry", this.externalSystemSummry);
+              _this4.externalSystemSummry = JSON.parse(retrievedObject);
+              console.log(_this4.externalSystemSummry); // console.log("this.externalSystemSummry", this.externalSystemSummry);
 
               var extCode = _this4.externalSystemSummry.extSysCode;
               var extName = _this4.externalSystemSummry.extSysName;
@@ -19030,7 +19034,8 @@
         }, {
           key: "onOptionsChange",
           value: function onOptionsChange(event) {
-            var value = event.target.value;
+            console.log(event);
+            var value = event;
 
             if (value) {
               this.externalSystemEditForm.controls.department.setValue(value);
@@ -19046,6 +19051,9 @@
           value: function onSubmit(externalSystemEditForm) {
             var _this5 = this;
 
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+
+            console.log(this.externalSystemSummry);
             this.externalSystemUpdate.extSysCode = externalSystemEditForm.extSysCode;
             this.externalSystemUpdate.extSysName = externalSystemEditForm.extSysName;
             this.externalSystemUpdate.department = externalSystemEditForm.department;
@@ -19058,6 +19066,19 @@
             this.externalSystemUpdate.updatedBy = this.currentUser;
             this.externalSystemUpdate.verifiedOnce = this.externalSystemSummry.verifiedOnce;
             this.externalSystemUpdate.version = this.externalSystemSummry.version;
+            this.apiService.setExternalSystemSummry({
+              authStatus: (_a = this.externalSystemSummry) === null || _a === void 0 ? void 0 : _a.authStatus.slice(0, 1),
+              authorizedBy: (_b = this.externalSystemSummry) === null || _b === void 0 ? void 0 : _b.authorizedBy,
+              authorizedTime: (_c = this.externalSystemSummry) === null || _c === void 0 ? void 0 : _c.authorizedTime,
+              department: (_d = this.externalSystemSummry) === null || _d === void 0 ? void 0 : _d.department,
+              extSysCode: (_e = this.externalSystemSummry) === null || _e === void 0 ? void 0 : _e.extSysCode,
+              extSysName: (_f = this.externalSystemSummry) === null || _f === void 0 ? void 0 : _f.extSysName,
+              modifiedBy: (_g = this.externalSystemSummry) === null || _g === void 0 ? void 0 : _g.modifiedBy,
+              modifiedTime: (_h = this.externalSystemSummry) === null || _h === void 0 ? void 0 : _h.modifiedTime,
+              recordStatus: (_j = this.externalSystemSummry) === null || _j === void 0 ? void 0 : _j.recordStatus,
+              verifiedOnce: (_k = this.externalSystemSummry) === null || _k === void 0 ? void 0 : _k.verifiedOnce,
+              version: (_l = this.externalSystemSummry) === null || _l === void 0 ? void 0 : _l.version
+            });
             this.apiService.updateexternalSystemEdit(this.externalSystemUpdate).subscribe(function (data) {
               _this5.externalSystemSummry = data;
 
@@ -21121,30 +21142,14 @@
 
             this.isLoading = true;
             this.apiService.getAllExt().subscribe(function (summryResp) {
-              _this19.externalSummaryData = summryResp.result;
-
-              var _iterator = _createForOfIteratorHelper(summryResp.result),
-                  _step;
-
-              try {
-                var _loop = function _loop() {
-                  var item = _step.value;
-                  item.authStatus = _this19.statusArr.find(function (i) {
-                    return i.startsWith(item.authStatus);
-                  });
-                  item.recordStatus = _this19.statusArr.find(function (i) {
-                    return i.startsWith(item.recordStatus);
-                  });
-                };
-
-                for (_iterator.s(); !(_step = _iterator.n()).done;) {
-                  _loop();
-                }
-              } catch (err) {
-                _iterator.e(err);
-              } finally {
-                _iterator.f();
-              }
+              _this19.externalSummaryData = summryResp.result; // for (let item of summryResp.result) {
+              //   item.authStatus = this.statusArr.find((i) =>
+              //     i.startsWith(item.authStatus)
+              //   );
+              //   item.recordStatus = this.statusArr.find((i) =>
+              //     i.startsWith(item.recordStatus)
+              //   );
+              // }
 
               _this19.isLoading = false;
 
@@ -21391,6 +21396,9 @@
                 recordStatus: dataForEdit.recordStatus,
                 verifiedOnce: dataForEdit.verifiedOnce,
                 version: dataForEdit.version
+              });
+              this.apiService.getExternalSystemSummry().subscribe(function (res) {
+                console.log(res);
               });
               this.router.navigate(['/external-system/extSys-edit']);
             }
@@ -27832,12 +27840,12 @@
 
             this.isLoading = true;
             this.apiService.getAllExtSys().subscribe(function (data) {
-              var _iterator2 = _createForOfIteratorHelper(data.result),
-                  _step2;
+              var _iterator = _createForOfIteratorHelper(data.result),
+                  _step;
 
               try {
-                var _loop2 = function _loop2() {
-                  var item = _step2.value;
+                var _loop = function _loop() {
+                  var item = _step.value;
                   item.authStatus = _this42.statusArr.find(function (i) {
                     return i.startsWith(item.authStatus);
                   });
@@ -27846,13 +27854,13 @@
                   });
                 };
 
-                for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-                  _loop2();
+                for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                  _loop();
                 }
               } catch (err) {
-                _iterator2.e(err);
+                _iterator.e(err);
               } finally {
-                _iterator2.f();
+                _iterator.f();
               }
 
               _this42.processCodeMappingSummry = data.result;

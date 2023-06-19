@@ -500,7 +500,7 @@ function RoleDetailsComponent_tr_53_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate"](roles_r15.Screens);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r4.editFlag)("checked", ctx_r4.selectAllChecked || roles_r15.SELECTALL);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r4.editFlag)("checked", ctx_r4.selectAllChecked || roles_r15.SELECTALL == "1");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r4.editFlag)("checked", roles_r15.VIEW == "0" ? false : true);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
@@ -1741,7 +1741,6 @@ class RoleDetailsComponent {
     }
     clickRoleAction(roles, action, event, i, roleScreenList) {
         this.isDisable = false;
-        console.log(this.roleScreenList);
         console.log(roles, "Roles");
         console.log(action, "action");
         console.log(event, "event");
@@ -1751,21 +1750,12 @@ class RoleDetailsComponent {
         console.log(roles.NEW);
         // let check = true;
         // for (let index = 0; index < roleScreenList.length; index++) {
-        //   if (roleScreenList[index].AUTH == "1" && roleScreenList[index].NEW == "1" && roleScreenList[index].DELETE == "1" && roleScreenList[index].VIEW == "1" && roleScreenList[index].CLOSE == "1" && roleScreenList[index].REOPEN == "1" && roleScreenList[index].EDIT == "1") {
-        //     debugger
-        //     if (roleScreenList[index].SELECTALL == "1") {
-        //       this.selectAllChecked = true;
-        //     }
-        //     //roleScreenList[index].SELECTALL = 1;
-        //     this.check = true;
-        //     console.log(this.check);
-        //     console.log(roles.SELECTALL);
-        //   }
+        // if(roleScreenList[index].AUTH == "0" || roleScreenList[index].NEW == "0" || roleScreenList[index].DELETE == "0" || roleScreenList[index].VIEW == "0" || roleScreenList[index].CLOSE == "0" || roleScreenList[index].REOPEN == "0"){
+        //   check = false;
         // }
-        // if (roles) {
-        //   this.selectAllChecked = true;
-        //   console.log(this.selectAllChecked);
-        // } else {
+        // }
+        // if(check){
+        // this.selectAllChecked = true;}else{
         //   this.selectAllChecked = false
         // }
         if (roles.AUTH) {
@@ -1776,103 +1766,118 @@ class RoleDetailsComponent {
         console.log(this.modifyRoleObject.roleName);
         if (this.modifyRoleObject.roleName) {
             if (action == "NEW" || action == "SELECTALL") {
-                roles.NEW = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "1";
+                roles.NEW = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "1";
                 console.log(roles.NEW, "Inside New If");
             }
             if (action == "EDIT" || action == "SELECTALL") {
-                roles.EDIT = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "1";
+                roles.EDIT = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "1";
             }
             if (action == "DELETE" || action == "SELECTALL") {
-                roles.DELETE = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "1";
+                roles.DELETE = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "1";
             }
             if (action == "CLOSE" || action == "SELECTALL") {
-                roles.CLOSE = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "1";
+                roles.CLOSE = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "1";
             }
             if (action == "REOPEN" || action == "SELECTALL") {
-                roles.REOPEN = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "1";
+                roles.REOPEN = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "1";
             }
             if (action == "UNLOCK" || action == "SELECTALL") {
-                roles.UNLOCK = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "1";
+                roles.UNLOCK = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "1";
             }
             if (action == "PRINT" || action == "SELECTALL") {
-                roles.PRINT = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "1";
+                roles.PRINT = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "1";
             }
             if (action == "AUTH" || action == "SELECTALL") {
-                roles.AUTH = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "1";
+                roles.AUTH = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "1";
             }
             if (action == "VIEW" || action == "SELECTALL") {
-                roles.VIEW = (event) ? "1" : "0";
+                roles.VIEW = event ? "1" : "0";
             }
-            if (this.roleScreenList[i].AUTH == 1 || this.roleScreenList[i].CLOSE == 1 ||
-                this.roleScreenList[i].DELETE == 1 || this.roleScreenList[i].EDIT == 1 ||
-                this.roleScreenList[i].NEW == 1 || this.roleScreenList[i].PRINT == 1 ||
+            if (this.roleScreenList[i].AUTH == 1 ||
+                this.roleScreenList[i].CLOSE == 1 ||
+                this.roleScreenList[i].DELETE == 1 ||
+                this.roleScreenList[i].EDIT == 1 ||
+                this.roleScreenList[i].NEW == 1 ||
+                this.roleScreenList[i].PRINT == 1 ||
                 this.roleScreenList[i].REOPEN == 1) {
                 roles.VIEW = "1";
             }
-            if (this.roleScreenList[i].AUTH == 1 && this.roleScreenList[i].CLOSE == 1 &&
-                this.roleScreenList[i].DELETE == 1 && this.roleScreenList[i].EDIT == 1 &&
-                this.roleScreenList[i].NEW == 1 && this.roleScreenList[i].REOPEN == 1) {
-                roles.VIEW = "1";
+            if (this.roleScreenList[i].AUTH == 1 &&
+                this.roleScreenList[i].CLOSE == 1 &&
+                this.roleScreenList[i].DELETE == 1 &&
+                this.roleScreenList[i].EDIT == 1 &&
+                this.roleScreenList[i].NEW == 1 &&
+                this.roleScreenList[i].REOPEN == 1) {
                 roles.SELECTALL = "1";
-                console.log(roles.SELECTALL);
             }
         }
-        else {
+        else { //For new records
             if (action == "NEW" || action == "SELECTALL") {
-                roles.NEW = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "0";
+                roles.NEW = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "0";
             }
             if (action == "EDIT" || action == "SELECTALL") {
-                roles.EDIT = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "0";
+                roles.EDIT = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "0";
             }
             if (action == "DELETE" || action == "SELECTALL") {
-                roles.DELETE = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "0";
+                roles.DELETE = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "0";
             }
             if (action == "CLOSE" || action == "SELECTALL") {
-                roles.CLOSE = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "0";
+                roles.CLOSE = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "0";
             }
             if (action == "REOPEN" || action == "SELECTALL") {
-                roles.REOPEN = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "0";
+                roles.REOPEN = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "0";
             }
             if (action == "UNLOCK" || action == "SELECTALL") {
-                roles.UNLOCK = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "0";
+                roles.UNLOCK = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "0";
             }
             if (action == "PRINT" || action == "SELECTALL") {
-                roles.PRINT = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "0";
+                roles.PRINT = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "0";
             }
             if (action == "AUTH" || action == "SELECTALL") {
-                roles.AUTH = (event) ? "1" : "0";
-                roles.VIEW = (event) ? "1" : "0";
+                roles.AUTH = event ? "1" : "0";
+                roles.VIEW = event ? "1" : "0";
             }
             if (action == "VIEW" || action == "SELECTALL") {
-                roles.VIEW = (event) ? "1" : "0";
+                roles.VIEW = event ? "1" : "0";
             }
-            if (this.roleScreenList[i].AUTH == 1 || this.roleScreenList[i].CLOSE == 1 ||
-                this.roleScreenList[i].DELETE == 1 || this.roleScreenList[i].EDIT == 1 ||
-                this.roleScreenList[i].NEW == 1 || this.roleScreenList[i].PRINT == 1 ||
+            if (this.roleScreenList[i].AUTH == 1 ||
+                this.roleScreenList[i].CLOSE == 1 ||
+                this.roleScreenList[i].DELETE == 1 ||
+                this.roleScreenList[i].EDIT == 1 ||
+                this.roleScreenList[i].NEW == 1 ||
+                this.roleScreenList[i].PRINT == 1 ||
                 this.roleScreenList[i].REOPEN == 1) {
                 roles.VIEW = "1";
             }
-            if (this.roleScreenList[i].AUTH == 1 && this.roleScreenList[i].CLOSE == 1 &&
-                this.roleScreenList[i].DELETE == 1 && this.roleScreenList[i].EDIT == 1 &&
-                this.roleScreenList[i].NEW == 1 && this.roleScreenList[i].REOPEN == 1) {
-                roles.VIEW = "1";
+            if (this.roleScreenList[i].AUTH == 1 &&
+                this.roleScreenList[i].CLOSE == 1 &&
+                this.roleScreenList[i].DELETE == 1 &&
+                this.roleScreenList[i].EDIT == 1 &&
+                this.roleScreenList[i].NEW == 1 &&
+                this.roleScreenList[i].REOPEN == 1) {
                 roles.SELECTALL = "1";
-                console.log(roles.SELECTALL);
+            }
+            else {
+                const hasZero = this.hasZeroValue(this.roleScreenList[i]);
+                console.log(hasZero, "-------------------------------"); // tru
+                if (hasZero) {
+                    roles.SELECTALL = "0";
+                }
             }
         }
         for (let m = 0; m < this.rolessorteddata.length; m++) {
@@ -1880,36 +1885,45 @@ class RoleDetailsComponent {
                 for (let n = 0; n < this.rolessorteddata[m].screenlist.length; n++) {
                     if (this.rolessorteddata[m].screenlist[n].screenname == roles.Screens) {
                         let newperm1 = this.rolessorteddata[m].screenlist[n].newpermission;
-                        let newperm = newperm1.split('');
+                        let newperm = newperm1.split("");
                         for (let p = 0; p < this.rolessorteddata[m].labelslist.length; p++) {
                             if (this.rolessorteddata[m].labelslist[p].labelName == "NEW") {
-                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] = roles.NEW;
+                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] =
+                                    roles.NEW;
                             }
                             if (this.rolessorteddata[m].labelslist[p].labelName == "EDIT") {
-                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] = roles.EDIT;
+                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] =
+                                    roles.EDIT;
                             }
                             if (this.rolessorteddata[m].labelslist[p].labelName == "DELETE") {
-                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] = roles.DELETE;
+                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] =
+                                    roles.DELETE;
                             }
                             if (this.rolessorteddata[m].labelslist[p].labelName == "CLOSE") {
-                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] = roles.CLOSE;
+                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] =
+                                    roles.CLOSE;
                             }
                             if (this.rolessorteddata[m].labelslist[p].labelName == "REOPEN") {
-                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] = roles.REOPEN;
+                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] =
+                                    roles.REOPEN;
                             }
                             if (this.rolessorteddata[m].labelslist[p].labelName == "UNLOCK") {
-                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] = roles.UNLOCK;
+                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] =
+                                    roles.UNLOCK;
                             }
                             if (this.rolessorteddata[m].labelslist[p].labelName == "PRINT") {
-                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] = roles.PRINT;
+                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] =
+                                    roles.PRINT;
                             }
                             if (this.rolessorteddata[m].labelslist[p].labelName == "AUTH") {
-                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] = roles.AUTH;
+                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] =
+                                    roles.AUTH;
                             }
                             if (this.rolessorteddata[m].labelslist[p].labelName == "VIEW") {
-                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] = roles.VIEW;
+                                newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] =
+                                    roles.VIEW;
                             }
-                            newperm1 = newperm.join('');
+                            newperm1 = newperm.join("");
                         }
                         this.rolessorteddata[m].screenlist[n].newpermission = newperm1;
                     }
@@ -1920,6 +1934,10 @@ class RoleDetailsComponent {
                 // this.isEnabled();
             }
         }
+    }
+    hasZeroValue(obj) {
+        const values = Object.values(obj);
+        return values.some(value => value === "0");
     }
     reset() {
         this.validationResponse = null;
@@ -2543,7 +2561,7 @@ class RoleListComponent {
     }
 }
 RoleListComponent.ɵfac = function RoleListComponent_Factory(t) { return new (t || RoleListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_6__.ChangeDetectorRef), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_api_service__WEBPACK_IMPORTED_MODULE_3__.ApiService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_shared_services_role_service__WEBPACK_IMPORTED_MODULE_4__.RoleService)); };
-RoleListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: RoleListComponent, selectors: [["npr-role-list"]], decls: 29, vars: 7, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "table-responsive"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "tableStyleSelect", "nowrap", "vAlignMdl", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLinkActive", "click"], [1, "link-color", 2, "cursor", "pointer", 3, "click"], ["title", "Authorize", 1, "btn", 2, "color", "red", 3, "disabled", "click"], ["src", "assets/images/authorize.svg", "alt", "Authorize", 1, "summaryIcon"], ["class", "btn", "style", "color: red", "title", "Delete", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Close", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Reopen", 3, "click", 4, "ngIf"], ["title", "Delete", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/delete.svg", "alt", "...", 1, "summaryIcon"], ["title", "Close", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/CROSS1.svg", "alt", "...", 1, "summaryIcon"], ["title", "Reopen", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/open.svg", "alt", "...", 1, "summaryIcon"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]], template: function RoleListComponent_Template(rf, ctx) { if (rf & 1) {
+RoleListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: RoleListComponent, selectors: [["npr-role-list"]], decls: 29, vars: 7, consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "table-responsive"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "tableStyleSelect", "nowrap", "vAlignMdl", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLinkActive", "click"], [1, "link-color", 2, "cursor", "pointer", "color", "#FF0000", 3, "click"], ["title", "Authorize", 1, "btn", 2, "color", "red", 3, "disabled", "click"], ["src", "assets/images/authorize.svg", "alt", "Authorize", 1, "summaryIcon"], ["class", "btn", "style", "color: red", "title", "Delete", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Close", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Reopen", 3, "click", 4, "ngIf"], ["title", "Delete", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/delete.svg", "alt", "...", 1, "summaryIcon"], ["title", "Close", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/CROSS1.svg", "alt", "...", 1, "summaryIcon"], ["title", "Reopen", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/open.svg", "alt", "...", 1, "summaryIcon"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]], template: function RoleListComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "h2", 2);

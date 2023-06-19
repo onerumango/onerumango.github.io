@@ -896,7 +896,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r4.editFlag)("checked", ctx_r4.selectAllChecked || roles_r15.SELECTALL);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("disabled", ctx_r4.editFlag)("checked", ctx_r4.selectAllChecked || roles_r15.SELECTALL == "1");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
 
@@ -2781,7 +2781,6 @@
           key: "clickRoleAction",
           value: function clickRoleAction(roles, action, event, i, roleScreenList) {
             this.isDisable = false;
-            console.log(this.roleScreenList);
             console.log(roles, "Roles");
             console.log(action, "action");
             console.log(event, "event");
@@ -2790,21 +2789,12 @@
             console.log(roles.Screens);
             console.log(roles.NEW); // let check = true;
             // for (let index = 0; index < roleScreenList.length; index++) {
-            //   if (roleScreenList[index].AUTH == "1" && roleScreenList[index].NEW == "1" && roleScreenList[index].DELETE == "1" && roleScreenList[index].VIEW == "1" && roleScreenList[index].CLOSE == "1" && roleScreenList[index].REOPEN == "1" && roleScreenList[index].EDIT == "1") {
-            //     debugger
-            //     if (roleScreenList[index].SELECTALL == "1") {
-            //       this.selectAllChecked = true;
-            //     }
-            //     //roleScreenList[index].SELECTALL = 1;
-            //     this.check = true;
-            //     console.log(this.check);
-            //     console.log(roles.SELECTALL);
-            //   }
+            // if(roleScreenList[index].AUTH == "0" || roleScreenList[index].NEW == "0" || roleScreenList[index].DELETE == "0" || roleScreenList[index].VIEW == "0" || roleScreenList[index].CLOSE == "0" || roleScreenList[index].REOPEN == "0"){
+            //   check = false;
             // }
-            // if (roles) {
-            //   this.selectAllChecked = true;
-            //   console.log(this.selectAllChecked);
-            // } else {
+            // }
+            // if(check){
+            // this.selectAllChecked = true;}else{
             //   this.selectAllChecked = false
             // }
 
@@ -2866,11 +2856,10 @@
               }
 
               if (this.roleScreenList[i].AUTH == 1 && this.roleScreenList[i].CLOSE == 1 && this.roleScreenList[i].DELETE == 1 && this.roleScreenList[i].EDIT == 1 && this.roleScreenList[i].NEW == 1 && this.roleScreenList[i].REOPEN == 1) {
-                roles.VIEW = "1";
                 roles.SELECTALL = "1";
-                console.log(roles.SELECTALL);
               }
             } else {
+              //For new records
               if (action == "NEW" || action == "SELECTALL") {
                 roles.NEW = event ? "1" : "0";
                 roles.VIEW = event ? "1" : "0";
@@ -2920,9 +2909,14 @@
               }
 
               if (this.roleScreenList[i].AUTH == 1 && this.roleScreenList[i].CLOSE == 1 && this.roleScreenList[i].DELETE == 1 && this.roleScreenList[i].EDIT == 1 && this.roleScreenList[i].NEW == 1 && this.roleScreenList[i].REOPEN == 1) {
-                roles.VIEW = "1";
                 roles.SELECTALL = "1";
-                console.log(roles.SELECTALL);
+              } else {
+                var hasZero = this.hasZeroValue(this.roleScreenList[i]);
+                console.log(hasZero, "-------------------------------"); // tru
+
+                if (hasZero) {
+                  roles.SELECTALL = "0";
+                }
               }
             }
 
@@ -2931,7 +2925,7 @@
                 for (var n = 0; n < this.rolessorteddata[m].screenlist.length; n++) {
                   if (this.rolessorteddata[m].screenlist[n].screenname == roles.Screens) {
                     var newperm1 = this.rolessorteddata[m].screenlist[n].newpermission;
-                    var newperm = newperm1.split('');
+                    var newperm = newperm1.split("");
 
                     for (var p = 0; p < this.rolessorteddata[m].labelslist.length; p++) {
                       if (this.rolessorteddata[m].labelslist[p].labelName == "NEW") {
@@ -2970,7 +2964,7 @@
                         newperm[this.rolessorteddata[m].labelslist[p].labelId - 1] = roles.VIEW;
                       }
 
-                      newperm1 = newperm.join('');
+                      newperm1 = newperm.join("");
                     }
 
                     this.rolessorteddata[m].screenlist[n].newpermission = newperm1;
@@ -2982,6 +2976,14 @@
                 console.log(this.rolessorteddata); // this.isEnabled();
               }
             }
+          }
+        }, {
+          key: "hasZeroValue",
+          value: function hasZeroValue(obj) {
+            var values = Object.values(obj);
+            return values.some(function (value) {
+              return value === "0";
+            });
           }
         }, {
           key: "reset",
@@ -4078,7 +4080,7 @@
         selectors: [["npr-role-list"]],
         decls: 29,
         vars: 7,
-        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "table-responsive"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "tableStyleSelect", "nowrap", "vAlignMdl", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLinkActive", "click"], [1, "link-color", 2, "cursor", "pointer", 3, "click"], ["title", "Authorize", 1, "btn", 2, "color", "red", 3, "disabled", "click"], ["src", "assets/images/authorize.svg", "alt", "Authorize", 1, "summaryIcon"], ["class", "btn", "style", "color: red", "title", "Delete", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Close", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Reopen", 3, "click", 4, "ngIf"], ["title", "Delete", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/delete.svg", "alt", "...", 1, "summaryIcon"], ["title", "Close", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/CROSS1.svg", "alt", "...", 1, "summaryIcon"], ["title", "Reopen", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/open.svg", "alt", "...", 1, "summaryIcon"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
+        consts: [[1, "pageContentMain"], [1, "pageTitleCol"], [1, "pageTitle"], [1, "dbCardStyle"], [1, "row", "g-3", "pb-3", "justify-content-end"], ["class", "col-auto", 4, "ngIf"], [1, "col-auto"], [1, "btn", "smBtn", "minWdSmBtn", "btnSecondary", 3, "routerLink"], [1, "table-responsive"], ["datatable", "", 1, "dataTable", "table", "tableStyle", "tableStyleSelect", "nowrap", "vAlignMdl", 2, "width", "100%", 3, "dtOptions", "dtTrigger"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "btn", "smBtn", "minWdSmBtn", "btnPrimary", 3, "routerLinkActive", "click"], [1, "link-color", 2, "cursor", "pointer", "color", "#FF0000", 3, "click"], ["title", "Authorize", 1, "btn", 2, "color", "red", 3, "disabled", "click"], ["src", "assets/images/authorize.svg", "alt", "Authorize", 1, "summaryIcon"], ["class", "btn", "style", "color: red", "title", "Delete", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Close", 3, "click", 4, "ngIf"], ["class", "btn", "style", "color: red", "title", "Reopen", 3, "click", 4, "ngIf"], ["title", "Delete", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/delete.svg", "alt", "...", 1, "summaryIcon"], ["title", "Close", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/CROSS1.svg", "alt", "...", 1, "summaryIcon"], ["title", "Reopen", 1, "btn", 2, "color", "red", 3, "click"], ["src", "assets/images/open.svg", "alt", "...", 1, "summaryIcon"], [1, "loading-page-center"], [1, "indicator-progress"], [1, "spinner-border", "spinner-border-sm", "align-middle", "ms-2"]],
         template: function RoleListComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);

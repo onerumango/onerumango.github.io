@@ -1529,7 +1529,7 @@ function UserNewComponent_div_38_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx_r6.userForm.get("email").errors.required);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx_r6.userForm.get("email").errors.pattern);
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx_r6.userForm.get("email").errors.pattern && ctx_r6.userForm.get("email").touched);
 } }
 function UserNewComponent_div_45_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div");
@@ -1559,7 +1559,7 @@ function UserNewComponent_div_46_ng_template_6_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "input", 56);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("change", function UserNewComponent_div_46_ng_template_6_Template_input_change_1_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r44); const ctx_r43 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](2); return ctx_r43.seleceAndDisselect($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Select All");
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Select All ");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 } }
 const _c0 = function () { return { standalone: true }; };
@@ -1650,7 +1650,7 @@ function UserNewComponent_div_47_ng_template_6_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](1, "input", 56);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("change", function UserNewComponent_div_47_ng_template_6_Template_input_change_1_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵrestoreView"](_r59); const ctx_r58 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"](2); return ctx_r58.seleceAndDisselect($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Select All");
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Select All ");
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 } }
 function UserNewComponent_div_47_ng_template_7_Template(rf, ctx) { if (rf & 1) {

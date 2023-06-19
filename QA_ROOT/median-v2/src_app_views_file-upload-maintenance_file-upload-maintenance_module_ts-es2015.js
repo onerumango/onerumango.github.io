@@ -18463,6 +18463,8 @@ class ExternalSystemEditComponent {
         });
         this.getAllDeptNames();
         this.getExternalSystemSummry();
+        console.log(this.externalSystemSummry);
+        console.log(this.externalSystemSummry && !this.editFlag && this.externalSystemSummry.authStatus == 'UNAUTHORIZED' && this.roleCodes.auth);
     }
     newRolePermissions() {
         this.roleService.fetchScreenPermissions('External System');
@@ -18529,9 +18531,11 @@ class ExternalSystemEditComponent {
     }
     getExternalSystemSummry() {
         this.apiService.getExternalSystemSummry().subscribe((summaryData) => {
+            console.log(summaryData);
             this.externalSystemSummry = summaryData;
             var retrievedObject = localStorage.getItem('externalSystemSummry');
             this.externalSystemSummry = JSON.parse(retrievedObject);
+            console.log(this.externalSystemSummry);
             // console.log("this.externalSystemSummry", this.externalSystemSummry);
             const extCode = this.externalSystemSummry.extSysCode;
             const extName = this.externalSystemSummry.extSysName;
@@ -18543,7 +18547,8 @@ class ExternalSystemEditComponent {
         });
     }
     onOptionsChange(event) {
-        const value = event.target.value;
+        console.log(event);
+        const value = event;
         if (value) {
             this.externalSystemEditForm.controls.department.setValue(value);
         }
@@ -18552,6 +18557,8 @@ class ExternalSystemEditComponent {
         this.editFlag = true;
     }
     onSubmit(externalSystemEditForm) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        console.log(this.externalSystemSummry);
         this.externalSystemUpdate.extSysCode = externalSystemEditForm.extSysCode;
         this.externalSystemUpdate.extSysName = externalSystemEditForm.extSysName;
         this.externalSystemUpdate.department = externalSystemEditForm.department;
@@ -18564,6 +18571,19 @@ class ExternalSystemEditComponent {
         this.externalSystemUpdate.updatedBy = this.currentUser;
         this.externalSystemUpdate.verifiedOnce = this.externalSystemSummry.verifiedOnce;
         this.externalSystemUpdate.version = this.externalSystemSummry.version;
+        this.apiService.setExternalSystemSummry({
+            authStatus: (_a = this.externalSystemSummry) === null || _a === void 0 ? void 0 : _a.authStatus.slice(0, 1),
+            authorizedBy: (_b = this.externalSystemSummry) === null || _b === void 0 ? void 0 : _b.authorizedBy,
+            authorizedTime: (_c = this.externalSystemSummry) === null || _c === void 0 ? void 0 : _c.authorizedTime,
+            department: (_d = this.externalSystemSummry) === null || _d === void 0 ? void 0 : _d.department,
+            extSysCode: (_e = this.externalSystemSummry) === null || _e === void 0 ? void 0 : _e.extSysCode,
+            extSysName: (_f = this.externalSystemSummry) === null || _f === void 0 ? void 0 : _f.extSysName,
+            modifiedBy: (_g = this.externalSystemSummry) === null || _g === void 0 ? void 0 : _g.modifiedBy,
+            modifiedTime: (_h = this.externalSystemSummry) === null || _h === void 0 ? void 0 : _h.modifiedTime,
+            recordStatus: (_j = this.externalSystemSummry) === null || _j === void 0 ? void 0 : _j.recordStatus,
+            verifiedOnce: (_k = this.externalSystemSummry) === null || _k === void 0 ? void 0 : _k.verifiedOnce,
+            version: (_l = this.externalSystemSummry) === null || _l === void 0 ? void 0 : _l.version,
+        });
         this.apiService.updateexternalSystemEdit(this.externalSystemUpdate).subscribe(data => {
             this.externalSystemSummry = data;
             if (this.externalSystemSummry) {
@@ -19737,10 +19757,14 @@ class ExternalSystemComponent {
         this.isLoading = true;
         this.apiService.getAllExt().subscribe(summryResp => {
             this.externalSummaryData = summryResp.result;
-            for (let item of summryResp.result) {
-                item.authStatus = this.statusArr.find((i) => i.startsWith(item.authStatus));
-                item.recordStatus = this.statusArr.find((i) => i.startsWith(item.recordStatus));
-            }
+            // for (let item of summryResp.result) {
+            //   item.authStatus = this.statusArr.find((i) =>
+            //     i.startsWith(item.authStatus)
+            //   );
+            //   item.recordStatus = this.statusArr.find((i) =>
+            //     i.startsWith(item.recordStatus)
+            //   );
+            // }
             this.isLoading = false;
             this.dtTrigger.next();
         });
@@ -19936,6 +19960,9 @@ class ExternalSystemComponent {
                 recordStatus: dataForEdit.recordStatus,
                 verifiedOnce: dataForEdit.verifiedOnce,
                 version: dataForEdit.version,
+            });
+            this.apiService.getExternalSystemSummry().subscribe((res) => {
+                console.log(res);
             });
             this.router.navigate(['/external-system/extSys-edit']);
         }

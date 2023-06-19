@@ -2708,7 +2708,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx_r6.userForm.get("email").errors.pattern);
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", ctx_r6.userForm.get("email").errors.pattern && ctx_r6.userForm.get("email").touched);
         }
       }
 
@@ -2774,7 +2774,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Select All");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Select All ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         }
@@ -2964,7 +2964,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Select All");
+          _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](2, " Select All ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
         }
