@@ -13,16 +13,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "otpModel": () => (/* binding */ otpModel),
 /* harmony export */   "verifyotpModel": () => (/* binding */ verifyotpModel)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _login_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./login.page.html?ngResource */ 96752);
 /* harmony import */ var _login_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./login.page.scss?ngResource */ 98433);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 92218);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 92218);
 /* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var src_app_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/local-store.service */ 78650);
+/* harmony import */ var src_app_services_session_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/session.service */ 87252);
+/* harmony import */ var src_app_services_token_storage_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/token-storage.service */ 11573);
+/* harmony import */ var src_app_components_relative_users_relative_users_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/components/relative-users/relative-users.component */ 46351);
 
 
 
@@ -33,37 +37,58 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+const REMEMBER_ME = 'isRemember';
 class otpModel {
 }
 class verifyotpModel {
 }
 let LoginPage = class LoginPage {
-    constructor(router, cdk, fb, api, toastCtrl, dataService) {
+    constructor(router, cdk, fb, api, toastCtrl, dataService, ls, sessionService, tokenService, modalCtrl) {
         this.router = router;
         this.cdk = cdk;
         this.fb = fb;
         this.api = api;
         this.toastCtrl = toastCtrl;
         this.dataService = dataService;
+        this.ls = ls;
+        this.sessionService = sessionService;
+        this.tokenService = tokenService;
+        this.modalCtrl = modalCtrl;
         this.otpValue = null;
         this.otpValid = false;
         this.oTpModel = new otpModel();
         this.verifyOtpModel = new verifyotpModel();
         this.userResp = false;
         this.showPassword = false;
-        this.userPasswordUpdate = new rxjs__WEBPACK_IMPORTED_MODULE_4__.Subject();
+        this.userPasswordUpdate = new rxjs__WEBPACK_IMPORTED_MODULE_8__.Subject();
         this.isLoading = false;
     }
     ngOnInit() {
         this.initForm();
+        let hasRemberObj;
+        hasRemberObj = this.ls.getItem(REMEMBER_ME) || {};
+        if (hasRemberObj === null || hasRemberObj === void 0 ? void 0 : hasRemberObj.rememberMe) {
+            delete hasRemberObj['otpRequired'];
+            this.loginForm.patchValue(hasRemberObj);
+        }
     }
     initForm() {
         this.loginForm = this.fb.group({
-            phoneNo: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
+            phoneNo: [''],
+            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_9__.Validators.required],
+            rememberMe: [false],
+            otpRequired: [false],
+            // old
             isOtp: [false],
-            otp: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
-            password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
+            otp: [''],
         });
+    }
+    get isOtpRequired() {
+        return this.loginForm.get('otpRequired');
     }
     onPasswordToggle(showType) {
         if (showType === 'new') {
@@ -78,6 +103,117 @@ let LoginPage = class LoginPage {
             event.preventDefault();
         }
     }
+    /**
+     * To submit the signin form
+     */
+    onSubmit() {
+        if (this.loginForm.invalid) {
+            return;
+        }
+        this.isLoading = true;
+        /* send username and password to get Access Token */
+        let payload = {
+            mobile: this.loginForm.value['phoneNo'],
+            password: this.loginForm.value['password'],
+        };
+        let isRememberMe = this.loginForm.value['rememberMe'];
+        let otpRequired = this.loginForm.value['otpRequired'];
+        this.ls.setItem(REMEMBER_ME, this.loginForm.value);
+        this.sessionService.signin(payload, isRememberMe, otpRequired).subscribe((_) => {
+            this.isLoading = false;
+            /* get profile info */
+            if (this.loginForm.value['otpRequired']) {
+                // this.show2Factor = true;
+            }
+            else {
+                this.getProfile();
+            }
+        }, (err) => {
+            this.isLoading = false;
+            // this.simulateLogin();
+        });
+    }
+    /**
+     * @method getProfile()
+     */
+    getProfile() {
+        this.sessionService.getProfileInfo().subscribe((res) => {
+            // this.spinner?.hide();
+            let role = res.roles[0];
+            if ((role === null || role === void 0 ? void 0 : role.name) === 'MOBILE_CUSTOMER') {
+                this.tokenService.saveUser(res);
+                this.tokenService.setLoggedIn(false);
+                this.dataService.isLoggedIn.next(true);
+                this.getCustomerListByMobile(res === null || res === void 0 ? void 0 : res.mobile);
+            }
+            else if ((role === null || role === void 0 ? void 0 : role.name) === 'MOBILE_AGENT') {
+                this.tokenService.saveUser(res);
+                this.dataService.isLoggedIn.next(true);
+                this.tokenService.setLoggedIn(true);
+                this.router.navigate(['dashboard'], { replaceUrl: true });
+                this.openToast(`Welcome, ${res === null || res === void 0 ? void 0 : res.username}!`);
+            }
+            else {
+                this.router.navigate(['no-permission'], { replaceUrl: true });
+            }
+        }, (err) => {
+            // this.spinner?.hide();
+            // this.simulateLogin();
+        });
+    }
+    getCustomerListByMobile(mobile) {
+        this.sessionService.fetchCustomersByMobile(mobile).subscribe((res) => {
+            if ((res === null || res === void 0 ? void 0 : res.statusCode) == 200) {
+                localStorage.setItem('customer_details', JSON.stringify(res === null || res === void 0 ? void 0 : res.data));
+                this.openAvailableUserModal(mobile, res === null || res === void 0 ? void 0 : res.data);
+            }
+            else {
+                this.openToast(`${res === null || res === void 0 ? void 0 : res.message}`);
+            }
+        }, (err) => {
+            console.log(err);
+        });
+    }
+    getCustomerByNumber(customerNo) {
+        this.sessionService.getCustomerByNumber(customerNo).subscribe((res) => {
+            if ((res === null || res === void 0 ? void 0 : res.statusCode) == 200) {
+                localStorage.setItem('ACCOUNT', JSON.stringify(res === null || res === void 0 ? void 0 : res.data));
+                this.tokenService.setLoggedIn(true);
+                this.router.navigate(['dashboard'], { replaceUrl: true });
+            }
+            else {
+                this.openToast(`${res === null || res === void 0 ? void 0 : res.message}`);
+            }
+        }, (err) => {
+            console.log(err);
+        });
+    }
+    // Opening relative user sheet
+    openAvailableUserModal(mobile, data) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
+            const modal = yield this.modalCtrl.create({
+                component: src_app_components_relative_users_relative_users_component__WEBPACK_IMPORTED_MODULE_7__.RelativeUsersComponent,
+                breakpoints: [0, 0.75],
+                initialBreakpoint: 0.75,
+                handle: false,
+                cssClass: 'relative-modal',
+                componentProps: {
+                    users: data,
+                    mobile: mobile,
+                },
+                backdropDismiss: false,
+                canDismiss: true,
+            });
+            yield modal.present();
+            modal.onDidDismiss().then((res) => {
+                var _a;
+                console.log(res);
+                if (res === null || res === void 0 ? void 0 : res.data) {
+                    this.getCustomerByNumber((_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.customerId);
+                }
+            });
+        });
+    }
     continue(loginForm) {
         if (!this.loginForm.get('isOtp').value) {
             if (!loginForm.phoneNo) {
@@ -91,16 +227,16 @@ let LoginPage = class LoginPage {
             this.isLoading = true;
             let payload = {
                 phoneNumber: loginForm.phoneNo,
-                password: loginForm.password
+                password: loginForm.password,
             };
             this.api.validatePassword(payload).subscribe((res) => {
-                var _a, _b, _c, _d, _e;
+                var _a, _b, _c, _d, _e, _f;
                 if (res.status == 200) {
-                    if (((_a = res['data']) === null || _a === void 0 ? void 0 : _a.firstTimeLogin) == "Y") {
+                    if (((_a = res['data']) === null || _a === void 0 ? void 0 : _a.firstTimeLogin) == 'Y') {
                         localStorage.setItem('customerPhonenum', loginForm.phoneNo);
                         const navigationExtras = {
                             queryParams: {
-                                'screenName': 'reset'
+                                screenName: 'reset',
                             },
                         };
                         this.api.sendNavParam(navigationExtras);
@@ -111,12 +247,13 @@ let LoginPage = class LoginPage {
                         sessionStorage.setItem('customer_id', (_b = res['data']) === null || _b === void 0 ? void 0 : _b.customerId);
                         localStorage.setItem('firstName', (_c = res['data']) === null || _c === void 0 ? void 0 : _c.firstName);
                         localStorage.setItem('lastName', (_d = res['data']) === null || _d === void 0 ? void 0 : _d.lastName);
-                        localStorage.setItem('customer_id', (_e = res['data']) === null || _e === void 0 ? void 0 : _e.customerId);
+                        localStorage.setItem('userType', (_e = res['data']) === null || _e === void 0 ? void 0 : _e.userType);
+                        localStorage.setItem('customer_id', (_f = res['data']) === null || _f === void 0 ? void 0 : _f.customerId);
                         localStorage.setItem('customer_details', JSON.stringify(res['data']));
-                        localStorage.setItem('isShowed', "no");
+                        localStorage.setItem('isShowed', 'no');
                         this.router.navigate(['dashboard'], { replaceUrl: true });
                         this.dataService.isLoggedIn.next(true);
-                        this.openToast("Logged in Successfully!");
+                        this.openToast('Logged in Successfully!');
                     }
                 }
                 else {
@@ -148,7 +285,7 @@ let LoginPage = class LoginPage {
                 this.openToast(res === null || res === void 0 ? void 0 : res.message);
                 const navigationExtras = {
                     queryParams: {
-                        'screenName': 'login'
+                        screenName: 'login',
                     },
                 };
                 this.api.sendNavParam(navigationExtras);
@@ -162,7 +299,7 @@ let LoginPage = class LoginPage {
         });
     }
     openToast(message) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, function* () {
             const toast = yield this.toastCtrl.create({
                 message: `${message}`,
                 duration: 2500,
@@ -191,20 +328,144 @@ let LoginPage = class LoginPage {
     }
 };
 LoginPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__.Router },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_8__.ChangeDetectorRef },
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_11__.Router },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_12__.ChangeDetectorRef },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormBuilder },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__.ApiService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.ToastController },
-    { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_3__.DataService }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.ToastController },
+    { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_3__.DataService },
+    { type: src_app_services_local_store_service__WEBPACK_IMPORTED_MODULE_4__.LocalStoreService },
+    { type: src_app_services_session_service__WEBPACK_IMPORTED_MODULE_5__.SessionService },
+    { type: src_app_services_token_storage_service__WEBPACK_IMPORTED_MODULE_6__.TokenStorageService },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.ModalController }
 ];
-LoginPage = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
+LoginPage = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_12__.Component)({
         selector: 'app-login',
         template: _login_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
         styles: [_login_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], LoginPage);
+
+
+
+/***/ }),
+
+/***/ 78650:
+/*!*************************************************!*\
+  !*** ./src/app/services/local-store.service.ts ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LocalStoreService": () => (/* binding */ LocalStoreService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
+
+
+let LocalStoreService = class LocalStoreService {
+    constructor() {
+        this.ls = window.localStorage;
+    }
+    setItem(key, value) {
+        value = JSON.stringify(value);
+        this.ls.setItem(key, value);
+        return true;
+    }
+    getItem(key) {
+        const value = this.ls.getItem(key);
+        try {
+            return JSON.parse(value);
+        }
+        catch (e) {
+            return null;
+        }
+    }
+    clear() {
+        this.ls.clear();
+    }
+};
+LocalStoreService.ctorParameters = () => [];
+LocalStoreService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
+        providedIn: 'root',
+    })
+], LocalStoreService);
+
+
+
+/***/ }),
+
+/***/ 87252:
+/*!*********************************************!*\
+  !*** ./src/app/services/session.service.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SessionService": () => (/* binding */ SessionService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 86942);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment */ 92340);
+/* harmony import */ var _token_storage_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./token-storage.service */ 11573);
+
+
+
+
+
+
+let SessionService = class SessionService {
+    constructor(httpClient, tokenService) {
+        this.httpClient = httpClient;
+        this.tokenService = tokenService;
+        this.basePath = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.microServiceURL;
+    }
+    signin(data, isRememberMe, otpRequired) {
+        return this.httpClient
+            .post(`${this.basePath}/auth/signin?rememberMe=${isRememberMe}&otpRequired=${otpRequired}`, data)
+            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)((res) => {
+            if (res === null || res === void 0 ? void 0 : res.accessToken) {
+                return this.tokenService.saveToken(res === null || res === void 0 ? void 0 : res.accessToken);
+            }
+        }));
+    }
+    getProfileInfo() {
+        return this.httpClient.get(`${this.basePath}/loginApi/profile`);
+    }
+    generateOTP() {
+        return this.httpClient.get(`${this.basePath}/auth/generateOTP`);
+    }
+    verifyOTP(payload) {
+        return this.httpClient
+            .post(`${this.basePath}/auth/verifyOTP`, payload)
+            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)((res) => {
+            if (res === null || res === void 0 ? void 0 : res.accessToken) {
+                return this.tokenService.saveToken(res === null || res === void 0 ? void 0 : res.accessToken);
+            }
+        }));
+    }
+    fetchCustomersByMobile(mobile) {
+        return this.httpClient.get(`${this.basePath}/customer?phoneNumber=${mobile}`);
+    }
+    getCustomerByNumber(customerNo) {
+        return this.httpClient.get(`${this.basePath}/customer/accountInfo?customerNo=${customerNo}`);
+    }
+};
+SessionService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient },
+    { type: _token_storage_service__WEBPACK_IMPORTED_MODULE_1__.TokenStorageService }
+];
+SessionService = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Injectable)({
+        providedIn: 'root',
+    })
+], SessionService);
 
 
 
@@ -226,7 +487,7 @@ module.exports = "section {\n  position: relative;\n  background: url('3@3x.png'
   \********************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content>\r\n  <section>\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button fill=\"clear\" (click)=\"back()\">\r\n          <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" class=\"back-nav-color\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n    \r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\"><img src=\"assets/images/Demobank.svg\" class=\"w-100\"></div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <div class=\"title\">Sign In</div>\r\n      <p class=\"sub-title\">Enter your details to get started</p>\r\n\r\n      <form [formGroup]=\"loginForm\" *ngIf=\"loginForm\">\r\n\r\n        <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n          <mat-label>Phone Number</mat-label>\r\n          <input type=\"tel\" matInput name=\"username\" formControlName=\"phoneNo\" #phone (keyup)=\"_keyPress($event)\"\r\n            placeholder=\"Phone Number\" maxLength=\"10\" autocomplete=\"off\"/>\r\n        </mat-form-field>\r\n\r\n\r\n        <mat-checkbox formControlName=\"isOtp\" color=\"primary\" class=\"app-font\">\r\n          Sign in using OTP\r\n        </mat-checkbox>\r\n\r\n        <mat-form-field class=\"full-width mt-2\" appearance=\"outline\" *ngIf=\"loginForm.get('isOtp').value == false\">\r\n          <mat-label>Password</mat-label>\r\n          <input [type]=\"hide ? 'text' : 'password'\" name=\"password\" matInput formControlName=\"password\"\r\n            placeholder=\"Enter Password\" autocomplete=\"off\" />\r\n          <button mat-icon-button matSuffix (click)=\"hide = !hide\" [attr.aria-label]=\"'Hide password'\"\r\n            [attr.aria-pressed]=\"hide\">\r\n            <mat-icon color=\"primary\">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>\r\n          </button>\r\n        </mat-form-field>\r\n\r\n\r\n        <div class=\"forgot\">\r\n          <a class=\"text-right\" (click)=\"forgotPassword()\">Forgot password ?</a>\r\n        </div>\r\n\r\n      </form>\r\n\r\n      <div class=\"continue_btn\">\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-3\" (click)=\"continue(loginForm.value)\">CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n      <!-- <ion-button expand=\"full\" shape=\"round\" class=\"my-3\" (click)=\"fingerprint()\">fingerprint\r\n      </ion-button>\r\n      <ion-button expand=\"full\" shape=\"round\" class=\"my-3\" (click)=\"faceid()\">faceid\r\n      </ion-button> -->\r\n\r\n      <ion-item class=\"ion-no-border\" lines=\"none\">\r\n        <ion-label class=\"text-center app-font\">\r\n          <h6><small>Version 0.0.24</small></h6>\r\n          <p><small>Build 24</small></p>\r\n        </ion-label>\r\n      </ion-item>\r\n\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content>\r\n  <section>\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-button fill=\"clear\" (click)=\"back()\">\r\n          <ion-icon\r\n            slot=\"icon-only\"\r\n            name=\"chevron-back-outline\"\r\n            class=\"back-nav-color\"\r\n          ></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n\r\n    <div class=\"logo-icon\">\r\n      <div class=\"logo\">\r\n        <img src=\"assets/images/Demobank.svg\" class=\"w-100\" />\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div class=\"item-box-white\">\r\n    <div class=\"form-box\">\r\n      <div class=\"title\">Sign In</div>\r\n      <p class=\"sub-title\">Enter your details to get started</p>\r\n\r\n      <form [formGroup]=\"loginForm\" *ngIf=\"loginForm\">\r\n        <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n          <mat-label>Phone Number</mat-label>\r\n          <input\r\n            type=\"tel\"\r\n            matInput\r\n            name=\"username\"\r\n            formControlName=\"phoneNo\"\r\n            #phone\r\n            (keyup)=\"_keyPress($event)\"\r\n            placeholder=\"Phone Number\"\r\n            maxlength=\"10\"\r\n            autocomplete=\"off\"\r\n          />\r\n        </mat-form-field>\r\n\r\n        <mat-checkbox formControlName=\"isOtp\" color=\"primary\" class=\"app-font\">\r\n          Sign in using OTP\r\n        </mat-checkbox>\r\n\r\n        <mat-form-field\r\n          class=\"full-width mt-2\"\r\n          appearance=\"outline\"\r\n          *ngIf=\"loginForm.get('isOtp').value == false\"\r\n        >\r\n          <mat-label>Password</mat-label>\r\n          <input\r\n            [type]=\"hide ? 'text' : 'password'\"\r\n            name=\"password\"\r\n            matInput\r\n            formControlName=\"password\"\r\n            placeholder=\"Enter Password\"\r\n            autocomplete=\"off\"\r\n          />\r\n          <button\r\n            mat-icon-button\r\n            matSuffix\r\n            (click)=\"hide = !hide\"\r\n            [attr.aria-label]=\"'Hide password'\"\r\n            [attr.aria-pressed]=\"hide\"\r\n          >\r\n            <mat-icon color=\"primary\"\r\n              >{{hide ? 'visibility' : 'visibility_off'}}</mat-icon\r\n            >\r\n          </button>\r\n        </mat-form-field>\r\n\r\n        <div class=\"forgot\">\r\n          <a class=\"text-right\" (click)=\"forgotPassword()\">Forgot password ?</a>\r\n        </div>\r\n      </form>\r\n\r\n      <div class=\"continue_btn\">\r\n        <ng-container *ngIf=\"isLoading; else showLoading\">\r\n          <ion-button expand=\"full\" shape=\"round\" class=\"my-5\">\r\n            <ion-spinner name=\"circles\"></ion-spinner>\r\n          </ion-button>\r\n        </ng-container>\r\n        <ng-template #showLoading>\r\n          <ion-button\r\n            expand=\"full\"\r\n            shape=\"round\"\r\n            class=\"my-3\"\r\n            (click)=\"onSubmit()\"\r\n            >CONTINUE\r\n          </ion-button>\r\n        </ng-template>\r\n      </div>\r\n      <!-- <ion-button expand=\"full\" shape=\"round\" class=\"my-3\" (click)=\"fingerprint()\">fingerprint\r\n      </ion-button>\r\n      <ion-button expand=\"full\" shape=\"round\" class=\"my-3\" (click)=\"faceid()\">faceid\r\n      </ion-button> -->\r\n\r\n      <ion-item class=\"ion-no-border\" lines=\"none\">\r\n        <ion-label class=\"text-center app-font\">\r\n          <h6><small>Version 0.0.41</small></h6>\r\n          <p><small>Build 41</small></p>\r\n        </ion-label>\r\n      </ion-item>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ })
 

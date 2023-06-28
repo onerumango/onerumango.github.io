@@ -156,9 +156,9 @@ let OtpPage = class OtpPage {
             disableAutoFocus: false,
             placeholder: '',
             inputStyles: {
-                'width': '40px',
-                'height': '40px'
-            }
+                width: '40px',
+                height: '40px',
+            },
         };
     }
     ngOnInit() {
@@ -171,8 +171,7 @@ let OtpPage = class OtpPage {
         this.PhoneNumLogin = localStorage.getItem('customerPhonenum');
         this.navSubscription = this.api.getNavParam.subscribe((data) => (this.screenNames = data));
     }
-    onOtpChange() {
-    }
+    onOtpChange() { }
     getOTP() {
         this.oTpModel.source = 'customer';
         this.oTpModel.source_key = 'mobile';
@@ -188,7 +187,6 @@ let OtpPage = class OtpPage {
         }, (err) => {
             this.openToast(err);
         });
-        ;
     }
     resendOTP() {
         this.ngOtpInput.setValue('');
@@ -203,13 +201,13 @@ let OtpPage = class OtpPage {
         this.verifyOtpModel.isMobileLogin = true;
         this.isLoading = true;
         this.api.verifyOtp(this.verifyOtpModel).subscribe((otpResp) => {
-            var _a, _b, _c, _d, _e;
+            var _a, _b, _c, _d, _e, _f;
             if ((otpResp === null || otpResp === void 0 ? void 0 : otpResp.status) == 200) {
-                if (((_a = otpResp['data']) === null || _a === void 0 ? void 0 : _a.firstTimeLogin) == "Y") {
+                if (((_a = otpResp['data']) === null || _a === void 0 ? void 0 : _a.firstTimeLogin) == 'Y') {
                     localStorage.setItem('customerPhonenum', this.customerPhonenum);
                     const navigationExtras = {
                         queryParams: {
-                            'screenName': 'reset'
+                            screenName: 'reset',
                         },
                     };
                     this.api.sendNavParam(navigationExtras);
@@ -218,19 +216,20 @@ let OtpPage = class OtpPage {
                 else {
                     // TODO:
                     if (this.screenNames) {
-                        if (this.screenNames.queryParams.screenName == "mpinotpValidate" || this.screenNames.queryParams.screenName == "forgotmpin") {
+                        if (this.screenNames.queryParams.screenName == 'mpinotpValidate' ||
+                            this.screenNames.queryParams.screenName == 'forgotmpin') {
                             const navigationExtras = {
                                 queryParams: {
-                                    'screenName': 'forgotmpin'
+                                    screenName: 'forgotmpin',
                                 },
                             };
                             this.api.sendNavParam(navigationExtras);
                             this.router.navigateByUrl('/setmpin');
                         }
-                        else if (this.screenNames.queryParams.screenName == "forget-password") {
+                        else if (this.screenNames.queryParams.screenName == 'forget-password') {
                             const navigationExtras = {
                                 queryParams: {
-                                    'screenName': 'forget-password'
+                                    screenName: 'forget-password',
                                 },
                             };
                             this.api.sendNavParam(navigationExtras);
@@ -242,7 +241,8 @@ let OtpPage = class OtpPage {
                             localStorage.setItem('lastName', (_d = otpResp['data']) === null || _d === void 0 ? void 0 : _d.lastName);
                             localStorage.setItem('customer_id', (_e = otpResp['data']) === null || _e === void 0 ? void 0 : _e.customerId);
                             localStorage.setItem('customer_details', JSON.stringify(otpResp['data']));
-                            localStorage.setItem('isShowed', "no");
+                            localStorage.setItem('userType', (_f = otpResp['data']) === null || _f === void 0 ? void 0 : _f.userType);
+                            localStorage.setItem('isShowed', 'no');
                             this.router.navigate(['dashboard'], { replaceUrl: true });
                             this.otpForm.reset();
                             this.dataService.isLoggedIn.next(true);
@@ -258,7 +258,7 @@ let OtpPage = class OtpPage {
             this.isLoading = false;
         }, (err) => {
             this.errMsg = 'Please enter a valid OTP';
-            setTimeout(() => this.errMsg = '', 3000);
+            setTimeout(() => (this.errMsg = ''), 3000);
             this.isLoading = false;
         });
     }
@@ -380,9 +380,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const _c0 = ["toast-component", ""];
+
 function Toast_button_0_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function Toast_button_0_Template_button_click_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6);
@@ -394,18 +396,21 @@ function Toast_button_0_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
   }
 }
+
 function Toast_div_1_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
   }
+
   if (rf & 2) {
     const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("[", ctx_r7.duplicatesCount + 1, "]");
   }
 }
+
 function Toast_div_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
@@ -413,6 +418,7 @@ function Toast_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, Toast_div_1_ng_container_2_Template, 2, 1, "ng-container", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
+
   if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx_r1.options.titleClass);
@@ -423,22 +429,26 @@ function Toast_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r1.duplicatesCount);
   }
 }
+
 function Toast_div_2_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div", 7);
   }
+
   if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx_r2.options.messageClass);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", ctx_r2.message, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
   }
 }
+
 function Toast_div_3_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
+
   if (rf & 2) {
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx_r3.options.messageClass);
@@ -447,21 +457,25 @@ function Toast_div_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r3.message, " ");
   }
 }
+
 function Toast_div_4_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "div", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
+
   if (rf & 2) {
     const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("width", ctx_r4.width + "%");
   }
 }
+
 function ToastNoAnimation_button_0_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ToastNoAnimation_button_0_Template_button_click_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6);
@@ -473,18 +487,21 @@ function ToastNoAnimation_button_0_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
   }
 }
+
 function ToastNoAnimation_div_1_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
   }
+
   if (rf & 2) {
     const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("[", ctx_r7.duplicatesCount + 1, "]");
   }
 }
+
 function ToastNoAnimation_div_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
@@ -492,6 +509,7 @@ function ToastNoAnimation_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ToastNoAnimation_div_1_ng_container_2_Template, 2, 1, "ng-container", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
+
   if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx_r1.options.titleClass);
@@ -502,22 +520,26 @@ function ToastNoAnimation_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r1.duplicatesCount);
   }
 }
+
 function ToastNoAnimation_div_2_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div", 7);
   }
+
   if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx_r2.options.messageClass);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", ctx_r2.message, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
   }
 }
+
 function ToastNoAnimation_div_3_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
+
   if (rf & 2) {
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx_r3.options.messageClass);
@@ -526,34 +548,42 @@ function ToastNoAnimation_div_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r3.message, " ");
   }
 }
+
 function ToastNoAnimation_div_4_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "div", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
+
   if (rf & 2) {
     const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("width", ctx_r4.width + "%");
   }
 }
+
 class ToastContainerDirective {
   constructor(el) {
     this.el = el;
   }
+
   getContainerElement() {
     return this.el.nativeElement;
   }
+
 }
+
 ToastContainerDirective.ɵfac = function ToastContainerDirective_Factory(t) {
   return new (t || ToastContainerDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef));
 };
+
 ToastContainerDirective.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
   type: ToastContainerDirective,
   selectors: [["", "toastContainer", ""]],
   exportAs: ["toastContainer"]
 });
+
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ToastContainerDirective, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
@@ -567,16 +597,20 @@ ToastContainerDirective.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_M
     }];
   }, null);
 })();
+
 class ToastContainerModule {}
+
 ToastContainerModule.ɵfac = function ToastContainerModule_Factory(t) {
   return new (t || ToastContainerModule)();
 };
+
 ToastContainerModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
   type: ToastContainerModule,
   declarations: [ToastContainerDirective],
   exports: [ToastContainerDirective]
 });
 ToastContainerModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({});
+
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ToastContainerModule, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModule,
@@ -586,29 +620,37 @@ ToastContainerModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODU
     }]
   }], null, null);
 })();
-
 /**
  * A `ComponentPortal` is a portal that instantiates some Component upon attachment.
  */
+
+
 class ComponentPortal {
   constructor(component, injector) {
     this.component = component;
     this.injector = injector;
   }
   /** Attach this portal to a host. */
+
+
   attach(host, newestOnTop) {
     this._attachedHost = host;
     return host.attach(this, newestOnTop);
   }
   /** Detach this portal from its host */
+
+
   detach() {
     const host = this._attachedHost;
+
     if (host) {
       this._attachedHost = undefined;
       return host.detach();
     }
   }
   /** Whether this portal is attached to a host. */
+
+
   get isAttached() {
     return this._attachedHost != null;
   }
@@ -616,37 +658,49 @@ class ComponentPortal {
    * Sets the PortalHost reference without performing `attach()`. This is used directly by
    * the PortalHost when it is performing an `attach()` or `detach()`.
    */
+
+
   setAttachedHost(host) {
     this._attachedHost = host;
   }
+
 }
 /**
  * Partial implementation of PortalHost that only deals with attaching a
  * ComponentPortal
  */
+
+
 class BasePortalHost {
   attach(portal, newestOnTop) {
     this._attachedPortal = portal;
     return this.attachComponentPortal(portal, newestOnTop);
   }
+
   detach() {
     if (this._attachedPortal) {
       this._attachedPortal.setAttachedHost();
     }
+
     this._attachedPortal = undefined;
+
     if (this._disposeFn) {
       this._disposeFn();
+
       this._disposeFn = undefined;
     }
   }
+
   setDisposeFn(fn) {
     this._disposeFn = fn;
   }
-}
 
+}
 /**
  * Everything a toast needs to launch
  */
+
+
 class ToastPackage {
   constructor(toastId, config, message, title, toastType, toastRef) {
     this.toastId = toastId;
@@ -659,27 +713,37 @@ class ToastPackage {
     this._onAction = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     this.toastRef.afterClosed().subscribe(() => {
       this._onAction.complete();
+
       this._onTap.complete();
     });
   }
   /** Fired on click */
+
+
   triggerTap() {
     this._onTap.next();
+
     if (this.config.tapToDismiss) {
       this._onTap.complete();
     }
   }
+
   onTap() {
     return this._onTap.asObservable();
   }
   /** available for use in custom toast */
+
+
   triggerAction(action) {
     this._onAction.next(action);
   }
+
   onAction() {
     return this._onAction.asObservable();
   }
+
 }
+
 const DefaultNoComponentGlobalConfig = {
   maxOpened: 0,
   autoDismiss: false,
@@ -713,97 +777,134 @@ const DefaultNoComponentGlobalConfig = {
   payload: null
 };
 const TOAST_CONFIG = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('ToastConfig');
-
 /**
  * Reference to a toast opened via the Toastr service.
  */
+
 class ToastRef {
   constructor(_overlayRef) {
     this._overlayRef = _overlayRef;
     /** Count of duplicates of this toast */
+
     this.duplicatesCount = 0;
     /** Subject for notifying the user that the toast has finished closing. */
+
     this._afterClosed = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     /** triggered when toast is activated */
+
     this._activate = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     /** notifies the toast that it should close before the timeout */
+
     this._manualClose = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     /** notifies the toast that it should reset the timeouts */
+
     this._resetTimeout = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     /** notifies the toast that it should count a duplicate toast */
+
     this._countDuplicate = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
   }
+
   manualClose() {
     this._manualClose.next();
+
     this._manualClose.complete();
   }
+
   manualClosed() {
     return this._manualClose.asObservable();
   }
+
   timeoutReset() {
     return this._resetTimeout.asObservable();
   }
+
   countDuplicate() {
     return this._countDuplicate.asObservable();
   }
   /**
    * Close the toast.
    */
+
+
   close() {
     this._overlayRef.detach();
+
     this._afterClosed.next();
+
     this._manualClose.next();
+
     this._afterClosed.complete();
+
     this._manualClose.complete();
+
     this._activate.complete();
+
     this._resetTimeout.complete();
+
     this._countDuplicate.complete();
   }
   /** Gets an observable that is notified when the toast is finished closing. */
+
+
   afterClosed() {
     return this._afterClosed.asObservable();
   }
+
   isInactive() {
     return this._activate.isStopped;
   }
+
   activate() {
     this._activate.next();
+
     this._activate.complete();
   }
   /** Gets an observable that is notified when the toast has started opening. */
+
+
   afterActivate() {
     return this._activate.asObservable();
   }
   /** Reset the toast timouts and count duplicates */
+
+
   onDuplicate(resetTimeout, countDuplicate) {
     if (resetTimeout) {
       this._resetTimeout.next();
     }
+
     if (countDuplicate) {
       this._countDuplicate.next(++this.duplicatesCount);
     }
   }
+
 }
 /** Custom injector type specifically for instantiating components with a toast. */
+
+
 class ToastInjector {
   constructor(_toastPackage, _parentInjector) {
     this._toastPackage = _toastPackage;
     this._parentInjector = _parentInjector;
   }
+
   get(token, notFoundValue, flags) {
     if (token === ToastPackage) {
       return this._toastPackage;
     }
+
     return this._parentInjector.get(token, notFoundValue, flags);
   }
-}
 
+}
 /**
  * A PortalHost for attaching portals to an arbitrary DOM element outside of the Angular
  * application context.
  *
  * This is the only part of the portal core that directly touches the DOM.
  */
+
+
 class DomPortalHost extends BasePortalHost {
   constructor(_hostDomElement, _componentFactoryResolver, _appRef) {
     super();
@@ -815,47 +916,58 @@ class DomPortalHost extends BasePortalHost {
    * Attach the given ComponentPortal to DOM element using the ComponentFactoryResolver.
    * @param portal Portal to be attached
    */
+
+
   attachComponentPortal(portal, newestOnTop) {
     const componentFactory = this._componentFactoryResolver.resolveComponentFactory(portal.component);
-    let componentRef;
-    // If the portal specifies a ViewContainerRef, we will use that as the attachment point
+
+    let componentRef; // If the portal specifies a ViewContainerRef, we will use that as the attachment point
     // for the component (in terms of Angular's component tree, not rendering).
     // When the ViewContainerRef is missing, we use the factory to create the component directly
     // and then manually attach the ChangeDetector for that component to the application (which
     // happens automatically when using a ViewContainer).
-    componentRef = componentFactory.create(portal.injector);
-    // When creating a component outside of a ViewContainer, we need to manually register
+
+    componentRef = componentFactory.create(portal.injector); // When creating a component outside of a ViewContainer, we need to manually register
     // its ChangeDetector with the application. This API is unfortunately not yet published
     // in Angular core. The change detector must also be deregistered when the component
     // is destroyed to prevent memory leaks.
+
     this._appRef.attachView(componentRef.hostView);
+
     this.setDisposeFn(() => {
       this._appRef.detachView(componentRef.hostView);
+
       componentRef.destroy();
-    });
-    // At this point the component has been instantiated, so we move it to the location in the DOM
+    }); // At this point the component has been instantiated, so we move it to the location in the DOM
     // where we want it to be rendered.
+
     if (newestOnTop) {
       this._hostDomElement.insertBefore(this._getComponentRootNode(componentRef), this._hostDomElement.firstChild);
     } else {
       this._hostDomElement.appendChild(this._getComponentRootNode(componentRef));
     }
+
     return componentRef;
   }
   /** Gets the root HTMLElement for an instantiated component. */
+
+
   _getComponentRootNode(componentRef) {
     return componentRef.hostView.rootNodes[0];
   }
-}
 
+}
 /**
  * Reference to an overlay that has been created with the Overlay service.
  * Used to manipulate or dispose of said overlay.
  */
+
+
 class OverlayRef {
   constructor(_portalHost) {
     this._portalHost = _portalHost;
   }
+
   attach(portal, newestOnTop = true) {
     return this._portalHost.attach(portal, newestOnTop);
   }
@@ -863,16 +975,21 @@ class OverlayRef {
    * Detaches an overlay from a portal.
    * @returns Resolves when the overlay has been detached.
    */
+
+
   detach() {
     return this._portalHost.detach();
   }
-}
 
+}
 /** Container inside which all toasts will render. */
+
+
 class OverlayContainer {
   constructor(_document) {
     this._document = _document;
   }
+
   ngOnDestroy() {
     if (this._containerElement && this._containerElement.parentNode) {
       this._containerElement.parentNode.removeChild(this._containerElement);
@@ -884,10 +1001,13 @@ class OverlayContainer {
    * the container in non-browser environments.
    * @returns the container element
    */
+
+
   getContainerElement() {
     if (!this._containerElement) {
       this._createContainer();
     }
+
     return this._containerElement;
   }
   /**
@@ -895,22 +1015,31 @@ class OverlayContainer {
    * with the 'cdk-overlay-container' class on the document body
    * and 'aria-live="polite"'
    */
+
+
   _createContainer() {
     const container = this._document.createElement('div');
+
     container.classList.add('overlay-container');
     container.setAttribute('aria-live', 'polite');
+
     this._document.body.appendChild(container);
+
     this._containerElement = container;
   }
+
 }
+
 OverlayContainer.ɵfac = function OverlayContainer_Factory(t) {
   return new (t || OverlayContainer)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_2__.DOCUMENT));
 };
+
 OverlayContainer.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
   token: OverlayContainer,
   factory: OverlayContainer.ɵfac,
   providedIn: 'root'
 });
+
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](OverlayContainer, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injectable,
@@ -927,8 +1056,8 @@ OverlayContainer.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_
     }];
   }, null);
 })();
-
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 /**
  * Service to create Overlays. Overlays are dynamically added pieces of floating UI, meant to be
  * used as a low-level building building block for other components. Dialogs, tooltips, menus,
@@ -937,46 +1066,58 @@ OverlayContainer.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_
  *
  * An overlay *is* a PortalHost, so any kind of Portal can be loaded into one.
  */
+
+
 class Overlay {
   constructor(_overlayContainer, _componentFactoryResolver, _appRef, _document) {
     this._overlayContainer = _overlayContainer;
     this._componentFactoryResolver = _componentFactoryResolver;
     this._appRef = _appRef;
-    this._document = _document;
-    // Namespace panes by overlay container
+    this._document = _document; // Namespace panes by overlay container
+
     this._paneElements = new Map();
   }
   /**
    * Creates an overlay.
    * @returns A reference to the created overlay.
    */
+
+
   create(positionClass, overlayContainer) {
     // get existing pane if possible
     return this._createOverlayRef(this.getPaneElement(positionClass, overlayContainer));
   }
+
   getPaneElement(positionClass = '', overlayContainer) {
     if (!this._paneElements.get(overlayContainer)) {
       this._paneElements.set(overlayContainer, {});
     }
+
     if (!this._paneElements.get(overlayContainer)[positionClass]) {
       this._paneElements.get(overlayContainer)[positionClass] = this._createPaneElement(positionClass, overlayContainer);
     }
+
     return this._paneElements.get(overlayContainer)[positionClass];
   }
   /**
    * Creates the DOM element for an overlay and appends it to the overlay container.
    * @returns Newly-created pane element
    */
+
+
   _createPaneElement(positionClass, overlayContainer) {
     const pane = this._document.createElement('div');
+
     pane.id = 'toast-container';
     pane.classList.add(positionClass);
     pane.classList.add('toast-container');
+
     if (!overlayContainer) {
       this._overlayContainer.getContainerElement().appendChild(pane);
     } else {
       overlayContainer.getContainerElement().appendChild(pane);
     }
+
     return pane;
   }
   /**
@@ -984,6 +1125,8 @@ class Overlay {
    * @param pane The DOM element to turn into a portal host.
    * @returns A portal host for the given DOM element.
    */
+
+
   _createPortalHost(pane) {
     return new DomPortalHost(pane, this._componentFactoryResolver, this._appRef);
   }
@@ -991,18 +1134,24 @@ class Overlay {
    * Creates an OverlayRef for an overlay in the given DOM element.
    * @param pane DOM element for the overlay
    */
+
+
   _createOverlayRef(pane) {
     return new OverlayRef(this._createPortalHost(pane));
   }
+
 }
+
 Overlay.ɵfac = function Overlay_Factory(t) {
   return new (t || Overlay)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](OverlayContainer), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ComponentFactoryResolver), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ApplicationRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_2__.DOCUMENT));
 };
+
 Overlay.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
   token: Overlay,
   factory: Overlay.ɵfac,
   providedIn: 'root'
 });
+
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](Overlay, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injectable,
@@ -1025,6 +1174,7 @@ Overlay.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
     }];
   }, null);
 })();
+
 class ToastrService {
   constructor(token, overlay, _injector, sanitizer, ngZone) {
     this.overlay = overlay;
@@ -1035,30 +1185,41 @@ class ToastrService {
     this.toasts = [];
     this.index = 0;
     this.toastrConfig = Object.assign(Object.assign({}, token.default), token.config);
+
     if (token.config.iconClasses) {
       this.toastrConfig.iconClasses = Object.assign(Object.assign({}, token.default.iconClasses), token.config.iconClasses);
     }
   }
   /** show toast */
+
+
   show(message, title, override = {}, type = '') {
     return this._preBuildNotification(type, message, title, this.applyConfig(override));
   }
   /** show successful toast */
+
+
   success(message, title, override = {}) {
     const type = this.toastrConfig.iconClasses.success || '';
     return this._preBuildNotification(type, message, title, this.applyConfig(override));
   }
   /** show error toast */
+
+
   error(message, title, override = {}) {
     const type = this.toastrConfig.iconClasses.error || '';
     return this._preBuildNotification(type, message, title, this.applyConfig(override));
   }
   /** show info toast */
+
+
   info(message, title, override = {}) {
     const type = this.toastrConfig.iconClasses.info || '';
     return this._preBuildNotification(type, message, title, this.applyConfig(override));
   }
   /** show warning toast */
+
+
   warning(message, title, override = {}) {
     const type = this.toastrConfig.iconClasses.warning || '';
     return this._preBuildNotification(type, message, title, this.applyConfig(override));
@@ -1066,6 +1227,8 @@ class ToastrService {
   /**
    * Remove all or a single toast by id
    */
+
+
   clear(toastId) {
     // Call every toastRef manualClose function
     for (const toast of this.toasts) {
@@ -1082,49 +1245,66 @@ class ToastrService {
   /**
    * Remove and destroy a single toast by id
    */
+
+
   remove(toastId) {
     const found = this._findToast(toastId);
+
     if (!found) {
       return false;
     }
+
     found.activeToast.toastRef.close();
     this.toasts.splice(found.index, 1);
     this.currentlyActive = this.currentlyActive - 1;
+
     if (!this.toastrConfig.maxOpened || !this.toasts.length) {
       return false;
     }
+
     if (this.currentlyActive < this.toastrConfig.maxOpened && this.toasts[this.currentlyActive]) {
       const p = this.toasts[this.currentlyActive].toastRef;
+
       if (!p.isInactive()) {
         this.currentlyActive = this.currentlyActive + 1;
         p.activate();
       }
     }
+
     return true;
   }
   /**
    * Determines if toast message is already shown
    */
+
+
   findDuplicate(title = '', message = '', resetOnDuplicate, countDuplicates) {
     const {
       includeTitleDuplicates
     } = this.toastrConfig;
+
     for (const toast of this.toasts) {
       const hasDuplicateTitle = includeTitleDuplicates && toast.title === title;
+
       if ((!includeTitleDuplicates || hasDuplicateTitle) && toast.message === message) {
         toast.toastRef.onDuplicate(resetOnDuplicate, countDuplicates);
         return toast;
       }
     }
+
     return null;
   }
   /** create a clone of global config and apply individual settings */
+
+
   applyConfig(override = {}) {
     return Object.assign(Object.assign({}, this.toastrConfig), override);
   }
   /**
    * Find toast object by id
    */
+
+
   _findToast(toastId) {
     for (let i = 0; i < this.toasts.length; i++) {
       if (this.toasts[i].toastId === toastId) {
@@ -1134,46 +1314,60 @@ class ToastrService {
         };
       }
     }
+
     return null;
   }
   /**
    * Determines the need to run inside angular's zone then builds the toast
    */
+
+
   _preBuildNotification(toastType, message, title, config) {
     if (config.onActivateTick) {
       return this.ngZone.run(() => this._buildNotification(toastType, message, title, config));
     }
+
     return this._buildNotification(toastType, message, title, config);
   }
   /**
    * Creates and attaches toast data to component
    * returns the active toast, or in case preventDuplicates is enabled the original/non-duplicate active toast.
    */
+
+
   _buildNotification(toastType, message, title, config) {
     if (!config.toastComponent) {
       throw new Error('toastComponent required');
-    }
-    // max opened and auto dismiss = true
+    } // max opened and auto dismiss = true
     // if timeout = 0 resetting it would result in setting this.hideTime = Date.now(). Hence, we only want to reset timeout if there is
     // a timeout at all
+
+
     const duplicate = this.findDuplicate(title, message, this.toastrConfig.resetTimeoutOnDuplicate && config.timeOut > 0, this.toastrConfig.countDuplicates);
+
     if ((this.toastrConfig.includeTitleDuplicates && title || message) && this.toastrConfig.preventDuplicates && duplicate !== null) {
       return duplicate;
     }
+
     this.previousToastMessage = message;
     let keepInactive = false;
+
     if (this.toastrConfig.maxOpened && this.currentlyActive >= this.toastrConfig.maxOpened) {
       keepInactive = true;
+
       if (this.toastrConfig.autoDismiss) {
         this.clear(this.toasts[0].toastId);
       }
     }
+
     const overlayRef = this.overlay.create(config.positionClass, this.overlayContainer);
     this.index = this.index + 1;
     let sanitizedMessage = message;
+
     if (message && config.enableHtml) {
       sanitizedMessage = this.sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.HTML, message);
     }
+
     const toastRef = new ToastRef(overlayRef);
     const toastPackage = new ToastPackage(this.index, config, sanitizedMessage, title, toastType, toastRef);
     const toastInjector = new ToastInjector(toastPackage, this._injector);
@@ -1191,24 +1385,30 @@ class ToastrService {
       onAction: toastPackage.onAction(),
       portal
     };
+
     if (!keepInactive) {
       this.currentlyActive = this.currentlyActive + 1;
       setTimeout(() => {
         ins.toastRef.activate();
       });
     }
+
     this.toasts.push(ins);
     return ins;
   }
+
 }
+
 ToastrService.ɵfac = function ToastrService_Factory(t) {
   return new (t || ToastrService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](TOAST_CONFIG), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](Overlay), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.DomSanitizer), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone));
 };
+
 ToastrService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
   token: ToastrService,
   factory: ToastrService.ɵfac,
   providedIn: 'root'
 });
+
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ToastrService, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injectable,
@@ -1233,16 +1433,20 @@ ToastrService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__
     }];
   }, null);
 })();
+
 class Toast {
   constructor(toastrService, toastPackage, ngZone) {
     this.toastrService = toastrService;
     this.toastPackage = toastPackage;
     this.ngZone = ngZone;
     /** width of progress bar */
+
     this.width = -1;
     /** a combination of toast type and options.toastClass */
+
     this.toastClasses = '';
     /** controls animation */
+
     this.state = {
       value: 'inactive',
       params: {
@@ -1269,12 +1473,16 @@ class Toast {
     });
   }
   /** hides component when waiting to be displayed */
+
+
   get displayStyle() {
     if (this.state.value === 'inactive') {
       return 'none';
     }
+
     return;
   }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
     this.sub1.unsubscribe();
@@ -1286,13 +1494,17 @@ class Toast {
   /**
    * activates toast and sets timeout
    */
+
+
   activateToast() {
     this.state = Object.assign(Object.assign({}, this.state), {
       value: 'active'
     });
+
     if (!(this.options.disableTimeOut === true || this.options.disableTimeOut === 'timeOut') && this.options.timeOut) {
       this.outsideTimeout(() => this.remove(), this.options.timeOut);
       this.hideTime = new Date().getTime() + this.options.timeOut;
+
       if (this.options.progressBar) {
         this.outsideInterval(() => this.updateProgress(), 10);
       }
@@ -1301,23 +1513,30 @@ class Toast {
   /**
    * updates progress bar width
    */
+
+
   updateProgress() {
     if (this.width === 0 || this.width === 100 || !this.options.timeOut) {
       return;
     }
+
     const now = new Date().getTime();
     const remaining = this.hideTime - now;
     this.width = remaining / this.options.timeOut * 100;
+
     if (this.options.progressAnimation === 'increasing') {
       this.width = 100 - this.width;
     }
+
     if (this.width <= 0) {
       this.width = 0;
     }
+
     if (this.width >= 100) {
       this.width = 100;
     }
   }
+
   resetTimeout() {
     clearTimeout(this.timeout);
     clearInterval(this.intervalId);
@@ -1328,6 +1547,7 @@ class Toast {
     this.options.timeOut = this.originalTimeout;
     this.hideTime = new Date().getTime() + (this.options.timeOut || 0);
     this.width = -1;
+
     if (this.options.progressBar) {
       this.outsideInterval(() => this.updateProgress(), 10);
     }
@@ -1335,48 +1555,60 @@ class Toast {
   /**
    * tells toastrService to remove this toast after animation time
    */
+
+
   remove() {
     if (this.state.value === 'removed') {
       return;
     }
+
     clearTimeout(this.timeout);
     this.state = Object.assign(Object.assign({}, this.state), {
       value: 'removed'
     });
     this.outsideTimeout(() => this.toastrService.remove(this.toastPackage.toastId), +this.toastPackage.config.easeTime);
   }
+
   tapToast() {
     if (this.state.value === 'removed') {
       return;
     }
+
     this.toastPackage.triggerTap();
+
     if (this.options.tapToDismiss) {
       this.remove();
     }
   }
+
   stickAround() {
     if (this.state.value === 'removed') {
       return;
     }
+
     clearTimeout(this.timeout);
     this.options.timeOut = 0;
-    this.hideTime = 0;
-    // disable progressBar
+    this.hideTime = 0; // disable progressBar
+
     clearInterval(this.intervalId);
     this.width = 0;
   }
+
   delayedHideToast() {
     if (this.options.disableTimeOut === true || this.options.disableTimeOut === 'extendedTimeOut' || this.options.extendedTimeOut === 0 || this.state.value === 'removed') {
       return;
     }
+
     this.outsideTimeout(() => this.remove(), this.options.extendedTimeOut);
     this.options.timeOut = this.options.extendedTimeOut;
     this.hideTime = new Date().getTime() + (this.options.timeOut || 0);
     this.width = -1;
+
     if (this.options.progressBar) {
       this.outsideInterval(() => this.updateProgress(), 10);
     }
   }
+
   outsideTimeout(func, timeout) {
     if (this.ngZone) {
       this.ngZone.runOutsideAngular(() => this.timeout = setTimeout(() => this.runInsideAngular(func), timeout));
@@ -1384,6 +1616,7 @@ class Toast {
       this.timeout = setTimeout(() => func(), timeout);
     }
   }
+
   outsideInterval(func, timeout) {
     if (this.ngZone) {
       this.ngZone.runOutsideAngular(() => this.intervalId = setInterval(() => this.runInsideAngular(func), timeout));
@@ -1391,6 +1624,7 @@ class Toast {
       this.intervalId = setInterval(() => func(), timeout);
     }
   }
+
   runInsideAngular(func) {
     if (this.ngZone) {
       this.ngZone.run(() => func());
@@ -1398,10 +1632,13 @@ class Toast {
       func();
     }
   }
+
 }
+
 Toast.ɵfac = function Toast_Factory(t) {
   return new (t || Toast)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ToastrService), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ToastPackage), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone));
 };
+
 Toast.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: Toast,
   selectors: [["", "toast-component", ""]],
@@ -1416,6 +1653,7 @@ Toast.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         return ctx.delayedHideToast();
       });
     }
+
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsyntheticHostProperty"]("@flyInOut", ctx.state);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.toastClasses);
@@ -1434,6 +1672,7 @@ Toast.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, Toast_div_3_Template, 2, 4, "div", 3);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, Toast_div_4_Template, 2, 2, "div", 4);
     }
+
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.options.closeButton);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -1458,6 +1697,7 @@ Toast.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
     })), (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.transition)('inactive => active', (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.animate)('{{ easeTime }}ms {{ easing }}')), (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.transition)('active => removed', (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.animate)('{{ easeTime }}ms {{ easing }}'))])]
   }
 });
+
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](Toast, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
@@ -1525,9 +1765,11 @@ Toast.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
     }]
   });
 })();
+
 const DefaultGlobalConfig = Object.assign(Object.assign({}, DefaultNoComponentGlobalConfig), {
   toastComponent: Toast
 });
+
 class ToastrModule {
   static forRoot(config = {}) {
     return {
@@ -1541,10 +1783,13 @@ class ToastrModule {
       }]
     };
   }
+
 }
+
 ToastrModule.ɵfac = function ToastrModule_Factory(t) {
   return new (t || ToastrModule)();
 };
+
 ToastrModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
   type: ToastrModule,
   declarations: [Toast],
@@ -1554,6 +1799,7 @@ ToastrModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["
 ToastrModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
   imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule]]
 });
+
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ToastrModule, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModule,
@@ -1565,6 +1811,7 @@ ToastrModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["
     }]
   }], null, null);
 })();
+
 class ToastrComponentlessModule {
   static forRoot(config = {}) {
     return {
@@ -1578,10 +1825,13 @@ class ToastrComponentlessModule {
       }]
     };
   }
+
 }
+
 ToastrComponentlessModule.ɵfac = function ToastrComponentlessModule_Factory(t) {
   return new (t || ToastrComponentlessModule)();
 };
+
 ToastrComponentlessModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
   type: ToastrComponentlessModule,
   imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule]
@@ -1589,6 +1839,7 @@ ToastrComponentlessModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED
 ToastrComponentlessModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
   imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule]]
 });
+
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ToastrComponentlessModule, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModule,
@@ -1597,16 +1848,20 @@ ToastrComponentlessModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED
     }]
   }], null, null);
 })();
+
 class ToastNoAnimation {
   constructor(toastrService, toastPackage, appRef) {
     this.toastrService = toastrService;
     this.toastPackage = toastPackage;
     this.appRef = appRef;
     /** width of progress bar */
+
     this.width = -1;
     /** a combination of toast type and options.toastClass */
+
     this.toastClasses = '';
     /** controls animation */
+
     this.state = 'inactive';
     this.message = toastPackage.message;
     this.title = toastPackage.title;
@@ -1627,11 +1882,14 @@ class ToastNoAnimation {
     });
   }
   /** hides component when waiting to be displayed */
+
+
   get displayStyle() {
     if (this.state === 'inactive') {
       return 'none';
     }
   }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
     this.sub1.unsubscribe();
@@ -1643,17 +1901,22 @@ class ToastNoAnimation {
   /**
    * activates toast and sets timeout
    */
+
+
   activateToast() {
     this.state = 'active';
+
     if (!(this.options.disableTimeOut === true || this.options.disableTimeOut === 'timeOut') && this.options.timeOut) {
       this.timeout = setTimeout(() => {
         this.remove();
       }, this.options.timeOut);
       this.hideTime = new Date().getTime() + this.options.timeOut;
+
       if (this.options.progressBar) {
         this.intervalId = setInterval(() => this.updateProgress(), 10);
       }
     }
+
     if (this.options.onActivateTick) {
       this.appRef.tick();
     }
@@ -1661,23 +1924,30 @@ class ToastNoAnimation {
   /**
    * updates progress bar width
    */
+
+
   updateProgress() {
     if (this.width === 0 || this.width === 100 || !this.options.timeOut) {
       return;
     }
+
     const now = new Date().getTime();
     const remaining = this.hideTime - now;
     this.width = remaining / this.options.timeOut * 100;
+
     if (this.options.progressAnimation === 'increasing') {
       this.width = 100 - this.width;
     }
+
     if (this.width <= 0) {
       this.width = 0;
     }
+
     if (this.width >= 100) {
       this.width = 100;
     }
   }
+
   resetTimeout() {
     clearTimeout(this.timeout);
     clearInterval(this.intervalId);
@@ -1686,6 +1956,7 @@ class ToastNoAnimation {
     this.timeout = setTimeout(() => this.remove(), this.originalTimeout);
     this.hideTime = new Date().getTime() + (this.originalTimeout || 0);
     this.width = -1;
+
     if (this.options.progressBar) {
       this.intervalId = setInterval(() => this.updateProgress(), 10);
     }
@@ -1693,50 +1964,64 @@ class ToastNoAnimation {
   /**
    * tells toastrService to remove this toast after animation time
    */
+
+
   remove() {
     if (this.state === 'removed') {
       return;
     }
+
     clearTimeout(this.timeout);
     this.state = 'removed';
     this.timeout = setTimeout(() => this.toastrService.remove(this.toastPackage.toastId));
   }
+
   tapToast() {
     if (this.state === 'removed') {
       return;
     }
+
     this.toastPackage.triggerTap();
+
     if (this.options.tapToDismiss) {
       this.remove();
     }
   }
+
   stickAround() {
     if (this.state === 'removed') {
       return;
     }
+
     clearTimeout(this.timeout);
     this.options.timeOut = 0;
-    this.hideTime = 0;
-    // disable progressBar
+    this.hideTime = 0; // disable progressBar
+
     clearInterval(this.intervalId);
     this.width = 0;
   }
+
   delayedHideToast() {
     if (this.options.disableTimeOut === true || this.options.disableTimeOut === 'extendedTimeOut' || this.options.extendedTimeOut === 0 || this.state === 'removed') {
       return;
     }
+
     this.timeout = setTimeout(() => this.remove(), this.options.extendedTimeOut);
     this.options.timeOut = this.options.extendedTimeOut;
     this.hideTime = new Date().getTime() + (this.options.timeOut || 0);
     this.width = -1;
+
     if (this.options.progressBar) {
       this.intervalId = setInterval(() => this.updateProgress(), 10);
     }
   }
+
 }
+
 ToastNoAnimation.ɵfac = function ToastNoAnimation_Factory(t) {
   return new (t || ToastNoAnimation)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ToastrService), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ToastPackage), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ApplicationRef));
 };
+
 ToastNoAnimation.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: ToastNoAnimation,
   selectors: [["", "toast-component", ""]],
@@ -1751,6 +2036,7 @@ ToastNoAnimation.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0
         return ctx.delayedHideToast();
       });
     }
+
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.toastClasses);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("display", ctx.displayStyle);
@@ -1768,6 +2054,7 @@ ToastNoAnimation.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ToastNoAnimation_div_3_Template, 2, 4, "div", 3);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, ToastNoAnimation_div_4_Template, 2, 2, "div", 4);
     }
+
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.options.closeButton);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -1783,6 +2070,7 @@ ToastNoAnimation.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgIf],
   encapsulation: 2
 });
+
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ToastNoAnimation, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
@@ -1838,9 +2126,11 @@ ToastNoAnimation.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0
     }]
   });
 })();
+
 const DefaultNoAnimationsGlobalConfig = Object.assign(Object.assign({}, DefaultNoComponentGlobalConfig), {
   toastComponent: ToastNoAnimation
 });
+
 class ToastNoAnimationModule {
   static forRoot(config = {}) {
     return {
@@ -1854,10 +2144,13 @@ class ToastNoAnimationModule {
       }]
     };
   }
+
 }
+
 ToastNoAnimationModule.ɵfac = function ToastNoAnimationModule_Factory(t) {
   return new (t || ToastNoAnimationModule)();
 };
+
 ToastNoAnimationModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
   type: ToastNoAnimationModule,
   declarations: [ToastNoAnimation],
@@ -1867,6 +2160,7 @@ ToastNoAnimationModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MO
 ToastNoAnimationModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
   imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule]]
 });
+
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ToastNoAnimationModule, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModule,
@@ -1878,10 +2172,10 @@ ToastNoAnimationModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MO
     }]
   }], null, null);
 })();
-
 /**
  * Generated bundle index. Do not edit.
  */
+
 
 
 

@@ -1,0 +1,200 @@
+[
+  {
+    "screenCode": 1,
+    "screenName": "Cash Withdrawal",
+    "route": "/cashwithdrawal",
+    "menu": true,
+    "linkType": "internal",
+    "icon": "/assets/icon/cash-withdrawal.png",
+    "privileges": [
+      {
+        "id": 5,
+        "name": "CREATE"
+      },
+      {
+        "id": 6,
+        "name": "EDIT"
+      }
+    ]
+  },
+  {
+    "screenCode": 2,
+    "screenName": "Cash Deposit",
+    "route": "/cashdeposit",
+    "menu": true,
+    "linkType": "internal",
+    "icon": "/assets/icon/piggy-bank.png",
+    "privileges": [
+      {
+        "id": 5,
+        "name": "CREATE"
+      },
+      {
+        "id": 6,
+        "name": "EDIT"
+      }
+    ]
+  },
+  {
+    "screenCode": 3,
+    "screenName": "Cheque Deposit",
+    "route": "/cheque-deposit-v2",
+    "menu": true,
+    "linkType": "internal",
+    "icon": "/assets/icon/cheque-deposit.png",
+    "privileges": [
+      {
+        "id": 5,
+        "name": "CREATE"
+      },
+      {
+        "id": 6,
+        "name": "EDIT"
+      }
+    ]
+  },
+  {
+    "screenCode": 4,
+    "screenName": "Cheque Withdrawal",
+    "route": "/cheque-withdrawal-v2",
+    "menu": true,
+    "linkType": "internal",
+    "icon": "/assets/icon/cheque-withdrawal.png",
+    "privileges": [
+      {
+        "id": 5,
+        "name": "CREATE"
+      },
+      {
+        "id": 6,
+        "name": "EDIT"
+      }
+    ]
+  },
+  {
+    "screenCode": 5,
+    "screenName": "Cash Forex Transactions",
+    "route": "/forextransaction",
+    "menu": true,
+    "linkType": "internal",
+    "icon": "/assets/icon/forex.png",
+    "privileges": [
+      {
+        "id": 5,
+        "name": "CREATE"
+      },
+      {
+        "id": 6,
+        "name": "EDIT"
+      }
+    ]
+  },
+  {
+    "screenCode": 6,
+    "screenName": "Loan Disbursement",
+    "route": "/loandisbursement",
+    "menu": true,
+    "linkType": "internal",
+    "icon": "/assets/icon/loan-signing.png",
+    "privileges": [
+      {
+        "id": 5,
+        "name": "CREATE"
+      },
+      {
+        "id": 6,
+        "name": "EDIT"
+      }
+    ]
+  },
+  {
+    "screenCode": 7,
+    "screenName": "Loan Repayment",
+    "route": "/loanrepayment",
+    "menu": true,
+    "linkType": "internal",
+    "icon": "/assets/icon/loan-signing.png",
+    "privileges": [
+      {
+        "id": 5,
+        "name": "CREATE"
+      },
+      {
+        "id": 6,
+        "name": "EDIT"
+      }
+    ]
+  },
+  {
+    "screenCode": 8,
+    "screenName": "Kyc",
+    "route": "/kyc",
+    "menu": true,
+    "linkType": "internal",
+    "icon": "/assets/icon/kyc-logo.png",
+    "privileges": [
+      {
+        "id": 5,
+        "name": "CREATE"
+      },
+      {
+        "id": 6,
+        "name": "EDIT"
+      }
+    ]
+  },
+  {
+    "screenCode": 9,
+    "screenName": "Customer Onboarding",
+    "route": "/customer-onboarding",
+    "menu": true,
+    "linkType": "internal",
+    "icon": "assets/icon/onboarding_logo.svg",
+    "privileges": [
+      {
+        "id": 5,
+        "name": "CREATE"
+      },
+      {
+        "id": 6,
+        "name": "EDIT"
+      }
+    ]
+  },
+  {
+    "screenCode": 10,
+    "screenName": "Utility Bill Payment",
+    "route": "",
+    "menu": false,
+    "linkType": "",
+    "order": 8,
+    "privileges": [
+      {
+        "id": 3,
+        "name": "CREATE"
+      },
+      {
+        "id": 4,
+        "name": "EDIT"
+      }
+    ]
+  },
+  {
+    "screenCode": 11,
+    "screenName": "Deposit Top Up",
+    "route": "",
+    "menu": false,
+    "linkType": "",
+    "order": 9,
+    "privileges": [
+      {
+        "id": 3,
+        "name": "CREATE"
+      },
+      {
+        "id": 4,
+        "name": "EDIT"
+      }
+    ]
+  }
+]

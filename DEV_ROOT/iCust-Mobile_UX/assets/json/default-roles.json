@@ -1,0 +1,209 @@
+[
+  {
+    "screenCode": 1,
+    "screenName": "Mobile",
+    "route": "",
+    "isEnable": false,
+    "type": "link",
+    "children": [
+      {
+        "screenCode": 12,
+        "screenName": "Cash Withdrawal",
+        "route": "",
+        "menu": false,
+        "linkType": "",
+        "order": 1,
+        "privileges": [
+          {
+            "id": 3,
+            "name": "CREATE"
+          },
+          {
+            "id": 4,
+            "name": "EDIT"
+          }
+        ]
+      },
+      {
+        "screenCode": 21,
+        "screenName": "Cash Deposit",
+        "route": "",
+        "menu": false,
+        "linkType": "",
+        "order": 2,
+        "privileges": [
+          {
+            "id": 3,
+            "name": "CREATE"
+          },
+          {
+            "id": 4,
+            "name": "EDIT"
+          }
+        ]
+      },
+      {
+        "screenCode": 31,
+        "screenName": "Cheque Withdrawal",
+        "route": "",
+        "menu": false,
+        "linkType": "",
+        "order": 3,
+        "privileges": [
+          {
+            "id": 3,
+            "name": "CREATE"
+          },
+          {
+            "id": 4,
+            "name": "EDIT"
+          }
+        ]
+      },
+      {
+        "screenCode": 41,
+        "screenName": "Cheque Deposit",
+        "route": "",
+        "menu": false,
+        "linkType": "",
+        "order": 4,
+        "privileges": [
+          {
+            "id": 3,
+            "name": "CREATE"
+          },
+          {
+            "id": 4,
+            "name": "EDIT"
+          }
+        ]
+      },
+      {
+        "screenCode": 51,
+        "screenName": "Cash Forex Transactions",
+        "route": "",
+        "menu": false,
+        "linkType": "",
+        "order": 5,
+        "privileges": [
+          {
+            "id": 3,
+            "name": "CREATE"
+          },
+          {
+            "id": 4,
+            "name": "EDIT"
+          }
+        ]
+      },
+      {
+        "screenCode": 61,
+        "screenName": "Loan Disbursement",
+        "route": "",
+        "menu": false,
+        "linkType": "",
+        "order": 6,
+        "privileges": [
+          {
+            "id": 3,
+            "name": "CREATE"
+          },
+          {
+            "id": 4,
+            "name": "EDIT"
+          }
+        ]
+      },
+      {
+        "screenCode": 71,
+        "screenName": "Loan Repayment",
+        "route": "",
+        "menu": false,
+        "linkType": "",
+        "order": 7,
+        "privileges": [
+          {
+            "id": 3,
+            "name": "CREATE"
+          },
+          {
+            "id": 4,
+            "name": "EDIT"
+          }
+        ]
+      },
+      {
+        "screenCode": 81,
+        "screenName": "Utility Bill Payment",
+        "route": "",
+        "menu": false,
+        "linkType": "",
+        "order": 8,
+        "privileges": [
+          {
+            "id": 3,
+            "name": "CREATE"
+          },
+          {
+            "id": 4,
+            "name": "EDIT"
+          }
+        ]
+      },
+      {
+        "screenCode": 91,
+        "screenName": "Deposit Top Up",
+        "route": "",
+        "menu": false,
+        "linkType": "",
+        "order": 9,
+        "privileges": [
+          {
+            "id": 3,
+            "name": "CREATE"
+          },
+          {
+            "id": 4,
+            "name": "EDIT"
+          }
+        ]
+      },
+      {
+        "screenCode": 101,
+        "screenName": "MKyc",
+        "route": "",
+        "menu": false,
+        "linkType": "",
+        "order": 10,
+        "privileges": [
+          {
+            "id": 3,
+            "name": "CREATE"
+          },
+          {
+            "id": 4,
+            "name": "EDIT"
+          }
+        ]
+      },
+      {
+        "screenCode": 111,
+        "screenName": "Customer Onboarding",
+        "route": "",
+        "menu": false,
+        "linkType": "",
+        "order": 11,
+        "privileges": [
+          {
+            "id": 3,
+            "name": "CREATE"
+          },
+          {
+            "id": 4,
+            "name": "EDIT"
+          }
+        ]
+      }
+    ]
+  }
+]

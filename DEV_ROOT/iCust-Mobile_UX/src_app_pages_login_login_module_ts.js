@@ -77,9 +77,9 @@ LoginPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
             _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.IonicModule,
             _login_routing_module__WEBPACK_IMPORTED_MODULE_0__.LoginPageRoutingModule,
             src_app_shared_shared_material_module__WEBPACK_IMPORTED_MODULE_2__.SharedMaterialModule,
-            src_app_directives_directive_module__WEBPACK_IMPORTED_MODULE_3__.DirectiveModule
+            src_app_directives_directive_module__WEBPACK_IMPORTED_MODULE_3__.DirectiveModule,
         ],
-        declarations: [_login_page__WEBPACK_IMPORTED_MODULE_1__.LoginPage]
+        declarations: [_login_page__WEBPACK_IMPORTED_MODULE_1__.LoginPage],
     })
 ], LoginPageModule);
 

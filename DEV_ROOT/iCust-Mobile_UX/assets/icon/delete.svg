@@ -1,17 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="89" viewBox="0 0 88 89">
-  <defs>
-    <filter id="Rectangle_10" x="0" y="0" width="88" height="89" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="7.5" result="blur"/>
-      <feFlood flood-opacity="0.039"/>
-      <feComposite operator="in" in2="blur"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-  </defs>
-  <g id="Group_1427" data-name="Group 1427" transform="translate(-250.574 7.089)">
-    <g transform="matrix(1, 0, 0, 1, 250.57, -7.09)" filter="url(#Rectangle_10)">
-      <rect id="Rectangle_10-2" data-name="Rectangle 10" width="43" height="44" rx="21.5" transform="translate(22.5 19.5)" fill="#fff"/>
-    </g>
-    <path id="Icon_material-delete" data-name="Icon material-delete" d="M8.6,22.1a2.207,2.207,0,0,0,2.2,2.2h8.8a2.207,2.207,0,0,0,2.2-2.2V8.9H8.6ZM22.9,5.6h-3.85l-1.1-1.1h-5.5l-1.1,1.1H7.5V7.8H22.9Z" transform="translate(279.264 19.269)" fill="#051a2d"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="7.219" height="9.281" viewBox="0 0 7.219 9.281">
+  <path id="Icon_material-delete" data-name="Icon material-delete" d="M8.016,12.75a1.034,1.034,0,0,0,1.031,1.031h4.125A1.034,1.034,0,0,0,14.2,12.75V6.563H8.016Zm6.7-7.735h-1.8L12.4,4.5H9.82L9.3,5.016H7.5V6.047h7.219Z" transform="translate(-7.5 -4.5)" fill="#b20000"/>
 </svg>

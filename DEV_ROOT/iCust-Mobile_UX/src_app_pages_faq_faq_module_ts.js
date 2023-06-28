@@ -48,15 +48,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FaqPageModule": () => (/* binding */ FaqPageModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var _faq_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./faq-routing.module */ 20263);
 /* harmony import */ var _faq_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./faq.page */ 28601);
-/* harmony import */ var src_app_pipes_search_filter_pipe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/pipes/search-filter.pipe */ 8572);
-
 
 
 
@@ -66,15 +64,15 @@ __webpack_require__.r(__webpack_exports__);
 
 let FaqPageModule = class FaqPageModule {
 };
-FaqPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.NgModule)({
+FaqPageModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_5__.CommonModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormsModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.IonicModule,
+            _angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule,
             _faq_routing_module__WEBPACK_IMPORTED_MODULE_0__.FaqPageRoutingModule
         ],
-        declarations: [_faq_page__WEBPACK_IMPORTED_MODULE_1__.FaqPage, src_app_pipes_search_filter_pipe__WEBPACK_IMPORTED_MODULE_2__.SearchFilterPipe]
+        declarations: [_faq_page__WEBPACK_IMPORTED_MODULE_1__.FaqPage]
     })
 ], FaqPageModule);
 
@@ -156,42 +154,6 @@ FaqPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
         styles: [_faq_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], FaqPage);
-
-
-
-/***/ }),
-
-/***/ 8572:
-/*!*********************************************!*\
-  !*** ./src/app/pipes/search-filter.pipe.ts ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "SearchFilterPipe": () => (/* binding */ SearchFilterPipe)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 34929);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
-
-
-let SearchFilterPipe = class SearchFilterPipe {
-    transform(value, args) {
-        if (!value)
-            return null;
-        if (!args)
-            return value;
-        args = args.toLowerCase();
-        return value.filter(function (data) {
-            return JSON.stringify(data).toLowerCase().includes(args);
-        });
-    }
-};
-SearchFilterPipe = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Pipe)({
-        name: 'searchFilter'
-    })
-], SearchFilterPipe);
 
 
 

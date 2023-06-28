@@ -147,7 +147,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
-    constructor(formBuilder, api, router, toastCtrl, shareDataService, loading, cdr, modalController, toastService, datepipe) {
+    constructor(formBuilder, api, router, toastCtrl, shareDataService, loading, cdr, modalController, toastService, datepipe, location) {
         this.formBuilder = formBuilder;
         this.api = api;
         this.router = router;
@@ -158,6 +158,7 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
         this.modalController = modalController;
         this.toastService = toastService;
         this.datepipe = datepipe;
+        this.location = location;
         this.isShow = true;
         this.currencyControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_10__.FormControl('');
         this.chargeAmount = 5;
@@ -170,8 +171,10 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
         this.icon_arrow_svg = 'assets/icon/arrow-down.svg';
         this.repFG = this.formBuilder.group({
             personName: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required],
-            phoneNo: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.minLength(10),
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.maxLength(10)]],
+            phoneNo: [
+                '',
+                [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.minLength(10), _angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.maxLength(10)],
+            ],
             repdocumentId: [''],
             repdocumentNumber: [''],
         });
@@ -191,44 +194,84 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
         this.loadData();
         if (this.router.getCurrentNavigation() != null) {
             this.routerData = this.router.getCurrentNavigation().extras.state;
-            console.log("Values?", this.routerData);
+            console.log('Values?', this.routerData);
             this.editMode = ((_b = this.routerData) === null || _b === void 0 ? void 0 : _b.data) ? true : false;
         }
         if (this.editMode) {
             const data = (_c = this.routerData) === null || _c === void 0 ? void 0 : _c.data;
             const countryCode = this.currencies.filter((i) => i.currencyCode === (data === null || data === void 0 ? void 0 : data.transactionCurrency));
             this.selectedCurrency = countryCode[0];
-            this.selectedCountryCode = (_d = this.selectedCurrency) === null || _d === void 0 ? void 0 : _d.countryCode.toLowerCase();
+            this.selectedCountryCode =
+                (_d = this.selectedCurrency) === null || _d === void 0 ? void 0 : _d.countryCode.toLowerCase();
             let deposit_type = (data === null || data === void 0 ? void 0 : data.representativeInfo.length) != 0 ? 'representative' : 'self';
             this.depositType = deposit_type;
             (_e = this.form.get('depositType')) === null || _e === void 0 ? void 0 : _e.patchValue(deposit_type);
             if (deposit_type == 'representative') {
                 this.form.addControl('representativeInfo', this.repFG);
-                this.form.get('representativeInfo').get('personName').patchValue((_g = (_f = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _f === void 0 ? void 0 : _f[0]) === null || _g === void 0 ? void 0 : _g.personName);
-                this.form.get('representativeInfo').get('phoneNo').patchValue((_j = (_h = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _h === void 0 ? void 0 : _h[0]) === null || _j === void 0 ? void 0 : _j.phoneNo);
-                this.form.get('representativeInfo').get('repdocumentId').patchValue((_l = (_k = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _k === void 0 ? void 0 : _k[0]) === null || _l === void 0 ? void 0 : _l.documentId);
-                this.form.get('representativeInfo').get('repdocumentNumber').patchValue((_o = (_m = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _m === void 0 ? void 0 : _m[0]) === null || _o === void 0 ? void 0 : _o.documentNumber);
+                this.form
+                    .get('representativeInfo')
+                    .get('personName')
+                    .patchValue((_g = (_f = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _f === void 0 ? void 0 : _f[0]) === null || _g === void 0 ? void 0 : _g.personName);
+                this.form
+                    .get('representativeInfo')
+                    .get('phoneNo')
+                    .patchValue((_j = (_h = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _h === void 0 ? void 0 : _h[0]) === null || _j === void 0 ? void 0 : _j.phoneNo);
+                this.form
+                    .get('representativeInfo')
+                    .get('repdocumentId')
+                    .patchValue((_l = (_k = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _k === void 0 ? void 0 : _k[0]) === null || _l === void 0 ? void 0 : _l.documentId);
+                this.form
+                    .get('representativeInfo')
+                    .get('repdocumentNumber')
+                    .patchValue((_o = (_m = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _m === void 0 ? void 0 : _m[0]) === null || _o === void 0 ? void 0 : _o.documentNumber);
             }
             else {
                 this.form.removeControl('representativeInfo');
             }
         }
         else {
-            const countryCode = this.currencies.filter((i) => i.currencyCode === "INR");
+            const countryCode = this.currencies.filter((i) => i.currencyCode === 'INR');
             this.selectedCurrency = countryCode[0];
             this.depositType = 'self';
             (_p = this.form.get('depositType')) === null || _p === void 0 ? void 0 : _p.patchValue('self');
         }
-        this.shareDataService.getAccountInfo.subscribe(data => {
+        this.shareDataService.getAccountInfo.subscribe((data) => {
             this.accountInfo = data;
         });
         this.filteredOptions = this.currencyControl.valueChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.startWith)(''), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.map)((value) => {
             const currencyCode = typeof value === 'string' ? value : value === null || value === void 0 ? void 0 : value.currencyCode;
-            return currencyCode ? this._filter(currencyCode) : this.currencies.slice();
+            return currencyCode
+                ? this._filter(currencyCode)
+                : this.currencies.slice();
         }));
         let today = new Date().toISOString();
         const convertedDate = this.datepipe.transform(today, 'yyyy-MM-dd');
         this.form.get('transactionDate').patchValue(convertedDate);
+        this.location.subscribe(() => {
+            this.patchScannedData();
+        });
+    }
+    patchScannedData() {
+        let scannedData = JSON.parse(localStorage.getItem('chequeData'));
+        let formValue = {};
+        formValue.chqAccountNumber = scannedData.accNo;
+        formValue.chequeNumber = scannedData.chequeNo;
+        formValue.chqAccountBank = scannedData.name;
+        this.form.patchValue(formValue);
+        // TODO LATER
+        // formValue.transactionAmount = scannedData.amount
+        // formValue.ifscCode = scannedData.ifsc
+        // console.log(formValue);
+        // this.api.getBankNameFromIfsc(scannedData.ifsc).subscribe((res:any)=> {
+        //   console.log(res);
+        //   if(res){
+        //     formValue.chqAccountBank = res.BANK;
+        //     this.form.patchValue(formValue);
+        //   }
+        //   else{
+        //     this.form.patchValue(formValue);
+        //   }
+        // })
     }
     onScroll() {
         var _a;
@@ -238,48 +281,66 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
     }
     formInit() {
         this.form = this.formBuilder.group({
-            transactionId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-            customerId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-            chequeDepositId: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
+            transactionId: [''],
+            customerId: [''],
+            chequeDepositId: [''],
             productCode: ['CQW', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
             tokenOrigin: ['Mobile', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
             accountNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-            accountBalance: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-            accountCurrency: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
+            accountBalance: [''],
+            accountCurrency: [''],
             transactionCurrency: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
             transactionAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
             branchFlag: [true, [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-            accountBranch: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
+            accountBranch: [''],
             transactionDate: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
             transactionBranch: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
             isMobileTrans: [true, [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
             transactionTime: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
             exchangeRate: [''],
-            accountAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-            totalChargeAmount: [this.chargeAmount, [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-            denomination: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-            totalAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
+            accountAmount: [''],
+            totalChargeAmount: [this.chargeAmount],
+            denomination: [null,],
+            totalAmount: [''],
             remarks: [''],
             totalTransactionAmount: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
-            chequeType: [''],
-            chequeNo: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
+            chequeType: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
+            chequeNumber: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_10__.Validators.required]],
             chqAccountNumber: [''],
-            chqAccountBank: ['']
+            chqAccountBank: [''],
         });
+    }
+    get checkInitialPageValidation() {
+        if (this.form.get("chequeType").value == "Self") {
+            return (this.form.get("chequeNumber").valid && this.form.get("transactionAmount").valid);
+        }
+        else if (this.form.get("chequeType").value == "Bearer") {
+            return ((this.form.get("accountNumber").valid && this.form.get("transactionCurrency").valid && this.form.get("transactionAmount").valid && this.form.get("chqAccountNumber").valid) && this.form.get("chqAccountBank").valid);
+        }
+        else if (this.form.get("chequeType").value == "Banker" && this.form.get("chequeType").value == "Traveler") {
+            return (this.form.get("transactionAmount").valid);
+        }
+        // return (( this.form.get("accountNumber").valid  && this.form.get("transactionCurrency").valid && this.form.get("transactionAmount").valid) && this.form.get("chequeNumber").valid && this.form.get("chqAccountNumber").valid && this.form.get("chqAccountBank").valid );
     }
     _filter(currency) {
         const filterValue = currency.toLowerCase();
-        return this.currencies.filter(option => option.currencyCode.toLowerCase().includes(filterValue));
+        return this.currencies.filter((option) => option.currencyCode.toLowerCase().includes(filterValue));
     }
     formatAccountBalance(balance) {
         if (balance > 0) {
             let toInt = parseInt(balance);
-            let toLocale = toInt.toLocaleString('en-IN', { style: "currency", currency: "INR" });
+            let toLocale = toInt.toLocaleString('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+            });
             return toLocale;
         }
         else {
             let toInt = parseInt('0');
-            let toLocale = toInt.toLocaleString('en-IN', { style: "currency", currency: "INR" });
+            let toLocale = toInt.toLocaleString('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+            });
             return toLocale;
         }
     }
@@ -300,7 +361,7 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
             const toast = yield this.toastCtrl.create({
                 message: 'Transaction Amount should not exceed than Account Balance',
                 duration: 2000,
-                position: 'bottom'
+                position: 'bottom',
             });
             toast.present();
         });
@@ -309,7 +370,7 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
         this.loading.present();
         this.api.custpomerDetails(this.phoneNumber).subscribe((resp) => {
             this.loading.dismiss();
-            resp.custAccount = resp.custAccount.filter(card => card.status === "APPROVED");
+            resp.custAccount = resp.custAccount.filter((card) => card.status === 'APPROVED');
             this.customerDetails = resp;
             this.upsertAccount(resp);
         }, (err) => {
@@ -321,12 +382,13 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
     }
     upsertAccount(filteredResponseSavingAccount) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-        console.log("Filt", filteredResponseSavingAccount);
+        console.log('Filt', filteredResponseSavingAccount);
         this.users = filteredResponseSavingAccount.custAccount;
         this.selectedAccount = this.users[0].accountId;
         this.currentBalance = this.users[0].amount;
         this.selectedCountryCode = this.selectedCurrency.countryCode.toLowerCase();
-        (_a = this.form.get('transactionCurrency')) === null || _a === void 0 ? void 0 : _a.patchValue(this.selectedCurrency.currencyCode);
+        (_a = this.form
+            .get('transactionCurrency')) === null || _a === void 0 ? void 0 : _a.patchValue(this.selectedCurrency.currencyCode);
         if (this.editMode) {
             const data = (_b = this.routerData) === null || _b === void 0 ? void 0 : _b.data;
             (_c = this.form.get('accountNumber')) === null || _c === void 0 ? void 0 : _c.patchValue(data === null || data === void 0 ? void 0 : data.accountNumber);
@@ -336,7 +398,8 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
             (_g = this.form.get('transactionBranch')) === null || _g === void 0 ? void 0 : _g.patchValue(data === null || data === void 0 ? void 0 : data.transactionBranch);
             (_h = this.form.get('transactionDate')) === null || _h === void 0 ? void 0 : _h.patchValue(data === null || data === void 0 ? void 0 : data.transactionDate);
             (_j = this.form.get('transactionTime')) === null || _j === void 0 ? void 0 : _j.patchValue(data === null || data === void 0 ? void 0 : data.transactionTime);
-            (_k = this.form.get('totalTransactionAmount')) === null || _k === void 0 ? void 0 : _k.patchValue(data === null || data === void 0 ? void 0 : data.totalTransactionAmount);
+            (_k = this.form
+                .get('totalTransactionAmount')) === null || _k === void 0 ? void 0 : _k.patchValue(data === null || data === void 0 ? void 0 : data.totalTransactionAmount);
         }
         else {
             if (this.accountInfo.accountId != null) {
@@ -345,36 +408,40 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
             else {
                 (_m = this.form.get('accountNumber')) === null || _m === void 0 ? void 0 : _m.patchValue(this.users[0].accountId);
             }
-            (_o = this.form.get('accountBranch')) === null || _o === void 0 ? void 0 : _o.patchValue(filteredResponseSavingAccount.custAccount[0].accountBranch);
-            (_p = this.form.get('transactionBranch')) === null || _p === void 0 ? void 0 : _p.patchValue(filteredResponseSavingAccount.custAccount[0].accountBranch);
+            (_o = this.form
+                .get('accountBranch')) === null || _o === void 0 ? void 0 : _o.patchValue(filteredResponseSavingAccount.custAccount[0].accountBranch);
+            (_p = this.form
+                .get('transactionBranch')) === null || _p === void 0 ? void 0 : _p.patchValue(filteredResponseSavingAccount.custAccount[0].accountBranch);
         }
         this.cdr.markForCheck();
     }
     onAccountSelect(e) {
-        var _a, _b, _c;
-        console.log("selected", this.selectedAccount);
-        let filteredAccount = this.users.filter(account => account.accountId === this.selectedAccount);
+        var _a, _b, _c, _d;
+        console.log('selected', this.selectedAccount);
+        let filteredAccount = this.users.filter((account) => account.accountId === this.selectedAccount);
         this.filteredAccount = filteredAccount[0];
         const countryCode = this.currencies.filter((i) => { var _a; return i.currencyCode === ((_a = this.filteredAccount) === null || _a === void 0 ? void 0 : _a.accountCurrency); });
-        console.log("countryCode", countryCode);
+        console.log('countryCode', countryCode);
         this.selectedCurrency = countryCode[0];
         this.selectedCountryCode = (_a = this.selectedCurrency) === null || _a === void 0 ? void 0 : _a.countryCode.toLowerCase();
-        (_b = this.form.get('transactionCurrency')) === null || _b === void 0 ? void 0 : _b.patchValue((_c = this.filteredAccount) === null || _c === void 0 ? void 0 : _c.accountCurrency);
+        (_b = this.form
+            .get('transactionCurrency')) === null || _b === void 0 ? void 0 : _b.patchValue((_c = this.filteredAccount) === null || _c === void 0 ? void 0 : _c.accountCurrency);
+        this.form.get('accountBranch').setValue((_d = this.filteredAccount) === null || _d === void 0 ? void 0 : _d.accountBranch);
     }
     chequeTypeChange(event) {
         this.chequeTypeSelected = event.value;
-        if (this.chequeTypeSelected == "Self") {
+        if (this.chequeTypeSelected == 'Self') {
             // this.form.get('accountPaymentNumber').setValidators([Validators.required]); // Set Required Validator
             // this.form.get('accountPaymentNumber').updateValueAndValidity();
-            // this.form.get('chequeNo').clearValidators(); // 6. Clear All Validators
-            // this.form.get('chequeNo').updateValueAndValidity();
+            // this.form.get('chequeNumber').clearValidators(); // 6. Clear All Validators
+            // this.form.get('chequeNumber').updateValueAndValidity();
         }
         console.log(this.chequeTypeSelected);
     }
     keyPressNumbers(event) {
-        var charCode = (event.which) ? event.which : event.keyCode;
+        var charCode = event.which ? event.which : event.keyCode;
         // Only Numbers 0-9
-        if ((charCode < 48 || charCode > 57)) {
+        if (charCode < 48 || charCode > 57) {
             event.preventDefault();
             return false;
         }
@@ -383,16 +450,20 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
         }
     }
     getExChangeRate(currency) {
-        this.api.getExchangeRate(this.accountInfo.accountCurrency).subscribe((res) => {
+        this.api
+            .getExchangeRate(this.accountInfo.accountCurrency)
+            .subscribe((res) => {
             var _a, _b, _c, _d;
             const code = this.currencies.filter((x) => x.currencyCode == currency);
             let filteredCurrency = code[0].currencyCode;
             const rate = (_a = res === null || res === void 0 ? void 0 : res.rates) === null || _a === void 0 ? void 0 : _a[filteredCurrency];
             this.form.get('exchangeRate').patchValue(rate);
             let toFix = (_b = this.form.get('transactionAmount')) === null || _b === void 0 ? void 0 : _b.value;
-            let val = (toFix != "undefined" || toFix != undefined) ? toFix === null || toFix === void 0 ? void 0 : toFix.replace(/,/g, '') : 0;
+            let val = toFix != 'undefined' || toFix != undefined
+                ? toFix === null || toFix === void 0 ? void 0 : toFix.replace(/,/g, '')
+                : 0;
             if (!isNaN(val)) {
-                let updatedAmount = (val * ((_c = this.form.get('exchangeRate')) === null || _c === void 0 ? void 0 : _c.value)) + this.chargeAmount;
+                let updatedAmount = val * ((_c = this.form.get('exchangeRate')) === null || _c === void 0 ? void 0 : _c.value) + this.chargeAmount;
                 if (!isNaN(updatedAmount)) {
                     let formatedAmount = this.shareDataService.formatCurrency(updatedAmount, (_d = this.form.get('transactionCurrency')) === null || _d === void 0 ? void 0 : _d.value);
                     this.form.get('totalTransactionAmount').patchValue(formatedAmount);
@@ -405,11 +476,11 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
     updateTransAmount() {
         var _a, _b, _c;
         let toFix = (_a = this.form.get('transactionAmount')) === null || _a === void 0 ? void 0 : _a.value;
-        console.log("check value", toFix);
-        let val = (toFix != "undefined" || toFix != undefined) ? toFix === null || toFix === void 0 ? void 0 : toFix.replace(/,/g, '') : 0;
-        console.log("check value after", val);
+        console.log('check value', toFix);
+        let val = toFix != 'undefined' || toFix != undefined ? toFix === null || toFix === void 0 ? void 0 : toFix.replace(/,/g, '') : 0;
+        console.log('check value after', val);
         if (!isNaN(val)) {
-            let updatedAmount = (val * ((_b = this.form.get('exchangeRate')) === null || _b === void 0 ? void 0 : _b.value)) + this.chargeAmount;
+            let updatedAmount = val * ((_b = this.form.get('exchangeRate')) === null || _b === void 0 ? void 0 : _b.value) + this.chargeAmount;
             if (!isNaN(updatedAmount)) {
                 let formatedAmount = this.shareDataService.formatCurrency(updatedAmount, (_c = this.form.get('transactionCurrency')) === null || _c === void 0 ? void 0 : _c.value);
                 this.form.get('totalTransactionAmount').patchValue(formatedAmount);
@@ -419,14 +490,18 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
     }
     selectCurrencyCode(e) {
         var _a;
-        if (typeof e == "undefined" || typeof e == undefined || typeof e == null || typeof e == "object") {
+        if (typeof e == 'undefined' ||
+            typeof e == undefined ||
+            typeof e == null ||
+            typeof e == 'object') {
             return;
         }
         else {
             if (e.length > 2) {
                 const filteredCurrency = (_a = this.currencies) === null || _a === void 0 ? void 0 : _a.filter((i) => i.currencyCode === e);
                 this.selectedCurrency = filteredCurrency[0];
-                this.selectedCountryCode = filteredCurrency[0].countryCode.toLowerCase();
+                this.selectedCountryCode =
+                    filteredCurrency[0].countryCode.toLowerCase();
                 this.getExChangeRate(filteredCurrency[0].currencyCode);
                 this.cdr.markForCheck();
             }
@@ -436,26 +511,29 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
         var _a, _b, _c;
         this.homeIconToggle = !this.homeIconToggle;
         if (this.homeIconToggle) {
-            (_a = this.form.get('transactionBranch')) === null || _a === void 0 ? void 0 : _a.patchValue((_b = this.users[0]) === null || _b === void 0 ? void 0 : _b.accountBranch);
+            (_a = this.form
+                .get('transactionBranch')) === null || _a === void 0 ? void 0 : _a.patchValue((_b = this.users[0]) === null || _b === void 0 ? void 0 : _b.accountBranch);
         }
         else {
-            (_c = this.form.get('transactionBranch')) === null || _c === void 0 ? void 0 : _c.patchValue("");
+            (_c = this.form.get('transactionBranch')) === null || _c === void 0 ? void 0 : _c.patchValue('');
         }
     }
     datePopup() {
         var _a;
         let oldDate = (_a = this.form.get('transactionDate')) === null || _a === void 0 ? void 0 : _a.value;
-        this.modalController.create({
+        this.modalController
+            .create({
             component: src_app_components_transaction_date_transaction_date_component__WEBPACK_IMPORTED_MODULE_4__.TransactionDateComponent,
             componentProps: {
                 date: this.form.get('transactionDate').value,
-            }
-        }).then(modalResp => {
+            },
+        })
+            .then((modalResp) => {
             modalResp.present();
-            modalResp.onDidDismiss().then(res => {
+            modalResp.onDidDismiss().then((res) => {
                 var _a, _b;
                 console.log(typeof (res === null || res === void 0 ? void 0 : res.data));
-                if (typeof (res === null || res === void 0 ? void 0 : res.data) == "undefined") {
+                if (typeof (res === null || res === void 0 ? void 0 : res.data) == 'undefined') {
                     (_a = this.form.get('transactionDate')) === null || _a === void 0 ? void 0 : _a.patchValue(oldDate);
                 }
                 else {
@@ -465,17 +543,22 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
         });
     }
     openPopup() {
-        this.modalController.create({
+        this.modalController
+            .create({
             component: src_app_components_time_slots_time_slots_component__WEBPACK_IMPORTED_MODULE_3__.TimeSlotsComponent,
             componentProps: {
                 date: this.form.get('transactionDate').value,
-            }
-        }).then(modalResp => {
+            },
+        })
+            .then((modalResp) => {
             modalResp.present();
-            modalResp.onDidDismiss().then(res => {
-                if (res.data != null || res.data != undefined || res.data != "undefined") {
+            modalResp.onDidDismiss().then((res) => {
+                var _a;
+                if (res.data != null ||
+                    res.data != undefined ||
+                    res.data != 'undefined') {
                     console.log(res);
-                    this.form.get('transactionTime').patchValue(res.data);
+                    this.form.get('transactionTime').patchValue((_a = res.data) === null || _a === void 0 ? void 0 : _a.form);
                 }
             });
         });
@@ -484,12 +567,14 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_13__.__awaiter)(this, void 0, void 0, function* () {
             const modal = yield this.modalController.create({
                 component: src_app_components_branch_branch_component__WEBPACK_IMPORTED_MODULE_2__.BranchComponent,
-                id: "branchModal",
-                componentProps: {}
+                id: 'branchModal',
+                componentProps: {},
             });
             modal.onDidDismiss().then((modelData) => {
                 if (modelData !== null) {
-                    this.form.get('transactionBranch').patchValue(modelData.data['data'].branchName);
+                    this.form
+                        .get('transactionBranch')
+                        .patchValue(modelData.data['data'].branchName);
                 }
             });
             return yield modal.present();
@@ -517,32 +602,45 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
             const data = (_c = this.routerData) === null || _c === void 0 ? void 0 : _c.data;
             const countryCode = this.currencies.filter((i) => i.currencyCode === (data === null || data === void 0 ? void 0 : data.transactionCurrency));
             this.selectedCurrency = countryCode[0];
-            this.selectedCountryCode = (_d = this.selectedCurrency) === null || _d === void 0 ? void 0 : _d.countryCode.toLowerCase();
+            this.selectedCountryCode =
+                (_d = this.selectedCurrency) === null || _d === void 0 ? void 0 : _d.countryCode.toLowerCase();
             let deposit_type = (data === null || data === void 0 ? void 0 : data.representativeInfo.length) != 0 ? 'representative' : 'self';
             this.depositType = deposit_type;
             (_e = this.form.get('depositType')) === null || _e === void 0 ? void 0 : _e.patchValue(deposit_type);
-            console.log("TESTON", (_g = (_f = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _f === void 0 ? void 0 : _f[0]) === null || _g === void 0 ? void 0 : _g.personName);
+            console.log('TESTON', (_g = (_f = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _f === void 0 ? void 0 : _f[0]) === null || _g === void 0 ? void 0 : _g.personName);
             if (deposit_type == 'representative') {
                 this.form.addControl('representativeInfo', this.repFG);
-                this.form.get('representativeInfo').get('personName').patchValue((_j = (_h = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _h === void 0 ? void 0 : _h[0]) === null || _j === void 0 ? void 0 : _j.personName);
-                this.form.get('representativeInfo').get('phoneNo').patchValue((_l = (_k = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _k === void 0 ? void 0 : _k[0]) === null || _l === void 0 ? void 0 : _l.phoneNo);
-                this.form.get('representativeInfo').get('repdocumentId').patchValue((_o = (_m = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _m === void 0 ? void 0 : _m[0]) === null || _o === void 0 ? void 0 : _o.documentId);
-                this.form.get('representativeInfo').get('repdocumentNumber').patchValue((_q = (_p = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _p === void 0 ? void 0 : _p[0]) === null || _q === void 0 ? void 0 : _q.documentNumber);
+                this.form
+                    .get('representativeInfo')
+                    .get('personName')
+                    .patchValue((_j = (_h = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _h === void 0 ? void 0 : _h[0]) === null || _j === void 0 ? void 0 : _j.personName);
+                this.form
+                    .get('representativeInfo')
+                    .get('phoneNo')
+                    .patchValue((_l = (_k = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _k === void 0 ? void 0 : _k[0]) === null || _l === void 0 ? void 0 : _l.phoneNo);
+                this.form
+                    .get('representativeInfo')
+                    .get('repdocumentId')
+                    .patchValue((_o = (_m = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _m === void 0 ? void 0 : _m[0]) === null || _o === void 0 ? void 0 : _o.documentId);
+                this.form
+                    .get('representativeInfo')
+                    .get('repdocumentNumber')
+                    .patchValue((_q = (_p = data === null || data === void 0 ? void 0 : data.representativeInfo) === null || _p === void 0 ? void 0 : _p[0]) === null || _q === void 0 ? void 0 : _q.documentNumber);
             }
             else {
                 this.form.removeControl('representativeInfo');
             }
         }
         else {
-            const countryCode = this.currencies.filter((i) => i.currencyCode === "INR");
+            const countryCode = this.currencies.filter((i) => i.currencyCode === 'INR');
             this.selectedCurrency = countryCode[0];
             this.depositType = 'self';
             (_r = this.form.get('depositType')) === null || _r === void 0 ? void 0 : _r.patchValue('self');
         }
-        this.shareDataService.getAccountInfo.subscribe(data => {
+        this.shareDataService.getAccountInfo.subscribe((data) => {
             this.accountInfo = data;
         });
-        (_s = this.form.get('transactionAmount')) === null || _s === void 0 ? void 0 : _s.valueChanges.subscribe(val => {
+        (_s = this.form.get('transactionAmount')) === null || _s === void 0 ? void 0 : _s.valueChanges.subscribe((val) => {
             if (val) {
                 this.updateTransAmount();
             }
@@ -573,16 +671,21 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
         form.productCode = this.productCode;
         form.accountType = (_a = this.filteredAccount) === null || _a === void 0 ? void 0 : _a.accountType;
         form.tokenOrigin = this.tokenOrigin;
-        form.accountCurrency = ((_b = this.filteredAccount) === null || _b === void 0 ? void 0 : _b.accountCurrency) || "";
+        form.accountCurrency = ((_b = this.filteredAccount) === null || _b === void 0 ? void 0 : _b.accountCurrency) || '';
         form.isMobileTrans = true;
-        form.holderName = (_d = (_c = this.filteredAccount) === null || _c === void 0 ? void 0 : _c.customerName) !== null && _d !== void 0 ? _d : "";
+        form.holderName = (_d = (_c = this.filteredAccount) === null || _c === void 0 ? void 0 : _c.customerName) !== null && _d !== void 0 ? _d : '';
+        form.accountNumber = this.form.get('accountNumber').value;
         if (this.depositType == 'representative') {
-            form.representativeInfo = [{
+            form.representativeInfo = [
+                {
                     phoneNo: (_e = this.form.get('representativeInfo').get('phoneNo')) === null || _e === void 0 ? void 0 : _e.value,
                     personName: (_f = this.form.get('representativeInfo').get('personName')) === null || _f === void 0 ? void 0 : _f.value,
                     documentId: (_g = this.form.get('representativeInfo').get('repdocumentId')) === null || _g === void 0 ? void 0 : _g.value,
-                    documentNumber: (_h = this.form.get('representativeInfo').get('repdocumentNumber')) === null || _h === void 0 ? void 0 : _h.value
-                }];
+                    documentNumber: (_h = this.form
+                        .get('representativeInfo')
+                        .get('repdocumentNumber')) === null || _h === void 0 ? void 0 : _h.value,
+                },
+            ];
         }
         else {
             form.representativeInfo = [];
@@ -590,76 +693,41 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
         // Total transaction convertion format
         let ttam = this.form.value['totalTransactionAmount'].substring(1);
         form.totalTransactionAmount = ttam.replace(/,/g, '');
-        let modeInfo;
-        if ((form === null || form === void 0 ? void 0 : form.chequeType) === 'Traveler') {
-            modeInfo = [
-                {
-                    chequeNo: form === null || form === void 0 ? void 0 : form.chequeNo,
-                    chequeType: form === null || form === void 0 ? void 0 : form.chequeType,
-                    accountNumber: form === null || form === void 0 ? void 0 : form.chqAccountNumber,
-                }
-            ];
-        }
-        else if ((form === null || form === void 0 ? void 0 : form.chequeType) === 'Bearer') {
-            modeInfo = [
-                {
-                    chequeType: form === null || form === void 0 ? void 0 : form.chequeType,
-                    accountNumber: form === null || form === void 0 ? void 0 : form.chqAccountNumber,
-                    accountBranch: form === null || form === void 0 ? void 0 : form.chqAccountBank,
-                    chequeNo: form === null || form === void 0 ? void 0 : form.chequeNo
-                }
-            ];
-        }
-        else if ((form === null || form === void 0 ? void 0 : form.chequeType) === 'Banker') {
-            modeInfo = [
-                {
-                    chequeType: form === null || form === void 0 ? void 0 : form.chequeType,
-                    accountNumber: form === null || form === void 0 ? void 0 : form.chqAccountNumber,
-                    accountBranch: form === null || form === void 0 ? void 0 : form.chqAccountBank,
-                    chequeNo: form === null || form === void 0 ? void 0 : form.chequeNo
-                }
-            ];
-        }
-        else {
-            modeInfo = [
-                {
-                    chequeNo: form === null || form === void 0 ? void 0 : form.chequeNo
-                }
-            ];
-        }
-        form.modeInfo = modeInfo;
-        form.transactionAmount = form.transactionAmount.toString().replace(/,/g, '');
+        form.transactionAmount = form.transactionAmount
+            .toString()
+            .replace(/,/g, '');
         if (this.editMode) {
             form.appointmentId = this.routerData.data.appointmentId;
             form.operation = 'update';
         }
-        console.log("Final payload", form);
-        // if (this.editMode) {
-        //   this.api.appointmentBooking(form).subscribe((resp) => {
-        //     localStorage.setItem("TransactionTime", resp.transactionTime);
-        //     this.loanRepaymentResponse = resp;
-        //     this.transactionId = this.loanRepaymentResponse.transactionId;
-        //     localStorage.setItem('AppointmentDetails', JSON.stringify(resp));
-        //     if (this.loanRepaymentResponse === 200 || this.loanRepaymentResponse !== null) {
-        //       this.shareDataService.shareTransactionId(this.transactionId);
-        //       this.onClick(this.loanRepaymentResponse);
-        //       this.form.reset();
-        //     }
-        //   });
-        // } else {
-        //   form.transactionAmount = form.transactionAmount.toString().replace(/,/g, '');
-        //   this.api.cashDepositSave(form).subscribe((resp) => {
-        //     localStorage.setItem("TransactionTime", resp.transactionTime);
-        //     this.loanRepaymentResponse = resp;
-        //     this.transactionId = this.loanRepaymentResponse.transactionId;
-        //     localStorage.setItem('AppointmentDetails', JSON.stringify(resp));
-        //     if (this.loanRepaymentResponse === 200 || this.loanRepaymentResponse !== null) {
-        //       this.shareDataService.shareTransactionId(this.transactionId);
-        //       this.onClick(this.loanRepaymentResponse);
-        //       this.form.reset();
-        //     }
-        //   });
-        // }
+        console.log('Final payload', form);
+        if (this.editMode) {
+            this.api.appointmentBooking(form).subscribe((resp) => {
+                localStorage.setItem("TransactionTime", resp.transactionTime);
+                this.loanRepaymentResponse = resp;
+                this.transactionId = this.loanRepaymentResponse.transactionId;
+                localStorage.setItem('AppointmentDetails', JSON.stringify(resp));
+                if (this.loanRepaymentResponse === 200 || this.loanRepaymentResponse !== null) {
+                    this.shareDataService.shareTransactionId(this.transactionId);
+                    this.onClick(this.loanRepaymentResponse);
+                    this.form.reset();
+                }
+            });
+        }
+        else {
+            form.transactionAmount = form.transactionAmount.toString().replace(/,/g, '');
+            this.api.cashDepositSave(form).subscribe((resp) => {
+                localStorage.setItem("TransactionTime", resp.transactionTime);
+                this.loanRepaymentResponse = resp;
+                this.transactionId = this.loanRepaymentResponse.transactionId;
+                localStorage.setItem('AppointmentDetails', JSON.stringify(resp));
+                if (this.loanRepaymentResponse === 200 || this.loanRepaymentResponse !== null) {
+                    this.shareDataService.shareTransactionId(this.transactionId);
+                    this.onClick(this.loanRepaymentResponse);
+                    this.form.reset();
+                }
+            });
+        }
     }
     goToNextPage() {
         this.flag = false;
@@ -673,12 +741,12 @@ let ChequeWithdrawalV2Page = class ChequeWithdrawalV2Page {
                 component: _token_v2_token_v2_page__WEBPACK_IMPORTED_MODULE_9__.TokenV2Page,
                 componentProps: {
                     value: event,
-                    screen: 'onScreen'
+                    screen: 'onScreen',
                 },
             });
             modal.onDidDismiss().then((res) => {
                 this.routerData = res;
-                console.log("Getting Back Data", this.routerData);
+                console.log('Getting Back Data', this.routerData);
                 this.flag = true;
                 this.onScreenRefresh();
             });
@@ -699,7 +767,8 @@ ChequeWithdrawalV2Page.ctorParameters = () => [
     { type: _angular_core__WEBPACK_IMPORTED_MODULE_16__.ChangeDetectorRef },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_15__.ModalController },
     { type: src_app_services_toast_service__WEBPACK_IMPORTED_MODULE_8__.ToastService },
-    { type: _angular_common__WEBPACK_IMPORTED_MODULE_17__.DatePipe }
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_17__.DatePipe },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_17__.Location }
 ];
 ChequeWithdrawalV2Page.propDecorators = {
     autocomplete: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_16__.ViewChild, args: [_angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__.MatAutocompleteTrigger,] }]
@@ -789,7 +858,7 @@ module.exports = ".example-right-align {\n  text-align: right;\n}\n\n.mat-form-f
   \*****************************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header *ngIf=\"flag\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goBack()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" style=\"color:#004C97\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title color=\"bank\">Cheque Withdrawal</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button fill=\"clear\" (click)=\"goToFileUpload()\">\r\n        <ion-icon slot=\"icon-only\" src=\"assets/icon/upload-icon.svg\"></ion-icon>\r\n      </ion-button>\r\n      <ion-button fill=\"clear\" (click)=\"goToScan()\">\r\n        <ion-icon slot=\"icon-only\" src=\"assets/icon/scan.svg\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content *ngIf=\"flag\" class=\"ion-padding\" [scrollEvents]=\"true\" (ionScroll)=\"onScroll()\">\r\n  <form *ngIf=\"form\" [formGroup]=\"form\">\r\n    <div class=\"account-group\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-2\" style=\"background: #ffffff;\">\r\n        <mat-label>Account Number</mat-label>\r\n        <mat-select formControlName=\"accountNumber\" [(ngModel)]=\"selectedAccount\"\r\n          (ngModelChange)=\"onAccountSelect($event)\" panelClass=\"nrpSelect\"\r\n          [ngClass]=\"users.length == 1 ? 'removeArrow' : ''\">\r\n          <mat-select-trigger>\r\n            <p class=\"my-1\">\r\n              <span class=\"currency-label\">{{ filteredAccount?.accountCurrency }} </span>\r\n              &nbsp; <span>{{ form.get('accountNumber')?.value }} </span>\r\n            </p>\r\n          </mat-select-trigger>\r\n          <mat-option *ngFor=\"let user of users\" [value]=\"user.accountId\" class=\"loan-text\" cdkScrollable>\r\n            {{user.accountId}}<br>\r\n            <span class=\"sub-text\">{{user?.accountType}}</span>\r\n          </mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div style=\"margin-left: 12px;margin-right: 12px;\" class=\"my-2\">\r\n        <div class=\"row justify-content-between text-left\">\r\n          <div class=\"col-6\">\r\n            <span class=\" lbl-title\">Account Balance</span>\r\n            <p class=\"lbl-content\">{{ formatAccountBalance(filteredAccount?.amount) }}</p>\r\n          </div>\r\n          <div class=\"col-6\">\r\n            <span class=\" lbl-title\">Account Branch</span>\r\n            <p class=\"lbl-content\">{{ filteredAccount?.accountBranch }}</p>\r\n          </div>\r\n        </div>\r\n        <div class=\"row align-items-center\">\r\n          <div class=\"col-6\">\r\n            <span class=\" lbl-title\">Customer Name</span>\r\n            <p class=\"lbl-content\">{{ currentUser?.firstName }}</p>\r\n          </div>\r\n          <div class=\"col-6\">\r\n            <span class=\" lbl-title\">Type</span>\r\n            <p class=\"lbl-content\">{{ filteredAccount?.accountType }}</p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"denom-group my-2\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n        <mat-label>Type of Cheque</mat-label>\r\n        <mat-select [(ngModel)]=\"chequeTypeSelected\" formControlName=\"chequeType\"\r\n          (selectionChange)=\"chequeTypeChange($event)\" panelClass=\"nrpSelect\">\r\n          <mat-option *ngFor=\"let mode of CHEQUE_TYPES\" [value]=\"mode\">{{mode}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div class=\"denom-group\" *ngIf=\"form.get('chequeType').value === 'Self'\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-1\">\r\n        <mat-label>Cheque Number</mat-label>\r\n        <input matInput placeholder=\"Cheque Number\" #myRef type=\"text\" min=\"1\" (keypress)=\"keyPressNumbers($event)\"\r\n          formControlName=\"chequeNo\" numbersOnly>\r\n      </mat-form-field>\r\n    </div>\r\n    <ng-container *ngIf=\"form.get('chequeType').value === 'Bearer'\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-1\">\r\n        <mat-label>Cheque Number</mat-label>\r\n        <input matInput placeholder=\"Cheque Number\" #myRef type=\"text\" min=\"1\" (keypress)=\"keyPressNumbers($event)\"\r\n          formControlName=\"chequeNo\" numbersOnly>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n        <mat-label>Account Number</mat-label>\r\n        <input matInput numbersOnly formControlName=\"chqAccountNumber\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n        <mat-label>Account Bank</mat-label>\r\n        <input matInput specialText formControlName=\"chqAccountBank\">\r\n      </mat-form-field>\r\n    </ng-container>\r\n\r\n    <ng-container *ngIf=\"form.get('chequeType').value === 'Banker' || form.get('chequeType').value === 'Traveler'\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-1\">\r\n        <mat-label>Cheque Number</mat-label>\r\n        <input matInput placeholder=\"Cheque Number\" #myRef type=\"text\" min=\"1\" (keypress)=\"keyPressNumbers($event)\"\r\n          numbersOnly>\r\n      </mat-form-field>\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n        <mat-label>Issuing Bank</mat-label>\r\n        <input matInput specialText>\r\n      </mat-form-field>\r\n    </ng-container>\r\n    <!-- End of payment mode section -->\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-6 my-3\">\r\n        <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n          <mat-label>Transaction Currency</mat-label>\r\n          <ngx-flag-picker *ngIf=\"form.get('transactionCurrency')?.value?.length === 3\" matPrefix\r\n            [selectedCountryCode]=\"selectedCountryCode\" [showFlags]=\"isShow\" [showLabels]=\"!isShow\"\r\n            [showArrow]=\"!isShow\" slot=\"start\"></ngx-flag-picker>\r\n          <input #autoCompleteInput matInput [matAutocomplete]=\"auto\" [(ngModel)]=\"transactionCurrency\"\r\n            formControlName=\"transactionCurrency\" (ngModelChange)=\"selectCurrencyCode($event)\"\r\n            [formControl]=\"currencyControl\" class=\"auto-currency\" oninput=\"this.value = this.value.toUpperCase()\"\r\n            appAlphabetOnly>\r\n          <mat-autocomplete #auto=\"matAutocomplete\" autoActiveFirstOption>\r\n            <mat-option *ngFor=\"let currency of filteredOptions | async\" [value]=\"currency.currencyCode\">\r\n              <img alt=\"\" class=\"example-option-img\"\r\n                src=\"assets/svg-country-flags/svg/{{currency?.countryCode.toLowerCase()}}.svg\" height=\"25\" width=\"25\">\r\n              <span> {{currency?.countryCode}} &nbsp;{{ currency?.countryName }}</span>\r\n            </mat-option>\r\n          </mat-autocomplete>\r\n          <mat-icon matSuffix>arrow_drop_down</mat-icon>\r\n        </mat-form-field>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <mat-form-field appearance=\"outline\" class=\"excg full-width my-3\">\r\n          <mat-label>Exchange Rate</mat-label>\r\n          <input matInput placeholder=\"Exchange Rate\" readonly=\"true\" formControlName=\"exchangeRate\">\r\n        </mat-form-field>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"denom-group my-2\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-1\">\r\n        <mat-label>Transaction Amount</mat-label>\r\n        <input matInput placeholder=\"Amount\" #myRef [(ngModel)]=\"transAmount\" \r\n        type=\"tel\"\r\n          formControlName=\"transactionAmount\" separator (blur)=\"onBlurEvent($event)\" \r\n          (keyup)=\"balanceCheck($event)\">\r\n      </mat-form-field>\r\n      <!-- <mat-error style=\"margin-left: 5px;\" *ngIf=\"transAmt > currentBalance\">\r\n        Loan disbursement amount should not exceed than Principal Outstanding\r\n      </mat-error> -->\r\n    </div>\r\n\r\n    <mat-hint>\r\n      <img src=\"assets/icon/error.svg\" class=\"small-info\">\r\n      <small> “Exchange rate may be changed at the time of transaction”</small>\r\n    </mat-hint>\r\n\r\n  </form>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\" *ngIf=\"flag\">\r\n  <ion-toolbar style=\"background: transparent !important;\">\r\n    <div class=\"row text-center\">\r\n      <div class=\"col-6\">\r\n        <ion-button shape=\"round\" class=\"next\" (click)=\"goToNextPage()\">Next\r\n        </ion-button>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <ion-button shape=\"round\" class=\"cancel\" (click)=\"goToHomepage()\">Cancel</ion-button>\r\n      </div>\r\n    </div>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n\r\n<ion-header *ngIf=\"!flag\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goToPreviousPage()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title color=\"bank\">Cheque Withdrawal</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content *ngIf=\"!flag\" class=\"ion-padding\">\r\n  <form *ngIf=\"form\" [formGroup]=\"form\">\r\n    <div class=\"group-field\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width excg-fld\">\r\n        <mat-label>Transaction Branch</mat-label>\r\n        <input matInput placeholder=\"Transaction Branch\" formControlName=\"transactionBranch\" readonly=\"true\">\r\n        <img [src]=\"homeIconToggle ? 'assets/icon/dark-home.svg' : 'assets/icon/home-branch.svg'\" matSuffix\r\n          class=\"suffix-icon\" (click)=\"getHomeBranch()\">\r\n      </mat-form-field>\r\n      <div class=\"currency-card secondary\">\r\n        <a class=\"currency-link\" (click)=\"presentModal()\">Click here to find the nearest branch</a>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row t-10 my-3\">\r\n      <div class=\"col-6\">\r\n        <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n          <mat-label>Transaction Date</mat-label>\r\n          <input matInput placeholder=\"Date\" [matDatepicker]=\"picker\" formControlName=\"transactionDate\" readonly=\"true\">\r\n          <mat-datepicker-toggle matSuffix>\r\n            <img src=\"assets/icon/calendar.svg\" matDatepickerToggleIcon class=\"suffix-icon\" (click)=\"datePopup()\">\r\n          </mat-datepicker-toggle>\r\n        </mat-form-field>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n          <mat-label>Time Slot</mat-label>\r\n          <input matInput placeholder=\"Time\" formControlName=\"transactionTime\" readonly=\"true\">\r\n          <img src=\"assets/icon/timer.svg\" matSuffix class=\"suffix-icon\" (click)=\"openPopup()\">\r\n        </mat-form-field>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row t-5 my-4\">\r\n      <div class=\"col-6\">\r\n        <mat-form-field appearance=\"outline\" class=\"ttc full-width\">\r\n          <mat-label>Total Charge Amount</mat-label>\r\n          <input matInput readonly=\"true\" formControlName=\"totalChargeAmount\">\r\n        </mat-form-field>\r\n      </div>\r\n\r\n      <div class=\"col-6\">\r\n        <mat-form-field appearance=\"outline\" class=\"tta full-width\">\r\n          <mat-label>Total Transaction Amount</mat-label>\r\n          <input matInput [readonly]=\"true\" formControlName=\"totalTransactionAmount\">\r\n          <img src=\"assets/icon/info.svg\" matSuffix class=\"suffix-icon\" id=\"bottom-start\">\r\n          <ion-popover mode=\"ios\" size=\"auto\" arrow=\"true\" trigger=\"bottom-start\" side=\"bottom\" alignment=\"center\"\r\n            class=\"trans-pop\" reference=\"bottom-start\">\r\n            <ng-template>\r\n              <ion-content class=\"ion-padding transpopover\">\r\n                <p>Transaction Amount: {{ form.get('transactionCurrency')?.value == 'INR' ? '₹' : '$' }}\r\n                  {{ form.get('transactionAmount')?.value ? form.get('transactionAmount')?.value : 0 }} </p>\r\n                <p>Total Charge Amount:{{ form.get('transactionCurrency')?.value == 'INR' ? '₹' : '$' }}\r\n                  {{ form.get('totalChargeAmount')?.value ? form.get('totalChargeAmount')?.value : 0 }}</p>\r\n                <hr style=\"background: #ffffff;\">\r\n                <p>Total Transaction Amount: {{ form.get('transactionCurrency')?.value == 'INR' ? '₹' : '$' }}\r\n                  {{ form.get('totalTransactionAmount')?.value ? form.get('totalTransactionAmount')?.value : 0\r\n                  }}</p>\r\n              </ion-content>\r\n            </ng-template>\r\n          </ion-popover>\r\n\r\n        </mat-form-field>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"remark-field t-15\">\r\n      <ion-item>\r\n        <ion-textarea [autoGrow]=\"true\" formControlName=\"remarks\" placeholder=\"Remarks\" specialText>\r\n        </ion-textarea>\r\n      </ion-item>\r\n    </div>\r\n\r\n    <h5 class=\"lbl-header\">Walkin Type</h5>\r\n    <ion-segment mode=\"ios\" style=\"margin-top: 10px;\" [value]=\"depositType == 'self' ? 'self' : 'representative'\"\r\n      [(ngModel)]=\"depositType\" (ngModelChange)=\"segmentChanged($event)\" [ngModelOptions]=\"{standalone: true}\">\r\n      <ion-segment-button value=\"self\">\r\n        <ion-label>Self</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button value=\"representative\">\r\n        <ion-label>Representative</ion-label>\r\n      </ion-segment-button>\r\n    </ion-segment>\r\n\r\n    <ng-container *ngIf=\"depositType == 'representative'\">\r\n      <div formGroupName=\"representativeInfo\" class=\"my-3\">\r\n        <mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n          <mat-label>Representative Name</mat-label>\r\n          <input matInput placeholder=\"Person name\" formControlName=\"personName\" specialText>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n          <mat-label>Mobile No</mat-label>\r\n          <input matInput formControlName=\"phoneNo\" type=\"tel\" maxlength=\"10\" (keypress)=\"keyPressMob($event)\">\r\n        </mat-form-field>\r\n\r\n        <mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n          <mat-label>Document ID</mat-label>\r\n          <mat-select matNativeControl formControlName=\"repdocumentId\">\r\n            <mat-option value=\"passport\">Passport</mat-option>\r\n            <mat-option value=\"visa\">Visa</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n          <mat-label>Document Number</mat-label>\r\n          <input matInput formControlName=\"repdocumentNumber\" numbersOnly>\r\n        </mat-form-field>\r\n\r\n        <mat-error style=\"margin-top: 7px;margin-left: 5px;\" *ngIf=\"isShowRepError\">\r\n          Please fill all information for representative!\r\n        </mat-error>\r\n\r\n      </div>\r\n    </ng-container>\r\n\r\n    <div class=\"file-upload-container my-2\" *ngIf=\"depositType !== 'self'\">\r\n      <div class=\"file-content text-center\">\r\n        <ion-icon src=\"assets/icon/fileicon.svg\" class=\"file-img\"></ion-icon>\r\n        <p class=\"file-text my-1\">File Upload</p>\r\n      </div>\r\n    </div>\r\n\r\n\r\n  </form>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\" *ngIf=\"!flag\">\r\n  <ion-toolbar style=\"background: transparent !important;\">\r\n    <div class=\"row text-center\">\r\n      <div class=\"col-6\">\r\n        <ion-button shape=\"round\" class=\"next\" (click)=\"submit(form.value)\">Submit\r\n        </ion-button>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <ion-button shape=\"round\" class=\"back\" (click)=\"goToPreviousPage()\">Back</ion-button>\r\n      </div>\r\n    </div>\r\n  </ion-toolbar>\r\n</ion-footer>";
+module.exports = "<ion-header *ngIf=\"flag\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goBack()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\" style=\"color:#004C97\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title color=\"bank\">Cheque Withdrawal</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button fill=\"clear\" (click)=\"goToFileUpload()\">\r\n        <ion-icon slot=\"icon-only\" src=\"assets/icon/upload-icon.svg\"></ion-icon>\r\n      </ion-button>\r\n      <ion-button fill=\"clear\" (click)=\"goToScan()\">\r\n        <ion-icon slot=\"icon-only\" src=\"assets/icon/scan.svg\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content *ngIf=\"flag\" class=\"ion-padding\" [scrollEvents]=\"true\" (ionScroll)=\"onScroll()\">\r\n  <form *ngIf=\"form\" [formGroup]=\"form\">\r\n    <div class=\"account-group\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-2\" style=\"background: #ffffff;\">\r\n        <mat-label>Account Number</mat-label>\r\n        <mat-select formControlName=\"accountNumber\" [(ngModel)]=\"selectedAccount\"\r\n          (ngModelChange)=\"onAccountSelect($event)\" panelClass=\"nrpSelect\"\r\n          [ngClass]=\"users.length == 1 ? 'removeArrow' : ''\">\r\n          <mat-select-trigger>\r\n            <p class=\"my-1\">\r\n              <span class=\"currency-label\">{{ filteredAccount?.accountCurrency }} </span>\r\n              &nbsp; <span>{{ form.get('accountNumber')?.value }} </span>\r\n            </p>\r\n          </mat-select-trigger>\r\n          <mat-option *ngFor=\"let user of users\" [value]=\"user.accountId\" class=\"loan-text\" cdkScrollable>\r\n            {{user.accountId}}<br>\r\n            <span class=\"sub-text\">{{user?.accountType}}</span>\r\n          </mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div style=\"margin-left: 12px;margin-right: 12px;\" class=\"my-2\">\r\n        <div class=\"row justify-content-between text-left\">\r\n          <div class=\"col-6\">\r\n            <span class=\" lbl-title\">Account Balance</span>\r\n            <p class=\"lbl-content\">{{ formatAccountBalance(filteredAccount?.amount) }}</p>\r\n          </div>\r\n          <div class=\"col-6\">\r\n            <span class=\" lbl-title\">Account Branch</span>\r\n            <p class=\"lbl-content\">{{ filteredAccount?.accountBranch }}</p>\r\n          </div>\r\n        </div>\r\n        <div class=\"row align-items-center\">\r\n          <div class=\"col-6\">\r\n            <span class=\" lbl-title\">Customer Name</span>\r\n            <p class=\"lbl-content\">{{ currentUser?.firstName }}</p>\r\n          </div>\r\n          <div class=\"col-6\">\r\n            <span class=\" lbl-title\">Type</span>\r\n            <p class=\"lbl-content\">{{ filteredAccount?.accountType }}</p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"denom-group my-2\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n        <mat-label>Type of Cheque</mat-label>\r\n        <mat-select [(ngModel)]=\"chequeTypeSelected\" formControlName=\"chequeType\"\r\n          (selectionChange)=\"chequeTypeChange($event)\" panelClass=\"nrpSelect\">\r\n          <mat-option *ngFor=\"let mode of CHEQUE_TYPES\" [value]=\"mode\">{{mode}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div class=\"denom-group\" *ngIf=\"form.get('chequeType').value === 'Self'\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-1\">\r\n        <mat-label>Cheque Number</mat-label>\r\n        <input matInput placeholder=\"Cheque Number\" #myRef type=\"text\" min=\"1\" (keypress)=\"keyPressNumbers($event)\"\r\n          formControlName=\"chequeNumber\" numbersOnly>\r\n      </mat-form-field>\r\n    </div>\r\n    <ng-container *ngIf=\"form.get('chequeType').value === 'Bearer'\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-1\">\r\n        <mat-label>Cheque Number</mat-label>\r\n        <input matInput placeholder=\"Cheque Number\" #myRef type=\"text\" min=\"1\" (keypress)=\"keyPressNumbers($event)\"\r\n          formControlName=\"chequeNumber\" numbersOnly>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n        <mat-label>Account Number</mat-label>\r\n        <input matInput numbersOnly formControlName=\"chqAccountNumber\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n        <mat-label>Account Bank</mat-label>\r\n        <input matInput specialText  formControlName=\"chqAccountBank\">\r\n      </mat-form-field>\r\n    </ng-container>\r\n\r\n    <ng-container *ngIf=\"form.get('chequeType').value === 'Banker' || form.get('chequeType').value === 'Traveler'\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-1\">\r\n        <mat-label>Cheque Number</mat-label>\r\n        <input matInput placeholder=\"Cheque Number\" #myRef type=\"text\" min=\"1\" (keypress)=\"keyPressNumbers($event)\"\r\n          numbersOnly>\r\n      </mat-form-field>\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n        <mat-label>Issuing Bank</mat-label>\r\n        <input matInput specialText>\r\n      </mat-form-field>\r\n    </ng-container>\r\n    <!-- End of payment mode section -->\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-6 my-3\">\r\n        <mat-form-field class=\"full-width\" appearance=\"outline\">\r\n          <mat-label>Transaction Currency</mat-label>\r\n          <ngx-flag-picker *ngIf=\"form.get('transactionCurrency')?.value?.length === 3\" matPrefix\r\n            [selectedCountryCode]=\"selectedCountryCode\" [showFlags]=\"isShow\" [showLabels]=\"!isShow\"\r\n            [showArrow]=\"!isShow\" slot=\"start\"></ngx-flag-picker>\r\n          <input #autoCompleteInput matInput [matAutocomplete]=\"auto\" [(ngModel)]=\"transactionCurrency\"\r\n            formControlName=\"transactionCurrency\" (ngModelChange)=\"selectCurrencyCode($event)\"\r\n            [formControl]=\"currencyControl\" class=\"auto-currency\" oninput=\"this.value = this.value.toUpperCase()\"\r\n            appAlphabetOnly>\r\n          <mat-autocomplete #auto=\"matAutocomplete\" autoActiveFirstOption>\r\n            <mat-option *ngFor=\"let currency of filteredOptions | async\" [value]=\"currency.currencyCode\">\r\n              <img alt=\"\" class=\"example-option-img\"\r\n                src=\"assets/svg-country-flags/svg/{{currency?.countryCode.toLowerCase()}}.svg\" height=\"25\" width=\"25\">\r\n              <span> {{currency?.countryCode}} &nbsp;{{ currency?.countryName }}</span>\r\n            </mat-option>\r\n          </mat-autocomplete>\r\n          <mat-icon matSuffix>arrow_drop_down</mat-icon>\r\n        </mat-form-field>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <mat-form-field appearance=\"outline\" class=\"excg full-width my-3\">\r\n          <mat-label>Exchange Rate</mat-label>\r\n          <input matInput placeholder=\"Exchange Rate\" readonly=\"true\" formControlName=\"exchangeRate\">\r\n        </mat-form-field>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"denom-group my-2\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width my-1\">\r\n        <mat-label>Transaction Amount</mat-label>\r\n        <input matInput placeholder=\"Amount\" #myRef [(ngModel)]=\"transAmount\" \r\n        type=\"tel\"\r\n          formControlName=\"transactionAmount\" separator (blur)=\"onBlurEvent($event)\" \r\n          (keyup)=\"balanceCheck($event)\">\r\n      </mat-form-field>\r\n      <!-- <mat-error style=\"margin-left: 5px;\" *ngIf=\"transAmt > currentBalance\">\r\n        Loan disbursement amount should not exceed than Principal Outstanding\r\n      </mat-error> -->\r\n    </div>\r\n\r\n    <mat-hint>\r\n      <img src=\"assets/icon/error.svg\" class=\"small-info\">\r\n      <small> “Exchange rate may be changed at the time of transaction”</small>\r\n    </mat-hint>\r\n\r\n  </form>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\" *ngIf=\"flag\">\r\n  <ion-toolbar style=\"background: transparent !important;\">\r\n    <div class=\"row text-center\">\r\n      <div class=\"col-6\">\r\n        <ion-button shape=\"round\" class=\"next\" [disabled]=\"!checkInitialPageValidation\" (click)=\"goToNextPage()\">Next\r\n        </ion-button>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <ion-button shape=\"round\" class=\"cancel\" (click)=\"goToHomepage()\">Cancel</ion-button>\r\n      </div>\r\n    </div>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n\r\n<ion-header *ngIf=\"!flag\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button (click)=\"goToPreviousPage()\">\r\n        <ion-icon slot=\"icon-only\" name=\"chevron-back-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <ion-title color=\"bank\">Cheque Withdrawal</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content *ngIf=\"!flag\" class=\"ion-padding\">\r\n  <form *ngIf=\"form\" [formGroup]=\"form\">\r\n    <div class=\"group-field\">\r\n      <mat-form-field appearance=\"outline\" class=\"full-width excg-fld\">\r\n        <mat-label>Transaction Branch</mat-label>\r\n        <input matInput placeholder=\"Transaction Branch\" formControlName=\"transactionBranch\" readonly=\"true\">\r\n        <img [src]=\"homeIconToggle ? 'assets/icon/dark-home.svg' : 'assets/icon/home-branch.svg'\" matSuffix\r\n          class=\"suffix-icon\" (click)=\"getHomeBranch()\">\r\n      </mat-form-field>\r\n      <div class=\"currency-card secondary\">\r\n        <a class=\"currency-link\" (click)=\"presentModal()\">Click here to find the nearest branch</a>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row t-10 my-3\">\r\n      <div class=\"col-6\">\r\n        <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n          <mat-label>Transaction Date</mat-label>\r\n          <input matInput placeholder=\"Date\" [matDatepicker]=\"picker\" formControlName=\"transactionDate\" readonly=\"true\">\r\n          <mat-datepicker-toggle matSuffix>\r\n            <img src=\"assets/icon/calendar.svg\" matDatepickerToggleIcon class=\"suffix-icon\" (click)=\"datePopup()\">\r\n          </mat-datepicker-toggle>\r\n        </mat-form-field>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n          <mat-label>Time Slot</mat-label>\r\n          <input matInput placeholder=\"Time\" formControlName=\"transactionTime\" readonly=\"true\">\r\n          <img src=\"assets/icon/timer.svg\" matSuffix class=\"suffix-icon\" (click)=\"openPopup()\">\r\n        </mat-form-field>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row t-5 my-4\">\r\n      <div class=\"col-6\">\r\n        <mat-form-field appearance=\"outline\" class=\"ttc full-width\">\r\n          <mat-label>Total Charge Amount</mat-label>\r\n          <input matInput readonly=\"true\" formControlName=\"totalChargeAmount\">\r\n        </mat-form-field>\r\n      </div>\r\n\r\n      <div class=\"col-6\">\r\n        <mat-form-field appearance=\"outline\" class=\"tta full-width\">\r\n          <mat-label>Total Transaction Amount</mat-label>\r\n          <input matInput [readonly]=\"true\" formControlName=\"totalTransactionAmount\">\r\n          <img src=\"assets/icon/info.svg\" matSuffix class=\"suffix-icon\" id=\"bottom-start\">\r\n          <ion-popover mode=\"ios\" size=\"auto\" arrow=\"true\" trigger=\"bottom-start\" side=\"bottom\" alignment=\"center\"\r\n            class=\"trans-pop\" reference=\"bottom-start\">\r\n            <ng-template>\r\n              <ion-content class=\"ion-padding transpopover\">\r\n                <p>Transaction Amount: {{ form.get('transactionCurrency')?.value == 'INR' ? '₹' : '$' }}\r\n                  {{ form.get('transactionAmount')?.value ? form.get('transactionAmount')?.value : 0 }} </p>\r\n                <p>Total Charge Amount:{{ form.get('transactionCurrency')?.value == 'INR' ? '₹' : '$' }}\r\n                  {{ form.get('totalChargeAmount')?.value ? form.get('totalChargeAmount')?.value : 0 }}</p>\r\n                <hr style=\"background: #ffffff;\">\r\n                <p>Total Transaction Amount: {{ form.get('transactionCurrency')?.value == 'INR' ? '₹' : '$' }}\r\n                  {{ form.get('totalTransactionAmount')?.value ? form.get('totalTransactionAmount')?.value : 0\r\n                  }}</p>\r\n              </ion-content>\r\n            </ng-template>\r\n          </ion-popover>\r\n\r\n        </mat-form-field>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"remark-field t-15\">\r\n      <ion-item>\r\n        <ion-textarea [autoGrow]=\"true\" formControlName=\"remarks\" placeholder=\"Remarks\" specialText>\r\n        </ion-textarea>\r\n      </ion-item>\r\n    </div>\r\n\r\n    <h5 class=\"lbl-header\">Walkin Type</h5>\r\n    <ion-segment mode=\"ios\" style=\"margin-top: 10px;\" [value]=\"depositType == 'self' ? 'self' : 'representative'\"\r\n      [(ngModel)]=\"depositType\" (ngModelChange)=\"segmentChanged($event)\" [ngModelOptions]=\"{standalone: true}\">\r\n      <ion-segment-button value=\"self\">\r\n        <ion-label>Self</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button value=\"representative\">\r\n        <ion-label>Representative</ion-label>\r\n      </ion-segment-button>\r\n    </ion-segment>\r\n\r\n    <ng-container *ngIf=\"depositType == 'representative'\">\r\n      <div formGroupName=\"representativeInfo\" class=\"my-3\">\r\n        <mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n          <mat-label>Representative Name</mat-label>\r\n          <input matInput placeholder=\"Person name\" formControlName=\"personName\" specialText>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n          <mat-label>Mobile No</mat-label>\r\n          <input matInput formControlName=\"phoneNo\" type=\"tel\" maxlength=\"10\" (keypress)=\"keyPressMob($event)\">\r\n        </mat-form-field>\r\n\r\n        <mat-form-field appearance=\"outline\" class=\"full-width my-2\">\r\n          <mat-label>Document ID</mat-label>\r\n          <mat-select matNativeControl formControlName=\"repdocumentId\">\r\n            <mat-option value=\"passport\">Passport</mat-option>\r\n            <mat-option value=\"visa\">Visa</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n          <mat-label>Document Number</mat-label>\r\n          <input matInput formControlName=\"repdocumentNumber\" numbersOnly>\r\n        </mat-form-field>\r\n\r\n        <mat-error style=\"margin-top: 7px;margin-left: 5px;\" *ngIf=\"isShowRepError\">\r\n          Please fill all information for representative!\r\n        </mat-error>\r\n\r\n      </div>\r\n    </ng-container>\r\n\r\n    <div class=\"file-upload-container my-2\" *ngIf=\"depositType !== 'self'\">\r\n      <div class=\"file-content text-center\">\r\n        <ion-icon src=\"assets/icon/fileicon.svg\" class=\"file-img\"></ion-icon>\r\n        <p class=\"file-text my-1\">File Upload</p>\r\n      </div>\r\n    </div>\r\n\r\n\r\n  </form>\r\n</ion-content>\r\n<ion-footer class=\"ion-no-border\" *ngIf=\"!flag\">\r\n  <ion-toolbar style=\"background: transparent !important;\">\r\n    <div class=\"row text-center\">\r\n      <div class=\"col-6\">\r\n        <ion-button shape=\"round\" class=\"next\" [disabled]=\"!form.valid\" (click)=\"submit(form.value)\">Submit\r\n        </ion-button>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <ion-button shape=\"round\" class=\"back\" (click)=\"goToPreviousPage()\">Back</ion-button>\r\n      </div>\r\n    </div>\r\n  </ion-toolbar>\r\n</ion-footer>";
 
 /***/ })
 

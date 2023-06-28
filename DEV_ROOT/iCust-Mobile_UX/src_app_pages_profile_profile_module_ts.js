@@ -93,23 +93,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ProfilePage": () => (/* binding */ ProfilePage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! tslib */ 34929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! tslib */ 34929);
 /* harmony import */ var _profile_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./profile.page.html?ngResource */ 67364);
 /* harmony import */ var _profile_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile.page.scss?ngResource */ 62581);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic/angular */ 93819);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ionic/angular */ 93819);
 /* harmony import */ var src_app_services_photo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/photo.service */ 61957);
 /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/api.service */ 5830);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/platform-browser */ 50318);
 /* harmony import */ var src_app_services_commonservice_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/commonservice.service */ 44045);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common/http */ 28784);
 /* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/data.service */ 52468);
 /* harmony import */ var src_app_services_toast_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/toast.service */ 84465);
 /* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/camera/ngx */ 6018);
 /* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/file/ngx */ 12358);
 /* harmony import */ var _ionic_native_file_path_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/file-path/ngx */ 74375);
 /* harmony import */ var _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/crop/ngx */ 82475);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var src_app_services_token_storage_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/services/token-storage.service */ 11573);
+/* harmony import */ var src_app_services_user_roles__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/app/services/user-roles */ 13634);
+
+
 
 
 
@@ -128,13 +132,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ProfilePage = class ProfilePage {
-    constructor(api, platform, actionSheetController, sanitizer, cdr, filePath, camera, router, photoService, commonService, dataService, alert, file, crop, toastService) {
+    constructor(api, platform, actionSheetController, sanitizer, cdr, filePath, tokenService, camera, router, photoService, commonService, dataService, alert, file, crop, toastService) {
         this.api = api;
         this.platform = platform;
         this.actionSheetController = actionSheetController;
         this.sanitizer = sanitizer;
         this.cdr = cdr;
         this.filePath = filePath;
+        this.tokenService = tokenService;
         this.camera = camera;
         this.router = router;
         this.photoService = photoService;
@@ -144,9 +149,12 @@ let ProfilePage = class ProfilePage {
         this.file = file;
         this.crop = crop;
         this.toastService = toastService;
+        this.roles = src_app_services_user_roles__WEBPACK_IMPORTED_MODULE_12__.Roles;
     }
     ngOnInit() {
-        this.currentUser = this.dataService.getCurrentUser();
+        var _a, _b;
+        this.currentUser = this.tokenService.getUser();
+        this.userRole = (_b = (_a = this.currentUser) === null || _a === void 0 ? void 0 : _a.roles[0]) === null || _b === void 0 ? void 0 : _b.name;
         this.phoneNumber = localStorage.getItem('customerPhonenum');
         this.api.custpomerDetails(this.phoneNumber).subscribe((resp) => {
             this.formData = resp;
@@ -169,7 +177,7 @@ let ProfilePage = class ProfilePage {
         }
         else {
             this.fullName = firstName + ' ' + middleName + ' ' + lastName;
-            console.log("full name", this.fullName);
+            console.log('full name', this.fullName);
         }
         this.email = email;
     }
@@ -192,13 +200,15 @@ let ProfilePage = class ProfilePage {
         this.flag = true;
     }
     getProfilePicture(customerId) {
-        this.api.getProfileDetails(customerId)
-            .subscribe((data) => {
+        this.api.getProfileDetails(customerId).subscribe((data) => {
             console.log('get profile data -- ', data);
             this.profileData = data;
             if (data.profileImage != null) {
                 let objectURL = data.profileImage;
-                this.image = data.profileImage != "not_available" ? this.sanitizer.bypassSecurityTrustUrl(objectURL) : undefined;
+                this.image =
+                    data.profileImage != 'not_available'
+                        ? this.sanitizer.bypassSecurityTrustUrl(objectURL)
+                        : undefined;
             }
             else {
                 this.image = null;
@@ -215,7 +225,7 @@ let ProfilePage = class ProfilePage {
         this.photoService.addNewToGallery();
     }
     openActionSheet() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_13__.__awaiter)(this, void 0, void 0, function* () {
             this.actionSheet = yield this.actionSheetController.create({
                 // header: 'Albums',
                 // subHeader: 'Subtitle',
@@ -223,30 +233,34 @@ let ProfilePage = class ProfilePage {
                 backdropDismiss: false,
                 cssClass: 'custom_action_css',
                 mode: 'ios',
-                buttons: [{
+                buttons: [
+                    {
                         text: 'Take Photo',
                         // icon: 'share',
                         handler: () => {
                             this.pickImage(this.camera.PictureSourceType.CAMERA);
-                        }
-                    }, {
+                        },
+                    },
+                    {
                         text: 'Upload Photo',
                         handler: () => {
                             this.fileInput.nativeElement.click();
-                        }
-                    }, {
+                        },
+                    },
+                    {
                         text: 'Remove Photo',
                         role: 'destructive',
                         handler: () => {
                             this.removeProfileImage();
                             this.image = null;
-                        }
-                    }, {
+                        },
+                    },
+                    {
                         text: 'Cancel',
                         role: 'cancel',
-                        handler: () => {
-                        }
-                    }]
+                        handler: () => { },
+                    },
+                ],
             });
             yield this.actionSheet.present();
         });
@@ -266,20 +280,20 @@ let ProfilePage = class ProfilePage {
         if (file) {
             const formData = new FormData();
             let payload = {
-                "documentName": "Profile",
-                "documentType": 1,
-                "fileType": file === null || file === void 0 ? void 0 : file.type,
-                "fileName": file === null || file === void 0 ? void 0 : file.name,
-                "customerId": this.customerId
+                documentName: 'Profile',
+                documentType: 1,
+                fileType: file === null || file === void 0 ? void 0 : file.type,
+                fileName: file === null || file === void 0 ? void 0 : file.name,
+                customerId: this.customerId,
             };
             formData.append('file', file);
             formData.append('data', JSON.stringify(payload));
             (_a = this.actionSheet) === null || _a === void 0 ? void 0 : _a.dismiss();
-            this.api.uploadProfileImage(formData).subscribe(resp => {
+            this.api.uploadProfileImage(formData).subscribe((resp) => {
                 console.log(resp);
                 this.image = resp.fileUrl;
                 localStorage.setItem('profilePicInfo', JSON.stringify(resp));
-            }, err => console.log('Error: ', err));
+            }, (err) => console.log('Error: ', err));
         }
     }
     removeProfileImage() {
@@ -307,11 +321,11 @@ let ProfilePage = class ProfilePage {
         this.toastService.showToast(`profile picture will take time to load since the upload file size is ${this.formatBytes(size, 2)}`);
         const formData = new FormData();
         let payload = {
-            "documentName": "Profile",
-            "documentType": 1,
-            "fileType": file.type,
-            "fileName": file.name,
-            "customerId": this.customerId
+            documentName: 'Profile',
+            documentType: 1,
+            fileType: file.type,
+            fileName: file.name,
+            customerId: this.customerId,
         };
         formData.append('file', file);
         formData.append('data', JSON.stringify(payload));
@@ -335,28 +349,34 @@ let ProfilePage = class ProfilePage {
             correctOrientation: true,
             targetHeight: 350,
             targetWidth: 350,
-            cameraDirection: 1
+            cameraDirection: 1,
         };
         this.camera.getPicture(options).then((imageData) => {
             console.log(imageData);
-            this.crop.crop(imageData, {
-                quality: 50, targetHeight: 350,
+            this.crop
+                .crop(imageData, {
+                quality: 50,
+                targetHeight: 350,
                 targetWidth: 350,
             })
-                .then(newImage => {
+                .then((newImage) => {
                 console.log('new image path is: ', newImage);
-                this.file.resolveLocalFilesystemUrl(newImage).then((entry) => {
-                    entry.file(file => {
+                this.file
+                    .resolveLocalFilesystemUrl(newImage)
+                    .then((entry) => {
+                    entry.file((file) => {
                         console.log(file);
-                        this.filePath.resolveNativePath(newImage)
-                            .then(filePath => {
-                            console.log("Resolve file", file);
+                        this.filePath
+                            .resolveNativePath(newImage)
+                            .then((filePath) => {
+                            console.log('Resolve file', file);
                             this.readFile(file, filePath);
-                            console.log("filePath native::", filePath);
-                        }).catch(e => console.log(e));
+                            console.log('filePath native::', filePath);
+                        })
+                            .catch((e) => console.log(e));
                     });
                 });
-            }, error => {
+            }, (error) => {
                 console.error('Error cropping image', error);
             });
         }, (err) => {
@@ -368,17 +388,17 @@ let ProfilePage = class ProfilePage {
         const reader = new FileReader();
         reader.onload = () => {
             const blob = new Blob([reader.result], {
-                type: file.type
+                type: file.type,
             });
-            console.log("this.read::", file);
-            let filename = targetUrl.split("/").pop();
+            console.log('this.read::', file);
+            let filename = targetUrl.split('/').pop();
             const formData = new FormData();
             let payload = {
-                "documentName": "Profile",
-                "documentType": 1,
-                "fileType": file.type,
-                "fileName": file.name,
-                "customerId": this.customerId
+                documentName: 'Profile',
+                documentType: 1,
+                fileType: file.type,
+                fileName: file.name,
+                customerId: this.customerId,
             };
             formData.append('file', blob, filename);
             formData.append('data', JSON.stringify(payload));
@@ -386,21 +406,19 @@ let ProfilePage = class ProfilePage {
         };
         reader.readAsArrayBuffer(file);
     }
-    ;
     uploadFile(formData) {
         this.showLoader = true;
-        this.api.uploadProfilePicture(formData)
-            .subscribe((event) => {
-            if (event.type === _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HttpEventType.UploadProgress) {
-                this.progress = Math.round(100 * event.loaded / event.total);
+        this.api.uploadProfilePicture(formData).subscribe((event) => {
+            if (event.type === _angular_common_http__WEBPACK_IMPORTED_MODULE_14__.HttpEventType.UploadProgress) {
+                this.progress = Math.round((100 * event.loaded) / event.total);
             }
-            else if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HttpResponse) {
+            else if (event instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_14__.HttpResponse) {
                 let avatarUrl = event.body.fileUrl;
                 this.image = avatarUrl;
                 this.showLoader = false;
                 localStorage.setItem('avatarUrl', avatarUrl);
                 this.dataService.shareAvatarUrl(avatarUrl);
-                this.toastService.showToast("File Uploaded Successfully!");
+                this.toastService.showToast('File Uploaded Successfully!');
             }
             this.cdr.markForCheck();
         }, (err) => {
@@ -410,7 +428,7 @@ let ProfilePage = class ProfilePage {
         });
     }
     goToFeedback() {
-        this.router.navigateByUrl("/feedback", { state: { goBack: true } });
+        this.router.navigateByUrl('/feedback', { state: { goBack: true } });
     }
     previous() {
         this.router.navigate(['/dashboard']);
@@ -418,29 +436,30 @@ let ProfilePage = class ProfilePage {
 };
 ProfilePage.ctorParameters = () => [
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_3__.ApiService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.Platform },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.ActionSheetController },
-    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_14__.DomSanitizer },
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_15__.ChangeDetectorRef },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_15__.Platform },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_15__.ActionSheetController },
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_16__.DomSanitizer },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_17__.ChangeDetectorRef },
     { type: _ionic_native_file_path_ngx__WEBPACK_IMPORTED_MODULE_9__.FilePath },
+    { type: src_app_services_token_storage_service__WEBPACK_IMPORTED_MODULE_11__.TokenStorageService },
     { type: _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_7__.Camera },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_16__.Router },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_18__.Router },
     { type: src_app_services_photo_service__WEBPACK_IMPORTED_MODULE_2__.PhotoService },
     { type: src_app_services_commonservice_service__WEBPACK_IMPORTED_MODULE_4__.CommonserviceService },
     { type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_5__.DataService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_13__.AlertController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_15__.AlertController },
     { type: _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_8__.File },
     { type: _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_10__.Crop },
     { type: src_app_services_toast_service__WEBPACK_IMPORTED_MODULE_6__.ToastService }
 ];
 ProfilePage.propDecorators = {
-    fileInput: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_15__.ViewChild, args: ['file',] }]
+    fileInput: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_17__.ViewChild, args: ['file',] }]
 };
-ProfilePage = (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_15__.Component)({
+ProfilePage = (0,tslib__WEBPACK_IMPORTED_MODULE_13__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_17__.Component)({
         selector: 'app-profile',
         template: _profile_page_html_ngResource__WEBPACK_IMPORTED_MODULE_0__,
-        changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_15__.ChangeDetectionStrategy.OnPush,
+        changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_17__.ChangeDetectionStrategy.OnPush,
         styles: [_profile_page_scss_ngResource__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], ProfilePage);
@@ -516,7 +535,7 @@ module.exports = "ion-content {\n  --background: #ffffff;\n  --offset-top: 1px !
   \************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header class=\"ion-no-border\" mode=\"ios\">\r\n  <ion-toolbar ion-no-border>\r\n    <ion-icon size=\"large\" name=\"chevron-back-outline\" (click)=\"previous()\" class=\"mt-6\"></ion-icon>\r\n    <!-- <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons> -->\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"mainbackground\">\r\n  <div class=\"header\" style=\"margin-top: 0px !important;\">\r\n  </div>\r\n  <div class=\"flex\">\r\n    <div class=\"border-blue\">\r\n      <div class=\"border-white circular_div\">\r\n        <div class=\"img-box\">\r\n          <ng-container *ngIf=\"image == null || image == undefined; else showAvatar\">\r\n            <div class=\"profile-image\" [style.background]=\"dataService.getRandomColor()\">\r\n              {{currentUser?.firstName | uppercase | slice:0:1}}{{currentUser?.lastName\r\n                | uppercase | slice:0:1}}\r\n            </div>\r\n          </ng-container>\r\n          <ng-template #showAvatar>\r\n            <img [src]=\"image\" alt=\"profile\" />\r\n          </ng-template>\r\n        </div>\r\n        <div class=\"box-with-img\" (click)=\"openActionSheet()\">\r\n          <input type=\"file\" class=\"file_upload_inp\" accept=\"image/png, image/jpeg\" #file (change)=\"handleProfileUpdate($event)\" />\r\n          <img class=\"img1\" id=\"action-sheets-home-page\" src=\"assets/images/photo-camera-interface.svg\" alt=\"Ionic logo\" />\r\n        </div>\r\n      \r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"name text-center\">\r\n    <h5 class=\"text\">{{fullName}}</h5>\r\n    <p>{{email}}</p>\r\n  </div>\r\n\r\n\r\n  <!-- <div class=\"container\">\r\n    <div class=\"body\"> -->\r\n  <div class=\"main_content_div\">\r\n    <div class=\"container_div\">\r\n      <div (click)=\"account()\" class=\"shopping_div\">\r\n        <div class=\"\">\r\n          <img src=\"assets/icon/settings.svg\" alt=\"\">\r\n        </div>\r\n        <div class=\"content_div\">\r\n          <ion-label class=\"name\">Account Settings</ion-label>\r\n          <ion-label class=\"date\">Update and modify your profile</ion-label>\r\n        </div>\r\n        <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n      </div>\r\n\r\n      <div (click)=\"securityCenter()\" class=\"shopping_div\">\r\n        <div class=\"\">\r\n          <img src=\"assets/icon/security.svg\" alt=\"\">\r\n        </div>\r\n        <div class=\"content_div\">\r\n          <ion-label class=\"name\">Security Center</ion-label>\r\n          <ion-label class=\"date\">Change your password</ion-label>\r\n        </div>\r\n        <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n      </div>\r\n\r\n\r\n      <div (click)=\"goToWallet()\" class=\"shopping_div\">\r\n        <div class=\"color_box\">\r\n          <img class=\"icon\" src=\"assets/icon/wallet.svg\" alt=\"Ionic logo\" />\r\n        </div>\r\n        <div class=\"content_div\">\r\n          <ion-label class=\"name\">Wallet</ion-label>\r\n          <ion-label class=\"date\"><small>Quick access for your saved token/ticket</small></ion-label>\r\n        </div>\r\n        <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n      </div>\r\n\r\n\r\n      <ion-item class=\"wa-box\" lines=\"none\" href=\"https://wa.me/15550896558?text=Hi\">\r\n        <div class=\"wa-icon-bg\">\r\n          <ion-avatar slot=\"start\">\r\n            <img class=\"wa-img\" alt=\"wa\" src=\"assets/icon/whatsapp.svg\" />\r\n          </ion-avatar>\r\n        </div>\r\n        <ion-label class=\"wa-ml-15\">\r\n          <h3 class=\"name\">WhatsApp Banking</h3>\r\n          <p class=\"date\"><small>Connect and Interact</small></p>\r\n        </ion-label>\r\n        <ion-icon name=\"chevron-forward-sharp\" slot=\"end\"></ion-icon>\r\n      </ion-item>\r\n\r\n      <div (click)=\"goToFeedback()\" class=\"shopping_div my-3\">\r\n        <div class=\"\">\r\n          <img src=\"assets/icon/feedback.svg\" alt=\"\">\r\n        </div>\r\n        <div class=\"content_div\">\r\n          <ion-label class=\"name\">Feedback</ion-label>\r\n          <ion-label class=\"date\">Suggestion</ion-label>\r\n        </div>\r\n        <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n      </div>\r\n\r\n      <!-- <div (click)=\"notification()\" class=\"shopping_div\">\r\n        <div class=\"color_box\">\r\n          <img class=\"icon\" src=\"assets/icon/notification.PNG\" alt=\"Ionic logo\" />\r\n        </div>\r\n        <div class=\"content_div\">\r\n          <ion-label class=\"name\">Notifications</ion-label>\r\n          <ion-label class=\"date\">Change your notification settings</ion-label>\r\n        </div>\r\n        <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n      </div> -->\r\n\r\n      <div (click)=\"goToHelp()\" class=\"shopping_div\">\r\n        <div class=\"\">\r\n          <img src=\"assets/icon/help.svg\" alt=\"\">\r\n        </div>\r\n        <div class=\"content_div\">\r\n          <ion-label class=\"name\">Help</ion-label>\r\n          <ion-label class=\"date\">Need more help</ion-label>\r\n        </div>\r\n        <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n      </div>\r\n\r\n      <div (click)=\"goToFaq()\" class=\"shopping_div\">\r\n        <div class=\"\">\r\n          <img src=\"assets/icon/faq.svg\" alt=\"\">\r\n        </div>\r\n        <div class=\"content_div\">\r\n          <ion-label class=\"name\">Faq</ion-label>\r\n          <ion-label class=\"date\">Ask your questions.</ion-label>\r\n        </div>\r\n        <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n      </div>\r\n\r\n      <!-- <div (click)=\"logoutApp()\" class=\"shopping_div\">\r\n        <div class=\"color_box\">\r\n          <img class=\"icon logout-icon\" src=\"assets/icon/logout.svg\" alt=\"Ionic logo\" />\r\n        </div>\r\n        <div class=\"content_div\">\r\n          <ion-label class=\"name\">Logout</ion-label>\r\n        </div>\r\n        <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n      </div> -->\r\n\r\n\r\n    </div>\r\n\r\n  </div>\r\n  <!-- </div> -->\r\n  <!-- </div> -->\r\n</ion-content>\r\n<app-footer></app-footer>\r\n";
+module.exports = "<ion-header class=\"ion-no-border\" mode=\"ios\">\r\n  <ion-toolbar ion-no-border>\r\n    <ion-icon\r\n      size=\"large\"\r\n      name=\"chevron-back-outline\"\r\n      (click)=\"previous()\"\r\n      class=\"mt-6\"\r\n    ></ion-icon>\r\n    <!-- <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n    </ion-buttons> -->\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content class=\"mainbackground\">\r\n  <div class=\"header\" style=\"margin-top: 0px !important\"></div>\r\n  <div class=\"flex\">\r\n    <div class=\"border-blue\">\r\n      <div class=\"border-white circular_div\">\r\n        <div class=\"img-box\">\r\n          <ng-container\r\n            *ngIf=\"image == null || image == undefined; else showAvatar\"\r\n          >\r\n            <div\r\n              class=\"profile-image\"\r\n              [style.background]=\"dataService.getRandomColor()\"\r\n            >\r\n              {{currentUser?.firstName | uppercase |\r\n              slice:0:1}}{{currentUser?.lastName | uppercase | slice:0:1}}\r\n            </div>\r\n          </ng-container>\r\n          <ng-template #showAvatar>\r\n            <img [src]=\"image\" alt=\"profile\" />\r\n          </ng-template>\r\n        </div>\r\n        <div class=\"box-with-img\" (click)=\"openActionSheet()\">\r\n          <input\r\n            type=\"file\"\r\n            class=\"file_upload_inp\"\r\n            accept=\"image/png, image/jpeg\"\r\n            #file\r\n            (change)=\"handleProfileUpdate($event)\"\r\n          />\r\n          <img\r\n            class=\"img1\"\r\n            id=\"action-sheets-home-page\"\r\n            src=\"assets/images/photo-camera-interface.svg\"\r\n            alt=\"Ionic logo\"\r\n          />\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"name text-center\">\r\n    <h5 class=\"text\">{{currentUser?.firstName }} {{currentUser?.lastName }}</h5>\r\n    <p>{{currentUser?.email }}</p>\r\n  </div>\r\n\r\n  <div class=\"main_content_div\">\r\n    <ng-container *ngIf=\"userRole === roles.MOBILE_CUSTOMER; else showAgent\">\r\n      <div class=\"container_div\">\r\n        <div (click)=\"account()\" class=\"shopping_div\">\r\n          <div class=\"\">\r\n            <img src=\"assets/icon/settings.svg\" alt=\"\" />\r\n          </div>\r\n          <div class=\"content_div\">\r\n            <ion-label class=\"name\">Account Settings</ion-label>\r\n            <ion-label class=\"date\">Update and modify your profile</ion-label>\r\n          </div>\r\n          <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n        </div>\r\n\r\n        <div (click)=\"securityCenter()\" class=\"shopping_div\">\r\n          <div class=\"\">\r\n            <img src=\"assets/icon/security.svg\" alt=\"\" />\r\n          </div>\r\n          <div class=\"content_div\">\r\n            <ion-label class=\"name\">Security Center</ion-label>\r\n            <ion-label class=\"date\">Change your password</ion-label>\r\n          </div>\r\n          <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n        </div>\r\n\r\n        <div (click)=\"goToWallet()\" class=\"shopping_div\">\r\n          <div class=\"color_box\">\r\n            <img class=\"icon\" src=\"assets/icon/wallet.svg\" alt=\"Ionic logo\" />\r\n          </div>\r\n          <div class=\"content_div\">\r\n            <ion-label class=\"name\">Wallet</ion-label>\r\n            <ion-label class=\"date\"\r\n              ><small\r\n                >Quick access for your saved token/ticket</small\r\n              ></ion-label\r\n            >\r\n          </div>\r\n          <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n        </div>\r\n\r\n        <ion-item\r\n          class=\"wa-box\"\r\n          lines=\"none\"\r\n          href=\"https://wa.me/15550896558?text=Hi\"\r\n        >\r\n          <div class=\"wa-icon-bg\">\r\n            <ion-avatar slot=\"start\">\r\n              <img class=\"wa-img\" alt=\"wa\" src=\"assets/icon/whatsapp.svg\" />\r\n            </ion-avatar>\r\n          </div>\r\n          <ion-label class=\"wa-ml-15\">\r\n            <h3 class=\"name\">WhatsApp Banking</h3>\r\n            <p class=\"date\"><small>Connect and Interact</small></p>\r\n          </ion-label>\r\n          <ion-icon name=\"chevron-forward-sharp\" slot=\"end\"></ion-icon>\r\n        </ion-item>\r\n\r\n        <div (click)=\"goToFeedback()\" class=\"shopping_div my-3\">\r\n          <div class=\"\">\r\n            <img src=\"assets/icon/feedback.svg\" alt=\"\" />\r\n          </div>\r\n          <div class=\"content_div\">\r\n            <ion-label class=\"name\">Feedback</ion-label>\r\n            <ion-label class=\"date\">Suggestion</ion-label>\r\n          </div>\r\n          <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n        </div>\r\n\r\n        <div (click)=\"goToHelp()\" class=\"shopping_div\">\r\n          <div class=\"\">\r\n            <img src=\"assets/icon/help.svg\" alt=\"\" />\r\n          </div>\r\n          <div class=\"content_div\">\r\n            <ion-label class=\"name\">Help</ion-label>\r\n            <ion-label class=\"date\">Need more help</ion-label>\r\n          </div>\r\n          <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n        </div>\r\n\r\n        <div (click)=\"goToFaq()\" class=\"shopping_div\">\r\n          <div class=\"\">\r\n            <img src=\"assets/icon/faq.svg\" alt=\"\" />\r\n          </div>\r\n          <div class=\"content_div\">\r\n            <ion-label class=\"name\">Faq</ion-label>\r\n            <ion-label class=\"date\">Ask your questions.</ion-label>\r\n          </div>\r\n          <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n    <ng-template #showAgent>\r\n      <div class=\"container_div\">\r\n        <ion-item\r\n          class=\"wa-box\"\r\n          lines=\"none\"\r\n          href=\"https://wa.me/15550896558?text=Hi\"\r\n        >\r\n          <div class=\"wa-icon-bg\">\r\n            <ion-avatar slot=\"start\">\r\n              <img class=\"wa-img\" alt=\"wa\" src=\"assets/icon/whatsapp.svg\" />\r\n            </ion-avatar>\r\n          </div>\r\n          <ion-label class=\"wa-ml-15\">\r\n            <h3 class=\"name\">WhatsApp Banking</h3>\r\n            <p class=\"date\"><small>Connect and Interact</small></p>\r\n          </ion-label>\r\n          <ion-icon name=\"chevron-forward-sharp\" slot=\"end\"></ion-icon>\r\n        </ion-item>\r\n\r\n        <div (click)=\"goToFeedback()\" class=\"shopping_div my-3\">\r\n          <div class=\"\">\r\n            <img src=\"assets/icon/feedback.svg\" alt=\"\" />\r\n          </div>\r\n          <div class=\"content_div\">\r\n            <ion-label class=\"name\">Feedback</ion-label>\r\n            <ion-label class=\"date\">Suggestion</ion-label>\r\n          </div>\r\n          <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n        </div>\r\n\r\n        <div (click)=\"goToHelp()\" class=\"shopping_div\">\r\n          <div class=\"\">\r\n            <img src=\"assets/icon/help.svg\" alt=\"\" />\r\n          </div>\r\n          <div class=\"content_div\">\r\n            <ion-label class=\"name\">Help</ion-label>\r\n            <ion-label class=\"date\">Need more help</ion-label>\r\n          </div>\r\n          <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n        </div>\r\n\r\n        <div (click)=\"goToFaq()\" class=\"shopping_div\">\r\n          <div class=\"\">\r\n            <img src=\"assets/icon/faq.svg\" alt=\"\" />\r\n          </div>\r\n          <div class=\"content_div\">\r\n            <ion-label class=\"name\">Faq</ion-label>\r\n            <ion-label class=\"date\">Ask your questions.</ion-label>\r\n          </div>\r\n          <ion-icon name=\"chevron-forward-sharp\" class=\"chevron\"></ion-icon>\r\n        </div>\r\n      </div>\r\n    </ng-template>\r\n  </div>\r\n</ion-content>\r\n<app-footer></app-footer>\r\n";
 
 /***/ })
 
