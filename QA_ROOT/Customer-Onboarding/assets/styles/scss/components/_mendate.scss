@@ -1,0 +1,240 @@
+@mixin styling {
+  display: flex;
+  justify-content: center;
+}
+
+.parentDiv {
+  .imgClass {
+    top: 247px;
+    left: 356px;
+    width: 207px;
+    height: 261px;
+    background: #f3f3f3 0% 0% no-repeat padding-box;
+    border: 3px solid #ffffff;
+    border-radius: 18px;
+    opacity: 1;
+  }
+
+  .addSign {
+    background: #f3f3f3 0% 0% no-repeat padding-box;
+    border-radius: 18px;
+    height: 214px;
+    opacity: 1;
+    position: relative;
+    padding-top: 78px !important;
+  }
+
+  .addSign1 {
+    background: #f3f3f3 0% 0% no-repeat padding-box;
+    border-radius: 18px 18px 0px 0px;
+    height: 214px;
+    opacity: 1;
+    position: relative;
+    padding-top: 78px !important;
+  }
+
+  .forAddingForm {
+    width: 207px;
+    // height: 214px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 3px solid #ffffff;
+    box-shadow: 0px 3px 15px #00000010;
+    border-radius: 18px;
+    opacity: 1;
+  }
+
+  ::ng-deep .mat-dialog-container {
+    border-radius: 12px;
+  }
+
+  .digsign {
+    color: white !important;
+    background: transparent linear-gradient(91deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box !important;
+    border-radius: 23px !important;
+  }
+
+  .upd {
+    background: #ffffff 0% 0% no-repeat padding-box !important;
+    box-shadow: 3px 3px 15px #0000000f;
+    border-radius: 35px !important;
+    color: #004c97 !important;
+  }
+
+  .button {
+    @include styling;
+    padding-top: 10px;
+  }
+
+  .forSignImg {
+    position: relative;
+    border: 3px solid #ffffff;
+    width: 225px;
+    background: #fffefe 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 15px #00000010;
+    border-radius: 12px;
+  }
+
+  .buttonColorWhite {
+    width: 172px;
+    height: 49px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 3px 3px 15px #0000000F;
+    border-radius: 35px;
+    color: black;
+  }
+  .paddingBottom{
+    padding-bottom: 10%;
+  }
+
+  .buttonColorBlue {
+    width: 172px;
+    height: 49px;
+    color: white;
+    background: transparent linear-gradient(91deg, #051A2D 0%, #004C97 100%) 0% 0% no-repeat padding-box;
+    border-radius: 23px;
+  }
+
+  .signdig {
+    width: 219px;
+    height: 214px;
+    border-radius: 8px 8px 18px 18px;
+    background: #f3f3f3 0% 0% no-repeat padding-box;
+    @include styling;
+    align-items: center;
+  }
+
+  .initial {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .initial1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #f3f3f3 !important;
+    border-radius: 0px 0px 18px 18px !important;
+  }
+
+  .forImg {
+    transform: matrix(0.8, -0.3, 0.2, 0.9, 1, 1);
+  }
+
+  .deletebtn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border-radius: 0px 11px;
+    color: #b20000;
+    cursor: pointer;
+    padding-top: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .changeInput {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .successupload {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+
+  ::ng-deep .cdk-overlay-backdrop {
+    backdrop-filter: blur(3px);
+  }
+
+  .backBtn {
+    border-radius: 23px;
+    width: 172px;
+    height: 49px;
+    border: none;
+    margin-left: 4%;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 3px 3px 15px #0000000f;
+    border-radius: 35px;
+    opacity: 1;
+  }
+
+  .finish {
+    border-radius: 23px;
+    width: 172px;
+    height: 49px;
+    background: transparent linear-gradient(91deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;
+    color: #fff;
+    border: none;
+  }
+
+  .footer {
+    padding-top: 80px;
+    display: flex;
+    width: 92%;
+    padding-left: 11px;
+    margin: 20px;
+    justify-content: space-between;
+  }
+
+  .showButton {
+    margin-left: 10%;
+    background: transparent linear-gradient(91deg, #051a2d 0%, #004c97 100%) 0% 0% no-repeat padding-box;
+    color: white;
+    border-radius: 55px;
+    width: 172px;
+    height: 49px;
+  }
+
+  .notShowButton {
+    margin-left: 10%;
+    width: 172px;
+    height: 49px;
+    /* UI Properties */
+    background: #6c6c6c 0% 0% no-repeat padding-box;
+    border-radius: 24px;
+    opacity: 0.38 !important;
+    color: white;
+  }
+
+  p {
+    text-align: left;
+    font-family: normal normal medium 14px/21px Poppins;
+    letter-spacing: 0px;
+    color: #102245;
+    text-transform: capitalize;
+    opacity: 0.5;
+  }
+
+  .hintsig {
+    margin-top: 30px !important;
+  }
+
+  .uploadsign {
+    padding-top: 45px !important;
+  }
+
+  .signiter {
+    margin-top: 35px !important;
+  }
+
+  .Image-crop-class {
+    .mat-dialog-container {
+      padding: 0px !important;
+      overflow: hidden !important;
+    }
+  }
+}
